@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_global_canton_switches",
+  "info": {
+    "name": "canton_switch",
+    "icon": "bars",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "canton": {
+      "type": "enumeration",
+      "enum": [
+        "GE",
+        "VS",
+        "VD"
+      ]
+    }
+  }
+}

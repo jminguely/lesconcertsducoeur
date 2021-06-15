@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news_articles",
+  "info": {
+    "name": "News Articles",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "canton_switch": {
+      "type": "component",
+      "repeatable": false,
+      "component": "global.canton-switch"
+    }
+  }
+}
