@@ -4,7 +4,7 @@
       <svg
         id="Capa_1"
         :class="{ 'rotate-45': dropdown }"
-        class="transform duration-200 ease-in-out w-5 h-5 mr-2"
+        class="w-5 h-5 mr-2 duration-200 ease-in-out transform"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -43,10 +43,7 @@
       <slot name="content"></slot>
     </div>
 
-    <div
-      class="text-lg text-gray-800 overflow-hidden duration-300 ease-in-out"
-      :class="{ 'h-0': !dropdown, 'h-32': dropdown }"
-    >
+    <div class="z-10 overflow-hidden text-lg text-gray-800 duration-300 ease-in-out bg-white" :class="{ 'h-0': !dropdown, 'h-32': dropdown }">
       <slot name="items"></slot>
     </div>
   </li>
@@ -69,11 +66,7 @@ export default {
     classObj() {
       const obj = {}
 
-      const statements = [
-        `duration-300 ease-in-out flex flex-col text-${this.color}-600 border-b border-${this.color}-600 w-full mx-6 cursor-pointer select-none`,
-        'h-10',
-        'h-32',
-      ]
+      const statements = [`bg-white duration-300 ease-in-out flex flex-col text-${this.color}-600 border-b border-${this.color}-600 w-full mx-6 cursor-pointer select-none`, 'h-10', 'h-32']
 
       const conditions = [true, !this.dropdown, this.dropdown]
 

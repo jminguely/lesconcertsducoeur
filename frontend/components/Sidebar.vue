@@ -1,45 +1,22 @@
 <template>
-  <div class="h-screen flex flex-col justify-between px-12 py-4 max-w-xs fixed">
+  <div class="fixed flex flex-col justify-between h-screen max-w-xs px-12 py-4 bg-white">
     <div>fr|de</div>
 
     <div>
-      <div class="flex flex-col font-bodoni my-8">
+      <div class="flex flex-col my-8 pointer-events-none font-playFair">
         <h6 class="ml-5 text-2xl leading-4">les concerts du</h6>
-        <h2 class="text-7xl leading-8">:ↄoeur</h2>
+        <h2 class="leading-8 text-7xl">:<span class="relative inline-block transform rotate-180 top-6">c</span>oeur</h2>
       </div>
 
       <div>
-        <ul class="ml-4">
-          <li>Accueil</li>
-          <li>Notre mission</li>
-          <li>Les concerts</li>
-          <li>Agenda</li>
-          <li>Medias</li>
-        </ul>
+        <div class="flex flex-col ml-4">
+          <nuxt-link v-for="(item, i) in links" :key="i" :to="item.link">{{ item.name }}</nuxt-link>
+        </div>
       </div>
 
-      <div
-        class="
-          transform
-          -rotate-25
-          relative
-          left-24
-          top-20
-          bg-gray-700
-          w-20
-          h-20
-          rounded-full
-          text-white
-          flex
-          items-center
-          justify-center
-          text-center
-          leading-5
-          font-bodoni
-        "
-      >
+      <nuxt-link class="relative flex items-center justify-center w-20 h-20 leading-5 text-center text-white transform bg-gray-700 rounded-full -rotate-25 left-24 top-20 font-bodoni" to="support">
         Nous soutenir!
-      </div>
+      </nuxt-link>
     </div>
     <div class="flex flex-col">
       <div class="flex items-center">
@@ -84,15 +61,24 @@
         <span class="font-bold"> Contact </span>
       </div>
       <div class="mt-4">
-        <input
-          class="border-2 border-gray-800 px-2"
-          placeholder="s'abonner a la newsletter"
-        />
+        <input class="px-2 border-2 border-gray-800" placeholder="s'abonner a la newsletter" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      links: [
+        { name: 'Accueil', link: 'home' },
+        { name: 'Notre mission', link: 'our-mission' },
+        { name: 'Les concerts', link: 'concerts' },
+        { name: 'Agenda', link: 'agenda' },
+        { name: 'Media', link: 'media' },
+      ],
+    }
+  },
+}
 </script>

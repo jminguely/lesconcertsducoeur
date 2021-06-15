@@ -3,3 +3,27 @@
   font-weight: 400;
   src: url('../webfonts/bodoni-seventytwo-itc-book-os.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'News Cycle';
+  src: url('../webfonts/NewsCycle-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'News Cycle';
+  src: url('../webfonts/NewsCycle-Bold.ttf');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Playfair';
+  src: url('../webfonts/PlayfairDisplay-VariableFont_wght.ttf');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair';
+  src: url('../webfonts/PlayfairDisplay-Italic-VariableFont_wght.ttf');
+  font-style: italic;
+}

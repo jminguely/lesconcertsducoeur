@@ -2,7 +2,9 @@
   <div>
     <Sidebar />
     <Navbar />
-    <Nuxt />
+    <div class="w-full mt-5 ml-auto max-w-screen-2xl">
+      <Nuxt />
+    </div>
   </div>
 </template>
 <script>
