@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-24 px-9">
+  <div>
     <nuxt-link class="absolute flex items-center justify-center w-20 h-20 leading-5 text-center text-white transform bg-gray-700 rounded-full right-10 -rotate-25 top-20 font-bodoni" to="support">
       Nous soutenir!
     </nuxt-link>

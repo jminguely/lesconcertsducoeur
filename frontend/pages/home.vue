@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-24 px-9">
+  <div>
     <Headline class="mb-36">
       <template #headline> La musique adoucit le temps qui passe </template>
       <template #content>

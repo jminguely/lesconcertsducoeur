@@ -3,8 +3,10 @@
     <Sidebar />
     <Navbar />
     <div class="w-full mt-5 ml-auto max-w-screen-2xl">
-      <Nuxt />
-      <Footer />
+      <div class="mt-24 px-9">
+        <Nuxt />
+        <Footer />
+      </div>
     </div>
   </div>
 </template>
