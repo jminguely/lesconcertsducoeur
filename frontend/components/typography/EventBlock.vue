@@ -1,0 +1,22 @@
+<template>
+  <div :class="`border-t-2 border-r-2 border-b-2 border-${color}-600 w-80`">
+    <span class="block px-2 text-2xl transform -translate-y-5 bg-white w-max font-playFair">
+      <slot name="datetime"></slot>
+    </span>
+    <div class="pb-8 pr-4">
+      <h3 :class="`text-2xl font-newsCycle text-${color}-500`"><slot name="pretitle"></slot></h3>
+      <h1 class="text-3xl font-playFair"><slot name="title"></slot></h1>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    color: {
+      type: String,
+      default: 'red',
+    },
+  },
+}
+</script>

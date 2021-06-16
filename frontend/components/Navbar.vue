@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-16 max-w-full">
+  <div class="fixed top-0 z-10 w-full h-16 max-w-full bg-white">
     <div class="ml-64">
       <ul class="flex justify-between px-8 py-4 text-2xl">
         <NavbarItem color="red">
@@ -32,15 +32,6 @@
             </ul>
           </template>
         </NavbarItem>
-        <!-- <li class="text-red-600 border-b border-red-600 w-full mx-6">
-          + Valais
-        </li>
-        <li class="text-green-600 border-b border-green-600 w-full mx-6">
-          + Vaud
-        </li>
-        <li class="text-yellow-600 border-b border-yellow-600 w-full mx-6">
-          + Geneve
-        </li> -->
       </ul>
     </div>
   </div>

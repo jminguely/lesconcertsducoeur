@@ -13,7 +13,10 @@ export default {
   css: ['~/assets/css/main.css', '~/assets/scss/main.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ ssr: false, src: '@/plugins/vue-clickaway.js' }],
+  plugins: [
+    { ssr: false, src: '@/plugins/vue-clickaway.js' },
+    { ssr: false, src: '@/plugins/vue-splide.js' },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
