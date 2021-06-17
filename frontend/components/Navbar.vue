@@ -6,7 +6,7 @@
           <template #content> Valais </template>
           <template #items>
             <ul class="overflow-hidden">
-              <li>L'association</li>
+              <nuxt-link to="/valais/associations">L'association</nuxt-link>
               <li>Nos artistes</li>
               <li>Auditions</li>
             </ul>

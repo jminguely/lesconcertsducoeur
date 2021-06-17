@@ -10,7 +10,7 @@
 
       <div>
         <div class="flex flex-col ml-4">
-          <nuxt-link v-for="(item, i) in links" :key="i" :to="item.link">{{ item.name }}</nuxt-link>
+          <nuxt-link v-for="(item, i) in links" :key="i" :to="item.link" :exact="item.exact">{{ item.name }}</nuxt-link>
         </div>
       </div>
 
@@ -72,11 +72,11 @@ export default {
   data() {
     return {
       links: [
-        { name: 'Accueil', link: 'home' },
-        { name: 'Notre mission', link: 'our-mission' },
-        { name: 'Les concerts', link: 'concerts' },
-        { name: 'Agenda', link: 'agenda' },
-        { name: 'Media', link: 'media' },
+        { name: 'Accueil', link: '/', exact: true },
+        { name: 'Notre mission', link: '/our-mission' },
+        { name: 'Les concerts', link: '/concerts' },
+        { name: 'Agenda', link: '/agenda' },
+        { name: 'Media', link: '/media' },
       ],
     }
   },
