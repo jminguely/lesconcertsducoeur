@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <nuxt-link class="relative flex items-center justify-center w-20 h-20 leading-5 text-center text-white transform bg-gray-700 rounded-full -rotate-25 left-24 top-20 font-bodoni" to="support">
+      <nuxt-link class="relative flex items-center justify-center w-20 h-20 leading-5 text-center text-white transform bg-gray-700 rounded-full -rotate-25 left-24 top-20 font-playFair" to="support">
         Nous soutenir!
       </nuxt-link>
     </div>
