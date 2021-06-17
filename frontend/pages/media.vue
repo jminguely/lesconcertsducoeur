@@ -1,7 +1,92 @@
 <template>
-  <div></div>
+  <div>
+    <Headline class="pt-20">
+      <template #headline>Médias</template>
+    </Headline>
+
+    <p class="text-xl font-newsCycle">Retrouvez-nous sur nos réseaux sociaux</p>
+
+    <div class="flex my-5">
+      <SocialLink class="mr-8" name="facebook" link="https://www.facebook.com" />
+      <SocialLink name="instagram" link="https://www.instagram.com" />
+    </div>
+
+    <Headline class="pt-20">
+      <template #headline>Newletters</template>
+    </Headline>
+
+    <div class="mt-8 text-xl font-newsCycle">
+      <p>Newsletter No 6 – Rapport d’activité 2019 | 03.2020</p>
+      <p>Newsletter No 5 | 11.2019</p>
+      <p>Newsletter No 4 – Rapport d’activité 2018 | 07.2019</p>
+      <p>Newsletter No 3 | 04.2019</p>
+    </div>
+
+    <Headline class="pt-20">
+      <template #headline>Presse</template>
+    </Headline>
+    <p class="text-2xl font-playFair">Ils parlent de nous</p>
+
+    <div class="flex justify-between pt-10">
+      <div>
+        <div class="mb-10">
+          <p class="text-2xl underline">La musique adoucit la vie</p>
+          <p class="text-xl">Journal de Sierre – 27 janvier 2017</p>
+        </div>
+
+        <div class="mb-10">
+          <p class="text-2xl underline">La musique adoucit le temps qui passe</p>
+          <p class="text-xl">Le Nouvelliste – 14 février 2017</p>
+        </div>
+
+        <div class="mb-10">
+          <p class="text-2xl underline">Les notes à la rencontre des isolés</p>
+          <p class="text-xl">Le Nouvelliste: Supplément Culture – 5 octobre 2017</p>
+        </div>
+
+        <div class="mb-10">
+          <p class="text-2xl underline">L’univers de la chanteuse lyrique valaisanne Laure Barras</p>
+          <p class="text-xl">RTS, La Puce à l’Oreille, 14 décembre 2017</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="mb-10">
+          <p class="text-2xl underline">La musique adoucit la vie</p>
+          <p class="text-xl">Journal de Sierre – 27 janvier 2017</p>
+        </div>
+
+        <div class="mb-10">
+          <p class="text-2xl underline">La musique adoucit le temps qui passe</p>
+          <p class="text-xl">Le Nouvelliste – 14 février 2017</p>
+        </div>
+
+        <div class="mb-10">
+          <p class="text-2xl underline">Les notes à la rencontre des isolés</p>
+          <p class="text-xl">Le Nouvelliste: Supplément Culture – 5 octobre 2017</p>
+        </div>
+
+        <div class="mb-10">
+          <p class="text-2xl underline">L’univers de la chanteuse lyrique valaisanne Laure Barras</p>
+          <p class="text-xl">RTS, La Puce à l’Oreille, 14 décembre 2017</p>
+        </div>
+      </div>
+    </div>
+
+    <Headline>
+      <template #headline>Images</template>
+    </Headline>
+  </div>
 </template>
 
 <script>
-export default {}
+import Headline from '@/components/typography/Headline.vue'
+import SocialLink from '@/components/pages/SocialLink.vue'
+
+export default {
+  components: {
+    Headline,
+    SocialLink,
+  },
+}
 </script>
