@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-4 pb-8 border-t border-b border-black">
+  <div class="border-t border-b border-black">
     <div class="flex items-center cursor-pointer select-none" @click="open = !open">
       <svg
         :class="{ 'transform rotate-90': open }"
@@ -14,7 +14,7 @@
       </svg>
       <h2 class="text-4xl font-newsCycle"><slot name="label"></slot></h2>
     </div>
-    <div :class="{ 'duration-300 ease-in-out min-h-0 max-h-0 flex justify-between': true, 'overflow-hidden max-h-0 font-newsCycle': !open, 'max-h-96 overflow-auto pt-4': open }">
+    <div :class="{ 'duration-300 ease-in-out min-h-0 max-h-0 flex justify-between': true, 'overflow-hidden max-h-0 font-newsCycle': !open, 'max-h-144 overflow-auto pt-4': open }">
       <div class="w-full px-5">
         <slot name="content"></slot>
       </div>

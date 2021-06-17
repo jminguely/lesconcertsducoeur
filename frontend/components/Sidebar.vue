@@ -58,7 +58,7 @@
           </svg>
         </div>
 
-        <span class="font-bold"> Contact </span>
+        <nuxt-link to="contact" class="font-bold"> Contact </nuxt-link>
       </div>
       <div class="mt-4">
         <input class="px-2 border-2 border-gray-800" placeholder="s'abonner a la newsletter" />
