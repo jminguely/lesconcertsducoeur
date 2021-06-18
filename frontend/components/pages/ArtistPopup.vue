@@ -13,7 +13,7 @@
 
     <div class="flex justify-between py-10">
       <div class="flex flex-col w-1/5">
-        <button class="flex my-2 text-2xl font-newsCycle" @click="goBack()">
+        <button class="flex my-2 text-2xl font-newsCycle focus:outline-none" @click="goBack()">
           <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="17.715" height="33.788" viewBox="0 0 17.715 33.788">
             <g id="Group_1250" data-name="Group 1250" transform="translate(-193.793 -66.793)">
               <line id="Line_21" data-name="Line 21" x2="16.301" y2="16.301" transform="translate(194.5 83.573)" fill="none" stroke="#4d9a70" stroke-width="2" />
@@ -23,7 +23,7 @@
           Quintet qui-vient-avant
         </button>
 
-        <button class="flex my-2 text-2xl font-newsCycle" @click="next()">
+        <button class="flex my-2 text-2xl font-newsCycle focus:outline-none" @click="next()">
           <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="17.715" height="33.788" viewBox="0 0 17.715 33.788">
             <g id="Group_1251" data-name="Group 1251" transform="translate(0.707 0.707)">
               <line id="Line_21" data-name="Line 21" x1="16.301" y2="16.301" transform="translate(0 16.073)" fill="none" stroke="#4d9a70" stroke-width="2" />

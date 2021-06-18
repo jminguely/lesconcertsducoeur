@@ -8,27 +8,27 @@
             <ul class="flex flex-col overflow-hidden">
               <nuxt-link to="/valais/associations">L'association</nuxt-link>
               <nuxt-link to="/valais/our-artists">Nos artistes</nuxt-link>
-              <li>Auditions</li>
+              <nuxt-link to="/valais/auditions">Auditions</nuxt-link>
             </ul>
           </template>
         </NavbarItem>
         <NavbarItem color="green">
-          <template #content> Valais </template>
+          <template #content> Vaud </template>
           <template #items>
             <ul class="flex flex-col overflow-hidden">
-              <li>L'association</li>
-              <li>Nos artistes</li>
-              <li>Auditions</li>
+              <nuxt-link to="/vaud/associations">L'association</nuxt-link>
+              <nuxt-link to="/vaud/our-artists">Nos artistes</nuxt-link>
+              <nuxt-link to="/vaud/auditions">Auditions</nuxt-link>
             </ul>
           </template>
         </NavbarItem>
         <NavbarItem color="yellow">
-          <template #content> Valais </template>
+          <template #content> Genève </template>
           <template #items>
             <ul class="flex flex-col overflow-hidden">
-              <li>L'association</li>
-              <li>Nos artistes</li>
-              <li>Auditions</li>
+              <nuxt-link to="/geneva/associations">L'association</nuxt-link>
+              <nuxt-link to="/geneva/our-artists">Nos artistes</nuxt-link>
+              <nuxt-link to="/geneva/auditions">Auditions</nuxt-link>
             </ul>
           </template>
         </NavbarItem>
