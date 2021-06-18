@@ -9,30 +9,36 @@
       <div v-else class="w-full h-full">
         <img class="object-cover w-full h-full" :src="artist.image" />
 
-        <a :href="artist.link" target="_blank" class="absolute top-0 left-0 w-full h-full p-10 text-white duration-300 ease-in-out hover:opacity-0">
-          <div class="absolute z-20">
+        <button class="absolute top-0 left-0 z-30 block w-full h-full p-10 text-white duration-300 ease-in-out hover:opacity-0 focus:outline-none" @click="openPopup(artist)">
+          <div class="absolute z-20 text-left top-5 left-5">
             <p class="text-2xl font-playFair">{{ artist.name }}</p>
             <p class="text-lg font-newsCycle">{{ artist.style }}</p>
           </div>
           <div class="absolute top-0 left-0 w-full h-full bg-gray-800 opacity-40"></div>
-        </a>
+        </button>
       </div>
     </div>
+    <ArtistPopup :artists="artists" :item.sync="selected" :popup.sync="popup" />
   </div>
 </template>
 
 <script>
+import ArtistPopup from '@/components/pages/ArtistPopup.vue'
+
 export default {
+  components: {
+    ArtistPopup,
+  },
   props: {
     artists: {
       type: Array,
       default() {
         return [
           {
+            id: '',
             name: '',
             style: '',
             image: '',
-            link: '',
           },
         ]
       },
@@ -41,6 +47,8 @@ export default {
   data() {
     return {
       mutated: [],
+      selected: {},
+      popup: false,
     }
   },
   created() {
@@ -54,6 +62,12 @@ export default {
     })
 
     this.mutated = clone
+  },
+  methods: {
+    openPopup(item) {
+      this.selected = item
+      this.popup = true
+    },
   },
 }
 </script>
