@@ -1,9 +1,9 @@
 <template>
   <div>
     <Sidebar />
-    <Navbar />
-    <div class="w-full mt-5 ml-auto max-w-screen-2xl">
-      <div class="mt-24 px-9">
+    <div class="flex flex-col flex-grow mt-5 ml-auto main lg:ml-96">
+      <Navbar />
+      <div class="flex flex-col flex-grow p-4 main-content mt-28">
         <Nuxt />
         <Footer />
       </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed top-0 left-0 z-20 flex flex-col justify-between h-screen max-w-xs px-12 py-4 bg-white">
+  <div class="fixed top-0 left-0 z-20 flex-col justify-between hidden h-screen max-w-xs px-12 py-4 bg-white lg:flex w-96">
     <div>fr|de</div>
 
     <div>
