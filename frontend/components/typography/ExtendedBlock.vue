@@ -3,7 +3,7 @@
     <span class="block px-2 text-2xl transform -translate-y-5 bg-white w-max font-playFair">
       <slot name="datetime"></slot>
     </span>
-    <div class="pb-8 pr-4">
+    <div class="pb-8 pr-6">
       <slot name="content"></slot>
     </div>
   </div>

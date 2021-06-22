@@ -1,16 +1,16 @@
 <template>
   <div class="flex flex-wrap items-center justify-start">
-    <div v-for="(artist, i) in mutated" :key="i" class="relative mx-12 my-6 w-80 h-96">
+    <div v-for="(artist, i) in mutated" :key="i" class="relative h-64 my-16 lg:my-6 lg:mx-12 w-96 lg:w-80 lg:h-96">
       <div v-if="artist.is_notice" class="w-full h-full p-5 border border-black">
-        <p class="mb-10 text-3xl font-playFair">{{ artist.text }}</p>
+        <p class="text-3xl lg:mb-10 font-playFair">{{ artist.text }}</p>
         <nuxt-link class="text-xl text-green-500" :to="artist.link">{{ artist.linkText }}</nuxt-link>
       </div>
 
       <div v-else class="w-full h-full">
         <img class="object-cover w-full h-full" :src="artist.image" />
 
-        <button class="absolute top-0 left-0 z-30 block w-full h-full p-10 text-white duration-300 ease-in-out hover:opacity-0 focus:outline-none" @click="openPopup(artist)">
-          <div class="absolute z-20 text-left top-5 left-5">
+        <button class="absolute top-0 left-0 z-30 block w-full h-full p-10 text-black duration-300 ease-in-out lg:text-white hover:opacity-0 focus:outline-none" @click="openPopup(artist)">
+          <div class="absolute left-0 z-20 text-left -bottom-20 lg:bottom-0 lg:top-5 lg:left-5">
             <p class="text-2xl font-playFair">{{ artist.name }}</p>
             <p class="text-lg font-newsCycle">{{ artist.style }}</p>
           </div>

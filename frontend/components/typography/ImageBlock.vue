@@ -1,8 +1,8 @@
 <template>
-  <div class="flex justify-between">
+  <div class="flex flex-col justify-between lg:flex-row">
     <div class="w-full text-2xl">
       <div class="border-t-2 border-b-2 border-r-2 border-black">
-        <div class="pr-4 transform -translate-y-5 bg-white font-playFair w-max">
+        <div class="pr-4 text-lg transform -translate-y-5 bg-white font-playFair w-max lg:text-2xl">
           <slot name="title"></slot>
         </div>
         <div class="pb-8">
@@ -10,7 +10,7 @@
         </div>
       </div>
     </div>
-    <div class="w-full">
+    <div class="w-full my-6 lg:my-0">
       <slot name="image"></slot>
     </div>
   </div>

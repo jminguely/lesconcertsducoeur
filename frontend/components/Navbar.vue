@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed top-0 z-10 z-50 w-full h-16 max-w-full bg-white left-5">
+  <div class="fixed top-0 z-40 hidden w-full h-16 max-w-full bg-white left-5 lg:block">
     <div class="lg:ml-64">
       <ul class="flex justify-between px-8 py-4 text-2xl">
         <NavbarItem color="red">

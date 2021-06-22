@@ -1,6 +1,6 @@
 <template>
-  <li v-clickaway="closeDropdown" :class="classObj" @click="toggleDropdown()">
-    <div class="flex items-center">
+  <li :class="classObj">
+    <div v-clickaway="closeDropdown" class="flex items-center text-xl lg:text-base" @click="toggleDropdown()">
       <svg
         id="Capa_1"
         :class="{ 'rotate-45': dropdown }"
@@ -43,7 +43,7 @@
       <slot name="content"></slot>
     </div>
 
-    <div class="z-10 overflow-hidden text-lg text-gray-800 duration-300 ease-in-out bg-white" :class="{ 'h-0': !dropdown, 'h-32': dropdown }">
+    <div class="z-10 overflow-hidden text-lg text-gray-800 duration-300 ease-in-out bg-white" :class="{ 'h-0': !dropdown, 'h-32': dropdown, 'pointer-events-none': !dropdown }">
       <slot name="items"></slot>
     </div>
   </li>
@@ -56,6 +56,10 @@ export default {
       type: String,
       default: 'red',
     },
+    black: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -65,10 +69,21 @@ export default {
   computed: {
     classObj() {
       const obj = {}
+      const statements = []
 
-      const statements = [`bg-white duration-300 ease-in-out flex flex-col text-${this.color}-600 border-b border-${this.color}-600 w-full mx-6 cursor-pointer select-none`, 'h-10', 'h-32']
+      statements[0] = `text-${this.color}-600 bg-white duration-300 ease-in-out flex flex-col  border-b  w-full lg:mx-6 cursor-pointer select-none`
 
-      const conditions = [true, !this.dropdown, this.dropdown]
+      if (this.black) {
+        statements[0] += ' border-black'
+      } else {
+        statements[0] += ` border-${this.color}-600`
+      }
+
+      statements[1] = 'h-10'
+
+      statements[2] = 'h-32'
+
+      const conditions = [true, !this.dropdown, this.dropdown, this.topBorder]
 
       for (let i = 0; i < statements.length; i++) {
         obj[statements[i]] = conditions[i]
@@ -79,14 +94,16 @@ export default {
   },
   methods: {
     detemineColor() {
-      if (this.color.toLowerCase() === 'red') {
-        return '#dc2626'
-      } else if (this.color.toLowerCase() === 'green') {
-        return '#059669'
-      } else if (this.color.toLowerCase() === 'yellow') {
-        return '#d97706'
-      } else {
-        return '#dc2626'
+      if (this.color) {
+        if (this.color.toLowerCase() === 'red') {
+          return '#dc2626'
+        } else if (this.color.toLowerCase() === 'green') {
+          return '#059669'
+        } else if (this.color.toLowerCase() === 'yellow') {
+          return '#d97706'
+        } else {
+          return '#dc2626'
+        }
       }
     },
     toggleDropdown() {

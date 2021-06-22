@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Headline class="mb-36">
+    <Headline class="mb-10 lg:mb-36">
       <template #headline> La musique adoucit le temps qui passe </template>
       <template #content>
         L’association Les Concerts du Coeur souhaite inscrire la musique dans le quotidien des personnes âgées, des personnes hospitalisées, incarcérées ou défavorisées afin d’essayer de rompre
@@ -15,7 +15,7 @@
       </Illustration>
 
       <Illustration color="green">
-        <template #image><img src="~/assets/img/illustrations/illustration2.svg" /></template>
+        <template #image><img src="~/assets/img/illustrations/illustration2.png" /></template>
         <template #label> Vaud </template>
       </Illustration>
 
@@ -25,7 +25,7 @@
       </Illustration>
     </div>
 
-    <div class="flex justify-between mt-24">
+    <div class="flex flex-col justify-between mt-24 lg:flex-row">
       <Testimonial>
         <template #quote>
           Nous sommes persuadés que les performances des artistes lyriques au sein de nos établissements sauront contribuer à permettre à bon nombre de nos patients de faire mieux face de leur maladie
@@ -37,7 +37,7 @@
         <template #title> Directeur des Hôpitaux du Valais </template>
       </Testimonial>
 
-      <Testimonial>
+      <Testimonial class="my-5 lg:my-0">
         <template #quote>
           C'est donc avec conviction que j'apporte mon appui à l'Association valaisanne, Les Concerts du Coeur, fondée en janvier pour réaliser ce projet. Je souhaite que nous soyons nombreux à la
           soutenir et à donner ainsi une chance aux personnes âgées, hospitalisées ou dans l'isolement de vivre des moments de plaisirs musicaux de qualité.
@@ -49,7 +49,7 @@
       </Testimonial>
     </div>
 
-    <div class="my-28">
+    <div class="my-5 lg:my-28">
       <Carousel
         class="mx-auto"
         :options="{
@@ -68,7 +68,7 @@
       <template #headline> Actualités </template>
     </Headline>
 
-    <div class="flex items-start justify-between mb-16">
+    <div class="flex flex-col items-start justify-between mb-16 lg:flex-row">
       <InfoBlock color="black">
         <template #date>23.03.20</template>
         <template #pretitle>général</template>
@@ -76,7 +76,7 @@
         <template #content>Nous vous proposons un nouveau type de concert pour contrer les restrictions de la pandémie.</template>
       </InfoBlock>
 
-      <InfoBlock color="yellow">
+      <InfoBlock class="my-5 lg:my-0" color="yellow">
         <template #date>11.02.21</template>
         <template #pretitle>Genève</template>
         <template #title>Bienvenue aux Genvois!</template>
@@ -95,14 +95,14 @@
       <template #headline> Prochains concerts </template>
     </Headline>
 
-    <div class="flex items-start justify-between">
+    <div class="flex flex-col items-start justify-between lg:flex-row">
       <EventBlock>
         <template #datetime>15.04.20 | 15:00 </template>
         <template #pretitle>Clinique Bernoise, Crans-Montana</template>
         <template #title>Récital de violon et violoncelle</template>
       </EventBlock>
 
-      <EventBlock color="green">
+      <EventBlock class="my-10 lg:my-0" color="green">
         <template #datetime>15.04.20 | 15:00 </template>
         <template #pretitle>Home Salem, St-Légier</template>
         <template #title>Quintette FECIMEO</template>
@@ -123,18 +123,18 @@
       </Headline>
     </div>
 
-    <div class="flex justify-between mb-20">
-      <Sublink>
+    <div class="flex flex-col justify-between mb-20 lg:flex-row">
+      <Sublink class="my-2 lg:my-0">
         <template #title>… en Valais?</template>
         <template #text>> découvrez nos musicien·nes·s</template>
       </Sublink>
 
-      <Sublink color="green">
+      <Sublink class="my-2 lg:my-0" color="green">
         <template #title>… sur Vaud?</template>
         <template #text>> découvrez nos musicien·nes·s</template>
       </Sublink>
 
-      <Sublink color="yellow">
+      <Sublink class="my-2 lg:my-0" color="yellow">
         <template #title>… sur Genève?</template>
         <template #text>> découvrez nos musicien·nes·s</template>
       </Sublink>
@@ -148,7 +148,7 @@
 
     <Divider class="mb-10" />
 
-    <div class="flex justify-between">
+    <div class="flex flex-col justify-between lg:flex-row">
       <div class="w-full">
         <Headline>
           <template #headline>Soutenez-nous …</template>

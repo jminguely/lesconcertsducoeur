@@ -1,8 +1,12 @@
 <template>
   <div>
     <Headline>
-      <template #headline>Auditions</template>
-      <template #content>Souhaitez-vous devenir musicien.ne des Concerts du Coeur ?</template>
+      <template #headline>
+        <span class="text-4xl lg:text-7xl">Auditions</span>
+      </template>
+      <template #content>
+        <span class="text-2xl lg:text-4xl"> Souhaitez-vous devenir musicien.ne des Concerts du Coeur ? </span>
+      </template>
     </Headline>
 
     <p class="text-2xl font-newsCycle">
@@ -27,9 +31,11 @@
       <p class="my-5">Tous les genres de musique sont bienvenus (classique / jazz / folklorique / musique du monde etc.).</p>
     </div>
 
-    <div class="flex justify-start my-20">
-      <ExtendedBlock class="mr-28">
-        <template #datetime>Audition dimanche 11 avril 2021</template>
+    <div class="flex flex-col justify-start my-20 lg:flex-row">
+      <ExtendedBlock class="mb-10 lg:mr-28 lg:mb-0">
+        <template #datetime>
+          <span class="text-lg">Audition dimanche 11 avril 2021</span>
+        </template>
         <template #content>
           <div class="text-xl font-newsCycle">
             <p class="block mb-10">10h00-17h00</p>
@@ -52,7 +58,9 @@
         </template>
       </ExtendedBlock>
       <ExtendedBlock class="mr-10">
-        <template #datetime>Audition dimanche 11 avril 2021</template>
+        <template #datetime>
+          <span class="text-lg">Audition dimanche 11 avril 2021</span>
+        </template>
         <template #content>
           <div class="text-xl font-newsCycle">
             <p class="block mb-10">10h00-17h00</p>
@@ -76,7 +84,7 @@
       </ExtendedBlock>
     </div>
 
-    <p class="max-w-md text-3xl text-yellow-500 font-playFair mb-36">Nous nous réjouissons de vous rencontrer et de vous écouter !</p>
+    <p class="max-w-md text-3xl text-yellow-500 font-playFair lg:mb-36">Nous nous réjouissons de vous rencontrer et de vous écouter !</p>
   </div>
 </template>
 

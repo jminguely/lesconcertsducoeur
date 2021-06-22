@@ -1,7 +1,9 @@
 <template>
   <div>
-    <Headline class="py-24">
-      <template #headline> Nos concepts, packaging </template>
+    <Headline class="lg:py-24">
+      <template #headline>
+        <span class="text-4xl lg:text-7xl">Nos concepts, packaging</span>
+      </template>
     </Headline>
     <p class="mb-16 text-xl font-newsCycle">
       Dans les établissements médico-sociaux et les institutions vouées aux personnes en difficulté nous donnons des concerts sous forme traditionnelle. Nous souhaitons que ces lieux de vie se
@@ -107,18 +109,18 @@
       <p class="mb-5">Une fois le concert terminé, les musiciens restent sur place pour échanger avec le public.</p>
     </div>
 
-    <div class="flex justify-between my-56">
-      <div class="max-w-xl">
+    <div class="flex flex-col justify-between lg:my-56 lg:flex-row">
+      <div class="max-w-xl my-6 lg:my-0">
         <img src="~/assets/img/illustrations/illustration6.svg" />
       </div>
 
       <div class="max-w-xl">
-        <h4 class="flex text-4xl font-newsCycle">
-          <span class="text-6xl">«</span>Votre concert a permis au personnel soignant de constater l’effet bénéfique de la musique sur l’ensemble des résidents. Votre performance a apporté du calme,
-          de la sérénité, beaucoup de joie et de plaisir.<span class="mt-auto text-6xl">»</span>
+        <h4 class="flex text-xl lg:text-4xl font-newsCycle">
+          <span class="text-2xl lg:text-6xl">«</span>Votre concert a permis au personnel soignant de constater l’effet bénéfique de la musique sur l’ensemble des résidents. Votre performance a apporté
+          du calme, de la sérénité, beaucoup de joie et de plaisir.<span class="mt-auto text-2xl lg:text-6xl">»</span>
         </h4>
-        <h2 class="mt-5 text-4xl text-right font-playFair">Claude Crettol</h2>
-        <h5 class="text-2xl text-right font-newsCycle">directeur des EMS Beaulieu et Jasmins</h5>
+        <h2 class="mt-5 text-2xl text-right lg:text-4xl font-playFair">Claude Crettol</h2>
+        <h5 class="text-right lg:text-xl lg:text-2xl font-newsCycle">directeur des EMS Beaulieu et Jasmins</h5>
       </div>
     </div>
   </div>

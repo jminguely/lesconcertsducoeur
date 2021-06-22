@@ -1,25 +1,88 @@
 <template>
-  <div class="fixed top-0 left-0 z-20 flex-col justify-between hidden h-screen max-w-xs px-12 py-4 bg-white lg:flex w-96">
-    <div>fr|de</div>
+  <div
+    :class="{ 'h-full': menu }"
+    class="fixed top-0 left-0 z-50 flex flex-col justify-between w-full max-h-screen p-4 pb-8 duration-300 ease-in-out bg-white lg:pb-4 lg:px-12 lg:py-4 lg:h-screen lg:max-w-xs lg:w-96"
+  >
+    <div :class="{ 'absolute top-5 left-5 text-2xl': menu, hidden: !menu }" class="lg:block">fr|de</div>
 
     <div>
-      <div class="flex flex-col my-8 pointer-events-none font-playFair">
-        <h6 class="ml-5 text-2xl leading-4">les concerts du</h6>
-        <h2 class="leading-8 text-7xl">:<span class="relative inline-block transform rotate-180 top-6">c</span>oeur</h2>
+      <div class="flex justify-between">
+        <div :class="{ 'opacity-0': menu, 'opacity-100': !menu }" class="flex flex-col my-2 duration-300 ease-in-out pointer-events-none lg:my-8 font-playFair">
+          <h6 class="ml-5 text-2xl lg:leading-4">les concerts du</h6>
+          <h2 class="leading-8 text-7xl">:<span class="relative inline-block transform rotate-180 top-6">c</span>oeur</h2>
+        </div>
+        <button
+          :class="{ opened: menu }"
+          :aria-expanded="menu"
+          class="flex w-16 h-16 p-0 bg-transparent border-none cursor-pointer lg:hidden focus:outline-none"
+          aria-label="Main Menu"
+          @click="toggleMenu()"
+        >
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <path
+              class="line line1"
+              d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
+            />
+            <path class="line line2" d="M 20,50 H 80" />
+            <path
+              class="line line3"
+              d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
+            />
+          </svg>
+        </button>
       </div>
 
-      <div>
+      <div :class="{ hidden: !menu }" class="text-3xl lg:text-base lg:block">
         <div class="flex flex-col ml-4">
-          <nuxt-link v-for="(item, i) in links" :key="i" :to="item.link" :exact="item.exact">{{ item.name }}</nuxt-link>
+          <nuxt-link v-for="(item, i) in links" :key="i" :class="{ 'my-2': menu }" :to="item.link" :exact="item.exact">{{ item.name }}</nuxt-link>
         </div>
       </div>
 
-      <nuxt-link class="relative flex items-center justify-center w-20 h-20 leading-5 text-center text-white transform bg-gray-700 rounded-full -rotate-25 left-24 top-20 font-playFair" to="support">
+      <nuxt-link
+        class="relative flex-col items-center justify-center hidden w-20 h-20 leading-5 text-center text-white transform bg-gray-700 rounded-full lg:flex -rotate-25 left-24 top-20 font-playFair"
+        to="support"
+      >
         Nous soutenir!
       </nuxt-link>
     </div>
+
+    <div :class="{ visible: menu, hidden: !menu }">
+      <ul class="flex flex-col mt-5 overflow-hidden">
+        <NavbarItem class="border-t" black color="red">
+          <template #content> Valais </template>
+          <template #items>
+            <ul class="flex flex-col overflow-hidden">
+              <nuxt-link to="/valais/associations">L'association</nuxt-link>
+              <nuxt-link to="/valais/our-artists">Nos artistes</nuxt-link>
+              <nuxt-link to="/valais/auditions">Auditions</nuxt-link>
+            </ul>
+          </template>
+        </NavbarItem>
+        <NavbarItem black color="green">
+          <template #content> Vaud </template>
+          <template #items>
+            <ul class="flex flex-col overflow-hidden">
+              <nuxt-link to="/vaud/associations">L'association</nuxt-link>
+              <nuxt-link to="/vaud/our-artists">Nos artistes</nuxt-link>
+              <nuxt-link to="/vaud/auditions">Auditions</nuxt-link>
+            </ul>
+          </template>
+        </NavbarItem>
+        <NavbarItem black color="yellow">
+          <template #content> Genève </template>
+          <template #items>
+            <ul class="flex flex-col overflow-hidden">
+              <nuxt-link to="/geneva/associations">L'association</nuxt-link>
+              <nuxt-link to="/geneva/our-artists">Nos artistes</nuxt-link>
+              <nuxt-link to="/geneva/auditions">Auditions</nuxt-link>
+            </ul>
+          </template>
+        </NavbarItem>
+      </ul>
+    </div>
+
     <div class="flex flex-col">
-      <div class="flex items-center">
+      <div :class="{ 'flex flex-row-reverse justify-between text-2xl': menu, 'hidden lg:flex': !menu }" class="items-center">
         <div class="mr-2">
           <svg
             aria-hidden="true"
@@ -29,7 +92,7 @@
             role="img"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
-            class="w-5 svg-inline--fa fa-facebook fa-w-16 fa-7x"
+            class="w-8 lg:w-5 svg-inline--fa fa-facebook fa-w-16 fa-7x"
           >
             <path
               fill="currentColor"
@@ -39,7 +102,7 @@
           </svg>
         </div>
 
-        <div class="mr-2">
+        <div :class="{ 'ml-auto': menu }" class="mr-2">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -48,7 +111,7 @@
             role="img"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
-            class="w-5 svg-inline--fa fa-instagram fa-w-14 fa-7x"
+            class="w-8 mr-4 lg:mr-0 lg:w-5 svg-inline--fa fa-instagram fa-w-14 fa-7x"
           >
             <path
               fill="currentColor"
@@ -58,9 +121,9 @@
           </svg>
         </div>
 
-        <nuxt-link to="contact" class="font-bold"> Contact </nuxt-link>
+        <nuxt-link to="/contact" class="font-bold font-newsCycle"> Contact </nuxt-link>
       </div>
-      <div class="mt-4">
+      <div class="hidden mt-4 lg:block">
         <input class="px-2 border-2 border-gray-800" placeholder="s'abonner a la newsletter" />
       </div>
     </div>
@@ -78,7 +141,59 @@ export default {
         { name: 'Agenda', link: '/agenda' },
         { name: 'Media', link: '/media' },
       ],
+      menu: false,
     }
+  },
+  watch: {
+    $route(val) {
+      this.menu = false
+    },
+  },
+  methods: {
+    openMenu() {
+      this.menu = true
+    },
+    toggleMenu() {
+      this.menu = !this.menu
+    },
+    closeMenu() {
+      this.menu = false
+    },
   },
 }
 </script>
+<style>
+.line {
+  fill: none;
+  stroke: black;
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+</style>

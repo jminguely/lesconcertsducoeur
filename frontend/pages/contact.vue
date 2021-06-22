@@ -1,15 +1,17 @@
 <template>
   <div>
-    <Headline class="pt-28">
-      <template #headline>Contact</template>
+    <Headline class="lg:pt-28">
+      <template #headline>
+        <span class="text-4xl lg:text-7xl">Contact</span>
+      </template>
       <template #content>
         Si nos actions vous intéressent, si vous désirez organiser un concert dans votre établissement ou dans l'EMS de l’un de de vos proches, n’hésitez pas à nous contacter.
-        <p class="my-10">Contact général</p>
-        <p class="ml-48 underline font-newsCycle">contact@lesconcertsducoeur.ch</p>
+        <p class="mt-10 lg:my-10">Contact général</p>
+        <p class="underline lg:ml-48 font-newsCycle">contact@lesconcertsducoeur.ch</p>
       </template>
     </Headline>
 
-    <AccordionItem>
+    <AccordionItem class="hidden lg:block">
       <template #label>Contact Valais</template>
       <template #content>
         <div class="mb-28">
@@ -39,7 +41,7 @@
       </template>
     </AccordionItem>
 
-    <AccordionItem>
+    <AccordionItem class="hidden lg:block">
       <template #label>Contact Vaud</template>
       <template #content>
         <div class="mb-28">
@@ -69,7 +71,7 @@
       </template>
     </AccordionItem>
 
-    <AccordionItem>
+    <AccordionItem class="hidden lg:block">
       <template #label>Contact Genève</template>
       <template #content>
         <div class="mb-28">
@@ -98,6 +100,64 @@
         </div>
       </template>
     </AccordionItem>
+
+    <div class="lg:hidden">
+      <div>
+        <h3 class="text-2xl font-playFair">Valais</h3>
+      </div>
+      <div class="mb-8 ml-8 text-red-600 font-newsCycle">
+        <h3 class="text-lg font-bold">Laure Barras</h3>
+        <h5 class="text-lg">Directrice artistique Valais email</h5>
+        <br />
+        <h5 class="text-lg">Les Rocailles, Rue des Biolirs 6, 3963 Crans-Montana</h5>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-playFair">Bénévoles valaisans</h3>
+      </div>
+      <div class="mb-8 ml-8 text-red-600 font-newsCycle">
+        <h3 class="text-lg font-bold">Laure Barras</h3>
+        <h5 class="text-lg">Directrice artistique Valais email</h5>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-playFair">Vaud</h3>
+      </div>
+      <div class="mb-8 ml-8 text-green-600 font-newsCycle">
+        <h3 class="text-lg font-bold">Mary Rose</h3>
+        <h5 class="text-lg">Directrice artistique Vaud email</h5>
+        <br />
+        <h5 class="text-lg">Route du village 59 1509 Vucherens</h5>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-playFair">Bénévoles valaisans</h3>
+      </div>
+      <div class="mb-8 ml-8 text-green-600 font-newsCycle">
+        <h3 class="text-lg font-bold">Mary Rose</h3>
+        <h5 class="text-lg">Directrice artistique Vaud email</h5>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-playFair">Bénévoles valaisans</h3>
+      </div>
+      <div class="mb-8 ml-8 text-yellow-600 font-newsCycle">
+        <h3 class="text-lg font-bold">Mary Rose</h3>
+        <h5 class="text-lg">Directrice artistique Vaud email</h5>
+        <br />
+        <h5 class="text-lg">Route du village 59 1509 Vucherens</h5>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-playFair">Bénévoles genevois</h3>
+      </div>
+      <div class="mb-8 ml-8 text-yellow-600 font-newsCycle">
+        <h3 class="text-lg font-bold">Mary Rose</h3>
+        <h5 class="text-lg">Directrice artistique Vaud email</h5>
+      </div>
+
+      <img class="mx-auto" src="~/assets/img/illustrations/illustration8.svg" />
+    </div>
   </div>
 </template>
 
