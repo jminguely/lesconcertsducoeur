@@ -1,17 +1,17 @@
 <template>
-  <div class="flex pb-20 border-b border-gray-800">
-    <div class="flex flex-col max-w-sm mr-60">
-      <div :class="`font-playFair text-${color}-600 text-3xl mb-5`">
+  <div class="flex flex-col border-b border-gray-800 pb-9 lg:pb-20 lg:flex-row">
+    <div class="flex flex-col lg:max-w-sm lg:mr-60">
+      <div :class="`font-playFair text-${color}-600 text-xl lg:text-3xl mb-5`">
         <slot name="due"></slot>
       </div>
-      <div class="text-6xl font-newsCycle">
+      <div class="mb-6 text-3xl lg:text-6xl font-newsCycle lg:mb-0">
         <slot name="title"></slot>
       </div>
     </div>
 
-    <div class="flex flex-col px-10 prose">
+    <div class="flex flex-col prose lg:px-10">
       <div class="w-full h-full"></div>
-      <div :class="`font-playFair text-${color}-600 text-2xl`">
+      <div :class="`font-playFair text-${color}-600 lg:text-2xl text-lg`">
         <slot name="details"></slot>
       </div>
     </div>

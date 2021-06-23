@@ -1,18 +1,22 @@
 <template>
   <div>
-    <Headline class="pt-20">
-      <template #headline>Médias</template>
+    <Headline class="lg:pt-20">
+      <template #headline>
+        <span class="text-4xl lg:text-7xl">Médias</span>
+      </template>
     </Headline>
 
     <p class="text-xl font-newsCycle">Retrouvez-nous sur nos réseaux sociaux</p>
 
     <div class="flex my-5">
-      <SocialLink class="mr-8" name="facebook" link="https://www.facebook.com" />
+      <SocialLink class="mr-4 lg:mr-8" name="facebook" link="https://www.facebook.com" />
       <SocialLink name="instagram" link="https://www.instagram.com" />
     </div>
 
-    <Headline class="pt-20">
-      <template #headline>Newletters</template>
+    <Headline class="lg:pt-20">
+      <template #headline>
+        <span class="text-4xl lg:text-7xl">Newletters</span>
+      </template>
     </Headline>
 
     <div class="mt-8 text-xl font-newsCycle">
@@ -22,12 +26,14 @@
       <p>Newsletter No 3 | 04.2019</p>
     </div>
 
-    <Headline class="pt-20">
-      <template #headline>Presse</template>
+    <Headline class="lg:pt-20">
+      <template #headline>
+        <span class="text-4xl lg:text-7xl">Presse</span>
+      </template>
     </Headline>
     <p class="text-2xl font-playFair">Ils parlent de nous</p>
 
-    <div class="flex justify-between pt-10">
+    <div class="flex flex-col justify-between pt-10 lg:flex-row">
       <div>
         <div class="mb-10">
           <p class="text-2xl underline">La musique adoucit la vie</p>

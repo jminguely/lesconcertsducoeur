@@ -1,22 +1,24 @@
 <template>
   <div>
     <Headline>
-      <template #headline> Agenda </template>
+      <template #headline>
+        <span class="text-4xl lg:text-7xl">Agenda</span>
+      </template>
     </Headline>
 
-    <div class="flex items-start my-20 text-2xl justify-items-start font-playFair">
-      <ClassicSelect class="mr-16" :options="years">
+    <div class="flex flex-col items-start text-2xl lg:my-20 lg:flex-row justify-items-start font-playFair">
+      <ClassicSelect class="my-4 mr-16 lg:my-0" :options="years">
         <template #label> à venir </template>
       </ClassicSelect>
 
-      <ClassicSelect class="mr-16" :options="['Sélection']">
+      <ClassicSelect class="my-4 mr-16 lg:my-0" :options="['Sélection']">
         <template #label> Filtre </template>
       </ClassicSelect>
 
-      <ClassicSelect class="mr-16" :options="[]">
+      <ClassicSelect class="my-4 mr-16 lg:my-0" :options="[]">
         <template #label> région </template>
       </ClassicSelect>
-      <ClassicSelect class="mr-16" :options="years">
+      <ClassicSelect class="my-4 mr-16 lg:my-0" :options="years">
         <template #label> à venir passés </template>
       </ClassicSelect>
     </div>
@@ -45,7 +47,7 @@
       </template>
     </EventDetails>
 
-    <EventDetails color="red" class="my-10 mb-40">
+    <EventDetails color="red" class="my-10 lg:mb-40">
       <template #due>Je 05.09.2019 | 00:00 Stiftung Altersheim St. Mauritius, Zermatt </template>
       <template #title>Étudiants de l’académie du Zermatt Music Festival</template>
       <template #details>

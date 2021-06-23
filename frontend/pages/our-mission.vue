@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <nuxt-link class="absolute flex items-center justify-center w-20 h-20 leading-5 text-center text-white transform bg-gray-700 rounded-full right-10 -rotate-25 top-20 font-playFair" to="support">
+  <div class="mt-16 lg:mt-0">
+    <nuxt-link
+      class="absolute flex items-center justify-center w-20 h-20 leading-5 text-center text-white transform bg-gray-700 rounded-full right-10 -rotate-25 top-32 lg:top-20 font-playFair"
+      to="support"
+    >
       Nous soutenir!
     </nuxt-link>
     <Headline>
@@ -14,22 +17,24 @@
       </template>
     </Headline>
 
-    <div class="flex mt-12 mb-24">
-      <Sublink width="auto">
+    <div class="flex flex-col mt-4 mb-4 lg:mb-24 lg:mt-12 lg:flex-row">
+      <Sublink class="my-4 lg:my-0" width="auto">
         <template #text>> En savoir plus sur l’organisation valaisanne</template>
       </Sublink>
 
-      <Sublink color="green" width="auto">
+      <Sublink class="my-4 lg:my-0" color="green" width="auto">
         <template #text>> En savoir plus sur l’organisation valaisanne</template>
       </Sublink>
 
-      <Sublink color="yellow" width="auto">
+      <Sublink class="my-4 lg:my-0" color="yellow" width="auto">
         <template #text>> En savoir plus sur l’organisation valaisanne</template>
       </Sublink>
     </div>
 
     <Headline>
-      <template #headline> Nos buts </template>
+      <template #headline>
+        <span class="text-4xl lg:text-7xl"> Nos buts</span>
+      </template>
     </Headline>
 
     <DetailedImages :items="items" />
@@ -38,7 +43,7 @@
       <template #headline>Nos objectifs</template>
     </Headline>
 
-    <div class="text-2xl font-newsCycle pr-44">
+    <div class="text-2xl font-newsCycle lg:pr-44">
       <p class="my-10">
         Des études récentes ont démontré que les activités musicales avaient des effets similaires aux antidépresseurs 1. Elles peuvent retarder les effets négatifs de la maladie d’Alzheimer et
         prévenir l’isolement social2.
@@ -65,7 +70,7 @@
       <p class="my-10">2 PLATEL, Hervé (octobre 2015), "Pourquoi la musique est bonne pour le cerveau ?"</p>
     </div>
 
-    <div class="mb-32">
+    <div class="mb-10 lg:mb-32">
       <h3 class="text-3xl font-playFair">Documentation</h3>
       <ul class="text-2xl">
         <li>— Pourquoi la musique est bonne pour le cerveau – Le Point</li>
@@ -73,13 +78,15 @@
       </ul>
     </div>
 
-    <div class="flex justify-between">
+    <div class="flex flex-col justify-between lg:flex-row">
       <div class="w-full">
         <Headline class="w-5/6 mb-16">
-          <template #headline>Comment nous soutenir</template>
+          <template #headline>
+            <span class="text-4xl lg:text-7xl">Comment nous soutenir</span>
+          </template>
         </Headline>
 
-        <div class="text-2xl pr-52">
+        <div class="text-2xl lg:pr-52">
           <p>
             Les dons sont la façon la plus simple de nous aider. Les Concerts du Cœur étant une association reconnue d’utilité publique vous pourrez les déduire fiscalement. Vous pouvez également
             devenir membre de l’association et/ou bénévole. Sponsoriser un concert pour un de vos proches est également possible.
