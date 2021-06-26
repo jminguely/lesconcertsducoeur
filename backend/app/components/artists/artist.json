@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_artists_artists",
+  "info": {
+    "name": "artist",
+    "icon": "utensil-spoon"
+  },
+  "options": {},
+  "attributes": {
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "instrument": {
+      "type": "string"
+    },
+    "website_link": {
+      "type": "string"
+    }
+  }
+}

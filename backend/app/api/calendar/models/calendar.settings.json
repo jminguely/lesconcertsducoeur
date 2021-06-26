@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "calendars",
+  "info": {
+    "name": "Concerts Calendar",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date_time": {
+      "type": "datetime"
+    },
+    "title": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "extra_comment": {
+      "type": "richtext"
+    },
+    "canton_switch": {
+      "type": "component",
+      "repeatable": false,
+      "component": "global.canton-switch"
+    }
+  }
+}
