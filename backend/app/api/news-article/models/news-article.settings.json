@@ -10,12 +10,21 @@
     "timestamps": true,
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "canton_switch": {
       "type": "component",
       "repeatable": false,
-      "component": "global.canton-switch"
+      "component": "global.canton-switch",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

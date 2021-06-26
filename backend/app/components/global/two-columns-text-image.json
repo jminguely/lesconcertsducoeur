@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_global_two_columns_text_images",
+  "info": {
+    "name": "two_columns_text_image",
+    "icon": "braille"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

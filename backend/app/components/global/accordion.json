@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_global_accordions",
+  "info": {
+    "name": "accordion",
+    "icon": "bezier-curve"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "two_columns_text_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "global.two-columns-text-image"
+    }
+  }
+}

@@ -33,6 +33,25 @@
         }
       },
       "type": "string"
+    },
+    "content": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "global.canton-switch"
+      ]
+    },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid"
     }
   }
 }

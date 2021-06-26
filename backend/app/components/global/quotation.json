@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_global_quotations",
+  "info": {
+    "name": "quotation",
+    "icon": "allergies"
+  },
+  "options": {},
+  "attributes": {
+    "author": {
+      "type": "string"
+    },
+    "citation": {
+      "type": "richtext"
+    },
+    "role": {
+      "type": "string"
+    }
+  }
+}
