@@ -91,6 +91,10 @@
           "localized": true
         }
       }
+    },
+    "concerts_calendar": {
+      "via": "artist",
+      "model": "calendar"
     }
   }
 }

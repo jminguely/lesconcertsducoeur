@@ -41,9 +41,7 @@
         }
       },
       "type": "dynamiczone",
-      "components": [
-        "global.canton-switch"
-      ]
+      "components": []
     },
     "slug": {
       "pluginOptions": {

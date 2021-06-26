@@ -1,18 +1,19 @@
 {
   "collectionName": "components_global_quotations",
   "info": {
-    "name": "quotation",
-    "icon": "allergies"
+    "name": "testimonial",
+    "icon": "allergies",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "author": {
+    "author_name": {
       "type": "string"
     },
-    "citation": {
+    "quote": {
       "type": "richtext"
     },
-    "role": {
+    "author_title": {
       "type": "string"
     }
   }
