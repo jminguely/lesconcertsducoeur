@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex flex-col px-4 font-playFair w-80 lg:px-0">
+  <div class="relative flex flex-col px-4 font-playFair w-80">
     <div>
       <slot name="image"></slot>
     </div>
