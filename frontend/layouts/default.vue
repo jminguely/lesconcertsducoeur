@@ -3,7 +3,7 @@
     <Sidebar />
     <div class="flex flex-col flex-grow mt-5 ml-auto lg:ml-96">
       <Navbar />
-      <div class="flex flex-col flex-grow pl-5 pr-20 mt-28">
+      <div class="flex flex-col flex-grow px-5 mt-28 lg:pr-20">
         <Nuxt />
         <Footer />
       </div>
