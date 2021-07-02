@@ -3,7 +3,7 @@
     :class="{ 'h-full': menu }"
     class="fixed top-0 left-0 z-50 flex flex-col justify-between w-full max-h-screen p-4 pb-8 duration-300 ease-in-out bg-white lg:pb-4 lg:px-12 lg:py-4 lg:h-screen lg:max-w-xs lg:w-96"
   >
-    <div :class="{ 'absolute top-5 left-5 text-2xl': menu, hidden: !menu }" class="lg:block">fr|de</div>
+    <div :class="{ 'absolute top-5 left-5 text-2xl': menu, hidden: !menu }" class="lg:block">fr | de</div>
 
     <div>
       <div class="flex justify-between">

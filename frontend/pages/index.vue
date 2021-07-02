@@ -26,7 +26,7 @@
     </div>
 
     <div class="flex flex-col justify-between mt-24 lg:flex-row">
-      <Testimonial>
+      <Testimonial class="lg:mr-10">
         <template #quote>
           Nous sommes persuadés que les performances des artistes lyriques au sein de nos établissements sauront contribuer à permettre à bon nombre de nos patients de faire mieux face de leur maladie
           notamment en rendant leur séjour hospitalier plus humain. L'Hôpital du Valais soutient donc avec enthousiasme cette magnifique initiative.
