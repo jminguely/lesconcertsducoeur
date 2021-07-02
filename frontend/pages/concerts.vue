@@ -27,6 +27,8 @@
       </template>
     </ImageBlock>
 
+    <Spacing />
+
     <p class="text-2xl font-playFair">Nos concepts, packaging</p>
 
     <AccordionItem>
@@ -109,19 +111,23 @@
       <p class="mb-5">Une fois le concert terminé, les musiciens restent sur place pour échanger avec le public.</p>
     </div>
 
-    <div class="flex flex-col justify-between lg:my-56 lg:flex-row">
-      <div class="max-w-xl my-6 lg:my-0">
+    <Spacing />
+
+    <div class="flex flex-col justify-between lg:flex-row">
+      <div class="max-w-xl my-5 lg:my-0 lg:mr-20">
         <img src="~/assets/img/illustrations/illustration6.svg" />
       </div>
 
-      <div class="max-w-xl">
-        <h4 class="flex text-xl lg:text-4xl font-newsCycle">
-          <span class="text-2xl lg:text-6xl">«</span>Votre concert a permis au personnel soignant de constater l’effet bénéfique de la musique sur l’ensemble des résidents. Votre performance a apporté
-          du calme, de la sérénité, beaucoup de joie et de plaisir.<span class="mt-auto text-2xl lg:text-6xl">»</span>
-        </h4>
-        <h2 class="mt-5 text-2xl text-right lg:text-4xl font-playFair">Claude Crettol</h2>
-        <h5 class="text-right lg:text-xl lg:text-2xl font-newsCycle">directeur des EMS Beaulieu et Jasmins</h5>
-      </div>
+      <Testimonial class="max-w-xl">
+        <template #quote>
+          Votre concert a permis au personnel soignant de constater l’effet bénéfique de la musique sur l’ensemble des résidents. Votre performance a apporté du calme, de la sérénité, beaucoup de joie
+          et de plaisir.
+        </template>
+
+        <template #name>Claude Crettol</template>
+
+        <template #title>Directeur des EMS Beaulieu et Jasmins</template>
+      </Testimonial>
     </div>
   </div>
 </template>
@@ -129,6 +135,8 @@
 <script>
 import Headline from '@/components/typography/Headline.vue'
 import ImageBlock from '@/components/typography/ImageBlock.vue'
+import Spacing from '@/components/typography/Spacing.vue'
+import Testimonial from '@/components/typography/Testimonial.vue'
 import AccordionItem from '@/components/pages/AccordionItem.vue'
 
 export default {
@@ -136,6 +144,8 @@ export default {
     Headline,
     ImageBlock,
     AccordionItem,
+    Spacing,
+    Testimonial,
   },
 }
 </script>

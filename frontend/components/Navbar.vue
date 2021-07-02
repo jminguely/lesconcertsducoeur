@@ -1,7 +1,7 @@
 <template>
   <div class="fixed top-0 z-40 hidden w-full h-16 max-w-full bg-white left-0 lg:block">
-    <div class="lg:ml-96 lg:mr-20">
-      <ul class="flex justify-between pt-5 text-2xl">
+    <div class="lg:ml-80 lg:mr-20">
+      <ul class="flex justify-between pt-5 pl-10 text-2xl">
         <NavbarItem color="red">
           <template #content> Valais </template>
           <template #items>

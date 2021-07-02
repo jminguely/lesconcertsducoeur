@@ -1,6 +1,6 @@
 <template>
-  <div class="border-t border-b border-black">
-    <div class="flex items-center py-2 cursor-pointer select-none" @click="open = !open">
+  <div class="py-5 border-b border-black">
+    <div class="flex items-center cursor-pointer select-none" @click="open = !open">
       <svg
         :class="{ 'transform rotate-90': open }"
         xmlns="http://www.w3.org/2000/svg"
@@ -14,8 +14,10 @@
       </svg>
       <h2 class="text-2xl lg:text-4xl font-newsCycle"><slot name="label"></slot></h2>
     </div>
-    <div :class="{ 'duration-300 ease-in-out min-h-0 max-h-0 flex flex-col lg:flex-row justify-between': true, 'overflow-hidden max-h-0 font-newsCycle': !open, 'max-h-144 overflow-auto pt-4': open }">
-      <div class="w-full px-5">
+    <div
+      :class="{ 'duration-300 ease-in-out min-h-0 max-h-0 flex flex-col lg:flex-row justify-between': true, 'overflow-hidden max-h-0 font-newsCycle': !open, 'max-h-144 overflow-visible pt-4': open }"
+    >
+      <div class="w-full pr-5 text-xl">
         <slot name="content"></slot>
       </div>
       <div class="w-full my-4 lg:my-0">
