@@ -34,7 +34,9 @@
 
       <div :class="{ hidden: !menu }" class="text-3xl lg:text-base lg:block">
         <div class="flex flex-col ml-4">
-          <nuxt-link v-for="(item, i) in links" :key="i" :class="{ 'my-2': menu }" :to="item.link" :exact="item.exact">{{ item.name }}</nuxt-link>
+          <nuxt-link v-for="(item, i) in links" :key="i" :class="{ 'my-2': menu }" :to="item.link" :exact="item.exact">
+            {{ item.name }}
+          </nuxt-link>
         </div>
       </div>
 
@@ -52,7 +54,7 @@
           <template #content> Valais </template>
           <template #items>
             <ul class="flex flex-col overflow-hidden">
-              <nuxt-link to="/valais/associations">L'association</nuxt-link>
+              <nuxt-link class="font-newsCycle" to="/valais/associations">L'association</nuxt-link>
               <nuxt-link to="/valais/our-artists">Nos artistes</nuxt-link>
               <nuxt-link to="/valais/auditions">Auditions</nuxt-link>
             </ul>

@@ -4,7 +4,7 @@
       <svg
         id="Capa_1"
         :class="{ 'rotate-45': dropdown }"
-        class="w-5 h-5 mr-2 duration-200 ease-in-out transform"
+        class="w-5 h-5 duration-200 ease-in-out transform"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -39,11 +39,12 @@
         <g></g>
         <g></g>
       </svg>
-
-      <slot name="content"></slot>
+      <span class="pl-2 text-xl">
+        <slot name="content"></slot>
+      </span>
     </div>
 
-    <div class="z-10 overflow-hidden text-lg text-gray-800 duration-300 ease-in-out bg-white" :class="{ 'h-0': !dropdown, 'h-32': dropdown, 'pointer-events-none': !dropdown }">
+    <div class="py-1 pl-7 z-10 overflow-hidden text-xl text-gray-800 duration-300 ease-in-out bg-white" :class="{ 'h-0': !dropdown, 'h-32': dropdown, 'pointer-events-none': !dropdown }">
       <slot name="items"></slot>
     </div>
   </li>
@@ -71,7 +72,7 @@ export default {
       const obj = {}
       const statements = []
 
-      statements[0] = `text-${this.color}-600 bg-white duration-300 ease-in-out flex flex-col  border-b  w-full lg:mx-6 cursor-pointer select-none`
+      statements[0] = `text-${this.color}-600 bg-white duration-300 ease-in-out flex flex-col  border-b-2  w-full lg:mx-6 cursor-pointer select-none`
 
       if (this.black) {
         statements[0] += ' border-black'

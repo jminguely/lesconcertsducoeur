@@ -69,14 +69,14 @@
     </Headline>
 
     <div class="flex flex-col items-start justify-between mb-16 lg:flex-row">
-      <InfoBlock color="black">
+      <InfoBlock class="my-5 lg:my-0 lg:mr-20" color="black">
         <template #date>23.03.20</template>
         <template #pretitle>général</template>
         <template #title>Concerts virtuels en temps de pandémie</template>
         <template #content>Nous vous proposons un nouveau type de concert pour contrer les restrictions de la pandémie.</template>
       </InfoBlock>
 
-      <InfoBlock class="my-5 lg:my-0" color="yellow">
+      <InfoBlock class="my-5 lg:my-0 lg:mr-20" color="yellow">
         <template #date>11.02.21</template>
         <template #pretitle>Genève</template>
         <template #title>Bienvenue aux Genvois!</template>
@@ -117,7 +117,7 @@
 
     <Divider class="mb-10 mt-36" />
 
-    <div class="w-1/2 pr-24">
+    <div>
       <Headline class="mb-24">
         <template #headline> Vous souhaitez organiser un concert … </template>
       </Headline>

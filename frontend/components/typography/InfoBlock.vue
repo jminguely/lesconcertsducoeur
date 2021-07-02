@@ -1,10 +1,22 @@
 <template>
   <div :class="`border-t-2 border-r-2 border-b-2 border-${color}-600 w-80`">
-    <span class="block w-24 text-2xl transform -translate-y-5 bg-white font-playFair"><slot name="date"></slot></span>
+    <!-- Date -->
+    <span class="block w-24 text-2xl transform -translate-y-5 bg-white font-playFair">
+      <slot name="date"></slot>
+    </span>
     <div class="pb-8 pr-4">
-      <h3 :class="`text-2xl font-newsCycle text-${color}-500`"><slot name="pretitle"></slot></h3>
-      <h1 class="text-3xl font-playFair"><slot name="title"></slot></h1>
-      <p :class="`text-2xl font-newsCycle border-b border-${color}-600`"><slot name="content"></slot></p>
+      <!-- Pretitle -->
+      <h3 :class="`text-xl font-newsCycle text-${color}-500`">
+        <slot name="pretitle"></slot>
+      </h3>
+      <!-- Title -->
+      <h1 class="pb-4 text-2xl font-playFair">
+        <slot name="title"></slot>
+      </h1>
+      <!-- Content -->
+      <p class="text-xl font-newsCycle">
+        <slot name="content"></slot>
+      </p>
     </div>
   </div>
 </template>

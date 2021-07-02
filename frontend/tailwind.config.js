@@ -15,11 +15,14 @@ module.exports = {
           dark: '#393939',
         },
       },
-      spacing:{
-        '120' : '30rem',
-        '128': '32rem',
-        '144': '36rem',
-      }
+      borderWidth: {
+        1: '1px',
+      },
+      spacing: {
+        120: '30rem',
+        128: '32rem',
+        144: '36rem',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],

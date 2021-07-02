@@ -1,5 +1,5 @@
 <template>
-  <div :class="`w-full border-${color} border`"></div>
+  <div :class="`w-full border-${color} border-b-1`"></div>
 </template>
 
 <script>
@@ -7,7 +7,7 @@ export default {
   props: {
     color: {
       type: String,
-      default: 'black',
+      default: 'concert-dark',
     },
   },
 }
