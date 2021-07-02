@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_global_headlines",
+  "info": {
+    "name": "headline",
+    "icon": "atlas"
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    }
+  }
+}
