@@ -3,7 +3,7 @@ version: '3'
 services:
   strapi:
     image: strapi/strapi
-    container_name: strapi
+    container_name: cdc-strapi
     restart: unless-stopped
     environment:
       DATABASE_CLIENT: postgres
@@ -17,16 +17,23 @@ services:
     volumes:
       - ./app:/srv/app
     ports:
-      - '1337:1337'
+      - '1338:1337'
+    networks:
+      - cdc
 
   postgres:
     image: postgres
-    container_name: postgres
+    container_name: cdc-postgres
     environment:
       POSTGRES_USER: strapi
       POSTGRES_PASSWORD: strapi
     volumes:
       - ./data:/var/lib/postgresql/data
     ports:
-      - '5432:5432'
-
+      - '5433:5432'
+    networks:
+      - cdc
+    
+networks:
+  cdc:
+    external: true  
