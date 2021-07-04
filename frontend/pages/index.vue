@@ -10,19 +10,31 @@
     </Headline>
 
     <div class="flex justify-between">
-      <Illustration class="mr-8 lg:mr-20">
-        <template #image><img src="~/assets/img/illustrations/illustration1.svg" /></template>
-        <template #label> Valais </template>
+      <Illustration class="w-1/3 pr-8">
+        <template #image>
+          <nuxt-link to="/vs/association">
+            <img src="~/assets/img/illustrations/illustration1.svg" />
+          </nuxt-link>
+        </template>
+        <template #label>Valais</template>
       </Illustration>
 
-      <Illustration class="mr-8 lg:mr-20" color="green">
-        <template #image><img src="~/assets/img/illustrations/illustration2.png" /></template>
-        <template #label> Vaud </template>
+      <Illustration class="w-1/3 pr-8" color="green">
+        <template #image>
+          <nuxt-link to="/vd/association">
+            <img src="~/assets/img/illustrations/illustration2.png" />
+          </nuxt-link>
+        </template>
+        <template #label>Vaud</template>
       </Illustration>
 
-      <Illustration color="yellow">
-        <template #image><img src="~/assets/img/illustrations/illustration3.svg" /></template>
-        <template #label> Genève </template>
+      <Illustration class="w-1/3" color="yellow">
+        <template #image>
+          <nuxt-link to="/ge/association">
+            <img src="~/assets/img/illustrations/illustration3.svg" />
+          </nuxt-link>
+        </template>
+        <template #label>Genève</template>
       </Illustration>
     </div>
 
@@ -70,21 +82,21 @@
     </Headline>
 
     <div class="flex flex-col items-start justify-between mb-16 lg:flex-row">
-      <InfoBlock class="mb-5 lg:mb-0 lg:mr-20" color="black">
+      <InfoBlock class="mb-5 lg:mb-0 lg:w-1/3 lg:mr-8" color="black">
         <template #date>23.03.20</template>
         <template #pretitle>général</template>
         <template #title>Concerts virtuels en temps de pandémie</template>
         <template #content>Nous vous proposons un nouveau type de concert pour contrer les restrictions de la pandémie.</template>
       </InfoBlock>
 
-      <InfoBlock class="mb-5 lg:mb-0 lg:mr-20" color="yellow">
+      <InfoBlock class="mb-5 lg:mb-0 lg:w-1/3 lg:mr-8" color="yellow">
         <template #date>11.02.21</template>
         <template #pretitle>Genève</template>
         <template #title>Bienvenue aux Genvois!</template>
         <template #content>Nous sommes ravis d’accueillir Genève en tant que nouvelle région parmi nos rangs.</template>
       </InfoBlock>
 
-      <InfoBlock color="green">
+      <InfoBlock color="green" class="lg:w-1/3">
         <template #date>24.12.20</template>
         <template #pretitle>Vaud</template>
         <template #title>«Des notes pour réconforter les cœurs à Monthey»</template>
@@ -97,19 +109,19 @@
     </Headline>
 
     <div class="flex flex-col items-start justify-between lg:flex-row">
-      <EventBlock class="mb-5 lg:mb-0 lg:mr-20">
+      <EventBlock class="mb-5 lg:mb-0 lg:w-1/3 lg:mr-8">
         <template #datetime>15.04.20 | 15:00 </template>
         <template #pretitle>Clinique Bernoise, Crans-Montana</template>
         <template #title>Récital de violon et violoncelle</template>
       </EventBlock>
 
-      <EventBlock class="mb-5 lg:mb-0 lg:mr-20" color="green">
+      <EventBlock class="mb-5 lg:mb-0 lg:w-1/3 lg:mr-8" color="green">
         <template #datetime>15.04.20 | 15:00 </template>
         <template #pretitle>Home Salem, St-Légier</template>
         <template #title>Quintette FECIMEO</template>
       </EventBlock>
 
-      <EventBlock color="yellow">
+      <EventBlock color="yellow" class="lg:w-1/3">
         <template #datetime>15.04.20 | 15:00 </template>
         <template #pretitle>EMS La Rozavère, Lausanne</template>
         <template #title>Jazzbox</template>
@@ -127,7 +139,9 @@
     <div class="flex flex-col justify-between mb-20 lg:flex-row">
       <Sublink class="my-2 lg:my-0">
         <template #title>… en Valais?</template>
-        <template #text>> découvrez nos musicien·nes·s</template>
+        <template #text>
+          <nuxt-link to="/vs/artists/">découvrez nos musicien·nes·s</nuxt-link>
+        </template>
       </Sublink>
 
       <Sublink class="my-2 lg:my-0" color="green">

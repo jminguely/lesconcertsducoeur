@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-wrap items-center justify-start">
-    <div v-for="(artist, i) in mutated" :key="i" class="relative h-64 my-16 lg:my-6 lg:mx-12 w-96 lg:w-80 lg:h-96">
+    <div v-for="(artist, i) in mutated" :key="i" class="relative h-64 my-16 lg:my-6 lg:w-1/3 lg:pr-8 lg:h-96">
       <div v-if="artist.is_notice" class="w-full h-full p-5 border border-black">
         <p class="text-3xl lg:mb-10 font-playFair">{{ artist.text }}</p>
         <nuxt-link class="text-xl text-green-500" :to="artist.link">{{ artist.linkText }}</nuxt-link>
@@ -18,7 +18,7 @@
         </button>
       </div>
     </div>
-    <ArtistPopup :artists="artists" :item.sync="selected" :popup.sync="popup" />
+    <ArtistPopup :class="{ hidden: !popup }" :artists="artists" :item.sync="selected" :popup.sync="popup" />
   </div>
 </template>
 

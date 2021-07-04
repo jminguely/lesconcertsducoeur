@@ -16,23 +16,35 @@
     }
   },
   "attributes": {
-    "content": {
-      "type": "dynamiczone",
-      "components": [
-        "content.canton-switch",
-        "content.headline",
-        "content.quotation",
-        "content.two-columns-rich-text",
-        "content.two-columns-text-image",
-        "content.accordion-item",
-        "content.carousel",
-        "content.accordion"
-      ],
+    "hero": {
+      "type": "component",
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "content.headline"
+    },
+    "testimonials": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "content.accordion-item"
+    },
+    "carousel": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "content.carousel"
     }
   }
 }

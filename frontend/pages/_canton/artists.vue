@@ -8,7 +8,7 @@
       Auditions
     </nuxt-link>
 
-    <ArtistsAlbums :artists="artists" />
+    <ArtistsAlbums id="artists" :artists="artists" />
   </div>
 </template>
 
