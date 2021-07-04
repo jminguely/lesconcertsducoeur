@@ -38,12 +38,10 @@ export default {
 
   apollo: {
     clientConfigs: {
-      default: {
-        httpEndpoint: (process.env.NODE_ENV !== 'production' ? 'http://localhost:1338' : process.env.API_URL) + '/graphql',
-      },
+      default: '@/plugins/apollo-client-configs-default.js',
     },
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
+  // Build Configuration: https://go.nuxtjs.dev/config-buildhome(locale:"de-CH"){
   build: {},
 }

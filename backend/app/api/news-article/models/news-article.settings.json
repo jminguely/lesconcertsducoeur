@@ -19,7 +19,7 @@
     "canton_switch": {
       "type": "component",
       "repeatable": false,
-      "component": "global.canton-switch",
+      "component": "content.canton-switch",
       "pluginOptions": {
         "i18n": {
           "localized": true

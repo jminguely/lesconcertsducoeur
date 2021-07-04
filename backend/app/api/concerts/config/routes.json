@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/concerts",
+      "handler": "concerts.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/concerts",
+      "handler": "concerts.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/concerts",
+      "handler": "concerts.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

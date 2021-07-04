@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_global_accordions",
+  "info": {
+    "name": "accordion",
+    "icon": "apple-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "accordion_item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.accordion-item"
+    }
+  }
+}

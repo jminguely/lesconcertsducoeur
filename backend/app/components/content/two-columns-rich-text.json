@@ -2,14 +2,15 @@
   "collectionName": "components_global_two_columns_rich_texts",
   "info": {
     "name": "two_columns_rich_text",
-    "icon": "align-justify"
+    "icon": "align-justify",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "column_1": {
+    "column_left": {
       "type": "richtext"
     },
-    "column_2": {
+    "column_right": {
       "type": "richtext"
     }
   }

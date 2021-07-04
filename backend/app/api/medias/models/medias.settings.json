@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "medias",
+  "info": {
+    "name": "Medias",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "dynamiczone",
+      "components": []
+    }
+  }
+}

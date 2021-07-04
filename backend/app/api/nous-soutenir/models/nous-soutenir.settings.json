@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "nous_soutenirs",
+  "info": {
+    "name": "Nous soutenir"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "dynamiczone",
+      "components": []
+    }
+  }
+}

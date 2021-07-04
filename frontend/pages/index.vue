@@ -1,5 +1,6 @@
 <template>
   <div>
+    {{ content }}
     <Headline class="mb-10 lg:mb-36">
       <template #headline> La musique adoucit le temps qui passe </template>
       <template #content>
@@ -192,6 +193,8 @@ import EventBlock from '@/components/typography/EventBlock.vue'
 import Sublink from '@/components/typography/Sublink.vue'
 import HeadlineLink from '@/components/typography/HeadlineLink.vue'
 
+import { gql } from 'graphql-tag'
+
 export default {
   components: {
     Headline,
@@ -218,7 +221,41 @@ export default {
         { img: require('~/assets/img/partners/prohelvetia.svg'), link: 'https://google.com' },
         { img: require('~/assets/img/partners/xbox.svg'), link: 'https://google.com' },
       ],
+      content: null,
     }
+  },
+  async fetch() {
+    const getHomePageQuery = gql`
+      query getHome {
+        home {
+          id
+          content {
+            ... on ComponentContentHeadline {
+              __typename
+              id
+              headline
+              text
+            }
+            ... on ComponentContentTwoColumnsRichText {
+              __typename
+              id
+              column_left
+              column_right
+            }
+          }
+        }
+      }
+    `
+
+    this.content = await this.$apollo
+      .query({ query: getHomePageQuery })
+      .then(({ data }) => {
+        if (process.env.dev) window.console.log(data)
+        return data
+      })
+      .catch((e) => {
+        if (process.env.dev) window.console.log(e)
+      })
   },
 }
 </script>

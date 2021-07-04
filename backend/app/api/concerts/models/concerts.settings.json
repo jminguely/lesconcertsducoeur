@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "concerts",
+  "info": {
+    "name": "concerts"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "dynamiczone",
+      "components": []
+    }
+  }
+}

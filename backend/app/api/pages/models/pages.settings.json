@@ -24,7 +24,7 @@
           "localized": true
         }
       },
-      "component": "global.canton-switch"
+      "component": "content.canton-switch"
     },
     "title": {
       "pluginOptions": {
@@ -41,7 +41,15 @@
         }
       },
       "type": "dynamiczone",
-      "components": []
+      "components": [
+        "content.accordion-item",
+        "content.accordion",
+        "content.canton-switch",
+        "content.headline",
+        "content.quotation",
+        "content.two-columns-rich-text",
+        "content.two-columns-text-image"
+      ]
     },
     "slug": {
       "pluginOptions": {

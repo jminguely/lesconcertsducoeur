@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "missions",
+  "info": {
+    "name": "mission"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "dynamiczone",
+      "components": []
+    }
+  }
+}

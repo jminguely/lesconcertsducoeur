@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "calendars",
+  "collectionName": "agenda",
   "info": {
-    "name": "Concerts Calendar",
+    "name": "Agenda concerts",
     "description": ""
   },
   "options": {
@@ -40,7 +40,7 @@
         }
       }
     },
-    "comment": {
+    "details": {
       "type": "richtext",
       "pluginOptions": {
         "i18n": {
@@ -51,7 +51,7 @@
     "canton_switch": {
       "type": "component",
       "repeatable": false,
-      "component": "global.canton-switch",
+      "component": "content.canton-switch",
       "pluginOptions": {
         "i18n": {
           "localized": true

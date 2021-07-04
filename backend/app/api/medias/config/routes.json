@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/medias",
+      "handler": "medias.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/medias",
+      "handler": "medias.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/medias",
+      "handler": "medias.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

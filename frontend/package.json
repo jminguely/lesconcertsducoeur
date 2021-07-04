@@ -9,7 +9,9 @@
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js",
-    "test": "jest"
+    "test": "jest",
+    "apollo:download": "apollo client:download-schema graphql/schema.json --endpoint http://localhost:1337/graphql",
+    "apollo:generate": "apollo client:codegen --outputFlat=graphql/types/ --target typescript --includes=graphql/queries/**.ts --localSchemaFile=graphql/schema.json --tagName=gql"
   },
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.1-rc.5",
