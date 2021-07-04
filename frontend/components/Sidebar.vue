@@ -54,7 +54,7 @@
           <template #content> Valais </template>
           <template #items>
             <ul class="flex flex-col overflow-hidden">
-              <nuxt-link class="font-newsCycle" to="/valais/associations">L'association</nuxt-link>
+              <nuxt-link class="font-newsCycle" to="/valais/association">L'association</nuxt-link>
               <nuxt-link to="/valais/our-artists">Nos artistes</nuxt-link>
               <nuxt-link to="/valais/auditions">Auditions</nuxt-link>
             </ul>
@@ -64,7 +64,7 @@
           <template #content> Vaud </template>
           <template #items>
             <ul class="flex flex-col overflow-hidden">
-              <nuxt-link to="/vaud/associations">L'association</nuxt-link>
+              <nuxt-link to="/vaud/association">L'association</nuxt-link>
               <nuxt-link to="/vaud/our-artists">Nos artistes</nuxt-link>
               <nuxt-link to="/vaud/auditions">Auditions</nuxt-link>
             </ul>
@@ -74,7 +74,7 @@
           <template #content> Genève </template>
           <template #items>
             <ul class="flex flex-col overflow-hidden">
-              <nuxt-link to="/geneva/associations">L'association</nuxt-link>
+              <nuxt-link to="/geneva/association">L'association</nuxt-link>
               <nuxt-link to="/geneva/our-artists">Nos artistes</nuxt-link>
               <nuxt-link to="/geneva/auditions">Auditions</nuxt-link>
             </ul>

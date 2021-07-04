@@ -15,8 +15,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { ssr: false, src: '@/plugins/vue-clickaway.js' },
-    { ssr: false, src: '@/plugins/vue-splide.js' },
+    { src: '@/plugins/vue-clickaway.js', mode: 'client' },
+    { src: '@/plugins/vue-splide.js', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -32,12 +32,17 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
+    // https://www.npmjs.com/package/@nuxtjs/apollo
+    '@nuxtjs/apollo',
   ],
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: (process.env.NODE_ENV !== 'production' ? 'http://localhost:1338' : process.env.API_URL) + '/graphql',
+      },
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
