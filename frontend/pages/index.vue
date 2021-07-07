@@ -1,6 +1,5 @@
 <template>
   <div>
-    {{ content }}
     <Headline class="mb-10 lg:mb-36">
       <template #headline> La musique adoucit le temps qui passe </template>
       <template #content>
@@ -39,7 +38,7 @@
     </div>
 
     <div class="flex flex-col justify-between mt-24 lg:flex-row">
-      <Testimonial class="lg:mr-20">
+      <Testimonial class="mb-10 lg:mr-20">
         <template #quote>
           Nous sommes persuadés que les performances des artistes lyriques au sein de nos établissements sauront contribuer à permettre à bon nombre de nos patients de faire mieux face de leur maladie
           notamment en rendant leur séjour hospitalier plus humain. L'Hôpital du Valais soutient donc avec enthousiasme cette magnifique initiative.
@@ -50,7 +49,7 @@
         <template #title> Directeur des Hôpitaux du Valais </template>
       </Testimonial>
 
-      <Testimonial class="mb-5 lg:mb-0">
+      <Testimonial>
         <template #quote>
           C'est donc avec conviction que j'apporte mon appui à l'Association valaisanne, Les Concerts du Coeur, fondée en janvier pour réaliser ce projet. Je souhaite que nous soyons nombreux à la
           soutenir et à donner ainsi une chance aux personnes âgées, hospitalisées ou dans l'isolement de vivre des moments de plaisirs musicaux de qualité.
@@ -82,14 +81,14 @@
     </Headline>
 
     <div class="flex flex-col items-start justify-between mb-16 lg:flex-row">
-      <InfoBlock class="mb-5 lg:mb-0 lg:w-1/3 lg:mr-8" color="black">
+      <InfoBlock class="mb-10 lg:mb-0 lg:w-1/3 lg:mr-8" color="black">
         <template #date>23.03.20</template>
         <template #pretitle>général</template>
         <template #title>Concerts virtuels en temps de pandémie</template>
         <template #content>Nous vous proposons un nouveau type de concert pour contrer les restrictions de la pandémie.</template>
       </InfoBlock>
 
-      <InfoBlock class="mb-5 lg:mb-0 lg:w-1/3 lg:mr-8" color="yellow">
+      <InfoBlock class="mb-10 lg:mb-0 lg:w-1/3 lg:mr-8" color="yellow">
         <template #date>11.02.21</template>
         <template #pretitle>Genève</template>
         <template #title>Bienvenue aux Genvois!</template>
@@ -108,23 +107,11 @@
       <template #headline> Prochains concerts </template>
     </Headline>
 
-    <div class="flex flex-col items-start justify-between lg:flex-row">
-      <EventBlock class="mb-5 lg:mb-0 lg:w-1/3 lg:mr-8">
-        <template #datetime>15.04.20 | 15:00 </template>
-        <template #pretitle>Clinique Bernoise, Crans-Montana</template>
-        <template #title>Récital de violon et violoncelle</template>
-      </EventBlock>
-
-      <EventBlock class="mb-5 lg:mb-0 lg:w-1/3 lg:mr-8" color="green">
-        <template #datetime>15.04.20 | 15:00 </template>
-        <template #pretitle>Home Salem, St-Légier</template>
-        <template #title>Quintette FECIMEO</template>
-      </EventBlock>
-
-      <EventBlock color="yellow" class="lg:w-1/3">
-        <template #datetime>15.04.20 | 15:00 </template>
-        <template #pretitle>EMS La Rozavère, Lausanne</template>
-        <template #title>Jazzbox</template>
+    <div class="flex flex-col items-start justify-between lg:flex-row lg:space-x-8">
+      <EventBlock v-for="item in calendars" :key="item.id" :color="getColor(item.canton_switch.canton)">
+        <template #datetime>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template>
+        <template #pretitle>{{ item.location }}</template>
+        <template #title>{{ item.title }} {{ getColor(item.canton_switch.canton) }}</template>
       </EventBlock>
     </div>
 
@@ -236,8 +223,10 @@ export default {
         { img: require('~/assets/img/partners/xbox.svg'), link: 'https://google.com' },
       ],
       content: null,
+      calendars: null,
     }
   },
+
   async fetch() {
     const getHomePageQuery = gql`
       query getHome {
@@ -270,6 +259,52 @@ export default {
       .catch((e) => {
         if (process.env.dev) window.console.log(e)
       })
+
+    const getAgendaQuery = gql`
+      query getCalendar {
+        calendars(limit: 3, locale: "de-CH") {
+          id
+          canton_switch {
+            id
+            canton
+          }
+          date_time
+          title
+          location
+          details
+          artist {
+            id
+            artists_list {
+              id
+              first_name
+              last_name
+              instrument
+              website_link
+            }
+          }
+        }
+      }
+    `
+
+    this.calendars = await this.$apollo
+      .query({ query: getAgendaQuery })
+      .then(({ data }) => {
+        if (process.env.dev) console.log(data)
+        return data
+      })
+      .catch((e) => {
+        if (process.env.dev) console.log(e)
+      })
+    this.calendars = this.calendars.calendars
+  },
+
+  methods: {
+    getColor(canton) {
+      if (canton === 'VS') return 'red'
+      if (canton === 'VD') return 'green'
+      if (canton === 'GE') return 'yellow'
+      if (canton === 'ALL') return 'black'
+    },
   },
 }
 </script>

@@ -147,8 +147,5 @@ export default {
       ],
     }
   },
-  fetch() {
-    window.console.log(this.$route.params.canton)
-  },
 }
 </script>

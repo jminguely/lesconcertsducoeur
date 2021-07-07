@@ -1,16 +1,13 @@
 <template>
   <div
     :class="{ 'h-full': menu }"
-    class="fixed top-0 left-0 z-50 flex flex-col justify-between w-full max-h-screen p-4 pb-8 duration-300 ease-in-out bg-white lg:pb-4 lg:px-12 lg:py-4 lg:h-screen lg:max-w-xs lg:w-96"
+    class="fixed top-0 left-0 z-50 flex flex-col justify-between w-full max-h-screen p-4 duration-300 ease-in-out bg-white lg:pb-4 lg:px-12 lg:py-4 lg:h-screen lg:max-w-xs lg:w-96"
   >
-    <div :class="{ 'absolute top-5 left-5 text-2xl': menu, hidden: !menu }" class="lg:block">fr | de</div>
+    <div :class="{ 'absolute top-5 left-5 text-2xl': menu, hidden: !menu }" class="lg:block lg:text-xl">fr | de</div>
 
     <div>
-      <div class="flex justify-between">
-        <div :class="{ 'opacity-0': menu, 'opacity-100': !menu }" class="flex flex-col my-2 duration-300 ease-in-out pointer-events-none lg:my-8 font-playFair">
-          <h6 class="ml-5 text-2xl lg:leading-4">les concerts du</h6>
-          <h2 class="leading-8 text-7xl">:<span class="relative inline-block transform rotate-180 top-6">c</span>oeur</h2>
-        </div>
+      <div class="flex justify-between items-center">
+        <Logo :class="{ 'opacity-0': menu, 'opacity-100': !menu }" class="h-12 lg:h-16 mb-8" />
         <button
           :class="{ opened: menu }"
           :aria-expanded="menu"
@@ -32,7 +29,7 @@
         </button>
       </div>
 
-      <div :class="{ hidden: !menu }" class="text-3xl lg:text-base lg:block">
+      <div :class="{ hidden: !menu }" class="text-3xl lg:text-xl lg:block">
         <div class="flex flex-col ml-4">
           <nuxt-link v-for="(item, i) in links" :key="i" :class="{ 'my-2': menu }" :to="item.link" :exact="item.exact">
             {{ item.name }}
@@ -51,7 +48,7 @@
     <div :class="{ visible: menu, hidden: !menu }">
       <ul class="flex flex-col mt-5 overflow-hidden">
         <NavbarItem class="border-t" black color="red">
-          <template #content> Valais </template>
+          <template #content>Valais</template>
           <template #items>
             <ul class="flex flex-col overflow-hidden">
               <nuxt-link class="font-newsCycle" to="/valais/association">L'association</nuxt-link>
@@ -61,7 +58,7 @@
           </template>
         </NavbarItem>
         <NavbarItem black color="green">
-          <template #content> Vaud </template>
+          <template #content>Vaud</template>
           <template #items>
             <ul class="flex flex-col overflow-hidden">
               <nuxt-link to="/vaud/association">L'association</nuxt-link>
@@ -71,7 +68,7 @@
           </template>
         </NavbarItem>
         <NavbarItem black color="yellow">
-          <template #content> Genève </template>
+          <template #content>Genève</template>
           <template #items>
             <ul class="flex flex-col overflow-hidden">
               <nuxt-link to="/geneva/association">L'association</nuxt-link>
@@ -125,6 +122,7 @@
 
         <nuxt-link to="/contact" class="font-bold font-newsCycle"> Contact </nuxt-link>
       </div>
+
       <div class="hidden mt-4 lg:block">
         <input class="px-2 border-2 border-gray-800" placeholder="s'abonner a la newsletter" />
       </div>

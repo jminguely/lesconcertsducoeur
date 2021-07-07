@@ -1,6 +1,6 @@
 <template>
-  <div :class="`border-t-2 border-r-2 border-b-2 border-${color}-600 w-80`">
-    <span class="block px-2 text-2xl transform -translate-y-5 bg-white w-max font-playFair">
+  <div :class="`border-t-2 border-r-2 border-b-2 border-${color}-600 w-full`">
+    <span class="block pr-2 text-2xl transform -translate-y-5 bg-white w-max font-playFair">
       <slot name="datetime"></slot>
     </span>
     <div class="pb-8 pr-4">

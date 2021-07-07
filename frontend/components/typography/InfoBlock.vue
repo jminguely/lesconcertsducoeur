@@ -1,5 +1,5 @@
 <template>
-  <div :class="`border-t-2 border-r-2 border-b-2 border-${color}-600 w-80`">
+  <div :class="`border-t-2 border-r-2 border-b-2 border-${color}-600 w-full`">
     <!-- Date -->
     <span class="block w-24 text-2xl transform -translate-y-5 bg-white font-playFair">
       <slot name="date"></slot>
