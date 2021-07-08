@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cantons",
+  "info": {
+    "name": "canton"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "uid"
+    }
+  }
+}

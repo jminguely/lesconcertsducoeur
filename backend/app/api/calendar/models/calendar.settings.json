@@ -48,16 +48,6 @@
         }
       }
     },
-    "canton_switch": {
-      "type": "component",
-      "repeatable": false,
-      "component": "content.canton-switch",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "artist": {
       "via": "concerts_calendar",
       "model": "artists"
