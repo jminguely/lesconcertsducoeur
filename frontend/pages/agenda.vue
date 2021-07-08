@@ -1,61 +1,52 @@
 <template>
   <div>
-    <Headline>
+    <Headline class="pb-8">
       <template #headline>
         <span class="text-4xl lg:text-7xl">Agenda</span>
       </template>
     </Headline>
 
-    <div class="flex flex-col items-start text-2xl lg:my-20 lg:flex-row justify-items-start font-playFair">
-      <ClassicSelect class="my-4 mr-16 lg:my-0" :options="years">
+    <!-- <div class="flex flex-col justify-items-start font-playFair items-start text-2xl lg:flex-row lg:space-x-8 lg:mb-16">
+      <ClassicSelect :options="years">
         <template #label> à venir </template>
       </ClassicSelect>
 
-      <ClassicSelect class="my-4 mr-16 lg:my-0" :options="['Sélection']">
+      <ClassicSelect :options="['Sélection']">
         <template #label> Filtre </template>
       </ClassicSelect>
 
-      <ClassicSelect class="my-4 mr-16 lg:my-0" :options="[]">
+      <ClassicSelect :options="['Valais', 'Vaud', 'Genève']">
         <template #label> région </template>
       </ClassicSelect>
-      <ClassicSelect class="my-4 mr-16 lg:my-0" :options="years">
+      <ClassicSelect :options="years">
         <template #label> à venir passés </template>
       </ClassicSelect>
-    </div>
+    </div> -->
 
     <DateDivider>
       <template #date>2021</template>
     </DateDivider>
 
-    <EventDetails color="yellow" class="my-10">
-      <template #due>Di 25.08.2019 | 15:00 Clinique Bernoise, Crans-Montana</template>
-      <template #title>Récital de violon et violoncelle</template>
-      <template #details>
-        Elena Reser | violon Ugo Reser | violoncelle
-        <br />–<br />
-        Entrée libre
-      </template>
-    </EventDetails>
-
-    <EventDetails color="green" class="my-10">
-      <template #due>Di 25.08.2019 | 15:00 Clinique Bernoise, Crans-Montana</template>
-      <template #title>Récital de violon et violoncelle</template>
-      <template #details>
-        Elena Reser | violon Ugo Reser | violoncelle
-        <br />–<br />
-        Entrée libre
-      </template>
-    </EventDetails>
-
-    <EventDetails color="red" class="my-10 lg:mb-40">
-      <template #due>Je 05.09.2019 | 00:00 Stiftung Altersheim St. Mauritius, Zermatt </template>
-      <template #title>Étudiants de l’académie du Zermatt Music Festival</template>
-      <template #details>
-        Richard Helm | Bariton Stéphanie Gurga | Piano <br />–<br />
-        Entrée libre <br />–<br />
-        En partenariat avec le Zermatt Music Festival and Academy Avec le soutien de la Fondation Beisheim
-      </template>
-    </EventDetails>
+    <!-- {{ calendars }} -->
+    <template v-if="calendars != null">
+      <EventDetails v-for="item in calendars.calendars" :key="item.id + item.title" class="py-12" :color="getColor(item.canton_switch.canton)">
+        <template #date>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template>
+        <template #location>{{ item.location }}</template>
+        <template #title>{{ item.title }} </template>
+        <template #artists>
+          <template v-if="item.artist != null">
+            <div v-for="artist in item.artist.artists_list" :key="artist.id + artist.first_name">
+              <span>{{ artist.first_name }} {{ artist.last_name }}</span>
+              <span>|</span>
+              <span>{{ artist.instrument }}</span>
+            </div>
+          </template>
+        </template>
+        <template #details>
+          {{ item.details }}
+        </template>
+      </EventDetails>
+    </template>
   </div>
 </template>
 
@@ -63,19 +54,78 @@
 import Headline from '@/components/typography/Headline.vue'
 import DateDivider from '@/components/typography/DateDivider.vue'
 import EventDetails from '@/components/typography/EventDetails.vue'
-import ClassicSelect from '@/components/pages/ClassicSelect.vue'
+// import ClassicSelect from '@/components/pages/ClassicSelect.vue'
+
+import { gql } from 'graphql-tag'
 
 export default {
   components: {
     Headline,
-    ClassicSelect,
+    // ClassicSelect,
     DateDivider,
     EventDetails,
   },
+  data() {
+    return {
+      calendars: null,
+    }
+  },
+
+  async fetch() {
+    await this.getAgenda()
+  },
+
   computed: {
     years() {
-      const year = new Date().getFullYear()
-      return Array.from({ length: year - 1900 }, (value, index) => 1901 + index).sort((a, b) => b - a)
+      return [2016, 2017, 2018, 2019, 2020, 2021]
+    },
+  },
+
+  methods: {
+    getColor(canton) {
+      if (canton === 'VS') return 'red'
+      if (canton === 'VD') return 'green'
+      if (canton === 'GE') return 'yellow'
+      if (canton === 'ALL') return 'black'
+    },
+    async getAgenda() {
+      const query = gql`
+        query getCalendar {
+          calendars(limit: 3, locale: "de-CH") {
+            id
+            canton_switch {
+              id
+              canton
+            }
+            date_time
+            title
+            location
+            details
+            artist {
+              id
+              artists_list {
+                id
+                first_name
+                last_name
+                instrument
+                website_link
+              }
+            }
+          }
+        }
+      `
+
+      this.calendars = await this.$apollo
+        .query({ query })
+        .then(({ data }) => {
+          if (process.env.dev) console.log(data)
+          return data
+        })
+        .catch((e) => {
+          if (process.env.dev) console.log(e)
+        })
+
+      // this.calendars = this.calendars.calendars
     },
   },
 }

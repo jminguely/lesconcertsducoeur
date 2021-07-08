@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mb-10 text-2xl ml-7 font-playFair">
+    <div class="mb-10 text-2xl font-playFair">
       <slot name="title"></slot>
     </div>
     <div>

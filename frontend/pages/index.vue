@@ -80,26 +80,12 @@
       <template #headline> Actualités </template>
     </Headline>
 
-    <div class="flex flex-col items-start justify-between mb-16 lg:flex-row">
-      <InfoBlock class="mb-10 lg:mb-0 lg:w-1/3 lg:mr-8" color="black">
-        <template #date>23.03.20</template>
-        <template #pretitle>général</template>
-        <template #title>Concerts virtuels en temps de pandémie</template>
-        <template #content>Nous vous proposons un nouveau type de concert pour contrer les restrictions de la pandémie.</template>
-      </InfoBlock>
-
-      <InfoBlock class="mb-10 lg:mb-0 lg:w-1/3 lg:mr-8" color="yellow">
-        <template #date>11.02.21</template>
-        <template #pretitle>Genève</template>
-        <template #title>Bienvenue aux Genvois!</template>
-        <template #content>Nous sommes ravis d’accueillir Genève en tant que nouvelle région parmi nos rangs.</template>
-      </InfoBlock>
-
-      <InfoBlock color="green" class="lg:w-1/3">
-        <template #date>24.12.20</template>
-        <template #pretitle>Vaud</template>
-        <template #title>«Des notes pour réconforter les cœurs à Monthey»</template>
-        <template #content>Article du 24.12.20 paru dans Le Nouvelliste.</template>
+    <div class="flex flex-col items-start justify-between mb-16 space-x-0 space-y-8 lg:flex-row lg:space-y-8 lg:space-x-8">
+      <InfoBlock v-for="item in newsArticles" :key="item.id" :color="getColor(item.canton_switch.canton)">
+        <template #date>{{ $dateFns.format(new Date(item.date), 'dd.MM.yyyy') }}</template>
+        <template #pretitle>{{ item.canton_switch.canton }}</template>
+        <template #title>{{ item.title }}</template>
+        <template #content>{{ item.content }}</template>
       </InfoBlock>
     </div>
 
@@ -107,7 +93,7 @@
       <template #headline> Prochains concerts </template>
     </Headline>
 
-    <div class="flex flex-col items-start justify-between lg:flex-row lg:space-x-8">
+    <div class="flex flex-col items-start justify-between space-x-0 space-y-8 lg:flex-row lg:space-y-8 lg:space-x-8">
       <EventBlock v-for="item in calendars" :key="item.id" :color="getColor(item.canton_switch.canton)">
         <template #datetime>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template>
         <template #pretitle>{{ item.location }}</template>
@@ -115,15 +101,13 @@
       </EventBlock>
     </div>
 
-    <Divider class="mb-10 mt-36" />
+    <Divider class="my-16" />
 
-    <div>
-      <Headline class="mb-24">
-        <template #headline> Vous souhaitez organiser un concert … </template>
-      </Headline>
-    </div>
+    <Headline>
+      <template #headline> Vous souhaitez organiser un concert … </template>
+    </Headline>
 
-    <div class="flex flex-col justify-between mb-20 lg:flex-row">
+    <div class="flex flex-col justify-between mb-12 lg:flex-row">
       <Sublink class="my-2 lg:my-0">
         <template #title>… en Valais?</template>
         <template #text>
@@ -142,13 +126,13 @@
       </Sublink>
     </div>
 
-    <HeadlineLink class="mb-14">
+    <HeadlineLink>
       <template #content>
         <a href="https://google.com">> Découvrez les différents types de concerts</a>
       </template>
     </HeadlineLink>
 
-    <Divider class="mb-10" />
+    <Divider class="my-16" />
 
     <div class="flex flex-col justify-between lg:flex-row">
       <div class="w-full">
@@ -166,7 +150,7 @@
       </div>
     </div>
 
-    <Divider class="mt-10 mb-36" />
+    <Divider class="my-16" />
 
     <Partner class="mb-32">
       <template #title> En partenariat avec </template>
@@ -224,78 +208,13 @@ export default {
       ],
       content: null,
       calendars: null,
+      newsArticles: null,
     }
   },
 
   async fetch() {
-    const getHomePageQuery = gql`
-      query getHome {
-        home {
-          id
-          content {
-            ... on ComponentContentHeadline {
-              __typename
-              id
-              headline
-              text
-            }
-            ... on ComponentContentTwoColumnsRichText {
-              __typename
-              id
-              column_left
-              column_right
-            }
-          }
-        }
-      }
-    `
-
-    this.content = await this.$apollo
-      .query({ query: getHomePageQuery })
-      .then(({ data }) => {
-        if (process.env.dev) window.console.log(data)
-        return data
-      })
-      .catch((e) => {
-        if (process.env.dev) window.console.log(e)
-      })
-
-    const getAgendaQuery = gql`
-      query getCalendar {
-        calendars(limit: 3, locale: "de-CH") {
-          id
-          canton_switch {
-            id
-            canton
-          }
-          date_time
-          title
-          location
-          details
-          artist {
-            id
-            artists_list {
-              id
-              first_name
-              last_name
-              instrument
-              website_link
-            }
-          }
-        }
-      }
-    `
-
-    this.calendars = await this.$apollo
-      .query({ query: getAgendaQuery })
-      .then(({ data }) => {
-        if (process.env.dev) console.log(data)
-        return data
-      })
-      .catch((e) => {
-        if (process.env.dev) console.log(e)
-      })
-    this.calendars = this.calendars.calendars
+    await this.getAgenda()
+    await this.getNewsArticles()
   },
 
   methods: {
@@ -304,6 +223,108 @@ export default {
       if (canton === 'VD') return 'green'
       if (canton === 'GE') return 'yellow'
       if (canton === 'ALL') return 'black'
+    },
+    async getAgenda() {
+      const query = gql`
+        query getCalendar {
+          calendars(limit: 3, locale: "de-CH") {
+            id
+            canton_switch {
+              id
+              canton
+            }
+            date_time
+            title
+            location
+            details
+            artist {
+              id
+              artists_list {
+                id
+                first_name
+                last_name
+                instrument
+                website_link
+              }
+            }
+          }
+        }
+      `
+
+      this.calendars = await this.$apollo
+        .query({ query })
+        .then(({ data }) => {
+          if (process.env.dev) console.log(data)
+          return data
+        })
+        .catch((e) => {
+          if (process.env.dev) console.log(e)
+        })
+
+      this.calendars = this.calendars.calendars
+    },
+
+    async getNewsArticles() {
+      const query = gql`
+        query getNewsArticles {
+          newsArticles(limit: 3, locale: "de-CH") {
+            id
+            title
+            date
+            content
+            canton_switch {
+              id
+              canton
+            }
+          }
+        }
+      `
+
+      this.newsArticles = await this.$apollo
+        .query({ query })
+        .then(({ data }) => {
+          if (process.env.dev) console.log(data)
+          return data
+        })
+        .catch((e) => {
+          if (process.env.dev) console.log(e)
+        })
+
+      this.newsArticles = this.newsArticles.newsArticles
+    },
+
+    async getContent() {
+      const query = gql`
+        query getHome {
+          home {
+            id
+            content {
+              ... on ComponentContentHeadline {
+                __typename
+                id
+                headline
+                text
+              }
+              ... on ComponentContentTwoColumnsRichText {
+                __typename
+                id
+                column_left
+                column_right
+              }
+            }
+          }
+        }
+      `
+
+      this.content = await this.$apollo
+        .query({ query })
+        .then(({ data }) => {
+          if (process.env.dev) window.console.log(data)
+          return data
+        })
+        .catch((e) => {
+          if (process.env.dev) window.console.log(e)
+        })
     },
   },
 }

@@ -1,13 +1,13 @@
 <template>
   <div
     :class="{ 'h-full': menu }"
-    class="fixed top-0 left-0 z-50 flex flex-col justify-between w-full max-h-screen p-4 duration-300 ease-in-out bg-white lg:pb-4 lg:px-12 lg:py-4 lg:h-screen lg:max-w-xs lg:w-96"
+    class="fixed top-0 left-0 z-50 flex flex-col justify-between w-full max-h-screen p-4 py-2 duration-300 ease-in-out bg-white lg:pb-4 lg:px-12 lg:py-4 lg:h-screen lg:max-w-xs lg:w-96"
   >
     <div :class="{ 'absolute top-5 left-5 text-2xl': menu, hidden: !menu }" class="lg:block lg:text-xl">fr | de</div>
 
     <div>
       <div class="flex justify-between items-center">
-        <Logo :class="{ 'opacity-0': menu, 'opacity-100': !menu }" class="h-12 lg:h-16 mb-8" />
+        <Logo :class="{ 'opacity-0': menu, 'opacity-100': !menu }" class="h-12 lg:h-16" />
         <button
           :class="{ opened: menu }"
           :aria-expanded="menu"
@@ -15,7 +15,7 @@
           aria-label="Main Menu"
           @click="toggleMenu()"
         >
-          <svg width="100" height="100" viewBox="0 0 100 100">
+          <svg class="w-16 h-16" viewBox="0 0 100 100">
             <path
               class="line line1"
               d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
