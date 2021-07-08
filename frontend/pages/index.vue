@@ -1,5 +1,6 @@
 <template>
   <div>
+    {{ $t('test') }}
     <Headline class="mb-10 lg:mb-36">
       <template #headline> La musique adoucit le temps qui passe </template>
       <template #content>

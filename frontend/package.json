@@ -19,6 +19,7 @@
     "@tailwindcss/typography": "^0.4.1",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3",
+    "nuxt-i18n": "^6.27.2",
     "sass": "^1.35.0",
     "sass-loader": "^10.1.1",
     "vue-clickaway": "^2.2.2"

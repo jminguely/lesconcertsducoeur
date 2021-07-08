@@ -1,3 +1,6 @@
+import fr from './i18n/fr.js'
+import de from './i18n/de.js'
+
 export default {
   target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -36,11 +39,30 @@ export default {
   modules: [
     // https://www.npmjs.com/package/@nuxtjs/apollo
     '@nuxtjs/apollo',
+    // https://i18n.nuxtjs.org/
+    'nuxt-i18n',
   ],
 
   apollo: {
     clientConfigs: {
       default: '@/plugins/apollo-client-configs-default.js',
+    },
+  },
+
+  i18n: {
+    locales: [
+      { code: 'fr', iso: 'fr-CH', file: 'fr.js' },
+      { code: 'de', iso: 'de-CH', file: 'de.js' },
+    ],
+    defaultLocale: 'fr',
+    landDir: 'i18n/',
+    strategy: 'prefix',
+    vueI18n: {
+      fallbackLocale: 'fr',
+      messages: {
+        fr,
+        de,
+      },
     },
   },
 
