@@ -1,22 +1,21 @@
 <template>
   <div>
-    {{ $t('test') }}
-    <Headline class="mb-10 lg:mb-36">
+    <Headline class="mb-10 lg:mb-32">
       <template #headline> La musique adoucit le temps qui passe </template>
       <template #content>
-        L’association Les Concerts du Coeur souhaite inscrire la musique dans le quotidien des personnes âgées, des personnes hospitalisées, incarcérées ou défavorisées afin d’essayer de rompre
-        quelque peu leur isolement en partageant de l’émotion, par le biais d'ateliers musicaux, de concerts de qualité et d’une interaction avec les artistes.
+        <i>Les Concerts du Cœur</i> proposent des moments de musique aux personnes qui ont difficilement accès aux salles de concerts traditionnelles, qu’il s’agisse de personnes âgées, hospitalisées,
+        incarcérées, en situation de handicap ou de précarité.
       </template>
     </Headline>
 
-    <div class="flex justify-between">
+    <div class="flex justify-between lg:mb-32">
       <Illustration class="w-1/3 pr-8">
         <template #image>
           <nuxt-link to="/vs/association">
             <img src="~/assets/img/illustrations/illustration1.svg" />
           </nuxt-link>
         </template>
-        <template #label>Valais</template>
+        <template #label>{{ $t('canton').VS }}</template>
       </Illustration>
 
       <Illustration class="w-1/3 pr-8" color="green">
@@ -25,7 +24,7 @@
             <img src="~/assets/img/illustrations/illustration2.png" />
           </nuxt-link>
         </template>
-        <template #label>Vaud</template>
+        <template #label>{{ $t('canton').VD }}</template>
       </Illustration>
 
       <Illustration class="w-1/3" color="yellow">
@@ -34,11 +33,11 @@
             <img src="~/assets/img/illustrations/illustration3.svg" />
           </nuxt-link>
         </template>
-        <template #label>Genève</template>
+        <template #label>{{ $t('canton').GE }}</template>
       </Illustration>
     </div>
 
-    <div class="flex flex-col justify-between mt-24 lg:flex-row">
+    <div class="flex flex-col justify-between lg:flex-row">
       <Testimonial class="mb-10 lg:mr-20">
         <template #quote>
           Nous sommes persuadés que les performances des artistes lyriques au sein de nos établissements sauront contribuer à permettre à bon nombre de nos patients de faire mieux face de leur maladie
@@ -81,7 +80,7 @@
       <template #headline> Actualités </template>
     </Headline>
 
-    <div class="flex flex-col items-start justify-between mb-16 space-x-0 space-y-8 lg:flex-row lg:space-y-8 lg:space-x-8">
+    <div class="flex flex-col items-start justify-between mb-16 space-x-0 space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8">
       <InfoBlock v-for="item in newsArticles" :key="item.id" :color="getColor(item.canton_switch.canton)">
         <template #date>{{ $dateFns.format(new Date(item.date), 'dd.MM.yyyy') }}</template>
         <template #pretitle>{{ item.canton_switch.canton }}</template>
@@ -94,7 +93,7 @@
       <template #headline> Prochains concerts </template>
     </Headline>
 
-    <div class="flex flex-col items-start justify-between space-x-0 space-y-8 lg:flex-row lg:space-y-8 lg:space-x-8">
+    <div class="flex flex-col items-start justify-between space-x-0 space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8">
       <EventBlock v-for="item in calendars" :key="item.id" :color="getColor(item.canton_switch.canton)">
         <template #datetime>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template>
         <template #pretitle>{{ item.location }}</template>
@@ -104,7 +103,7 @@
 
     <Divider class="my-16" />
 
-    <Headline>
+    <Headline class="mb-8">
       <template #headline> Vous souhaitez organiser un concert … </template>
     </Headline>
 
@@ -306,7 +305,7 @@ export default {
                 headline
                 text
               }
-              ... on ComponentContentTwoColumnsRichText {
+              ... on ComponentContentTwoColsText {
                 __typename
                 id
                 column_left

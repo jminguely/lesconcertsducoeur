@@ -1,9 +1,7 @@
 <template>
   <div>
-    <Headline class="lg:pt-20">
-      <template #headline>
-        <span class="text-4xl lg:text-7xl">Médias</span>
-      </template>
+    <Headline>
+      <template #headline> Médias </template>
     </Headline>
 
     <p class="text-xl font-newsCycle">Retrouvez-nous sur nos réseaux sociaux</p>

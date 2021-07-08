@@ -1,16 +1,16 @@
 {
   "collectionName": "components_global_two_columns_rich_texts",
   "info": {
-    "name": "two_columns_rich_text",
+    "name": "two_cols_text",
     "icon": "align-justify",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "column_left": {
+    "col_left": {
       "type": "richtext"
     },
-    "column_right": {
+    "col_right": {
       "type": "richtext"
     }
   }

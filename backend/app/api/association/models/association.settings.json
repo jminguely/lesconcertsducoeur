@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "associations",
+  "info": {
+    "name": "Association",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "canton_switch": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content.canton-switch",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "content.two-columns-text-image",
+        "content.canton-switch",
+        "content.headline",
+        "content.accordion-item",
+        "content.accordion",
+        "content.carousel",
+        "content.quotation",
+        "content.two-columns-rich-text"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

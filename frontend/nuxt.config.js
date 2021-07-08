@@ -41,6 +41,8 @@ export default {
     '@nuxtjs/apollo',
     // https://i18n.nuxtjs.org/
     'nuxt-i18n',
+    // https://www.npmjs.com/package/@nuxtjs/markdownit
+    '@nuxtjs/markdownit',
   ],
 
   apollo: {
@@ -64,6 +66,10 @@ export default {
         de,
       },
     },
+  },
+
+  markdownit: {
+    runtime: true, // Support `$md()`
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-buildhome(locale:"de-CH"){

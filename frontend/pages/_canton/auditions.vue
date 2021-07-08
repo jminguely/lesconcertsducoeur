@@ -1,13 +1,20 @@
 <template>
-  <div>
+  <div v-if="content != null">
+    {{ content.auditions }}
     <Headline>
       <template #headline>
-        <span class="text-4xl lg:text-7xl">Auditions</span>
+        {{ content.auditions[0].hero.headline }}
       </template>
       <template #content>
-        <span class="text-2xl lg:text-4xl"> Souhaitez-vous devenir musicien.ne des Concerts du Coeur ? </span>
+        {{ content.auditions[0].hero.subhead }}
       </template>
     </Headline>
+
+    <div v-for="el in content.auditions[0].content" :key="el.__typename + el.id">
+      <template v-if="el.__typename === 'ComponentContentText'">
+        <div class="prose prose-xl max-w-none" v-html="$md.render(el.text)"></div>
+      </template>
+    </div>
 
     <p class="text-2xl font-newsCycle">
       Avez-vous envie d’apporter des moments de légèreté aux personnes âgées, hospitalisées et/ou en difficulté en leur partageant votre musicalité avec celles-ci tout en développant vos aptitudes de
@@ -33,9 +40,7 @@
 
     <div class="flex flex-col justify-start my-20 lg:flex-row">
       <ExtendedBlock class="mb-10 lg:mr-28 lg:mb-0">
-        <template #datetime>
-          <span class="text-lg">Audition dimanche 11 avril 2021</span>
-        </template>
+        <template #datetime> Audition dimanche 11 avril 2021 </template>
         <template #content>
           <div class="text-xl font-newsCycle">
             <p class="block mb-10">10h00-17h00</p>
@@ -58,9 +63,7 @@
         </template>
       </ExtendedBlock>
       <ExtendedBlock class="mr-10">
-        <template #datetime>
-          <span class="text-lg">Audition dimanche 11 avril 2021</span>
-        </template>
+        <template #datetime> Audition dimanche 11 avril 2021 </template>
         <template #content>
           <div class="text-xl font-newsCycle">
             <p class="block mb-10">10h00-17h00</p>
@@ -92,10 +95,69 @@
 import Headline from '@/components/typography/Headline.vue'
 import ExtendedBlock from '@/components/typography/ExtendedBlock.vue'
 
+import { gql } from 'graphql-tag'
+
 export default {
   components: {
     Headline,
     ExtendedBlock,
+  },
+
+  data() {
+    return {
+      content: null,
+    }
+  },
+
+  async fetch() {
+    await this.getContent()
+  },
+
+  methods: {
+    async getContent() {
+      const query = gql`
+        query getAudition {
+          auditions(locale: "fr-CH") {
+            id
+            locale
+            hero {
+              ... on ComponentContentHero {
+                headline
+                subhead
+              }
+            }
+            canton_switch {
+              ... on ComponentContentCantonSwitch {
+                canton
+              }
+            }
+            content {
+              ... on ComponentContentText {
+                __typename
+                id
+                text
+              }
+              ... on ComponentContentHeadline {
+                __typename
+                id
+                headline
+                text
+              }
+            }
+          }
+        }
+      `
+
+      this.content = await this.$apollo
+        .query({ query })
+        .then(({ data }) => {
+          if (process.env.dev) window.console.log(data)
+          return data
+        })
+        .catch((e) => {
+          if (process.env.dev) window.console.log(e)
+        })
+    },
   },
 }
 </script>

@@ -1,9 +1,13 @@
 <template>
   <div>
-    <Headline class="lg:py-24">
-      <template #headline>
-        <span class="text-4xl lg:text-7xl">Nos concepts, packaging</span>
-      </template>
+    <Headline>
+      <template #headline>Nos concerts</template>
+      <template #content
+        ><p>
+          Nous adaptons constamment nos concerts à la situation sanitaire, aux publics et aux lieux. Nous pouvons chercher avec vous la meilleure solution pour votre institution. N’hésitez pas à nous
+          contacter pour en discuter
+        </p></template
+      >
     </Headline>
     <p class="mb-16 text-xl font-newsCycle">
       Dans les établissements médico-sociaux et les institutions vouées aux personnes en difficulté nous donnons des concerts sous forme traditionnelle. Nous souhaitons que ces lieux de vie se
@@ -28,8 +32,6 @@
     </ImageBlock>
 
     <Spacing />
-
-    <p class="text-2xl font-playFair">Nos concepts, packaging</p>
 
     <AccordionItem>
       <template #label>Le concert traditionnel</template>

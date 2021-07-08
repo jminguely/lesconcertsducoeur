@@ -1,8 +1,9 @@
 {
   "collectionName": "components_global_two_columns_text_images",
   "info": {
-    "name": "two_columns_text_image",
-    "icon": "braille"
+    "name": "two_cols_text_image",
+    "icon": "braille",
+    "description": ""
   },
   "options": {},
   "attributes": {

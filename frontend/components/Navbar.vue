@@ -3,32 +3,32 @@
     <div class="lg:ml-80 lg:mr-20">
       <ul class="flex justify-between pt-5 pl-10 text-2xl">
         <NavbarItem color="red">
-          <template #content> Valais </template>
+          <template #content>{{ $t('canton').VS }}</template>
           <template #items>
             <ul class="flex flex-col overflow-hidden">
-              <nuxt-link to="/vs/association">L'association</nuxt-link>
-              <nuxt-link to="/vs/our-artists">Nos artistes</nuxt-link>
-              <nuxt-link to="/vs/auditions">Auditions</nuxt-link>
+              <nuxt-link :to="localePath({ name: 'canton-association', params: { canton: 'vs' } })">L'association</nuxt-link>
+              <nuxt-link :to="localePath({ name: 'canton-artistes', params: { canton: 'vs' } })">Nos artistes</nuxt-link>
+              <nuxt-link :to="localePath({ name: 'canton-auditions', params: { canton: 'vs' } })">Auditions</nuxt-link>
             </ul>
           </template>
         </NavbarItem>
         <NavbarItem color="green">
-          <template #content> Vaud </template>
+          <template #content>{{ $t('canton').VD }}</template>
           <template #items>
             <ul class="flex flex-col overflow-hidden">
-              <nuxt-link to="/vd/association">L'association</nuxt-link>
-              <nuxt-link to="/vd/our-artists">Nos artistes</nuxt-link>
-              <nuxt-link to="/vd/auditions">Auditions</nuxt-link>
+              <nuxt-link :to="localePath({ name: 'canton-association', params: { canton: 'vd' } })">L'association</nuxt-link>
+              <nuxt-link :to="localePath({ name: 'canton-artistes', params: { canton: 'vd' } })">Nos artistes</nuxt-link>
+              <nuxt-link :to="localePath({ name: 'canton-auditions', params: { canton: 'vd' } })">Auditions</nuxt-link>
             </ul>
           </template>
         </NavbarItem>
         <NavbarItem color="yellow">
-          <template #content> Genève </template>
+          <template #content>{{ $t('canton.GE') }}</template>
           <template #items>
             <ul class="flex flex-col overflow-hidden">
-              <nuxt-link to="/ge/association">L'association</nuxt-link>
-              <nuxt-link to="/ge/our-artists">Nos artistes</nuxt-link>
-              <nuxt-link to="/ge/auditions">Auditions</nuxt-link>
+              <nuxt-link :to="localePath({ name: 'canton-association', params: { canton: 'ge' } })">L'association</nuxt-link>
+              <nuxt-link :to="localePath({ name: 'canton-artistes', params: { canton: 'ge' } })">Nos artistes</nuxt-link>
+              <nuxt-link :to="localePath({ name: 'canton-auditions', params: { canton: 'ge' } })">Auditions</nuxt-link>
             </ul>
           </template>
         </NavbarItem>

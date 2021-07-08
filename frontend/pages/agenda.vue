@@ -1,9 +1,7 @@
 <template>
   <div>
-    <Headline class="pb-8">
-      <template #headline>
-        <span class="text-4xl lg:text-7xl">Agenda</span>
-      </template>
+    <Headline class="pb-12">
+      <template #headline> Agenda </template>
     </Headline>
 
     <!-- <div class="flex flex-col justify-items-start font-playFair items-start text-2xl lg:flex-row lg:space-x-8 lg:mb-16">

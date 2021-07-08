@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_content_heroes",
+  "info": {
+    "name": "hero",
+    "icon": "crow"
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "subhead": {
+      "type": "text"
+    }
+  }
+}

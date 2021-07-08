@@ -1,6 +1,29 @@
 module.exports = {
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            color: 'black',
+          },
+        },
+        xl: {
+          css: {
+            lineHeight: '1.75rem',
+            h2: {
+              fontFamily: 'Playfair',
+              fontSize: '1.875rem',
+              lineHeight: '2.25rem',
+              fontWeight: 'normal',
+            },
+            ul: {
+              li: {
+                margin: 0,
+              },
+            },
+          },
+        },
+      },
       fontFamily: {
         bodoni: ['Bodoni'],
         newsCycle: ['News Cycle'],

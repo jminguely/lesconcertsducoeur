@@ -1,13 +1,11 @@
 <template>
   <div>
-    <div class="flex flex-col justify-between mb-16 lg:pr-10 lg:flex-row lg:pt-28">
+    <div class="flex flex-col justify-between lg:flex-row lg:space-x-8">
       <div>
         <Headline>
-          <template #headline>
-            <span class="text-4xl lg:text-7xl">L'association valaisanne</span>
-          </template>
+          <template #headline>L'association valaisanne</template>
           <template #content>
-            <p class="text-2xl lg:text-base">Les Concerts du Cœur Valaisans</p>
+            <p class="text-2xl">Les Concerts du Cœur Valaisans</p>
             <p class="text-xl font-newsCycle">fondés le 13 janvier 2017</p>
           </template>
         </Headline>
@@ -17,13 +15,14 @@
         <img src="~/assets/img/illustrations/illustration1.svg" />
       </div>
     </div>
+
     <Headline class="my-16">
       <template #headline>
         <span class="text-4xl lg:text-7xl"> Comité et direction artistique Valais </span>
       </template>
     </Headline>
 
-    <div class="flex flex-col justify-between lg:flex-row">
+    <div class="grid grid-cols-2">
       <div class="flex-col mb-16 lg:mb-0 lg:flex-row">
         <div class="mb-16">
           <h3 class="text-2xl font-playFair">Direction artistique</h3>
@@ -74,10 +73,8 @@
       </div>
     </div>
 
-    <Headline>
-      <template #headline>
-        <span class="text-4xl lg:text-7xl">Comment soutenir le Valais?</span>
-      </template>
+    <Headline class="mb-8">
+      <template #headline> Comment soutenir le Valais? </template>
     </Headline>
 
     <DonationBlock class="mb-16" :circle="false">
@@ -99,7 +96,7 @@
       </template>
     </DonationBlock>
 
-    <DonationBlock class="mb-10 lg:mb-56" :circle="false">
+    <DonationBlock :circle="false">
       <template #title>Devenez membre</template>
       <template #details>
         > Bulletin d'adhésion pour les membres<br />
@@ -107,16 +104,20 @@
       </template>
     </DonationBlock>
 
-    <Headline class="mb-28">
+    <Spacing />
+
+    <Headline class="mb-12">
       <template #headline>Nos partenaires et soutiens</template>
     </Headline>
 
-    <Partner class="mb-32">
+    <Partner>
       <template #title> En partenariat avec </template>
       <template #image>
         <img src="~/assets/img/partners/LMN.svg" />
       </template>
     </Partner>
+
+    <Spacing />
 
     <Sponsors :sponsors="sponsors">
       <template #title> Soutiens </template>
@@ -129,6 +130,7 @@ import Headline from '@/components/typography/Headline.vue'
 import DonationBlock from '@/components/typography/DonationBlock.vue'
 import Partner from '@/components/pages/Partner.vue'
 import Sponsors from '@/components/pages/Sponsors.vue'
+import Spacing from '~/components/typography/Spacing.vue'
 
 export default {
   components: {
@@ -136,6 +138,7 @@ export default {
     DonationBlock,
     Partner,
     Sponsors,
+    Spacing,
   },
   data() {
     return {
