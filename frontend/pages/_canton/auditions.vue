@@ -1,22 +1,24 @@
 <template>
   <div v-if="content != null">
-    {{ content }}
+    <!-- {{ content }} -->
     <Headline>
       <template #headline>
-        {{ content.auditions[0].hero.headline }}
+        <!-- {{ content.auditions[0].hero.headline }} -->
+        Auditions
       </template>
       <template #content>
-        {{ content.auditions[0].hero.subhead }}
+        <!-- {{ content.auditions[0].hero.subhead }} -->
+        Souhaitez-vous devenir musicien·ne des Concerts du Cœur Genevois ?
       </template>
     </Headline>
 
-    <div v-for="el in content.auditions[0].content" :key="el.__typename + el.id">
+    <!-- <div v-for="el in content.auditions[0].content" :key="el.__typename + el.id">
       <template v-if="el.__typename === 'ComponentContentText'">
         <div class="prose prose-xl max-w-none" v-html="$md.render(el.text)"></div>
       </template>
-    </div>
+    </div> -->
 
-    <!-- <div class="flex flex-col justify-start my-20 lg:flex-row">
+    <div class="flex flex-col justify-start my-20 lg:flex-row">
       <ExtendedBlock class="mb-10 lg:mr-28 lg:mb-0">
         <template #datetime> Audition dimanche 11 avril 2021 </template>
         <template #content>
@@ -63,7 +65,7 @@
           </div>
         </template>
       </ExtendedBlock>
-    </div> -->
+    </div>
     <Spacing />
 
     <p class="text-3xl text-yellow-500 font-playFair">Nous nous réjouissons de vous rencontrer et de vous écouter !</p>
