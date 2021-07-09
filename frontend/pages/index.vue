@@ -97,7 +97,7 @@
       <EventBlock v-for="item in calendars" :key="item.id" :color="getColor(getCanton(item.canton))">
         <template #datetime>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template>
         <template #pretitle>{{ item.location }}</template>
-        <template #title>{{ item.title }} {{ getColor(getCanton(item.canton)) }}</template>
+        <template #title>{{ item.title }}</template>
       </EventBlock>
     </div>
 
@@ -226,7 +226,7 @@ export default {
       else return 'black'
     },
     getCanton(canton) {
-      return canton == null ? 'ALL' : canton.uid
+      return canton == null ? 'ALL' : canton.uid.toUpperCase()
     },
     async getAgenda() {
       const query = gql`
