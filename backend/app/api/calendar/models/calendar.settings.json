@@ -51,6 +51,9 @@
     "artist": {
       "via": "concerts_calendar",
       "model": "artists"
+    },
+    "canton": {
+      "model": "canton"
     }
   }
 }

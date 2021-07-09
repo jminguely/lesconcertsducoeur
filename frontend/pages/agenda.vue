@@ -27,7 +27,7 @@
 
     <!-- {{ calendars }} -->
     <template v-if="calendars != null">
-      <EventDetails v-for="item in calendars.calendars" :key="item.id + item.title" class="py-12" :color="getColor(item.canton_switch.canton)">
+      <EventDetails v-for="item in calendars.calendars" :key="item.id + item.title" class="py-12" :color="getColor(getCanton(item.canton))">
         <template #date>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template>
         <template #location>{{ item.location }}</template>
         <template #title>{{ item.title }} </template>
@@ -86,14 +86,16 @@ export default {
       if (canton === 'GE') return 'yellow'
       if (canton === 'ALL') return 'black'
     },
+    getCanton(canton) {
+      return canton == null ? 'ALL' : canton.uid
+    },
     async getAgenda() {
       const query = gql`
         query getCalendar {
           calendars(limit: 3, locale: "de-CH") {
             id
-            canton_switch {
-              id
-              canton
+            canton {
+              uid
             }
             date_time
             title

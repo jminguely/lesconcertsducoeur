@@ -49,6 +49,9 @@
         }
       },
       "type": "text"
+    },
+    "canton": {
+      "model": "canton"
     }
   }
 }

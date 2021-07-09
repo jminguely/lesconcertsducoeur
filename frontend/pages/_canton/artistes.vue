@@ -1,9 +1,10 @@
 <template>
   <div>
-    <Headline class="mt-20">
+    <Headline>
       <template #headline>Nos Artistes</template>
     </Headline>
 
+    <!-- {{ content }} -->
     <nuxt-link class="absolute flex items-center justify-center text-xl leading-5 text-center text-white transform bg-green-700 rounded-full top-24 w-28 h-28 right-10 font-playFair" to="auditions">
       Auditions
     </nuxt-link>
@@ -15,6 +16,8 @@
 <script>
 import Headline from '@/components/typography/Headline.vue'
 import ArtistsAlbums from '@/components/pages/ArtistAlbums.vue'
+
+import { gql } from 'graphql-tag'
 
 export default {
   components: {
@@ -36,7 +39,47 @@ export default {
         { id: 10, name: 'Ennio Morricone', style: 'Classical', image: `https://placeimg.com/540/317/people?nocache=${Math.random()}` },
         { id: 11, name: 'Einar Selvik', style: 'Folk', image: `https://placeimg.com/540/317/people?nocache=${Math.random()}` },
       ],
+      content: null,
     }
+  },
+
+  async fetch() {
+    console.log(this.$route.params)
+    await this.getArtists(this.$route.params.canton)
+  },
+
+  methods: {
+    async getArtists(canton) {
+      const query = gql`
+        query getArtists($canton: String) {
+          artists(where: { canton: { uid: $canton } }) {
+            id
+            name
+            music_genre
+            description
+            repertoire
+            formats
+            cover {
+              id
+              url
+            }
+          }
+        }
+      `
+      const variables = {
+        canton: canton.toUpperCase(),
+      }
+
+      this.content = await this.$apollo
+        .query({ query, variables })
+        .then(({ data }) => {
+          if (process.env.dev) console.log(data)
+          return data
+        })
+        .catch((e) => {
+          if (process.env.dev) console.log(e)
+        })
+    },
   },
 }
 </script>

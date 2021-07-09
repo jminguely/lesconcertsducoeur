@@ -81,9 +81,9 @@
     </Headline>
 
     <div class="flex flex-col items-start justify-between mb-16 space-x-0 space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8">
-      <InfoBlock v-for="item in newsArticles" :key="item.id" :color="getColor(item.canton_switch.canton)">
+      <InfoBlock v-for="item in newsArticles" :key="item.id" :color="getColor(getCanton(item.canton))">
         <template #date>{{ $dateFns.format(new Date(item.date), 'dd.MM.yyyy') }}</template>
-        <template #pretitle>{{ item.canton_switch.canton }}</template>
+        <template #pretitle>{{ $t('canton')[getCanton(item.canton)] }}</template>
         <template #title>{{ item.title }}</template>
         <template #content>{{ item.content }}</template>
       </InfoBlock>
@@ -94,10 +94,10 @@
     </Headline>
 
     <div class="flex flex-col items-start justify-between space-x-0 space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8">
-      <EventBlock v-for="item in calendars" :key="item.id" :color="getColor(item.canton_switch.canton)">
+      <EventBlock v-for="item in calendars" :key="item.id" :color="getColor(getCanton(item.canton))">
         <template #datetime>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template>
         <template #pretitle>{{ item.location }}</template>
-        <template #title>{{ item.title }} {{ getColor(item.canton_switch.canton) }}</template>
+        <template #title>{{ item.title }} {{ getColor(getCanton(item.canton)) }}</template>
       </EventBlock>
     </div>
 
@@ -223,20 +223,23 @@ export default {
       if (canton === 'VD') return 'green'
       if (canton === 'GE') return 'yellow'
       if (canton === 'ALL') return 'black'
+      else return 'black'
+    },
+    getCanton(canton) {
+      return canton == null ? 'ALL' : canton.uid
     },
     async getAgenda() {
       const query = gql`
         query getCalendar {
-          calendars(limit: 3, locale: "de-CH") {
+          calendars(limit: 3, locale: "fr-CH") {
             id
-            canton_switch {
-              id
-              canton
-            }
             date_time
             title
             location
             details
+            canton {
+              uid
+            }
             artist {
               id
               artists_list {
@@ -267,14 +270,13 @@ export default {
     async getNewsArticles() {
       const query = gql`
         query getNewsArticles {
-          newsArticles(limit: 3, locale: "de-CH") {
+          newsArticles(limit: 3, locale: "fr-CH") {
             id
             title
             date
             content
-            canton_switch {
-              id
-              canton
+            canton {
+              uid
             }
           }
         }
@@ -319,11 +321,11 @@ export default {
       this.content = await this.$apollo
         .query({ query })
         .then(({ data }) => {
-          if (process.env.dev) window.console.log(data)
+          if (process.env.dev) console.log(data)
           return data
         })
         .catch((e) => {
-          if (process.env.dev) window.console.log(e)
+          if (process.env.dev) console.log(e)
         })
     },
   },
