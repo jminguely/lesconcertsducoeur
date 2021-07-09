@@ -1,5 +1,5 @@
 <template>
-  <div v-if="content != null">
+  <div>
     <!-- {{ content }} -->
     <Headline>
       <template #headline>
