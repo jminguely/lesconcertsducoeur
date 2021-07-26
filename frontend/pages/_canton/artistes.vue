@@ -51,8 +51,8 @@ export default {
   methods: {
     async getArtists(canton) {
       const query = gql`
-        query getArtists($canton: String) {
-          artists(where: { canton: { uid: $canton } }) {
+        query getArtists($locale: String, $canton: String) {
+          artists(locale: $locale, where: { canton: { uid: $canton } }) {
             id
             name
             music_genre
@@ -66,8 +66,12 @@ export default {
           }
         }
       `
+
+      const locale = this.$i18n.locale + '-CH'
+
       const variables = {
-        canton: canton.toUpperCase(),
+        canton,
+        locale,
       }
 
       this.content = await this.$apollo

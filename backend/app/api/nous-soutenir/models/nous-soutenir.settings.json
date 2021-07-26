@@ -2,18 +2,28 @@
   "kind": "singleType",
   "collectionName": "nous_soutenirs",
   "info": {
-    "name": "Nous soutenir"
+    "name": "Nous soutenir",
+    "description": ""
   },
   "options": {
     "increments": true,
     "timestamps": true,
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "content": {
       "type": "dynamiczone",
-      "components": []
+      "components": [],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
