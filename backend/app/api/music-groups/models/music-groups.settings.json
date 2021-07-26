@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "music_groups",
+  "info": {
+    "name": "Music groups",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "music_genre": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "repertoire": {
+      "type": "richtext"
+    },
+    "formats": {
+      "type": "richtext"
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "cantons": {
+      "collection": "canton"
+    },
+    "artists": {
+      "via": "music_groups",
+      "collection": "artists",
+      "dominant": true
+    }
+  }
+}

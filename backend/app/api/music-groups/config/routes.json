@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/music-groups",
+      "handler": "music-groups.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/music-groups/count",
+      "handler": "music-groups.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/music-groups/:id",
+      "handler": "music-groups.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/music-groups",
+      "handler": "music-groups.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/music-groups/:id",
+      "handler": "music-groups.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/music-groups/:id",
+      "handler": "music-groups.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

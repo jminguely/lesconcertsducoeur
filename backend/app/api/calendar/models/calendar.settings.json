@@ -48,12 +48,14 @@
         }
       }
     },
-    "artist": {
-      "via": "concerts_calendar",
-      "model": "artists"
-    },
     "canton": {
       "model": "canton"
+    },
+    "music_group": {
+      "model": "music-groups"
+    },
+    "artists": {
+      "collection": "artists"
     }
   }
 }
