@@ -26,8 +26,7 @@
     {{ fromHex('454d53206c6120436861726d6169652c20436f6c6c6f6d626579') }}
     <!-- Get Hex from meta_value that can then be piped to "fromHex" -->
     <!-- {{ wpPostmeta[2].data[1].meta_value.substr(2) }} -->
-    {{ data }}
-    <!-- {{ meta_posts }} -->
+    {{ meta_posts[303] }}
     <!-- {{ agendaPostmeta }} -->
     <!-- {{ wpPostmeta[2].data }} -->
     <!-- <div v-for="(event, i) in agendaPosts" :key="`post-${i}`" class="py-2">
@@ -115,7 +114,10 @@ export default {
   mounted() {
     this.regroupMetaPosts(this.wpPostmeta[2].data)
     //     console.log(JSON.stringify(this.meta_posts[301])
-    //     this.createCalendarEntry(this.parseCalendarEntry(this.meta_posts[300]))
+    // this.createCalendarEntry(this.parseCalendarEntry(this.meta_posts[]))
+    for (let i = 0; i < this.meta_posts.length; i++) {
+      this.createCalendarEntry(this.parseCalendarEntry(this.meta_posts[i]))
+    }
   },
 
   methods: {
@@ -149,6 +151,12 @@ export default {
       let date = null
       let time = null
 
+      // let hasLocale = false
+      // let hasTitle = false
+      // let hasLocation = false
+      let hasDate = false
+      let hasTime = false
+
       for (let i = 0; i < post.length; i++) {
         if (post[i].meta_key === 'agenda_lang') {
           if (post[i].meta_value === 'fr-FR') {
@@ -156,19 +164,26 @@ export default {
           } else {
             data.locale = post[i].meta_value
           }
+          // hasLocale = true
         } else if (post[i].meta_key === 'agenda_titre') {
           data.title = post[i].meta_value
+          // hasTitle = true
         } else if (post[i].meta_key === 'agenda_lieu') {
           data.location = post[i].meta_value
+          // hasLocation = true
         } else if (post[i].meta_key === 'agenda_jour') {
           date = post[i].meta_value
+          hasDate = true
         } else if (post[i].meta_key === 'agenda_time') {
           time = post[i].meta_value
+          hasTime = true
         } else if (post[i].meta_key.includes('agenda_artiste')) {
           data.details += ',' + post[i].meta_value
         }
       }
-      data.date_time = `${date}T${time}:00.000Z`
+      if (hasDate && hasTime) data.date_time = this.$dateFns.formatISO(new Date(`${date}T${time}`))
+
+      console.log(data)
       return data
     },
     fromHex(h) {
@@ -189,33 +204,35 @@ export default {
     },
 
     async createCalendarEntry(dataObject) {
-      const mutation = gql`
-        mutation CreateCalendarEntry($input: createCalendarInput) {
-          createCalendar(input: $input) {
-            calendar {
-              id
-              title
+      if (dataObject.title !== null) {
+        const mutation = gql`
+          mutation CreateCalendarEntry($input: createCalendarInput) {
+            createCalendar(input: $input) {
+              calendar {
+                id
+                title
+              }
             }
           }
+        `
+        const variables = {
+          input: {
+            data: dataObject,
+          },
         }
-      `
-      const variables = {
-        input: {
-          data: dataObject,
-        },
-      }
 
-      await this.$apollo
-        .mutate({
-          mutation,
-          variables,
-        })
-        .then(({ data }) => {
-          if (process.env.dev) console.log(data)
-        })
-        .catch((e) => {
-          if (process.env.dev) console.log(e)
-        })
+        await this.$apollo
+          .mutate({
+            mutation,
+            variables,
+          })
+          .then(({ data }) => {
+            if (process.env.dev) console.log(data)
+          })
+          .catch((e) => {
+            if (process.env.dev) console.log(e)
+          })
+      }
     },
 
     async getAgenda() {

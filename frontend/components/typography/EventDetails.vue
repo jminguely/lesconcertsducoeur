@@ -1,11 +1,11 @@
 <template>
   <div class="flex flex-col justify-between border-b border-gray-800 lg:grid lg:grid-cols-2">
     <div class="flex flex-col lg:max-w-xl">
-      <div :class="`font-playFair text-${color}-600 text-xl lg:text-3xl`">
+      <div :class="`font-playFair text-${color}-600 text-${color}-600text-xl lg:text-3xl`">
         <div><slot name="date"></slot></div>
         <div><slot name="location"></slot></div>
       </div>
-      <div class="mb-6 text-3xl lg:text-6xl font-newsCycle lg:mb-0">
+      <div :class="`mb-6 text-3xl lg:text-6xl font-newsCycle text-${color}-600 lg:mb-0`">
         <slot name="title"></slot>
       </div>
     </div>

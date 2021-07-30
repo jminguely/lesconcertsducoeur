@@ -27,7 +27,7 @@
 
     <template v-if="data != null">
       <EventDetails v-for="item in data.calendars" :key="item.id + item.title" class="py-12" :color="getColor(getCanton(item.canton))">
-        <!-- <template #date>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template> -->
+        <template #date>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template>
         <template #location>{{ item.location }}</template>
         <template #title>{{ item.title }} </template>
         <template #artists>
