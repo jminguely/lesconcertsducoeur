@@ -72,7 +72,7 @@ export default {
       const obj = {}
       const statements = []
 
-      statements[0] = `text-${this.color}-600 bg-white duration-300 ease-in-out flex flex-col  border-b-2  w-full lg:mx-6 cursor-pointer select-none`
+      statements[0] = `text-${this.color}-600 bg-white duration-300 ease-in-out flex flex-col  border-b-2  w-full cursor-pointer select-none`
 
       if (this.black) {
         statements[0] += ' border-black'
