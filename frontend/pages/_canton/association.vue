@@ -1,5 +1,5 @@
 <template>
-  <div v-if="data.associations != null">
+  <div v-if="data != null">
     <div class="flex flex-col justify-between lg:flex-row lg:space-x-8">
       <div>
         <Headline>
@@ -26,21 +26,7 @@
       <div class="prose prose-xl" v-html="$md.render(data.associations[0].section_comite.col_right)"></div>
     </div>
 
-    <div class="grid grid-cols-2">
-      <div class="flex-col mb-16 lg:mb-0 lg:flex-row">
-        <div class="mb-16">
-          <h3 class="text-2xl font-playFair">Direction artistique</h3>
-          <h5 class="ml-8 text-xl font-newsCycle lg:ml-0">Laure Barras, soprano</h5>
-          <p class="ml-8 text-lg text-red-500 lg:ml-0">Contacter par email</p>
-        </div>
-
-        <div>
-          <h3 class="text-2xl font-playFair">Statuts de l’accociation</h3>
-          <br class="hidden lg:block" />
-          <p class="text-lg text-red-500">> Document officiel des statuts (PDF)</p>
-        </div>
-      </div>
-    </div>
+    <Spacing />
 
     <Headline class="mb-8">
       <template #headline> Comment soutenir le Valais? </template>
@@ -49,21 +35,14 @@
     <DonationBlock class="mb-16" :circle="false">
       <template #title>Devenez bénévole</template>
       <template #details>
-
-      <div class="prose prose-xl" v-html="$md.render(data.associations[0].section_comite.col_right)"></div>
-        Nous avons besoin de votre soutien pour les tâches suivantes:
-        <br />— alksdfjal <br />— alksdfjal <br /><br />Annoncez-vous à benevoles-vs@lesconcertsducoeur.ch
+        <div v-if="association.section_benevole != null" class="prose prose-xl text-red-500" v-html="$md.render(association.section_benevole)"></div>
       </template>
     </DonationBlock>
 
     <DonationBlock class="mb-16">
       <template #title>Faites un don</template>
       <template #details>
-        No de compte : 103.079.98.07<br />
-        IBAN : CH82 0076 5001 0307 9980 7<br />
-        SWIFT / BIC : BCVSCH2LXXX<br />
-        CCP : 19-81-6<br />
-        Clearing : 765
+        <div v-if="association.section_don != null" class="prose prose-xl text-red-500" v-html="$md.render(association.section_don)"></div>
       </template>
     </DonationBlock>
 
@@ -81,12 +60,10 @@
       <template #headline>Nos partenaires et soutiens</template>
     </Headline>
 
-    <Partner>
-      <template #title> En partenariat avec </template>
-      <template #image>
-        <img src="~/assets/img/partners/LMN.svg" />
-      </template>
-    </Partner>
+    <h2 class="mb-10 text-3xl font-playFair">En partenariat avec</h2>
+    <div class="grid grid-cols-3 gap-5">
+      <img class="object-contain w-full h-full" src="~/assets/img/partners/LMN.svg" />
+    </div>
 
     <Spacing />
 
@@ -101,7 +78,6 @@ import { gql } from 'graphql-tag'
 
 import Headline from '@/components/typography/Headline.vue'
 import DonationBlock from '@/components/typography/DonationBlock.vue'
-import Partner from '@/components/pages/Partner.vue'
 import Sponsors from '@/components/pages/Sponsors.vue'
 import Spacing from '~/components/typography/Spacing.vue'
 
@@ -109,7 +85,6 @@ export default {
   components: {
     Headline,
     DonationBlock,
-    Partner,
     Sponsors,
     Spacing,
   },
@@ -126,6 +101,11 @@ export default {
   },
   async fetch() {
     await this.getAssociation(this.$route.params.canton)
+  },
+  computed: {
+    association() {
+      return this.data != null ? this.data.associations[0] : {}
+    },
   },
   methods: {
     getCantonID(canton) {

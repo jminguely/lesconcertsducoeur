@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="mb-10 text-2xl font-playFair">
+    <div class="mb-10 text-3xl font-playFair">
       <slot name="title"></slot>
     </div>
-    <div class="flex flex-col flex-wrap lg:flex-row">
-      <a v-for="(item, i) in sponsors" :key="i" class="my-5 mr-10 lg:my-0" target="_blank" :href="item.link">
-        <img :src="item.img" />
+    <div class="grid grid-cols-3 gap-5">
+      <a v-for="(item, i) in sponsors" :key="i" target="_blank" :href="item.link">
+        <img class="w-full h-full object-contain" :src="item.img" />
       </a>
     </div>
   </div>

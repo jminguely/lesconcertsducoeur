@@ -3,7 +3,7 @@
     <div class="text-3xl font-playFair mb-4">
       <slot name="title"></slot>
     </div>
-    <div class="flex flex-col items-center ml-16 lg:ml-16 justify-items-start lg:flex-row">
+    <div class="flex flex-col items-center justify-items-start lg:flex-row">
       <div :class="`text-${color}-500 font-newsCycle text-lg lg:text-2xl lg:mr-48`">
         <slot name="details"></slot>
       </div>
