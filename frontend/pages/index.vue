@@ -8,33 +8,33 @@
       </template>
     </Headline>
 
-    <div class="flex justify-between lg:mb-32">
-      <Illustration class="w-1/3 pr-8">
-        <template #image>
-          <nuxt-link to="/vs/association">
-            <img src="~/assets/img/illustrations/illustration1.svg" />
-          </nuxt-link>
-        </template>
-        <template #label>{{ $t('canton').VS }}</template>
-      </Illustration>
+    <div class="grid grid-cols-3 gap-5 lg:mb-32">
+      <nuxt-link to="/vs/association">
+        <Illustration>
+          <template #image>
+            <img class="object-cover" src="~/assets/img/illustrations/illustration1.svg" />
+          </template>
+          <template #label>{{ $t('canton').VS }}</template>
+        </Illustration>
+      </nuxt-link>
 
-      <Illustration class="w-1/3 pr-8" color="green">
-        <template #image>
-          <nuxt-link to="/vd/association">
+      <nuxt-link to="/vd/association">
+        <Illustration color="green">
+          <template #image>
             <img src="~/assets/img/illustrations/illustration2.png" />
-          </nuxt-link>
-        </template>
-        <template #label>{{ $t('canton').VD }}</template>
-      </Illustration>
+          </template>
+          <template #label>{{ $t('canton').VD }}</template>
+        </Illustration>
+      </nuxt-link>
 
-      <Illustration class="w-1/3" color="yellow">
-        <template #image>
-          <nuxt-link to="/ge/association">
+      <nuxt-link to="/ge/association">
+        <Illustration color="yellow">
+          <template #image>
             <img src="~/assets/img/illustrations/illustration3.svg" />
-          </nuxt-link>
-        </template>
-        <template #label>{{ $t('canton').GE }}</template>
-      </Illustration>
+          </template>
+          <template #label>{{ $t('canton').GE }}</template>
+        </Illustration>
+      </nuxt-link>
     </div>
 
     <div class="flex flex-col justify-between lg:flex-row">

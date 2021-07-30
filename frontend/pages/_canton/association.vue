@@ -1,12 +1,11 @@
 <template>
-  <div>
+  <div v-if="data.associations != null">
     <div class="flex flex-col justify-between lg:flex-row lg:space-x-8">
       <div>
         <Headline>
-          <template #headline>L'association valaisanne</template>
+          <template #headline>{{ data.associations[0].section_hero_title }}</template>
           <template #content>
-            <p class="text-2xl">Les Concerts du Cœur Valaisans</p>
-            <p class="text-xl font-newsCycle">fondés le 13 janvier 2017</p>
+            <div class="prose prose-xl" v-html="$md.render(data.associations[0].section_hero_description)"></div>
           </template>
         </Headline>
       </div>
@@ -23,6 +22,11 @@
     </Headline>
 
     <div class="grid grid-cols-2">
+      <div class="prose prose-xl" v-html="$md.render(data.associations[0].section_comite.col_left)"></div>
+      <div class="prose prose-xl" v-html="$md.render(data.associations[0].section_comite.col_right)"></div>
+    </div>
+
+    <div class="grid grid-cols-2">
       <div class="flex-col mb-16 lg:mb-0 lg:flex-row">
         <div class="mb-16">
           <h3 class="text-2xl font-playFair">Direction artistique</h3>
@@ -36,41 +40,6 @@
           <p class="text-lg text-red-500">> Document officiel des statuts (PDF)</p>
         </div>
       </div>
-
-      <div>
-        <div class="lg:mb-16">
-          <h3 class="text-2xl font-playFair">Comité</h3>
-        </div>
-        <div class="mb-8 ml-8 lg:mb-16 lg:ml-0 font-newsCycle">
-          <h3 class="text-lg font-bold lg:text-2xl">Président</h3>
-          <h5 class="text-lg lg:text-xl">Michel Buro (consultant);</h5>
-        </div>
-
-        <div class="mb-8 ml-8 lg:mb-16 lg:ml-0 font-newsCycle">
-          <h3 class="text-lg font-bold lg:text-2xl">vice-président</h3>
-          <h5 class="text-lg lg:text-xl">René-Pierre Antille (administrateur immobilier ainsi que de la Fondation du Château Mercier);</h5>
-        </div>
-
-        <div class="mb-8 ml-8 lg:mb-16 lg:ml-0 font-newsCycle">
-          <h3 class="text-lg font-bold lg:text-2xl">secrétaire</h3>
-          <h5 class="text-lg lg:text-xl">Andrée Lemaitre (juriste);</h5>
-        </div>
-
-        <div class="mb-8 ml-8 lg:mb-16 lg:ml-0 font-newsCycle">
-          <h3 class="text-lg font-bold lg:text-2xl">trésorière</h3>
-          <h5 class="text-lg lg:text-xl">Claudia Roque (comptable);</h5>
-        </div>
-
-        <div class="mb-8 ml-8 lg:mb-16 lg:ml-0 font-newsCycle">
-          <h3 class="text-lg font-bold lg:text-2xl">membre musicien</h3>
-          <h5 class="text-lg lg:text-xl">Jean-Luc Follonier (chanteur, chef du département de chant au conservatoire de Sion et directeur d'Ouverture Opéra)</h5>
-        </div>
-
-        <div class="mb-8 ml-8 lg:mb-16 lg:ml-0 font-newsCycle">
-          <h3 class="text-lg font-bold lg:text-2xl">membre musicienne</h3>
-          <h5 class="text-lg lg:text-xl">Patricia Neels (violoncelliste)</h5>
-        </div>
-      </div>
     </div>
 
     <Headline class="mb-8">
@@ -80,6 +49,8 @@
     <DonationBlock class="mb-16" :circle="false">
       <template #title>Devenez bénévole</template>
       <template #details>
+
+      <div class="prose prose-xl" v-html="$md.render(data.associations[0].section_comite.col_right)"></div>
         Nous avons besoin de votre soutien pour les tâches suivantes:
         <br />— alksdfjal <br />— alksdfjal <br /><br />Annoncez-vous à benevoles-vs@lesconcertsducoeur.ch
       </template>
@@ -126,6 +97,8 @@
 </template>
 
 <script>
+import { gql } from 'graphql-tag'
+
 import Headline from '@/components/typography/Headline.vue'
 import DonationBlock from '@/components/typography/DonationBlock.vue'
 import Partner from '@/components/pages/Partner.vue'
@@ -148,7 +121,58 @@ export default {
         { img: require('~/assets/img/partners/LR.svg'), link: 'https://google.com' },
         { img: require('~/assets/img/partners/M.svg'), link: 'https://google.com' },
       ],
+      data: null,
     }
+  },
+  async fetch() {
+    await this.getAssociation(this.$route.params.canton)
+  },
+  methods: {
+    getCantonID(canton) {
+      if (canton === 'ALL') return 1
+      if (canton === 'VS') return 2
+      if (canton === 'VD') return 3
+      if (canton === 'GE') return 4
+    },
+    async getAssociation(canton) {
+      const query = gql`
+        query getAssociation($locale: String) {
+          associations(locale: $locale, where: { canton: 2 }) {
+            id
+            section_comite {
+              col_right
+              col_left
+            }
+            section_hero_img {
+              id
+              url
+            }
+            section_hero_title
+            section_hero_description
+            section_benevole
+            section_don
+            section_membre
+          }
+        }
+      `
+
+      const locale = this.$i18n.locale + '-CH'
+
+      const variables = {
+        // canton: this.getCantonID(canton.toUpperCase()),
+        locale,
+      }
+
+      this.data = await this.$apollo
+        .query({ query, variables })
+        .then(({ data }) => {
+          if (process.env.dev) console.log(data)
+          return data
+        })
+        .catch((e) => {
+          if (process.env.dev) console.log(e)
+        })
+    },
   },
 }
 </script>
