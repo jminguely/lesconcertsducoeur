@@ -1,7 +1,7 @@
 <template>
   <div
     :class="{ 'opacity-100 z-50': popup }"
-    class="fixed top-0 left-0 flex flex-col w-screen h-screen px-10 py-6 overflow-auto duration-300 ease-in-out bg-white border-b-8 border-green-600 opacity-0 lg:overflow-hidden"
+    class="fixed top-0 left-0 flex flex-col w-screen h-screen px-10 py-10 overflow-auto duration-300 ease-in-out bg-white border-b-8 border-green-600 opacity-0 lg:overflow-hidden"
   >
     <div>
       <button class="focus:outline-none" @click="$emit('update:popup', false)">
@@ -23,7 +23,9 @@
               <line id="Line_22" data-name="Line 22" x2="16.301" y2="16.301" transform="translate(210.801 67.5) rotate(90)" fill="none" stroke="#4d9a70" stroke-width="2" />
             </g>
           </svg>
-          <span class="hidden lg:block"> Quintet qui-vient-avant </span>
+          <template v-if="artists[previousIndex] != null">
+            <span class="pl-3 hidden lg:block hover:text-gray-500"> {{ artists[previousIndex].first_name }} {{ artists[previousIndex].last_name }} </span>
+          </template>
         </button>
 
         <button class="flex my-2 text-2xl font-newsCycle focus:outline-none" @click="next()">
@@ -33,36 +35,43 @@
               <line id="Line_22" data-name="Line 22" y1="16.301" x2="16.301" transform="translate(16.301 0) rotate(90)" fill="none" stroke="#4d9a70" stroke-width="2" />
             </g>
           </svg>
-          <span class="hidden lg:block"> Quatuor suivant </span>
+          <template v-if="artists[previousIndex] != null">
+            <span class="pl-3 hidden lg:block hover:text-gray-500"> {{ artists[nextIndex].first_name }} {{ artists[nextIndex].last_name }} </span>
+          </template>
         </button>
       </div>
 
       <div class="mb-6 overflow-auto lg:w-2/5 lg:mb-0" style="max-height: calc(100vh - 125.83px)">
-        <h1 class="text-6xl font-newsCycle">{{ selected.name }}</h1>
-        <h3 class="mb-16 text-3xl font-playFair">{{ selected.style }}</h3>
+        <h1 class="pb-4 text-6xl font-newsCycle">{{ selected.first_name }} {{ selected.last_name }}</h1>
+        <h3 class="mb-12 text-3xl font-playFair">{{ selected.instrument }}</h3>
 
         <div class="prose">
           <p class="prose-lg font-newsCycle">
-            Jazzbox trio est … Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
-            et accusam et justo duo dolores et ea rebum. Jazzbox trio est … Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+            {{ selected.description }}
           </p>
 
-          <p class="block text-2xl font-playFair lg:inline">Répertoire</p>
-          <p class="prose-lg font-newsCycle">Jazzy Bazz <br />Cover Django Reinhardt</p>
-          <br />
-          <p class="text-2xl font-playFair">Formats</p>
-          <p class="prose-lg font-newsCycle">Concert classique <br />Itinérant</p>
+          <div v-if="selected.repertoire != null">
+            <p class="block text-2xl font-playFair">Répertoire</p>
+            <p class="prose-lg font-newsCycle">{{ selected.repertoire }}</p>
+          </div>
+
+          <div v-if="selected.formats != null">
+            <p class="text-2xl font-playFair">Formats</p>
+            <p class="prose-lg font-newsCycle">{{ selected.formats }}</p>
+          </div>
         </div>
-        <p class="my-6 prose-xl font-newsCycle">Vous souhaitez booker ce groupe dans votre établissement?</p>
+        <p class="my-6 prose-xl font-newsCycle">Vous souhaitez booker ce musicien·nne dans votre établissement?</p>
         <nuxt-link class="prose-xl text-green-500 no-underline" to="/contact">> Contact</nuxt-link>
       </div>
 
       <div class="lg:overflow-auto lg:w-2/6" style="max-height: calc(100vh - 125.83px)">
         <div class="ml-auto">
-          <img class="object-cover h-64 lg:w-120 lg:h-128 w-96" :src="selected.image" />
+          <template v-if="selected.picture != null">
+            <img class="object-cover h-64 lg:w-120 lg:h-128 w-96" :src="'https://api.lesconcertsducoeur.ch' + selected.picture.url" />
+          </template>
         </div>
-        <div class="flex flex-col w-80">
+
+        <!-- <div class="flex flex-col w-80">
           <div class="flex mt-8 mb-2">
             <p class="mr-6 text-xl font-playFair">Prénom Nom</p>
             <span class="text-lg font-newsCycle">Instrument</span>
@@ -75,7 +84,7 @@
             <p class="mr-6 text-xl font-playFair">Prénom Nom</p>
             <span class="text-lg font-newsCycle">Instrument</span>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -96,22 +105,24 @@ export default {
     },
     artists: {
       type: Array,
-      default() {
-        return [
-          {
-            id: '',
-            name: '',
-            style: '',
-            image: '',
-          },
-        ]
-      },
+      default: () => [],
     },
   },
   data() {
     return {
       selected: this.item,
     }
+  },
+  computed: {
+    currentIndex() {
+      return this.artists.map((e) => e.id).indexOf(this.selected.id) || 0
+    },
+    previousIndex() {
+      return (this.currentIndex === 0 ? this.artists.length : this.currentIndex) - 1
+    },
+    nextIndex() {
+      return this.currentIndex === this.artists.length - 1 ? 0 : this.currentIndex + 1
+    },
   },
   watch: {
     item(val) {
@@ -120,14 +131,10 @@ export default {
   },
   methods: {
     goBack() {
-      const currentIndex = this.artists.map((e) => e.id).indexOf(this.selected.id)
-      const previousIndex = (currentIndex === 0 ? this.artists.length : currentIndex) - 1
-      this.selected = this.artists[previousIndex]
+      this.selected = this.artists[this.previousIndex]
     },
     next() {
-      const currentIndex = this.artists.map((e) => e.id).indexOf(this.selected.id)
-      const nextIndex = currentIndex === this.artists.length - 1 ? 0 : currentIndex + 1
-      this.selected = this.artists[nextIndex]
+      this.selected = this.artists[this.nextIndex]
     },
   },
 }

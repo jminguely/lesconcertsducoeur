@@ -11,7 +11,7 @@
     <template v-if="data != null">
       <template v-if="data.artists != null">
         <div class="mt-12 grid md:grid-cols-3 md:gap-5">
-          <artist-cover v-for="artist in data.artists" :key="artist.id" :artist="artist" @click="openPopup(artist)"></artist-cover>
+          <artist-cover v-for="artist in data.artists" :key="artist.id" :artist="artist" @click.native="openPopup(artist)"></artist-cover>
         </div>
         <artist-popup :class="{ hidden: !popup }" :artists="data.artists" :item.sync="selected" :popup.sync="popup" />
       </template>
@@ -46,7 +46,6 @@ export default {
 
   methods: {
     openPopup(item) {
-      console.log('openPopup>')
       this.selected = item
       this.popup = true
     },
