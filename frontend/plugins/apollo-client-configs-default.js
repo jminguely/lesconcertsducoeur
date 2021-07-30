@@ -6,7 +6,7 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
 
 export default ({ req, app }) => {
   return {
-    httpEndpoint: (process.env.NODE_ENV !== 'production' ? 'http://localhost:1337' : 'https://api.lesconcertsducoeur.ch') + '/graphql',
+    httpEndpoint: (process.env.NODE_ENV !== 'production' ? 'http://localhost:1338' : 'https://api.lesconcertsducoeur.ch') + '/graphql',
     cache: new InMemoryCache({ fragmentMatcher }),
   }
 }
