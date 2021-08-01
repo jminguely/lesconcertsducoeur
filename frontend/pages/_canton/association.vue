@@ -1,11 +1,11 @@
 <template>
-  <div v-if="data != null">
+  <div v-if="association != null">
     <div class="flex flex-col justify-between lg:flex-row lg:space-x-8">
       <div>
         <Headline>
-          <template #headline>{{ data.associations[0].section_hero_title }}</template>
+          <template #headline>{{ association.section_hero_title }}</template>
           <template #content>
-            <div class="prose prose-xl" v-html="$md.render(data.associations[0].section_hero_description)"></div>
+            <div class="prose prose-xl" v-html="$md.render(association.section_hero_description)"></div>
           </template>
         </Headline>
       </div>
@@ -15,16 +15,19 @@
       </div>
     </div>
 
+    <!-- Section Comtié et Direction Artistique -->
     <Headline class="my-16">
       <template #headline>
         <span class="text-4xl lg:text-7xl"> Comité et direction artistique Valais </span>
       </template>
     </Headline>
 
-    <div class="grid grid-cols-2">
-      <div class="prose prose-xl" v-html="$md.render(data.associations[0].section_comite.col_left)"></div>
-      <div class="prose prose-xl" v-html="$md.render(data.associations[0].section_comite.col_right)"></div>
-    </div>
+    <template v-if="association.section_comite != null">
+      <div class="grid grid-cols-2">
+        <div class="prose prose-xl" v-html="$md.render(association.section_comite.col_left)"></div>
+        <div class="prose prose-xl" v-html="$md.render(association.section_comite.col_right)"></div>
+      </div>
+    </template>
 
     <Spacing />
 
@@ -97,15 +100,11 @@ export default {
         { img: require('~/assets/img/partners/M.svg'), link: 'https://google.com' },
       ],
       data: null,
+      association: null,
     }
   },
   async fetch() {
     await this.getAssociation(this.$route.params.canton)
-  },
-  computed: {
-    association() {
-      return this.data != null ? this.data.associations[0] : {}
-    },
   },
   methods: {
     getCantonID(canton) {
@@ -152,6 +151,7 @@ export default {
         .catch((e) => {
           if (process.env.dev) console.log(e)
         })
+      if (this.data != null) this.association = this.data.associations[0]
     },
   },
 }
