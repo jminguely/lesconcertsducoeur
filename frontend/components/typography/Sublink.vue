@@ -3,7 +3,7 @@
     <h2 class="text-3xl font-playFair">
       <slot name="title"></slot>
     </h2>
-    <h4 :class="`pt-2 pl-8 text-2xl text-${color}-500 w-${width}`">
+    <h4 :class="`pt-2 text-2xl text-${color}-500`">
       <slot name="text"></slot>
     </h4>
   </div>
@@ -15,10 +15,6 @@ export default {
     color: {
       type: String,
       default: 'red',
-    },
-    width: {
-      type: String,
-      default: '48',
     },
   },
 }

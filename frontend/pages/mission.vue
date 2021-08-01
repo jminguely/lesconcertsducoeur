@@ -1,8 +1,8 @@
 <template>
   <div class="mt-16 lg:mt-0">
     <nuxt-link
-      class="absolute flex items-center justify-center w-20 h-20 leading-5 text-center text-white transform bg-gray-700 rounded-full right-10 -rotate-25 top-32 lg:top-20 font-playFair"
-      to="support"
+      class="absolute flex items-center justify-center w-20 h-20 leading-5 text-center text-white transform bg-gray-700 rounded-full right-20 -rotate-25 top-32 lg:top-20 font-playFair"
+      :to="localePath('soutien')"
     >
       Nous soutenir!
     </nuxt-link>
@@ -17,16 +17,16 @@
       </template>
     </Headline>
 
-    <div class="flex flex-col mt-4 mb-4 lg:mb-24 lg:mt-12 lg:flex-row">
-      <Sublink class="my-4 lg:my-0" width="auto">
+    <div class="grid grid-cols-1 gap-5 mt-4 mb-4 lg:mb-24 lg:mt-12 lg:grid-cols-3">
+      <Sublink width="auto">
         <template #text>> En savoir plus sur l’organisation valaisanne</template>
       </Sublink>
 
-      <Sublink class="my-4 lg:my-0" color="green" width="auto">
+      <Sublink color="green" width="auto">
         <template #text>> En savoir plus sur l’organisation valaisanne</template>
       </Sublink>
 
-      <Sublink class="my-4 lg:my-0" color="yellow" width="auto">
+      <Sublink color="yellow" width="auto">
         <template #text>> En savoir plus sur l’organisation valaisanne</template>
       </Sublink>
     </div>
@@ -120,19 +120,19 @@ export default {
   data() {
     return {
       items: [
-        { description: 'de produire et réaliser des concerts de qualité notamment dans les EMS, hôpitaux et prisons', img: `https://placeimg.com/540/317/animals?nocache=${Math.random()}` },
+        { description: 'de produire et réaliser des concerts de qualité notamment dans les EMS, hôpitaux et prisons', img: '/img/mission_1.jpeg' },
         {
           description:
             'de sélectionner et soutenir de jeunes musiciens en leur donnant l’occasion de mettre leurs talents au service de  concerts à l’intention spécifique de personnes âgées dépendantes, de personnes hospitalisées, incarcérées ou défavorisées',
-          img: `https://placeimg.com/540/317/animals?nocache=${Math.random()}`,
+          img: '/img/mission_2.jpeg',
         },
         {
           description: 'd’ouvrir de nouveaux horizons à des artistes professionnels et d’ajouter une dimension sociale à leur métier.',
-          img: `https://placeimg.com/540/317/animals?nocache=${Math.random()}`,
+          img: '/img/mission_3.jpeg',
         },
         {
           description: 'De rassembler des musiciens professionnels ainsi que des personnalités politiques, artistiques et sociales.',
-          img: `https://placeimg.com/540/317/animals?nocache=${Math.random()}}`,
+          img: '/img/mission_4.jpeg',
         },
       ],
     }

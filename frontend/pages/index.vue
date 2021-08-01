@@ -233,28 +233,17 @@ export default {
         query getCalendar {
           calendars(limit: 3, locale: "fr-CH") {
             id
-            date_time
-            title
-            location
-            details
             canton {
               uid
             }
-            artist {
-              id
-              artists_list {
-                id
-                first_name
-                last_name
-                instrument
-                website_link
-              }
-            }
+            date_time
+            title
+            location
           }
         }
       `
 
-      this.calendars = await this.$apollo
+      this.data = await this.$apollo
         .query({ query })
         .then(({ data }) => {
           if (process.env.dev) console.log(data)
@@ -264,7 +253,7 @@ export default {
           if (process.env.dev) console.log(e)
         })
 
-      this.calendars = this.calendars.calendars
+      this.calendars = this.data.calendars
     },
 
     async getNewsArticles() {

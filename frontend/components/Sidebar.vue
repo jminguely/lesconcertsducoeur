@@ -41,7 +41,7 @@
 
       <nuxt-link
         class="relative flex-col items-center justify-center hidden w-20 h-20 leading-5 text-center text-white transform bg-gray-700 rounded-full lg:flex -rotate-25 left-24 top-20 font-playFair"
-        to="support"
+        :to="localePath('soutien')"
       >
         Nous soutenir!
       </nuxt-link>
