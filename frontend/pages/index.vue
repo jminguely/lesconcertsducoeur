@@ -89,6 +89,8 @@
       </InfoBlock>
     </div>
 
+    <spacing />
+
     <Headline class="mb-16">
       <template #headline> Prochains concerts </template>
     </Headline>
@@ -107,26 +109,26 @@
       <template #headline> Vous souhaitez organiser un concert … </template>
     </Headline>
 
-    <div class="flex flex-col justify-between mb-12 lg:flex-row">
-      <Sublink class="my-2 lg:my-0">
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+      <Sublink canton="vs">
         <template #title>… en Valais?</template>
         <template #text>
           <nuxt-link to="/vs/artists/">découvrez nos musicien·nes·s</nuxt-link>
         </template>
       </Sublink>
 
-      <Sublink class="my-2 lg:my-0" color="green">
+      <Sublink canton="vd">
         <template #title>… sur Vaud?</template>
         <template #text>> découvrez nos musicien·nes·s</template>
       </Sublink>
 
-      <Sublink class="my-2 lg:my-0" color="yellow">
+      <Sublink canton="ge">
         <template #title>… sur Genève?</template>
         <template #text>> découvrez nos musicien·nes·s</template>
       </Sublink>
     </div>
 
-    <HeadlineLink>
+    <HeadlineLink class="mt-10">
       <template #content>
         <a href="https://google.com">> Découvrez les différents types de concerts</a>
       </template>
@@ -177,6 +179,7 @@ import InfoBlock from '@/components/typography/InfoBlock.vue'
 import EventBlock from '@/components/typography/EventBlock.vue'
 import Sublink from '@/components/typography/Sublink.vue'
 import HeadlineLink from '@/components/typography/HeadlineLink.vue'
+import Spacing from '@/components/typography/Spacing.vue'
 
 import { gql } from 'graphql-tag'
 
@@ -193,6 +196,7 @@ export default {
     HeadlineLink,
     Partner,
     Sponsors,
+    Spacing,
   },
   data() {
     return {

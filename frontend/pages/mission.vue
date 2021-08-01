@@ -18,16 +18,16 @@
     </Headline>
 
     <div class="grid grid-cols-1 gap-5 mt-4 mb-4 lg:mb-24 lg:mt-12 lg:grid-cols-3">
-      <Sublink width="auto">
-        <template #text>> En savoir plus sur l’organisation valaisanne</template>
+      <Sublink canton="vs">
+        <template #text><nuxt-link :to="localePath({ name: 'canton-association', params: { canton: 'vs' } })">> En savoir plus sur l’organisation valaisanne</nuxt-link></template>
       </Sublink>
 
-      <Sublink color="green" width="auto">
-        <template #text>> En savoir plus sur l’organisation valaisanne</template>
+      <Sublink canton="vd">
+        <template #text><nuxt-link :to="localePath({ name: 'canton-association', params: { canton: 'vd' } })">> En savoir plus sur l’organisation valaisanne</nuxt-link></template>
       </Sublink>
 
-      <Sublink color="yellow" width="auto">
-        <template #text>> En savoir plus sur l’organisation valaisanne</template>
+      <Sublink canton="ge">
+        <template #text><nuxt-link :to="localePath({ name: 'canton-association', params: { canton: 'ge' } })">> En savoir plus sur l’organisation valaisanne</nuxt-link></template>
       </Sublink>
     </div>
 

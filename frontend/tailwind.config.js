@@ -34,6 +34,9 @@ module.exports = {
         25: '25deg',
       },
       colors: {
+        vs: '#DB303D',
+        vd: '#4D9A70',
+        ge: '#EE6F22',
         concert: {
           dark: '#393939',
         },

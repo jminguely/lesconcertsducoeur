@@ -11,7 +11,9 @@
       <SocialLink name="instagram" link="https://www.instagram.com" />
     </div>
 
-    <Headline class="lg:pt-20">
+    <spacing />
+
+    <Headline>
       <template #headline>
         <span class="text-4xl lg:text-7xl">Newletters</span>
       </template>
@@ -24,11 +26,14 @@
       <p>Newsletter No 3 | 04.2019</p>
     </div>
 
-    <Headline class="lg:pt-20">
+    <spacing />
+
+    <Headline>
       <template #headline>
         <span class="text-4xl lg:text-7xl">Presse</span>
       </template>
     </Headline>
+
     <p class="text-2xl font-playFair">Ils parlent de nous</p>
 
     <div class="flex flex-col justify-between pt-10 lg:flex-row">
@@ -77,6 +82,8 @@
       </div>
     </div>
 
+    <spacing />
+
     <Headline>
       <template #headline>Images</template>
     </Headline>
@@ -86,11 +93,13 @@
 <script>
 import Headline from '@/components/typography/Headline.vue'
 import SocialLink from '@/components/pages/SocialLink.vue'
+import Spacing from '@/components/typography/Spacing.vue'
 
 export default {
   components: {
     Headline,
     SocialLink,
+    Spacing,
   },
 }
 </script>
