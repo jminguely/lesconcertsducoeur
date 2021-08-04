@@ -172,6 +172,12 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
       </ul>`,
       },
     ],
+    testimonial: {
+      quote:
+        'Ihr Konzert hat unserem Pflegepersonal ermöglicht, die positive Wirkung der Musik auf alle unsere Bewohnerinnen und Bewohner zu erleben. Das Konzert hat Ruhe, Gelassenheit, grosse Freude und viel Vergnügen in unser Haus gebracht.',
+      name: 'Claude Crettol',
+      title: 'Leiter des Alters- und Pflegeheims Beaulieu et Jasmins',
+    },
   },
   canton: {
     VS: 'Wallis',

@@ -174,6 +174,12 @@ export default {
       </ul>`,
       },
     ],
+    testimonial: {
+      quote:
+        "Votre concert a permis au personnel soignant de constater l'effet bénéfique de la musique sur l'ensemble des résidents. Votre performance a apporté du calme, de la sérénité, beaucoup de joie et de plaisir.",
+      name: 'Claude Crettol',
+      title: 'Directeur des EMS Beaulieu et Jasmine',
+    },
   },
   canton: {
     VS: 'Valais',

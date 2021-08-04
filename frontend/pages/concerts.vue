@@ -38,13 +38,16 @@
 
       <Testimonial class="max-w-xl">
         <template #quote>
-          Votre concert a permis au personnel soignant de constater l’effet bénéfique de la musique sur l’ensemble des résidents. Votre performance a apporté du calme, de la sérénité, beaucoup de joie
-          et de plaisir.
+          {{ $t('concerts').testimonial.quote }}
         </template>
 
-        <template #name>Claude Crettol</template>
+        <template #name>
+          {{ $t('concerts').testimonial.name }}
+        </template>
 
-        <template #title>Directeur des EMS Beaulieu et Jasmins</template>
+        <template #title>
+          {{ $t('concerts').testimonial.title }}
+        </template>
       </Testimonial>
     </div>
   </div>
