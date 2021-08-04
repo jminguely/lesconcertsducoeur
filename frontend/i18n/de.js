@@ -42,8 +42,8 @@ export default {
   mission: {
     hero: {
       title: 'Unsere Mission',
-      subtitle:
-        '<p><i><i>Les Concerts du Cœur</i></i> bietet Menschen mit erschwertem Zugang zu traditionellen Konzerten qualitativ hochwertige musikalische Erlebnisse.</p><br><p>Dieses Bestreben wird mittlerweile in drei Schweizer Kantonen umgesetzt, wobei die jeweiligen Vereine im Kanton Wallis, Waadt und Genf die gleichen Ziele und Werte vertreten.</p>',
+      subtitle: `<p><i>Les Concerts du Cœur</i>bietet Menschen mit erschwertem Zugang zu traditionellen Konzerten qualitativ hochwertige musikalische Erlebnisse.</p><br>
+        <p>Dieses Bestreben wird mittlerweile in drei Schweizer Kantonen umgesetzt, wobei die jeweiligen Vereine im Kanton Wallis, Waadt und Genf die gleichen Ziele und Werte vertreten.</p>`,
     },
     enSavoirPlus: {
       vs: '> Erfahren Sie mehr über den Walliser Verein',
@@ -83,6 +83,95 @@ export default {
         },
       ],
     },
+  },
+  concerts: {
+    hero: {
+      title: 'Unsere Konzerte',
+      subtitle: `<i>Les Concerts du Cœur</i> passt seine Konzerte in enger Zusammenarbeit mit Ihrer Institution an den jeweiligen Standort, das Publikum sowie die geltenden Hygienemassnahmen an.<br><br>
+        So wurden beispielsweise während der Pandemie die Konzerte nicht abgesagt, sondern jeweils Alternativen für einen kontinuierlichen Musikaustausch gesucht.`,
+      text: `<p class="pb-4">Mit unseren Konzerten bieten wir Ihnen ein breites Angebot an qualitativ hochwertigen Musikprogrammen:<br>
+      Unsere KünstlerInnen sind professionell ausgebildete MusikerInnen mit einem großen Anpassungsvermögen an die jeweilige Situation sowie dem Bedürfnis, sich ganz in den Dienst des Publikums zu stellen.</p>
+<p class="pb-4">Unsere Konzerte können zu jeder Tageszeit während der Woche oder am Wochenende stattfinden.</p>
+<p>Zögern Sie nicht, uns für nähere Informationen zu kontaktieren.</p>
+`,
+    },
+    concertTypes: [
+      {
+        title: 'Traditionelle Konzerte',
+        content: `Dieses Format bietet ein Konzert im traditionellen Sinne: Die Aufenthaltsräume verwandeln sich in einen Konzertsaal für die BewohnerInnen, PatientInnen, Personal und Angehörige: 
+      <ul class="pt-2">
+        <li>— Das Konzert dauert zwischen 45 und 60 Minuten;</li>
+        <li>— Die KünstlerInnen führen mit kurzen Ansprachen durch das Konzert;</li>
+        <li>— Nach dem Konzert bleiben die MusikerInnen nach Wunsch vor Ort, um sich mit dem Publikum auszutauschen.</li>
+      </ul>`,
+      },
+      {
+        title: 'Konzerte im Freien',
+        content: `Je nach Wetterbedingungen und Hygienemassnahmen sind Konzerte im Freien – in den Gärten, auf den Terrassen oder sogar auf den Parkplätzen Ihrer Institution – möglich: 
+      <ul class="pt-2">
+        <li>— Das Konzert dauert zwischen 45 und 60 Minuten;</li>
+        <li>— Das Publikum kann von den Balkonen oder aus der Ferne zuhören;</li>
+        <li>— Die KünstlerInnen führen mit kurzen Ansprachen durch das Konzert;</li>
+        <li>— Nach dem Konzert bleiben die MusikerInnen vor Ort, um sich mit dem Publikum auszutauschen;</li>
+        <li>— Diese Konzerte werden je nach Akustik mit Lautsprechern unterstützt, die vom Verein zur Verfügung gestellt werden.</li>
+      </ul>`,
+      },
+      {
+        title: 'Wanderkonzerte',
+        content: `In Krankenhäusern und Kliniken, aber auch im Altersheim, laden die MusikerInnen zu kurzen Ständchen auf den jeweiligen Abteilungen ein:
+      <ul class="pt-2">
+        <li>— Jedes Konzert dauert maximal 15 Minuten;</li>
+        <li>— Die Musik ist für PatientInnen, ihre Angehörigen und das Personal bestimmt;</li>
+        <li>— Wer möchte, hat die Möglichkeit, den MusikerInnen durch die Institution zu folgen;</li>
+        <li>— Insbesondere bei diesem Format passen die MusikerInnen ihr Repertoire und Moderation je nach Situation und Stimmung spontan an.</li>
+      </ul>`,
+      },
+      {
+        title: 'Konzerte in den Zimmern',
+        content: `Den PatientInnen und BewohnerInnen wird die Möglichkeit geboten, private Minikonzerte in ihren Zimmern zu genissen: 
+      <ul class="pt-2">
+        <li>— Die Konzerte dauern ungefähr 15 Minuten;</li>
+        <li>— Die MusikerInnen spielen im Zimmer des/der PatientIn, der/die aus dem jeweiligen Repertoire einige Werke auswählen darf;</li>
+        <li>— Die KünstlerInnen stehen im direkten Dialog mit ihrem Publikum.</li>
+      </ul>`,
+      },
+      {
+        title: 'Virtuelle Konzerte',
+        content: `Live-Konzerte werden direkt in Ihre Institutionen übertragen: Die KünstlerInnen musizieren von zu Hause oder von einem Musikstudio aus und treten in den direkten, virtuellen Dialog mit den BewohnerInnen und PatientInnen. 
+Sofern es die technische Ausstattung der Institution zulässt, ist es auch möglich, das Konzert in der gesamten Institution, resp. an verschiedenen Abteilungen zu übertragen`,
+      },
+      {
+        title: 'Virtuelle Treffen mit Künstlern',
+        content: `Das persönliche, virtuelle Treffen wird durch ein iPad der Institution ermöglicht, das mit Hilfe Ihres Personals von Zimmer zu Zimmer zirkuliert: 
+      <ul class="pt-2">
+        <li>— Die BewohnerInnen treten in den direkten Dialog mit den KünstlerInnen, können Fragen stellen und aus dem jeweiligen Repertoire einige Werke auswählen;</li>
+        <li>— Diese Form ist eine ideale Lösung für Institutionen, in denen die BewohnerInnen ihre Zimmer nicht verlassen können.</li>
+      </ul>`,
+      },
+      {
+        title: 'Repertoire',
+        content: `Die vorgeschlagenen Formate und Programme erfüllen folgende Kriterien: 
+      <ul class="pt-2">
+        <li>— Aufführung aus einem vorab besprochenem Repertoire, um individuell auf die Bedürfnisse Ihrer Institution einzugehen;</li>
+        <li>— Wiederbelebung des regionalen Musikschatzes durch die jeweilige Einbindung von einigen Volksliedern in das Programm;</li>
+        <li>— Einbindung des Publikums bei bekannten Werken wie beispielsweise Volksliedern;</li>
+        <li>— Entdeckung neuen Repertoires, welches die Neugier des Publikums weckt.</li>
+      </ul>`,
+      },
+      {
+        title: 'Organisation',
+        content: `<i>Les Concerts du Cœur</i> bietet für jede gebuchte Veranstaltung folgende Dienstleistungen:   
+      <ul class="pt-2">
+        <li>— Organisation der Konzerte laut Wunschdatum-/Uhrzeit der Institution;</li>
+        <li>— Koordination der KünstlerInnen;</li>
+        <li>— Bereitstellen von Flyern und Plakaten zum Ausdruck für das jeweilige Konzert;</li>
+        <li>— Bereitstellen von Material oder Instrumenten wie z. B. ein E-Piano;</li>
+        <li>— Anträge für Unterstützungsbeiträge, um die Kosten des Konzertes zu decken sowie den KünstlerInnen eine angemessene Gage zu zahlen;</li>
+        <li>— Begleitung der MusikerInnen vor Ort durch ein Vereins-Mitglied;</li>
+        <li>— Ausfallentschädigung für die KünstlerInnen im Falle einer Absage wegen der Hygienemassnahmen.</li>
+      </ul>`,
+      },
+    ],
   },
   canton: {
     VS: 'Wallis',

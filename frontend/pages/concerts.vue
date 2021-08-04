@@ -1,7 +1,7 @@
 <template>
   <div>
     <Headline>
-      <template #headline>Nos concerts</template>
+      <template #headline>{{ $t('concerts').hero.title }}</template>
       <template #content><p v-html="$t('concerts').hero.subtitle"></p></template>
     </Headline>
 
