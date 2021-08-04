@@ -1,11 +1,7 @@
 <template>
   <div>
     <Headline class="mb-10 lg:mb-32">
-      <template #headline> La musique adoucit le temps qui passe </template>
-      <template #content>
-        <i>Les Concerts du Cœur</i> proposent des moments de musique aux personnes qui ont difficilement accès aux salles de concerts traditionnelles, qu’il s’agisse de personnes âgées, hospitalisées,
-        incarcérées, en situation de handicap ou de précarité.
-      </template>
+      <template #content> <i>Les Concerts du Cœur</i> {{ $t('home').hero.subtitle }} </template>
     </Headline>
 
     <div class="grid grid-cols-3 gap-5 lg:mb-32">
@@ -38,27 +34,15 @@
     </div>
 
     <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
-      <Testimonial>
+      <testimonial v-for="item in $t('home').testimonials" :key="item.name">
         <template #quote>
-          Nous sommes persuadés que les performances des artistes lyriques au sein de nos établissements sauront contribuer à permettre à bon nombre de nos patients de faire mieux face de leur maladie
-          notamment en rendant leur séjour hospitalier plus humain. L'Hôpital du Valais soutient donc avec enthousiasme cette magnifique initiative.
+          {{ item.quote }}
         </template>
 
-        <template #name> Eric Bonvin </template>
+        <template #name> {{ item.name }}</template>
 
-        <template #title> Directeur des Hôpitaux du Valais </template>
-      </Testimonial>
-
-      <Testimonial>
-        <template #quote>
-          C'est donc avec conviction que j'apporte mon appui à l'Association valaisanne, Les Concerts du Coeur, fondée en janvier pour réaliser ce projet. Je souhaite que nous soyons nombreux à la
-          soutenir et à donner ainsi une chance aux personnes âgées, hospitalisées ou dans l'isolement de vivre des moments de plaisirs musicaux de qualité.
-        </template>
-
-        <template #name> Pascal Couchepin </template>
-
-        <template #title> Ancien Conseiller fédéral </template>
-      </Testimonial>
+        <template #title> {{ item.title }}</template>
+      </testimonial>
     </div>
 
     <div class="my-5 lg:my-28">
@@ -92,7 +76,7 @@
     <spacing />
 
     <Headline class="mb-16">
-      <template #headline> Prochains concerts </template>
+      <template #headline> {{ $t('home').nextConcerts }} </template>
     </Headline>
 
     <div class="flex flex-col items-start justify-between space-x-0 space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8">
@@ -142,7 +126,7 @@
 
     <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
       <Headline>
-        <template #headline>Soutenez-nous …</template>
+        <template #headline>{{ $t('home').supportUs }}</template>
         <template #content>
           <p class="my-8 text-2xl">… en faisant un don</p>
           <p class="my-8 text-2xl">… en devenant bénévole</p>
@@ -157,7 +141,7 @@
     <Divider class="my-16" />
 
     <Partner>
-      <template #title> En partenariat avec </template>
+      <template #title> {{ $t('home').partners.title }}</template>
       <template #image>
         <img src="~/assets/img/partners/LMN.svg" />
       </template>
@@ -166,7 +150,7 @@
     <spacing />
 
     <Sponsors :sponsors="sponsors">
-      <template #title> Soutiens </template>
+      <template #title>{{ $t('home').sponsors.title }}</template>
     </Sponsors>
   </div>
 </template>
@@ -232,15 +216,16 @@ export default {
       else return 'black'
     },
     getCanton(canton) {
-      return canton == null ? 'ALL' : canton.uid.toUpperCase()
+      return canton == null ? 'ALL' : canton.slug.toUpperCase()
     },
     async getAgenda() {
       const query = gql`
-        query getCalendar {
-          calendars(limit: 3, locale: "fr-CH") {
+        query getCalendar($locale: String) {
+          calendars(limit: 3, locale: $locale) {
             id
             canton {
               uid
+              slug
             }
             date_time
             title
@@ -249,8 +234,12 @@ export default {
         }
       `
 
+      const variables = {
+        locale: this.$i18n.locale + '-CH',
+      }
+
       this.data = await this.$apollo
-        .query({ query })
+        .query({ query, variables })
         .then(({ data }) => {
           if (process.env.dev) console.log(data)
           return data
