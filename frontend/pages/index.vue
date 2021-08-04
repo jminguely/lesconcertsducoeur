@@ -202,15 +202,15 @@ export default {
   },
   data() {
     return {
-      images: ['https://placeimg.com/1920/1080/animals', 'https://placeimg.com/1920/1080/people', 'https://placeimg.com/1920/1080/architecture'],
+      images: ['/img/mission_1.jpeg', '/img/mission_2.jpeg', '/img/mission_3.jpeg', '/img/mission_4.jpeg'],
       sponsors: [
-        { img: require('~/assets/img/partners/Berthy.svg'), link: 'https://google.com' },
-        { img: require('~/assets/img/partners/BS.svg'), link: 'https://google.com' },
-        { img: require('~/assets/img/partners/Hemu.svg'), link: 'https://google.com' },
-        { img: require('~/assets/img/partners/LR.svg'), link: 'https://google.com' },
-        { img: require('~/assets/img/partners/M.svg'), link: 'https://google.com' },
-        { img: require('~/assets/img/partners/prohelvetia.svg'), link: 'https://google.com' },
-        { img: require('~/assets/img/partners/xbox.svg'), link: 'https://google.com' },
+        { img: require('~/assets/img/partners/Berthy.svg'), link: '' },
+        { img: require('~/assets/img/partners/BS.svg'), link: '' },
+        { img: require('~/assets/img/partners/Hemu.svg'), link: '' },
+        { img: require('~/assets/img/partners/LR.svg'), link: '' },
+        { img: require('~/assets/img/partners/M.svg'), link: '' },
+        { img: require('~/assets/img/partners/prohelvetia.svg'), link: '' },
+        { img: require('~/assets/img/partners/xbox.svg'), link: '' },
       ],
       content: null,
       calendars: null,

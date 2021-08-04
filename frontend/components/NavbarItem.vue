@@ -1,9 +1,10 @@
 <template>
   <li :class="classObj">
     <div v-clickaway="closeDropdown" class="flex items-center text-xl lg:text-base" @click="toggleDropdown()">
+      <!-- :class="{ 'rotate-45': dropdown, colorCanton: true }" -->
       <svg
         id="Capa_1"
-        :class="{ 'rotate-45': dropdown }"
+        :class="`text-${canton} ${dropdown ? 'rotate-45' : ''}`"
         class="fill-current text-vs w-5 h-5 duration-200 ease-in-out transform"
         ersion="1.1"
         xmlns="http://www.w3.org/2000/svg"
@@ -71,16 +72,19 @@ export default {
     }
   },
   computed: {
+    colorCanton() {
+      return 'text-' + this.canton
+    },
     classObj() {
       const obj = {}
       const statements = []
 
-      statements[0] = `text-${this.color}-600 bg-white duration-300 ease-in-out flex flex-col  border-b-2  w-full cursor-pointer select-none`
+      statements[0] = `text-${this.canton} bg-white duration-300 ease-in-out flex flex-col  border-b-2  w-full cursor-pointer select-none`
 
       if (this.black) {
         statements[0] += ' border-black'
       } else {
-        statements[0] += ` border-${this.color}-600`
+        statements[0] += ` border-${this.canton}`
       }
 
       statements[1] = 'h-10'
