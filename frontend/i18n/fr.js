@@ -3,6 +3,12 @@ export default {
     association: "L'association",
     artists: 'Nos artistes',
     auditions: 'Auditions',
+    home: 'Accueil',
+    mission: 'Notre mission',
+    concerts: 'Les concerts',
+    agenda: 'Agenda',
+    medias: 'Médias',
+    contact: 'Contact',
   },
   home: {
     hero: {
@@ -26,6 +32,7 @@ export default {
     ],
     nextConcerts: 'Prochains concerts',
     supportUs: 'Soutenez-nous …',
+    nousSoutenir: 'Nous soutenir',
     partners: {
       title: 'En partenariat avec',
     },

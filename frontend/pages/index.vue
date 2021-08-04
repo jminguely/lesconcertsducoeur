@@ -50,11 +50,10 @@
         class="mx-auto"
         :options="{
           rewind: true,
-          width: 1164,
           perPage: 1,
           gap: '1rem',
           type: 'fade',
-          arrows: false,
+          arrows: true,
         }"
         :images="images"
       />

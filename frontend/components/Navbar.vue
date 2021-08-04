@@ -2,7 +2,7 @@
   <div class="fixed top-0 z-40 hidden w-full h-16 max-w-full bg-white left-0 lg:block">
     <div class="pt-5 lg:ml-96 lg:pr-20">
       <ul class="grid grid-cols-3 gap-5 text-2xl">
-        <navbar-item v-for="(canton, i) in ['vs', 'vd', 'ge']" :key="i" :canton="canton">
+        <navbar-item v-for="(canton, i) in ['vs', 'vd', 'ge']" :key="i + canton" :canton="canton">
           <template #content>{{ $t('canton')[canton] }}</template>
           <template #items>
             <ul class="flex flex-col overflow-hidden">
