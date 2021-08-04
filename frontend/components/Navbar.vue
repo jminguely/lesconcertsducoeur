@@ -2,7 +2,7 @@
   <div class="fixed top-0 z-40 hidden w-full h-16 max-w-full bg-white left-0 lg:block">
     <div class="pt-5 lg:ml-96 lg:pr-20">
       <ul class="grid grid-cols-3 gap-5 text-2xl">
-        <NavbarItem color="red">
+        <NavbarItem canton="vs">
           <template #content>{{ $t('canton').VS }}</template>
           <template #items>
             <ul class="flex flex-col overflow-hidden">
@@ -12,7 +12,7 @@
             </ul>
           </template>
         </NavbarItem>
-        <NavbarItem color="green">
+        <NavbarItem canton="vd">
           <template #content>{{ $t('canton').VD }}</template>
           <template #items>
             <ul class="flex flex-col overflow-hidden">
@@ -22,8 +22,8 @@
             </ul>
           </template>
         </NavbarItem>
-        <NavbarItem color="yellow">
-          <template #content>{{ $t('canton.GE') }}</template>
+        <NavbarItem canton="ge">
+          <template #content>{{ $t('canton').GE }}</template>
           <template #items>
             <ul class="flex flex-col overflow-hidden">
               <nuxt-link :to="localePath({ name: 'canton-association', params: { canton: 'ge' } })">L'association</nuxt-link>

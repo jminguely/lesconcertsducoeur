@@ -3,7 +3,7 @@
     <div class="mb-10 text-3xl font-playFair">
       <slot name="title"></slot>
     </div>
-    <div class="grid grid-cols-3 gap-5">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-10">
       <a v-for="(item, i) in sponsors" :key="i" target="_blank" :href="item.link">
         <img class="w-full h-full object-contain" :src="item.img" />
       </a>

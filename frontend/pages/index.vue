@@ -21,7 +21,7 @@
       <nuxt-link to="/vd/association">
         <Illustration color="green">
           <template #image>
-            <img src="~/assets/img/illustrations/illustration2.png" />
+            <img src="~/assets/img/illustrations/illustration2.svg" />
           </template>
           <template #label>{{ $t('canton').VD }}</template>
         </Illustration>
@@ -37,8 +37,8 @@
       </nuxt-link>
     </div>
 
-    <div class="flex flex-col justify-between lg:flex-row">
-      <Testimonial class="mb-10 lg:mr-20">
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+      <Testimonial>
         <template #quote>
           Nous sommes persuadés que les performances des artistes lyriques au sein de nos établissements sauront contribuer à permettre à bon nombre de nos patients de faire mieux face de leur maladie
           notamment en rendant leur séjour hospitalier plus humain. L'Hôpital du Valais soutient donc avec enthousiasme cette magnifique initiative.
@@ -76,7 +76,7 @@
       />
     </div>
 
-    <Headline class="mb-16">
+    <!-- <Headline class="mb-16">
       <template #headline> Actualités </template>
     </Headline>
 
@@ -87,7 +87,7 @@
         <template #title>{{ item.title }}</template>
         <template #content>{{ item.content }}</template>
       </InfoBlock>
-    </div>
+    </div> -->
 
     <spacing />
 
@@ -105,7 +105,7 @@
 
     <Divider class="my-16" />
 
-    <Headline class="mb-8">
+    <Headline class="mb-12">
       <template #headline> Vous souhaitez organiser un concert … </template>
     </Headline>
 
@@ -113,40 +113,42 @@
       <Sublink canton="vs">
         <template #title>… en Valais?</template>
         <template #text>
-          <nuxt-link to="/vs/artists/">découvrez nos musicien·nes·s</nuxt-link>
+          <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'vs' } })">> découvrez nos musicien·nes·s</nuxt-link>
         </template>
       </Sublink>
 
       <Sublink canton="vd">
         <template #title>… sur Vaud?</template>
-        <template #text>> découvrez nos musicien·nes·s</template>
+        <template #text>
+          <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'vd' } })"> > découvrez nos musicien·nes·s </nuxt-link>
+        </template>
       </Sublink>
 
       <Sublink canton="ge">
         <template #title>… sur Genève?</template>
-        <template #text>> découvrez nos musicien·nes·s</template>
+        <template #text>
+          <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'ge' } })"> > découvrez nos musicien·nes·s </nuxt-link>
+        </template>
       </Sublink>
     </div>
 
-    <HeadlineLink class="mt-10">
+    <HeadlineLink class="mt-12">
       <template #content>
-        <a href="https://google.com">> Découvrez les différents types de concerts</a>
+        <nuxt-link :to="localePath('concerts')">> Découvrez les différents types de concerts</nuxt-link>
       </template>
     </HeadlineLink>
 
     <Divider class="my-16" />
 
-    <div class="flex flex-col justify-between lg:flex-row">
-      <div class="w-full">
-        <Headline>
-          <template #headline>Soutenez-nous …</template>
-          <template #content>
-            <p class="my-8 text-2xl">… en faisant un don</p>
-            <p class="my-8 text-2xl">… en devenant bénévole</p>
-            <p class="my-8 text-2xl">… en devenant membre</p>
-          </template>
-        </Headline>
-      </div>
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+      <Headline>
+        <template #headline>Soutenez-nous …</template>
+        <template #content>
+          <p class="my-8 text-2xl">… en faisant un don</p>
+          <p class="my-8 text-2xl">… en devenant bénévole</p>
+          <p class="my-8 text-2xl">… en devenant membre</p>
+        </template>
+      </Headline>
       <div class="w-full">
         <img class="mx-auto" src="~/assets/img/illustrations/illustration4.svg" />
       </div>
@@ -154,12 +156,14 @@
 
     <Divider class="my-16" />
 
-    <Partner class="mb-32">
+    <Partner>
       <template #title> En partenariat avec </template>
       <template #image>
         <img src="~/assets/img/partners/LMN.svg" />
       </template>
     </Partner>
+
+    <spacing />
 
     <Sponsors :sponsors="sponsors">
       <template #title> Soutiens </template>
@@ -175,7 +179,6 @@ import Partner from '@/components/pages/Partner.vue'
 import Sponsors from '@/components/pages/Sponsors.vue'
 import Headline from '@/components/typography/Headline.vue'
 import Testimonial from '@/components/typography/Testimonial.vue'
-import InfoBlock from '@/components/typography/InfoBlock.vue'
 import EventBlock from '@/components/typography/EventBlock.vue'
 import Sublink from '@/components/typography/Sublink.vue'
 import HeadlineLink from '@/components/typography/HeadlineLink.vue'
@@ -189,7 +192,6 @@ export default {
     Illustration,
     Testimonial,
     Carousel,
-    InfoBlock,
     EventBlock,
     Divider,
     Sublink,
