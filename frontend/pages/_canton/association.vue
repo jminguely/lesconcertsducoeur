@@ -18,12 +18,12 @@
     <!-- Section Comtié et Direction Artistique -->
     <Headline class="my-16">
       <template #headline>
-        <span class="text-4xl lg:text-7xl"> Comité et direction artistique Valais </span>
+        <span class="text-4xl lg:text-7xl">{{ $t('association').comite.title }}</span>
       </template>
     </Headline>
 
     <template v-if="association.section_comite != null">
-      <div class="grid grid-cols-2">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div class="prose prose-xl" v-html="$md.render(association.section_comite.col_left)"></div>
         <div class="prose prose-xl" v-html="$md.render(association.section_comite.col_right)"></div>
       </div>
@@ -32,25 +32,25 @@
     <Spacing />
 
     <Headline class="mb-8">
-      <template #headline> Comment soutenir le Valais? </template>
+      <template #headline>{{ $t('association').soutien }}</template>
     </Headline>
 
     <DonationBlock class="mb-16">
-      <template #title>Devenez bénévole</template>
+      <template #title>{{ $t('association').benevole }}</template>
       <template #details>
         <div v-if="association.section_benevole != null" :class="`prose prose-xl text-${canton}`" v-html="$md.render(association.section_benevole)"></div>
       </template>
     </DonationBlock>
 
     <DonationBlock class="mb-16" circle :canton="canton">
-      <template #title>Faites un don</template>
+      <template #title>{{ $t('association').don }}</template>
       <template #details>
         <div v-if="association.section_don != null" :class="`prose prose-xl text-${canton}`" v-html="$md.render(association.section_don)"></div>
       </template>
     </DonationBlock>
 
     <DonationBlock>
-      <template #title>Devenez membre</template>
+      <template #title>{{ $t('association').membre }}</template>
       <template #details>
         <div v-if="association.section_membre != null" :class="`prose prose-xl text-${canton}`" v-html="$md.render(association.section_membre)"></div>
       </template>
@@ -59,10 +59,10 @@
     <Spacing />
 
     <Headline class="mb-12">
-      <template #headline>Nos partenaires et soutiens</template>
+      <template #headline>{{ $t('association').partners }} </template>
     </Headline>
 
-    <h2 class="mb-10 text-3xl font-playFair">En partenariat avec</h2>
+    <h2 class="mb-10 text-3xl font-playFair">{{ $t('home').partners.title }}</h2>
     <div class="grid grid-cols-3 gap-5">
       <img class="object-contain w-full h-full" src="~/assets/img/partners/LMN.svg" />
     </div>
@@ -70,7 +70,7 @@
     <Spacing />
 
     <Sponsors :sponsors="sponsors">
-      <template #title> Soutiens </template>
+      <template #title> {{ $t('home').sponsors.title }}</template>
     </Sponsors>
   </div>
 </template>

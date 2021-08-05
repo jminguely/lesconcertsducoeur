@@ -207,6 +207,16 @@ export default {
       'Nous nous réjouissons de vous rencontrer et de vous écouter !',
     ],
   },
+  association: {
+    comite: {
+      title: 'Comité et direction artistique',
+    },
+    soutien: 'Comment nous soutenir ?',
+    benevole: 'Devenez bénévole',
+    don: 'Faites un don',
+    membre: 'Devenez membre',
+    partners: 'Nos partenaires et soutiens',
+  },
   canton: {
     VS: 'Valais',
     VD: 'Vaud',

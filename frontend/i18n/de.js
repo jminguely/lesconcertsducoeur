@@ -204,6 +204,16 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
       'Wir freuen uns darauf, Sie kennenzulernen und von Ihnen zu hören!',
     ],
   },
+  association: {
+    comite: {
+      title: 'Vorstand und künstlerische Leitung',
+    },
+    soutien: 'Wie kann man uns unterstützen?',
+    benevole: 'Freiwillige/r werden',
+    don: 'Spende machen',
+    membre: 'Mitglied werden',
+    partners: 'Unsere Partner und Unterstützer',
+  },
   canton: {
     VS: 'Wallis',
     VD: 'Waadt',
