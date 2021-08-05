@@ -1,16 +1,26 @@
 <template>
-  <div>
-    <!-- {{ content }} -->
+  <div class="text-xl">
     <Headline>
-      <template #headline>
-        <!-- {{ content.auditions[0].hero.headline }} -->
-        Auditions
-      </template>
-      <template #content>
-        <!-- {{ content.auditions[0].hero.subhead }} -->
-        Souhaitez-vous devenir musicien·ne des Concerts du Cœur Genevois ?
-      </template>
+      <template #headline>{{ $t('auditions').hero.title }}</template>
+      <template #content> {{ $t('auditions').hero.subtitle[canton] }}</template>
     </Headline>
+
+    <p class="text-xl">
+      {{ $t('auditions').hero.text }}
+    </p>
+
+    <br />
+
+    <p class="text-xl">
+      {{ $t('auditions').hero.text_1 }}
+    </p>
+
+    <div v-html="$t('auditions').requirements[0]"></div>
+
+    <br />
+
+    <p>Tous les styles de musique sont bienvenus (classique / jazz / folklorique / musique du monde etc.).</p>
+    <p :class="`mt-8 text-2xl lg:text-3xl text-${canton} font-playFair`">Nous nous réjouissons de vous rencontrer et de vous écouter !</p>
 
     <!-- <div v-for="el in content.auditions[0].content" :key="el.__typename + el.id">
       <template v-if="el.__typename === 'ComponentContentText'">
@@ -18,7 +28,7 @@
       </template>
     </div> -->
 
-    <div class="flex flex-col justify-start my-20 lg:flex-row">
+    <!-- <div class="flex flex-col justify-start my-20 lg:flex-row">
       <ExtendedBlock class="mb-10 lg:mr-28 lg:mb-0">
         <template #datetime> Audition dimanche 11 avril 2021 </template>
         <template #content>
@@ -65,10 +75,9 @@
           </div>
         </template>
       </ExtendedBlock>
-    </div>
-    <Spacing />
+    </div> -->
 
-    <p class="text-3xl text-yellow-500 font-playFair">Nous nous réjouissons de vous rencontrer et de vous écouter !</p>
+    <Spacing />
   </div>
 </template>
 
@@ -87,11 +96,13 @@ export default {
   data() {
     return {
       content: null,
+      canton: null,
     }
   },
 
-  async fetch() {
-    await this.getContent()
+  fetch() {
+    this.canton = this.$route.params.canton
+    // await this.getContent()
   },
 
   methods: {

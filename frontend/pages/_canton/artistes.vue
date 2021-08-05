@@ -4,7 +4,7 @@
       <template #headline>Nos Artistes</template>
     </Headline>
 
-    <nuxt-link class="absolute flex items-center justify-center text-xl leading-5 text-center text-white transform bg-green-700 rounded-full top-24 w-28 h-28 right-10 font-playFair" to="auditions">
+    <nuxt-link :class="`absolute flex items-center justify-center text-xl leading-5 text-center text-white transform bg-${canton} rounded-full top-24 w-28 h-28 right-10 font-playFair`" to="auditions">
       Auditions
     </nuxt-link>
 
@@ -37,10 +37,12 @@ export default {
       data: null,
       selected: {},
       popup: false,
+      canton: null,
     }
   },
 
   async fetch() {
+    this.canton = this.$route.params.canton
     await this.getArtists(this.$route.params.canton)
   },
 
