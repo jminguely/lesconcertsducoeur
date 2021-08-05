@@ -10,8 +10,8 @@
         </Headline>
       </div>
 
-      <div>
-        <img src="~/assets/img/illustrations/illustration1.svg" />
+      <div v-if="association.section_hero_img != null" class="max-w-sm">
+        <img :src="'https://api.lesconcertsducoeur.ch' + association.section_hero_img.url" />
       </div>
     </div>
 
@@ -35,25 +35,24 @@
       <template #headline> Comment soutenir le Valais? </template>
     </Headline>
 
-    <DonationBlock class="mb-16" :circle="false">
+    <DonationBlock class="mb-16">
       <template #title>Devenez bénévole</template>
       <template #details>
-        <div v-if="association.section_benevole != null" class="prose prose-xl text-red-500" v-html="$md.render(association.section_benevole)"></div>
+        <div v-if="association.section_benevole != null" :class="`prose prose-xl text-${canton}`" v-html="$md.render(association.section_benevole)"></div>
       </template>
     </DonationBlock>
 
-    <DonationBlock class="mb-16">
+    <DonationBlock class="mb-16" circle :canton="canton">
       <template #title>Faites un don</template>
       <template #details>
-        <div v-if="association.section_don != null" class="prose prose-xl text-red-500" v-html="$md.render(association.section_don)"></div>
+        <div v-if="association.section_don != null" :class="`prose prose-xl text-${canton}`" v-html="$md.render(association.section_don)"></div>
       </template>
     </DonationBlock>
 
-    <DonationBlock :circle="false">
+    <DonationBlock>
       <template #title>Devenez membre</template>
       <template #details>
-        > Bulletin d'adhésion pour les membres<br />
-        > Document officiel des statuts de l’association
+        <div v-if="association.section_membre != null" :class="`prose prose-xl text-${canton}`" v-html="$md.render(association.section_membre)"></div>
       </template>
     </DonationBlock>
 
@@ -101,29 +100,30 @@ export default {
       ],
       data: null,
       association: null,
+      canton: null,
     }
   },
   async fetch() {
+    this.canton = this.$route.params.canton
     await this.getAssociation(this.$route.params.canton)
   },
   methods: {
     getCantonID(canton) {
-      if (canton === 'ALL') return 1
-      if (canton === 'VS') return 2
-      if (canton === 'VD') return 3
-      if (canton === 'GE') return 4
+      if (canton === 'all') return 1
+      if (canton === 'vs') return 2
+      if (canton === 'vd') return 3
+      if (canton === 'ge') return 4
     },
     async getAssociation(canton) {
       const query = gql`
-        query getAssociation($locale: String) {
-          associations(locale: $locale, where: { canton: 2 }) {
+        query getAssociation($locale: String, $canton: ID) {
+          associations(locale: $locale, where: { canton: $canton }) {
             id
             section_comite {
               col_right
               col_left
             }
             section_hero_img {
-              id
               url
             }
             section_hero_title
@@ -138,7 +138,7 @@ export default {
       const locale = this.$i18n.locale + '-CH'
 
       const variables = {
-        // canton: this.getCantonID(canton.toUpperCase()),
+        canton: this.getCantonID(canton),
         locale,
       }
 

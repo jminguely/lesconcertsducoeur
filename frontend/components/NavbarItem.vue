@@ -52,17 +52,9 @@
 <script>
 export default {
   props: {
-    color: {
-      type: String,
-      default: 'red',
-    },
     canton: {
       type: String,
       default: '',
-    },
-    black: {
-      type: Boolean,
-      default: false,
     },
   },
   data() {
@@ -75,13 +67,7 @@ export default {
       const obj = {}
       const statements = []
 
-      statements[0] = `text-${this.canton} bg-white duration-300 ease-in-out flex flex-col  border-b-2  w-full cursor-pointer select-none`
-
-      if (this.black) {
-        statements[0] += ' border-black'
-      } else {
-        statements[0] += ` border-${this.canton}`
-      }
+      statements[0] = `border-${this.canton} text-${this.canton} bg-white duration-300 ease-in-out flex flex-col border-b-2 w-full cursor-pointer select-none`
 
       statements[1] = 'h-10'
 
@@ -97,19 +83,6 @@ export default {
     },
   },
   methods: {
-    detemineColor() {
-      if (this.canton) {
-        if (this.canton === 'vs') {
-          return '#DB303D'
-        } else if (this.canton === 'vd') {
-          return '#4D9A70'
-        } else if (this.canton === 'ge') {
-          return '#EE6F22'
-        } else {
-          return '#DB303D'
-        }
-      }
-    },
     toggleDropdown() {
       this.dropdown = !this.dropdown
     },
