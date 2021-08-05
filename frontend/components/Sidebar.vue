@@ -3,7 +3,7 @@
     :class="{ 'h-full': menu }"
     class="fixed top-0 left-0 z-50 flex flex-col justify-between w-full max-h-screen p-4 py-2 duration-300 ease-in-out bg-white lg:pb-4 lg:px-12 lg:py-4 lg:h-screen lg:max-w-xs lg:w-96"
   >
-    <div :class="{ 'absolute top-5 left-5 text-2xl z-10': menu, hidden: !menu }" class="ml-3 lg:block lg:text-xl">
+    <div :class="{ 'absolute top-5 left-5 text-xl z-10': menu, hidden: !menu }" class="ml-3 lg:block lg:text-xl">
       <nuxt-link :to="switchLocalePath('fr')">fr</nuxt-link> | <nuxt-link :to="switchLocalePath('de')">de</nuxt-link>
     </div>
 
@@ -31,7 +31,7 @@
         </button>
       </div>
 
-      <div :class="{ hidden: !menu }" class="mt-8 text-3xl lg:text-xl lg:block">
+      <div :class="{ hidden: !menu }" class="mt-8 text-2xl lg:text-xl lg:block">
         <div class="flex flex-col ml-4">
           <nuxt-link v-for="(item, i) in links" :key="item.name + i" :class="{ 'my-2': menu }" :to="item.link" :exact="item.exact">
             {{ item.name }}

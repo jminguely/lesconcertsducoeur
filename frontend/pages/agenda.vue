@@ -26,17 +26,17 @@
     </DateDivider>
 
     <template v-if="data != null">
-      <EventDetails v-for="item in data.calendars" :key="item.id + item.title" class="py-12" :color="getColor(getCanton(item.canton))">
+      <EventDetails v-for="item in data.calendars" :key="item.id + item.title" class="py-6" :canton="getColor(getCanton(item.canton))">
         <template #date>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template>
         <template #location>{{ item.location }}</template>
         <template #title>{{ item.title }} </template>
         <template #artists>
-          <template v-if="item.artist != null">
-            <!-- <div v-for="artist in item.artist.artists_list" :key="artist.id + artist.first_name">
+          <template v-if="item.artists != null">
+            <div v-for="artist in item.artists" :key="artist.id + artist.first_name">
               <span>{{ artist.first_name }} {{ artist.last_name }}</span>
               <span>|</span>
               <span>{{ artist.instrument }}</span>
-            </div> -->
+            </div>
           </template>
         </template>
         <template #details>
@@ -82,18 +82,18 @@ export default {
 
   methods: {
     getColor(canton) {
-      if (canton === 'VS') return 'red'
-      if (canton === 'VD') return 'green'
-      if (canton === 'GE') return 'yellow'
-      if (canton === 'ALL') return 'black'
+      if (canton === 'VS') return 'vs'
+      if (canton === 'VD') return 'vd'
+      if (canton === 'GE') return 'ge'
+      if (canton === 'ALL') return 'all'
     },
     getCanton(canton) {
       return canton == null ? 'ALL' : canton.uid
     },
     async getAgenda() {
       const query = gql`
-        query getCalendar($locale: String) {
-          calendars(locale: $locale) {
+        query getCalendar($locale: String, $date_time: DateTime) {
+          calendars(locale: $locale, where: { date_time_gte: $date_time }) {
             id
             canton {
               uid
@@ -102,12 +102,18 @@ export default {
             title
             location
             details
+            artists {
+              first_name
+              last_name
+              instrument
+            }
           }
         }
       `
       const locale = this.$i18n.locale + '-CH'
 
       const variables = {
+        date_time: this.$dateFns.formatISO(new Date()),
         locale,
       }
 
