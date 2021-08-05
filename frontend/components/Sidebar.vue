@@ -3,7 +3,7 @@
     :class="{ 'h-full': menu }"
     class="fixed top-0 left-0 z-50 flex flex-col justify-between w-full max-h-screen p-4 py-2 duration-300 ease-in-out bg-white lg:pb-4 lg:px-12 lg:py-4 lg:h-screen lg:max-w-xs lg:w-96"
   >
-    <div :class="{ 'absolute top-5 left-5 text-2xl': menu, hidden: !menu }" class="lg:block lg:text-xl">
+    <div :class="{ 'absolute top-5 left-5 text-2xl z-10': menu, hidden: !menu }" class="ml-3 lg:block lg:text-xl">
       <nuxt-link :to="switchLocalePath('fr')">fr</nuxt-link> | <nuxt-link :to="switchLocalePath('de')">de</nuxt-link>
     </div>
 
@@ -47,9 +47,9 @@
       </nuxt-link> -->
     </div>
 
-    <div :class="{ visible: menu, hidden: !menu }">
+    <div :class="{ visible: menu, hidden: !menu }" class="px-4">
       <ul class="flex flex-col mt-5 overflow-hidden">
-        <navbar-item v-for="(canton, i) in ['vs', 'vd', 'ge']" :key="i + canton" :canton="canton">
+        <navbar-item v-for="(canton, i) in cantons" :key="'mobile-navbar' + i + canton" :canton="canton" class="mb-4">
           <template #content>{{ $t('canton')[canton] }}</template>
           <template #items>
             <ul class="flex flex-col overflow-hidden">
@@ -98,6 +98,7 @@ export default {
         { name: this.$t('nav').medias, link: this.localePath('medias') },
       ],
       menu: false,
+      cantons: ['vs', 'vd', 'ge'],
     }
   },
   watch: {

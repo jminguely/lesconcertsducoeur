@@ -19,8 +19,8 @@
 
     <br />
 
-    <p>Tous les styles de musique sont bienvenus (classique / jazz / folklorique / musique du monde etc.).</p>
-    <p :class="`mt-8 text-2xl lg:text-3xl text-${canton} font-playFair`">Nous nous réjouissons de vous rencontrer et de vous écouter !</p>
+    <p>{{ $t('auditions').requirements[1] }}</p>
+    <p :class="`mt-8 text-2xl lg:text-3xl text-${canton} font-playFair`">{{ $t('auditions').requirements[2] }}</p>
 
     <!-- <div v-for="el in content.auditions[0].content" :key="el.__typename + el.id">
       <template v-if="el.__typename === 'ComponentContentText'">
