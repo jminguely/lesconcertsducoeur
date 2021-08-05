@@ -94,10 +94,10 @@ export default {
   data() {
     return {
       sponsors: [
-        { img: require('~/assets/img/partners/BS.svg'), link: 'https://google.com' },
-        { img: require('~/assets/img/partners/Hemu.svg'), link: 'https://google.com' },
-        { img: require('~/assets/img/partners/LR.svg'), link: 'https://google.com' },
-        { img: require('~/assets/img/partners/M.svg'), link: 'https://google.com' },
+        { img: require('~/assets/img/partners/BS.svg'), link: '' },
+        { img: require('~/assets/img/partners/Hemu.svg'), link: '' },
+        { img: require('~/assets/img/partners/LR.svg'), link: '' },
+        { img: require('~/assets/img/partners/M.svg'), link: '' },
       ],
       data: null,
       association: null,

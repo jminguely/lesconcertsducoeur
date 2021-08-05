@@ -72,19 +72,20 @@
       </InfoBlock>
     </div> -->
 
-    <spacing />
+    <template v-if="calendars != null">
+      <spacing />
+      <Headline class="mb-16">
+        <template #headline> {{ $t('home').nextConcerts }} </template>
+      </Headline>
 
-    <Headline class="mb-16">
-      <template #headline> {{ $t('home').nextConcerts }} </template>
-    </Headline>
-
-    <div class="flex flex-col items-start justify-between space-x-0 space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8">
-      <EventBlock v-for="item in calendars" :key="item.id" :color="getColor(getCanton(item.canton))">
-        <template #datetime>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template>
-        <template #pretitle>{{ item.location }}</template>
-        <template #title>{{ item.title }}</template>
-      </EventBlock>
-    </div>
+      <div class="flex flex-col items-start justify-between space-x-0 space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8">
+        <EventBlock v-for="item in calendars" :key="item.id" :color="getColor(getCanton(item.canton))">
+          <template #datetime>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template>
+          <template #pretitle>{{ item.location }}</template>
+          <template #title>{{ item.title }}</template>
+        </EventBlock>
+      </div>
+    </template>
 
     <Divider class="my-16" />
 
@@ -203,7 +204,7 @@ export default {
 
   async fetch() {
     await this.getAgenda()
-    await this.getNewsArticles()
+    // await this.getNewsArticles()
   },
 
   methods: {
@@ -215,7 +216,7 @@ export default {
       else return 'black'
     },
     getCanton(canton) {
-      return canton == null ? 'ALL' : canton.slug.toUpperCase()
+      return canton == null ? 'ALL' : canton.uid.toUpperCase()
     },
     async getAgenda() {
       const query = gql`
@@ -224,7 +225,6 @@ export default {
             id
             canton {
               uid
-              slug
             }
             date_time
             title
@@ -247,7 +247,7 @@ export default {
           if (process.env.dev) console.log(e)
         })
 
-      this.calendars = this.data.calendars
+      if (this.data != null) this.calendars = this.data.calendars
     },
 
     async getNewsArticles() {
