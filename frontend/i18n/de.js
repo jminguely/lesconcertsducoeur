@@ -2,7 +2,7 @@ export default {
   nav: {
     association: 'Der Verein',
     artists: 'Die Musiker',
-    auditions: 'Hörproben',
+    auditions: 'Auditions',
     home: 'Home',
     mission: 'Unsere Mission',
     concerts: 'Die Konzerte',
@@ -42,7 +42,7 @@ export default {
   mission: {
     hero: {
       title: 'Unsere Mission',
-      subtitle: `<p><i>Les Concerts du Cœur</i>bietet Menschen mit erschwertem Zugang zu traditionellen Konzerten qualitativ hochwertige musikalische Erlebnisse.</p><br>
+      subtitle: `<p><i>Les Concerts du Cœur</i> bietet Menschen mit erschwertem Zugang zu traditionellen Konzerten qualitativ hochwertige musikalische Erlebnisse.</p><br>
         <p>Dieses Bestreben wird mittlerweile in drei Schweizer Kantonen umgesetzt, wobei die jeweiligen Vereine im Kanton Wallis, Waadt und Genf die gleichen Ziele und Werte vertreten.</p>`,
     },
     enSavoirPlus: {

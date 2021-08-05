@@ -62,16 +62,34 @@
       <template #headline>{{ $t('association').partners }} </template>
     </Headline>
 
-    <h2 class="mb-10 text-3xl font-playFair">{{ $t('home').partners.title }}</h2>
+    <!-- <h2 class="mb-10 text-3xl font-playFair">{{ $t('home').partners.title }}</h2>
     <div class="grid grid-cols-3 gap-5">
       <img class="object-contain w-full h-full" src="~/assets/img/partners/LMN.svg" />
-    </div>
+    </div> -->
+
+    <template v-if="association.partners != null">
+      <logo-cloud v-if="association.partners.length > 0" :logos="association.partners">
+        <template #title> {{ $t('home').partners.title }}</template>
+      </logo-cloud>
+    </template>
+
+    <spacing />
+
+    <template v-if="association.sponsors != null">
+      <logo-cloud v-if="association.sponsors.length > 0" :logos="association.sponsors">
+        <template #title> {{ $t('home').sponsors.title }}</template>
+      </logo-cloud>
+    </template>
+
+    <!-- <Sponsors :sponsors="sponsors">
+      <template #title> {{ $t('home').partners.title }}</template>
+    </Sponsors>
 
     <Spacing />
 
     <Sponsors :sponsors="sponsors">
       <template #title> {{ $t('home').sponsors.title }}</template>
-    </Sponsors>
+    </Sponsors> -->
   </div>
 </template>
 
@@ -80,14 +98,14 @@ import { gql } from 'graphql-tag'
 
 import Headline from '@/components/typography/Headline.vue'
 import DonationBlock from '@/components/typography/DonationBlock.vue'
-import Sponsors from '@/components/pages/Sponsors.vue'
+import LogoCloud from '@/components/LogoCloud.vue'
 import Spacing from '~/components/typography/Spacing.vue'
 
 export default {
   components: {
     Headline,
     DonationBlock,
-    Sponsors,
+    LogoCloud,
     Spacing,
   },
   data() {
@@ -131,6 +149,14 @@ export default {
             section_benevole
             section_don
             section_membre
+            partners {
+              id
+              url
+            }
+            sponsors {
+              id
+              url
+            }
           }
         }
       `
