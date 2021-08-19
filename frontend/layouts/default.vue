@@ -3,12 +3,12 @@
     <Sidebar />
     <div class="flex flex-col flex-grow mt-5 ml-auto lg:ml-96">
       <Navbar />
-      <div class="px-5 flex flex-col flex-grow mt-28 lg:pl-0 lg:pr-20">
+      <div class="px-5 flex flex-col flex-grow mt-20 lg:mt-28 lg:pl-0 lg:pr-20">
         <Nuxt />
         <Footer />
       </div>
     </div>
-    <div class="z-50 fixed w-full h-1 bottom-0 left-0 lg:w-1 lg:h-full lg:top-0 lg:right-0" :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"></div>
+    <div class="z-50 fixed w-full h-1 bottom-0 left-0" :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"></div>
   </div>
 </template>
 <script>

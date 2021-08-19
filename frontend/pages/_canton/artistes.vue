@@ -5,7 +5,7 @@
     </Headline>
 
     <nuxt-link
-      class="absolute flex items-center justify-center text-xl leading-5 text-center text-white transform rounded-full top-24 w-28 h-28 right-10 font-playFair"
+      class="hidden lg:block absolute flex items-center justify-center text-xl leading-5 text-center text-white transform rounded-full top-24 w-28 h-28 right-10 font-playFair"
       :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"
       to="auditions"
     >
@@ -14,7 +14,7 @@
 
     <template v-if="data != null">
       <template v-if="data.artists != null">
-        <div class="mt-12 grid md:grid-cols-3 md:gap-5">
+        <div class="gap-y-5 sm:gap-x-5 md:mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
           <artist-cover v-for="artist in data.artists" :key="artist.id" :artist="artist" @click.native="openPopup(artist)"></artist-cover>
         </div>
         <artist-popup :class="{ hidden: !popup }" :artists="data.artists" :item.sync="selected" :popup.sync="popup" />

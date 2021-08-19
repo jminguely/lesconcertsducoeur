@@ -1,8 +1,5 @@
 <template>
-  <div
-    :class="{ 'opacity-100 z-50': popup }"
-    class="fixed top-0 left-0 flex flex-col w-screen h-screen px-10 py-10 overflow-auto duration-300 ease-in-out bg-white border-b-8 border-green-600 opacity-0 lg:overflow-hidden"
-  >
+  <div :class="{ 'opacity-100 z-50': popup }" class="fixed top-0 left-0 flex flex-col w-screen h-screen px-10 py-10 overflow-auto duration-300 ease-in-out bg-white opacity-0 lg:overflow-hidden">
     <div>
       <button class="focus:outline-none" @click="$emit('update:popup', false)">
         <svg xmlns="http://www.w3.org/2000/svg" width="31.839" height="31.839" viewBox="0 0 31.839 31.839">
