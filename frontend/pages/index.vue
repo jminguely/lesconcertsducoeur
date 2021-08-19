@@ -6,7 +6,7 @@
 
     <div class="grid grid-cols-3 gap-5 lg:mb-32">
       <nuxt-link to="/vs/association">
-        <Illustration>
+        <Illustration canton="vs">
           <template #image>
             <img class="object-cover" src="~/assets/img/illustrations/illustration1.svg" />
           </template>
@@ -15,7 +15,7 @@
       </nuxt-link>
 
       <nuxt-link to="/vd/association">
-        <Illustration color="green">
+        <Illustration canton="vd">
           <template #image>
             <img src="~/assets/img/illustrations/illustration2.svg" />
           </template>
@@ -24,7 +24,7 @@
       </nuxt-link>
 
       <nuxt-link to="/ge/association">
-        <Illustration color="yellow">
+        <Illustration canton="ge">
           <template #image>
             <img src="~/assets/img/illustrations/illustration3.svg" />
           </template>

@@ -38,12 +38,15 @@
         <g></g>
         <g></g>
       </svg>
-      <span class="pl-2 text-xl">
+      <span class="pl-2 text-xl" :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">
         <slot name="content"></slot>
       </span>
     </div>
 
-    <div class="py-1 pl-7 z-10 overflow-hidden text-xl text-gray-800 duration-300 ease-in-out bg-white" :class="{ 'h-0': !dropdown, 'h-32': dropdown, 'pointer-events-none': !dropdown }">
+    <div
+      class="border-b-2 py-1 pl-7 z-10 overflow-hidden text-xl text-gray-800 duration-300 ease-in-out bg-white"
+      :class="{ 'border-vs': canton == 'vs', 'border-vd': canton == 'vd', 'border-ge': canton == 'ge', 'h-0': !dropdown, 'h-32': dropdown, 'pointer-events-none': !dropdown }"
+    >
       <slot name="items"></slot>
     </div>
   </li>
@@ -67,7 +70,7 @@ export default {
       const obj = {}
       const statements = []
 
-      statements[0] = `border-${this.canton} text-${this.canton} bg-white duration-300 ease-in-out flex flex-col border-b-2 w-full cursor-pointer select-none`
+      statements[0] = 'bg-white duration-300 ease-in-out flex flex-col w-full cursor-pointer select-none'
 
       statements[1] = 'h-10'
 
