@@ -5,7 +5,7 @@ export default {
     auditions: 'Auditions',
     home: 'Home',
     mission: 'Unsere Mission',
-    concerts: 'Die Konzerte',
+    concerts: 'Unsere Konzerte',
     agenda: 'Agenda',
     medias: 'Medien',
     contact: 'Kontakt',

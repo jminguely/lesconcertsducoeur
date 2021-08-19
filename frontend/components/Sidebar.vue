@@ -9,7 +9,9 @@
 
     <div class="lg:absolute lg:top-36">
       <div class="flex justify-between items-center">
-        <Logo :class="{ 'opacity-0': menu, 'opacity-100': !menu }" class="h-12 lg:h-16" />
+        <nuxt-link :to="localePath('/')">
+          <Logo :class="{ 'opacity-0': menu, 'opacity-100': !menu }" class="h-12 lg:h-16" />
+        </nuxt-link>
         <button
           :class="{ opened: menu }"
           :aria-expanded="menu"
@@ -79,9 +81,9 @@
         <nuxt-link :to="localePath('contact')" class="text-lg font-bold font-newsCycle"> {{ $t('nav').contact }} </nuxt-link>
       </div>
 
-      <!-- <div class="hidden mt-4 lg:block">
+      <div class="hidden mt-4 lg:block">
         <input class="px-2 border-2 border-gray-800" placeholder="s'abonner a la newsletter" />
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
