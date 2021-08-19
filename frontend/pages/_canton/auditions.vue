@@ -20,7 +20,7 @@
     <br />
 
     <p>{{ $t('auditions').requirements[1] }}</p>
-    <p :class="`mt-8 text-2xl lg:text-3xl text-${canton} font-playFair`">{{ $t('auditions').requirements[2] }}</p>
+    <p class="mt-8 text-2xl lg:text-3xl font-playFair" :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">{{ $t('auditions').requirements[2] }}</p>
 
     <!-- <div v-for="el in content.auditions[0].content" :key="el.__typename + el.id">
       <template v-if="el.__typename === 'ComponentContentText'">

@@ -3,7 +3,7 @@
     <h2 class="text-3xl font-playFair">
       <slot name="title"></slot>
     </h2>
-    <h4 :class="`pt-2 text-2xl text-${canton}`">
+    <h4 class="pt-2 text-2xl" :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">
       <slot name="text"></slot>
     </h4>
   </div>

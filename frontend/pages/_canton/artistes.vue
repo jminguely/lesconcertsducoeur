@@ -4,7 +4,11 @@
       <template #headline>Nos Artistes</template>
     </Headline>
 
-    <nuxt-link :class="`absolute flex items-center justify-center text-xl leading-5 text-center text-white transform bg-${canton} rounded-full top-24 w-28 h-28 right-10 font-playFair`" to="auditions">
+    <nuxt-link
+      class="absolute flex items-center justify-center text-xl leading-5 text-center text-white transform rounded-full top-24 w-28 h-28 right-10 font-playFair"
+      :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"
+      to="auditions"
+    >
       Auditions
     </nuxt-link>
 

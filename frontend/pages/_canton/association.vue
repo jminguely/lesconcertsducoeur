@@ -38,21 +38,36 @@
     <DonationBlock class="mb-16">
       <template #title>{{ $t('association').benevole }}</template>
       <template #details>
-        <div v-if="association.section_benevole != null" :class="`prose prose-xl text-${canton}`" v-html="$md.render(association.section_benevole)"></div>
+        <div
+          v-if="association.section_benevole != null"
+          class="prose prose-xl"
+          :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }"
+          v-html="$md.render(association.section_benevole)"
+        ></div>
       </template>
     </DonationBlock>
 
     <DonationBlock class="mb-16" circle :canton="canton">
       <template #title>{{ $t('association').don }}</template>
       <template #details>
-        <div v-if="association.section_don != null" :class="`prose prose-xl text-${canton}`" v-html="$md.render(association.section_don)"></div>
+        <div
+          v-if="association.section_don != null"
+          class="prose prose-xl"
+          :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }"
+          v-html="$md.render(association.section_don)"
+        ></div>
       </template>
     </DonationBlock>
 
     <DonationBlock>
       <template #title>{{ $t('association').membre }}</template>
       <template #details>
-        <div v-if="association.section_membre != null" :class="`prose prose-xl text-${canton}`" v-html="$md.render(association.section_membre)"></div>
+        <div
+          v-if="association.section_membre != null"
+          class="prose prose-xl"
+          :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }"
+          v-html="$md.render(association.section_membre)"
+        ></div>
       </template>
     </DonationBlock>
 
