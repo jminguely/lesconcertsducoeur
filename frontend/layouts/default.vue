@@ -8,6 +8,7 @@
         <Footer />
       </div>
     </div>
+    <div class="z-50 fixed w-full h-1 bottom-0 left-0 lg:w-1 lg:h-full lg:top-0 lg:right-0" :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"></div>
   </div>
 </template>
 <script>
@@ -20,6 +21,17 @@ export default {
     Sidebar,
     Navbar,
     Footer,
+  },
+  data() {
+    return { canton: '' }
+  },
+  watch: {
+    $route(newRoute) {
+      if (newRoute.params) this.canton = newRoute.params.canton
+    },
+  },
+  mounted() {
+    if (this.$route.params) this.canton = this.$route.params.canton
   },
 }
 </script>
