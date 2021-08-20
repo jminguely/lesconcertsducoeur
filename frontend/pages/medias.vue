@@ -34,49 +34,49 @@
       </template>
     </Headline>
 
-    <p class="text-2xl font-playFair">Ils parlent de nous</p>
+    <p class="text-xl font-playFair">Ils parlent de nous</p>
 
     <div class="flex flex-col justify-between pt-10 lg:flex-row">
       <div>
         <div class="mb-10">
-          <p class="text-2xl underline">La musique adoucit la vie</p>
+          <p class="text-xl underline">La musique adoucit la vie</p>
           <p class="text-xl">Journal de Sierre – 27 janvier 2017</p>
         </div>
 
         <div class="mb-10">
-          <p class="text-2xl underline">La musique adoucit le temps qui passe</p>
+          <p class="text-xl underline">La musique adoucit le temps qui passe</p>
           <p class="text-xl">Le Nouvelliste – 14 février 2017</p>
         </div>
 
         <div class="mb-10">
-          <p class="text-2xl underline">Les notes à la rencontre des isolés</p>
+          <p class="text-xl underline">Les notes à la rencontre des isolés</p>
           <p class="text-xl">Le Nouvelliste: Supplément Culture – 5 octobre 2017</p>
         </div>
 
         <div class="mb-10">
-          <p class="text-2xl underline">L’univers de la chanteuse lyrique valaisanne Laure Barras</p>
+          <p class="text-xl underline">L’univers de la chanteuse lyrique valaisanne Laure Barras</p>
           <p class="text-xl">RTS, La Puce à l’Oreille, 14 décembre 2017</p>
         </div>
       </div>
 
       <div>
         <div class="mb-10">
-          <p class="text-2xl underline">La musique adoucit la vie</p>
+          <p class="text-xl underline">La musique adoucit la vie</p>
           <p class="text-xl">Journal de Sierre – 27 janvier 2017</p>
         </div>
 
         <div class="mb-10">
-          <p class="text-2xl underline">La musique adoucit le temps qui passe</p>
+          <p class="text-xl underline">La musique adoucit le temps qui passe</p>
           <p class="text-xl">Le Nouvelliste – 14 février 2017</p>
         </div>
 
         <div class="mb-10">
-          <p class="text-2xl underline">Les notes à la rencontre des isolés</p>
+          <p class="text-xl underline">Les notes à la rencontre des isolés</p>
           <p class="text-xl">Le Nouvelliste: Supplément Culture – 5 octobre 2017</p>
         </div>
 
         <div class="mb-10">
-          <p class="text-2xl underline">L’univers de la chanteuse lyrique valaisanne Laure Barras</p>
+          <p class="text-xl underline">L’univers de la chanteuse lyrique valaisanne Laure Barras</p>
           <p class="text-xl">RTS, La Puce à l’Oreille, 14 décembre 2017</p>
         </div>
       </div>

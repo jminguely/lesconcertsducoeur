@@ -4,7 +4,7 @@
       <template #headline> Agenda </template>
     </Headline>
 
-    <!-- <div class="flex flex-col justify-items-start font-playFair items-start text-2xl lg:flex-row lg:space-x-8 lg:mb-16">
+    <!-- <div class="flex flex-col justify-items-start font-playFair items-start text-xl lg:flex-row lg:space-x-8 lg:mb-16">
       <ClassicSelect :options="years">
         <template #label> à venir </template>
       </ClassicSelect>

@@ -21,7 +21,7 @@
       </button>
 
       <div class="absolute flex w-1/5 lg:block lg:w-full right-5 lg:flex-col lg:static top-4">
-        <button class="flex my-2 mr-6 text-2xl font-newsCycle focus:outline-none lg:mr-0" @click="goBack()">
+        <button class="flex my-2 mr-6 text-xl font-newsCycle focus:outline-none lg:mr-0" @click="goBack()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="mr-2 stroke-current"
@@ -43,7 +43,7 @@
           </template>
         </button>
 
-        <button class="flex my-2 text-2xl font-newsCycle focus:outline-none" @click="next()">
+        <button class="flex my-2 text-xl font-newsCycle focus:outline-none" @click="next()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="mr-2 stroke-current"
@@ -84,12 +84,12 @@
           </p>
 
           <div v-if="selected.repertoire != null">
-            <p class="block text-2xl font-playFair">Répertoire</p>
+            <p class="block text-xl font-playFair">Répertoire</p>
             <p class="prose-lg font-newsCycle">{{ selected.repertoire }}</p>
           </div>
 
           <div v-if="selected.formats != null">
-            <p class="text-2xl font-playFair">Formats</p>
+            <p class="text-xl font-playFair">Formats</p>
             <p class="prose-lg font-newsCycle">{{ selected.formats }}</p>
           </div>
         </div>

@@ -45,7 +45,7 @@
       <template #image><img class="mx-auto" :src="images[i]" /></template>
     </accordion-item>
 
-    <div class="mt-12 text-2xl font-newsCycle">
+    <div class="mt-12 text-xl font-newsCycle">
       <!-- <div v-for="(item, i) in $t('mission').objectifs.content" :key="i" class="pb-8">
         <h3 class="font-bold pb-4">{{ item.title }}</h3>
         <p v-html="item.text"></p>

@@ -13,7 +13,7 @@
 
     <div class="flex flex-col justify-between py-10 lg:flex-row">
       <div class="absolute flex w-1/5 right-5 lg:flex-col lg:static top-4">
-        <button class="flex my-2 mr-6 text-2xl font-newsCycle focus:outline-none lg:mr-0" @click="goBack()">
+        <button class="flex my-2 mr-6 text-xl font-newsCycle focus:outline-none lg:mr-0" @click="goBack()">
           <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="17.715" height="33.788" viewBox="0 0 17.715 33.788">
             <g id="Group_1250" data-name="Group 1250" transform="translate(-193.793 -66.793)">
               <line id="Line_21" data-name="Line 21" x2="16.301" y2="16.301" transform="translate(194.5 83.573)" fill="none" stroke="#4d9a70" stroke-width="2" />
@@ -25,7 +25,7 @@
           </template>
         </button>
 
-        <button class="flex my-2 text-2xl font-newsCycle focus:outline-none" @click="next()">
+        <button class="flex my-2 text-xl font-newsCycle focus:outline-none" @click="next()">
           <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="17.715" height="33.788" viewBox="0 0 17.715 33.788">
             <g id="Group_1251" data-name="Group 1251" transform="translate(0.707 0.707)">
               <line id="Line_21" data-name="Line 21" x1="16.301" y2="16.301" transform="translate(0 16.073)" fill="none" stroke="#4d9a70" stroke-width="2" />
@@ -48,12 +48,12 @@
           </p>
 
           <div v-if="selected.repertoire != null">
-            <p class="block text-2xl font-playFair">Répertoire</p>
+            <p class="block text-xl font-playFair">Répertoire</p>
             <p class="prose-lg font-newsCycle">{{ selected.repertoire }}</p>
           </div>
 
           <div v-if="selected.formats != null">
-            <p class="text-2xl font-playFair">Formats</p>
+            <p class="text-xl font-playFair">Formats</p>
             <p class="prose-lg font-newsCycle">{{ selected.formats }}</p>
           </div>
         </div>

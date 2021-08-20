@@ -33,7 +33,7 @@
         </button>
       </div>
 
-      <div :class="{ hidden: !menu }" class="mt-8 text-2xl lg:text-xl lg:block">
+      <div :class="{ hidden: !menu }" class="mt-8 text-xl lg:text-xl lg:block">
         <div class="flex flex-col ml-4">
           <nuxt-link v-for="(item, i) in links" :key="item.name + i" :class="{ 'my-2': menu }" :to="item.link" :exact="item.exact">
             {{ item.name }}

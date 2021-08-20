@@ -192,7 +192,7 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
     },
     requirements: [
       `
-    <h2 class="mt-12 text-2xl lg:text-3xl font-playFair">Interessierte Künstler müssen die folgenden Kriterien erfüllen:</h2>
+    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Interessierte Künstler müssen die folgenden Kriterien erfüllen:</h2>
     <ul class="pt-2">
       <li>— im Kanton Genf wohnhaft sind (in jedem Fall die Mehrheit der Mitglieder der Formation);</li>
       <li>— einen sehr hohen Standard an musikalischer Qualität und Instrumentaltechnik nachweisen;</li>

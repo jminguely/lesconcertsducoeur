@@ -194,7 +194,7 @@ export default {
     },
     requirements: [
       `
-    <h2 class="mt-12 text-2xl lg:text-3xl font-playFair">Les artistes intéressé·e·s doivent répondre aux critères ci-dessous :</h2>
+    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Les artistes intéressé·e·s doivent répondre aux critères ci-dessous :</h2>
     <ul class="pt-2">
       <li>— résider dans le canton de Genève (en tout cas la majorité des membres de la formation) ;</li>
       <li>— démontrer un standard très élevé de qualité musicale et technique instrumentale ;</li>

@@ -1,7 +1,7 @@
 <template>
   <div class="border-t-2 border-r-2 border-b-2 w-full" :class="{ 'border-vs': canton == 'vs', 'border-vd': canton == 'vd', 'border-ge': canton == 'ge' }">
     <!-- Date -->
-    <span class="block w-32 text-2xl transform -translate-y-5 bg-white font-playFair">
+    <span class="block w-32 text-xl transform -translate-y-5 bg-white font-playFair">
       <slot name="date"></slot>
     </span>
     <div class="pb-8 pr-4">
@@ -10,7 +10,7 @@
         <slot name="pretitle"></slot>
       </h3>
       <!-- Title -->
-      <h1 class="pb-4 text-2xl font-playFair">
+      <h1 class="pb-4 text-xl font-playFair">
         <slot name="title"></slot>
       </h1>
       <!-- Content -->

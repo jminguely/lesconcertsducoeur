@@ -15,7 +15,7 @@
       <template #label>Contact Valais</template>
       <template #content>
         <div class="mb-28">
-          <div class="text-2xl text-red-500 ml-52">
+          <div class="text-xl text-red-500 ml-52">
             <span class="font-bold">Les Concerts du Coeur</span><br />
             Les Rocailles, Rue des Biolirs 6,<br />
             3963 Crans-Montana<br />
@@ -24,16 +24,16 @@
         </div>
 
         <div class="mb-28">
-          <h3 class="text-2xl font-playFair">Direction artistique</h3>
-          <div class="text-2xl text-red-500 ml-52">
+          <h3 class="text-xl font-playFair">Direction artistique</h3>
+          <div class="text-xl text-red-500 ml-52">
             <span class="font-bold">Laure Barras</span><br />
             <span class="underline">laure.barras@lesconcertsducoeur.chch</span>
           </div>
         </div>
 
         <div class="pb-28">
-          <h3 class="text-2xl font-playFair">Bénévoles</h3>
-          <div class="text-2xl text-red-500 ml-52">
+          <h3 class="text-xl font-playFair">Bénévoles</h3>
+          <div class="text-xl text-red-500 ml-52">
             <span class="font-bold">Resp</span><br />
             <span class="underline">benevoles-vs@lesconcertsducoeur.ch</span>
           </div>
@@ -45,7 +45,7 @@
       <template #label>Contact Vaud</template>
       <template #content>
         <div class="mb-28">
-          <div class="text-2xl text-red-500 ml-52">
+          <div class="text-xl text-red-500 ml-52">
             <span class="font-bold">Les Concerts du Coeur</span><br />
             Les Rocailles, Rue des Biolirs 6,<br />
             3963 Crans-Montana<br />
@@ -54,16 +54,16 @@
         </div>
 
         <div class="mb-28">
-          <h3 class="text-2xl font-playFair">Direction artistique</h3>
-          <div class="text-2xl text-red-500 ml-52">
+          <h3 class="text-xl font-playFair">Direction artistique</h3>
+          <div class="text-xl text-red-500 ml-52">
             <span class="font-bold">Laure Barras</span><br />
             <span class="underline">laure.barras@lesconcertsducoeur.chch</span>
           </div>
         </div>
 
         <div class="pb-28">
-          <h3 class="text-2xl font-playFair">Bénévoles</h3>
-          <div class="text-2xl text-red-500 ml-52">
+          <h3 class="text-xl font-playFair">Bénévoles</h3>
+          <div class="text-xl text-red-500 ml-52">
             <span class="font-bold">Resp</span><br />
             <span class="underline">benevoles-vs@lesconcertsducoeur.ch</span>
           </div>
@@ -75,7 +75,7 @@
       <template #label>Contact Genève</template>
       <template #content>
         <div class="mb-28">
-          <div class="text-2xl text-red-500 ml-52">
+          <div class="text-xl text-red-500 ml-52">
             <span class="font-bold">Les Concerts du Coeur</span><br />
             Les Rocailles, Rue des Biolirs 6,<br />
             3963 Crans-Montana<br />
@@ -84,16 +84,16 @@
         </div>
 
         <div class="mb-28">
-          <h3 class="text-2xl font-playFair">Direction artistique</h3>
-          <div class="text-2xl text-red-500 ml-52">
+          <h3 class="text-xl font-playFair">Direction artistique</h3>
+          <div class="text-xl text-red-500 ml-52">
             <span class="font-bold">Laure Barras</span><br />
             <span class="underline">laure.barras@lesconcertsducoeur.chch</span>
           </div>
         </div>
 
         <div class="pb-28">
-          <h3 class="text-2xl font-playFair">Bénévoles</h3>
-          <div class="text-2xl text-red-500 ml-52">
+          <h3 class="text-xl font-playFair">Bénévoles</h3>
+          <div class="text-xl text-red-500 ml-52">
             <span class="font-bold">Resp</span><br />
             <span class="underline">benevoles-vs@lesconcertsducoeur.ch</span>
           </div>
@@ -103,7 +103,7 @@
 
     <div class="lg:hidden">
       <div>
-        <h3 class="text-2xl font-playFair">Valais</h3>
+        <h3 class="text-xl font-playFair">Valais</h3>
       </div>
       <div class="mb-8 ml-8 text-red-600 font-newsCycle">
         <h3 class="text-lg font-bold">Laure Barras</h3>
@@ -113,7 +113,7 @@
       </div>
 
       <div>
-        <h3 class="text-2xl font-playFair">Bénévoles valaisans</h3>
+        <h3 class="text-xl font-playFair">Bénévoles valaisans</h3>
       </div>
       <div class="mb-8 ml-8 text-red-600 font-newsCycle">
         <h3 class="text-lg font-bold">Laure Barras</h3>
@@ -121,7 +121,7 @@
       </div>
 
       <div>
-        <h3 class="text-2xl font-playFair">Vaud</h3>
+        <h3 class="text-xl font-playFair">Vaud</h3>
       </div>
       <div class="mb-8 ml-8 text-green-600 font-newsCycle">
         <h3 class="text-lg font-bold">Mary Rose</h3>
@@ -131,7 +131,7 @@
       </div>
 
       <div>
-        <h3 class="text-2xl font-playFair">Bénévoles valaisans</h3>
+        <h3 class="text-xl font-playFair">Bénévoles valaisans</h3>
       </div>
       <div class="mb-8 ml-8 text-green-600 font-newsCycle">
         <h3 class="text-lg font-bold">Mary Rose</h3>
@@ -139,7 +139,7 @@
       </div>
 
       <div>
-        <h3 class="text-2xl font-playFair">Bénévoles valaisans</h3>
+        <h3 class="text-xl font-playFair">Bénévoles valaisans</h3>
       </div>
       <div class="mb-8 ml-8 text-yellow-600 font-newsCycle">
         <h3 class="text-lg font-bold">Mary Rose</h3>
@@ -149,7 +149,7 @@
       </div>
 
       <div>
-        <h3 class="text-2xl font-playFair">Bénévoles genevois</h3>
+        <h3 class="text-xl font-playFair">Bénévoles genevois</h3>
       </div>
       <div class="mb-8 ml-8 text-yellow-600 font-newsCycle">
         <h3 class="text-lg font-bold">Mary Rose</h3>

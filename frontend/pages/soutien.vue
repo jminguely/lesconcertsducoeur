@@ -30,21 +30,21 @@
     <div class="flex flex-col my-20">
       <div class="flex my-10">
         <div class="text-3xl transform -translate-y-6 font-playFair">… en Valais</div>
-        <div class="max-w-2xl text-2xl text-red-500 ml-28 font-newsCycle">
+        <div class="max-w-2xl text-xl text-red-500 ml-28 font-newsCycle">
           Nous avons besoin de votre soutien pour les tâches suivantes: alksdfjal Annoncez-vous à benevoles-vs@lesconcertsducoeur.ch
         </div>
       </div>
 
       <div class="flex my-10">
         <div class="text-3xl transform -translate-y-6 font-playFair">… sur Vaud</div>
-        <div class="max-w-2xl text-2xl text-green-500 ml-28 font-newsCycle">
+        <div class="max-w-2xl text-xl text-green-500 ml-28 font-newsCycle">
           Nous avons besoin de votre soutien pour les tâches suivantes: alksdfjal Annoncez-vous à benevoles-vd@lesconcertsducoeur.ch
         </div>
       </div>
 
       <div class="flex my-10">
         <div class="text-3xl transform -translate-y-6 font-playFair">… à Genève</div>
-        <div class="max-w-2xl text-2xl text-yellow-500 ml-28 font-newsCycle">
+        <div class="max-w-2xl text-xl text-yellow-500 ml-28 font-newsCycle">
           Nous avons besoin de votre soutien pour les tâches suivantes: alksdfjal Annoncez-vous à benevoles-ge@lesconcertsducoeur.ch
         </div>
       </div>
@@ -100,7 +100,7 @@
     <div class="flex flex-col my-20">
       <div class="flex my-10">
         <div class="text-3xl transform -translate-y-6 font-playFair">…Valaisan</div>
-        <div class="max-w-2xl text-2xl prose text-red-500 ml-28 font-newsCycle">
+        <div class="max-w-2xl text-xl prose text-red-500 ml-28 font-newsCycle">
           > Bulletin d'adhésion pour les membres<br />
           > Document officiel des statuts de l’association
         </div>
@@ -108,7 +108,7 @@
 
       <div class="flex my-10">
         <div class="text-3xl transform -translate-y-6 font-playFair">…Vaudois</div>
-        <div class="max-w-2xl text-2xl text-green-500 ml-28 font-newsCycle">
+        <div class="max-w-2xl text-xl text-green-500 ml-28 font-newsCycle">
           > Bulletin d'adhésion pour les membres<br />
           > Document officiel des statuts de l’association
         </div>
@@ -116,7 +116,7 @@
 
       <div class="flex my-10">
         <div class="text-3xl transform -translate-y-6 font-playFair">…Genevois</div>
-        <div class="max-w-2xl text-2xl text-yellow-500 ml-28 font-newsCycle">
+        <div class="max-w-2xl text-xl text-yellow-500 ml-28 font-newsCycle">
           > Bulletin d'adhésion pour les<br />
           > Document officiel des statuts de l’association
         </div>
