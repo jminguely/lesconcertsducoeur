@@ -53,6 +53,8 @@ module.exports = {
   },
   plugins: [require('@tailwindcss/typography')],
   variants: {
-    typography: [],
+    extend: {
+      borderWidth: ['first'],
+    },
   },
 }

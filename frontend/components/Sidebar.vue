@@ -67,18 +67,14 @@
     <div class="flex flex-col">
       <div :class="{ 'flex flex-row-reverse justify-between': menu, 'hidden lg:flex': !menu }" class="items-center">
         <div class="mr-2">
-          <a href="https://www.facebook.com/concertsducoeur/">
-            <facebook-logo />
-          </a>
+          <SocialLink name="facebook" link="https://www.facebook.com/concertsducoeur/" sidebar />
         </div>
 
         <div :class="{ 'ml-auto': menu }" class="mr-2">
-          <a href="https://www.instagram.com/lesconcertsducoeur/">
-            <instagram-logo />
-          </a>
+          <SocialLink name="instagram" link="https://www.instagram.com/lesconcertsducoeur/" sidebar />
         </div>
 
-        <nuxt-link :to="localePath('contact')" class="text-lg font-bold font-newsCycle"> {{ $t('nav').contact }} </nuxt-link>
+        <nuxt-link :to="localePath('contact')" class="text-xl font-newsCycle hover:font-bold"> {{ $t('nav').contact }} </nuxt-link>
       </div>
 
       <div class="hidden mt-4 lg:block">
@@ -89,7 +85,11 @@
 </template>
 
 <script>
+import SocialLink from '@/components/pages/SocialLink.vue'
 export default {
+  components: {
+    SocialLink,
+  },
   data() {
     return {
       links: [

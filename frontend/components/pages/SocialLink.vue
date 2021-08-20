@@ -1,5 +1,5 @@
 <template>
-  <div class="w-8 h-8">
+  <div :class="{ 'w-8 h-8': !sidebar, 'w-6 h-6': sidebar }">
     <a :target="newWindow ? '_blank' : '_self'" :href="link">
       <img v-if="name === 'facebook'" src="~/assets/img/social/facebook.svg" />
       <img v-else-if="name === 'instagram'" src="~/assets/img/social/instagram.svg" />
@@ -10,6 +10,10 @@
 <script>
 export default {
   props: {
+    sidebar: {
+      type: Boolean,
+      default: false,
+    },
     name: {
       type: String,
       default() {

@@ -1,13 +1,13 @@
 <template>
   <div class="py-5 border-b border-black">
-    <div class="flex items-center cursor-pointer select-none" @click="open = !open">
+    <div class="flex cursor-pointer select-none" @click="open = !open">
       <svg
         :class="{ 'transform rotate-90': open }"
         xmlns="http://www.w3.org/2000/svg"
         width="28"
         height="28"
         fill="currentColor"
-        class="mr-4 duration-300 ease-in-out bi bi-chevron-right"
+        class="flex-shrink-0 mt-2 mr-4 duration-300 ease-in-out bi bi-chevron-right"
         viewBox="0 0 16 16"
       >
         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
@@ -21,7 +21,7 @@
       <div class="w-full pr-5 text-xl">
         <slot name="content"></slot>
       </div>
-      <div class="w-full my-4 lg:my-0">
+      <div class="w-full my-4 lg:my-0 max-h-144">
         <slot name="image"></slot>
       </div>
     </div>

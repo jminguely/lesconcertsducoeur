@@ -7,7 +7,7 @@
     <p class="text-xl font-newsCycle">Retrouvez-nous sur nos réseaux sociaux</p>
 
     <div class="flex my-5">
-      <SocialLink class="mr-4 lg:mr-8" name="facebook" link="https://www.facebook.com" />
+      <SocialLink class="mr-2 lg:mr-4" name="facebook" link="https://www.facebook.com" />
       <SocialLink name="instagram" link="https://www.instagram.com" />
     </div>
 
