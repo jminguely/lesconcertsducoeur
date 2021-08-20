@@ -5,7 +5,7 @@
     </Headline>
 
     <nuxt-link
-      class="hidden lg:block absolute flex items-center justify-center text-xl leading-5 text-center text-white transform rounded-full top-24 w-28 h-28 right-10 font-playFair"
+      class="hidden lg:flex absolute flex items-center justify-center text-xl leading-5 text-center text-white transform rounded-full top-24 w-28 h-28 right-10 font-playFair"
       :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"
       to="auditions"
     >
@@ -13,19 +13,6 @@
     </nuxt-link>
 
     <template v-if="data != null">
-      {{ data.musicGroups }}
-      <!-- <template v-if="data.musicGroups != null">
-        <div class="gap-y-5 sm:gap-x-5 md:mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
-          <artist-cover v-for="musicGroup in data.musicGroups" :key="musicGroup.id" :data="musicGroup" @click.native="openPopup(musicGroup)"></artist-cover>
-        </div>
-        <artist-popup :class="{ hidden: !popup }" :data="data.musicGroups" :item.sync="selected" :popup.sync="popup" />
-      </template>
-      <template v-if="data.artists != null">
-        <div class="gap-y-5 sm:gap-x-5 md:mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
-          <artist-cover v-for="artist in data.artists" :key="artist.id" :data="artist" @click.native="openPopup(artist)"></artist-cover>
-        </div>
-        <artist-popup :class="{ hidden: !popup }" :data="data.artists" :item.sync="selected" :popup.sync="popup" />
-      </template> -->
       <div class="gap-y-5 sm:gap-x-5 md:mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
         <artist-cover v-for="artist in data" :key="artist.id" :data="artist" @click.native="openPopup(artist)"></artist-cover>
       </div>
