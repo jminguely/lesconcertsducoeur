@@ -18,7 +18,7 @@
     <!-- Section Comtié et Direction Artistique -->
     <Headline class="my-16">
       <template #headline>
-        <span class="text-4xl lg:text-7xl">{{ $t('association').comite.title }}</span>
+        <span class="text-4xl lg:text-5xl">{{ $t('association').comite.title }}</span>
       </template>
     </Headline>
 

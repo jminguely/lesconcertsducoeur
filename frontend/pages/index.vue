@@ -80,7 +80,7 @@
       </Headline>
 
       <div class="flex flex-col items-start justify-between space-x-0 space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8">
-        <EventBlock v-for="item in calendars" :key="item.id" :color="getColor(getCanton(item.canton))">
+        <EventBlock v-for="item in calendars" :key="item.id" :canton="getCanton(item.canton)">
           <template #datetime>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template>
           <template #pretitle>{{ item.location }}</template>
           <template #title>{{ item.title }}</template>
@@ -103,14 +103,14 @@
       </Sublink>
 
       <Sublink canton="vd">
-        <template #title>… sur Vaud?</template>
+        <template #title>… dans le canton de Vaud?</template>
         <template #text>
           <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'vd' } })"> > découvrez nos musicien·nes·s </nuxt-link>
         </template>
       </Sublink>
 
       <Sublink canton="ge">
-        <template #title>… sur Genève?</template>
+        <template #title>… à Genève?</template>
         <template #text>
           <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'ge' } })"> > découvrez nos musicien·nes·s </nuxt-link>
         </template>
@@ -209,15 +209,8 @@ export default {
   },
 
   methods: {
-    getColor(canton) {
-      if (canton === 'VS') return 'red'
-      if (canton === 'VD') return 'green'
-      if (canton === 'GE') return 'yellow'
-      if (canton === 'ALL') return 'black'
-      else return 'black'
-    },
     getCanton(canton) {
-      return canton == null ? 'ALL' : canton.uid.toUpperCase()
+      return canton == null ? 'all' : canton.uid.toLowerCase()
     },
     async getAgenda() {
       const query = gql`
