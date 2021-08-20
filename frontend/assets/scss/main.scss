@@ -6,13 +6,21 @@ body {
 	font-family: "News Cycle", sans-serif;
 }
 
-// #content a {
-// 	border-bottom: 1px black solid;
-// 	&:hover {
-// 		border: none
-// 	}
-// }
+#sidebar,
+#navbar {
+	a:hover {
+		font-weight: bold;
+	}
+}
 
+#content {
+	a {
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
 // .prose ul > li::before {
 //     content: '—';
 //     top: 0px;

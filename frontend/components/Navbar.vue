@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed top-0 z-40 hidden w-full h-16 max-w-full bg-white left-0 lg:block">
+  <div id="navbar" class="fixed top-0 z-40 hidden w-full h-16 max-w-full bg-white left-0 lg:block">
     <div class="pt-5 lg:ml-96 lg:pr-20">
       <ul class="grid grid-cols-3 gap-5 text-xl">
         <navbar-item v-for="(canton, i) in cantons" :key="'navbar-' + i + canton" :canton="canton">

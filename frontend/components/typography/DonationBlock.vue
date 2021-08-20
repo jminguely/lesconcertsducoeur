@@ -3,7 +3,7 @@
     <div class="text-3xl font-playFair mb-4">
       <slot name="title"></slot>
     </div>
-    <div class="flex flex-col items-center lg:flex-row">
+    <div class="flex items-center flex-row">
       <div class="font-newsCycle text-lg lg:text-xl lg:mr-48" :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">
         <slot name="details"></slot>
       </div>
