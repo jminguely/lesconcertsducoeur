@@ -141,18 +141,23 @@
 
     <Divider class="my-16" />
 
-    <Partner>
-      <template #title> {{ $t('home').partners.title }}</template>
-      <template #image>
-        <img src="~/assets/img/partners/LMN.svg" />
-      </template>
-    </Partner>
-
     <spacing />
 
-    <Sponsors :sponsors="sponsors">
-      <template #title>{{ $t('home').sponsors.title }}</template>
-    </Sponsors>
+    <template v-if="content != null">
+      <template v-if="content.partners != null">
+        <logo-cloud v-if="content.partners.length > 0" :logos="content.partners" is-home>
+          <template #title> {{ $t('home').partners.title }}</template>
+        </logo-cloud>
+      </template>
+
+      <spacing />
+
+      <template v-if="content.sponsors != null">
+        <logo-cloud v-if="content.sponsors.length > 0" :logos="content.sponsors" is-home>
+          <template #title> {{ $t('home').sponsors.title }}</template>
+        </logo-cloud>
+      </template>
+    </template>
   </div>
 </template>
 
@@ -160,8 +165,6 @@
 import Illustration from '@/components/pages/Illustration.vue'
 import Carousel from '@/components/pages/Carousel.vue'
 import Divider from '@/components/pages/Divider.vue'
-import Partner from '@/components/pages/Partner.vue'
-import Sponsors from '@/components/pages/Sponsors.vue'
 import Headline from '@/components/typography/Headline.vue'
 import Testimonial from '@/components/typography/Testimonial.vue'
 import EventBlock from '@/components/typography/EventBlock.vue'
@@ -181,8 +184,6 @@ export default {
     Divider,
     Sublink,
     HeadlineLink,
-    Partner,
-    Sponsors,
     Spacing,
   },
   data() {
@@ -204,6 +205,7 @@ export default {
   },
 
   async fetch() {
+    await this.getContent()
     await this.getAgenda()
     // await this.getNewsArticles()
   },
@@ -277,19 +279,13 @@ export default {
         query getHome {
           home {
             id
-            content {
-              ... on ComponentContentHeadline {
-                __typename
-                id
-                headline
-                text
-              }
-              ... on ComponentContentTwoColsText {
-                __typename
-                id
-                column_left
-                column_right
-              }
+            sponsors {
+              id
+              url
+            }
+            partners {
+              id
+              url
             }
           }
         }
@@ -304,6 +300,7 @@ export default {
         .catch((e) => {
           if (process.env.dev) console.log(e)
         })
+      this.content = this.content.home
     },
   },
 }
