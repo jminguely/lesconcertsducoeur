@@ -29,7 +29,7 @@
       <div class="gap-y-5 sm:gap-x-5 md:mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
         <artist-cover v-for="artist in data" :key="artist.id" :data="artist" @click.native="openPopup(artist)"></artist-cover>
       </div>
-      <artist-popup :class="{ hidden: !popup }" :data="data" :item.sync="selected" :popup.sync="popup" />
+      <artist-popup :class="{ hidden: !popup }" :data="data" :item.sync="selected" :popup.sync="popup" :canton="canton" />
     </template>
   </div>
 </template>

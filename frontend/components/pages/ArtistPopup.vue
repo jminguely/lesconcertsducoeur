@@ -2,20 +2,34 @@
   <div :class="{ 'opacity-100 z-50': popup }" class="fixed top-0 left-0 flex flex-col w-screen h-screen p-5 lg:p-10 overflow-auto duration-300 ease-in-out bg-white opacity-0 lg:overflow-hidden">
     <div>
       <button class="focus:outline-none" @click="$emit('update:popup', false)">
-        <svg xmlns="http://www.w3.org/2000/svg" width="31.839" height="31.839" viewBox="0 0 31.839 31.839">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="31.839"
+          height="31.839"
+          viewBox="0 0 31.839 31.839"
+          class="stroke-current"
+          :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }"
+        >
           <g id="Group_1249" data-name="Group 1249" transform="translate(-193.793 -96.793)">
-            <line id="Line_21" data-name="Line 21" x2="30.425" y2="30.425" transform="translate(194.5 97.5)" fill="none" stroke="#4d9a70" stroke-width="2" />
-            <line id="Line_22" data-name="Line 22" x2="30.425" y2="30.425" transform="translate(224.925 97.5) rotate(90)" fill="none" stroke="#4d9a70" stroke-width="2" />
+            <line id="Line_21" data-name="Line 21" x2="30.425" y2="30.425" transform="translate(194.5 97.5)" fill="none" stroke-width="2" />
+            <line id="Line_22" data-name="Line 22" x2="30.425" y2="30.425" transform="translate(224.925 97.5) rotate(90)" fill="none" stroke-width="2" />
           </g>
         </svg>
       </button>
 
       <div class="absolute flex w-1/5 right-5 lg:flex-col lg:static top-4">
         <button class="flex my-2 mr-6 text-2xl font-newsCycle focus:outline-none lg:mr-0" @click="goBack()">
-          <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="17.715" height="33.788" viewBox="0 0 17.715 33.788">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mr-2 stroke-current"
+            width="17.715"
+            height="33.788"
+            viewBox="0 0 17.715 33.788"
+            :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }"
+          >
             <g id="Group_1250" data-name="Group 1250" transform="translate(-193.793 -66.793)">
-              <line id="Line_21" data-name="Line 21" x2="16.301" y2="16.301" transform="translate(194.5 83.573)" fill="none" stroke="#4d9a70" stroke-width="2" />
-              <line id="Line_22" data-name="Line 22" x2="16.301" y2="16.301" transform="translate(210.801 67.5) rotate(90)" fill="none" stroke="#4d9a70" stroke-width="2" />
+              <line id="Line_21" data-name="Line 21" x2="16.301" y2="16.301" transform="translate(194.5 83.573)" fill="none" stroke-width="2" />
+              <line id="Line_22" data-name="Line 22" x2="16.301" y2="16.301" transform="translate(210.801 67.5) rotate(90)" fill="none" stroke-width="2" />
             </g>
           </svg>
           <template v-if="data[previousIndex] != null">
@@ -27,10 +41,17 @@
         </button>
 
         <button class="flex my-2 text-2xl font-newsCycle focus:outline-none" @click="next()">
-          <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="17.715" height="33.788" viewBox="0 0 17.715 33.788">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mr-2 stroke-current"
+            :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }"
+            width="17.715"
+            height="33.788"
+            viewBox="0 0 17.715 33.788"
+          >
             <g id="Group_1251" data-name="Group 1251" transform="translate(0.707 0.707)">
-              <line id="Line_21" data-name="Line 21" x1="16.301" y2="16.301" transform="translate(0 16.073)" fill="none" stroke="#4d9a70" stroke-width="2" />
-              <line id="Line_22" data-name="Line 22" y1="16.301" x2="16.301" transform="translate(16.301 0) rotate(90)" fill="none" stroke="#4d9a70" stroke-width="2" />
+              <line id="Line_21" data-name="Line 21" x1="16.301" y2="16.301" transform="translate(0 16.073)" fill="none" stroke-width="2" />
+              <line id="Line_22" data-name="Line 22" y1="16.301" x2="16.301" transform="translate(16.301 0) rotate(90)" fill="none" stroke-width="2" />
             </g>
           </svg>
           <template v-if="data[nextIndex] != null">
@@ -110,6 +131,10 @@ export default {
     data: {
       type: Array,
       default: () => [],
+    },
+    canton: {
+      type: String,
+      default: '',
     },
   },
   data() {
