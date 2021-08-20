@@ -1,6 +1,9 @@
 <template>
-  <div :class="{ 'opacity-100 z-50': popup }" class="fixed top-0 left-0 flex flex-col w-screen h-screen p-5 lg:p-10 overflow-auto duration-300 ease-in-out bg-white opacity-0 lg:overflow-hidden">
-    <div>
+  <div
+    :class="{ 'opacity-100 z-50': popup }"
+    class="fixed top-0 left-0 flex flex-col w-screen h-screen p-5 lg:flex-row lg:p-10 overflow-auto duration-300 ease-in-out bg-white opacity-0 lg:overflow-hidden"
+  >
+    <div class="lg:w-1/5">
       <button class="focus:outline-none" @click="$emit('update:popup', false)">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +20,7 @@
         </svg>
       </button>
 
-      <div class="absolute flex w-1/5 right-5 lg:flex-col lg:static top-4">
+      <div class="absolute flex w-1/5 lg:block lg:w-full right-5 lg:flex-col lg:static top-4">
         <button class="flex my-2 mr-6 text-2xl font-newsCycle focus:outline-none lg:mr-0" @click="goBack()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -64,8 +67,8 @@
       </div>
     </div>
 
-    <div class="flex flex-col justify-between py-10 lg:flex-row">
-      <div class="mb-6 lg:w-2/5 lg:mb-0">
+    <div class="flex flex-col justify-between py-10 lg:flex-row lg:w-4/5">
+      <div class="mb-6 lg:w-3/5 lg:mb-0">
         <h1 class="pb-4 text-6xl font-newsCycle">
           <template v-if="selected.first_name != null && selected.last_name != null"> {{ selected.first_name }} {{ selected.last_name }} </template>
           <template v-if="selected.name != null"> {{ selected.name }} </template>
@@ -94,7 +97,7 @@
         <nuxt-link class="prose-xl text-green-500 no-underline" to="/contact">> Contact</nuxt-link> -->
       </div>
 
-      <div class="lg:w-2/5">
+      <div class="lg:ml-5 lg:w-2/5">
         <div class="ml-auto">
           <template v-if="selected.picture != null">
             <img class="object-cover h-64 lg:w-120 lg:h-128 w-96" :src="'https://api.lesconcertsducoeur.ch' + selected.picture.url" />

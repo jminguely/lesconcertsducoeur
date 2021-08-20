@@ -4,7 +4,7 @@
       <template #content> <i>Les Concerts du Cœur</i> {{ $t('home').hero.subtitle }} </template>
     </Headline>
 
-    <div class="grid grid-cols-3 gap-5 lg:mb-32">
+    <div class="grid grid-cols-1 gap-5 gap-y-20 sm:grid-cols-3 lg:mb-32">
       <nuxt-link to="/vs/association">
         <Illustration canton="vs">
           <template #image>
@@ -33,7 +33,8 @@
       </nuxt-link>
     </div>
 
-    <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+    <spacing />
+    <div class="grid grid-cols-1 gap-y-10 md:gap-5 md:grid-cols-2">
       <testimonial v-for="item in $t('home').testimonials" :key="item.name">
         <template #quote>
           {{ item.quote }}
