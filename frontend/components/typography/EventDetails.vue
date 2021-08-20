@@ -5,7 +5,7 @@
         <div><slot name="date"></slot></div>
         <div><slot name="location"></slot></div>
       </div>
-      <div class="mb-6 text-xl lg:text-6xl font-newsCycle lg:mb-0" :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">
+      <div class="mb-6 text-4xl lg:text-5xl font-newsCycle lg:mb-0 text-concert-dark">
         <slot name="title"></slot>
       </div>
     </div>
