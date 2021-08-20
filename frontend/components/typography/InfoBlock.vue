@@ -1,12 +1,12 @@
 <template>
-  <div :class="`border-t-2 border-r-2 border-b-2 border-${color}-600 w-full`">
+  <div class="border-t-2 border-r-2 border-b-2 w-full" :class="{ 'border-vs': canton == 'vs', 'border-vd': canton == 'vd', 'border-ge': canton == 'ge' }">
     <!-- Date -->
-    <span class="block w-24 text-2xl transform -translate-y-5 bg-white font-playFair">
+    <span class="block w-32 text-2xl transform -translate-y-5 bg-white font-playFair">
       <slot name="date"></slot>
     </span>
     <div class="pb-8 pr-4">
       <!-- Pretitle -->
-      <h3 :class="`text-xl font-newsCycle text-${color}-500`">
+      <h3 class="text-xl font-newsCycle" :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">
         <slot name="pretitle"></slot>
       </h3>
       <!-- Title -->
@@ -24,9 +24,9 @@
 <script>
 export default {
   props: {
-    color: {
+    canton: {
       type: String,
-      default: 'red',
+      default: '',
     },
   },
 }

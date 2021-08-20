@@ -60,21 +60,26 @@
       />
     </div>
 
-    <!-- <Headline class="mb-16">
-      <template #headline> Actualités </template>
-    </Headline>
+    <template v-if="newsArticles != null">
+      <spacing />
 
-    <div class="flex flex-col items-start justify-between mb-16 space-x-0 space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8">
-      <InfoBlock v-for="item in newsArticles" :key="item.id" :color="getColor(getCanton(item.canton))">
-        <template #date>{{ $dateFns.format(new Date(item.date), 'dd.MM.yyyy') }}</template>
-        <template #pretitle>{{ $t('canton')[getCanton(item.canton)] }}</template>
-        <template #title>{{ item.title }}</template>
-        <template #content>{{ item.content }}</template>
-      </InfoBlock>
-    </div> -->
+      <Headline class="mb-16">
+        <template #headline> Actualités </template>
+      </Headline>
+
+      <div class="flex flex-col items-start justify-between mb-16 space-x-0 space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8">
+        <InfoBlock v-for="item in newsArticles" :key="item.id" :canton="getCanton(item.canton)">
+          <template #date>{{ $dateFns.format(new Date(item.date), 'dd.MM.yyyy') }}</template>
+          <template #pretitle></template>
+          <template #title>{{ item.title }}</template>
+          <template #content>{{ item.content }}</template>
+        </InfoBlock>
+      </div>
+    </template>
 
     <template v-if="calendars != null">
       <spacing />
+
       <Headline class="mb-16">
         <template #headline> {{ $t('home').nextConcerts }} </template>
       </Headline>
@@ -168,6 +173,7 @@ import Divider from '@/components/pages/Divider.vue'
 import Headline from '@/components/typography/Headline.vue'
 import Testimonial from '@/components/typography/Testimonial.vue'
 import EventBlock from '@/components/typography/EventBlock.vue'
+import InfoBlock from '@/components/typography/InfoBlock.vue'
 import Sublink from '@/components/typography/Sublink.vue'
 import HeadlineLink from '@/components/typography/HeadlineLink.vue'
 import Spacing from '@/components/typography/Spacing.vue'
@@ -181,6 +187,7 @@ export default {
     Testimonial,
     Carousel,
     EventBlock,
+    InfoBlock,
     Divider,
     Sublink,
     HeadlineLink,
@@ -207,7 +214,7 @@ export default {
   async fetch() {
     await this.getContent()
     await this.getAgenda()
-    // await this.getNewsArticles()
+    await this.getNewsArticles()
   },
 
   methods: {
@@ -248,8 +255,8 @@ export default {
 
     async getNewsArticles() {
       const query = gql`
-        query getNewsArticles {
-          newsArticles(limit: 3, locale: "fr-CH") {
+        query getNewsArticles($locale: String) {
+          newsArticles(limit: 3, locale: $locale) {
             id
             title
             date
@@ -261,8 +268,12 @@ export default {
         }
       `
 
+      const variables = {
+        locale: this.$i18n.locale + '-CH',
+      }
+
       this.newsArticles = await this.$apollo
-        .query({ query })
+        .query({ query, variables })
         .then(({ data }) => {
           if (process.env.dev) console.log(data)
           return data
