@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="antialiased">
     <Sidebar />
     <div class="flex flex-col flex-grow mt-5 ml-auto lg:ml-96">
       <Navbar />
