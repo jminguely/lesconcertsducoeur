@@ -4,7 +4,7 @@
       <slot name="image"></slot>
     </div>
     <div
-      class="w-28 h-28 rounded-full text-white flex items-center justify-center transform -rotate-25 text-xl absolute -bottom-10 m-auto left-0 right-0"
+      class="duration-300 ease-in-out hover:scale-110 w-28 h-28 rounded-full text-white flex items-center justify-center transform -rotate-25 text-xl absolute -bottom-10 m-auto left-0 right-0"
       :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"
     >
       <slot name="label"></slot>

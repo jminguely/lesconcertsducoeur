@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="component__donation">
     <div class="text-3xl font-playFair mb-4">
       <slot name="title"></slot>
     </div>
@@ -8,9 +8,9 @@
         <slot name="details"></slot>
       </div>
       <div v-if="circle" class="ml-auto lg:m-0">
-        <nuxt-link :to="localePath('soutien')">
+        <nuxt-link :to="localePath('soutien')" class="no-underline">
           <div
-            class="flex items-center justify-center w-28 h-28 text-xl px-4 leading-6 text-center text-white transform rounded-full -rotate-25 font-playFair"
+            class="duration-300 ease-in-out hover:scale-110 flex items-center justify-center w-28 h-28 text-xl px-4 leading-6 text-center text-white transform rounded-full -rotate-25 font-playFair"
             :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"
           >
             Faire un don
