@@ -149,6 +149,8 @@ export default {
         <li>— Ces rendez-vous musicaux constituent une solution idéale pour les institutions où les résident·e·s ne peuvent pas quitter leur chambre.</li>
       </ul>`,
       },
+    ],
+    content: [
       {
         title: 'Répertoire',
         content: `L'élaboration des programmes et répertoires proposés répond aux critères suivants : 

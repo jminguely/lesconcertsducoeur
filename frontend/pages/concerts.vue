@@ -5,7 +5,7 @@
       <template #content><p v-html="$t('concerts').hero.subtitle"></p></template>
     </Headline>
 
-    <p class="mb-12 text-xl font-newsCycle" v-html="$t('concerts').hero.text"></p>
+    <p class="mt-4 mb-12 text-xl font-newsCycle" v-html="$t('concerts').hero.text"></p>
 
     <!-- <ImageBlock>
       <template #title>Vous souhaitez organiser un concert?</template>
@@ -28,6 +28,14 @@
       <template #content><div v-html="item.content"></div></template>
       <template #image><img class="mx-auto" :src="images[i]" /></template>
     </accordion-item>
+
+    <div v-for="(item, i) in $t('concerts').content" :key="i">
+      <spacing />
+      <Headline>
+        <template #headline>{{ item.title }}</template>
+      </Headline>
+      <div class="text-xl" v-html="item.content"></div>
+    </div>
 
     <Spacing />
 
