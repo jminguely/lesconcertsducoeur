@@ -134,9 +134,9 @@
       <Headline>
         <template #headline>{{ $t('home').supportUs }}</template>
         <template #content>
-          <p class="my-8 text-xl">… en faisant un don</p>
-          <p class="my-8 text-xl">… en devenant bénévole</p>
-          <p class="my-8 text-xl">… en devenant membre</p>
+          <p class="mb-2 text-xl">… en faisant un don</p>
+          <p class="mb-2 text-xl">… en devenant bénévole</p>
+          <p class="mb-2 text-xl">… en devenant membre</p>
         </template>
       </Headline>
       <div class="w-full">

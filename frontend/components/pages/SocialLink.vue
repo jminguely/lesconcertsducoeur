@@ -1,5 +1,5 @@
 <template>
-  <div class="w-10 h-10">
+  <div class="w-8 h-8">
     <a :target="newWindow ? '_blank' : '_self'" :href="link">
       <img v-if="name === 'facebook'" src="~/assets/img/social/facebook.svg" />
       <img v-else-if="name === 'instagram'" src="~/assets/img/social/instagram.svg" />

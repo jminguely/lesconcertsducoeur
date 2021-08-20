@@ -6,9 +6,12 @@ body {
 	font-family: "News Cycle", sans-serif;
 }
 
-a:hover {
-	font-weight: bold;
-}
+// #content a {
+// 	border-bottom: 1px black solid;
+// 	&:hover {
+// 		border: none
+// 	}
+// }
 
 // .prose ul > li::before {
 //     content: '—';
