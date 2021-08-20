@@ -83,7 +83,7 @@
     </div> -->
 
     <template v-if="association.partners != null">
-      <logo-cloud v-if="association.partners.length > 0" :logos="association.partners">
+      <logo-cloud v-if="association.partners.length > 0" :logos="association.partners" is-home>
         <template #title> {{ $t('home').partners.title }}</template>
       </logo-cloud>
     </template>
@@ -91,7 +91,7 @@
     <spacing />
 
     <template v-if="association.sponsors != null">
-      <logo-cloud v-if="association.sponsors.length > 0" :logos="association.sponsors">
+      <logo-cloud v-if="association.sponsors.length > 0" :logos="association.sponsors" is-home>
         <template #title> {{ $t('home').sponsors.title }}</template>
       </logo-cloud>
     </template>
