@@ -8,7 +8,7 @@
       <nuxt-link to="/vs/association">
         <Illustration canton="vs">
           <template #image>
-            <img class="object-cover" src="~/assets/img/illustrations/home_illu_vs.png" />
+            <img class="object-cover" src="~/assets/img/illustrations/home_illu_vs.webp" />
           </template>
           <template #label>{{ $t('canton').VS }}</template>
         </Illustration>
@@ -17,7 +17,7 @@
       <nuxt-link to="/vd/association">
         <Illustration canton="vd">
           <template #image>
-            <img src="~/assets/img/illustrations/home_illu_vd.png" />
+            <img src="~/assets/img/illustrations/home_illu_vd.webp" />
           </template>
           <template #label>{{ $t('canton').VD }}</template>
         </Illustration>
@@ -26,7 +26,7 @@
       <nuxt-link to="/ge/association">
         <Illustration canton="ge">
           <template #image>
-            <img src="~/assets/img/illustrations/home_illu_ge.png" />
+            <img src="~/assets/img/illustrations/home_illu_ge.webp" />
           </template>
           <template #label>{{ $t('canton').GE }}</template>
         </Illustration>
