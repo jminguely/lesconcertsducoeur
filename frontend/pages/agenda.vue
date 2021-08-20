@@ -93,7 +93,7 @@ export default {
     async getAgenda() {
       const query = gql`
         query getCalendar($locale: String, $date_time: DateTime) {
-          calendars(locale: $locale, where: { date_time_gte: $date_time }) {
+          calendars(locale: $locale, where: { date_time_lte: $date_time }) {
             id
             canton {
               uid
