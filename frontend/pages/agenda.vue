@@ -4,7 +4,7 @@
       <template #headline>Agenda</template>
     </Headline>
 
-    <!-- <div class="flex flex-col justify-items-start font-playFair items-start text-xl lg:flex-row lg:space-x-8 lg:mb-16">
+    <div class="flex flex-col justify-items-start font-playFair items-start text-xl lg:flex-row lg:space-x-8 lg:mb-16">
       <ClassicSelect :options="years">
         <template #label> à venir </template>
       </ClassicSelect>
@@ -19,7 +19,7 @@
       <ClassicSelect :options="years">
         <template #label> à venir passés </template>
       </ClassicSelect>
-    </div> -->
+    </div>
 
     <DateDivider>
       <template #date>2021</template>
@@ -51,7 +51,7 @@
 import Headline from '@/components/typography/Headline.vue'
 import DateDivider from '@/components/typography/DateDivider.vue'
 import EventDetails from '@/components/typography/EventDetails.vue'
-// import ClassicSelect from '@/components/pages/ClassicSelect.vue'
+import ClassicSelect from '@/components/pages/ClassicSelect.vue'
 
 import { gql } from 'graphql-tag'
 
@@ -60,7 +60,7 @@ export default {
     Headline,
     DateDivider,
     EventDetails,
-    // ClassicSelect,
+    ClassicSelect,
   },
   data() {
     return {
