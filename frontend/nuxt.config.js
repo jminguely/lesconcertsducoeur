@@ -52,6 +52,7 @@ export default {
   },
 
   i18n: {
+    detectBrowserLanguage: false,
     locales: [
       { code: 'fr', iso: 'fr-CH', file: 'fr.js' },
       { code: 'de', iso: 'de-CH', file: 'de.js' },
