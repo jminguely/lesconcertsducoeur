@@ -27,7 +27,7 @@
 
     <Headline>
       <template #headline>
-        <span class="text-4xl lg:text-7xl">{{ $t('mission').buts.title }}</span>
+        <span class="text-4xl lg:text-5xl">{{ $t('mission').buts.title }}</span>
       </template>
     </Headline>
 
@@ -39,11 +39,17 @@
       <template #headline>{{ $t('mission').objectifs.title }}</template>
     </Headline>
 
+    <accordion-item v-for="(item, i) in $t('mission').objectifs.content" :key="i">
+      <template #label>{{ item.title }}</template>
+      <template #content><div v-html="item.text"></div></template>
+      <template #image><img class="mx-auto" :src="images[i]" /></template>
+    </accordion-item>
+
     <div class="mt-12 text-2xl font-newsCycle">
-      <div v-for="(item, i) in $t('mission').objectifs.content" :key="i" class="pb-8">
+      <!-- <div v-for="(item, i) in $t('mission').objectifs.content" :key="i" class="pb-8">
         <h3 class="font-bold pb-4">{{ item.title }}</h3>
         <p v-html="item.text"></p>
-      </div>
+      </div> -->
 
       <p class="pb-2 text-lg">[1] CHANDA, Mona Lisa et LEVITIN, Daniel J. (avril 2013), Trends in Cognitive Sciences</p>
       <p class="text-lg">[2] PLATEL, Hervé (octobre 2015), "Pourquoi la musique est bonne pour le cerveau ?"</p>
@@ -56,6 +62,7 @@ import Headline from '@/components/typography/Headline.vue'
 import Sublink from '@/components/typography/Sublink.vue'
 import DetailedImages from '@/components/typography/DetailedImages.vue'
 import Spacing from '@/components/typography/Spacing.vue'
+import AccordionItem from '@/components/pages/AccordionItem.vue'
 
 export default {
   components: {
@@ -63,9 +70,11 @@ export default {
     Sublink,
     DetailedImages,
     Spacing,
+    AccordionItem,
   },
   data() {
     return {
+      images: ['/img/mission_1.jpeg', '/img/mission_2.jpeg', '/img/mission_3.jpeg', '/img/mission_4.jpeg', '/img/mission_1.jpeg', '/img/mission_2.jpeg', '/img/mission_3.jpeg', '/img/mission_4.jpeg'],
       items: [
         { description: this.$t('mission').buts.content[0], img: '/img/mission_1.jpeg' },
         {
