@@ -5,19 +5,19 @@
     </Headline>
 
     <div class="flex flex-col justify-items-start font-playFair items-start text-xl lg:flex-row lg:space-x-8 lg:mb-16">
-      <ClassicSelect :options="years">
+      <!-- <ClassicSelect :options="years">
         <template #label> à venir </template>
       </ClassicSelect>
 
       <ClassicSelect :options="['Sélection']">
         <template #label> Filtre </template>
-      </ClassicSelect>
+      </ClassicSelect> -->
 
       <ClassicSelect :options="['Valais', 'Vaud', 'Genève']">
-        <template #label> région </template>
+        <template #label> Région </template>
       </ClassicSelect>
       <ClassicSelect :options="years">
-        <template #label> à venir passés </template>
+        <template #label>Concerts passés </template>
       </ClassicSelect>
     </div>
 

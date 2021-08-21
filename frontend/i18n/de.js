@@ -2,7 +2,7 @@ export default {
   nav: {
     association: 'Der Verein',
     artists: 'Die Musiker',
-    auditions: 'Auditions',
+    auditions: 'Vorsingen',
     home: 'Home',
     mission: 'Unsere Mission',
     concerts: 'Unsere Konzerte',
@@ -181,7 +181,7 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
   },
   auditions: {
     hero: {
-      title: 'Auditions',
+      title: 'Vorsingen',
       subtitle: {
         vs: 'Möchten Sie Musiker bei den Concerts du Cœur Valaisans werden?',
         vd: 'Möchten Sie Musiker bei den Concerts du Cœur Vaudois werden?',

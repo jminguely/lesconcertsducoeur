@@ -30,7 +30,7 @@ export default {
       },
     ],
     nextConcerts: 'Prochains concerts',
-    supportUs: 'Soutenez-nous …',
+    supportUs: 'Soutenez-nous',
     nousSoutenir: 'Nous soutenir',
     partners: {
       title: 'En partenariat avec',
@@ -63,7 +63,7 @@ export default {
       content: [
         {
           title: 'Proposer des moments musicaux aux personnes qui ont difficilement accès à la culture',
-          text: 'L’objectif des Concerts du Cœur est de promouvoir l’accès à la culture en dehors des salles traditionnelles de concert auprès des personnes âgées, hospitalisées, incarcérées, en situation de handicap ou de précarité. ',
+          text: 'L’objectif des Concerts du Cœur est de promouvoir l’accès à la culture pour les personnes âgées, hospitalisées, incarcérées, en situation de handicap ou de précarité. En organisant, en coordination étroite avec le personnel, des concerts au sein même des institutions, nous amenons la musique dans des espaces nouveaux, et allons à la rencontre des personnes isolées ou empêchées dans leur capacité de déplacement.',
         },
         {
           title: 'Apporter les bienfaits de la musique',

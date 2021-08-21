@@ -96,26 +96,26 @@
     <Divider class="my-16" />
 
     <Headline class="mb-12">
-      <template #headline> Vous souhaitez organiser un concert … </template>
+      <template #headline> Souhaitez vous organiser un concert ? </template>
     </Headline>
 
     <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
       <Sublink canton="vs">
-        <template #title>… en Valais?</template>
+        <template #title>dans le canton du Valais?</template>
         <template #text>
           <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'vs' } })">> découvrez nos musicien·nes·s</nuxt-link>
         </template>
       </Sublink>
 
       <Sublink canton="vd">
-        <template #title>… dans le canton de Vaud?</template>
+        <template #title>dans le canton de Vaud?</template>
         <template #text>
           <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'vd' } })"> > découvrez nos musicien·nes·s </nuxt-link>
         </template>
       </Sublink>
 
       <Sublink canton="ge">
-        <template #title>… à Genève?</template>
+        <template #title>dans le canton de Genève?</template>
         <template #text>
           <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'ge' } })"> > découvrez nos musicien·nes·s </nuxt-link>
         </template>
@@ -134,9 +134,9 @@
       <Headline>
         <template #headline>{{ $t('home').supportUs }}</template>
         <template #content>
-          <p class="mb-2 text-xl">… en faisant un don</p>
-          <p class="mb-2 text-xl">… en devenant bénévole</p>
-          <p class="mb-2 text-xl">… en devenant membre</p>
+          <p class="mb-2 text-xl">> en faisant un don</p>
+          <p class="mb-2 text-xl">> en devenant bénévole</p>
+          <p class="mb-2 text-xl">> en devenant membre</p>
         </template>
       </Headline>
       <div class="w-full">

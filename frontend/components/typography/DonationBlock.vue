@@ -10,7 +10,7 @@
       <div v-if="circle" class="ml-auto lg:m-0">
         <nuxt-link :to="localePath('soutien')" class="no-underline">
           <div
-            class="duration-300 ease-in-out hover:scale-110 flex items-center justify-center w-28 h-28 text-xl px-4 leading-6 text-center text-white transform rounded-full -rotate-25 font-playFair"
+            class="duration-500 ease-in-out hover:scale-105 flex items-center justify-center w-28 h-28 text-xl px-4 leading-6 text-center text-white transform rounded-full -rotate-25 font-playFair"
             :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"
           >
             Faire un don

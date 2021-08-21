@@ -15,11 +15,11 @@
 
     <Headline>
       <template #headline>
-        <span class="text-4xl lg:text-5xl">Newsletters</span>
+        <h1 class="text-4xl lg:text-5xl">Newsletters</h1>
       </template>
     </Headline>
 
-    <div class="mt-8 text-xl font-newsCycle">
+    <div class="text-xl font-newsCycle">
       <p>Newsletter No 6 – Rapport d’activité 2019 | 03.2020</p>
       <p>Newsletter No 5 | 11.2019</p>
       <p>Newsletter No 4 – Rapport d’activité 2018 | 07.2019</p>
@@ -34,9 +34,7 @@
       </template>
     </Headline>
 
-    <p class="text-xl font-playFair">Ils parlent de nous</p>
-
-    <div class="flex flex-col justify-between pt-10 lg:flex-row">
+    <div class="flex flex-col justify-between lg:flex-row">
       <div>
         <div class="mb-10">
           <p class="text-xl underline">La musique adoucit la vie</p>
@@ -88,7 +86,7 @@
       <template #headline>Images</template>
     </Headline>
 
-    <div class="my-5 lg:my-28">
+    <div class="">
       <Carousel
         class="mx-auto"
         :options="{
