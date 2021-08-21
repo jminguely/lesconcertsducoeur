@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full h-full md:border-1 md:border-gray-500">
+  <div class="relative w-full h-full">
     <template v-if="data.picture != null">
       <img class="object-cover w-full h-4/5 md:h-full" :src="'https://api.lesconcertsducoeur.ch' + data.picture.url" />
     </template>
