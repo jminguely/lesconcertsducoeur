@@ -19,7 +19,7 @@
     <div class="lg:absolute lg:top-36">
       <div class="flex justify-between lg:items-center">
         <nuxt-link :to="localePath('/')">
-          <Logo :class="{ 'opacity-0': menu, 'opacity-100': !menu, 'h-9': stickyHeader && !menu, 'h-12': !stickyHeader }" class="h-12 lg:h-16" />
+          <Logo :class="{ 'opacity-0': menu, 'opacity-100': !menu, 'h-9': stickyHeader, 'h-12': !stickyHeader }" class="lg:h-16" />
         </nuxt-link>
         <button
           :class="{ opened: menu }"
@@ -150,8 +150,10 @@ export default {
     handleScroll() {
       // Your scroll handling here
       console.log(window.scrollY)
-      if (window.scrollY > 80) this.stickyHeader = true
-      else this.stickyHeader = false
+      if (!this.menu) {
+        if (window.scrollY > 80) this.stickyHeader = true
+        else this.stickyHeader = false
+      }
     },
     openMenu() {
       this.menu = true
