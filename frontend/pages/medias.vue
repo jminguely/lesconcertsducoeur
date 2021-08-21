@@ -15,7 +15,7 @@
 
     <Headline>
       <template #headline>
-        <span class="text-4xl lg:text-7xl">Newletters</span>
+        <span class="text-4xl lg:text-5xl">Newsletters</span>
       </template>
     </Headline>
 
@@ -30,7 +30,7 @@
 
     <Headline>
       <template #headline>
-        <span class="text-4xl lg:text-7xl">Presse</span>
+        <span class="text-4xl lg:text-5xl">Presse</span>
       </template>
     </Headline>
 
@@ -87,6 +87,20 @@
     <Headline>
       <template #headline>Images</template>
     </Headline>
+
+    <div class="my-5 lg:my-28">
+      <Carousel
+        class="mx-auto"
+        :options="{
+          rewind: true,
+          perPage: 1,
+          gap: '1rem',
+          type: 'fade',
+          arrows: true,
+        }"
+        :images="images"
+      />
+    </div>
   </div>
 </template>
 
@@ -94,12 +108,19 @@
 import Headline from '@/components/typography/Headline.vue'
 import SocialLink from '@/components/pages/SocialLink.vue'
 import Spacing from '@/components/typography/Spacing.vue'
+import Carousel from '@/components/pages/Carousel.vue'
 
 export default {
   components: {
     Headline,
+    Carousel,
     SocialLink,
     Spacing,
+  },
+  data() {
+    return {
+      images: ['/img/mission_1.jpeg', '/img/mission_2.jpeg', '/img/mission_3.jpeg', '/img/mission_4.jpeg'],
+    }
   },
 }
 </script>
