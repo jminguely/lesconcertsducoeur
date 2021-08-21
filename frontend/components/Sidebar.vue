@@ -12,14 +12,14 @@
       'border-ge': canton == 'ge',
     }"
   >
-    <div :class="{ 'absolute top-5 left-5 text-xl z-10': menu, hidden: !menu }" class="ml-3 lg:block lg:text-xl">
+    <div :class="{ 'absolute top-5 left-5 text-xl z-10': menu, hidden: !menu }" class="lg:ml-4 lg:block lg:text-xl">
       <nuxt-link :to="switchLocalePath('fr')">fr</nuxt-link> | <nuxt-link :to="switchLocalePath('de')">de</nuxt-link>
     </div>
 
     <div class="lg:absolute lg:top-36">
-      <div class="flex justify-between items-center">
+      <div class="flex justify-between lg:items-center">
         <nuxt-link :to="localePath('/')">
-          <Logo :class="{ 'opacity-0': menu, 'opacity-100': !menu, 'h-9': stickyHeader, 'h-12': !stickyHeader }" class="lg:h-16" />
+          <Logo :class="{ 'opacity-0': menu, 'opacity-100': !menu, 'h-9': stickyHeader && !menu, 'h-12': !stickyHeader }" class="h-12 lg:h-16" />
         </nuxt-link>
         <button
           :class="{ opened: menu }"
@@ -53,8 +53,8 @@
         </button>
       </div>
 
-      <div :class="{ hidden: !menu }" class="mt-8 text-xl lg:text-xl lg:block">
-        <div class="flex flex-col ml-4">
+      <div :class="{ hidden: !menu }" class="mt-4 lg:mt-8 text-xl lg:text-xl lg:block">
+        <div class="flex flex-col lg:ml-4">
           <nuxt-link v-for="(item, i) in links" :key="item.name + i" :class="{ 'my-2': menu }" :to="item.link" :exact="item.exact">
             {{ item.name }}
           </nuxt-link>
@@ -69,12 +69,12 @@
       </nuxt-link> -->
     </div>
 
-    <div :class="{ visible: menu, hidden: !menu }" class="px-4">
-      <ul class="flex flex-col mt-5 overflow-hidden">
-        <navbar-item v-for="(canton, i) in cantons" :key="'mobile-navbar' + i + canton" :canton="canton" class="mb-4">
+    <div :class="{ visible: menu, hidden: !menu }" class="">
+      <ul class="flex flex-col overflow-hidden">
+        <navbar-item v-for="(canton, i) in cantons" :key="'mobile-navbar' + i + canton" :canton="canton" class="mt-2">
           <template #content>{{ $t('canton')[canton] }}</template>
           <template #items>
-            <ul class="flex flex-col overflow-hidden">
+            <ul class="flex flex-col overflow-hidden text-xl">
               <nuxt-link :to="localePath({ name: 'canton-association', params: { canton: canton } })">{{ $t('nav').association }}</nuxt-link>
               <nuxt-link :to="localePath({ name: 'canton-artistes', params: { canton: canton } })">{{ $t('nav').artists }}</nuxt-link>
               <nuxt-link :to="localePath({ name: 'canton-auditions', params: { canton: canton } })">{{ $t('nav').auditions }}</nuxt-link>
@@ -86,11 +86,11 @@
 
     <div class="flex flex-col">
       <div :class="{ 'flex flex-row-reverse justify-between': menu, 'hidden lg:flex': !menu }" class="items-center">
-        <div class="mr-2">
+        <div class="lg:mr-2">
           <SocialLink name="facebook" link="https://www.facebook.com/concertsducoeur/" sidebar />
         </div>
 
-        <div :class="{ 'ml-auto': menu }" class="mr-2">
+        <div :class="{ 'ml-auto mr-4': menu }" class="mr-2">
           <SocialLink name="instagram" link="https://www.instagram.com/lesconcertsducoeur/" sidebar />
         </div>
 
