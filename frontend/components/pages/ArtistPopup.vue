@@ -36,7 +36,7 @@
             </g>
           </svg>
           <template v-if="data[previousIndex] != null">
-            <span class="pl-3 hidden lg:block hover:text-gray-500">
+            <span class="pl-3 hidden lg:block" :class="{ 'hover:text-vs': canton == 'vs', 'hover:text-vd': canton == 'vd', 'hover:text-ge': canton == 'ge' }">
               <template v-if="data[previousIndex].first_name != null && data[previousIndex].last_name"> {{ data[previousIndex].first_name }} {{ data[previousIndex].last_name }} </template>
               <template v-if="data[previousIndex].name != null"> {{ data[previousIndex].name }} </template>
             </span>
@@ -58,7 +58,7 @@
             </g>
           </svg>
           <template v-if="data[nextIndex] != null">
-            <span class="pl-3 hidden lg:block hover:text-gray-500">
+            <span class="pl-3 hidden lg:block" :class="{ 'hover:text-vs': canton == 'vs', 'hover:text-vd': canton == 'vd', 'hover:text-ge': canton == 'ge' }">
               <template v-if="data[nextIndex].first_name != null && data[nextIndex].last_name"> {{ data[nextIndex].first_name }} {{ data[nextIndex].last_name }} </template>
               <template v-if="data[nextIndex].name != null"> {{ data[nextIndex].name }} </template>
             </span>
@@ -79,18 +79,18 @@
         </h3>
 
         <div class="prose">
-          <p class="prose-lg font-newsCycle">
+          <p class="prose-xl font-newsCycle">
             {{ selected.description }}
           </p>
 
           <div v-if="selected.repertoire != null">
             <p class="block text-xl font-playFair">Répertoire</p>
-            <p class="prose-lg font-newsCycle">{{ selected.repertoire }}</p>
+            <p class="prose-xl font-newsCycle">{{ selected.repertoire }}</p>
           </div>
 
           <div v-if="selected.formats != null">
             <p class="text-xl font-playFair">Formats</p>
-            <p class="prose-lg font-newsCycle">{{ selected.formats }}</p>
+            <p class="prose-xl font-newsCycle">{{ selected.formats }}</p>
           </div>
         </div>
         <!-- <p class="my-6 prose-xl font-newsCycle">Vous souhaitez booker ce musicien·nne dans votre établissement?</p>

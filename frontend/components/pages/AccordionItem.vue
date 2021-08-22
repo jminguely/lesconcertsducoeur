@@ -16,12 +16,12 @@
     </div>
     <div
       class="duration-500 ease-in-out min-h-0 max-h-0 flex flex-col lg:flex-row justify-between"
-      :class="{ 'opacity-0 overflow-hidden max-h-0 font-newsCycle': !open, 'opacity-1 h-full max-h-144 overflow-hidden pt-4': open }"
+      :class="{ 'opacity-0 overflow-hidden max-h-0 font-newsCycle': !open, 'opacity-1 h-full max-h-full overflow-hidden pt-4': open }"
     >
       <div class="w-full pr-5 text-xl">
         <slot name="content"></slot>
       </div>
-      <div class="w-full my-4 lg:my-0 max-h-144">
+      <div v-if="!noImage" class="w-full my-4 lg:my-0 max-h-144">
         <slot name="image"></slot>
       </div>
     </div>
@@ -32,6 +32,10 @@
 export default {
   props: {
     open: {
+      type: Boolean,
+      default: false,
+    },
+    noImage: {
       type: Boolean,
       default: false,
     },

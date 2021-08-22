@@ -1,174 +1,131 @@
 <template>
   <div>
-    <Headline class="lg:pt-28">
-      <template #headline>
-        <span class="text-4xl lg:text-7xl">Contact</span>
-      </template>
+    <Headline class="mb-12">
+      <template #headline> Contact </template>
       <template #content>
         Si nos actions vous intéressent, si vous désirez organiser un concert dans votre établissement ou dans l'EMS de l’un de de vos proches, n’hésitez pas à nous contacter.
-        <p class="mt-10 lg:my-10">Contact général</p>
-        <p class="underline lg:ml-48 font-newsCycle">contact@lesconcertsducoeur.ch</p>
       </template>
     </Headline>
 
-    <AccordionItem class="hidden lg:block">
-      <template #label>Contact Valais</template>
-      <template #content>
-        <div class="mb-28">
-          <div class="text-xl text-red-500 ml-52">
-            <span class="font-bold">Les Concerts du Coeur</span><br />
-            Les Rocailles, Rue des Biolirs 6,<br />
-            3963 Crans-Montana<br />
-            <span class="underline">valais@lesconcertsducoeur.ch</span>
-          </div>
-        </div>
+    <h2 class="text-3xl font-playFair">Contact général</h2>
+    <p class="font-newsCycle text-xl mb-12">contact@lesconcertsducoeur.ch</p>
 
-        <div class="mb-28">
-          <h3 class="text-xl font-playFair">Direction artistique</h3>
-          <div class="text-xl text-red-500 ml-52">
-            <span class="font-bold">Laure Barras</span><br />
-            <span class="underline">laure.barras@lesconcertsducoeur.chch</span>
-          </div>
-        </div>
+    <accordion :items="items" class="hidden lg:block"> </accordion>
 
-        <div class="pb-28">
-          <h3 class="text-xl font-playFair">Bénévoles</h3>
-          <div class="text-xl text-red-500 ml-52">
-            <span class="font-bold">Resp</span><br />
-            <span class="underline">benevoles-vs@lesconcertsducoeur.ch</span>
-          </div>
-        </div>
-      </template>
-    </AccordionItem>
-
-    <AccordionItem class="hidden lg:block">
-      <template #label>Contact Vaud</template>
-      <template #content>
-        <div class="mb-28">
-          <div class="text-xl text-red-500 ml-52">
-            <span class="font-bold">Les Concerts du Coeur</span><br />
-            Les Rocailles, Rue des Biolirs 6,<br />
-            3963 Crans-Montana<br />
-            <span class="underline">valais@lesconcertsducoeur.ch</span>
-          </div>
-        </div>
-
-        <div class="mb-28">
-          <h3 class="text-xl font-playFair">Direction artistique</h3>
-          <div class="text-xl text-red-500 ml-52">
-            <span class="font-bold">Laure Barras</span><br />
-            <span class="underline">laure.barras@lesconcertsducoeur.chch</span>
-          </div>
-        </div>
-
-        <div class="pb-28">
-          <h3 class="text-xl font-playFair">Bénévoles</h3>
-          <div class="text-xl text-red-500 ml-52">
-            <span class="font-bold">Resp</span><br />
-            <span class="underline">benevoles-vs@lesconcertsducoeur.ch</span>
-          </div>
-        </div>
-      </template>
-    </AccordionItem>
-
-    <AccordionItem class="hidden lg:block">
-      <template #label>Contact Genève</template>
-      <template #content>
-        <div class="mb-28">
-          <div class="text-xl text-red-500 ml-52">
-            <span class="font-bold">Les Concerts du Coeur</span><br />
-            Les Rocailles, Rue des Biolirs 6,<br />
-            3963 Crans-Montana<br />
-            <span class="underline">valais@lesconcertsducoeur.ch</span>
-          </div>
-        </div>
-
-        <div class="mb-28">
-          <h3 class="text-xl font-playFair">Direction artistique</h3>
-          <div class="text-xl text-red-500 ml-52">
-            <span class="font-bold">Laure Barras</span><br />
-            <span class="underline">laure.barras@lesconcertsducoeur.chch</span>
-          </div>
-        </div>
-
-        <div class="pb-28">
-          <h3 class="text-xl font-playFair">Bénévoles</h3>
-          <div class="text-xl text-red-500 ml-52">
-            <span class="font-bold">Resp</span><br />
-            <span class="underline">benevoles-vs@lesconcertsducoeur.ch</span>
-          </div>
-        </div>
-      </template>
-    </AccordionItem>
-
-    <div class="lg:hidden">
+    <div v-for="(item, i) in items" :key="i + item.title" class="lg:hidden mb-16">
       <div>
-        <h3 class="text-xl font-playFair">Valais</h3>
+        <h3 class="mb-4 text-3xl font-playFair">{{ item.title }}</h3>
       </div>
-      <div class="mb-8 ml-8 text-red-600 font-newsCycle">
-        <h3 class="text-lg font-bold">Laure Barras</h3>
-        <h5 class="text-lg">Directrice artistique Valais email</h5>
-        <br />
-        <h5 class="text-lg">Les Rocailles, Rue des Biolirs 6, 3963 Crans-Montana</h5>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-playFair">Bénévoles valaisans</h3>
-      </div>
-      <div class="mb-8 ml-8 text-red-600 font-newsCycle">
-        <h3 class="text-lg font-bold">Laure Barras</h3>
-        <h5 class="text-lg">Directrice artistique Valais email</h5>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-playFair">Vaud</h3>
-      </div>
-      <div class="mb-8 ml-8 text-green-600 font-newsCycle">
-        <h3 class="text-lg font-bold">Mary Rose</h3>
-        <h5 class="text-lg">Directrice artistique Vaud email</h5>
-        <br />
-        <h5 class="text-lg">Route du village 59 1509 Vucherens</h5>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-playFair">Bénévoles valaisans</h3>
-      </div>
-      <div class="mb-8 ml-8 text-green-600 font-newsCycle">
-        <h3 class="text-lg font-bold">Mary Rose</h3>
-        <h5 class="text-lg">Directrice artistique Vaud email</h5>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-playFair">Bénévoles valaisans</h3>
-      </div>
-      <div class="mb-8 ml-8 text-yellow-600 font-newsCycle">
-        <h3 class="text-lg font-bold">Mary Rose</h3>
-        <h5 class="text-lg">Directrice artistique Vaud email</h5>
-        <br />
-        <h5 class="text-lg">Route du village 59 1509 Vucherens</h5>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-playFair">Bénévoles genevois</h3>
-      </div>
-      <div class="mb-8 ml-8 text-yellow-600 font-newsCycle">
-        <h3 class="text-lg font-bold">Mary Rose</h3>
-        <h5 class="text-lg">Directrice artistique Vaud email</h5>
-      </div>
-
-      <img class="mx-auto" src="~/assets/img/illustrations/illustration8.svg" />
+      <div v-html="item.text"></div>
     </div>
   </div>
 </template>
 
 <script>
 import Headline from '@/components/typography/Headline.vue'
-import AccordionItem from '@/components/pages/AccordionItem.vue'
+import Accordion from '@/components/pages/Accordion.vue'
+// import Spacing from '@/components/typography/Spacing.vue'
 
 export default {
   components: {
     Headline,
-    AccordionItem,
+    Accordion,
+    // Spacing,
+  },
+  data() {
+    return {
+      items: [
+        {
+          noImage: true,
+          title: `Contact Valais`,
+          text: `
+          <div class="mb-8 lg:mb-12">
+          <div class="text-xl text-vs">
+            <span class="font-bold">Les Concerts du Coeur</span><br />
+            Les Rocailles, Rue des Biolirs 6,<br />
+            3963 Crans-Montana<br />
+            <a href="mailto:valais@lesconcertsducoeur.ch">valais@lesconcertsducoeur.ch</a>
+          </div>
+        </div>
+        <spacing />
+
+        <div class="mb-8 lg:mb-12">
+          <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Direction artistique et organisation des concerts Bas-Valais et Valais Centrale</h3>
+          <div class="text-xl text-vs">
+            <span class="font-bold">Laure Barras</span><br />
+            <a href="mailto:laure.barras@lesconcertsducoeur.ch">laure.barras@lesconcertsducoeur.ch</a>
+          </div>
+        </div>
+
+        <div class="mb-8 lg:mb-12">
+          <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Organisation concerts Haut-Valais</h3>
+          <div class="text-xl text-vs">
+            <span class="font-bold">Franziska Heinzen</span><br />
+            <a href="mailto:franziska.heinzen@lesconcertsducoeur.ch">franziska.heinzen@lesconcertsducoeur.ch</a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Secrétariat</h3>
+          <div class="text-xl text-vs">
+            <span class="font-bold">Danielle Waser-Massy</span><br />
+            <a href="mailto:secretariat-vs@lesconcertsducoeur.ch">secretariat-vs@lesconcertsducoeur.ch</a>
+          </div>
+        </div>`,
+        },
+        {
+          noImage: true,
+          title: `Contact Vaud`,
+          text: `
+          <div class="mb-8 lg:mb-12">
+          <div class="text-xl text-vd">
+            <span class="font-bold">Les Concerts du Cœur Vaudois</span><br />
+            Route du village 59<br />
+            1509 Vucherens<br />
+            <a href="mailto:vaud@lesconcertsducoeur.ch">vaud@lesconcertsducoeur.ch</a>
+          </div>
+        </div>
+        <spacing />
+
+        <div>
+          <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Direction artistique et organisation des concerts</h3>
+          <div class="text-xl text-vd">
+            <span class="font-bold">Mary Rose</span><br />
+            <a href="mailto:mary.rose@lesconcertsducoeur.ch">mary.rose@lesconcertsducoeur.ch</a>
+          </div>
+        </div>
+        `,
+        },
+        {
+          noImage: true,
+          title: `Contact Genève`,
+          text: `
+          <div class="mb-8 lg:mb-12">
+          <div class="text-xl text-ge">
+            <span class="font-bold">Les Concerts du Cœur Genevois</span><br />
+            C/O Etude Zarb & Wood<br />
+            Rue du Conseil-General 11<br />
+            1205 Genève<br />
+            <a href="mailto:geneve@lesconcertsducoeur.ch">geneve@lesconcertsducoeur.ch</a>
+          </div>
+        </div>
+        <spacing />
+
+        <div>
+          <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Direction artistique et organisations des concerts</h3>
+          <div class="mb-2 text-xl text-ge">
+            <span class="font-bold">Laure Zaugg</span><br />
+            <a href="mailto:laure.zaugg@lesconcertsducoeur.ch">laure.zaugg@lesconcertsducoeur.ch</a>
+          </div>
+          <div class="text-xl text-ge">
+            <span class="font-bold">Sylvain Leutwyler</span><br />
+            <a href="mailto:sylvain.leutwyler@lesconcertsducoeur.ch">sylvain.leutwyler@lesconcertsducoeur.ch</a>
+          </div>
+        </div>
+        `,
+        },
+      ],
+    }
   },
 }
 </script>

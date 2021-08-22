@@ -12,7 +12,7 @@ module.exports = {
         },
         xl: {
           css: {
-            lineHeight: '1.75rem',
+            lineHeight: '1.5',
             h2: {
               fontFamily: 'Playfair',
               fontSize: '1.875rem',
