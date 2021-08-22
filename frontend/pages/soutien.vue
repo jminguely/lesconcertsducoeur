@@ -7,10 +7,10 @@
     <div class="flex my-28">
       <div class="w-full py-4 pr-10">
         <h2 class="text-3xl font-playFair">
-          - Parler de nous autour de vous; <br />
-          <span>- Devenez membre</span> de l'association; <br />
-          <span>- Devenez bénévole</span>; <br />
-          <span>- Faites un don</span>. <br /><br />
+          — Parler de nous autour de vous; <br />
+          <span>— Devenez membre</span> de l'association; <br />
+          <span>— Devenez bénévole</span>; <br />
+          <span>— Faites un don</span>. <br /><br />
           Merci !
         </h2>
       </div>
