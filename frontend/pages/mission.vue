@@ -74,16 +74,16 @@ export default {
   },
   data() {
     return {
-      images: ['/img/mission_1.jpeg', '/img/mission_2.jpeg', '/img/mission_3.jpeg', '/img/mission_4.jpeg', '/img/mission_1.jpeg', '/img/mission_2.jpeg', '/img/mission_3.jpeg', '/img/mission_4.jpeg'],
+      images: ['/img/mission_objectif_1.jpg', '/img/mission_objectif_2.jpg', '/img/mission_objectif_3.jpg', '/img/mission_objectif_4.jpg', '/img/mission_objectif_5.jpg'],
       items: [
-        { description: this.$t('mission').buts.content[0], img: '/img/mission_1.jpeg' },
+        { description: this.$t('mission').buts.content[0], img: '/img/mission_but_1.jpg' },
         {
           description: this.$t('mission').buts.content[1],
-          img: '/img/mission_2.jpeg',
+          img: '/img/mission_but_2.jpg',
         },
         {
           description: this.$t('mission').buts.content[2],
-          img: '/img/mission_3.jpeg',
+          img: '/img/mission_but_3.jpg',
         },
       ],
     }
