@@ -67,7 +67,7 @@ export default {
         },
         {
           title: 'Apporter les bienfaits de la musique',
-          text: 'Grâce au langage universel de la musique et à une véritable interaction humaine avec les artistes, nous offrons des moments de partage unique.<br>Des études récentes ont démontré que les activités musicales sembleraient avoir des effets similaires aux antidépresseurs <span class="text-base">[1]</span> et pourraient semble-t-il retarder les effets négatifs de la maladie  d’Alzheimer et prévenir l’isolement social. <span class="text-base">[2]</span>',
+          text: 'Grâce au langage universel de la musique et à une véritable interaction humaine avec les artistes, nous offrons des moments de partage unique.<br>Des études récentes ont démontré que les activités musicales sembleraient avoir des effets similaires aux antidépresseurs <span class="text-base">[1]</span> et pourraient semble-t-il retarder les effets négatifs de la maladie  d’Alzheimer et prévenir l’isolement social. <span class="text-base">[2]</span><br><p class="pb-2 text-sm">[1] CHANDA, Mona Lisa et LEVITIN, Daniel J. (avril 2013), Trends in Cognitive Sciences</p><p class="text-sm">[2] PLATEL, Hervé (octobre 2015), "Pourquoi la musique est bonne pour le cerveau ?"</p>',
         },
         {
           title: 'Soutenir une démarche de médiation culturelle',

@@ -35,24 +35,23 @@
 
     <spacing />
 
-    <Headline>
+    <Headline class="mb-8">
       <template #headline>{{ $t('mission').objectifs.title }}</template>
     </Headline>
 
     <accordion-item v-for="(item, i) in $t('mission').objectifs.content" :key="i">
-      <template #label>{{ item.title }}</template>
+      <template #label>{{ item.title }}{{ i }}</template>
       <template #content><div v-html="item.text"></div></template>
       <template #image><img class="mx-auto" :src="images[i]" /></template>
     </accordion-item>
+
+    <accordion :items="$t('mission').objectifs.content" :images="images"> </accordion>
 
     <div class="mt-12 text-xl font-newsCycle">
       <!-- <div v-for="(item, i) in $t('mission').objectifs.content" :key="i" class="pb-8">
         <h3 class="font-bold pb-4">{{ item.title }}</h3>
         <p v-html="item.text"></p>
       </div> -->
-
-      <p class="pb-2 text-lg">[1] CHANDA, Mona Lisa et LEVITIN, Daniel J. (avril 2013), Trends in Cognitive Sciences</p>
-      <p class="text-lg">[2] PLATEL, Hervé (octobre 2015), "Pourquoi la musique est bonne pour le cerveau ?"</p>
     </div>
   </div>
 </template>
@@ -62,7 +61,8 @@ import Headline from '@/components/typography/Headline.vue'
 import Sublink from '@/components/typography/Sublink.vue'
 import DetailedImages from '@/components/typography/DetailedImages.vue'
 import Spacing from '@/components/typography/Spacing.vue'
-import AccordionItem from '@/components/pages/AccordionItem.vue'
+// import AccordionItem from '@/components/pages/AccordionItem.vue'
+import Accordion from '@/components/pages/Accordion.vue'
 
 export default {
   components: {
@@ -70,10 +70,12 @@ export default {
     Sublink,
     DetailedImages,
     Spacing,
-    AccordionItem,
+    // AccordionItem,
+    Accordion,
   },
   data() {
     return {
+      activeAccordionItem: -1,
       images: ['/img/mission_objectif_1.jpg', '/img/mission_objectif_2.jpg', '/img/mission_objectif_3.jpg', '/img/mission_objectif_4.jpg', '/img/mission_objectif_5.jpg'],
       items: [
         { description: this.$t('mission').buts.content[0], img: '/img/mission_but_1.jpg' },
@@ -87,6 +89,12 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    setActiveAccordionItem(i) {
+      console.log(i)
+      this.activeAccordionItem = i
+    },
   },
 }
 </script>
