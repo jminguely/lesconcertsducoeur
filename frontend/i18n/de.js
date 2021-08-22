@@ -98,7 +98,7 @@ export default {
     concertTypes: [
       {
         title: 'Traditionelle Konzerte',
-        content: `Dieses Format bietet ein Konzert im traditionellen Sinne: Die Aufenthaltsräume verwandeln sich in einen Konzertsaal für die BewohnerInnen, PatientInnen, Personal und Angehörige: 
+        text: `Dieses Format bietet ein Konzert im traditionellen Sinne: Die Aufenthaltsräume verwandeln sich in einen Konzertsaal für die BewohnerInnen, PatientInnen, Personal und Angehörige: 
       <ul class="pt-2">
         <li>— Das Konzert dauert zwischen 45 und 60 Minuten;</li>
         <li>— Die KünstlerInnen führen mit kurzen Ansprachen durch das Konzert;</li>
@@ -107,7 +107,7 @@ export default {
       },
       {
         title: 'Konzerte im Freien',
-        content: `Je nach Wetterbedingungen und Hygienemassnahmen sind Konzerte im Freien – in den Gärten, auf den Terrassen oder sogar auf den Parkplätzen Ihrer Institution – möglich: 
+        text: `Je nach Wetterbedingungen und Hygienemassnahmen sind Konzerte im Freien – in den Gärten, auf den Terrassen oder sogar auf den Parkplätzen Ihrer Institution – möglich: 
       <ul class="pt-2">
         <li>— Das Konzert dauert zwischen 45 und 60 Minuten;</li>
         <li>— Das Publikum kann von den Balkonen oder aus der Ferne zuhören;</li>
@@ -118,7 +118,7 @@ export default {
       },
       {
         title: 'Wanderkonzerte',
-        content: `In Krankenhäusern und Kliniken, aber auch im Altersheim, laden die MusikerInnen zu kurzen Ständchen auf den jeweiligen Abteilungen ein:
+        text: `In Krankenhäusern und Kliniken, aber auch im Altersheim, laden die MusikerInnen zu kurzen Ständchen auf den jeweiligen Abteilungen ein:
       <ul class="pt-2">
         <li>— Jedes Konzert dauert maximal 15 Minuten;</li>
         <li>— Die Musik ist für PatientInnen, ihre Angehörigen und das Personal bestimmt;</li>
@@ -128,7 +128,7 @@ export default {
       },
       {
         title: 'Konzerte in den Zimmern',
-        content: `Den PatientInnen und BewohnerInnen wird die Möglichkeit geboten, private Minikonzerte in ihren Zimmern zu genissen: 
+        text: `Den PatientInnen und BewohnerInnen wird die Möglichkeit geboten, private Minikonzerte in ihren Zimmern zu genissen: 
       <ul class="pt-2">
         <li>— Die Konzerte dauern ungefähr 15 Minuten;</li>
         <li>— Die MusikerInnen spielen im Zimmer des/der PatientIn, der/die aus dem jeweiligen Repertoire einige Werke auswählen darf;</li>
@@ -137,7 +137,7 @@ export default {
       },
       {
         title: 'Virtuelle Konzerte',
-        content: `Live-Konzerte werden direkt in Ihre Institutionen übertragen: Die KünstlerInnen musizieren von zu Hause oder von einem Musikstudio aus und treten in den direkten, virtuellen Dialog mit den BewohnerInnen und PatientInnen. 
+        text: `Live-Konzerte werden direkt in Ihre Institutionen übertragen: Die KünstlerInnen musizieren von zu Hause oder von einem Musikstudio aus und treten in den direkten, virtuellen Dialog mit den BewohnerInnen und PatientInnen. 
 Sofern es die technische Ausstattung der Institution zulässt, ist es auch möglich, das Konzert in der gesamten Institution, resp. an verschiedenen Abteilungen zu übertragen`,
       },
       {
@@ -148,6 +148,8 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
         <li>— Diese Form ist eine ideale Lösung für Institutionen, in denen die BewohnerInnen ihre Zimmer nicht verlassen können.</li>
       </ul>`,
       },
+    ],
+    content: [
       {
         title: 'Repertoire',
         content: `Die vorgeschlagenen Formate und Programme erfüllen folgende Kriterien: 

@@ -33,7 +33,8 @@ export default {
   },
   methods: {
     setActiveItem(i) {
-      this.activeItem = i
+      if (this.activeItem !== i) this.activeItem = i
+      else this.activeItem = this.items.length
     },
   },
 }

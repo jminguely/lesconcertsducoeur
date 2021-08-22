@@ -23,11 +23,13 @@
       </template>
     </ImageBlock> -->
 
-    <accordion-item v-for="(item, i) in $t('concerts').concertTypes" :key="i">
+    <!-- <accordion-item v-for="(item, i) in $t('concerts').concertTypes" :key="i">
       <template #label>{{ item.title }}</template>
       <template #content><div v-html="item.content"></div></template>
       <template #image><img class="mx-auto" :src="images[i]" /></template>
-    </accordion-item>
+    </accordion-item> -->
+
+    <accordion :items="$t('concerts').concertTypes" :images="images"> </accordion>
 
     <div v-for="(item, i) in $t('concerts').content" :key="i">
       <spacing />
@@ -65,18 +67,20 @@
 import Headline from '@/components/typography/Headline.vue'
 import Spacing from '@/components/typography/Spacing.vue'
 import Testimonial from '@/components/typography/Testimonial.vue'
-import AccordionItem from '@/components/pages/AccordionItem.vue'
+// import AccordionItem from '@/components/pages/AccordionItem.vue'
+import Accordion from '@/components/pages/Accordion.vue'
 
 export default {
   components: {
     Headline,
-    AccordionItem,
+    // AccordionItem,
+    Accordion,
     Spacing,
     Testimonial,
   },
   data() {
     return {
-      images: ['/img/mission_1.jpeg', '/img/mission_2.jpeg', '/img/mission_3.jpeg', '/img/mission_4.jpeg', '/img/mission_1.jpeg', '/img/mission_2.jpeg', '/img/mission_3.jpeg', '/img/mission_4.jpeg'],
+      images: ['/img/concert_mediation.jpg', '/img/concert_exterieur.jpg', '/img/concert_itinerant.jpg', '/img/concert_chambres.jpg', '/img/concert_virtuel.jpg', '/img/rencontre_virtuelle.jpg'],
     }
   },
 }
