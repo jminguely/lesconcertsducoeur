@@ -83,14 +83,14 @@
             {{ selected.description }}
           </p>
 
-          <div v-if="selected.repertoire != null">
-            <p class="block text-xl font-playFair">Répertoire</p>
-            <p class="prose-xl font-newsCycle">{{ selected.repertoire }}</p>
+          <div v-if="selected.repertoire != null && selected.repertoire != ''">
+            <div class="mb-4 text-3xl font-playFair">Répertoire</div>
+            <div v-if="selected.repertoire != null" class="prose prose-xl" v-html="$md.render(selected.repertoire)"></div>
           </div>
 
-          <div v-if="selected.formats != null">
-            <p class="text-xl font-playFair">Formats</p>
-            <p class="prose-xl font-newsCycle">{{ selected.formats }}</p>
+          <div v-if="selected.formats != null && selected.formats != ''">
+            <div class="mb-4 text-3xl font-playFair">Formats</div>
+            <div v-if="selected.formats != null" class="prose prose-xl" v-html="$md.render(selected.formats)"></div>
           </div>
         </div>
         <!-- <p class="my-6 prose-xl font-newsCycle">Vous souhaitez booker ce musicien·nne dans votre établissement?</p>
@@ -107,8 +107,8 @@
           </template>
         </div>
 
-        <div v-if="selected.artists != null" class="mt-4 flex flex-col w-80">
-          <div v-for="artist in selected.artists" :key="artist.id" class="flex my-2">
+        <div v-if="selected.artists != null" class="mt-4 flex flex-col">
+          <div v-for="artist in selected.artists" :key="artist.id" class="grid grid-cols-2 my-2">
             <p class="mr-6 text-xl font-playFair">{{ artist.first_name }} {{ artist.last_name }}</p>
             <span class="text-lg font-newsCycle">{{ artist.instrument }} </span>
           </div>

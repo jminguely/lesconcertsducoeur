@@ -1,18 +1,21 @@
 <template>
   <div>
-    <Headline class="mb-12">
+    <Headline>
       <template #headline> Contact </template>
       <template #content>
         Si nos actions vous intéressent, si vous désirez organiser un concert dans votre établissement ou dans l'EMS de l’un de de vos proches, n’hésitez pas à nous contacter.
       </template>
     </Headline>
 
-    <h2 class="text-3xl font-playFair">Contact général</h2>
-    <p class="font-newsCycle text-xl mb-12">contact@lesconcertsducoeur.ch</p>
+    <spacing />
 
+    <h2 class="text-3xl font-playFair">Contact général</h2>
+    <p class="font-newsCycle text-xl">contact@lesconcertsducoeur.ch</p>
+
+    <spacing />
     <accordion :items="items" class="hidden lg:block"> </accordion>
 
-    <div v-for="(item, i) in items" :key="i + item.title" class="lg:hidden mb-16">
+    <div v-for="(item, i) in items" :key="i + item.title" class="lg:hidden">
       <div>
         <h3 class="mb-4 text-3xl font-playFair">{{ item.title }}</h3>
       </div>
@@ -24,13 +27,13 @@
 <script>
 import Headline from '@/components/typography/Headline.vue'
 import Accordion from '@/components/pages/Accordion.vue'
-// import Spacing from '@/components/typography/Spacing.vue'
+import Spacing from '@/components/typography/Spacing.vue'
 
 export default {
   components: {
     Headline,
     Accordion,
-    // Spacing,
+    Spacing,
   },
   data() {
     return {
