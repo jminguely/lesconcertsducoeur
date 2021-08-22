@@ -7,7 +7,7 @@
       <div class="font-newsCycle text-lg lg:text-xl lg:mr-48" :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">
         <slot name="details"></slot>
       </div>
-      <div v-if="circle" class="ml-auto lg:m-0">
+      <div v-if="circle" id="donation-circle" class="ml-auto lg:m-0">
         <nuxt-link :to="localePath('soutien')" class="no-underline">
           <div
             class="duration-500 ease-in-out hover:scale-105 flex items-center justify-center w-28 h-28 text-xl px-4 leading-6 text-center text-white transform rounded-full -rotate-25 font-playFair"

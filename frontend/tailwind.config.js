@@ -4,7 +4,10 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            color: 'black',
+            color: '#393939',
+            a: {
+              color: '',
+            },
           },
         },
         xl: {
