@@ -60,21 +60,21 @@ export default {
       if (canton === 'GE') return 4
     },
     async getArtists(canton) {
+      // artists(locale: $locale, where: { cantons_contains: $cantons }) {
+      //   id
+      //   first_name
+      //   last_name
+      //   instrument
+      //   description
+      //   repertoire
+      //   formats
+      //   picture {
+      //     id
+      //     url
+      //   }
+      // }
       const query = gql`
         query getArtists($locale: String, $cantons: ID) {
-          artists(locale: $locale, where: { cantons_contains: $cantons }) {
-            id
-            first_name
-            last_name
-            instrument
-            description
-            repertoire
-            formats
-            picture {
-              id
-              url
-            }
-          }
           musicGroups(locale: $locale, where: { cantons_contains: $cantons }) {
             id
             name
@@ -113,9 +113,10 @@ export default {
           if (process.env.dev) console.log(e)
         })
 
-      const artists = queryData.artists
+      // const artists = queryData.artists
       const musicGroups = queryData.musicGroups
-      this.data = musicGroups.concat(artists)
+      this.data = musicGroups
+      // this.data = musicGroups.concat(artists)
     },
   },
 }
