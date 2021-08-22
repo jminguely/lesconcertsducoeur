@@ -71,13 +71,13 @@
 
     <div :class="{ visible: menu, hidden: !menu }" class="">
       <ul class="flex flex-col overflow-hidden">
-        <navbar-item v-for="(item, i) in cantons" :key="'mobile-navbar' + i + canton" :canton="canton" class="mt-2">
-          <template #content>{{ $t('canton')[item] }}</template>
+        <navbar-item v-for="(canton, i) in cantons" :key="'mobile-navbar' + i + canton" :canton="canton" class="mt-2">
+          <template #content>{{ $t('canton')[canton] }}</template>
           <template #items>
             <ul class="flex flex-col overflow-hidden text-xl">
-              <nuxt-link :to="localePath({ name: 'canton-association', params: { canton: item } })">{{ $t('nav').association }}</nuxt-link>
-              <nuxt-link :to="localePath({ name: 'canton-artistes', params: { canton: item } })">{{ $t('nav').artists }}</nuxt-link>
-              <nuxt-link :to="localePath({ name: 'canton-auditions', params: { canton: item } })">{{ $t('nav').auditions }}</nuxt-link>
+              <nuxt-link :to="localePath({ name: 'canton-association', params: { canton: canton } })">{{ $t('nav').association }}</nuxt-link>
+              <nuxt-link :to="localePath({ name: 'canton-artistes', params: { canton: canton } })">{{ $t('nav').artists }}</nuxt-link>
+              <nuxt-link :to="localePath({ name: 'canton-auditions', params: { canton: canton } })">{{ $t('nav').auditions }}</nuxt-link>
             </ul>
           </template>
         </navbar-item>
