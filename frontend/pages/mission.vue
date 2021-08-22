@@ -39,11 +39,11 @@
       <template #headline>{{ $t('mission').objectifs.title }}</template>
     </Headline>
 
-    <accordion-item v-for="(item, i) in $t('mission').objectifs.content" :key="i">
+    <!-- <accordion-item v-for="(item, i) in $t('mission').objectifs.content" :key="i">
       <template #label>{{ item.title }}{{ i }}</template>
       <template #content><div v-html="item.text"></div></template>
       <template #image><img class="mx-auto" :src="images[i]" /></template>
-    </accordion-item>
+    </accordion-item> -->
 
     <accordion :items="$t('mission').objectifs.content" :images="images"> </accordion>
 
