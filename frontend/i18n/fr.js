@@ -199,7 +199,7 @@ export default {
     <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Les artistes intéressé·e·s doivent répondre aux critères ci-dessous :</h2>
     <ul class="pt-2">
       <li>— résider dans le canton de Genève (en tout cas la majorité des membres de la formation) ;</li>
-      <li>— démontrer un standard très élevé de qualité musicale et technique instrumentale ;</li>
+      <li>— démontrer un standard très élevé de qualité musicale et de technique instrumentale ;</li>
       <li>— posséder de bonnes capacités de communication et une aisance manifeste à établir une relation avec le public en l’invitant à participer autant que faire se peut ;</li>
       <li>— mise à disposition gracieusement de matériel et d’instruments tel un piano électrique ;</li>
       <li>— proposer un choix de répertoire varié et adapté aux spécificités d’un ou plusieurs publics cibles des Concerts du Cœur ;</li>
