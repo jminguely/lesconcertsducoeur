@@ -7,8 +7,8 @@
     <p class="text-xl font-newsCycle">Retrouvez-nous sur nos réseaux sociaux</p>
 
     <div class="flex my-5">
-      <SocialLink class="mr-2 lg:mr-4" name="facebook" link="https://www.facebook.com" />
-      <SocialLink name="instagram" link="https://www.instagram.com" />
+      <SocialLink class="mr-2 lg:mr-4" name="facebook" link="https://www.facebook.com/concertsducoeur/" />
+      <SocialLink name="instagram" link="https://www.instagram.com/lesconcertsducoeur/" />
     </div>
 
     <spacing />
@@ -82,22 +82,30 @@
 
     <spacing />
 
-    <Headline>
+    <Headline class="mb-4">
       <template #headline>Images</template>
     </Headline>
 
     <div class="">
-      <Carousel
-        class="mx-auto"
-        :options="{
-          rewind: true,
-          perPage: 1,
-          gap: '1rem',
-          type: 'fade',
-          arrows: true,
-        }"
-        :images="images"
-      />
+      <template v-if="content != null">
+        <template v-if="content.carousel != null">
+          <template v-if="content.carousel.images != null">
+            <Carousel
+              class="mx-auto"
+              :options="{
+                rewind: true,
+                perPage: 1,
+                gap: '1rem',
+                type: 'fade',
+                arrows: true,
+                autoplay: true,
+                interval: 3000,
+              }"
+              :images="content.carousel.images"
+            />
+          </template>
+        </template>
+      </template>
     </div>
   </div>
 </template>
@@ -107,6 +115,7 @@ import Headline from '@/components/typography/Headline.vue'
 import SocialLink from '@/components/pages/SocialLink.vue'
 import Spacing from '@/components/typography/Spacing.vue'
 import Carousel from '@/components/pages/Carousel.vue'
+import { gql } from 'graphql-tag'
 
 export default {
   components: {
@@ -117,8 +126,40 @@ export default {
   },
   data() {
     return {
-      images: ['/img/mission_1.jpeg', '/img/mission_2.jpeg', '/img/mission_3.jpeg', '/img/mission_4.jpeg'],
+      content: null,
     }
+  },
+  async fetch() {
+    await this.getContent()
+  },
+  methods: {
+    async getContent() {
+      const query = gql`
+        query getHome {
+          home {
+            id
+            carousel {
+              id
+              images {
+                id
+                url
+              }
+            }
+          }
+        }
+      `
+
+      this.content = await this.$apollo
+        .query({ query })
+        .then(({ data }) => {
+          if (process.env.dev) console.log(data)
+          return data
+        })
+        .catch((e) => {
+          if (process.env.dev) console.log(e)
+        })
+      this.content = this.content.home
+    },
   },
 }
 </script>

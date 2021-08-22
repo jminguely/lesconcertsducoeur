@@ -50,17 +50,25 @@
     </div>
 
     <div class="my-5 lg:my-28">
-      <Carousel
-        class="mx-auto"
-        :options="{
-          rewind: true,
-          perPage: 1,
-          gap: '1rem',
-          type: 'fade',
-          arrows: true,
-        }"
-        :images="images"
-      />
+      <template v-if="content != null">
+        <template v-if="content.carousel != null">
+          <template v-if="content.carousel.images != null">
+            <Carousel
+              class="mx-auto"
+              :options="{
+                rewind: true,
+                perPage: 1,
+                gap: '1rem',
+                type: 'fade',
+                arrows: true,
+                autoplay: true,
+                interval: 3000,
+              }"
+              :images="content.carousel.images"
+            />
+          </template>
+        </template>
+      </template>
     </div>
 
     <template v-if="newsArticles != null">
@@ -198,7 +206,7 @@ export default {
   },
   data() {
     return {
-      images: ['/img/mission_1.jpeg', '/img/mission_2.jpeg', '/img/mission_3.jpeg', '/img/mission_4.jpeg'],
+      images: ['/img/home_1.jpg', '/img/home_2.jpg', '/img/home_3.jpg', '/img/home_4.jpg', '/img/home_5'],
       sponsors: [
         { img: require('~/assets/img/partners/Berthy.svg'), link: '' },
         { img: require('~/assets/img/partners/BS.svg'), link: '' },
@@ -293,6 +301,13 @@ export default {
         query getHome {
           home {
             id
+            carousel {
+              id
+              images {
+                id
+                url
+              }
+            }
             sponsors {
               id
               url
