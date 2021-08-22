@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-16 lg:mt-0">
+  <div>
     <!-- <nuxt-link
       class="absolute flex items-center justify-center w-20 h-20 leading-5 text-center text-white transform bg-gray-700 rounded-full right-20 -rotate-25 top-32 lg:top-20 font-playFair"
       :to="localePath('soutien')"
