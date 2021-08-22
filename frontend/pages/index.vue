@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Headline class="mb-10 lg:mb-32">
+    <Headline class="-mt-4 mb-10 lg:mb-24">
       <template #content> <i>Les Concerts du Cœur</i> {{ $t('home').hero.subtitle }} </template>
     </Headline>
 
@@ -34,7 +34,10 @@
     </div>
 
     <spacing />
-    <div class="grid grid-cols-1 gap-y-10 md:gap-5 md:grid-cols-2">
+    <Headline class="mb-4">
+      <template #headline> Témoignages </template>
+    </Headline>
+    <div class="grid grid-cols-1 gap-y-10 md:gap-10 md:grid-cols-2">
       <testimonial v-for="item in $t('home').testimonials" :key="item.name">
         <template #quote>
           {{ item.quote }}
@@ -63,7 +66,7 @@
     <template v-if="newsArticles != null">
       <spacing />
 
-      <Headline class="mb-16">
+      <Headline class="mb-12">
         <template #headline> Actualités </template>
       </Headline>
 
@@ -80,7 +83,7 @@
     <template v-if="calendars != null">
       <spacing />
 
-      <Headline class="mb-16">
+      <Headline class="mb-12">
         <template #headline> {{ $t('home').nextConcerts }} </template>
       </Headline>
 
