@@ -32,7 +32,7 @@
     <!-- <div v-for="(event, i) in agendaPosts" :key="`post-${i}`" class="py-2">
       {{ event }}
     </div> -->
-    {{ meta_posts }}
+    {{ meta_posts.length }}
     <DateDivider>
       <template #date>2021</template>
     </DateDivider>
@@ -118,12 +118,14 @@ export default {
     for (let i = 0; i < this.meta_posts.length; i++) {
       setTimeout(() => {
         const postData = this.parseCalendarEntry(this.meta_posts[i])
-        if (postData.title != null && postData.location != null && postData.locale != null) {
-          this.createCalendarEntry(postData)
-          // console.log(postData)
-        } else if (postData.title == null && postData.location != null && postData.locale == null) {
+        console.log(JSON.stringify(postData))
+        // console.log(JSON.stringify(postData))
+        if (postData.title == null || postData.locale == null) {
           // This certainly means that it has a french version
           postData.locale = 'fr-CH'
+          postData.title = ''
+        }
+        if (postData.title != null && postData.locale != null && postData.location != null) {
           this.createCalendarEntry(postData)
           // console.log(postData)
         }
@@ -207,7 +209,9 @@ export default {
         }
       }
       if (hasDate && hasTime) {
+        console.log(date, time)
         data.date_time = this.$dateFns.formatISO(new Date(`${date}T${time}`))
+        console.log(data.date_time)
       } else if (hasDate && !hasTime) {
         time = '16:00'
         this.$dateFns.formatISO(new Date(`${date}T${time}`))
