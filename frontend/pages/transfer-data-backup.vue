@@ -26,12 +26,13 @@
     <!-- {{ fromHex('454d53206c6120436861726d6169652c20436f6c6c6f6d626579') }} -->
     <!-- Get Hex from meta_value that can then be piped to "fromHex" -->
     <!-- {{ wpPostmeta[2].data[1].meta_value.substr(2) }} -->
-    {{ wpPostmeta.data }}
+    <!-- {{ wpPostmeta[2].data }} -->
     <!-- {{ agendaPostmeta }} -->
     <!-- {{ wpPostmeta[2].data }} -->
     <!-- <div v-for="(event, i) in agendaPosts" :key="`post-${i}`" class="py-2">
       {{ event }}
     </div> -->
+    {{ meta_posts }}
     <DateDivider>
       <template #date>2021</template>
     </DateDivider>
@@ -103,7 +104,6 @@ export default {
       for (const item of this.wpPostmeta[2].data) {
         if (this.agendaPostsID.includes(item.post_id)) {
           item.meta_value = item.meta_value.substr(2, item.meta_value.length)
-          item.meta_value = this.fromHex(item.meta_value)
           agendaPostmeta.push(item)
         }
       }
@@ -112,12 +112,29 @@ export default {
   },
 
   mounted() {
-    // this.regroupMetaPosts(this.wpPostmeta[2].data)
-    // //     console.log(JSON.stringify(this.meta_posts[301])
-    // // this.createCalendarEntry(this.parseCalendarEntry(this.meta_posts[]))
-    // for (let i = 0; i < this.meta_posts.length; i++) {
-    //   this.createCalendarEntry(this.parseCalendarEntry(this.meta_posts[i]))
-    // }
+    this.regroupMetaPosts(this.wpPostmeta[2].data)
+    // console.log(JSON.stringify(this.parseCalendarEntry(this.meta_posts[301])))
+    // this.createCalendarEntry(this.parseCalendarEntry(this.meta_posts[301]))
+    for (let i = 0; i < this.meta_posts.length; i++) {
+      setTimeout(() => {
+        const postData = this.parseCalendarEntry(this.meta_posts[i])
+        if (postData.title != null && postData.location != null && postData.locale != null) {
+          this.createCalendarEntry(postData)
+          // console.log(postData)
+        } else if (postData.title == null && postData.location != null && postData.locale == null) {
+          // This certainly means that it has a french version
+          postData.locale = 'fr-CH'
+          this.createCalendarEntry(postData)
+          // console.log(postData)
+        }
+        // this.createCalendarEntry(this.parseCalendarEntry(this.meta_posts[i]))
+      }, 1000)
+      // const postData = this.parseCalendarEntry(this.meta_posts[i])
+      // if (postData.title != null && postData.location != null && postData.locale != null) {
+      //   this.createCalendarEntry(this.parseCalendarEntry(postData))
+      //   console.log(postData)
+      // }
+    }
   },
 
   methods: {
@@ -125,7 +142,6 @@ export default {
       let j = 0
       this.meta_posts.push([])
       for (let i = 0; i < posts.length; i++) {
-        posts[i].meta_value = this.fromHex(posts[i].meta_value.substr(2))
         if (i + 1 < posts.length) {
           if (posts[i].post_id !== posts[i + 1].post_id) {
             this.meta_posts.push([])
@@ -142,7 +158,7 @@ export default {
       const data = {
         title: null,
         location: null,
-        details: null,
+        details: '',
         canton: 2,
         locale: null,
         date_time: null,
@@ -165,6 +181,13 @@ export default {
             data.locale = post[i].meta_value
           }
           // hasLocale = true
+        } else if (post[i].meta_key === 'agenda_canton') {
+          if (post[i].meta_value === 'vs') {
+            data.canton = 2
+          } else {
+            data.canton = 3
+          }
+          // hasTitle = true
         } else if (post[i].meta_key === 'agenda_titre') {
           data.title = post[i].meta_value
           // hasTitle = true
@@ -177,21 +200,20 @@ export default {
         } else if (post[i].meta_key === 'agenda_time') {
           time = post[i].meta_value
           hasTime = true
+        } else if (post[i].meta_key === 'agenda_info') {
+          data.details = post[i].meta_value + ' -- '
         } else if (post[i].meta_key.includes('agenda_artiste')) {
-          data.details += ',' + post[i].meta_value
+          data.details += post[i].meta_value + ' '
         }
       }
-      if (hasDate && hasTime) data.date_time = this.$dateFns.formatISO(new Date(`${date}T${time}`))
-
-      console.log(data)
-      return data
-    },
-    fromHex(h) {
-      let s = ''
-      for (let i = 0; i < h.length; i += 2) {
-        s += String.fromCharCode(parseInt(h.substr(i, 2), 16))
+      if (hasDate && hasTime) {
+        data.date_time = this.$dateFns.formatISO(new Date(`${date}T${time}`))
+      } else if (hasDate && !hasTime) {
+        time = '16:00'
+        this.$dateFns.formatISO(new Date(`${date}T${time}`))
       }
-      return decodeURIComponent(escape(s))
+
+      return data
     },
     getColor(canton) {
       if (canton === 'VS') return 'red'
