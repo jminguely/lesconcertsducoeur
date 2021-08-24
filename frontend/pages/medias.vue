@@ -34,8 +34,8 @@
       </template>
     </Headline>
 
-    <div class="flex flex-col justify-between lg:flex-row">
-      <div>
+    <div class="grid grid-cols-1 sm:grid-cols-2">
+      <div class="w-full">
         <div class="mb-10">
           <p class="text-xl underline">La musique adoucit la vie</p>
           <p class="text-xl">Journal de Sierre – 27 janvier 2017</p>
@@ -57,7 +57,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="w-full">
         <div class="mb-10">
           <p class="text-xl underline">La musique adoucit la vie</p>
           <p class="text-xl">Journal de Sierre – 27 janvier 2017</p>
