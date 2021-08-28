@@ -4,15 +4,7 @@
       <template #headline>Agenda</template>
     </Headline>
 
-    <div class="flex flex-col justify-items-start font-playFair items-start text-xl lg:flex-row lg:space-x-8 lg:mb-16">
-      <!-- <ClassicSelect :options="years">
-        <template #label> à venir </template>
-      </ClassicSelect>
-
-      <ClassicSelect :options="['Sélection']">
-        <template #label> Filtre </template>
-      </ClassicSelect> -->
-
+    <div class="flex flex-col justify-items-start font-playFair text-xl items-start space-y-4 mb-16 lg:space-y-0 lg:flex-row lg:space-x-8">
       <ClassicSelect :options="cantons" :selected-item.sync="cantonFilter">
         <template #label>Région</template>
       </ClassicSelect>
@@ -32,7 +24,14 @@
         <template #location>{{ item.location }}</template>
         <template #title>{{ item.title }} </template>
         <template #artists>
-          <template v-if="item.artists != null">
+          <template v-if="item.music_group != null">
+            <div v-for="artist in item.music_group.artists" :key="artist.id + artist.first_name">
+              <span>{{ artist.first_name }} {{ artist.last_name }}</span>
+              <span>|</span>
+              <span>{{ artist.instrument }}</span>
+            </div>
+          </template>
+          <template v-else>
             <div v-for="artist in item.artists" :key="artist.id + artist.first_name">
               <span>{{ artist.first_name }} {{ artist.last_name }}</span>
               <span>|</span>
@@ -77,7 +76,7 @@ export default {
 
   computed: {
     years() {
-      return ['2016', '2017', '2018', '2019', '2020', '2021']
+      return ['2021', '2020', '2019', '2018', '2017', '2016']
     },
     cantons() {
       return ['VS', 'VD', 'GE']
@@ -134,6 +133,15 @@ export default {
               first_name
               last_name
               instrument
+            }
+            music_group {
+              id
+              artists {
+                id
+                first_name
+                last_name
+                instrument
+              }
             }
           }
         }
