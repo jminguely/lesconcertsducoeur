@@ -4,13 +4,35 @@
       <template #headline>Nos Artistes</template>
     </Headline>
 
-    <nuxt-link
-      class="hidden lg:flex absolute flex items-center justify-center text-xl leading-5 text-center text-white transform rounded-full top-24 w-28 h-28 right-10 font-playFair"
-      :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"
-      to="auditions"
-    >
-      Auditions
-    </nuxt-link>
+    <div id="donation-circle">
+      <nuxt-link
+        class="
+          hover:scale-105
+          duration-500
+          ease-in-out
+          hidden
+          lg:flex
+          absolute
+          flex
+          items-center
+          justify-center
+          text-xl
+          leading-5
+          text-center text-white
+          transform
+          rounded-full
+          top-24
+          w-28
+          h-28
+          right-10
+          font-playFair
+        "
+        :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"
+        to="auditions"
+      >
+        Auditions
+      </nuxt-link>
+    </div>
 
     <template v-if="data != null">
       <div class="gap-y-5 sm:gap-x-5 md:mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-5">

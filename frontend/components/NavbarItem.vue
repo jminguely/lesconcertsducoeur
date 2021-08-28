@@ -72,7 +72,7 @@ export default {
 
       statements[0] = 'bg-white duration-300 ease-in-out flex flex-col w-full cursor-pointer select-none'
 
-      statements[1] = 'h-10'
+      statements[1] = 'h-9'
 
       statements[2] = 'h-32'
 
