@@ -13,12 +13,13 @@
         <template #label> Filtre </template>
       </ClassicSelect> -->
 
-      <ClassicSelect :options="['Valais', 'Vaud', 'Genève']">
-        <template #label> Région </template>
+      <ClassicSelect :options="cantons" :selected-item.sync="cantonFilter">
+        <template #label>Région</template>
       </ClassicSelect>
-      <ClassicSelect :options="years">
+      <ClassicSelect :options="years" :selected-item.sync="yearFilter">
         <template #label>Concerts passés </template>
       </ClassicSelect>
+      <a class="cursor-pointer" @click="resetFilters()">Réinitialiser Filtre</a>
     </div>
 
     <DateDivider>
@@ -65,6 +66,8 @@ export default {
   data() {
     return {
       data: null,
+      yearFilter: '',
+      cantonFilter: '',
     }
   },
 
@@ -74,13 +77,32 @@ export default {
 
   computed: {
     years() {
-      return [2016, 2017, 2018, 2019, 2020, 2021]
+      return ['2016', '2017', '2018', '2019', '2020', '2021']
+    },
+    cantons() {
+      return ['VS', 'VD', 'GE']
+    },
+  },
+
+  watch: {
+    async yearFilter() {
+      await this.getAgenda()
+    },
+    async cantonFilter() {
+      await this.getAgenda()
     },
   },
 
   mounted() {},
 
   methods: {
+    resetFilters() {
+      this.yearFilter = ''
+      this.cantonFilter = ''
+    },
+    handleYears(el) {
+      console.log(el)
+    },
     getColor(canton) {
       if (canton === 'VS') return 'vs'
       if (canton === 'VD') return 'vd'
@@ -90,10 +112,16 @@ export default {
     getCanton(canton) {
       return canton == null ? 'ALL' : canton.uid
     },
+    getCantonID(canton) {
+      if (canton === 'ALL') return 1
+      if (canton === 'VS') return 2
+      if (canton === 'VD') return 3
+      if (canton === 'GE') return 4
+    },
     async getAgenda() {
       const query = gql`
-        query getCalendar($locale: String, $date_time: DateTime) {
-          calendars(sort: "date_time:asc", locale: $locale, where: { date_time_gte: $date_time }) {
+        query getCalendar($locale: String, $where: JSON) {
+          calendars(sort: "date_time:asc", locale: $locale, where: $where) {
             id
             canton {
               uid
@@ -111,9 +139,15 @@ export default {
         }
       `
       const locale = this.$i18n.locale + '-CH'
+      const canton = this.getCantonID(this.cantonFilter)
+
+      let where = {}
+      if (this.cantonFilter === '') where = this.yearFilter === '' ? { date_time_gte: new Date() } : { date_time_gte: `${this.yearFilter}-01-01`, date_time_lte: `${this.yearFilter}-12-31` }
+      else where = this.yearFilter === '' ? { date_time_gte: new Date(), canton } : { date_time_gte: `${this.yearFilter}-01-01`, date_time_lte: `${this.yearFilter}-12-31`, canton }
 
       const variables = {
-        date_time: this.$dateFns.formatISO(new Date()),
+        // date_time: this.$dateFns.formatISO(new Date()),
+        where,
         locale,
       }
 
