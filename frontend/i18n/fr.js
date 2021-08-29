@@ -87,8 +87,8 @@ export default {
   concerts: {
     hero: {
       title: 'Nos Concerts',
-      subtitle: `Adaptant constamment ses concerts à la situation sanitaire, aux publics et aux lieux, <i>Les Concerts du Cœur</i> cherchent avec vous la meilleure solution pour votre institution.<br>
-        Durant la pandémie, nous n’avons pas annulé les concerts mais avons constamment cherché des alternatives afin de ne jamais interrompre la musique.`,
+      subtitle: `Adaptant ses concerts aux publics, aux lieux ainsi qu’à la situation sanitaire <i>Les Concerts du Cœur</i> cherchent avec vous la meilleure solution pour votre institution.<br>
+        En ces temps de pandémie, nous avons annulé très peu du concerts et avons constamment cherché des alternatives afin de ne jamais interrompre la musique.`,
       text: `<p class="pb-4">Nous proposons une large palette de programmes musicaux de qualité.<br>
       Tous nos artistes sont des musicien·ne·s professionnel·le·s formé·e·s pour réagir aux situations inattendues et se mettre au service du public.</p>
 <p class="pb-4">Les concerts peuvent avoir lieu en semaine ou le weekend et à n’importe quelle heure de la journée.</p>
@@ -121,7 +121,7 @@ export default {
         text: `Dans les hôpitaux, les cliniques ou les EMS les artistes peuvent se déplacer avec leurs instruments de service en service  et d’étage en étage : 
       <ul class="pt-2">
         <li>— Chaque intervention dure une quinzaine de minutes maximum ;</li>
-        <li>— La musique est destinée aux patient·e·s, à leur proche ainsi qu’au personnel ;</li>
+        <li>— La musique est destinée aux patient·e·s, à leurs proches ainsi qu’au personnel ;</li>
         <li>— Celles et ceux qui le souhaitent ont l’opportunité de suivre les musicien·e·s à travers l’institution ;</li>
         <li>— Les musicien·ne·s adaptent leur présentation et leur programme au lieu et au public qu’ils et elles rencontrent.</li>
       </ul>`,
@@ -145,8 +145,8 @@ export default {
         title: 'Rencontres virtuelles avec des artistes',
         text: `Ces rencontres se font au moyen d’une tablette de type iPad fourni par l’institution qui circule de chambre en chambre, assurant la diffusion d’un·e musicien·ne connecté·e ; 
       <ul class="pt-2">
-        <li>— Cela permet aux résident·e·s d'échanger individuellement avec l'artiste, de lui poser des questions et de choisir des pièces parmi le répertoire de l’artiste ;</li>
-        <li>— Ces rendez-vous musicaux constituent une solution idéale pour les institutions où les résident·e·s ne peuvent pas quitter leur chambre.</li>
+        <li>— Cela permet aux résident·e·s d'échanger individuellement avec le musicien, de lui poser des questions et de choisir des pièces parmi le répertoire de l’artiste ;</li>
+        <li>— Ces rendez-vous musicaux constituent une solution idéale pour les institutions où les résident·e·s ne peuvent pas quitter leur chambre ni recevoir de visites.</li>
       </ul>`,
       },
     ],
@@ -158,7 +158,7 @@ export default {
         <li>— Interpréter des œuvres spécifiques demandées en amont par le public ;</li>
         <li>— Faire revivre le répertoire musical régional ;</li>
         <li>— Faire participer le public dans l’interprétation d’un répertoire connu comme des chants régionaux traditionnels ;</li>
-        <li>— Faire découvrir un répertoire inédit et accessible, qui éveille la curiosité des auditeurs·trices.</li>
+        <li>— Faire découvrir un répertoire inédit et accessible, qui éveille la curiosité des audit·eurs·rices</li>
       </ul>`,
       },
       {
@@ -167,7 +167,7 @@ export default {
       <ul class="pt-2">
         <li>— Organisation du concert selon la date et l’horaire souhaités par l’institution ;</li>
         <li>— Coordination avec les artistes ; </li>
-        <li>— Mise à disposition de flyer et d’affiches prêts à imprimer pour chaque concert ;</li>
+        <li>— Mise à disposition de flyers et d’affiches prêts à imprimer pour chaque concert ;</li>
         <li>— Mise à disposition gracieusement de matériel et d’instruments tel un piano électrique ;</li>
         <li>— Établissement de contrats et de fiches de salaires pour les musicien·ne·s et prise en charge des cotisations sociales ;</li>
         <li>— Recherche de fonds afin de permettre de soutenir les coûts du concert et d’offrir une rémunération correcte aux musicien·ne·s ;</li>
