@@ -177,7 +177,7 @@
 
     <template v-if="content != null">
       <template v-if="content.partners != null">
-        <logo-cloud v-if="content.partners.length > 0" :logos="content.partners" is-home>
+        <logo-cloud v-if="content.partners.length > 0" :logos="content.partners" is-partner>
           <template #title> {{ $t('home').partners.title }}</template>
         </logo-cloud>
       </template>
@@ -185,7 +185,7 @@
       <spacing />
 
       <template v-if="content.sponsors != null">
-        <logo-cloud v-if="content.sponsors.length > 0" :logos="content.sponsors" is-home>
+        <logo-cloud v-if="content.sponsors.length > 0" :logos="content.sponsors">
           <template #title> {{ $t('home').sponsors.title }}</template>
         </logo-cloud>
       </template>

@@ -3,7 +3,7 @@
     <div class="mb-10 text-3xl font-playFair">
       <slot name="title"></slot>
     </div>
-    <div :class="{ 'grid grid-cols-2 md:grid-cols-3 md:gap-0': !isHome, 'grid grid-cols-3 sm:grid-cols-4 2xl:grid-cols-6': isHome }">
+    <div :class="{ 'grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3': isPartner, 'grid grid-cols-3 sm:grid-cols-4 2xl:grid-cols-6': !isPartner }">
       <div v-for="(item, i) in logos" :key="i">
         <img class="filter grayscale w-full h-full object-contain" :src="'https://api.lesconcertsducoeur.ch' + item.url" />
       </div>
@@ -18,7 +18,7 @@ export default {
       type: Array,
       default: () => [],
     },
-    isHome: {
+    isPartner: {
       type: Boolean,
       default: false,
     },
