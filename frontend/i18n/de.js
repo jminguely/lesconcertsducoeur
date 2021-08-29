@@ -67,7 +67,7 @@ export default {
         },
         {
           title: 'Emotionen durch die Musik erleben',
-          text: 'Durch die Sprache der Musik sowie die zwischenmenschliche Interaktion kann die Isolation von Menschen durchbrochen werden: Jüngste Studien zeigen, dass musikalische Aktivitäten ähnliche Wirkungen erzeugen können wie Antidepressiva <span class="text-base">[1]</span>, die negativen Auswirkungen der Alzheimer-Krankheit verzögern sowie die soziale Isolation verhindern können. <span class="text-base">[2]</span><br><p class="pb-2 text-sm">[1] CHANDA, Mona Lisa et LEVITIN, Daniel J. (avril 2013), Trends in Cognitive Sciences</p><p class="text-sm">[2] PLATEL, Hervé (octobre 2015), "Pourquoi la musique est bonne pour le cerveau ?"</p>',
+          text: 'Durch die Sprache der Musik sowie die zwischenmenschliche Interaktion kann die Isolation von Menschen durchbrochen werden: Jüngste Studien zeigen, dass musikalische Aktivitäten ähnliche Wirkungen erzeugen können wie Antidepressiva <sup class="text-sm">1</sup>, die negativen Auswirkungen der Alzheimer-Krankheit verzögern sowie die soziale Isolation verhindern können. <sup class="text-sm">2</sup><br /><br /><p class="pb-2 text-sm"><sup>1</sup> CHANDA, Mona Lisa et LEVITIN, Daniel J. (avril 2013), Trends in Cognitive Sciences</p><p class="text-sm"><sup>2</sup> PLATEL, Hervé (octobre 2015), "Pourquoi la musique est bonne pour le cerveau ?"</p>',
         },
         {
           title: 'Kultur hautnah vermitteln',
