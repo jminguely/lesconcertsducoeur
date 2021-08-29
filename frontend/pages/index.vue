@@ -4,7 +4,7 @@
       <template #content> <i>Les Concerts du Cœur</i> {{ $t('home').hero.subtitle }} </template>
     </Headline>
 
-    <div class="grid grid-cols-1 gap-5 gap-y-20 sm:grid-cols-3 lg:mb-32">
+    <div class="grid grid-cols-3 gap-5 gap-y-20 sm:grid-cols-3 lg:mb-32">
       <nuxt-link to="/vs/association">
         <Illustration canton="vs">
           <template #image>
@@ -33,10 +33,40 @@
       </nuxt-link>
     </div>
 
+    <template v-if="newsArticles != null">
+      <spacing />
+
+      <Headline class="mb-12">
+        <template #headline> Actualités </template>
+      </Headline>
+
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+        <InfoBlock v-for="item in newsArticles" :key="item.id" :canton="getCanton(item.canton)">
+          <template #date>{{ $dateFns.format(new Date(item.date), 'dd.MM.yyyy') }}</template>
+          <template #pretitle></template>
+          <template #title>{{ item.title }}</template>
+          <template #content>{{ item.content }}</template>
+        </InfoBlock>
+      </div>
+    </template>
+
+    <template v-if="calendars != null">
+      <spacing />
+
+      <Headline class="mb-12">
+        <template #headline> {{ $t('home').nextConcerts }} </template>
+      </Headline>
+
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+        <EventBlock v-for="item in calendars" :key="item.id" :canton="getCanton(item.canton)">
+          <template #datetime>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template>
+          <template #pretitle>{{ item.location }}</template>
+          <template #title>{{ item.title }}</template>
+        </EventBlock>
+      </div>
+    </template>
+
     <spacing />
-    <Headline class="mb-4">
-      <template #headline> Témoignages </template>
-    </Headline>
 
     <div class="grid grid-cols-1 gap-y-10 md:gap-10 md:grid-cols-2">
       <testimonial>
@@ -89,39 +119,6 @@
         </template>
       </template>
     </div>
-
-    <template v-if="newsArticles != null">
-      <spacing />
-
-      <Headline class="mb-12">
-        <template #headline> Actualités </template>
-      </Headline>
-
-      <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
-        <InfoBlock v-for="item in newsArticles" :key="item.id" :canton="getCanton(item.canton)">
-          <template #date>{{ $dateFns.format(new Date(item.date), 'dd.MM.yyyy') }}</template>
-          <template #pretitle></template>
-          <template #title>{{ item.title }}</template>
-          <template #content>{{ item.content }}</template>
-        </InfoBlock>
-      </div>
-    </template>
-
-    <template v-if="calendars != null">
-      <spacing />
-
-      <Headline class="mb-12">
-        <template #headline> {{ $t('home').nextConcerts }} </template>
-      </Headline>
-
-      <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
-        <EventBlock v-for="item in calendars" :key="item.id" :canton="getCanton(item.canton)">
-          <template #datetime>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template>
-          <template #pretitle>{{ item.location }}</template>
-          <template #title>{{ item.title }}</template>
-        </EventBlock>
-      </div>
-    </template>
 
     <Divider class="my-16" />
 
