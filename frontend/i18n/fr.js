@@ -183,6 +183,11 @@ export default {
       title: 'Directeur Association Beaulieu',
     },
   },
+  agenda: {
+    canton: 'Canton',
+    pastConcerts: 'Concerts passés',
+    resetFilters: 'Effacer les filtres',
+  },
   auditions: {
     hero: {
       title: 'Auditions',
@@ -194,20 +199,48 @@ export default {
       text: 'Avez-vous envie de proposer des moments de musique aux personnes âgées, hospitalisées, incarcérées, en situation de handicap ou de précarité, tout en développant vos aptitudes de médiation culturelle grâce à des concerts rémunérés ?',
       text_1: 'Nous organisons des auditions afin de recruter de nouvelles·aux musicien·ne·s.',
     },
-    requirements: [
-      `
+    prochainesAuditions: 'Prochaines auditions',
+    requirements: {
+      vs: [
+        `
+    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Les artistes intéressé·e·s doivent répondre aux critères ci-dessous :</h2>
+    <ul class="pt-2">
+      <li>— résider dans le canton du Valais (en tout cas la majorité des membres de la formation) ;</li>
+      <li>— démontrer un standard très élevé de qualité musicale et de technique instrumentale ;</li>
+      <li>— posséder de bonnes capacités de communication et une aisance manifeste à établir une relation avec le public en l’invitant à participer autant que faire se peut ;</li>
+      <li>— proposer un choix de répertoire varié et adapté aux spécificités d’un ou plusieurs publics cibles des Concerts du Cœur ;</li>
+      <li>— s’engager à respecter et à défendre les valeurs de l’association.</li>
+    </ul>`,
+        `Tous les styles de musique sont bienvenus (classique / jazz / folklorique / musique du monde etc.).`,
+        'Les Concerts du Cœur Valaisans organiseront des auditions en 2022.',
+      ],
+      vd: [
+        `
+    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Les artistes intéressé·e·s doivent répondre aux critères ci-dessous :</h2>
+    <ul class="pt-2">
+      <li>— résider dans le canton de Vaud (en tout cas la majorité des membres de la formation) ;</li>
+      <li>— démontrer un standard très élevé de qualité musicale et de technique instrumentale ;</li>
+      <li>— posséder de bonnes capacités de communication et une aisance manifeste à établir une relation avec le public en l’invitant à participer autant que faire se peut ;</li>
+      <li>— proposer un choix de répertoire varié et adapté aux spécificités d’un ou plusieurs publics cibles des Concerts du Cœur ;</li>
+      <li>— s’engager à respecter et à défendre les valeurs de l’association.</li>
+    </ul>`,
+        `Tous les styles de musique sont bienvenus (classique / jazz / folklorique / musique du monde etc.).`,
+        'Les Concerts du Cœur Vaudois organiseront des auditions en 2022.',
+      ],
+      ge: [
+        `
     <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Les artistes intéressé·e·s doivent répondre aux critères ci-dessous :</h2>
     <ul class="pt-2">
       <li>— résider dans le canton de Genève (en tout cas la majorité des membres de la formation) ;</li>
       <li>— démontrer un standard très élevé de qualité musicale et de technique instrumentale ;</li>
       <li>— posséder de bonnes capacités de communication et une aisance manifeste à établir une relation avec le public en l’invitant à participer autant que faire se peut ;</li>
-      <li>— mise à disposition gracieusement de matériel et d’instruments tel un piano électrique ;</li>
       <li>— proposer un choix de répertoire varié et adapté aux spécificités d’un ou plusieurs publics cibles des Concerts du Cœur ;</li>
       <li>— s’engager à respecter et à défendre les valeurs de l’association.</li>
     </ul>`,
-      `Tous les styles de musique sont bienvenus (classique / jazz / folklorique / musique du monde etc.).`,
-      'Nous nous réjouissons de vous rencontrer et de vous écouter !',
-    ],
+        `Tous les styles de musique sont bienvenus (classique / jazz / folklorique / musique du monde etc.).`,
+        'Les Concerts du Cœur Genevois organiseront des auditions en 2022.',
+      ],
+    },
   },
   association: {
     comite: {

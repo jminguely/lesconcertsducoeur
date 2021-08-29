@@ -181,6 +181,11 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
       title: 'Direktor der Vereinigung Beaulieu',
     },
   },
+  agenda: {
+    canton: 'Kanton',
+    pastConcerts: 'Vergangene Konzerte',
+    resetFilters: 'Filter löschen',
+  },
   auditions: {
     hero: {
       title: 'Vorsingen',
@@ -192,8 +197,36 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
       text: 'Möchten Sie älteren Menschen im Krankenhaus, inhaftierten, behinderten oder unsicheren Menschen Momente der Musik bieten und gleichzeitig Ihre Fähigkeiten zur Kulturvermittlung durch bezahlte Konzerte entwickeln?',
       text_1: 'Wir organisieren Auditions, um neue Musiker zu rekrutieren.',
     },
-    requirements: [
-      `
+    prochainesAuditions: 'Nächste Vorsingen',
+    requirements: {
+      vs: [
+        `
+    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Interessierte Künstler müssen die folgenden Kriterien erfüllen:</h2>
+    <ul class="pt-2">
+      <li>— im Kanton Wallis wohnhaft sind (in jedem Fall die Mehrheit der Mitglieder der Formation);</li>
+      <li>— einen sehr hohen Standard an musikalischer Qualität und Instrumentaltechnik nachweisen;</li>
+      <li>— über gute Kommunikationsfähigkeiten und eine nachweisliche Leichtigkeit beim Aufbau einer Beziehung zur Öffentlichkeit verfügen, indem sie sie so weit wie möglich zur Teilnahme einladen;</li>
+      <li>— eine Auswahl an abwechslungsreichen Repertoire anzubieten, das an die Besonderheiten einer oder mehrerer Zielgruppen von Concerts du Cœur angepasst ist;</li>
+      <li>— verpflichten sich, die Werte des Vereins zu respektieren und zu verteidigen.</li>
+    </ul>`,
+        `Alle Musikrichtungen sind willkommen (Klassik / Jazz / Folk / Weltmusik etc.).`,
+        'Die Concerts du Cœur Valaisans werden im Jahr 2022 Vorsingen durchführen.',
+      ],
+      vd: [
+        `
+    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Interessierte Künstler müssen die folgenden Kriterien erfüllen:</h2>
+    <ul class="pt-2">
+      <li>— im Kanton Waadt wohnhaft sind (in jedem Fall die Mehrheit der Mitglieder der Formation);</li>
+      <li>— einen sehr hohen Standard an musikalischer Qualität und Instrumentaltechnik nachweisen;</li>
+      <li>— über gute Kommunikationsfähigkeiten und eine nachweisliche Leichtigkeit beim Aufbau einer Beziehung zur Öffentlichkeit verfügen, indem sie sie so weit wie möglich zur Teilnahme einladen;</li>
+      <li>— eine Auswahl an abwechslungsreichen Repertoire anzubieten, das an die Besonderheiten einer oder mehrerer Zielgruppen von Concerts du Cœur angepasst ist;</li>
+      <li>— verpflichten sich, die Werte des Vereins zu respektieren und zu verteidigen.</li>
+    </ul>`,
+        `Alle Musikrichtungen sind willkommen (Klassik / Jazz / Folk / Weltmusik etc.).`,
+        'Die Concerts du Cœur Vaudois werden im Jahr 2022 Vorsingen durchführen.',
+      ],
+      ge: [
+        `
     <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Interessierte Künstler müssen die folgenden Kriterien erfüllen:</h2>
     <ul class="pt-2">
       <li>— im Kanton Genf wohnhaft sind (in jedem Fall die Mehrheit der Mitglieder der Formation);</li>
@@ -202,9 +235,10 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
       <li>— eine Auswahl an abwechslungsreichen Repertoire anzubieten, das an die Besonderheiten einer oder mehrerer Zielgruppen von Concerts du Cœur angepasst ist;</li>
       <li>— verpflichten sich, die Werte des Vereins zu respektieren und zu verteidigen.</li>
     </ul>`,
-      `Alle Musikrichtungen sind willkommen (Klassik / Jazz / Folk / Weltmusik etc.).`,
-      'Wir freuen uns darauf, Sie kennenzulernen und von Ihnen zu hören!',
-    ],
+        `Alle Musikrichtungen sind willkommen (Klassik / Jazz / Folk / Weltmusik etc.).`,
+        'Die Concerts du Cœur Genevois werden im Jahr 2022 Vorsingen durchführen.',
+      ],
+    },
   },
   association: {
     comite: {

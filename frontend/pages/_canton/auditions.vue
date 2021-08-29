@@ -5,7 +5,7 @@
       <template #content> {{ $t('auditions').hero.subtitle[canton] }}</template>
     </Headline>
 
-    <p class="text-xl">
+    <p class="text-xl mt-4">
       {{ $t('auditions').hero.text }}
     </p>
 
@@ -15,12 +15,13 @@
       {{ $t('auditions').hero.text_1 }}
     </p>
 
-    <div v-html="$t('auditions').requirements[0]"></div>
+    <div v-html="$t('auditions').requirements[canton][0]"></div>
 
     <br />
 
-    <p>{{ $t('auditions').requirements[1] }}</p>
-    <p class="mt-8 text-xl lg:text-3xl font-playFair" :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">{{ $t('auditions').requirements[2] }}</p>
+    <p>{{ $t('auditions').requirements[canton][1] }}</p>
+    <h2 class="mt-12 mb-4 text-xl lg:text-3xl font-playFair">{{ $t('auditions').prochainesAuditions }}</h2>
+    <p class="text-xl" :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">{{ $t('auditions').requirements[canton][2] }}</p>
 
     <!-- <div v-for="el in content.auditions[0].content" :key="el.__typename + el.id">
       <template v-if="el.__typename === 'ComponentContentText'">
