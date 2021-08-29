@@ -1,7 +1,7 @@
 <template>
   <div
     id="sidebar"
-    class="p-5 fixed top-0 left-0 z-50 flex flex-col justify-between w-full max-h-screen duration-300 ease-in-out bg-white lg:px-12 lg:py-5 lg:h-screen lg:max-w-xs lg:w-96"
+    class="px-5 py-4 fixed top-0 left-0 z-50 flex flex-col justify-between w-full max-h-screen duration-300 ease-in-out bg-white lg:px-12 lg:py-5 lg:h-screen lg:max-w-xs lg:w-96"
     :class="{
       'h-full': menu,
       'border-0 border-opacity-0': !stickyHeader,
