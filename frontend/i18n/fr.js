@@ -9,6 +9,8 @@ export default {
     agenda: 'Agenda',
     medias: 'Médias',
     contact: 'Contact',
+    supportUs: 'Nous soutenir',
+    newsletter: "S'abonner à la newsletter",
   },
   home: {
     hero: {
@@ -187,6 +189,11 @@ export default {
     canton: 'Canton',
     pastConcerts: 'Concerts passés',
     resetFilters: 'Effacer les filtres',
+  },
+  medias: {
+    title: 'Médias',
+    findUsOnSocialMedias: 'Retrouvez-nous sur nos réseaux sociaux',
+    images: 'Images',
   },
   auditions: {
     hero: {

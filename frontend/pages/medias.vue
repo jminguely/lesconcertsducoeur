@@ -1,10 +1,10 @@
 <template>
   <div>
     <Headline>
-      <template #headline> Médias </template>
+      <template #headline> {{ $t('medias').title }}</template>
     </Headline>
 
-    <p class="text-xl font-newsCycle">Retrouvez-nous sur nos réseaux sociaux</p>
+    <p class="text-xl font-newsCycle">{{ $t('medias').findUsOnSocialMedias }}</p>
 
     <div class="flex my-5">
       <SocialLink class="mr-2 lg:mr-4" name="facebook" link="https://www.facebook.com/concertsducoeur/" />
@@ -74,7 +74,7 @@
     <spacing />
 
     <Headline class="mb-4">
-      <template #headline>Images</template>
+      <template #headline>{{ $t('medias').images }}</template>
     </Headline>
 
     <div class="">

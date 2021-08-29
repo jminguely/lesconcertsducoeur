@@ -8,13 +8,14 @@
       <h2 class="text-3xl font-playFair">Adresse de contact</h2>
       <p>
         Les Concerts du Coeur<br />
-        Adresse<br />
-        Email
+        Les Rocailles, rue des biolirs 6<br />
+        3963 Crans-Montana<br />
+        valais@lesconcertsducoeur.ch
       </p>
 
       <h2 class="text-3xl font-playFair">Représentant(s) autorisé(s)</h2>
       <p>
-        Contenu du texte : ...<br />
+        Contenu du texte : Laure Barras<br />
         conception graphique : Malaïka Schürch<br />
         Illsutrations : Michèle Reymond<br />
         Programmation : Alex Roque<br />
@@ -49,13 +50,14 @@
       <h2 class="text-3xl font-playFair">Kontaktadresse</h2>
       <p>
         Les Concerts du Coeur<br />
-        Anschrift<br />
-        E-Mail
+        Les Rocailles, rue des biolirs 6<br />
+        3963 Crans-Montana<br />
+        valais@lesconcertsducoeur.ch
       </p>
 
       <h2 class="text-3xl font-playFair">Bevollmächtigte(r) Vertreter</h2>
       <p>
-        Textinhalt: ...<br />
+        Textinhalt: Laure Barras<br />
         Grafikdesign: Malaïka Schürch<br />. Illustrationen: Michèle Reymond<br />
         Programmierung: Alex Roque Programmierung: Alex Roque Französisch-Deutsche Übersetzungen: ...<br />
       </p>

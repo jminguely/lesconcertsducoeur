@@ -6,7 +6,7 @@
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     class="stroke-current"
-    :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }"
+    :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge', 'text-concert-dark': canton == '' }"
   >
     <g clip-path="url(#clip0)">
       <path d="M1 1L31 31" stroke-width="2" stroke-linecap="round" />

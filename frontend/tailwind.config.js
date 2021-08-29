@@ -12,11 +12,12 @@ module.exports = {
         },
         xl: {
           css: {
-            lineHeight: '1.5',
+            lineHeight: '1.25',
             h2: {
               fontFamily: 'Playfair',
               fontSize: '1.875rem',
-              lineHeight: '2.25rem',
+              marginBottom: '1.5rem',
+              lineHeight: '1.25',
               fontWeight: 'normal',
             },
             ul: {

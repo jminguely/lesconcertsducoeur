@@ -9,6 +9,8 @@ export default {
     agenda: 'Agenda',
     medias: 'Medien',
     contact: 'Kontakt',
+    supportUs: 'Uns unterstützen',
+    newsletter: 'Newsletter abonnieren',
   },
   home: {
     hero: {
@@ -185,6 +187,11 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
     canton: 'Kanton',
     pastConcerts: 'Vergangene Konzerte',
     resetFilters: 'Filter löschen',
+  },
+  medias: {
+    title: 'Medien',
+    findUsOnSocialMedias: 'Finden Sie uns in unseren sozialen Netzwerken',
+    images: 'Bilder',
   },
   auditions: {
     hero: {

@@ -80,7 +80,7 @@
           <nuxt-link :class="{ 'my-2': menu }" :to="localePath('medias')">
             {{ $t('nav').medias }}
           </nuxt-link>
-          <nuxt-link :class="{ 'my-2': menu }" :to="localePath('soutien')"> Nous soutenir </nuxt-link>
+          <nuxt-link :class="{ 'my-2': menu }" :to="localePath('soutien')"> {{ $t('nav').supportUs }}</nuxt-link>
         </div>
       </div>
 
@@ -110,8 +110,8 @@
         hover:scale-105
         w-14
         h-14
-        text-sm
-        lg:w-20 lg:h-20 lg:flex
+        text-xs
+        lg:w-24 lg:h-24 lg:flex
         rounded-full
         text-white
         items-center
@@ -123,7 +123,7 @@
         m-auto
       "
     >
-      Nous<br />Soutenir !
+      {{ $t('nav').supportUs }}
     </nuxt-link>
 
     <div class="flex flex-col">
@@ -140,7 +140,8 @@
       </div>
 
       <div class="hidden mt-4 lg:block">
-        <input class="px-2 border-2 border-gray-800" placeholder="s'abonner a la newsletter" />
+        <input class="w-full px-2 py-1 border-2 border-concert-dark focus:rounded-none" :placeholder="$t('nav').newsletter" />
+        <chevron-right class="absolute right-2" />
       </div>
     </div>
   </div>
