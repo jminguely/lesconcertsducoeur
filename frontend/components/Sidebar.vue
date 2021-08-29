@@ -4,8 +4,8 @@
     class="p-5 fixed top-0 left-0 z-50 flex flex-col justify-between w-full max-h-screen duration-300 ease-in-out bg-white lg:px-12 lg:py-5 lg:h-screen lg:max-w-xs lg:w-96"
     :class="{
       'h-full': menu,
-      'border-0': !stickyHeader,
-      'border-b-2': stickyHeader,
+      'border-0 border-opacity-0': !stickyHeader,
+      'border-b-2 border-opacity-100': stickyHeader,
       'border-concert-dark': canton == '',
       'border-vs': canton == 'vs',
       'border-vd': canton == 'vd',
@@ -19,7 +19,7 @@
     <div class="lg:absolute lg:top-36">
       <div class="flex justify-between lg:items-center">
         <nuxt-link :to="localePath('/')">
-          <Logo :class="{ 'opacity-0': menu, 'opacity-100': !menu, 'h-9': stickyHeader, 'h-12': !stickyHeader }" class="lg:h-16" />
+          <Logo :class="{ 'opacity-0': menu, 'opacity-100': !menu, 'h-9': stickyHeader, 'h-12': !stickyHeader }" class="duration-300 ease-in-out lg:h-16" />
         </nuxt-link>
         <button
           :class="{ opened: menu }"
@@ -153,7 +153,7 @@ export default {
       // Your scroll handling here
       // console.log(window.scrollY)
       if (!this.menu) {
-        if (window.scrollY > 80) this.stickyHeader = true
+        if (window.scrollY > 10) this.stickyHeader = true
         else this.stickyHeader = false
       }
     },
