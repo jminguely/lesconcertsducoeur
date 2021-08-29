@@ -228,6 +228,6 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
     title: 'Impressum',
   },
   privacy: {
-    title: 'Datenschutzerkl&auml;rung',
+    title: 'Datenschutzerklärung',
   },
 }
