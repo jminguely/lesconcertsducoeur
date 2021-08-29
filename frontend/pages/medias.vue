@@ -65,7 +65,7 @@
     <div class="grid grid-cols-1 sm:gap-x-10 sm:grid-cols-2">
       <div v-for="item in links" :key="item.title" class="text-xl mb-10">
         <p>
-          <a :href="item.link">{{ item.title }}</a>
+          <a :href="item.link" target="_blank">{{ item.title }}</a>
         </p>
         <p>{{ item.subtitle }} – {{ item.date }}</p>
       </div>
@@ -123,91 +123,103 @@ export default {
           title: 'La musique adoucit la vie',
           subtitle: 'Journal de Sierre',
           date: '27 janvier 2017',
-          link: '',
+          link: 'https://api.lesconcertsducoeur.ch/uploads/Cd_C_JDS_270117_1_a63027ba80.pdf',
         },
         {
           title: 'La musique adoucit le temps qui passe',
           subtitle: 'Le Nouvelliste',
           date: '14 février 2017',
-          link: '',
+          link: 'https://api.lesconcertsducoeur.ch/uploads/Cd_C_Nouvelliste_140217_1_40d4e255b2.pdf',
         },
         {
           title: 'Les notes à la rencontre des isolés',
           subtitle: 'Le Nouvelliste: Supplément Culture',
           date: '5 octobre 2017',
-          link: '',
+          link: 'https://api.lesconcertsducoeur.ch/uploads/Cd_C_Le_Nouvelliste_supplement_Culture_05102017_81a3ec5f09.pdf',
         },
         {
           title: 'L’univers de la chanteuse lyrique valaisanne Laure Barras',
           subtitle: "RTS, La Puce à l'Oreille",
           date: '14 décembre 2017',
-          link: '',
+          link: 'https://www.rts.ch/play/tv/la-puce-a-loreille/video/lunivers-de-la-chanteuse-lyrique-valaisanne-laure-barras?id=9175995&station=a83f29dee7a5d0d3f9fccdb9c92161b1afb512db',
+        },
+        {
+          title: 'Présentation des Concerts du Cœur',
+          subtitle: 'Canal9',
+          date: '15 décembre 2017',
+          link: 'http://canal9.ch/les-concerts-du-coeur-la-soprano-valaisanne-laure-barras-amene-la-musique-classique-dans-les-ems-et-les-hopitaux/',
         },
         {
           title: 'L’art lyrique en partage',
           subtitle: 'Espace 2, Nectar',
           date: '11 janvier 2018',
-          link: '',
+          link: 'https://www.rts.ch/play/radio/nectar/audio/lart-lyrique-en-partage?id=9206125&station=a83f29dee7a5d0d3f9fccdb9c92161b1afb512db',
+        },
+        {
+          title: 'Nez à nez avec Laure Barras',
+          subtitle: 'Espace 2',
+          date: '13 janvier 2018',
+          link: 'https://www.rts.ch/play/radio/nez-a-nez/audio/nez-a-nez-avec-laure-barras?id=9210314&station=a83f29dee7a5d0d3f9fccdb9c92161b1afb512db',
         },
         {
           title: 'La musique pour les défavorisés',
           subtitle: 'Le Temps: Spécial Forum des 100',
           date: '24 mai 2018',
-          link: '',
+          link: 'https://api.lesconcertsducoeur.ch/uploads/CDC_article_Le_TEMPS_100_Forum_116a5bd52d.pdf',
         },
         {
           title: 'Des concerts pour un peu de baume au cœur',
           subtitle: 'Contact Magazine, Hôpital du Valais',
           date: '15 juillet 2018',
-          link: '',
+          link: 'https://api.lesconcertsducoeur.ch/uploads/CDC_article_contact_magazine_hoptital_valais_084c493fb5.pdf',
         },
         {
           title: 'Les Concerts du Cœur',
           subtitle: 'Journal La Source',
           date: '5 octobre 2018',
-          link: '',
+          link: 'https://api.lesconcertsducoeur.ch/uploads/CDC_article_journal_la_source_82c3453d57.pdf',
         },
         {
           title: 'La musique adoucit les soins',
           subtitle: 'Le Nouvelliste',
           date: '29 janvier 2019',
-          link: '',
+          link: 'https://api.lesconcertsducoeur.ch/uploads/Cd_C_Le_Nouvelliste_La_musique_adoucit_les_soins_29012019_compressed_komprimiert_c5601fe81c.pdf',
         },
         {
           title: 'Concerts du Cœur: Laure Barras et ses musiciens amènent la musique auprès de ceux qui ne peuvent se rendre aux concerts',
           subtitle: 'Canal9',
           date: '6 février 2019',
-          link: '',
+          link: 'http://canal9.ch/concerts-du-coeur-laure-barras-et-ses-musiciens-amenent-la-musique-aupres-de-ceux-qui-ne-peuvent-se-rendre-aux-concerts/',
         },
         {
           title: 'Les Concerts du Cœur',
           subtitle: 'Bénévolat-Vaud (publication Facebook)',
           date: '2 décembre 2019',
-          link: '',
+          link: 'https://www.facebook.com/benevolatvaud/videos/541329486721330/',
         },
         {
           title: 'La Puce au cœur… de Cœur à Cœur à Sion',
           subtitle: 'RTS, La Puce à l’Oreille',
           date: '19 décembre 2019',
-          link: '',
+          link: 'https://www.rts.ch/play/tv/la-puce-a-loreille/video/la-puce-au-cur----de-cur-a-cur-a-sion?id=10959223&startTime=2335',
         },
         {
           title: 'Les Concerts du Cœur en Valais',
           subtitle: 'Paris Match',
           date: '17 février 2020',
-          link: '',
+          link: 'https://api.lesconcertsducoeur.ch/uploads/CDC_presse_paris_Match_02172020_compressed_988ac1a0df.pdf',
         },
         {
           title: 'Coronavirus: les aînés apprécient des concerts privés sur un iPad',
           subtitle: 'Le Nouvelliste',
           date: '6 mai 2020',
-          link: '',
+          link: 'https://api.lesconcertsducoeur.ch/uploads/Cd_C_Le_Nouvelliste_coronavirs_07052020_compressed_da2af00cf0.pdf',
         },
         {
           title: 'Des notes pour réconforter les cœurs à Monthey',
           subtitle: 'Le Nouvelliste',
           date: '24 décembre 2020',
-          link: '',
+          link: 'https://api.lesconcertsducoeur.ch/uploads/article_castalie_25a7ba189f.pdf',
         },
         {
           title: 'Présentation des Concerts du Cœur Genevois',
@@ -219,7 +231,7 @@ export default {
           title: 'Présentation des Concerts du Cœur',
           subtitle: 'Rhône FM',
           date: '24 mars 2021',
-          link: '',
+          link: 'https://www.culturevalais.ch/fr/offre-culturelle/emission-rhone-fm-/les-concerts-du-coeur-999',
         },
         {
           title: 'Lancement de l’association genevoise des Concerts du Cœur',
