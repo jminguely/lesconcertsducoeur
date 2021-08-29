@@ -247,6 +247,7 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
     soutien: 'Wie kann man uns unterstützen?',
     benevole: 'Freiwillige/r werden',
     don: 'Spende machen',
+    donate: 'spenden',
     membre: 'Mitglied werden',
     partners: 'Unsere Partner und Unterstützer',
   },

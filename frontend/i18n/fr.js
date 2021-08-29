@@ -249,6 +249,7 @@ export default {
     soutien: 'Comment nous soutenir ?',
     benevole: 'Devenez bénévole',
     don: 'Faites un don',
+    donate: 'Faire un don',
     membre: 'Devenez membre',
     partners: 'Nos partenaires et soutiens',
   },

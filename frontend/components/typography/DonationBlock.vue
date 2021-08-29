@@ -31,7 +31,7 @@
             "
             :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"
           >
-            Faire un don
+            {{ $t('association').donate }}
           </div>
         </nuxt-link>
       </div>

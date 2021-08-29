@@ -4,7 +4,7 @@
       <template #headline>Soutenez-nous</template>
     </Headline>
 
-    <div class="flex my-28">
+    <div class="flex">
       <div class="w-full py-4 pr-10">
         <h2 class="text-3xl font-playFair">
           — Parler de nous autour de vous; <br />
@@ -18,6 +18,8 @@
         <img src="~/assets/img/illustrations/illustration7.svg" />
       </div>
     </div>
+
+    <spacing />
 
     <!-- <Headline>
       <template #headline> Devenez bénévole</template>
