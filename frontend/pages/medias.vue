@@ -20,10 +20,38 @@
     </Headline>
 
     <div class="text-xl font-newsCycle">
-      <p>Newsletter No 6 – Rapport d’activité 2019 | 03.2020</p>
-      <p>Newsletter No 5 | 11.2019</p>
-      <p>Newsletter No 4 – Rapport d’activité 2018 | 07.2019</p>
-      <p>Newsletter No 3 | 04.2019</p>
+      <p>
+        <a
+          href="https://lesconcertsducoeur.statslive.info/show-campaign-archived/eyJpdiI6ImxIekUzbzJiSTFFVnJPQkRad3dPMDRCUElwOWlCREVDaHRKVEplTnBnTFk9IiwidmFsdWUiOiJ0bHV5WEEyVVwvOGtweE1YbWJyM3pvZTN3UG1sUnlUWkRya3l6ZUgwc2p5WT0iLCJtYWMiOiI4ZWFkZWI5YjE4ODE0YzI3YmUwNjVkNThlMDVkMDRkODRhZDRkY2FjMTA4MWRiNjE2Y2VmOWY2Zjk0MjBkNzI5In0="
+          target="_blank"
+        >
+          Newsletter No 6 – Rapport d’activité 2019 | 03.2020
+        </a>
+      </p>
+      <p>
+        <a
+          href="https://lesconcertsducoeur.statslive.info/show-campaign-archived/eyJpdiI6IkZGMUtrYVFpVGowTFI2cXFDbHQrNnJkem1uWU5rOFlhMFh3QmtpUkN2K3M9IiwidmFsdWUiOiJmT1JyeTJIdnlwN1J3N2FLQ3BqekpHTDhzSTdPbGkxd1wvNmd5UlFcL1dMdFk9IiwibWFjIjoiMmRjOWE1NzY2OTNiOTFjN2MxZTBjNDdjMDA5OTE4MTY0NWMyYzQ0ZjhmMzdlYzNkNjlhZGVkYTYyZGI1ODgyZCJ9"
+          target="_blank"
+        >
+          Newsletter No 5 | 11.2019
+        </a>
+      </p>
+      <p>
+        <a
+          href="https://lesconcertsducoeur.statslive.info/show-campaign-archived/eyJpdiI6IlVYRXd1VzFlQksrMkdSa2hDSWhiS2g5MzNVSHVQMmlVRVNvYWNDWG1vSVE9IiwidmFsdWUiOiJueU5hR21aMUx6MFIxSWZCSFVtRUUyNlljTnNsand3WkhoQU9jYzJDZ2lrPSIsIm1hYyI6ImI2NTI1YjMyNDc4OGFiOTc2NWNmZmQxNjIxNDE0ODgxYzM0MzBjM2ExNDQyMzFjYmFiNzk4M2E0NDgxODI0NGYifQ=="
+          target="_blank"
+        >
+          Newsletter No 4 – Rapport d’activité 2018 | 07.2019
+        </a>
+      </p>
+      <p>
+        <a
+          href="https://lesconcertsducoeur.statslive.info/show-campaign-archived/eyJpdiI6ImxtSWxBdXRpYzRrdkpNdWt4TWlTMDlXaHNMajlhOGhkcm4yNVdWRGdcL09ZPSIsInZhbHVlIjoia3FCd2Q4RDZWbmV2eHY4Rm1aU0haZlUxcnE5ekk1OTA2NERkeStKU0ZxZz0iLCJtYWMiOiJjNjlmYmRmYWVjMjk3OTlkNjdjYWMzNzJjZGI5ZTg5ODhhNzYwM2Y0MmI3YjQ2ZWJhNzkwOTYzYjg2NGUxMGQ2In0="
+          target="_blank"
+        >
+          Newsletter No 3 | 04.2019
+        </a>
+      </p>
     </div>
 
     <spacing />
