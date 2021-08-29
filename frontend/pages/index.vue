@@ -234,8 +234,8 @@ export default {
     },
     async getAgenda() {
       const query = gql`
-        query getCalendar($locale: String) {
-          calendars(limit: 3, locale: $locale) {
+        query getCalendar($locale: String, $where: JSON) {
+          calendars(sort: "date_time:asc", limit: 3, locale: $locale, where: $where) {
             id
             canton {
               uid
@@ -247,8 +247,10 @@ export default {
         }
       `
 
+      const where = { date_time_gte: new Date() }
       const variables = {
         locale: this.$i18n.locale + '-CH',
+        where,
       }
 
       this.data = await this.$apollo
@@ -266,8 +268,8 @@ export default {
 
     async getNewsArticles() {
       const query = gql`
-        query getNewsArticles($locale: String) {
-          newsArticles(limit: 3, locale: $locale) {
+        query getNewsArticles($locale: String, $where: JSON) {
+          newsArticles(sort: "date:asc", limit: 3, locale: $locale, where: $where) {
             id
             title
             date
@@ -278,9 +280,10 @@ export default {
           }
         }
       `
-
+      const where = { date_gte: new Date() }
       const variables = {
         locale: this.$i18n.locale + '-CH',
+        where,
       }
 
       this.newsArticles = await this.$apollo
