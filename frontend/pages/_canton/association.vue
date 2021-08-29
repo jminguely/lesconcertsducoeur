@@ -1,5 +1,5 @@
 <template>
-  <div v-if="association != null">
+  <div v-if="association != null" :class="canton">
     <div class="flex flex-col justify-between lg:flex-row lg:space-x-8">
       <div>
         <Headline>
@@ -24,7 +24,7 @@
     </Headline>
 
     <template v-if="association.section_comite != null">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div id="comite" class="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div class="prose prose-xl" v-html="$md.render(association.section_comite.col_left)"></div>
         <div class="prose prose-xl" v-html="$md.render(association.section_comite.col_right)"></div>
       </div>

@@ -35,6 +35,15 @@ ul > li::before {
 		text-decoration: none;
 	}
 }
+.vs #comite .prose a {
+	color: #db303d !important;
+}
+.vd #comite .prose a {
+	color: #4d9a70 !important;
+}
+.ge .prose a {
+	color: #ee6f22 !important;
+}
 // .prose ul > li::before {
 //     content: '—';
 //     top: 0px;
