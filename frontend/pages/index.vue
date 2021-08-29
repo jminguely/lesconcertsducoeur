@@ -37,15 +37,34 @@
     <Headline class="mb-4">
       <template #headline> Témoignages </template>
     </Headline>
+
     <div class="grid grid-cols-1 gap-y-10 md:gap-10 md:grid-cols-2">
-      <testimonial v-for="item in $t('home').testimonials" :key="item.name">
+      <testimonial>
         <template #quote>
-          {{ item.quote }}
+          {{ $t('home').testimonials[0].quote }}
         </template>
 
-        <template #name> {{ item.name }}</template>
+        <template #name>
+          {{ $t('home').testimonials[0].name }}
+        </template>
 
-        <template #title> {{ item.title }}</template>
+        <template #title>
+          {{ $t('home').testimonials[0].title }}
+        </template>
+      </testimonial>
+
+      <testimonial class="hidden sm:block">
+        <template #quote>
+          {{ $t('home').testimonials[1].quote }}
+        </template>
+
+        <template #name>
+          {{ $t('home').testimonials[1].name }}
+        </template>
+
+        <template #title>
+          {{ $t('home').testimonials[1].title }}
+        </template>
       </testimonial>
     </div>
 
