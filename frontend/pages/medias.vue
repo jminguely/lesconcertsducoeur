@@ -62,49 +62,12 @@
       </template>
     </Headline>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2">
-      <div class="w-full">
-        <div class="mb-10">
-          <p class="text-xl underline">La musique adoucit la vie</p>
-          <p class="text-xl">Journal de Sierre – 27 janvier 2017</p>
-        </div>
-
-        <div class="mb-10">
-          <p class="text-xl underline">La musique adoucit le temps qui passe</p>
-          <p class="text-xl">Le Nouvelliste – 14 février 2017</p>
-        </div>
-
-        <div class="mb-10">
-          <p class="text-xl underline">Les notes à la rencontre des isolés</p>
-          <p class="text-xl">Le Nouvelliste: Supplément Culture – 5 octobre 2017</p>
-        </div>
-
-        <div class="mb-10">
-          <p class="text-xl underline">L’univers de la chanteuse lyrique valaisanne Laure Barras</p>
-          <p class="text-xl">RTS, La Puce à l’Oreille, 14 décembre 2017</p>
-        </div>
-      </div>
-
-      <div class="w-full">
-        <div class="mb-10">
-          <p class="text-xl underline">La musique adoucit la vie</p>
-          <p class="text-xl">Journal de Sierre – 27 janvier 2017</p>
-        </div>
-
-        <div class="mb-10">
-          <p class="text-xl underline">La musique adoucit le temps qui passe</p>
-          <p class="text-xl">Le Nouvelliste – 14 février 2017</p>
-        </div>
-
-        <div class="mb-10">
-          <p class="text-xl underline">Les notes à la rencontre des isolés</p>
-          <p class="text-xl">Le Nouvelliste: Supplément Culture – 5 octobre 2017</p>
-        </div>
-
-        <div class="mb-10">
-          <p class="text-xl underline">L’univers de la chanteuse lyrique valaisanne Laure Barras</p>
-          <p class="text-xl">RTS, La Puce à l’Oreille, 14 décembre 2017</p>
-        </div>
+    <div class="grid grid-cols-1 sm:gap-x-10 sm:grid-cols-2">
+      <div v-for="item in links" :key="item.title" class="text-xl mb-10">
+        <p>
+          <a :href="item.link">{{ item.title }}</a>
+        </p>
+        <p>{{ item.subtitle }} – {{ item.date }}</p>
       </div>
     </div>
 
@@ -155,6 +118,116 @@ export default {
   data() {
     return {
       content: null,
+      links: [
+        {
+          title: 'La musique adoucit la vie',
+          subtitle: 'Journal de Sierre',
+          date: '27 janvier 2017',
+          link: '',
+        },
+        {
+          title: 'La musique adoucit le temps qui passe',
+          subtitle: 'Le Nouvelliste',
+          date: '14 février 2017',
+          link: '',
+        },
+        {
+          title: 'Les notes à la rencontre des isolés',
+          subtitle: 'Le Nouvelliste: Supplément Culture',
+          date: '5 octobre 2017',
+          link: '',
+        },
+        {
+          title: 'L’univers de la chanteuse lyrique valaisanne Laure Barras',
+          subtitle: "RTS, La Puce à l'Oreille",
+          date: '14 décembre 2017',
+          link: '',
+        },
+        {
+          title: 'L’art lyrique en partage',
+          subtitle: 'Espace 2, Nectar',
+          date: '11 janvier 2018',
+          link: '',
+        },
+        {
+          title: 'La musique pour les défavorisés',
+          subtitle: 'Le Temps: Spécial Forum des 100',
+          date: '24 mai 2018',
+          link: '',
+        },
+        {
+          title: 'Des concerts pour un peu de baume au cœur',
+          subtitle: 'Contact Magazine, Hôpital du Valais',
+          date: '15 juillet 2018',
+          link: '',
+        },
+        {
+          title: 'Les Concerts du Cœur',
+          subtitle: 'Journal La Source',
+          date: '5 octobre 2018',
+          link: '',
+        },
+        {
+          title: 'La musique adoucit les soins',
+          subtitle: 'Le Nouvelliste',
+          date: '29 janvier 2019',
+          link: '',
+        },
+        {
+          title: 'Concerts du Cœur: Laure Barras et ses musiciens amènent la musique auprès de ceux qui ne peuvent se rendre aux concerts',
+          subtitle: 'Canal9',
+          date: '6 février 2019',
+          link: '',
+        },
+        {
+          title: 'Les Concerts du Cœur',
+          subtitle: 'Bénévolat-Vaud (publication Facebook)',
+          date: '2 décembre 2019',
+          link: '',
+        },
+        {
+          title: 'La Puce au cœur… de Cœur à Cœur à Sion',
+          subtitle: 'RTS, La Puce à l’Oreille',
+          date: '19 décembre 2019',
+          link: '',
+        },
+        {
+          title: 'Les Concerts du Cœur en Valais',
+          subtitle: 'Paris Match',
+          date: '17 février 2020',
+          link: '',
+        },
+        {
+          title: 'Coronavirus: les aînés apprécient des concerts privés sur un iPad',
+          subtitle: 'Le Nouvelliste',
+          date: '6 mai 2020',
+          link: '',
+        },
+        {
+          title: 'Des notes pour réconforter les cœurs à Monthey',
+          subtitle: 'Le Nouvelliste',
+          date: '24 décembre 2020',
+          link: '',
+        },
+        {
+          title: 'Présentation des Concerts du Cœur Genevois',
+          subtitle: 'Radio Cité Genève',
+          date: '22 mars 2021',
+          link: 'https://www.podcastics.com/player/playlist/904/?s=15',
+        },
+        {
+          title: 'Présentation des Concerts du Cœur',
+          subtitle: 'Rhône FM',
+          date: '24 mars 2021',
+          link: '',
+        },
+        {
+          title: 'Lancement de l’association genevoise des Concerts du Cœur',
+          subtitle: 'Le Lancéen',
+          date: 'Avril 2021',
+          link: 'https://www.lancy.ch/sites/default/files/arborescence/AUTRES/Le%20Lanc%C3%A9en/238-le-lanceen-avril-21_web_sans_pages_pub.pdf',
+        },
+      ],
     }
   },
   async fetch() {
