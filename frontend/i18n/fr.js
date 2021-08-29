@@ -53,7 +53,7 @@ export default {
     buts: {
       title: 'Nos buts',
       content: [
-        'Produire et réaliser des concerts de qualité, dans des établissements médico-sociaux et éducatifs, hôpitaux, cliniques et centres pénitentiaires.',
+        'Produire et réaliser des concerts de qualité dans des établissements médico-sociaux et éducatifs, des institutions à but social, des hôpitaux, cliniques et centres pénitentiaires.',
         'Sélectionner et soutenir de jeunes musicien·ne·s en leur permettant d’exprimer leur talent lors de concerts donnés dans ces institutions. ',
         'Ouvrir de nouveaux horizons professionnels à ces artistes en les rendant attentifs à une approche sociale de leur profession.',
       ],
@@ -63,23 +63,23 @@ export default {
       content: [
         {
           title: 'Proposer des moments musicaux aux personnes qui ont difficilement accès à la culture',
-          text: 'L’objectif des Concerts du Cœur est de promouvoir l’accès à la culture pour les personnes âgées, hospitalisées, incarcérées, en situation de handicap ou de précarité. En organisant, en coordination étroite avec le personnel, des concerts au sein même des institutions, nous amenons la musique dans des espaces nouveaux, et allons à la rencontre des personnes isolées ou empêchées dans leur capacité de déplacement.',
+          text: 'L’objectif des <i>Concerts du Cœur</i> est de promouvoir l’accès à la culture pour les personnes âgées, hospitalisées, incarcérées, en situation de handicap ou de précarité. En organisant, en coordination étroite avec le personnel, des concerts au sein même des institutions, nous amenons la musique dans des espaces nouveaux, et allons à la rencontre des personnes isolées ou empêchées dans leur capacité de déplacement.',
         },
         {
           title: 'Apporter les bienfaits de la musique',
-          text: 'Grâce au langage universel de la musique et à une véritable interaction humaine avec les artistes, nous offrons des moments de partage unique.<br>Des études récentes ont démontré que les activités musicales sembleraient avoir des effets similaires aux antidépresseurs <span class="text-base">[1]</span> et pourraient semble-t-il retarder les effets négatifs de la maladie  d’Alzheimer et prévenir l’isolement social. <span class="text-base">[2]</span><br><p class="pb-2 text-sm">[1] CHANDA, Mona Lisa et LEVITIN, Daniel J. (avril 2013), Trends in Cognitive Sciences</p><p class="text-sm">[2] PLATEL, Hervé (octobre 2015), "Pourquoi la musique est bonne pour le cerveau ?"</p>',
+          text: 'Grâce au langage universel de la musique et à une véritable interaction humaine avec les artistes, nous offrons des moments uniques de partage.<br />Grâce au langage universel de la musique et à une véritable interaction humaine avec les artistes, nous offrons des moments uniques de partage<sup class="text-sm">1</sup>. Elle pourrait selon certaines études retarder les effets de la maladie d’Alzheimer et prévenir l’isolement social<sup class="text-sm">2</sup>.<br /><br /><p class="pb-2 text-sm"><sup>1</sup> CHANDA, Mona Lisa et LEVITIN, Daniel J. (avril 2013), Trends in Cognitive Sciences</p><p class="text-sm"><sup>2</sup> PLATEL, Hervé (octobre 2015), "Pourquoi la musique est bonne pour le cerveau ?"</p>',
         },
         {
           title: 'Soutenir une démarche de médiation culturelle',
-          text: 'Chaque concert s’inscrit dans une démarche de médiation culturelle : d’un côté, les éléments de la performance sont pensés en fonction du contexte d’intervention et des spécificités du public, de l’autre, le concert intègre des actions qui facilitent la mise en relation du public avec la proposition culturelle.<br>Les artistes encouragent la mobilisation du public en jouant par exemple des mélodies connues qui vont donner aux auditeurs·trices l’envie de chanter ou en ouvrant le dialogue pendant et après la prestation.',
+          text: 'Chaque concert s’inscrit dans une démarche de médiation culturelle : d’un côté, les éléments de la performance sont pensés en fonction du contexte d’intervention et des spécificités du public, de l’autre, le concert intègre des actions qui facilitent la mise en relation du public avec la proposition culturelle.<br>Les artistes encouragent la mobilisation du public en jouant par exemple des mélodies connues qui vont donner aux audit·eurs·rices l’envie de chanter ou en ouvrant le dialogue pendant et après la prestation.',
         },
         {
           title: 'Promouvoir la diversité musicale',
-          text: 'Les Concerts du Cœur  sont représentatifs de la diversité musicale et de la très grande qualité des artistes de la Suisse. Nous veillons également à décloisonner les styles musicaux et à faire découvrir une grande variété d’instruments et de formations.',
+          text: 'Les <i>Concerts du Cœur</i> souhaitent être représentatifs de la diversité musicale et de la très grande qualité des artistes de la Suisse romande. Profitant de nouveaux espaces de concert, nous veillons également à décloisonner les styles musicaux et à faire découvrir une grande variété d’instruments et de formations.',
         },
         {
-          title: 'Promouvoir le statut professionnel des artistes',
-          text: 'Les Concerts du Cœur sont des moments musicaux d’excellence, qui font toujours appel à des musicien·ne·s ou des ensembles professionnels de la région.<br>En les salariant et en les faisant cotiser au premier et deuxième pilier, nous contribuons à la reconnaissance de leur statut.',
+          title: 'Promouvoir le statut professionnel des artistes et reconnaître leur rôle sociétal',
+          text: 'Les Concerts du Cœur sont des moments musicaux d’excellence, qui font toujours appel à des musicien·ne·s ou $ des ensembles professionnels qui jouent en Suisse romande.<br>En les salariant et en les faisant cotiser au premier et deuxième pilier, nous contribuons à la reconnaissance de leur statut.',
         },
       ],
     },

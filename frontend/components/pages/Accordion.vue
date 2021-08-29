@@ -1,8 +1,10 @@
 <template>
   <div class="border-t-1 border-concert-dark">
     <template v-for="(item, i) in items">
-      <accordion-item :key="i" :open="i == activeItem" :no-image="item.noImage" @click.native="setActiveItem(i)">
-        <template #label>{{ item.title }}</template>
+      <accordion-item :key="i" :open="i == activeItem" :no-image="item.noImage">
+        <template #label
+          ><div @click="setActiveItem(i)">{{ item.title }}</div></template
+        >
         <template #content><div v-html="item.text"></div></template>
         <template #image><img class="mx-auto" :src="images[i]" /></template>
       </accordion-item>
