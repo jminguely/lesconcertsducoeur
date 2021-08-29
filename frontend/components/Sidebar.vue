@@ -41,6 +41,25 @@
         </button>
       </div>
 
+      <div :class="{ hidden: !menu }" class="text-xl lg:mt-8 lg:text-xl lg:block">
+        <div class="flex flex-col lg:ml-4">
+          <nuxt-link :class="{ 'my-2': menu }" :to="localePath('/')" :exact="true">
+            {{ $t('nav').home }}
+          </nuxt-link>
+          <nuxt-link :class="{ 'my-2': menu }" :to="localePath('mission')">
+            {{ $t('nav').mission }}
+          </nuxt-link>
+          <nuxt-link :class="{ 'my-2': menu }" :to="localePath('concerts')">
+            {{ $t('nav').concerts }}
+          </nuxt-link>
+          <nuxt-link :class="{ 'my-2': menu }" :to="localePath('agenda')">
+            {{ $t('nav').agenda }}
+          </nuxt-link>
+          <nuxt-link :class="{ 'my-2': menu }" :to="localePath('medias')">
+            {{ $t('nav').medias }}
+          </nuxt-link>
+        </div>
+      </div>
       <!-- <nuxt-link
         class="relative flex-col items-center justify-center hidden w-30 h-30 leading-5 text-center text-white transform bg-gray-700 rounded-full lg:flex -rotate-25 left-24 top-20 font-playFair"
         :to="localePath('soutien')"
@@ -50,7 +69,7 @@
     </div>
 
     <div>
-      <div :class="{ hidden: !menu }" class="text-xl lg:mt-8 lg:text-xl lg:block">
+      <div :class="{ hidden: !menu }" class="text-xl lg:mt-8 lg:text-xl lg:hidden">
         <div class="flex flex-col lg:ml-4">
           <nuxt-link :class="{ 'my-2': menu }" :to="localePath('/')" :exact="true">
             {{ $t('nav').home }}

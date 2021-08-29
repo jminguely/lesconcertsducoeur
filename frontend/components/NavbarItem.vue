@@ -44,7 +44,7 @@
     </div>
 
     <div
-      class="border-b-2 py-1 pl-7 z-10 overflow-hidden text-xl text-gray-800 duration-300 ease-in-out bg-white"
+      class="mt-px border-b-2 py-1 pl-7 z-10 overflow-hidden text-xl text-gray-800 duration-300 ease-in-out bg-white"
       :class="{ 'border-vs': canton == 'vs', 'border-vd': canton == 'vd', 'border-ge': canton == 'ge', 'h-0': !dropdown, 'h-32': dropdown, 'pointer-events-none': !dropdown }"
     >
       <slot name="items"></slot>

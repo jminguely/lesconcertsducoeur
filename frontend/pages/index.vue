@@ -78,7 +78,7 @@
         <template #headline> Actualités </template>
       </Headline>
 
-      <div class="flex flex-col items-start justify-between mb-16 space-x-0 space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8">
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
         <InfoBlock v-for="item in newsArticles" :key="item.id" :canton="getCanton(item.canton)">
           <template #date>{{ $dateFns.format(new Date(item.date), 'dd.MM.yyyy') }}</template>
           <template #pretitle></template>
@@ -95,7 +95,7 @@
         <template #headline> {{ $t('home').nextConcerts }} </template>
       </Headline>
 
-      <div class="flex flex-col items-start justify-between space-x-0 space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8">
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
         <EventBlock v-for="item in calendars" :key="item.id" :canton="getCanton(item.canton)">
           <template #datetime>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template>
           <template #pretitle>{{ item.location }}</template>
