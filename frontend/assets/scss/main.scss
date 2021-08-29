@@ -25,6 +25,9 @@ body {
 		left: 0.25em !important;
 		background-color: transparent !important;
 	}
+	.splide ul > li::before {
+		content: "" !important;
+	}
 	a {
 		text-decoration: underline;
 		&:hover {
