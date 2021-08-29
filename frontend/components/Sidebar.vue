@@ -41,7 +41,7 @@
         </button>
       </div>
 
-      <div :class="{ hidden: !menu }" class="text-xl lg:mt-8 lg:text-xl lg:block">
+      <div :class="{ hidden: !menu }" class="hidden text-xl lg:mt-8 lg:text-xl lg:block">
         <div class="flex flex-col lg:ml-4">
           <nuxt-link :class="{ 'my-2': menu }" :to="localePath('/')" :exact="true">
             {{ $t('nav').home }}
@@ -60,12 +60,6 @@
           </nuxt-link>
         </div>
       </div>
-      <!-- <nuxt-link
-        class="relative flex-col items-center justify-center hidden w-30 h-30 leading-5 text-center text-white transform bg-gray-700 rounded-full lg:flex -rotate-25 left-24 top-20 font-playFair"
-        :to="localePath('soutien')"
-      >
-        {{ $t('home').nousSoutenir }} !
-      </nuxt-link> -->
     </div>
 
     <div>
@@ -86,10 +80,11 @@
           <nuxt-link :class="{ 'my-2': menu }" :to="localePath('medias')">
             {{ $t('nav').medias }}
           </nuxt-link>
+          <nuxt-link :class="{ 'my-2': menu }" :to="localePath('soutien')"> Nous soutenir </nuxt-link>
         </div>
       </div>
 
-      <div :class="{ visible: menu, hidden: !menu }" class="mt-8">
+      <div :class="{ visible: menu, hidden: !menu }" class="mt-4">
         <ul class="flex flex-col overflow-hidden">
           <navbar-item v-for="(canton, i) in cantons" :key="'mobile-navbar' + i + canton" :canton="canton" class="mt-2">
             <template #content>{{ $t('canton')[canton] }}</template>
@@ -104,6 +99,32 @@
         </ul>
       </div>
     </div>
+
+    <nuxt-link
+      :to="localePath('soutien')"
+      class="
+        hidden
+        bg-concert-dark
+        duration-500
+        ease-in-out
+        hover:scale-105
+        w-14
+        h-14
+        text-sm
+        lg:w-20 lg:h-20 lg:flex
+        rounded-full
+        text-white
+        items-center
+        justify-center
+        text-center
+        transform
+        -rotate-25
+        sm:text-base
+        m-auto
+      "
+    >
+      Nous<br />Soutenir !
+    </nuxt-link>
 
     <div class="flex flex-col">
       <div :class="{ 'flex flex-row-reverse justify-between': menu, 'hidden lg:flex': !menu }" class="items-center">
