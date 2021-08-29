@@ -49,19 +49,41 @@
       </nuxt-link> -->
     </div>
 
-    <div :class="{ visible: menu, hidden: !menu }" class="">
-      <ul class="flex flex-col overflow-hidden">
-        <navbar-item v-for="(canton, i) in cantons" :key="'mobile-navbar' + i + canton" :canton="canton" class="mt-2">
-          <template #content>{{ $t('canton')[canton] }}</template>
-          <template #items>
-            <ul class="flex flex-col overflow-hidden text-xl">
-              <nuxt-link :to="localePath({ name: 'canton-association', params: { canton: canton } })">{{ $t('nav').association }}</nuxt-link>
-              <nuxt-link :to="localePath({ name: 'canton-artistes', params: { canton: canton } })">{{ $t('nav').artists }}</nuxt-link>
-              <nuxt-link :to="localePath({ name: 'canton-auditions', params: { canton: canton } })">{{ $t('nav').auditions }}</nuxt-link>
-            </ul>
-          </template>
-        </navbar-item>
-      </ul>
+    <div>
+      <div :class="{ hidden: !menu }" class="text-xl lg:mt-8 lg:text-xl lg:block">
+        <div class="flex flex-col lg:ml-4">
+          <nuxt-link :class="{ 'my-2': menu }" :to="localePath('/')" :exact="true">
+            {{ $t('nav').home }}
+          </nuxt-link>
+          <nuxt-link :class="{ 'my-2': menu }" :to="localePath('mission')">
+            {{ $t('nav').mission }}
+          </nuxt-link>
+          <nuxt-link :class="{ 'my-2': menu }" :to="localePath('concerts')">
+            {{ $t('nav').concerts }}
+          </nuxt-link>
+          <nuxt-link :class="{ 'my-2': menu }" :to="localePath('agenda')">
+            {{ $t('nav').agenda }}
+          </nuxt-link>
+          <nuxt-link :class="{ 'my-2': menu }" :to="localePath('medias')">
+            {{ $t('nav').medias }}
+          </nuxt-link>
+        </div>
+      </div>
+
+      <div :class="{ visible: menu, hidden: !menu }" class="mt-8">
+        <ul class="flex flex-col overflow-hidden">
+          <navbar-item v-for="(canton, i) in cantons" :key="'mobile-navbar' + i + canton" :canton="canton" class="mt-2">
+            <template #content>{{ $t('canton')[canton] }}</template>
+            <template #items>
+              <ul class="flex flex-col overflow-hidden text-xl">
+                <nuxt-link :to="localePath({ name: 'canton-association', params: { canton: canton } })">{{ $t('nav').association }}</nuxt-link>
+                <nuxt-link :to="localePath({ name: 'canton-artistes', params: { canton: canton } })">{{ $t('nav').artists }}</nuxt-link>
+                <nuxt-link :to="localePath({ name: 'canton-auditions', params: { canton: canton } })">{{ $t('nav').auditions }}</nuxt-link>
+              </ul>
+            </template>
+          </navbar-item>
+        </ul>
+      </div>
     </div>
 
     <div class="flex flex-col">
