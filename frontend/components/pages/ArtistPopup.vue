@@ -93,7 +93,7 @@
             <div v-if="selected.formats != null" class="prose prose-xl" v-html="$md.render(selected.formats)"></div>
           </div>
         </div>
-        <!-- <p class="my-6 prose-xl font-newsCycle">Vous souhaitez booker ce musicien·nne dans votre établissement?</p>
+        <!-- <p class="my-6 prose-xl font-newsCycle">Vous souhaitez booker ce musicien·nne dans votre établissement ?</p>
         <nuxt-link class="prose-xl text-green-500 no-underline" to="/contact">> Contact</nuxt-link> -->
       </div>
 

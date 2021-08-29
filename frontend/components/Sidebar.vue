@@ -5,14 +5,14 @@
     :class="{
       'h-full': menu,
       'border-0': !stickyHeader,
-      'border-b': stickyHeader,
+      'border-b-2': stickyHeader,
       'border-concert-dark': canton == '',
       'border-vs': canton == 'vs',
       'border-vd': canton == 'vd',
       'border-ge': canton == 'ge',
     }"
   >
-    <div :class="{ 'absolute top-5 left-5 text-xl z-10': menu, hidden: !menu }" class="lg:ml-4 lg:block lg:text-xl">
+    <div :class="{ 'absolute top-5 left-5 text-xl z-10 overflow-hidden': menu, hidden: !menu }" class="lg:ml-4 lg:block lg:text-xl">
       <nuxt-link :to="switchLocalePath('fr')">fr</nuxt-link> | <nuxt-link :to="switchLocalePath('de')">de</nuxt-link>
     </div>
 
@@ -39,26 +39,6 @@
             <line x1="0.57262" y1="27.0959" x2="55.5726" y2="1.09593" stroke="#393939" stroke-width="2" />
           </svg>
         </button>
-      </div>
-
-      <div :class="{ hidden: !menu }" class="mt-4 lg:mt-8 text-xl lg:text-xl lg:block">
-        <div class="flex flex-col lg:ml-4">
-          <nuxt-link :class="{ 'my-2': menu }" :to="localePath('/')" :exact="true">
-            {{ $t('nav').home }}
-          </nuxt-link>
-          <nuxt-link :class="{ 'my-2': menu }" :to="localePath('mission')">
-            {{ $t('nav').mission }}
-          </nuxt-link>
-          <nuxt-link :class="{ 'my-2': menu }" :to="localePath('concerts')">
-            {{ $t('nav').concerts }}
-          </nuxt-link>
-          <nuxt-link :class="{ 'my-2': menu }" :to="localePath('agenda')">
-            {{ $t('nav').agenda }}
-          </nuxt-link>
-          <nuxt-link :class="{ 'my-2': menu }" :to="localePath('medias')">
-            {{ $t('nav').medias }}
-          </nuxt-link>
-        </div>
       </div>
 
       <!-- <nuxt-link

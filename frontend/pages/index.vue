@@ -112,21 +112,21 @@
 
     <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
       <Sublink canton="vs">
-        <template #title>dans le canton du Valais?</template>
+        <template #title>dans le canton du Valais ?</template>
         <template #text>
           <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'vs' } })">> découvrez nos musicien·nes·s</nuxt-link>
         </template>
       </Sublink>
 
       <Sublink canton="vd">
-        <template #title>dans le canton de Vaud?</template>
+        <template #title>dans le canton de Vaud ?</template>
         <template #text>
           <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'vd' } })"> > découvrez nos musicien·nes·s </nuxt-link>
         </template>
       </Sublink>
 
       <Sublink canton="ge">
-        <template #title>dans le canton de Genève?</template>
+        <template #title>dans le canton de Genève ?</template>
         <template #text>
           <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'ge' } })"> > découvrez nos musicien·nes·s </nuxt-link>
         </template>

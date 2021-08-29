@@ -56,7 +56,7 @@ export default {
 
     clone.splice(6, 0, {
       is_notice: true,
-      text: 'Vous êtes musicien·nne et souhaitez jouer avec les Concerts du Coeur Vaudois?',
+      text: 'Vous êtes musicien·nne et souhaitez jouer avec les Concerts du Coeur Vaudois ?',
       linkText: '> participez aux auditons',
       link: 'auditions',
     })
