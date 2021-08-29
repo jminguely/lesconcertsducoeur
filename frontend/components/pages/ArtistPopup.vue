@@ -1,15 +1,18 @@
 <template>
-  <div :class="{ 'opacity-100 z-50': popup }" class="fixed top-0 left-0 flex flex-col w-screen h-screen p-5 lg:flex-row lg:p-10 lg:pb-20 overflow-auto duration-300 ease-in-out bg-white opacity-0">
+  <div
+    :class="{ 'opacity-100 z-50': popup }"
+    class="fixed top-0 left-0 flex flex-col w-screen h-screen p-5 lg:gap-x-5 lg:flex-row lg:p-10 lg:pb-20 overflow-auto duration-300 ease-in-out bg-white opacity-0"
+  >
     <div class="flex justify-between lg:block lg:w-1/5">
       <button class="focus:outline-none" @click="$emit('update:popup', false)">
         <nav-cross :canton="canton" />
       </button>
 
       <div class="flex-shrink flex items-center lg:block lg:w-full lg:flex-col lg:static">
-        <button class="flex my-2 mr-6 text-xl font-newsCycle focus:outline-none lg:mr-0" @click="goBack()">
-          <nav-chevron-left :canton="canton" />
+        <button class="flex my-2 mr-4 text-xl font-newsCycle focus:outline-none lg:mr-0" @click="goBack()">
+          <nav-chevron-left :canton="canton" class="flex-shrink-0" />
           <template v-if="data[previousIndex] != null">
-            <span class="pl-2 hidden lg:block" :class="{ 'hover:text-vs': canton == 'vs', 'hover:text-vd': canton == 'vd', 'hover:text-ge': canton == 'ge' }">
+            <span class="pl-2 hidden text-left lg:block" :class="{ 'hover:text-vs': canton == 'vs', 'hover:text-vd': canton == 'vd', 'hover:text-ge': canton == 'ge' }">
               <template v-if="data[previousIndex].first_name != null && data[previousIndex].last_name"> {{ data[previousIndex].first_name }} {{ data[previousIndex].last_name }} </template>
               <template v-if="data[previousIndex].name != null"> {{ data[previousIndex].name }} </template>
             </span>
@@ -17,9 +20,9 @@
         </button>
 
         <button class="flex my-2 text-xl font-newsCycle focus:outline-none" @click="next()">
-          <nav-chevron-right :canton="canton" />
+          <nav-chevron-right :canton="canton" class="flex-shrink-0" />
           <template v-if="data[nextIndex] != null">
-            <span class="pl-2 hidden lg:block" :class="{ 'hover:text-vs': canton == 'vs', 'hover:text-vd': canton == 'vd', 'hover:text-ge': canton == 'ge' }">
+            <span class="pl-2 hidden text-left lg:block" :class="{ 'hover:text-vs': canton == 'vs', 'hover:text-vd': canton == 'vd', 'hover:text-ge': canton == 'ge' }">
               <template v-if="data[nextIndex].first_name != null && data[nextIndex].last_name"> {{ data[nextIndex].first_name }} {{ data[nextIndex].last_name }} </template>
               <template v-if="data[nextIndex].name != null"> {{ data[nextIndex].name }} </template>
             </span>
