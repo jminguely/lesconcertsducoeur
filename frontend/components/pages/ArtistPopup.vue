@@ -20,7 +20,7 @@
         </svg>
       </button>
 
-      <div class="absolute flex w-1/5 lg:block lg:w-full right-5 lg:flex-col lg:static top-4">
+      <div class="flex-shrink absolute flex w-1/5 lg:block lg:w-full right-5 lg:flex-col lg:static top-4">
         <button class="flex my-2 mr-6 text-xl font-newsCycle focus:outline-none lg:mr-0" @click="goBack()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@
       </div>
     </div>
 
-    <div class="flex flex-col justify-between py-10 lg:flex-row lg:w-4/5">
+    <div class="flex-shrink flex flex-col justify-between py-10 lg:flex-row lg:w-4/5 lg:gap-x-10">
       <div class="mb-6 lg:w-3/5 lg:mb-0">
         <h1 class="pb-4 text-6xl font-newsCycle">
           <template v-if="selected.first_name != null && selected.last_name != null"> {{ selected.first_name }} {{ selected.last_name }} </template>
@@ -97,20 +97,22 @@
         <nuxt-link class="prose-xl text-green-500 no-underline" to="/contact">> Contact</nuxt-link> -->
       </div>
 
-      <div class="lg:ml-5 lg:w-2/5">
+      <div class="flex-grow lg:w-2/5">
         <div class="ml-auto">
           <template v-if="selected.picture != null">
-            <img class="object-cover h-64 lg:w-120 lg:h-128 w-96" :src="'https://api.lesconcertsducoeur.ch' + selected.picture.url" />
+            <img class="object-cover h-full lg:w-120 lg:h-full w-96" :src="'https://api.lesconcertsducoeur.ch' + selected.picture.url" />
           </template>
           <template v-if="selected.cover != null">
-            <img class="object-cover h-64 lg:w-120 lg:h-128 w-96" :src="'https://api.lesconcertsducoeur.ch' + selected.cover.url" />
+            <img class="object-cover h-full lg:w-120 lg:h-full w-96" :src="'https://api.lesconcertsducoeur.ch' + selected.cover.url" />
           </template>
         </div>
 
         <div v-if="selected.artists != null" class="mt-4 flex flex-col">
-          <div v-for="artist in selected.artists" :key="artist.id" class="grid grid-cols-2 my-2">
-            <p class="mr-6 text-xl font-playFair">{{ artist.first_name }} {{ artist.last_name }}</p>
-            <span class="text-lg font-newsCycle">{{ artist.instrument }} </span>
+          <div v-for="artist in selected.artists" :key="artist.id" class="my-2">
+            <p class="mr-6 text-xl font-playFair">
+              {{ artist.first_name }} {{ artist.last_name }} |
+              <span class="text-lg font-newsCycle">{{ artist.instrument }} </span>
+            </p>
           </div>
         </div>
       </div>
