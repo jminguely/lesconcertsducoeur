@@ -1,39 +1,15 @@
 <template>
   <div :class="{ 'opacity-100 z-50': popup }" class="fixed top-0 left-0 flex flex-col w-screen h-screen p-5 lg:flex-row lg:p-10 lg:pb-20 overflow-auto duration-300 ease-in-out bg-white opacity-0">
-    <div class="lg:w-1/5">
+    <div class="flex justify-between lg:block lg:w-1/5">
       <button class="focus:outline-none" @click="$emit('update:popup', false)">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="31.839"
-          height="31.839"
-          viewBox="0 0 31.839 31.839"
-          class="stroke-current"
-          :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }"
-        >
-          <g id="Group_1249" data-name="Group 1249" transform="translate(-193.793 -96.793)">
-            <line id="Line_21" data-name="Line 21" x2="30.425" y2="30.425" transform="translate(194.5 97.5)" fill="none" stroke-width="2" />
-            <line id="Line_22" data-name="Line 22" x2="30.425" y2="30.425" transform="translate(224.925 97.5) rotate(90)" fill="none" stroke-width="2" />
-          </g>
-        </svg>
+        <nav-cross :canton="canton" />
       </button>
 
-      <div class="flex-shrink absolute flex w-1/5 lg:block lg:w-full right-5 lg:flex-col lg:static top-4">
+      <div class="flex-shrink flex items-center lg:block lg:w-full lg:flex-col lg:static">
         <button class="flex my-2 mr-6 text-xl font-newsCycle focus:outline-none lg:mr-0" @click="goBack()">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="mr-2 stroke-current"
-            width="17.715"
-            height="33.788"
-            viewBox="0 0 17.715 33.788"
-            :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }"
-          >
-            <g id="Group_1250" data-name="Group 1250" transform="translate(-193.793 -66.793)">
-              <line id="Line_21" data-name="Line 21" x2="16.301" y2="16.301" transform="translate(194.5 83.573)" fill="none" stroke-width="2" />
-              <line id="Line_22" data-name="Line 22" x2="16.301" y2="16.301" transform="translate(210.801 67.5) rotate(90)" fill="none" stroke-width="2" />
-            </g>
-          </svg>
+          <nav-chevron-left :canton="canton" />
           <template v-if="data[previousIndex] != null">
-            <span class="pl-3 hidden lg:block" :class="{ 'hover:text-vs': canton == 'vs', 'hover:text-vd': canton == 'vd', 'hover:text-ge': canton == 'ge' }">
+            <span class="pl-2 hidden lg:block" :class="{ 'hover:text-vs': canton == 'vs', 'hover:text-vd': canton == 'vd', 'hover:text-ge': canton == 'ge' }">
               <template v-if="data[previousIndex].first_name != null && data[previousIndex].last_name"> {{ data[previousIndex].first_name }} {{ data[previousIndex].last_name }} </template>
               <template v-if="data[previousIndex].name != null"> {{ data[previousIndex].name }} </template>
             </span>
@@ -41,21 +17,9 @@
         </button>
 
         <button class="flex my-2 text-xl font-newsCycle focus:outline-none" @click="next()">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="mr-2 stroke-current"
-            :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }"
-            width="17.715"
-            height="33.788"
-            viewBox="0 0 17.715 33.788"
-          >
-            <g id="Group_1251" data-name="Group 1251" transform="translate(0.707 0.707)">
-              <line id="Line_21" data-name="Line 21" x1="16.301" y2="16.301" transform="translate(0 16.073)" fill="none" stroke-width="2" />
-              <line id="Line_22" data-name="Line 22" y1="16.301" x2="16.301" transform="translate(16.301 0) rotate(90)" fill="none" stroke-width="2" />
-            </g>
-          </svg>
+          <nav-chevron-right :canton="canton" />
           <template v-if="data[nextIndex] != null">
-            <span class="pl-3 hidden lg:block" :class="{ 'hover:text-vs': canton == 'vs', 'hover:text-vd': canton == 'vd', 'hover:text-ge': canton == 'ge' }">
+            <span class="pl-2 hidden lg:block" :class="{ 'hover:text-vs': canton == 'vs', 'hover:text-vd': canton == 'vd', 'hover:text-ge': canton == 'ge' }">
               <template v-if="data[nextIndex].first_name != null && data[nextIndex].last_name"> {{ data[nextIndex].first_name }} {{ data[nextIndex].last_name }} </template>
               <template v-if="data[nextIndex].name != null"> {{ data[nextIndex].name }} </template>
             </span>
