@@ -5,7 +5,7 @@
         id="Capa_1"
         :class="{ 'rotate-45': dropdown, 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }"
         class="fill-current w-5 h-5 duration-200 ease-in-out transform"
-        ersion="1.1"
+        version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px"
