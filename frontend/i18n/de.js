@@ -224,4 +224,10 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
     vd: 'Waadt',
     ge: 'Genf',
   },
+  impressum: {
+    title: 'Impressum',
+  },
+  privacy: {
+    title: 'Datenschutzerkl&auml;rung',
+  },
 }

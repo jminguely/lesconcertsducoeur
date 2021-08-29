@@ -227,4 +227,10 @@ export default {
     vd: 'Vaud',
     ge: 'Genève',
   },
+  impressum: {
+    title: 'Mentions légales',
+  },
+  privacy: {
+    title: 'Politique de confidentialité',
+  },
 }

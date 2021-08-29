@@ -1,7 +1,9 @@
 <template>
-  <div class="pt-5 pb-5 font-newsCycle">
+  <div id="footer" class="mt-32 pt-5 pb-5 font-newsCycle">
     <Divider class="mb-2" />
-    <nuxt-link to="/about" class="text-lg text-gray-800">© 2021 Les Concerts du Coeur | Impressum | protection des données</nuxt-link>
+    <div class="text-lg">
+      © 2021 Les Concerts du Coeur | <nuxt-link :to="localePath('about')">Mentions légales</nuxt-link> | <nuxt-link :to="localePath('privacy')">Protection des données</nuxt-link>
+    </div>
   </div>
 </template>
 <script>
