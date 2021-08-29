@@ -5,17 +5,28 @@
     </Headline>
 
     <div class="flex flex-col justify-items-start font-playFair text-xl items-start space-y-4 mb-16 lg:space-y-0 lg:flex-row lg:space-x-8">
-      <ClassicSelect :options="cantons" :selected-item.sync="cantonFilter">
-        <template #label>Région</template>
+      <ClassicSelect :options="cantons" :selected-item.sync="cantonFilter" default-item="CC">
+        <template #label>{{ $t('agenda').canton }}</template>
       </ClassicSelect>
-      <ClassicSelect :options="years" :selected-item.sync="yearFilter">
-        <template #label>Concerts passés </template>
+      <ClassicSelect :options="years" :selected-item.sync="yearFilter" default-item="YYYY">
+        <template #label>{{ $t('agenda').pastConcerts }}</template>
       </ClassicSelect>
-      <a class="cursor-pointer" @click="resetFilters()">Réinitialiser Filtre</a>
+      <!-- <a class="cursor-pointer" @click="resetFilters()">Effacer les filtres</a> -->
+
+      <div
+        class="w-full sm:w-auto duration-300 ease-in-out flex items-start py-2 px-4 bg-white border-1 border-concert-dark cursor-pointer"
+        :class="{
+          'border-1': yearFilter == '' && cantonFilter == '',
+          'border-2': yearFilter != '' || cantonFilter != '',
+        }"
+        @click="resetFilters()"
+      >
+        {{ $t('agenda').resetFilters }}
+      </div>
     </div>
 
     <DateDivider>
-      <template #date>2021</template>
+      <template #date>{{ yearFilter || 2021 }}</template>
     </DateDivider>
 
     <template v-if="data != null">
