@@ -8,7 +8,7 @@
         <Footer />
       </div>
     </div>
-    <div class="z-50 fixed w-full h-2 bottom-0 left-0" :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"></div>
+    <div class="z-50 fixed w-full h-1 bottom-0 left-0" :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"></div>
   </div>
 </template>
 <script>
