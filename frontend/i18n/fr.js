@@ -81,7 +81,7 @@ export default {
         },
         {
           title: 'Promouvoir le statut professionnel des artistes et reconnaître leur rôle sociétal',
-          text: '<i>Les Concerts du Cœur</i> sont des moments musicaux d’excellence, qui font toujours appel à des musicien·ne·s ou $ des ensembles professionnels qui jouent en Suisse romande.<br>En les salariant et en les faisant cotiser au premier et deuxième pilier, nous contribuons à la reconnaissance de leur statut.',
+          text: '<i>Les Concerts du Cœur</i> sont des moments musicaux d’excellence, qui font toujours appel à des musicien·ne·s ou des ensembles professionnels qui jouent en Suisse romande.<br>En les salariant et en les faisant cotiser au premier et deuxième pilier, nous contribuons à la reconnaissance de leur statut.',
         },
       ],
     },
@@ -210,7 +210,7 @@ export default {
     requirements: {
       vs: [
         `
-    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Les artistes intéressé·e·s doivent répondre aux critères ci-dessous :</h2>
+    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Les artistes intéressé·e·s doivent répondre aux critères ci-dessous:</h2>
     <ul class="pt-2">
       <li>— résider dans le canton du Valais (en tout cas la majorité des membres de la formation) ;</li>
       <li>— démontrer un standard très élevé de qualité musicale et de technique instrumentale ;</li>
@@ -219,11 +219,11 @@ export default {
       <li>— s’engager à respecter et à défendre les valeurs de l’association.</li>
     </ul>`,
         `Tous les styles de musique sont bienvenus (classique / jazz / folklorique / musique du monde etc.).`,
-        '<i>Les Concerts du Cœur</i> Valaisans organiseront des auditions en 2022.',
+        '<i>Les Concerts du Cœur</i> organiseront des auditions en 2022.',
       ],
       vd: [
         `
-    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Les artistes intéressé·e·s doivent répondre aux critères ci-dessous :</h2>
+    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Les artistes intéressé·e·s doivent répondre aux critères ci-dessous: </h2>
     <ul class="pt-2">
       <li>— résider dans le canton de Vaud (en tout cas la majorité des membres de la formation) ;</li>
       <li>— démontrer un standard très élevé de qualité musicale et de technique instrumentale ;</li>
@@ -236,7 +236,7 @@ export default {
       ],
       ge: [
         `
-    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Les artistes intéressé·e·s doivent répondre aux critères ci-dessous :</h2>
+    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Les artistes intéressé·e·s doivent répondre aux critères ci-dessous:</h2>
     <ul class="pt-2">
       <li>— résider dans le canton de Genève (en tout cas la majorité des membres de la formation) ;</li>
       <li>— démontrer un standard très élevé de qualité musicale et de technique instrumentale ;</li>

@@ -25,7 +25,7 @@
           href="https://lesconcertsducoeur.statslive.info/show-campaign-archived/eyJpdiI6ImxIekUzbzJiSTFFVnJPQkRad3dPMDRCUElwOWlCREVDaHRKVEplTnBnTFk9IiwidmFsdWUiOiJ0bHV5WEEyVVwvOGtweE1YbWJyM3pvZTN3UG1sUnlUWkRya3l6ZUgwc2p5WT0iLCJtYWMiOiI4ZWFkZWI5YjE4ODE0YzI3YmUwNjVkNThlMDVkMDRkODRhZDRkY2FjMTA4MWRiNjE2Y2VmOWY2Zjk0MjBkNzI5In0="
           target="_blank"
         >
-          Newsletter No 6 – Rapport d’activité 2019 | 03.2020
+          Newsletter No 6 | Rapport d’activité 2019 | 03.2020
         </a>
       </p>
       <p>
@@ -41,7 +41,7 @@
           href="https://lesconcertsducoeur.statslive.info/show-campaign-archived/eyJpdiI6IlVYRXd1VzFlQksrMkdSa2hDSWhiS2g5MzNVSHVQMmlVRVNvYWNDWG1vSVE9IiwidmFsdWUiOiJueU5hR21aMUx6MFIxSWZCSFVtRUUyNlljTnNsand3WkhoQU9jYzJDZ2lrPSIsIm1hYyI6ImI2NTI1YjMyNDc4OGFiOTc2NWNmZmQxNjIxNDE0ODgxYzM0MzBjM2ExNDQyMzFjYmFiNzk4M2E0NDgxODI0NGYifQ=="
           target="_blank"
         >
-          Newsletter No 4 – Rapport d’activité 2018 | 07.2019
+          Newsletter No 4 | Rapport d’activité 2018 | 07.2019
         </a>
       </p>
       <p>

@@ -217,7 +217,7 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
       <li>— verpflichten sich, die Werte des Vereins zu respektieren und zu verteidigen.</li>
     </ul>`,
         `Alle Musikrichtungen sind willkommen (Klassik / Jazz / Folk / Weltmusik etc.).`,
-        'Die Concerts du Cœur Valaisans werden im Jahr 2022 Vorsingen durchführen.',
+        'Die <i>Concerts du Cœur</i>werden im Jahr 2022 Vorsingen durchführen.',
       ],
       vd: [
         `

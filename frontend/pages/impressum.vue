@@ -41,8 +41,8 @@
 
       <h2 class="text-3xl font-playFair">Droits d’auteur</h2>
       <p>
-        Les droits d’auteur et tous les autres droits sur le contenu, les images, les photos ou autres fichiers de ce site appartiennent exclusivement aux <i>Concerts du Cœur</i> ou aux détenteurs de droits
-        spécifiquement nommés. Pour la reproduction de tout élément, le consentement écrit du détenteur du droit d’auteur doit être obtenu au préalable.
+        Les droits d’auteur et tous les autres droits sur le contenu, les images, les photos ou autres fichiers de ce site appartiennent exclusivement aux <i>Concerts du Cœur</i> ou aux détenteurs de
+        droits spécifiquement nommés. Pour la reproduction de tout élément, le consentement écrit du détenteur du droit d’auteur doit être obtenu au préalable.
       </p>
     </div>
 

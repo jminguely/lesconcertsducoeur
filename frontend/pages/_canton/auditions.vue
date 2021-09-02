@@ -21,7 +21,7 @@
 
     <p>{{ $t('auditions').requirements[canton][1] }}</p>
     <h2 class="mt-12 mb-4 text-xl lg:text-3xl font-playFair">{{ $t('auditions').prochainesAuditions }}</h2>
-    <p class="text-xl" :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">{{ $t('auditions').requirements[canton][2] }}</p>
+    <p class="text-xl" :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }" v-html="$t('auditions').requirements[canton][2]"></p>
 
     <!-- <div v-for="el in content.auditions[0].content" :key="el.__typename + el.id">
       <template v-if="el.__typename === 'ComponentContentText'">

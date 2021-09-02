@@ -95,7 +95,7 @@
     <div class="grid grid-cols-1 gap-y-10 md:gap-10 md:grid-cols-2">
       <testimonial>
         <template #quote>
-          {{ $t('home').testimonials[0].quote }}
+          <span v-html="$t('home').testimonials[0].quote"></span>
         </template>
 
         <template #name>
@@ -109,7 +109,7 @@
 
       <testimonial class="hidden sm:block">
         <template #quote>
-          {{ $t('home').testimonials[1].quote }}
+          <span v-html="$t('home').testimonials[1].quote"></span>
         </template>
 
         <template #name>
@@ -125,7 +125,7 @@
     <Divider class="my-16" />
 
     <Headline class="mb-12">
-      <template #headline> Souhaitez vous organiser un concert ? </template>
+      <template #headline> Souhaitez vous organiser un concert</template>
     </Headline>
 
     <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
