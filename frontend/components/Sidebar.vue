@@ -5,7 +5,7 @@
     :class="{
       'h-screen': menu,
       'border-0 border-opacity-0': !stickyHeader,
-      'border-b-2 border-opacity-100': stickyHeader,
+      'border-b-2 border-opacity-100 lg:border-0': stickyHeader,
       'border-concert-dark': canton == '' || canton == 'all',
       'border-vs': canton == 'vs',
       'border-vd': canton == 'vd',
