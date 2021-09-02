@@ -1,7 +1,7 @@
 <template>
   <div class="py-5 border-b border-black">
     <div class="flex cursor-pointer select-none items-center">
-      <svg
+      <!-- <svg
         :class="{ 'transform rotate-90': open }"
         xmlns="http://www.w3.org/2000/svg"
         width="28"
@@ -11,7 +11,8 @@
         viewBox="0 0 16 16"
       >
         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
-      </svg>
+      </svg> -->
+      <slot name="chevron"></slot>
       <h2 class="text-xl lg:text-4xl font-newsCycle"><slot name="label"></slot></h2>
     </div>
     <div

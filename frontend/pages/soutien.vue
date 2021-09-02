@@ -1,16 +1,62 @@
 <template>
   <div>
     <Headline>
+      <template #headline>Faites un don</template>
+    </Headline>
+
+    <DonationBlock canton="vs" circle>
+      <template #title>à l’association valaisanne</template>
+      <template #details>
+        <p>
+          No de compte : 103.079.98.07<br />
+          IBAN : CH82 0076 5001 0307 9980 7<br />
+          SWIFT / BIC : BCVSCH2LXXX<br />
+          CCP : 19-81-6<br />
+          Clearing : 765
+        </p>
+      </template>
+    </DonationBlock>
+
+    <spacing />
+
+    <DonationBlock canton="vd" circle>
+      <template #title>à l’association vaudoise</template>
+      <template #details>
+        <p>
+          Banque Cantonale Vaudoise <br />
+          IBAN : CH13 0076 7000 Z546 0551 3<br />
+          SWIFT / BIC : BCVLCH2LXXX<br />
+          CCP : 10-725-4<br />
+          Clearing : 767
+        </p>
+      </template>
+    </DonationBlock>
+
+    <spacing />
+
+    <DonationBlock class="mb-28" canton="ge" circle>
+      <template #title>à l’association genevoise</template>
+      <template #details>
+        <p>
+          Banque Cantonale Vaudoise <br />
+          IBAN : CH13 0076 7000 Z546 0551 3<br />
+          SWIFT / BIC : BCVLCH2LXXX<br />
+          CCP : 10-725-4<br />
+          Clearing : 767
+        </p>
+      </template>
+    </DonationBlock>
+    <Headline>
       <template #headline>Soutenez-nous</template>
     </Headline>
 
     <div class="flex">
       <div class="w-full py-4 pr-10">
         <h2 class="text-3xl font-playFair">
-          — Parler de nous autour de vous; <br />
-          <span>— Devenez membre</span> de l'association; <br />
-          <span>— Devenez bénévole</span>; <br />
-          <span>— Faites un don</span>. <br /><br />
+          Parlez de nous autour de vous ; <br />
+          Devenez membrede l'association ; <br />
+          Devenez bénévole ; <br />
+          Faites un don <br /><br />
           Merci !
         </h2>
       </div>
@@ -47,53 +93,6 @@
         </div>
       </div>
     </div> -->
-
-    <Headline>
-      <template #headline>Faites un don</template>
-    </Headline>
-
-    <DonationBlock canton="vs" circle>
-      <template #title>— à l’association valaisanne</template>
-      <template #details>
-        <p>
-          No de compte : 103.079.98.07<br />
-          IBAN : CH82 0076 5001 0307 9980 7<br />
-          SWIFT / BIC : BCVSCH2LXXX<br />
-          CCP : 19-81-6<br />
-          Clearing : 765
-        </p>
-      </template>
-    </DonationBlock>
-
-    <spacing />
-
-    <DonationBlock canton="vd" circle>
-      <template #title>— à l’association vaudoise</template>
-      <template #details>
-        <p>
-          Banque Cantonale Vaudoise <br />
-          IBAN : CH13 0076 7000 Z546 0551 3<br />
-          SWIFT / BIC : BCVLCH2LXXX<br />
-          CCP : 10-725-4<br />
-          Clearing : 767
-        </p>
-      </template>
-    </DonationBlock>
-
-    <spacing />
-
-    <DonationBlock class="mb-28" canton="ge" circle>
-      <template #title>— à l’association genevoise</template>
-      <template #details>
-        <p>
-          Banque Cantonale Vaudoise <br />
-          IBAN : CH13 0076 7000 Z546 0551 3<br />
-          SWIFT / BIC : BCVLCH2LXXX<br />
-          CCP : 10-725-4<br />
-          Clearing : 767
-        </p>
-      </template>
-    </DonationBlock>
 
     <Headline>
       <template #headline>Devenez membre</template>

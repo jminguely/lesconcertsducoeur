@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Headline class="-mt-4 mb-10 lg:mb-24">
+    <Headline class="-mt-6 mb-6 lg:mb-16">
       <template #content> <i>Les Concerts du Cœur</i> {{ $t('home').hero.subtitle }} </template>
     </Headline>
 
@@ -42,7 +42,9 @@
 
       <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
         <InfoBlock v-for="item in newsArticles" :key="item.id" :canton="getCanton(item.canton)">
-          <template #date>{{ $dateFns.format(new Date(item.date), 'dd.MM.yyyy') }}</template>
+          <template #date
+            ><span class="invisible">{{ $dateFns.format(new Date(item.date), 'dd.MM.yyyy') }}</span></template
+          >
           <template #pretitle></template>
           <template #title>{{ item.title }}</template>
           <template #content>{{ item.content }}</template>

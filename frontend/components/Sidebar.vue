@@ -1,6 +1,5 @@
 <template>
   <div
-    id="sidebar"
     class="px-5 py-4 fixed top-0 left-0 z-50 flex flex-col justify-between w-full max-h-screen duration-300 ease-in-out bg-white lg:px-12 lg:py-5 lg:h-screen lg:max-w-xs lg:w-96"
     :class="{
       'h-screen': menu,
@@ -41,7 +40,7 @@
         </button>
       </div>
 
-      <div :class="{ hidden: !menu }" class="hidden text-xl lg:mt-8 lg:text-xl lg:block">
+      <div id="sidebar" :class="{ hidden: !menu }" class="hidden text-xl lg:mt-8 lg:text-xl lg:block">
         <div class="flex flex-col lg:ml-4">
           <nuxt-link :class="{ 'my-2': menu }" :to="localePath('/')" :exact="true">
             {{ $t('nav').home }}
@@ -84,7 +83,7 @@
         </div>
       </div>
 
-      <div :class="{ visible: menu, hidden: !menu }" class="mt-4">
+      <div id="sidebar" :class="{ visible: menu, hidden: !menu }" class="mt-4">
         <ul class="flex flex-col overflow-hidden">
           <navbar-item v-for="(canton, i) in cantons" :key="'mobile-navbar' + i + canton" :canton="canton" class="mt-2">
             <template #content>{{ $t('canton')[canton] }}</template>
@@ -102,6 +101,7 @@
 
     <div>
       <nuxt-link
+        id="link-no-bold"
         :to="localePath('soutien')"
         class="
           hidden
@@ -128,7 +128,7 @@
       >
         {{ $t('nav').supportUs }}
       </nuxt-link>
-      <div class="flex flex-col">
+      <div id="sidebar" class="flex flex-col">
         <div :class="{ 'flex flex-row-reverse justify-between': menu, 'hidden lg:flex': !menu }" class="items-center">
           <div class="lg:mr-2">
             <SocialLink name="facebook" link="https://www.facebook.com/concertsducoeur/" sidebar />
