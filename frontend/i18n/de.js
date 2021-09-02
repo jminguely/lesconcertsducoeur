@@ -26,7 +26,7 @@ export default {
       },
       {
         quote:
-          'Ich unterstütze das Projekt dieses Walliser Vereins mit Überzeugung und ich hoffe, dass sich möglichst viele Menschen finden, die sich ebenfalls für den Verein Les Concerts du Coeur einsetzen. Dadurch ermöglichen wir betagten Menschen, Menschen in Spitälern oder Menschen in schwierigen Situationen Augenblicke mit viel Freude dank professioneller Musik.',
+          'Ich unterstütze das Projekt dieses Walliser Vereins mit Überzeugung und ich hoffe, dass sich möglichst viele Menschen finden, die sich ebenfalls für den Verein <i>Les Concerts du Cœur</i> einsetzen. Dadurch ermöglichen wir betagten Menschen, Menschen in Spitälern oder Menschen in schwierigen Situationen Augenblicke mit viel Freude dank professioneller Musik.',
         name: 'Pascal Couchepin',
         title: 'Alt-Bundesrat',
       },

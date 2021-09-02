@@ -26,7 +26,7 @@ export default {
       },
       {
         quote:
-          "C'est donc avec conviction que j'apporte mon appui à l'Association valaisanne, Les Concerts du Coeur, fondée en janvier pour réaliser ce projet. Je souhaite que nous soyons nombreux à la soutenir et à donner ainsi une chance aux personnes âgées, hospitalisées ou dans l'isolement de vivre des moments de plaisirs musicaux de qualité.",
+          "C'est donc avec conviction que j'apporte mon appui à l'Association valaisanne, <i>Les Concerts du Cœur</i>, fondée en janvier pour réaliser ce projet. Je souhaite que nous soyons nombreux à la soutenir et à donner ainsi une chance aux personnes âgées, hospitalisées ou dans l'isolement de vivre des moments de plaisirs musicaux de qualité.",
         name: 'Pascal Couchepin',
         title: 'Ancien Conseiller fédéral',
       },
@@ -81,7 +81,7 @@ export default {
         },
         {
           title: 'Promouvoir le statut professionnel des artistes et reconnaître leur rôle sociétal',
-          text: 'Les Concerts du Cœur sont des moments musicaux d’excellence, qui font toujours appel à des musicien·ne·s ou $ des ensembles professionnels qui jouent en Suisse romande.<br>En les salariant et en les faisant cotiser au premier et deuxième pilier, nous contribuons à la reconnaissance de leur statut.',
+          text: '<i>Les Concerts du Cœur</i> sont des moments musicaux d’excellence, qui font toujours appel à des musicien·ne·s ou $ des ensembles professionnels qui jouent en Suisse romande.<br>En les salariant et en les faisant cotiser au premier et deuxième pilier, nous contribuons à la reconnaissance de leur statut.',
         },
       ],
     },
@@ -219,7 +219,7 @@ export default {
       <li>— s’engager à respecter et à défendre les valeurs de l’association.</li>
     </ul>`,
         `Tous les styles de musique sont bienvenus (classique / jazz / folklorique / musique du monde etc.).`,
-        'Les Concerts du Cœur Valaisans organiseront des auditions en 2022.',
+        '<i>Les Concerts du Cœur</i> Valaisans organiseront des auditions en 2022.',
       ],
       vd: [
         `
@@ -232,7 +232,7 @@ export default {
       <li>— s’engager à respecter et à défendre les valeurs de l’association.</li>
     </ul>`,
         `Tous les styles de musique sont bienvenus (classique / jazz / folklorique / musique du monde etc.).`,
-        'Les Concerts du Cœur Vaudois organiseront des auditions en 2022.',
+        '<i>Les Concerts du Cœur</i> Vaudois organiseront des auditions en 2022.',
       ],
       ge: [
         `
@@ -245,7 +245,7 @@ export default {
       <li>— s’engager à respecter et à défendre les valeurs de l’association.</li>
     </ul>`,
         `Tous les styles de musique sont bienvenus (classique / jazz / folklorique / musique du monde etc.).`,
-        'Les Concerts du Cœur Genevois organiseront des auditions en 2022.',
+        '<i>Les Concerts du Cœur</i> Genevois organiseront des auditions en 2022.',
       ],
     },
   },

@@ -5,7 +5,7 @@ export default {
   target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Les Concerts du Coeur',
+    title: 'Les Concerts du Cœur',
     htmlAttrs: {
       lang: 'fr',
     },

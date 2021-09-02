@@ -7,7 +7,7 @@
     <div v-if="$i18n.locale == 'fr'" class="prose prose-xl max-w-full">
       <h2 class="text-3xl font-playFair">Adresse de contact</h2>
       <p>
-        Les Concerts du Coeur<br />
+        <i>Les Concerts du Cœur</i><br />
         Les Rocailles, rue des biolirs 6<br />
         3963 Crans-Montana<br />
         valais@lesconcertsducoeur.ch
@@ -41,7 +41,7 @@
 
       <h2 class="text-3xl font-playFair">Droits d’auteur</h2>
       <p>
-        Les droits d’auteur et tous les autres droits sur le contenu, les images, les photos ou autres fichiers de ce site appartiennent exclusivement aux concerts du coeur ou aux détenteurs de droits
+        Les droits d’auteur et tous les autres droits sur le contenu, les images, les photos ou autres fichiers de ce site appartiennent exclusivement aux <i>Concerts du Cœur</i> ou aux détenteurs de droits
         spécifiquement nommés. Pour la reproduction de tout élément, le consentement écrit du détenteur du droit d’auteur doit être obtenu au préalable.
       </p>
     </div>
@@ -49,7 +49,7 @@
     <div v-if="$i18n.locale == 'de'" class="prose prose-xl max-w-full">
       <h2 class="text-3xl font-playFair">Kontaktadresse</h2>
       <p>
-        Les Concerts du Coeur<br />
+        <i>Les Concerts du Cœur</i><br />
         Les Rocailles, rue des biolirs 6<br />
         3963 Crans-Montana<br />
         valais@lesconcertsducoeur.ch

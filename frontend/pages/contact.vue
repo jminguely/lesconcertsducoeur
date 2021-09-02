@@ -44,7 +44,7 @@ export default {
           text: `
           <div class="mb-8 lg:mb-12">
           <div class="text-xl text-vs">
-            <span class="font-bold">Les Concerts du Coeur</span><br />
+            <span class="font-bold"><i>Les Concerts du Cœur</i></span><br />
             Les Rocailles, Rue des Biolirs 6,<br />
             3963 Crans-Montana<br />
             <a href="mailto:valais@lesconcertsducoeur.ch">valais@lesconcertsducoeur.ch</a>
@@ -82,7 +82,7 @@ export default {
           text: `
           <div class="mb-8 lg:mb-12">
           <div class="text-xl text-vd">
-            <span class="font-bold">Les Concerts du Cœur Vaudois</span><br />
+            <span class="font-bold"><i>Les Concerts du Cœur Vaudois</i></span><br />
             Route du village 59<br />
             1509 Vucherens<br />
             <a href="mailto:vaud@lesconcertsducoeur.ch">vaud@lesconcertsducoeur.ch</a>
@@ -105,7 +105,7 @@ export default {
           text: `
           <div class="mb-8 lg:mb-12">
           <div class="text-xl text-ge">
-            <span class="font-bold">Les Concerts du Cœur Genevois</span><br />
+            <span class="font-bold"><i>Les Concerts du Cœur Genevois<i></span><br />
             C/O Etude Zarb & Wood<br />
             Rue du Conseil-General 11<br />
             1205 Genève<br />
