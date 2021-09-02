@@ -100,48 +100,51 @@
       </div>
     </div>
 
-    <nuxt-link
-      :to="localePath('soutien')"
-      class="
-        hidden
-        bg-concert-dark
-        duration-500
-        ease-in-out
-        hover:scale-105
-        w-14
-        h-14
-        text-xs
-        lg:w-24 lg:h-24 lg:flex
-        rounded-full
-        text-white
-        items-center
-        justify-center
-        text-center
-        transform
-        -rotate-25
-        sm:text-base
-        m-auto
-      "
-    >
-      {{ $t('nav').supportUs }}
-    </nuxt-link>
+    <div>
+      <nuxt-link
+        :to="localePath('soutien')"
+        class="
+          hidden
+          bg-concert-dark
+          duration-500
+          ease-in-out
+          hover:scale-105
+          w-14
+          h-14
+          text-xs
+          lg:w-24 lg:h-24 lg:flex
+          rounded-full
+          text-white
+          items-center
+          justify-center
+          text-center
+          transform
+          -rotate-25
+          sm:text-base
+          ml-auto
+          bottom-20
+          relative
+        "
+      >
+        {{ $t('nav').supportUs }}
+      </nuxt-link>
+      <div class="flex flex-col">
+        <div :class="{ 'flex flex-row-reverse justify-between': menu, 'hidden lg:flex': !menu }" class="items-center">
+          <div class="lg:mr-2">
+            <SocialLink name="facebook" link="https://www.facebook.com/concertsducoeur/" sidebar />
+          </div>
 
-    <div class="flex flex-col">
-      <div :class="{ 'flex flex-row-reverse justify-between': menu, 'hidden lg:flex': !menu }" class="items-center">
-        <div class="lg:mr-2">
-          <SocialLink name="facebook" link="https://www.facebook.com/concertsducoeur/" sidebar />
+          <div :class="{ 'ml-auto mr-4': menu }" class="mr-2">
+            <SocialLink name="instagram" link="https://www.instagram.com/lesconcertsducoeur/" sidebar />
+          </div>
+
+          <nuxt-link :to="localePath('contact')" class="text-xl font-newsCycle hover:font-bold"> {{ $t('nav').contact }} </nuxt-link>
         </div>
 
-        <div :class="{ 'ml-auto mr-4': menu }" class="mr-2">
-          <SocialLink name="instagram" link="https://www.instagram.com/lesconcertsducoeur/" sidebar />
+        <div class="hidden mt-4 lg:block">
+          <input class="w-full px-2 py-1 border-2 border-concert-dark focus:rounded-none" :placeholder="$t('nav').newsletter" />
+          <chevron-right class="absolute right-2" />
         </div>
-
-        <nuxt-link :to="localePath('contact')" class="text-xl font-newsCycle hover:font-bold"> {{ $t('nav').contact }} </nuxt-link>
-      </div>
-
-      <div class="hidden mt-4 lg:block">
-        <input class="w-full px-2 py-1 border-2 border-concert-dark focus:rounded-none" :placeholder="$t('nav').newsletter" />
-        <chevron-right class="absolute right-2" />
       </div>
     </div>
   </div>

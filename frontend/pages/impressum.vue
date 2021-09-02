@@ -16,7 +16,7 @@
       <h2 class="text-3xl font-playFair">Représentant(s) autorisé(s)</h2>
       <p>
         Contenu du texte : Laure Barras<br />
-        conception graphique : Malaïka Schürch<br />
+        Conception graphique : Malaïka Schürch<br />
         Illsutrations : Michèle Reymond<br />
         Programmation : Alex Roque<br />
         Traductions français-allemand : ...<br />
