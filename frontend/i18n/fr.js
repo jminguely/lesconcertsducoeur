@@ -290,4 +290,8 @@ export default {
   privacy: {
     title: 'Politique de confidentialité',
   },
+  artistes: {
+    repertoire: 'Répertoire',
+    formats: 'Formate',
+  },
 }

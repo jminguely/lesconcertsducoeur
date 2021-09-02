@@ -155,8 +155,8 @@ export default {
       },
       {
         title: 'Virtuelle Konzerte',
-        text: `Live-Konzerte werden direkt in Ihre Institutionen übertragen: Die KünstlerInnen musizieren von zu Hause oder von einem Musikstudio aus und treten in den direkten, virtuellen Dialog mit den BewohnerInnen und PatientInnen. 
-Sofern es die technische Ausstattung der Institution zulässt, ist es auch möglich, das Konzert in der gesamten Institution, resp. an verschiedenen Abteilungen zu übertragen`,
+        text: `Live-Konzerte werden direkt in Ihre Institutionen übertragen: Die Künstler:innen musizieren von zu Hause oder von einem Musikstudio aus und treten in den direkten, virtuellen Dialog mit den Bewohner:innen und Patient:innen. 
+Sofern es die technische Ausstattung der Institution zulässt, ist es auch möglich, das Konzert in der gesamten Institution, resp. an verschiedenen Abteilungen zu übertragen.`,
       },
       {
         title: 'Virtuelle Treffen mit Künstlern',
@@ -172,29 +172,29 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
         title: 'Repertoire',
         content: `Die vorgeschlagenen Formate und Programme erfüllen folgende Kriterien: 
       <ul class="pt-2">
-        <li>— Aufführung aus einem vorab besprochenem Repertoire, um individuell auf die Bedürfnisse Ihrer Institution einzugehen;</li>
-        <li>— Wiederbelebung des regionalen Musikschatzes durch die jeweilige Einbindung von einigen Volksliedern in das Programm;</li>
-        <li>— Einbindung des Publikums bei bekannten Werken wie beispielsweise Volksliedern;</li>
-        <li>— Entdeckung neuen Repertoires, welches die Neugier des Publikums weckt.</li>
+        <li>— Aufführung  eines vorab besprochenen Repertoires, um individuell auf die musikalischen Vorlieben Ihrer Institution einzugehen;</li>
+        <li>— Wiederbelebung des regionalen Musikschatzes durch die jeweilige Darbietung von einigen Volksliedern;</li>
+        <li>— Aktive Einbindung des Publikums bei bekannten Werken wie beispielsweise Volksliedern;</li>
+		    <li>Gemeinsame Entdeckung neuen Repertoires, welches die Neugier des Publikums wecken soll.</li>
       </ul>`,
       },
       {
         title: 'Organisation',
-        content: `<i>Les Concerts du Cœur</i> bietet für jede gebuchte Veranstaltung folgende Dienstleistungen:   
+        content: `Der Verein <i>Les Concerts du Cœur</i> bietet für jede gebuchte Veranstaltung folgende Dienstleistungen:   
       <ul class="pt-2">
         <li>— Organisation der Konzerte laut Wunschdatum-/Uhrzeit der Institution;</li>
-        <li>— Koordination der KünstlerInnen;</li>
+        <li>— Koordination der Künstler:nnen;</li>
         <li>— Bereitstellen von Flyern und Plakaten zum Ausdruck für das jeweilige Konzert;</li>
         <li>— Bereitstellen von Material oder Instrumenten wie z. B. ein E-Piano;</li>
-        <li>— Anträge für Unterstützungsbeiträge, um die Kosten des Konzertes zu decken sowie den KünstlerInnen eine angemessene Gage zu zahlen;</li>
-        <li>— Begleitung der MusikerInnen vor Ort durch ein Vereins-Mitglied;</li>
-        <li>— Ausfallentschädigung für die KünstlerInnen im Falle einer Absage wegen der Hygienemassnahmen.</li>
+        <li>— Anträge für Unterstützungsbeiträge, um den Künstler:innen eine angemessene Gage zu zahlen;</li>
+        <li>— Begleitung der Musiker:innen vor Ort durch ein Vereins-Mitglied;</li>
+        <li>— Ausfallentschädigung für die Künstler:innen im Falle einer Absage durch höhere Gewalt.</li>
       </ul>`,
       },
     ],
     testimonial: {
       quote:
-        'Ihr Konzert hat unserem Pflegepersonal ermöglicht, die positive Wirkung der Musik auf alle unsere Bewohnerinnen und Bewohner zu erleben. Das Konzert hat Ruhe, Gelassenheit, grosse Freude und viel Vergnügen in unser Haus gebracht.',
+        'Ihr Konzert hat unserem Pflegepersonal ermöglicht, die positive Wirkung der Musik auf alle unsere Bewohnerinnen und Bewohner zu übertragen. Das Konzert hat Ruhe, Gelassenheit, grosse Freude und viel Vergnügen in unser Haus gebracht.',
       name: 'Claude Crettol',
       title: 'Direktor der Vereinigung Beaulieu',
     },
@@ -206,7 +206,7 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
   },
   medias: {
     title: 'Medien',
-    findUsOnSocialMedias: 'Finden Sie uns in unseren sozialen Netzwerken',
+    findUsOnSocialMedias: 'Folgen Sie uns auf den sozialen Netzwerken!',
     images: 'Bilder',
   },
   auditions: {
@@ -267,8 +267,8 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
     comite: {
       title: 'Vorstand und künstlerische Leitung',
     },
-    soutien: 'Wie kann man uns unterstützen?',
-    benevole: 'Freiwillige/r werden',
+    soutien: 'Sie möchten uns unterstützen?',
+    benevole: 'FreiwilligeR werden',
     don: 'Spende machen',
     donate: 'spenden',
     membre: 'Mitglied werden',
@@ -287,5 +287,9 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
   },
   privacy: {
     title: 'Datenschutzerklärung',
+  },
+  artistes: {
+    repertoire: 'Repertoire',
+    formats: 'Formate',
   },
 }

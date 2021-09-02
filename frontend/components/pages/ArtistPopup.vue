@@ -48,12 +48,12 @@
           </p>
 
           <div v-if="selected.repertoire != null && selected.repertoire != ''">
-            <div class="mb-4 text-3xl font-playFair">Répertoire</div>
+            <div class="mb-4 text-3xl font-playFair">{{ $t('artistes').repertoire }}</div>
             <div v-if="selected.repertoire != null" class="prose prose-xl" v-html="$md.render(selected.repertoire)"></div>
           </div>
 
           <div v-if="selected.formats != null && selected.formats != ''">
-            <div class="mb-4 text-3xl font-playFair">Formats</div>
+            <div class="mb-4 text-3xl font-playFair">{{ $t('artistes').formats }}</div>
             <div v-if="selected.formats != null" class="prose prose-xl" v-html="$md.render(selected.formats)"></div>
           </div>
         </div>
