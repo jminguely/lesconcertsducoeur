@@ -37,7 +37,7 @@
       <spacing />
 
       <Headline class="mb-12">
-        <template #headline> Actualités </template>
+        <template #headline> {{ $t('home').news.title }}</template>
       </Headline>
 
       <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
@@ -125,35 +125,49 @@
     <Divider class="my-16" />
 
     <Headline class="mb-12">
-      <template #headline> Souhaitez vous organiser un concert</template>
+      <template #headline> {{ $t('home').organizeConcert.title }} </template>
     </Headline>
 
     <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
       <Sublink canton="vs">
-        <template #title>dans le canton du Valais ?</template>
+        <template #title>
+          {{ $t('home').organizeConcert.vs }}
+        </template>
         <template #text>
-          <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'vs' } })">> découvrez nos musicien·nes·s</nuxt-link>
+          <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'vs' } })">
+            {{ $t('home').organizeConcert.discover }}
+          </nuxt-link>
         </template>
       </Sublink>
 
       <Sublink canton="vd">
-        <template #title>dans le canton de Vaud ?</template>
+        <template #title>
+          {{ $t('home').organizeConcert.vd }}
+        </template>
         <template #text>
-          <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'vd' } })"> > découvrez nos musicien·nes·s </nuxt-link>
+          <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'vd' } })">
+            {{ $t('home').organizeConcert.discover }}
+          </nuxt-link>
         </template>
       </Sublink>
 
       <Sublink canton="ge">
-        <template #title>dans le canton de Genève ?</template>
+        <template #title>
+          {{ $t('home').organizeConcert.vd }}
+        </template>
         <template #text>
-          <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'ge' } })"> > découvrez nos musicien·nes·s </nuxt-link>
+          <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'ge' } })">
+            {{ $t('home').organizeConcert.discover }}
+          </nuxt-link>
         </template>
       </Sublink>
     </div>
 
     <HeadlineLink class="mt-12">
       <template #content>
-        <nuxt-link :to="localePath('concerts')">> Découvrez les différents types de concerts</nuxt-link>
+        <nuxt-link :to="localePath('concerts')">
+          {{ $t('home').organizeConcert.differentTypes }}
+        </nuxt-link>
       </template>
     </HeadlineLink>
 
@@ -161,11 +175,17 @@
 
     <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
       <Headline>
-        <template #headline>{{ $t('home').supportUs }}</template>
+        <template #headline>{{ $t('home').supportUs.title }}</template>
         <template #content>
-          <p class="mb-2 text-xl">> en faisant un don</p>
-          <p class="mb-2 text-xl">> en devenant bénévole</p>
-          <p class="mb-2 text-xl">> en devenant membre</p>
+          <p class="mb-2 text-xl">
+            {{ $t('home').supportUs.donate }}
+          </p>
+          <p class="mb-2 text-xl">
+            {{ $t('home').supportUs.help }}
+          </p>
+          <p class="mb-2 text-xl">
+            {{ $t('home').supportUs.member }}
+          </p>
         </template>
       </Headline>
       <div class="w-full">

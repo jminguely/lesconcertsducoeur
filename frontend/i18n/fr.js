@@ -17,6 +17,17 @@ export default {
       subtitle:
         'proposent des moments de musique aux personnes qui ont difficilement accès aux salles de concerts traditionnelles, qu’il s’agisse de personnes âgées, hospitalisées, incarcérées, en situation de handicap ou de précarité.',
     },
+    news: {
+      title: 'Actualités',
+    },
+    organizeConcert: {
+      title: 'Souhaitez-vous organiser un concert',
+      vs: 'dans le canton du Valais ?',
+      vd: 'dans le canton de Vaud ?',
+      ge: 'dans le canton de Genève ?',
+      discover: '> découvrez nos musicien·nes·s',
+      differentTypes: '> Découvrez les différents types de concerts',
+    },
     testimonials: [
       {
         quote:
@@ -32,7 +43,12 @@ export default {
       },
     ],
     nextConcerts: 'Prochains concerts',
-    supportUs: 'Soutenez-nous',
+    supportUs: {
+      title: 'Soutenez-nous!',
+      donate: '> en faisant un don',
+      help: '> en devenant bénévole',
+      member: '> en devenant membre',
+    },
     nousSoutenir: 'Nous soutenir',
     partners: {
       title: 'En partenariat avec',

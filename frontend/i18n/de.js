@@ -15,7 +15,18 @@ export default {
   home: {
     hero: {
       subtitle:
-        'bietet qualitativ hochwertige musikalische Erlebnisse für Menschen mit erschwertem Zugang zu traditionellen Konzerten wie beispielsweise betagte, kranke, inhaftierte, sozial, finanziell, körperlich oder geistig beeinträchtigten Personen.',
+        'bringt Musik in den Alltag von betagten oder kranken, inhaftierten oder sozial beeinträchtigten Personen – kurz, zu Menschen, die nicht auf der Sonnenseite des Lebens stehen. Es ist der Versuch, die soziale Isolation dank geteilten Emotionen in Musikworkshops, Konzerten sowie im Austausch mit den Künstler:innen aufzubrechen.',
+    },
+    news: {
+      title: 'Aktuell',
+    },
+    organizeConcert: {
+      title: 'Möchten Sie GastgeberIn eines Konzertes werden',
+      vs: 'Im Kanton Wallis?',
+      vd: 'Im Kanton Waadt?',
+      ge: 'Im Kanton Genf?',
+      discover: '> Entdecken Sie unsere Musiker:innen',
+      differentTypes: '> Entdecken Sie unsere verschiedenen Konzertangebote',
     },
     testimonials: [
       {
@@ -32,8 +43,13 @@ export default {
       },
     ],
     nextConcerts: 'Nächste Konzerte',
-    supportUs: 'Unterstützen Sie uns ...',
-    nousSoutenir: 'Uns unterstützen',
+    supportUs: {
+      title: 'Unterstützen Sie uns!',
+      donate: '> Mit einer Spende',
+      help: '> Als Freiwillige:r',
+      member: '> Als Vereinsmitglied',
+    },
+    nousSoutenir: 'Verein unterstützen',
     partners: {
       title: 'In Partnerschaft mit',
     },
@@ -44,8 +60,8 @@ export default {
   mission: {
     hero: {
       title: 'Unsere Mission',
-      subtitle: `<p><i>Les Concerts du Cœur</i> bietet Menschen mit erschwertem Zugang zu traditionellen Konzerten qualitativ hochwertige musikalische Erlebnisse.</p><br>
-        <p>Dieses Bestreben wird mittlerweile in drei Schweizer Kantonen umgesetzt, wobei die jeweiligen Vereine im Kanton Wallis, Waadt und Genf die gleichen Ziele und Werte vertreten.</p>`,
+      subtitle: `<p>Der Verein <i>Les Concerts du Cœur</i> bietet qualitativ hochwertige musikalische Erlebnisse für Menschen mit erschwertem Zugang zu traditionellen Konzerten wie beispielsweise betagten, kranken, inhaftierten sowie sozial, finanziell, körperlich oder geistig beeinträchtigten Personen. </p><br>
+        <p>Dieses Bestreben wird mittlerweile in drei Schweizer Kantonen umgesetzt, wobei die jeweiligen Vereine im Kanton Wallis, Waadt und Genf jeweils die gleichen Ziele und Werte vertreten.</p>`,
     },
     enSavoirPlus: {
       vs: '> Erfahren Sie mehr über den Walliser Verein',
@@ -55,21 +71,21 @@ export default {
     buts: {
       title: 'Unsere Ziele',
       content: [
-        'Organisation und Durchführung von qualitativ hochwertigen Konzerten in Alters- und Pflegeheimen, sozialen Institutionen, Krankenhäusern sowie Strafvollzugsanstalten.Organisation und Durchführung von qualitativ hochwertigen Konzerten in Alters- und Pflegeheimen, sozialen Institutionen, Krankenhäusern sowie Strafvollzugsanstalten.',
-        'Auswahl von jungen MusikerInnen sowie deren künstlerische und finanzielle Unterstützung durch die Aufführungsmöglichkeiten.',
-        'Erweiterung des musikalischen Berufsfeldes der MusikerInnen durch den sozialen Aspekt der Konzerte.',
+        'Organisation und Durchführung von qualitativ hochwertigen Konzerten in Alters- und Pflegeheimen, sozialen Institutionen, Krankenhäusern sowie Strafvollzugsanstalten.',
+        'Künstlerische und finanzielle Unterstützung  junger Musiker:innen durch die Aufführungsmöglichkeiten.',
+        'Erweiterung des musikalischen Berufsfeldes der Musiker:innen durch den sozialen Aspekt der Konzerte.',
       ],
     },
     objectifs: {
-      title: 'Unsere Zielsetzungen und Werte',
+      title: 'Unsere Zielsetzungen',
       content: [
         {
-          title: 'Musikalische Erlebnisse für Menschen mit erschwertem Zugang zu Kultur',
-          text: 'Mit unseren Konzerten bieten wir Menschen mit erschwertem Zugang zu Kultur wie beispielsweise betagten, kranken, inhaftierten, sozial, finanziell, körperlich oder geistig beeinträchtigten Menschen qualitativ hochwertige musikalische Erlebnisse ausserhalb des traditionellen Konzertsaales.',
+          title: 'Musikalische Erlebnisse für Menschen mit erschwertem Zugang zu Kultur schaffen',
+          text: 'Mit unseren Konzerten bieten wir Menschen mit erschwertem Zugang zu Kultur wie beispielsweise betagten, kranken, inhaftierten sowie sozial, finanziell, körperlich oder geistig beeinträchtigten Menschen qualitativ hochwertige musikalische Erlebnisse ausserhalb des traditionellen Konzertsaales.',
         },
         {
-          title: 'Emotionen durch die Musik erleben',
-          text: 'Durch die Sprache der Musik sowie die zwischenmenschliche Interaktion kann die Isolation von Menschen durchbrochen werden: Jüngste Studien zeigen, dass musikalische Aktivitäten ähnliche Wirkungen erzeugen können wie Antidepressiva <sup class="text-sm">1</sup>, die negativen Auswirkungen der Alzheimer-Krankheit verzögern sowie die soziale Isolation verhindern können. <sup class="text-sm">2</sup><br /><br /><p class="pb-2 text-sm"><sup>1</sup> CHANDA, Mona Lisa et LEVITIN, Daniel J. (avril 2013), Trends in Cognitive Sciences</p><p class="text-sm"><sup>2</sup> PLATEL, Hervé (octobre 2015), "Pourquoi la musique est bonne pour le cerveau ?"</p>',
+          title: 'Emotionen durch Musik erleben',
+          text: 'Durch die Sprache der Musik sowie die zwischenmenschliche Interaktion kann die Isolation von Menschen durchbrochen werden: Jüngste Studien zeigen, dass musikalische Aktivitäten ähnliche Wirkungen erzeugen können wie Antidepressiva1<sup class="text-sm">1</sup>, die negativen Auswirkungen der Alzheimer-Krankheit verzögern sowie die soziale Isolation verhindern können.<sup class="text-sm">2</sup><br /><br /><p class="pb-2 text-sm"><sup>1</sup> CHANDA, Mona Lisa et LEVITIN, Daniel J. (avril 2013), Trends in Cognitive Sciences</p><p class="text-sm"><sup>2</sup> PLATEL, Hervé (octobre 2015), Pourquoi la musique est bonne pour le cerveau ?</p>',
         },
         {
           title: 'Kultur hautnah vermitteln',
@@ -80,8 +96,8 @@ export default {
           text: '<i>Les Concerts du Cœur</i> repräsentieren die musikalische Vielfalt und die hohe Qualität junger Schweizer KünstlerInnen durch die stilistische Breite der Konzertprogramme sowie die unterschiedlichsten Instrumente und Besetzungen.',
         },
         {
-          title: 'Den professionellen Status der KünstlerInnen fördern und ihre gesellschaftliche Rolle anerkennen',
-          text: '<i>Les Concerts du Cœur</i> bieten musikalische Momente der Extraklasse, die von professionellen MusikerInnen der jeweiligen Region aufgeführt werden. Mit unserer Gage sowie unseren Beiträgen an die erste und zweite Säule tragen wir zur Anerkennung ihres professionellen Status bei.',
+          title: 'Professionellen Status der KünstlerInnen fördern und ihre gesellschaftliche Rolle anerkennen',
+          text: 'Der Verein <i>Les Concerts du Cœur</i> bietet musikalische Momente der Extraklasse, die von professionellen Musiker:innen der jeweiligen Region dargeboten werden. Mit unserer garantierten Gage sowie unseren Beiträgen an die erste und zweite Säule tragen wir zur Anerkennung ihres professionellen Status bei.',
         },
       ],
     },
@@ -89,52 +105,52 @@ export default {
   concerts: {
     hero: {
       title: 'Unsere Konzerte',
-      subtitle: `<i>Les Concerts du Cœur</i> passt seine Konzerte in enger Zusammenarbeit mit Ihrer Institution an den jeweiligen Standort, das Publikum sowie die geltenden Hygienemassnahmen an.<br><br>
+      subtitle: `Der Verein <i>Les Concerts du Cœur</i> passt seine Konzerte in enger Zusammenarbeit mit Ihrer Institution an den jeweiligen Standort, das Publikum sowie die geltenden Hygienemassnahmen an.<br><br>
         So wurden beispielsweise während der Pandemie die Konzerte nicht abgesagt, sondern jeweils Alternativen für einen kontinuierlichen Musikaustausch gesucht.`,
       text: `<p class="pb-4">Mit unseren Konzerten bieten wir Ihnen ein breites Angebot an qualitativ hochwertigen Musikprogrammen:<br>
-      Unsere KünstlerInnen sind professionell ausgebildete MusikerInnen mit einem großen Anpassungsvermögen an die jeweilige Situation sowie dem Bedürfnis, sich ganz in den Dienst des Publikums zu stellen.</p>
-<p class="pb-4">Unsere Konzerte können zu jeder Tageszeit während der Woche oder am Wochenende stattfinden.</p>
+      Unsere Künstler:innen sind professionell ausgebildete Musiker:innen mit einer hohen Ausdruckskraft, starker Kommunikationsfähigkeit und Sensibilität und passen sich mit Leichtigkeit der jeweiligen Situation im Dienste des Publikums und der Musik an.</p>
+<p class="pb-4">Unsere stlistisch breit gefächerten Konzerte können zu jeder Tageszeit während der Woche sowie am Wochenende gebucht werden.</p>
 <p>Zögern Sie nicht, uns für nähere Informationen zu kontaktieren.</p>
 `,
     },
     concertTypes: [
       {
         title: 'Traditionelle Konzerte',
-        text: `Dieses Format bietet ein Konzert im traditionellen Sinne: Die Aufenthaltsräume verwandeln sich in einen Konzertsaal für die BewohnerInnen, PatientInnen, Personal und Angehörige: 
+        text: `Dieses Format bietet ein Konzert im traditionellen Sinne: Der Aufenthaltsraum verwandelt sich in einen Konzertsaal für die Bewohner:innen, Patient:innen, Personal und Angehörige: 
       <ul class="pt-2">
         <li>— Das Konzert dauert zwischen 45 und 60 Minuten;</li>
-        <li>— Die KünstlerInnen führen mit kurzen Ansprachen durch das Konzert;</li>
-        <li>— Nach dem Konzert bleiben die MusikerInnen nach Wunsch vor Ort, um sich mit dem Publikum auszutauschen.</li>
+        <li>— Die Künstler:innen führen mit kurzen Moderationen durch das Konzert;</li>
+        <li>— Nach dem Konzert bleiben die Musiker:innen Wunsch vor Ort, um sich mit dem Publikum auszutauschen.</li>
       </ul>`,
       },
       {
         title: 'Konzerte im Freien',
-        text: `Je nach Wetterbedingungen und Hygienemassnahmen sind Konzerte im Freien – in den Gärten, auf den Terrassen oder sogar auf den Parkplätzen Ihrer Institution – möglich: 
+        text: `Je nach Wetterbedingungen sind Konzerte im Freien – in den Gärten, auf den Terrassen oder sogar auf den Parkplätzen Ihrer Institution – möglich: 
       <ul class="pt-2">
         <li>— Das Konzert dauert zwischen 45 und 60 Minuten;</li>
-        <li>— Das Publikum kann von den Balkonen oder aus der Ferne zuhören;</li>
-        <li>— Die KünstlerInnen führen mit kurzen Ansprachen durch das Konzert;</li>
-        <li>— Nach dem Konzert bleiben die MusikerInnen vor Ort, um sich mit dem Publikum auszutauschen;</li>
+        <li>— Das Publikum kann aus der Ferne von den Balkonen, Fenstern oder Terrassen zuhören;</li>
+        <li>— Die Künstler:innen führen mit kurzen Moderationen durch das Konzert;</li>
+        <li>— Nach dem Konzert bleiben die Musiker:innen vor Ort, um sich mit dem Publikum auszutauschen;</li>
         <li>— Diese Konzerte werden je nach Akustik mit Lautsprechern unterstützt, die vom Verein zur Verfügung gestellt werden.</li>
       </ul>`,
       },
       {
         title: 'Wanderkonzerte',
-        text: `In Krankenhäusern und Kliniken, aber auch im Altersheim, laden die MusikerInnen zu kurzen Ständchen auf den jeweiligen Abteilungen ein:
+        text: `In Krankenhäusern und Kliniken, aber auch in Altersheimen laden die Musiker:innen zu kurzen Ständchen auf den jeweiligen Abteilungen ein:
       <ul class="pt-2">
         <li>— Jedes Konzert dauert maximal 15 Minuten;</li>
         <li>— Die Musik ist für PatientInnen, ihre Angehörigen und das Personal bestimmt;</li>
-        <li>— Wer möchte, hat die Möglichkeit, den MusikerInnen durch die Institution zu folgen;</li>
-        <li>— Insbesondere bei diesem Format passen die MusikerInnen ihr Repertoire und Moderation je nach Situation und Stimmung spontan an.</li>
+        <li>— Wer möchte, hat die Möglichkeit, den Musiker:innen durch die Institution zu folgen;</li>
+        <li>— Insbesondere bei diesem Format passen die Musiker:innen ihr Repertoire und Moderation je nach Situation und Stimmung spontan an.</li>
       </ul>`,
       },
       {
         title: 'Konzerte in den Zimmern',
-        text: `Den PatientInnen und BewohnerInnen wird die Möglichkeit geboten, private Minikonzerte in ihren Zimmern zu genissen: 
+        text: `Den PatientInnen und BewohnerInnen wird die Möglichkeit geboten, private Minikonzerte in ihren Zimmern zu geniessen: 
       <ul class="pt-2">
-        <li>— Die Konzerte dauern ungefähr 15 Minuten;</li>
-        <li>— Die MusikerInnen spielen im Zimmer des/der PatientIn, der/die aus dem jeweiligen Repertoire einige Werke auswählen darf;</li>
-        <li>— Die KünstlerInnen stehen im direkten Dialog mit ihrem Publikum.</li>
+        <li>— Die Konzerte dauern ca. 15 Minuten;</li>
+        <li>— Die Musiker:innen spielen im Zimmer des/der PatientIn, der/die aus dem jeweiligen Repertoire einige Werke auswählen darf;</li>
+        <li>— Die Künstler:innen stehen im unmittelbaren Dialog mit ihrem Publikum.</li>
       </ul>`,
       },
       {
