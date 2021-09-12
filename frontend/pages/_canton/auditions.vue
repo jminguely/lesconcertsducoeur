@@ -2,7 +2,7 @@
   <div class="text-xl">
     <Headline>
       <template #headline>{{ $t('auditions').hero.title }}</template>
-      <template #content> {{ $t('auditions').hero.subtitle[canton] }}</template>
+      <template #content> <span v-html="$t('auditions').hero.subtitle[canton]"></span></template>
     </Headline>
 
     <p class="text-xl mt-4">

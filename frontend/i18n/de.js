@@ -228,7 +228,7 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
     <ul class="pt-2">
       <li>— Sehr hoher Standard an musikalischer Qualität und Instrumentaltechnik;</li>
       <li>— Augezeichnete Kommunikationsfähigkeiten sowie eine Affinität zur Konzertmoderation und zwischenmenschlicher Kommunikation;</li>
-      <li>— Nachweis eines abwechslungsreichen Repertoires, das auf die Besonderheiten einer oder mehrerer Zielgruppen der Konzerte von Les concerts du Coeur angepasst werden kann;</li>
+      <li>— Nachweis eines abwechslungsreichen Repertoires, das auf die Besonderheiten einer oder mehrerer Zielgruppen der Konzerte von <i>Les concerts du Cœur</i> angepasst werden kann;</li>
       <li>— Vollständiger oder mehrheitlicher Wohnsitz des Ensembles im Kanton Wallis;</li>
       <li>— Wahrnehmung und Vermittlung der Vereins-Werte.</li>
     </ul>`,
@@ -237,29 +237,29 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
       ],
       vd: [
         `
-    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Interessierte Künstler müssen die folgenden Kriterien erfüllen:</h2>
+    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Interessierte Künstler:innen müssen die folgenden Kriterien erfüllen:</h2>
     <ul class="pt-2">
-      <li>— im Kanton Waadt wohnhaft sind (in jedem Fall die Mehrheit der Mitglieder der Formation);</li>
-      <li>— einen sehr hohen Standard an musikalischer Qualität und Instrumentaltechnik nachweisen;</li>
-      <li>— über gute Kommunikationsfähigkeiten und eine nachweisliche Leichtigkeit beim Aufbau einer Beziehung zur Öffentlichkeit verfügen, indem sie sie so weit wie möglich zur Teilnahme einladen;</li>
-      <li>— eine Auswahl an abwechslungsreichen Repertoire anzubieten, das an die Besonderheiten einer oder mehrerer Zielgruppen von Concerts du Cœur angepasst ist;</li>
-      <li>— verpflichten sich, die Werte des Vereins zu respektieren und zu verteidigen.</li>
+      <li>— Sehr hoher Standard an musikalischer Qualität und Instrumentaltechnik;</li>
+      <li>— Augezeichnete Kommunikationsfähigkeiten sowie eine Affinität zur Konzertmoderation und zwischenmenschlicher Kommunikation;</li>
+      <li>— Nachweis eines abwechslungsreichen Repertoires, das auf die Besonderheiten einer oder mehrerer Zielgruppen der Konzerte von <i>Les concerts du Cœur</i> angepasst werden kann;</li>
+      <li>— Vollständiger oder mehrheitlicher Wohnsitz des Ensembles im Kanton Waadt;</li>
+      <li>— Wahrnehmung und Vermittlung der Vereins-Werte.</li>
     </ul>`,
-        `Alle Musikrichtungen sind willkommen (Klassik / Jazz / Folk / Weltmusik etc.).`,
-        'Die Concerts du Cœur Vaudois werden im Jahr 2022 Vorsingen durchführen.',
+        `Das gesamte Spektrum an Musikrichtungen ist willkommen!`,
+        'Der Verein <i>Les Concerts du Cœur Vaudois</i> wird wiederum im Jahr 2022 Vorsingen anbieten. Für mehr Informationen freuen wir uns auf Ihre <a href="mailto:vaud@lesconcertsducoeur.ch">Kontaktaufnahme</a>.',
       ],
       ge: [
         `
-    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Interessierte Künstler müssen die folgenden Kriterien erfüllen:</h2>
+    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Interessierte Künstler:innen müssen die folgenden Kriterien erfüllen:</h2>
     <ul class="pt-2">
-      <li>— im Kanton Genf wohnhaft sind (in jedem Fall die Mehrheit der Mitglieder der Formation);</li>
-      <li>— einen sehr hohen Standard an musikalischer Qualität und Instrumentaltechnik nachweisen;</li>
-      <li>— über gute Kommunikationsfähigkeiten und eine nachweisliche Leichtigkeit beim Aufbau einer Beziehung zur Öffentlichkeit verfügen, indem sie sie so weit wie möglich zur Teilnahme einladen;</li>
-      <li>— eine Auswahl an abwechslungsreichen Repertoire anzubieten, das an die Besonderheiten einer oder mehrerer Zielgruppen von Concerts du Cœur angepasst ist;</li>
-      <li>— verpflichten sich, die Werte des Vereins zu respektieren und zu verteidigen.</li>
+      <li>— Sehr hoher Standard an musikalischer Qualität und Instrumentaltechnik;</li>
+      <li>— Augezeichnete Kommunikationsfähigkeiten sowie eine Affinität zur Konzertmoderation und zwischenmenschlicher Kommunikation;</li>
+      <li>— Nachweis eines abwechslungsreichen Repertoires, das auf die Besonderheiten einer oder mehrerer Zielgruppen der Konzerte von <i>Les concerts du Cœur</i> angepasst werden kann;</li>
+      <li>— Vollständiger oder mehrheitlicher Wohnsitz des Ensembles im Kanton Genf;</li>
+      <li>— Wahrnehmung und Vermittlung der Vereins-Werte.</li>
     </ul>`,
-        `Alle Musikrichtungen sind willkommen (Klassik / Jazz / Folk / Weltmusik etc.).`,
-        'Die Concerts du Cœur Genevois werden im Jahr 2022 Vorsingen durchführen.',
+        `Das gesamte Spektrum an Musikrichtungen ist willkommen!`,
+        'Der Verein <i>Les Concerts du Cœur Genevois</i> wird wiederum im Jahr 2022 Vorsingen anbieten. Für mehr Informationen freuen wir uns auf Ihre <a href="mailto:geneve@lesconcertsducoeur.ch">Kontaktaufnahme</a>.',
       ],
     },
   },
@@ -273,6 +273,125 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
     donate: 'spenden',
     membre: 'Mitglied werden',
     partners: 'Unsere Partner und Unterstützer',
+  },
+  soutien: {
+    donate: {
+      title: 'Spende machen',
+      vs: 'Walliser Verein',
+      vd: 'Waadtländer Verein',
+      ge: 'Genfer Verein',
+    },
+    supportUs: {
+      title: 'Unterstützen Sie uns!',
+      text: `
+Erzählen Sie anderen von uns; <br />
+Werden Sie Mitglied; <br />
+Werden Sie Freiwillige:r; <br />
+Machen Sie eine Spende.<br /><br />
+Herzlichen Dank!
+      `,
+    },
+    member: {
+      title: 'Mitglied werden',
+      vs: { title: 'Walliser Verein', subscription: 'Beitrittsformular für Mitglieder', status: 'Statuten des Walliser Vereins' },
+      vd: { title: 'Waadtländer Verein', subscription: 'Beitrittsformular für Mitglieder', status: 'Statuten des Waadtländer Vereins' },
+      ge: { title: 'Genfer Verein', subscription: 'Beitrittsformular für Mitglieder', status: 'Statuten des Genfer Vereins' },
+    },
+  },
+  contact: {
+    hero: {
+      title: 'Kontakt',
+      subtitle:
+        'Wenn Sie sich für unsere Aktionen interessieren, wenn Sie ein Konzert in Ihrer Einrichtung oder im EMS eines Ihrer Angehörigen organisieren möchten, zögern Sie nicht, uns zu kontaktieren.',
+    },
+    general: 'Allgemeiner Kontakt',
+    vs: {
+      title: 'Kontakt Wallis',
+      text: `
+      <div class="mb-8 lg:mb-12">
+          <div class="text-xl text-vs">
+            <span class="font-bold"><i>Les Concerts du Cœur</i></span><br />
+            Les Rocailles, Rue des Biolirs 6,<br />
+            3963 Crans-Montana<br />
+            <a href="mailto:valais@lesconcertsducoeur.ch">valais@lesconcertsducoeur.ch</a>
+          </div>
+        </div>
+        <spacing />
+
+        <div class="mb-8 lg:mb-12">
+          <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Künstlerische Leitung und Organisation der Konzerte im Unterwallis und Mittelwallis</h3>
+          <div class="text-xl text-vs">
+            <span class="font-bold">Laure Barras</span><br />
+            <a href="mailto:laure.barras@lesconcertsducoeur.ch">laure.barras@lesconcertsducoeur.ch</a>
+          </div>
+        </div>
+
+        <div class="mb-8 lg:mb-12">
+          <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Organisation der Konzerte im Oberwallis</h3>
+          <div class="text-xl text-vs">
+            <span class="font-bold">Franziska Heinzen</span><br />
+            <a href="mailto:franziska.heinzen@lesconcertsducoeur.ch">franziska.heinzen@lesconcertsducoeur.ch</a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Sekretariat</h3>
+          <div class="text-xl text-vs">
+            <span class="font-bold">Danielle Waser-Massy</span><br />
+            <a href="mailto:secretariat-vs@lesconcertsducoeur.ch">secretariat-vs@lesconcertsducoeur.ch</a>
+          </div>
+        </div>`,
+    },
+
+    vd: {
+      title: `Kontakt Waadt`,
+      text: `
+          <div class="mb-8 lg:mb-12">
+          <div class="text-xl text-vd">
+            <span class="font-bold"><i>Les Concerts du Cœur Vaudois</i></span><br />
+            Route du village 59<br />
+            1509 Vucherens<br />
+            <a href="mailto:vaud@lesconcertsducoeur.ch">vaud@lesconcertsducoeur.ch</a>
+          </div>
+        </div>
+        <spacing />
+
+        <div>
+          <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Künstlerische Leitung und Organisation der Konzerte</h3>
+          <div class="text-xl text-vd">
+            <span class="font-bold">Mary Rose</span><br />
+            <a href="mailto:mary.rose@lesconcertsducoeur.ch">mary.rose@lesconcertsducoeur.ch</a>
+          </div>
+        </div>
+        `,
+    },
+    ge: {
+      title: `Kontakt Genf`,
+      text: `
+          <div class="mb-8 lg:mb-12">
+          <div class="text-xl text-ge">
+            <span class="font-bold"><i>Les Concerts du Cœur Genevois</i></span><br />
+            C/O Etude Zarb & Wood<br />
+            Rue du Conseil-General 11<br />
+            1205 Genève<br />
+            <a href="mailto:geneve@lesconcertsducoeur.ch">geneve@lesconcertsducoeur.ch</a>
+          </div>
+        </div>
+        <spacing />
+
+        <div>
+          <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Künstlerische Leitung und Organisation der Konzerte</h3>
+          <div class="mb-2 text-xl text-ge">
+            <span class="font-bold">Laure Zaugg</span><br />
+            <a href="mailto:laure.zaugg@lesconcertsducoeur.ch">laure.zaugg@lesconcertsducoeur.ch</a>
+          </div>
+          <div class="text-xl text-ge">
+            <span class="font-bold">Sylvain Leutwyler</span><br />
+            <a href="mailto:sylvain.leutwyler@lesconcertsducoeur.ch">sylvain.leutwyler@lesconcertsducoeur.ch</a>
+          </div>
+        </div>
+        `,
+    },
   },
   canton: {
     VS: 'Wallis',

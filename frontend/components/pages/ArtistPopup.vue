@@ -37,7 +37,7 @@
           <template v-if="selected.first_name != null && selected.last_name != null"> {{ selected.first_name }} {{ selected.last_name }} </template>
           <template v-if="selected.name != null"> {{ selected.name }} </template>
         </h1>
-        <h3 class="mb-12 text-3xl font-playFair">
+        <h3 v-if="(selected.instrument != null && selected.instrument != '') || (selected.music_genre != null && selected.music_genre != '')" class="mb-12 text-3xl font-playFair">
           <template v-if="selected.instrument != null"> {{ selected.instrument }} </template>
           <template v-if="selected.music_genre != null"> {{ selected.music_genre }} </template>
         </h3>

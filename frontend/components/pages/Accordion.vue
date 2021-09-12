@@ -1,7 +1,7 @@
 <template>
   <div class="border-t-1 border-concert-dark">
     <template v-for="(item, i) in items">
-      <accordion-item :key="i" :open="i == activeItem" :no-image="item.noImage">
+      <accordion-item :key="i + $i18n.locale" :open="i == activeItem" :no-image="item.noImage">
         <template #chevron>
           <svg
             :class="{ 'transform rotate-90': i == activeItem }"

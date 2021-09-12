@@ -28,9 +28,9 @@
           font-playFair
         "
         :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"
-        :to="localePath('auditions')"
+        :to="localePath('canton-auditions')"
       >
-        {{ $t('auditions').title }}
+        {{ $t('auditions').hero.title }}
       </nuxt-link>
     </div>
 

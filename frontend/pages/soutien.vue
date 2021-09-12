@@ -1,18 +1,19 @@
 <template>
   <div>
     <Headline>
-      <template #headline>Faites un don</template>
+      <template #headline>{{ $t('soutien').donate.title }} </template>
     </Headline>
 
     <DonationBlock canton="vs" circle>
-      <template #title>à l’association valaisanne</template>
+      <template #title>{{ $t('soutien').donate.vs }}</template>
       <template #details>
         <p>
-          No de compte : 103.079.98.07<br />
-          IBAN : CH82 0076 5001 0307 9980 7<br />
-          SWIFT / BIC : BCVSCH2LXXX<br />
-          CCP : 19-81-6<br />
-          Clearing : 765
+          Les Concerts du Cœur <br />
+          No de compte{{ $i18n.locale == 'fr' ? ' :' : ':' }} 103.079.98.07 <br />
+          IBAN{{ $i18n.locale == 'fr' ? ' :' : ':' }} CH82 0076 5001 0307 9980 7 <br />
+          SWIFT/BIC{{ $i18n.locale == 'fr' ? ' :' : ':' }} BCVSCH2LXXX <br />
+          CCP{{ $i18n.locale == 'fr' ? ' :' : ':' }} 19-81-6 <br />
+          Clearing{{ $i18n.locale == 'fr' ? ' :' : ':' }} 765
         </p>
       </template>
     </DonationBlock>
@@ -20,14 +21,14 @@
     <spacing />
 
     <DonationBlock canton="vd" circle>
-      <template #title>à l’association vaudoise</template>
+      <template #title>{{ $t('soutien').donate.vd }}</template>
       <template #details>
         <p>
-          Banque Cantonale Vaudoise <br />
-          IBAN : CH13 0076 7000 Z546 0551 3<br />
-          SWIFT / BIC : BCVLCH2LXXX<br />
-          CCP : 10-725-4<br />
-          Clearing : 767
+          Les Concerts du Cœur Vaudois <br />
+          1509 Vucherens <br />
+          IBAN{{ $i18n.locale == 'fr' ? ' :' : ':' }} CH13 0076 7000 Z546 0551 3 <br />
+          SWIFT/BIC{{ $i18n.locale == 'fr' ? ' :' : ':' }} BCVLCH2LXXX <br />
+          Clearing{{ $i18n.locale == 'fr' ? ' :' : ':' }} 767
         </p>
       </template>
     </DonationBlock>
@@ -35,30 +36,24 @@
     <spacing />
 
     <DonationBlock class="mb-28" canton="ge" circle>
-      <template #title>à l’association genevoise</template>
+      <template #title>{{ $t('soutien').donate.ge }}</template>
       <template #details>
         <p>
-          Banque Cantonale Vaudoise <br />
-          IBAN : CH13 0076 7000 Z546 0551 3<br />
-          SWIFT / BIC : BCVLCH2LXXX<br />
-          CCP : 10-725-4<br />
-          Clearing : 767
+          Les Concerts du Cœur Genevois <br />
+          1205 Genève <br />
+          IBAN{{ $i18n.locale == 'fr' ? ' :' : ':' }} CH83 0078 8000 0508 4197 7 <br />
+          SWIFT/BIC{{ $i18n.locale == 'fr' ? ' :' : ':' }} BCGECHGGXXX <br />
+          Clearing{{ $i18n.locale == 'fr' ? ' :' : ':' }} 788 <br />
         </p>
       </template>
     </DonationBlock>
     <Headline>
-      <template #headline>Soutenez-nous</template>
+      <template #headline>{{ $t('soutien').supportUs.title }}</template>
     </Headline>
 
     <div class="flex">
       <div class="w-full py-4 pr-10">
-        <h2 class="text-3xl font-playFair">
-          Parlez de nous autour de vous ; <br />
-          Devenez membrede l'association ; <br />
-          Devenez bénévole ; <br />
-          Faites un don <br /><br />
-          Merci !
-        </h2>
+        <h2 class="text-3xl font-playFair" v-html="$t('soutien').supportUs.text"></h2>
       </div>
       <div class="w-full">
         <img src="~/assets/img/illustrations/illustration7.svg" />
@@ -95,29 +90,32 @@
     </div> -->
 
     <Headline>
-      <template #headline>Devenez membre</template>
+      <template #headline>{{ $t('soutien').member.title }}</template>
     </Headline>
 
     <div class="mb-8">
-      <h2 class="mb-4 text-3xl font-playFair">Valaisan</h2>
+      <h2 class="mb-4 text-3xl font-playFair">{{ $t('soutien').member.vs.title }}</h2>
       <p class="max-w-2xl text-xl text-vs font-newsCycle">
-        <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_VS_bulletindadhesion_membres_ordinaires_FR_bc25236636.pdf">&gt; Bulletin d'adhésion pour les membres</a><br />
-        <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_VS_statuts_760d9d3219.pdf">&gt; Document officiel des statuts de l’association</a>
+        <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_VS_bulletindadhesion_membres_ordinaires_FR_bc25236636.pdf">&gt; {{ $t('soutien').member.vs.subscription }}</a
+        ><br />
+        <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_VS_statuts_760d9d3219.pdf">&gt; {{ $t('soutien').member.vs.status }}</a>
       </p>
     </div>
 
     <div class="mb-8">
-      <h2 class="mb-4 text-3xl font-playFair">Vaudois</h2>
+      <h2 class="mb-4 text-3xl font-playFair">{{ $t('soutien').member.vd.title }}</h2>
       <p class="max-w-2xl text-xl text-vd font-newsCycle">
-        <a href="https://api.lesconcertsducoeur.ch/uploads/uploads/Cd_C_VD_bulletindadhesion_membres_ordinaires_320695b34d.pdf">&gt; Bulletin d'adhésion pour les membres</a><br />
-        <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_VD_statuts_c18257d91d.pdf">&gt; Document officiel des statuts de l’association</a>
+        <a href="https://api.lesconcertsducoeur.ch/uploads/uploads/Cd_C_VD_bulletindadhesion_membres_ordinaires_320695b34d.pdf">&gt; {{ $t('soutien').member.vd.subscription }}</a
+        ><br />
+        <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_VD_statuts_c18257d91d.pdf">&gt; {{ $t('soutien').member.vd.status }}</a>
       </p>
     </div>
 
-    <h2 class="mb-4 text-3xl font-playFair">Genevois</h2>
+    <h2 class="mb-4 text-3xl font-playFair">{{ $t('soutien').member.ge.title }}</h2>
     <p class="max-w-2xl text-xl text-ge font-newsCycle">
-      <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_GE_bulletindadhesion_membres_c_679aaa5faa.pdf">&gt; Bulletin d'adhésion pour les membres</a><br />
-      <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_GE_Statuts_80c429d56e.pdf">&gt; Document officiel des statuts de l’association</a>
+      <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_GE_bulletindadhesion_membres_c_679aaa5faa.pdf">&gt; {{ $t('soutien').member.ge.subscription }}</a
+      ><br />
+      <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_GE_Statuts_80c429d56e.pdf">&gt; {{ $t('soutien').member.ge.status }}</a>
     </p>
   </div>
 </template>

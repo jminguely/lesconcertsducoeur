@@ -91,9 +91,6 @@
         </template>
       </template>
     </div>
-    {{ maxTestimonial }}
-    {{ firstTestimonial }}
-    {{ secondTestimonial }}
 
     <div class="grid grid-cols-1 gap-y-10 md:gap-10 md:grid-cols-2">
       <testimonial>
