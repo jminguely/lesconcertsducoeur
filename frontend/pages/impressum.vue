@@ -19,7 +19,7 @@
         Conception graphique : Malaïka Schürch<br />
         Illsutrations : Michèle Reymond<br />
         Programmation : Alex Roque<br />
-        Traductions français-allemand : ...<br />
+        Traductions français-allemand : Franziska Heinzen
       </p>
 
       <h2 class="text-3xl font-playFair">Utilisation de services tiers</h2>
@@ -58,8 +58,10 @@
       <h2 class="text-3xl font-playFair">Bevollmächtigte(r) Vertreter</h2>
       <p>
         Textinhalt: Laure Barras<br />
-        Grafikdesign: Malaïka Schürch<br />. Illustrationen: Michèle Reymond<br />
-        Programmierung: Alex Roque Programmierung: Alex Roque Französisch-Deutsche Übersetzungen: ...<br />
+        Grafikdesign: Malaïka Schürch<br />
+        Illustrationen: Michèle Reymond<br />
+        Programmierung: Alex Roque Programmierung: Alex Roque <br />
+        Französisch-Deutsche Übersetzungen: Franziska Heinzen
       </p>
 
       <h2 class="text-3xl font-playFair">Nutzung von Diensten Dritter</h2>

@@ -272,9 +272,9 @@ export default {
     hero: {
       title: 'Auditions',
       subtitle: {
-        vs: 'Souhaitez-vous devenir musicien·ne des Concerts du Cœur Valaisans ?',
-        vd: 'Souhaitez-vous devenir musicien·ne des Concerts du Cœur Vaudois ?',
-        ge: 'Souhaitez-vous devenir musicien·ne des Concerts du Cœur Genevois ?',
+        vs: 'Souhaitez-vous devenir musicien·ne des <i>Concerts du Cœur Valaisans</i> ?',
+        vd: 'Souhaitez-vous devenir musicien·ne des <i>Concerts du Cœur Vaudois</i> ?',
+        ge: 'Souhaitez-vous devenir musicien·ne des <i>Concerts du Cœur Genevois</i> ?',
       },
       text: 'Avez-vous envie de proposer des moments de musique aux personnes âgées, hospitalisées, incarcérées, en situation de handicap ou de précarité, tout en développant vos aptitudes de médiation culturelle grâce à des concerts rémunérés ?',
       text_1: 'Nous organisons des auditions afin de recruter de nouvelles·aux musicien·ne·s.',
@@ -288,7 +288,7 @@ export default {
       <li>— résider dans le canton du Valais (en tout cas la majorité des membres de la formation) ;</li>
       <li>— démontrer un standard très élevé de qualité musicale et de technique instrumentale ;</li>
       <li>— posséder de bonnes capacités de communication et une aisance manifeste à établir une relation avec le public en l’invitant à participer autant que faire se peut ;</li>
-      <li>— proposer un choix de répertoire varié et adapté aux spécificités d’un ou plusieurs publics cibles des Concerts du Cœur ;</li>
+      <li>— proposer un choix de répertoire varié et adapté aux spécificités d’un ou plusieurs publics cibles des <i>Concerts du Cœur</i> ;</li>
       <li>— s’engager à respecter et à défendre les valeurs de l’association.</li>
     </ul>`,
         `Tous les styles de musique sont bienvenus (classique / jazz / folklorique / musique du monde etc.).`,
@@ -301,7 +301,7 @@ export default {
       <li>— résider dans le canton de Vaud (en tout cas la majorité des membres de la formation) ;</li>
       <li>— démontrer un standard très élevé de qualité musicale et de technique instrumentale ;</li>
       <li>— posséder de bonnes capacités de communication et une aisance manifeste à établir une relation avec le public en l’invitant à participer autant que faire se peut ;</li>
-      <li>— proposer un choix de répertoire varié et adapté aux spécificités d’un ou plusieurs publics cibles des Concerts du Cœur ;</li>
+      <li>— proposer un choix de répertoire varié et adapté aux spécificités d’un ou plusieurs publics cibles des <i>Concerts du Cœur</i> ;</li>
       <li>— s’engager à respecter et à défendre les valeurs de l’association.</li>
     </ul>`,
         `Tous les styles de musique sont bienvenus (classique / jazz / folklorique / musique du monde etc.).`,
@@ -314,7 +314,7 @@ export default {
       <li>— résider dans le canton de Genève (en tout cas la majorité des membres de la formation) ;</li>
       <li>— démontrer un standard très élevé de qualité musicale et de technique instrumentale ;</li>
       <li>— posséder de bonnes capacités de communication et une aisance manifeste à établir une relation avec le public en l’invitant à participer autant que faire se peut ;</li>
-      <li>— proposer un choix de répertoire varié et adapté aux spécificités d’un ou plusieurs publics cibles des Concerts du Cœur ;</li>
+      <li>— proposer un choix de répertoire varié et adapté aux spécificités d’un ou plusieurs publics cibles des <i>Concerts du Cœur</i> ;</li>
       <li>— s’engager à respecter et à défendre les valeurs de l’association.</li>
     </ul>`,
         `Tous les styles de musique sont bienvenus (classique / jazz / folklorique / musique du monde etc.).`,
@@ -413,7 +413,6 @@ Merci !
           </div>
         </div>
         <spacing />
-
         <div>
           <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Direction artistique et organisation des concerts</h3>
           <div class="text-xl text-vd">
