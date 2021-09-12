@@ -244,7 +244,7 @@ export default {
   },
 
   fetchOnServer: false,
-  
+
   async fetch() {
     await this.getContent()
   },
