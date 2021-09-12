@@ -95,29 +95,29 @@
     <div class="grid grid-cols-1 gap-y-10 md:gap-10 md:grid-cols-2">
       <testimonial>
         <template #quote>
-          <span v-html="$t('home').testimonials[firstTestimonial].quote"></span>
+          <span v-html="firstTestimonial.quote"></span>
         </template>
 
         <template #name>
-          {{ $t('home').testimonials[firstTestimonial].name }}
+          {{ firstTestimonial.name }}
         </template>
 
         <template #title>
-          {{ $t('home').testimonials[firstTestimonial].title }}
+          {{ firstTestimonial.title }}
         </template>
       </testimonial>
 
       <testimonial class="hidden sm:block">
         <template #quote>
-          <span v-html="$t('home').testimonials[secondTestimonial].quote"></span>
+          <span v-html="secondTestimonial.quote"></span>
         </template>
 
         <template #name>
-          {{ $t('home').testimonials[secondTestimonial].name }}
+          {{ secondTestimonial.name }}
         </template>
 
         <template #title>
-          {{ $t('home').testimonials[secondTestimonial].title }}
+          {{ secondTestimonial.title }}
         </template>
       </testimonial>
     </div>
@@ -263,6 +263,8 @@ export default {
       content: null,
       calendars: null,
       newsArticles: null,
+      currentIndex: 0,
+      timer: null,
     }
   },
 
@@ -275,27 +277,25 @@ export default {
   },
 
   computed: {
-    maxTestimonial() {
-      return this.$t('home').testimonials.length - 1
-    },
-    testimonialLength() {
-      return this.$t('home').testimonials.length
-    },
     firstTestimonial() {
-      if (this.testimonialLength > 2) return this.getRandomInt(0, this.maxTestimonial)
-      else return 0
+      return this.$t('home').testimonials[Math.abs(this.currentIndex) % this.$t('home').testimonials.length]
     },
     secondTestimonial() {
-      if (this.testimonialLength > 2) {
-        const random = this.getRandomInt(0, this.maxTestimonial)
-        if (random === this.firstTestimonial && this.firstTestimonial > 0) return this.firstTestimonial - 1
-        else if (random === this.firstTestimonial && this.firstTestimonial === 0) return this.firstTestimonial + 1
-        else return random
-      } else return 1
+      return this.$t('home').testimonials[Math.abs(this.currentIndex + 1) % this.$t('home').testimonials.length]
     },
   },
 
+  mounted() {
+    this.startSlide()
+  },
+
   methods: {
+    startSlide() {
+      this.timer = setInterval(() => this.next(), 12000)
+    },
+    next() {
+      this.currentIndex += 2
+    },
     getRandomInt(min, max) {
       min = Math.ceil(min)
       max = Math.floor(max)
