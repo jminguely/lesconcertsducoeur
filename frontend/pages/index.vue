@@ -266,6 +266,8 @@ export default {
     }
   },
 
+  fetchOnServer: false,
+  
   async fetch() {
     await this.getContent()
     await this.getAgenda()

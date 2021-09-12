@@ -101,6 +101,7 @@ export default {
     }
   },
 
+  fetchOnServer: false,
   fetch() {
     this.canton = this.$route.params.canton
     // await this.getContent()

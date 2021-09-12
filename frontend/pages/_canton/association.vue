@@ -137,6 +137,8 @@ export default {
       canton: null,
     }
   },
+
+  fetchOnServer: false,
   async fetch() {
     this.canton = this.$route.params.canton
     await this.getAssociation(this.$route.params.canton)

@@ -65,6 +65,8 @@ export default {
     }
   },
 
+  fetchOnServer: false,
+
   async fetch() {
     this.canton = this.$route.params.canton
     await this.getArtists(this.$route.params.canton)
