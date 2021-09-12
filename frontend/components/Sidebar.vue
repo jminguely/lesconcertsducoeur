@@ -141,9 +141,9 @@
           <nuxt-link :to="localePath('contact')" class="text-xl font-newsCycle hover:font-bold"> {{ $t('nav').contact }} </nuxt-link>
         </div>
 
-        <div class="hidden mt-4 lg:block">
-          <input class="w-full px-2 py-1 border-2 border-concert-dark focus:rounded-none" :placeholder="$t('nav').newsletter" />
-          <chevron-right class="absolute right-2" />
+        <div class="hidden mt-4 lg:flex lg:items-center lg:w-full" :class="{ 'border-2 border-concert-dark': !isSent, 'border-2 border-green-500': isSent }">
+          <input v-model="email" class="flex-auto px-2 py-1 focus:rounded-none focus:border-0 focus:outline-none" :placeholder="$t('nav').newsletter" @keyup.enter="subscribeNewsletter()" />
+          <button @click="subscribeNewsletter()"><nav-chevron-right class="h-5 hover:cursor-pointer" /></button>
         </div>
       </div>
     </div>
@@ -152,9 +152,11 @@
 
 <script>
 import SocialLink from '@/components/pages/SocialLink.vue'
+// import NavChevronRight from '@/components/NavChevronRight.vue'
 export default {
   components: {
     SocialLink,
+    // NavChevronRight,
   },
   data() {
     return {
@@ -169,6 +171,8 @@ export default {
       menu: false,
       cantons: ['vs', 'vd', 'ge'],
       canton: '',
+      email: '',
+      isSent: false,
     }
   },
   watch: {
@@ -193,6 +197,12 @@ export default {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
+    subscribeNewsletter() {
+      this.isSent = true
+      setTimeout(() => {
+        this.isSent = false
+      }, 1000)
+    },
     handleScroll() {
       // Your scroll handling here
       // console.log(window.scrollY)

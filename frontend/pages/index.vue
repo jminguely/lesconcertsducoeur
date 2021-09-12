@@ -178,13 +178,19 @@
         <template #headline>{{ $t('home').supportUs.title }}</template>
         <template #content>
           <p class="mb-2 text-xl">
-            {{ $t('home').supportUs.donate }}
+            <nuxt-link :to="localePath('soutien')">
+              {{ $t('home').supportUs.donate }}
+            </nuxt-link>
           </p>
           <p class="mb-2 text-xl">
-            {{ $t('home').supportUs.help }}
+            <nuxt-link :to="localePath('mission')">
+              {{ $t('home').supportUs.help }}
+            </nuxt-link>
           </p>
           <p class="mb-2 text-xl">
-            {{ $t('home').supportUs.member }}
+            <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_VS_bulletindadhesion_membres_ordinaires_FR_bc25236636.pdf" target="_blank">
+              {{ $t('home').supportUs.member }}
+            </a>
           </p>
         </template>
       </Headline>
