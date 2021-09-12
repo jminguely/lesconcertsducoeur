@@ -91,33 +91,36 @@
         </template>
       </template>
     </div>
+    {{ maxTestimonial }}
+    {{ firstTestimonial }}
+    {{ secondTestimonial }}
 
     <div class="grid grid-cols-1 gap-y-10 md:gap-10 md:grid-cols-2">
       <testimonial>
         <template #quote>
-          <span v-html="$t('home').testimonials[0].quote"></span>
+          <span v-html="$t('home').testimonials[firstTestimonial].quote"></span>
         </template>
 
         <template #name>
-          {{ $t('home').testimonials[0].name }}
+          {{ $t('home').testimonials[firstTestimonial].name }}
         </template>
 
         <template #title>
-          {{ $t('home').testimonials[0].title }}
+          {{ $t('home').testimonials[firstTestimonial].title }}
         </template>
       </testimonial>
 
       <testimonial class="hidden sm:block">
         <template #quote>
-          <span v-html="$t('home').testimonials[1].quote"></span>
+          <span v-html="$t('home').testimonials[secondTestimonial].quote"></span>
         </template>
 
         <template #name>
-          {{ $t('home').testimonials[1].name }}
+          {{ $t('home').testimonials[secondTestimonial].name }}
         </template>
 
         <template #title>
-          {{ $t('home').testimonials[1].title }}
+          {{ $t('home').testimonials[secondTestimonial].title }}
         </template>
       </testimonial>
     </div>
@@ -266,7 +269,33 @@ export default {
     await this.getNewsArticles()
   },
 
+  computed: {
+    maxTestimonial() {
+      return this.$t('home').testimonials.length - 1
+    },
+    testimonialLength() {
+      return this.$t('home').testimonials.length
+    },
+    firstTestimonial() {
+      if (this.testimonialLength > 2) return this.getRandomInt(0, this.maxTestimonial)
+      else return 0
+    },
+    secondTestimonial() {
+      if (this.testimonialLength > 2) {
+        const random = this.getRandomInt(0, this.maxTestimonial)
+        if (random === this.firstTestimonial && this.firstTestimonial > 0) return this.firstTestimonial - 1
+        else if (random === this.firstTestimonial && this.firstTestimonial === 0) return this.firstTestimonial + 1
+        else return random
+      } else return 1
+    },
+  },
+
   methods: {
+    getRandomInt(min, max) {
+      min = Math.ceil(min)
+      max = Math.floor(max)
+      return Math.floor(Math.random() * (max - min)) + min
+    },
     getCanton(canton) {
       return canton == null ? 'all' : canton.uid.toLowerCase()
     },

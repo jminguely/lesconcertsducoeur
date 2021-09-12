@@ -1,7 +1,7 @@
 export default {
   nav: {
     association: 'Der Verein',
-    artists: 'Die Musiker',
+    artists: 'Die Musiker:innen',
     auditions: 'Vorsingen',
     home: 'Home',
     mission: 'Unsere Mission',
@@ -213,27 +213,27 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
     hero: {
       title: 'Vorsingen',
       subtitle: {
-        vs: 'Möchten Sie Musiker bei den Concerts du Cœur Valaisans werden?',
-        vd: 'Möchten Sie Musiker bei den Concerts du Cœur Vaudois werden?',
-        ge: 'Möchten Sie Musiker bei den Concerts du Cœur Genevois werden?',
+        vs: 'Werden auch Sie Musiker:in des Vereins <i>Les Concerts du Cœur</i>!',
+        vd: 'Werden auch Sie Musiker:in des Vereins <i>Les Concerts du Cœur Vaudois</i>!',
+        ge: 'Werden auch Sie Musiker:in des Vereins <i>Les Concerts du Cœur Genevois</i>!',
       },
-      text: 'Möchten Sie älteren Menschen im Krankenhaus, inhaftierten, behinderten oder unsicheren Menschen Momente der Musik bieten und gleichzeitig Ihre Fähigkeiten zur Kulturvermittlung durch bezahlte Konzerte entwickeln?',
-      text_1: 'Wir organisieren Auditions, um neue Musiker zu rekrutieren.',
+      text: 'Möchten auch Sie betagten oder kranken Menschen, Inhaftierten und sozial beeinträchtigten Menschen besondere musikalische Momente schenken und gleichzeitig Ihre Fähigkeiten zur Kulturvermittlung durch bezahlte Konzerte entwickeln?',
+      text_1: 'Wir freuen uns auf Ihre Bewerbung für das nächste Vorsingen!',
     },
     prochainesAuditions: 'Nächste Vorsingen',
     requirements: {
       vs: [
         `
-    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Interessierte Künstler müssen die folgenden Kriterien erfüllen:</h2>
+    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Interessierte Künstler:innen müssen die folgenden Kriterien erfüllen:</h2>
     <ul class="pt-2">
-      <li>— im Kanton Wallis wohnhaft sind (in jedem Fall die Mehrheit der Mitglieder der Formation);</li>
-      <li>— einen sehr hohen Standard an musikalischer Qualität und Instrumentaltechnik nachweisen;</li>
-      <li>— über gute Kommunikationsfähigkeiten und eine nachweisliche Leichtigkeit beim Aufbau einer Beziehung zur Öffentlichkeit verfügen, indem sie sie so weit wie möglich zur Teilnahme einladen;</li>
-      <li>— eine Auswahl an abwechslungsreichen Repertoire anzubieten, das an die Besonderheiten einer oder mehrerer Zielgruppen von Concerts du Cœur angepasst ist;</li>
-      <li>— verpflichten sich, die Werte des Vereins zu respektieren und zu verteidigen.</li>
+      <li>— Sehr hoher Standard an musikalischer Qualität und Instrumentaltechnik;</li>
+      <li>— Augezeichnete Kommunikationsfähigkeiten sowie eine Affinität zur Konzertmoderation und zwischenmenschlicher Kommunikation;</li>
+      <li>— Nachweis eines abwechslungsreichen Repertoires, das auf die Besonderheiten einer oder mehrerer Zielgruppen der Konzerte von Les concerts du Coeur angepasst werden kann;</li>
+      <li>— Vollständiger oder mehrheitlicher Wohnsitz des Ensembles im Kanton Wallis;</li>
+      <li>— Wahrnehmung und Vermittlung der Vereins-Werte.</li>
     </ul>`,
-        `Alle Musikrichtungen sind willkommen (Klassik / Jazz / Folk / Weltmusik etc.).`,
-        'Die <i>Concerts du Cœur</i>werden im Jahr 2022 Vorsingen durchführen.',
+        `Das gesamte Spektrum an Musikrichtungen ist willkommen!`,
+        'Der Verein <i>Les Concerts du Cœur</i> wird wiederum im Jahr 2022 Vorsingen anbieten. Für mehr Informationen freuen wir uns auf Ihre <a href="mailto:valais@lesconcertsducoeur.ch">Kontaktaufnahme</a>.',
       ],
       vd: [
         `
@@ -289,6 +289,7 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
     title: 'Datenschutzerklärung',
   },
   artistes: {
+    title: 'Unsere Künstler:innen',
     repertoire: 'Repertoire',
     formats: 'Formate',
   },

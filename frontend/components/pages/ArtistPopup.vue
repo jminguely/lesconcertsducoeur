@@ -75,7 +75,7 @@
           <div v-for="artist in selected.artists" :key="artist.id" class="my-2">
             <p class="mr-6 text-xl font-playFair">
               {{ artist.first_name }} {{ artist.last_name }}
-              <span class="text-lg font-newsCycle">{{ artist.instrument }} </span>
+              <span class="pl-2 text-lg font-newsCycle">{{ artist.instrument }} </span>
             </p>
           </div>
         </div>

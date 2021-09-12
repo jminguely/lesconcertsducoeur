@@ -1,7 +1,7 @@
 <template>
   <div>
     <Headline>
-      <template #headline>Nos Artistes</template>
+      <template #headline>{{ $t('artistes').title }} </template>
     </Headline>
 
     <div id="donation-circle">
@@ -28,9 +28,9 @@
           font-playFair
         "
         :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"
-        to="auditions"
+        :to="localePath('auditions')"
       >
-        Auditions
+        {{ $t('auditions').title }}
       </nuxt-link>
     </div>
 

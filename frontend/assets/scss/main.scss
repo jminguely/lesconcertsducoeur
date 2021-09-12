@@ -10,6 +10,13 @@ body {
 	font-family: "News Cycle", sans-serif;
 	line-height: 1.25 !important;
 	color: #393939;
+	h1 {
+		line-height: 1.05 !important;
+	}
+	h2,
+	h3 {
+		line-height: 1.1 !important;
+	}
 }
 p {
 	padding-bottom: 0.25rem;
