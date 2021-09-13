@@ -8,7 +8,7 @@
         <slot name="details"></slot>
       </div>
       <div v-if="circle" id="donation-circle" class="ml-auto lg:m-0">
-        <nuxt-link :to="localePath('soutien')" class="no-underline">
+        <nuxt-link :to="localePath({ name: 'canton-don', params: { canton } })" class="no-underline">
           <div
             class="
               font-normal

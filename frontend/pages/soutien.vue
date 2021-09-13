@@ -20,7 +20,7 @@
 
     <spacing />
 
-    <DonationBlock canton="vd" circle>
+    <DonationBlock canton="vd">
       <template #title>{{ $t('soutien').donate.vd }}</template>
       <template #details>
         <p>
