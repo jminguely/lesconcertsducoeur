@@ -48,7 +48,7 @@ export default {
       },
       {
         quote:
-          'Grâce aux Concerts du Cœur, des liens se créent entre des mondes trop souvent considérés comme lointains et inaccessibles. Le résultat est une journée remplie de sourires et de larmes, expérience qui aidera à transformer, sur le long terme, notre monde en une société meilleure et plus humaine.',
+          'Grâce aux <i>Concerts du Cœur</i>, des liens se créent entre des mondes trop souvent considérés comme lointains et inaccessibles. Le résultat est une journée remplie de sourires et de larmes, expérience qui aidera à transformer, sur le long terme, notre monde en une société meilleure et plus humaine.',
         name: 'Valentina Rebaudo',
         title: 'Clarinettiste',
       },
@@ -77,7 +77,7 @@ export default {
       },
       {
         quote:
-          'Humainement, c’est une expérience très enrichissante. En tant que musicien professionnel, j’ai l’habitude de jouer sur scène, de saluer et de partir, sans avoir trop d’échanges avec les spectateurs. Avec Les Concerts du Cœur, un dialogue se crée avec le public. C’est un vrai moment de partage qui m’aide dans ma vie d’artiste.',
+          'Humainement, c’est une expérience très enrichissante. En tant que musicien professionnel, j’ai l’habitude de jouer sur scène, de saluer et de partir, sans avoir trop d’échanges avec les spectateurs. Avec Les <i>Concerts du Cœur</i>, un dialogue se crée avec le public. C’est un vrai moment de partage qui m’aide dans ma vie d’artiste.',
         name: 'Hugo Reser',
         title: 'Violoncelliste',
       },
