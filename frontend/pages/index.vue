@@ -46,7 +46,7 @@
             ><span class="invisible">{{ $dateFns.format(new Date(item.date), 'dd.MM.yyyy') }}</span></template
           >
           <template #pretitle></template>
-          <template #title>{{ item.title }}</template>
+          <template #title><span v-html="$md.render(item.title)"></span></template>
           <template #content>{{ item.content }}</template>
         </InfoBlock>
       </div>
@@ -250,16 +250,6 @@ export default {
   },
   data() {
     return {
-      images: ['/img/home_1.jpg', '/img/home_2.jpg', '/img/home_3.jpg', '/img/home_4.jpg', '/img/home_5'],
-      sponsors: [
-        { img: require('~/assets/img/partners/Berthy.svg'), link: '' },
-        { img: require('~/assets/img/partners/BS.svg'), link: '' },
-        { img: require('~/assets/img/partners/Hemu.svg'), link: '' },
-        { img: require('~/assets/img/partners/LR.svg'), link: '' },
-        { img: require('~/assets/img/partners/M.svg'), link: '' },
-        { img: require('~/assets/img/partners/prohelvetia.svg'), link: '' },
-        { img: require('~/assets/img/partners/xbox.svg'), link: '' },
-      ],
       content: null,
       calendars: null,
       newsArticles: null,
