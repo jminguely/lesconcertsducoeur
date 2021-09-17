@@ -5,19 +5,19 @@
     </Headline>
 
     <div class="flex flex-col justify-items-start font-playFair text-xl items-start space-y-4 mb-16 lg:space-y-0 lg:flex-row lg:space-x-8">
-      <ClassicSelect :options="cantons" :selected-item.sync="cantonFilter" default-item="CC">
+      <ClassicSelect :options="cantons" :selected-item.sync="cantonFilter" default-item="VS">
         <template #label>{{ $t('agenda').canton }}</template>
       </ClassicSelect>
-      <ClassicSelect :options="years" :selected-item.sync="yearFilter" default-item="YYYY">
+      <ClassicSelect :options="years" :selected-item.sync="yearFilter" default-item="2021">
         <template #label>{{ $t('agenda').pastConcerts }}</template>
       </ClassicSelect>
       <!-- <a class="cursor-pointer" @click="resetFilters()">Effacer les filtres</a> -->
 
       <div
-        class="w-full sm:w-auto duration-300 ease-in-out flex items-start py-2 px-4 bg-white border-1 border-concert-dark cursor-pointer"
+        class="w-full sm:w-auto duration-300 ease-in-out flex items-start py-2 px-4 border-2 text-white bg-concert-dark border-concert-dark cursor-pointer"
         :class="{
-          'border-1': yearFilter == '' && cantonFilter == '',
-          'border-2': yearFilter != '' || cantonFilter != '',
+          'opacity-0': yearFilter == '' && cantonFilter == '',
+          'opacity-100': yearFilter != '' || cantonFilter != '',
         }"
         @click="resetFilters()"
       >

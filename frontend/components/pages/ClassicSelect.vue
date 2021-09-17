@@ -27,7 +27,7 @@
           {{ selectedItem }}
         </template>
         <template v-else>
-          {{ defaultItem }}
+          <span class="invisible"> {{ defaultItem }}</span>
         </template>
       </div>
     </div>
