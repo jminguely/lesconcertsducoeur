@@ -100,7 +100,7 @@
     </div>
 
     <div>
-      <donate-button-link class="relative bottom-20 left-28" :to="localePath('soutien')">
+      <donate-button-link class="hidden lg:block relative bottom-20 left-28" :to="localePath('soutien')">
         {{ $t('nav').supportUs }}
       </donate-button-link>
       <div id="sidebar" class="flex flex-col lg:ml-4">

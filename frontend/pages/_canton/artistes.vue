@@ -1,17 +1,15 @@
 <template>
-  <div>
+  <div class="relative">
     <Headline>
       <template #headline>{{ $t('artistes').title }} </template>
     </Headline>
 
-    <div id="donation-circle">
-      <donate-button-link :to="localePath('canton-auditions')" :canton="canton">
-        {{ $t('auditions').hero.title }}
-      </donate-button-link>
-    </div>
+    <donate-button-link class="hidden lg:block absolute right-28 top-6" :to="localePath('canton-auditions')" :canton="canton">
+      {{ $t('auditions').hero.title }}
+    </donate-button-link>
 
     <template v-if="data != null">
-      <div class="gap-y-5 sm:gap-x-5 md:mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
+      <div class="gap-y-5 sm:gap-x-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
         <artist-cover v-for="artist in data" :key="artist.id" :data="artist" @click.native="openPopup(artist)"></artist-cover>
       </div>
       <artist-popup :class="{ hidden: !popup }" :data="data" :item.sync="selected" :popup.sync="popup" :canton="canton" />
