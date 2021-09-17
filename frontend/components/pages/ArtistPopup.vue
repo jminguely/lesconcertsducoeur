@@ -33,7 +33,7 @@
 
     <div class="flex-shrink flex flex-col justify-between py-10 lg:flex-row lg:w-4/5 lg:gap-x-10">
       <div class="mb-6 lg:w-3/5 lg:mb-0">
-        <h1 class="pb-4 text-6xl font-newsCycle">
+        <h1 class="mb-6 text-4xl lg:text-5xl font-newsCycle">
           <template v-if="selected.first_name != null && selected.last_name != null"> {{ selected.first_name }} {{ selected.last_name }} </template>
           <template v-if="selected.name != null"> {{ selected.name }} </template>
         </h1>
@@ -72,10 +72,10 @@
         </div>
 
         <div v-if="selected.artists != null" class="mt-4 flex flex-col">
-          <div v-for="artist in selected.artists" :key="artist.id" class="my-2">
+          <div v-for="artist in selected.artists" :key="artist.id">
             <p class="mr-6 text-xl font-playFair">
               {{ artist.first_name }} {{ artist.last_name }}
-              <span class="pl-2 text-lg font-newsCycle">{{ artist.instrument }} </span>
+              <span class="text-lg font-newsCycle">{{ artist.instrument }} </span>
             </p>
           </div>
         </div>
