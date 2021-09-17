@@ -8,7 +8,7 @@
       <nuxt-link to="/vs/association">
         <Illustration canton="vs">
           <template #image>
-            <img class="object-cover" src="~/assets/img/illustrations/home_illu_vs.webp" />
+            <img class="object-cover" src="~/assets/img/illustrations/home_illu_vs.webp" width="2048" height="1683" />
           </template>
           <template #label>{{ $t('canton').VS }}</template>
         </Illustration>
@@ -17,7 +17,7 @@
       <nuxt-link to="/vd/association">
         <Illustration canton="vd">
           <template #image>
-            <img src="~/assets/img/illustrations/home_illu_vd.webp" />
+            <img src="~/assets/img/illustrations/home_illu_vd.webp" width="2048" height="1683" />
           </template>
           <template #label>{{ $t('canton').VD }}</template>
         </Illustration>
@@ -26,7 +26,7 @@
       <nuxt-link to="/ge/association">
         <Illustration canton="ge">
           <template #image>
-            <img src="~/assets/img/illustrations/home_illu_ge.webp" />
+            <img src="~/assets/img/illustrations/home_illu_ge.webp" width="2048" height="1683" />
           </template>
           <template #label>{{ $t('canton').GE }}</template>
         </Illustration>
@@ -153,7 +153,7 @@
 
       <Sublink canton="ge">
         <template #title>
-          {{ $t('home').organizeConcert.vd }}
+          {{ $t('home').organizeConcert.ge }}
         </template>
         <template #text>
           <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'ge' } })">
@@ -183,14 +183,14 @@
             </nuxt-link>
           </p>
           <p class="mb-2 text-xl">
-            <nuxt-link :to="localePath('mission')">
+            <nuxt-link :to="localePath('soutien') + '#devenir-membre'">
               {{ $t('home').supportUs.help }}
             </nuxt-link>
           </p>
           <p class="mb-2 text-xl">
-            <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_VS_bulletindadhesion_membres_ordinaires_FR_bc25236636.pdf" target="_blank">
+            <nuxt-link :to="localePath('soutien') + '#devenir-membre'">
               {{ $t('home').supportUs.member }}
-            </a>
+            </nuxt-link>
           </p>
         </template>
       </Headline>

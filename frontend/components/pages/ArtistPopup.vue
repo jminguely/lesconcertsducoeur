@@ -8,7 +8,7 @@
         <nav-cross :canton="canton" />
       </button>
 
-      <div class="flex-shrink flex items-center lg:block lg:w-full lg:flex-col lg:static">
+      <div class="flex-shrink flex items-center lg:block lg:w-full lg:flex-col lg:static lg:mt-4">
         <button class="flex my-2 mr-4 text-xl font-newsCycle focus:outline-none lg:mr-0" @click="goBack()">
           <nav-chevron-left :canton="canton" class="flex-shrink-0" />
           <template v-if="data[previousIndex] != null">

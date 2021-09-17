@@ -47,7 +47,7 @@
         </p>
       </template>
     </DonationBlock>
-    <Headline>
+    <!-- <Headline>
       <template #headline>{{ $t('soutien').supportUs.title }}</template>
     </Headline>
 
@@ -58,7 +58,7 @@
       <div class="w-full">
         <img src="~/assets/img/illustrations/illustration7.svg" />
       </div>
-    </div>
+    </div> -->
 
     <spacing />
 
@@ -89,7 +89,7 @@
       </div>
     </div> -->
 
-    <Headline>
+    <Headline id="devenir-membre">
       <template #headline>{{ $t('soutien').member.title }}</template>
     </Headline>
 
