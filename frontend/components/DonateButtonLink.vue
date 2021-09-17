@@ -1,18 +1,19 @@
 <template>
-  <div class="relative flex flex-col font-playFair w-full h-full">
-    <div>
-      <slot name="image"></slot>
-    </div>
+  <nuxt-link id="link-no-bold" :to="to">
     <donate-button :canton="canton">
-      <slot name="label"></slot>
+      <slot></slot>
     </donate-button>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
 export default {
   props: {
     canton: {
+      type: String,
+      default: '',
+    },
+    to: {
       type: String,
       default: '',
     },

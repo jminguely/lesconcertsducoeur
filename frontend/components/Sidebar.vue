@@ -100,35 +100,10 @@
     </div>
 
     <div>
-      <nuxt-link
-        id="link-no-bold"
-        :to="localePath('soutien')"
-        class="
-          hidden
-          bg-concert-dark
-          duration-500
-          ease-in-out
-          hover:scale-105
-          w-14
-          h-14
-          text-xs
-          lg:w-24 lg:h-24 lg:flex
-          rounded-full
-          text-white
-          items-center
-          justify-center
-          text-center
-          transform
-          -rotate-25
-          sm:text-base
-          ml-auto
-          bottom-20
-          relative
-        "
-      >
+      <donate-button-link class="relative bottom-20 left-28" :to="localePath('soutien')">
         {{ $t('nav').supportUs }}
-      </nuxt-link>
-      <div id="sidebar" class="flex flex-col">
+      </donate-button-link>
+      <div id="sidebar" class="flex flex-col lg:ml-4">
         <div :class="{ 'flex flex-row-reverse justify-between': menu, 'hidden lg:flex': !menu }" class="items-center">
           <div class="lg:mr-2">
             <SocialLink name="facebook" link="https://www.facebook.com/concertsducoeur/" sidebar />

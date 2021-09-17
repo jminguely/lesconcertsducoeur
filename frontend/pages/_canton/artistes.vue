@@ -5,33 +5,9 @@
     </Headline>
 
     <div id="donation-circle">
-      <nuxt-link
-        class="
-          hover:scale-105
-          duration-500
-          ease-in-out
-          hidden
-          lg:flex
-          absolute
-          flex
-          items-center
-          justify-center
-          text-xl
-          leading-5
-          text-center text-white
-          transform
-          rounded-full
-          top-24
-          w-28
-          h-28
-          right-10
-          font-playFair
-        "
-        :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"
-        :to="localePath('canton-auditions')"
-      >
+      <donate-button-link :to="localePath('canton-auditions')" :canton="canton">
         {{ $t('auditions').hero.title }}
-      </nuxt-link>
+      </donate-button-link>
     </div>
 
     <template v-if="data != null">
