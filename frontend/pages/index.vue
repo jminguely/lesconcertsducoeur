@@ -42,9 +42,9 @@
 
       <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
         <InfoBlock v-for="item in newsArticles" :key="item.id" :canton="getCanton(item.canton)">
-          <template #date
-            ><span class="invisible">{{ $dateFns.format(new Date(item.date), 'dd.MM.yyyy') }}</span></template
-          >
+          <template #date>
+            {{ $t('canton')[item.canton.uid.toLowerCase()] }}
+          </template>
           <template #pretitle></template>
           <template #title><span v-html="$md.render(item.title)"></span></template>
           <template #content>{{ item.content }}</template>
@@ -330,8 +330,8 @@ export default {
 
     async getNewsArticles() {
       const query = gql`
-        query getNewsArticles($locale: String, $where: JSON) {
-          newsArticles(sort: "date:asc", limit: 3, locale: $locale, where: $where) {
+        query getNewsArticles($locale: String) {
+          newsArticles(sort: "date:asc", limit: 3, locale: $locale) {
             id
             title
             date
@@ -342,10 +342,11 @@ export default {
           }
         }
       `
-      const where = { date_gte: new Date() }
+
+      // const where = { date_gte: new Date() }
       const variables = {
         locale: this.$i18n.locale + '-CH',
-        where,
+        // where,
       }
 
       this.newsArticles = await this.$apollo

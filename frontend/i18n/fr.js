@@ -22,9 +22,9 @@ export default {
     },
     organizeConcert: {
       title: 'Souhaitez-vous organiser un concert',
-      vs: 'dans le canton du Valais ?',
-      vd: 'dans le canton de Vaud ?',
-      ge: 'dans le canton de Genève ?',
+      vs: 'dans le canton du Valais?',
+      vd: 'dans le canton de Vaud?',
+      ge: 'dans le canton de Genève?',
       discover: '> découvrez nos musicien·nes·s',
       differentTypes: '> Découvrez les différents types de concerts',
     },
