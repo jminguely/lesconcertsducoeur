@@ -34,9 +34,7 @@
     </div>
 
     <template v-if="newsArticles != null">
-      <spacing />
-
-      <Headline class="mb-12">
+      <Headline class="mt-20">
         <template #headline> {{ $t('home').news.title }}</template>
       </Headline>
 
@@ -55,7 +53,7 @@
     <template v-if="calendars != null">
       <spacing />
 
-      <Headline class="mb-12">
+      <Headline>
         <template #headline> {{ $t('home').nextConcerts }} </template>
       </Headline>
 
@@ -122,9 +120,9 @@
       </testimonial>
     </div>
 
-    <Divider class="my-16" />
+    <Divider class="my-12" />
 
-    <Headline class="mb-12">
+    <Headline>
       <template #headline> {{ $t('home').organizeConcert.title }} </template>
     </Headline>
 

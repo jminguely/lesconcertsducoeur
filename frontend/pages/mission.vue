@@ -35,7 +35,7 @@
 
     <spacing />
 
-    <Headline class="mb-8">
+    <Headline>
       <template #headline>{{ $t('mission').objectifs.title }}</template>
     </Headline>
 

@@ -17,9 +17,9 @@
           </svg>
         </template>
         <template #label
-          ><div @click="setActiveItem(i)">{{ item.title }}</div></template
+          ><h2 class="text-2xl" @click="setActiveItem(i)">{{ item.title }}</h2></template
         >
-        <template #content><div v-html="item.text"></div></template>
+        <template #content><p v-html="item.text"></p></template>
         <template #image><img class="mx-auto" :src="images[i]" /></template>
       </accordion-item>
     </template>

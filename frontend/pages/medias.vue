@@ -62,12 +62,12 @@
       </template>
     </Headline>
 
-    <div class="grid grid-cols-1 sm:gap-x-10 sm:grid-cols-2">
-      <div v-for="item in links" :key="item.title" class="text-xl mb-10">
+    <div class="grid grid-cols-1 sm:gap-x-10 sm:grid-cols-2 sm:gap-y-5">
+      <div v-for="item in links" :key="item.title" class="text-xl">
         <p>
-          <a :href="item.link" target="_blank">{{ item.title }}</a>
+          <a :href="item.link" target="_blank" v-html="item.title"></a><br />
+          {{ item.subtitle }} – {{ item.date }}
         </p>
-        <p>{{ item.subtitle }} – {{ item.date }}</p>
       </div>
     </div>
 
@@ -144,7 +144,7 @@ export default {
           link: 'https://www.rts.ch/play/tv/la-puce-a-loreille/video/lunivers-de-la-chanteuse-lyrique-valaisanne-laure-barras?id=9175995&station=a83f29dee7a5d0d3f9fccdb9c92161b1afb512db',
         },
         {
-          title: 'Présentation des Concerts du Cœur',
+          title: 'Présentation des <i>Concerts du Cœur</i>',
           subtitle: 'Canal9',
           date: '15 décembre 2017',
           link: 'http://canal9.ch/les-concerts-du-coeur-la-soprano-valaisanne-laure-barras-amene-la-musique-classique-dans-les-ems-et-les-hopitaux/',
@@ -174,7 +174,7 @@ export default {
           link: 'https://api.lesconcertsducoeur.ch/uploads/CDC_article_contact_magazine_hoptital_valais_084c493fb5.pdf',
         },
         {
-          title: 'Les Concerts du Cœur',
+          title: '<i>Les Concerts du Cœur</i>',
           subtitle: 'Journal La Source',
           date: '5 octobre 2018',
           link: 'https://api.lesconcertsducoeur.ch/uploads/CDC_article_journal_la_source_82c3453d57.pdf',
@@ -186,13 +186,19 @@ export default {
           link: 'https://api.lesconcertsducoeur.ch/uploads/Cd_C_Le_Nouvelliste_La_musique_adoucit_les_soins_29012019_compressed_komprimiert_c5601fe81c.pdf',
         },
         {
-          title: 'Concerts du Cœur: Laure Barras et ses musiciens amènent la musique auprès de ceux qui ne peuvent se rendre aux concerts',
+          title: '<i>Les Concerts du Cœur</i>: Laure Barras et ses musiciens amènent la musique auprès de ceux qui ne peuvent se rendre aux concerts',
           subtitle: 'Canal9',
           date: '6 février 2019',
           link: 'http://canal9.ch/concerts-du-coeur-laure-barras-et-ses-musiciens-amenent-la-musique-aupres-de-ceux-qui-ne-peuvent-se-rendre-aux-concerts/',
         },
         {
-          title: 'Les Concerts du Cœur',
+          title: '<i>Les Concerts du Cœur</i>',
+          subtitle: 'Die Falte',
+          date: 'Février 2021',
+          link: 'https://api.lesconcertsducoeur.ch/uploads/die_falte_article_1ddbb8311a.pdf',
+        },
+        {
+          title: '<i>Les Concerts du Cœur</i>',
           subtitle: 'Bénévolat-Vaud (publication Facebook)',
           date: '2 décembre 2019',
           link: 'https://www.facebook.com/benevolatvaud/videos/541329486721330/',
@@ -204,7 +210,7 @@ export default {
           link: 'https://www.rts.ch/play/tv/la-puce-a-loreille/video/la-puce-au-cur----de-cur-a-cur-a-sion?id=10959223&startTime=2335',
         },
         {
-          title: 'Les Concerts du Cœur en Valais',
+          title: '<i>Les Concerts du Cœur</i> en Valais',
           subtitle: 'Paris Match',
           date: '17 février 2020',
           link: 'https://api.lesconcertsducoeur.ch/uploads/CDC_presse_paris_Match_02172020_compressed_988ac1a0df.pdf',
@@ -222,7 +228,7 @@ export default {
           link: 'https://api.lesconcertsducoeur.ch/uploads/article_castalie_25a7ba189f.pdf',
         },
         {
-          title: 'Présentation des Concerts du Cœur Genevois',
+          title: 'Présentation des <i>Concerts du Cœur Genevois</i>',
           subtitle: 'Radio Cité Genève',
           date: '22 mars 2021',
           link: 'https://www.podcastics.com/player/playlist/904/?s=15',
@@ -234,7 +240,7 @@ export default {
           link: 'https://www.culturevalais.ch/fr/offre-culturelle/emission-rhone-fm-/les-concerts-du-coeur-999',
         },
         {
-          title: 'Lancement de l’association genevoise des Concerts du Cœur',
+          title: 'Lancement de l’association genevoise des <i>Concerts du Cœur</i>',
           subtitle: 'Le Lancéen',
           date: 'Avril 2021',
           link: 'https://www.lancy.ch/sites/default/files/arborescence/AUTRES/Le%20Lanc%C3%A9en/238-le-lanceen-avril-21_web_sans_pages_pub.pdf',
