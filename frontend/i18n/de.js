@@ -60,7 +60,7 @@ export default {
   mission: {
     hero: {
       title: 'Unsere Mission',
-      subtitle: `<p>Der Verein <i>Les Concerts du Cœur</i> bietet qualitativ hochwertige musikalische Erlebnisse für Menschen mit erschwertem Zugang zu traditionellen Konzerten wie beispielsweise betagten, kranken, inhaftierten sowie sozial, finanziell, körperlich oder geistig beeinträchtigten Personen. </p><br>
+      subtitle: `<p>Der Verein <i>Les Concerts du Cœur</i> bietet qualitativ hochwertige musikalische Erlebnisse für Menschen mit erschwertem Zugang zu traditionellen Konzerten wie beispielsweise betagten, kranken, inhaftierten sowie sozial, finanziell, körperlich oder geistig beeinträchtigten Personen. </p>
         <p>Dieses Bestreben wird mittlerweile in drei Schweizer Kantonen umgesetzt, wobei die jeweiligen Vereine im Kanton Wallis, Waadt und Genf jeweils die gleichen Ziele und Werte vertreten.</p>`,
     },
     enSavoirPlus: {
@@ -105,11 +105,11 @@ export default {
   concerts: {
     hero: {
       title: 'Unsere Konzerte',
-      subtitle: `Der Verein <i>Les Concerts du Cœur</i> passt seine Konzerte in enger Zusammenarbeit mit Ihrer Institution an den jeweiligen Standort, das Publikum sowie die geltenden Hygienemassnahmen an.<br><br>
-        So wurden beispielsweise während der Pandemie die Konzerte nicht abgesagt, sondern jeweils Alternativen für einen kontinuierlichen Musikaustausch gesucht.`,
-      text: `<p class="pb-4">Mit unseren Konzerten bieten wir Ihnen ein breites Angebot an qualitativ hochwertigen Musikprogrammen:<br>
+      subtitle: `<p>Der Verein <i>Les Concerts du Cœur</i> passt seine Konzerte in enger Zusammenarbeit mit Ihrer Institution an den jeweiligen Standort, das Publikum sowie die geltenden Hygienemassnahmen an.</p>
+        <p>So wurden beispielsweise während der Pandemie die Konzerte nicht abgesagt, sondern jeweils Alternativen für einen kontinuierlichen Musikaustausch gesucht.</p>`,
+      text: `<p>Mit unseren Konzerten bieten wir Ihnen ein breites Angebot an qualitativ hochwertigen Musikprogrammen:<br>
       Unsere Künstler:innen sind professionell ausgebildete Musiker:innen mit einer hohen Ausdruckskraft, starker Kommunikationsfähigkeit und Sensibilität und passen sich mit Leichtigkeit der jeweiligen Situation im Dienste des Publikums und der Musik an.</p>
-<p class="pb-4">Unsere stlistisch breit gefächerten Konzerte können zu jeder Tageszeit während der Woche sowie am Wochenende gebucht werden.</p>
+<p>Unsere stlistisch breit gefächerten Konzerte können zu jeder Tageszeit während der Woche sowie am Wochenende gebucht werden.</p>
 <p>Zögern Sie nicht, uns für nähere Informationen zu kontaktieren.</p>
 `,
     },

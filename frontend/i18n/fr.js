@@ -118,7 +118,7 @@ export default {
     hero: {
       title: 'Notre mission',
       subtitle:
-        '<p>La mission des <i>Concerts du Cœur</i> est de proposer des moments musicaux de grande qualité aux personnes qui ont difficilement accès aux salles de concerts traditionnelles.</p><br><p>L’action des <i>Concerts du Cœur</i> se déploie dans trois cantons suisses.</p><br><p>Les associations valaisanne, vaudoise et genevoise partagent les mêmes buts, objectifs et valeurs.</p>',
+        '<p>La mission des <i>Concerts du Cœur</i> est de proposer des moments musicaux de grande qualité aux personnes qui ont difficilement accès aux salles de concerts traditionnelles.</p><p>L’action des <i>Concerts du Cœur</i> se déploie dans trois cantons suisses.</p><p>Les associations valaisanne, vaudoise et genevoise partagent les mêmes buts, objectifs et valeurs.</p>',
     },
     enSavoirPlus: {
       vs: "> En savoir plus sur l'association valaisanne",
@@ -162,11 +162,11 @@ export default {
   concerts: {
     hero: {
       title: 'Nos Concerts',
-      subtitle: `Adaptant ses concerts aux publics, aux lieux ainsi qu’à la situation sanitaire <i>Les Concerts du Cœur</i> cherchent avec vous la meilleure solution pour votre institution.<br>
-        En ces temps de pandémie, nous avons annulé très peu du concerts et avons constamment cherché des alternatives afin de ne jamais interrompre la musique.`,
-      text: `<p class="pb-4">Nous proposons une large palette de programmes musicaux de qualité.<br>
+      subtitle: `<p>Adaptant ses concerts aux publics, aux lieux ainsi qu’à la situation sanitaire <i>Les Concerts du Cœur</i> cherchent avec vous la meilleure solution pour votre institution.</p>
+        <p>En ces temps de pandémie, nous avons annulé très peu du concerts et avons constamment cherché des alternatives afin de ne jamais interrompre la musique.</p>`,
+      text: `<p>Nous proposons une large palette de programmes musicaux de qualité.<br>
       Tous nos artistes sont des musicien·ne·s professionnel·le·s formé·e·s pour réagir aux situations inattendues et se mettre au service du public.</p>
-<p class="pb-4">Les concerts peuvent avoir lieu en semaine ou le weekend et à n’importe quelle heure de la journée.</p>
+<p>Les concerts peuvent avoir lieu en semaine ou le weekend et à n’importe quelle heure de la journée.</p>
 <p>N’hésitez pas à nous contacter pour tout renseignement. </p>
 `,
     },

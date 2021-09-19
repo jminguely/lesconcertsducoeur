@@ -17,7 +17,7 @@
           </svg>
         </template>
         <template #label
-          ><h2 class="text-2xl" @click="setActiveItem(i)">{{ item.title }}</h2></template
+          ><h2 class="text-2xl lg:text-3xl font-newsCycle" @click="setActiveItem(i)">{{ item.title }}</h2></template
         >
         <template #content><p v-html="item.text"></p></template>
         <template #image><img class="mx-auto" :src="images[i]" /></template>

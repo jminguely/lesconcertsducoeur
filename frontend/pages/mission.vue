@@ -13,8 +13,6 @@
       </template>
     </Headline>
 
-    <spacing />
-
     <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
       <sublink v-for="(canton, i) in ['vs', 'vd', 'ge']" :key="canton + i" :canton="canton">
         <template #text
