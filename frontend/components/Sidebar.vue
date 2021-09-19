@@ -116,7 +116,10 @@
           <nuxt-link :to="localePath('contact')" class="text-xl font-newsCycle hover:font-bold"> {{ $t('nav').contact }} </nuxt-link>
         </div>
 
-        <div class="hidden mt-4 lg:flex lg:items-center lg:w-full" :class="{ 'border-2 border-concert-dark': !isSent, 'border-2 border-green-500': isSent }">
+        <div
+          class="hidden mt-4 lg:flex lg:items-center lg:w-full"
+          :class="{ 'border-2 border-concert-dark': !isSent && !hasError, 'border-2 border-green-500': isSent && !hasError, 'border-2 border-red-500': hasError && hasError }"
+        >
           <input v-model="email" class="flex-auto px-2 py-1 focus:rounded-none focus:border-0 focus:outline-none" :placeholder="$t('nav').newsletter" @keyup.enter="subscribeNewsletter()" />
           <button @click="subscribeNewsletter()"><nav-chevron-right class="h-5 hover:cursor-pointer" /></button>
         </div>
@@ -128,6 +131,7 @@
 <script>
 import SocialLink from '@/components/pages/SocialLink.vue'
 // import NavChevronRight from '@/components/NavChevronRight.vue'
+import { gql } from 'graphql-tag'
 export default {
   components: {
     SocialLink,
@@ -148,6 +152,7 @@ export default {
       canton: '',
       email: '',
       isSent: false,
+      hasError: false,
     }
   },
   watch: {
@@ -172,11 +177,52 @@ export default {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
-    subscribeNewsletter() {
-      this.isSent = true
-      setTimeout(() => {
-        this.isSent = false
-      }, 1000)
+    validateEmail(email) {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      return re.test(String(email).toLowerCase())
+    },
+    async subscribeNewsletter() {
+      if (this.validateEmail(this.email)) {
+        const mutation = gql`
+          mutation CreateNewsletter($input: createNewsletterInput!) {
+            createNewsletter(input: $input) {
+              newsletter {
+                id
+                email
+              }
+            }
+          }
+        `
+        const variables = {
+          input: {
+            data: {
+              email: this.email,
+            },
+          },
+        }
+        await this.$apollo
+          .mutate({
+            mutation,
+            variables,
+          })
+          .then(({ data }) => {
+            if (process.env.dev) console.log(data)
+            this.isSent = true
+            this.hasError = false
+            setTimeout(() => {
+              this.isSent = false
+            }, 3000)
+          })
+          .catch((e) => {
+            if (process.env.dev) console.log(e)
+            this.hasError = true
+          })
+      } else {
+        this.hasError = true
+        setTimeout(() => {
+          this.hasError = false
+        }, 1500)
+      }
     },
     handleScroll() {
       // Your scroll handling here
