@@ -1,6 +1,6 @@
 <template>
   <li :class="classObj">
-    <div v-clickaway="closeDropdown" class="flex items-center text-xl lg:text-base" @click="toggleDropdown()">
+    <div v-clickaway="closeDropdown" class="h-5 flex items-center text-xl lg:text-base" @click="toggleDropdown()">
       <svg
         id="Capa_1"
         :class="{ 'rotate-45': dropdown, 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }"
@@ -45,7 +45,7 @@
 
     <div
       class="mt-px border-b-2 py-1 pl-7 z-10 overflow-hidden text-xl text-gray-800 duration-300 ease-in-out bg-white"
-      :class="{ 'border-vs': canton == 'vs', 'border-vd': canton == 'vd', 'border-ge': canton == 'ge', 'h-0': !dropdown, 'h-32': dropdown, 'pointer-events-none': !dropdown }"
+      :class="{ 'border-vs': canton == 'vs', 'border-vd': canton == 'vd', 'border-ge': canton == 'ge', 'h-0': !dropdown, 'h-24': dropdown, 'pointer-events-none': !dropdown }"
     >
       <slot name="items"></slot>
     </div>
