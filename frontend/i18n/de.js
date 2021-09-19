@@ -9,7 +9,7 @@ export default {
     agenda: 'Agenda',
     medias: 'Medien',
     contact: 'Kontakt',
-    supportUs: 'Uns unterstützen',
+    supportUs: 'Uns unter-stützen',
     newsletter: 'Newsletter abonnieren',
   },
   home: {

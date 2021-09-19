@@ -16,7 +16,7 @@ module.exports = {
             h2: {
               fontFamily: 'Playfair',
               fontSize: '1.875rem',
-              marginBottom: '1rem',
+              marginBottom: '0.7rem',
               lineHeight: '1.1',
               fontWeight: 'normal',
             },
