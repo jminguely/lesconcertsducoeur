@@ -1,11 +1,11 @@
 <template>
   <div>
-    <Headline>
+    <Headline class="mb-5">
       <template #headline>{{ $t('soutien').donate.title }} </template>
       <template #content>{{ $t('soutien').donate[canton] }}</template>
     </Headline>
 
-    <iframe class="border-2 p-5 lg:mt-5" :class="{ 'border-vs': canton == 'vs', 'border-vd': canton == 'vd', 'border-ge': canton == 'ge' }" width="100%" height="2200" :src="src"></iframe>
+    <iframe class="border-2 lg:mt-5" :class="{ 'border-vs': canton == 'vs', 'border-vd': canton == 'vd', 'border-ge': canton == 'ge' }" width="100%" height="2200" :src="src"></iframe>
   </div>
 </template>
 
@@ -32,3 +32,10 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+#tamaro-widget-overlay.tamaro-widget.tamaro-widget,
+#tamaro-widget.tamaro-widget {
+  padding: 0 !important;
+}
+</style>

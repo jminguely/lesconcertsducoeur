@@ -22,9 +22,9 @@ export default {
     },
     organizeConcert: {
       title: 'Souhaitez-vous organiser un concert',
-      vs: 'dans le canton du Valais?',
-      vd: 'dans le canton de Vaud?',
-      ge: 'dans le canton de Genève?',
+      vs: 'dans le canton du Valais&nbsp;?',
+      vd: 'dans le canton de Vaud&nbsp;?',
+      ge: 'dans le canton de Genève&nbsp;?',
       discover: '> découvrez nos musicien·nes·s',
       differentTypes: '> Découvrez les différents types de concerts',
     },
@@ -142,7 +142,7 @@ export default {
         },
         {
           title: 'Apporter les bienfaits de la musique',
-          text: 'Grâce au langage universel de la musique et à une véritable interaction humaine avec les artistes, nous offrons des moments uniques de partage.<br />Grâce au langage universel de la musique et à une véritable interaction humaine avec les artistes, nous offrons des moments uniques de partage<sup class="text-sm">1</sup>. Elle pourrait selon certaines études retarder les effets de la maladie d’Alzheimer et prévenir l’isolement social<sup class="text-sm">2</sup>.<br /><br /><p class="pb-2 text-sm"><sup>1</sup> CHANDA, Mona Lisa et LEVITIN, Daniel J. (avril 2013), Trends in Cognitive Sciences</p><p class="text-sm"><sup>2</sup> PLATEL, Hervé (octobre 2015), "Pourquoi la musique est bonne pour le cerveau ?"</p>',
+          text: 'Grâce au langage universel de la musique et à une véritable interaction humaine avec les artistes, nous offrons des moments uniques de partage<sup class="text-sm">1</sup>. Certaines études montrent que la musique peut retarder les effets de la maladie d’Alzheimer et prévenir l’isolement social<sup class="text-sm">2</sup>.<br /><br /><p class="pb-2 text-sm"><sup>1</sup> CHANDA, Mona Lisa et LEVITIN, Daniel J. (avril 2013), Trends in Cognitive Sciences</p><p class="text-sm"><sup>2</sup> PLATEL, Hervé (octobre 2015), "Pourquoi la musique est bonne pour le cerveau ?"</p>',
         },
         {
           title: 'Soutenir une démarche de médiation culturelle',

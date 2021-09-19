@@ -8,7 +8,7 @@
       <nuxt-link to="/vs/association">
         <Illustration canton="vs">
           <template #image>
-            <img class="object-cover" src="~/assets/img/illustrations/home_illu_vs.webp" width="2048" height="1683" />
+            <img class="object-cover" src="~/assets/img/illustrations/home_illu_vs.jpg" width="2048" height="1683" />
           </template>
           <template #label>{{ $t('canton').VS }}</template>
         </Illustration>
@@ -17,7 +17,7 @@
       <nuxt-link to="/vd/association">
         <Illustration canton="vd">
           <template #image>
-            <img src="~/assets/img/illustrations/home_illu_vd.webp" width="2048" height="1683" />
+            <img src="~/assets/img/illustrations/home_illu_vd.jpg" width="2048" height="1683" />
           </template>
           <template #label>{{ $t('canton').VD }}</template>
         </Illustration>
@@ -26,7 +26,7 @@
       <nuxt-link to="/ge/association">
         <Illustration canton="ge">
           <template #image>
-            <img src="~/assets/img/illustrations/home_illu_ge.webp" width="2048" height="1683" />
+            <img src="~/assets/img/illustrations/home_illu_ge.jpg" width="2048" height="1683" />
           </template>
           <template #label>{{ $t('canton').GE }}</template>
         </Illustration>
@@ -129,7 +129,7 @@
     <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
       <Sublink canton="vs">
         <template #title>
-          {{ $t('home').organizeConcert.vs }}
+          <span v-html="$t('home').organizeConcert.vs"></span>
         </template>
         <template #text>
           <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'vs' } })">
@@ -140,7 +140,7 @@
 
       <Sublink canton="vd">
         <template #title>
-          {{ $t('home').organizeConcert.vd }}
+          <span v-html="$t('home').organizeConcert.vd"></span>
         </template>
         <template #text>
           <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'vd' } })">
@@ -151,7 +151,7 @@
 
       <Sublink canton="ge">
         <template #title>
-          {{ $t('home').organizeConcert.ge }}
+          <span v-html="$t('home').organizeConcert.ge"></span>
         </template>
         <template #text>
           <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'ge' } })">
