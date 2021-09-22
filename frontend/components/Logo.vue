@@ -1,5 +1,5 @@
 <template>
   <div>
-    <img class="w-auto h-full" src="https://lesconcertsducoeur.ch/CdC-logo.png" />
+    <img class="w-auto h-full" src="/CdC-logo.png" />
   </div>
 </template>
