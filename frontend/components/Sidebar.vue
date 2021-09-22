@@ -99,10 +99,10 @@
       </div>
     </div>
 
+    <donate-button-link class="hidden lg:block relative -bottom-8 left-24" :to="localePath('soutien')">
+      {{ $t('nav').supportUs }}
+    </donate-button-link>
     <div>
-      <donate-button-link class="hidden lg:block relative bottom-32 left-14" :to="localePath('soutien')">
-        {{ $t('nav').supportUs }}
-      </donate-button-link>
       <div id="sidebar" class="flex flex-col lg:ml-4">
         <div :class="{ 'flex flex-row-reverse justify-between': menu, 'hidden lg:flex': !menu }" class="items-center">
           <div class="lg:mr-2">

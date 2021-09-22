@@ -77,8 +77,8 @@ export default {
       },
       {
         quote:
-          'Humainement, c’est une expérience très enrichissante. En tant que musicien professionnel, j’ai l’habitude de jouer sur scène, de saluer et de partir, sans avoir trop d’échanges avec les spectateurs. Avec Les <i>Concerts du Cœur</i>, un dialogue se crée avec le public. C’est un vrai moment de partage qui m’aide dans ma vie d’artiste.',
-        name: 'Hugo Reser',
+          'Humainement, c’est une expérience très enrichissante. En tant que musicien professionnel, j’ai l’habitude de jouer sur scène, de saluer et de partir, sans avoir trop d’échanges avec les spectateurs. Avec <i>Les Concerts du Cœur</i>, un dialogue se crée avec le public. C’est un vrai moment de partage qui m’aide dans ma vie d’artiste.',
+        name: 'Ugo Reser',
         title: 'Violoncelliste',
       },
       {
@@ -88,7 +88,7 @@ export default {
         title: '',
       },
       {
-        quote: "Très grande satisfaction de la part de nos résidents et de votre visite  il en reste  un  souvenir d’exception. Merci pour ce moment d'émotions.",
+        quote: "Très grande satisfaction de la part de nos résidents et de votre visite.<br/>Il en reste  un  souvenir d’exception. Merci pour ce moment d'émotions.",
         name: "Equipe d'animation de l'EMS Saint-Joseph",
         title: '',
       },
