@@ -23,9 +23,9 @@
 
     <spacing />
 
-    <Headline>
+    <Headline class="-mb-8">
       <template #headline>
-        <span class="text-4xl lg:text-5xl">{{ $t('mission').buts.title }}</span>
+        {{ $t('mission').buts.title }}
       </template>
     </Headline>
 
