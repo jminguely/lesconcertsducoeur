@@ -8,7 +8,7 @@
         <nav-cross :canton="canton" />
       </button>
 
-      <div class="flex-shrink flex items-center lg:block lg:w-full lg:flex-col lg:static lg:mt-4">
+      <div class="lg:flex-shrink flex items-center lg:block lg:w-full lg:flex-col lg:static lg:mt-4">
         <button class="flex my-2 mr-4 text-xl font-newsCycle focus:outline-none lg:mr-0" @click="goBack()">
           <nav-chevron-left :canton="canton" class="flex-shrink-0" />
           <template v-if="data[previousIndex] != null">
@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div class="flex-shrink flex flex-col justify-between py-10 lg:flex-row lg:w-4/5 lg:gap-x-10">
+    <div class="lg:flex-shrink flex flex-col justify-between py-10 lg:flex-row lg:w-4/5 lg:gap-x-10">
       <div class="mb-6 lg:w-3/5 lg:mb-0">
         <h1 class="mb-6 text-4xl lg:text-5xl font-newsCycle">
           <template v-if="selected.first_name != null && selected.last_name != null"> {{ selected.first_name }} {{ selected.last_name }} </template>
