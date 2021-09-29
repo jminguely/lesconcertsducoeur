@@ -23,7 +23,7 @@
 
     <spacing />
 
-    <Headline class="-mb-8">
+    <Headline class="-mb-8 lg:mb-12">
       <template #headline>
         {{ $t('mission').buts.title }}
       </template>

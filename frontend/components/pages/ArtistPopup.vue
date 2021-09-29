@@ -3,7 +3,7 @@
     :class="{ 'opacity-100 z-50': popup }"
     class="fixed top-0 left-0 flex flex-col w-screen h-screen p-5 lg:gap-x-5 lg:flex-row lg:p-10 lg:pb-20 overflow-auto duration-300 ease-in-out bg-white opacity-0"
   >
-    <div class="flex justify-between lg:block lg:w-1/5">
+    <div class="z-10 flex justify-between lg:block lg:w-1/5">
       <button class="focus:outline-none" @click="$emit('update:popup', false)">
         <nav-cross :canton="canton" />
       </button>
