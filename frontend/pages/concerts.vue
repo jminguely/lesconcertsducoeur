@@ -2,10 +2,10 @@
   <div>
     <Headline>
       <template #headline>{{ $t('concerts').hero.title }}</template>
-      <template #content><p v-html="$t('concerts').hero.subtitle"></p></template>
+      <template #content><div v-html="$t('concerts').hero.subtitle"></div></template>
     </Headline>
 
-    <p class="mt-4 mb-12 text-xl font-newsCycle" v-html="$t('concerts').hero.text"></p>
+    <p class="mb-12 text-xl font-newsCycle" v-html="$t('concerts').hero.text"></p>
 
     <!-- <ImageBlock>
       <template #title>Vous souhaitez organiser un concert?</template>

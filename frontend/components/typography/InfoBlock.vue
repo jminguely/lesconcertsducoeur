@@ -7,13 +7,13 @@
     <!-- <span class="block w-32 text-xl transform -translate-y-5 bg-white font-playFair">
       <slot name="date"></slot>
     </span> -->
-    <div class="pt-8 pb-8 pr-4">
+    <div class="pt-5 pb-5 pr-4">
       <!-- Pretitle -->
       <h3 class="text-xl font-newsCycle" :class="{ 'text-concert-dark': canton == '' || canton == 'all', 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">
         <slot name="pretitle"></slot>
       </h3>
       <!-- Title -->
-      <h1 class="pb-2 text-xl font-playFair">
+      <h1 class="text-2xl font-playFair">
         <slot name="title"></slot>
       </h1>
       <!-- Content -->

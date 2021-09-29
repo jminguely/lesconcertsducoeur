@@ -38,7 +38,7 @@
         <template #headline> {{ $t('home').news.title }}</template>
       </Headline>
 
-      <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+      <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
         <InfoBlock v-for="item in newsArticles" :key="item.id" :canton="getCanton(item.canton)">
           <template #date>
             {{ $t('canton')[item.canton.uid.toLowerCase()] }}
@@ -57,7 +57,7 @@
         <template #headline> {{ $t('home').nextConcerts }} </template>
       </Headline>
 
-      <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+      <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
         <EventBlock v-for="item in calendars" :key="item.id" :canton="getCanton(item.canton)">
           <template #datetime>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template>
           <template #pretitle>{{ item.location }}</template>

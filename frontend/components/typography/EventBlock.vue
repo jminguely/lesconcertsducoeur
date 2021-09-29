@@ -3,8 +3,8 @@
     <span class="block pr-2 text-xl transform -translate-y-4 bg-white w-max font-playFair">
       <slot name="datetime"></slot>
     </span>
-    <div class="pt-1 pb-8 pr-4">
-      <h3 class="pb-2 text-xl font-newsCycle" :class="{ 'text-concert-dark': canton == '', 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">
+    <div class="-mt-1 pb-5 pr-4">
+      <h3 class="pb-1 text-xl font-newsCycle" :class="{ 'text-concert-dark': canton == '', 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">
         <slot name="pretitle"></slot>
       </h3>
       <h1 class="text-3xl font-playFair"><slot name="title"></slot></h1>
