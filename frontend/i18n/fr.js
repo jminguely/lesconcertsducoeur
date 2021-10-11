@@ -118,7 +118,7 @@ export default {
     hero: {
       title: 'Notre mission',
       subtitle:
-        '<p>La mission des <i>Concerts du Cœur</i> est de proposer des moments musicaux de grande qualité aux personnes qui ont difficilement accès aux salles de concerts traditionnelles.</p><p>L’action des <i>Concerts du Cœur</i> se déploie dans trois cantons suisses.</p><p>Les associations valaisanne, vaudoise et genevoise partagent les mêmes buts, objectifs et valeurs.</p>',
+        "<p>La mission des <i>Concerts du Cœur</i> est de proposer des moments musicaux de grande qualité aux personnes qui ont difficilement accès aux salles de concerts traditionnelles.</p><p>Fondés par la soprano Laure Barras, <i>Les Concerts du Cœur</i> ont vu le jour en Valais en 2017.</p><p>L'action des <i>Concerts du Cœur</i> a ensuite été lancée dans le canton de Vaud en 2019, puis dans le canton de Genève en 2021.</p>",
     },
     enSavoirPlus: {
       vs: "> En savoir plus sur l'association valaisanne",
