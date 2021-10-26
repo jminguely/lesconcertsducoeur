@@ -163,7 +163,7 @@ export default {
     hero: {
       title: 'Nos Concerts',
       subtitle: `<p>Adaptant ses concerts aux publics, aux lieux ainsi qu’à la situation sanitaire <i>Les Concerts du Cœur</i> cherchent avec vous la meilleure solution pour votre institution.</p>
-        <p>En ces temps de pandémie, nous avons annulé très peu du concerts et avons constamment cherché des alternatives afin de ne jamais interrompre la musique.</p>`,
+        <p>En ces temps de pandémie, nous avons annulé très peu de concerts et avons constamment cherché des alternatives afin de ne jamais interrompre la musique.</p>`,
       text: `<p>Nous proposons une large palette de programmes musicaux de qualité.<br>
       Tous nos artistes sont des musicien·ne·s professionnel·le·s formé·e·s pour réagir aux situations inattendues et se mettre au service du public.</p>
 <p>Les concerts peuvent avoir lieu en semaine ou le weekend et à n’importe quelle heure de la journée.</p>

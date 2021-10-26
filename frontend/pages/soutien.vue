@@ -105,7 +105,7 @@
     <div class="mb-8">
       <h2 class="mb-4 text-3xl font-playFair">{{ $t('soutien').member.vd.title }}</h2>
       <p class="max-w-2xl text-xl text-vd font-newsCycle">
-        <a href="https://api.lesconcertsducoeur.ch/uploads/uploads/Cd_C_VD_bulletindadhesion_membres_ordinaires_320695b34d.pdf">&gt; {{ $t('soutien').member.vd.subscription }}</a
+        <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_VD_bulletindadhesion_membres_ordinaires_320695b34d.pdf">&gt; {{ $t('soutien').member.vd.subscription }}</a
         ><br />
         <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_VD_statuts_c18257d91d.pdf">&gt; {{ $t('soutien').member.vd.status }}</a>
       </p>
