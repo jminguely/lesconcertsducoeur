@@ -20,7 +20,7 @@
 
     <spacing />
 
-    <DonationBlock canton="vd">
+    <DonationBlock canton="vd" circle>
       <template #title>{{ $t('soutien').donate.vd }}</template>
       <template #details>
         <p>
@@ -98,7 +98,7 @@
       <p class="max-w-2xl text-xl text-vs font-newsCycle">
         <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_VS_bulletindadhesion_membres_ordinaires_FR_bc25236636.pdf">&gt; {{ $t('soutien').member.vs.subscription }}</a
         ><br />
-        <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_VS_statuts_760d9d3219.pdf">&gt; {{ $t('soutien').member.vs.status }}</a>
+        <a href="https://api.lesconcertsducoeur.ch/uploads/Cdc_VS_statuts_2019_signes_4d53a41b7e.pdf">&gt; {{ $t('soutien').member.vs.status }}</a>
       </p>
     </div>
 
