@@ -1,0 +1,446 @@
+<mjml>
+  <mj-head>
+    <mj-font name="Playfair Display" href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" />
+    <mj-font name="News Cycle" href="https://fonts.googleapis.com/css?family=News+Cycle&display=swap" />
+    <mj-raw>
+      <link href="https://fonts.googleapis.com/css?family=News+Cycle&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+    </mj-raw>
+    <mj-style>
+      h1, h2, h3, h4{
+        font-family: 'Playfair Display', serif;
+        font-weight: normal;
+        letter-spacing: 0.5px;
+      }
+      h1{
+        font-size: 50px;
+        line-height: 55px;
+        font-family: 'News Cycle', sans-serif !important;
+      }
+      h2{
+        font-size: 28px;
+        line-height: 30px;
+      }
+      h3{
+        font-size: 24px;
+        line-height: 26px;
+      }
+
+      h4{
+        font-size: 20px;
+        line-height: 22px;
+      }
+      a {
+        font-family: 'News Cycle', sans-serif !important;
+        font-weight: normal !important;
+        color: #FA8258 !important;
+        text-decoration: none !important;
+      }
+
+      a:hover {
+        color: #000000;
+      }
+      ul{
+        padding-left: 20px !important;
+        /* list-style: none; */
+      }
+      li::before{
+        /* content: "\2192"; */
+        margin-left: -20px;
+      }
+      p{
+        margin-bottom: -5px !important;
+      }
+      .list-style-none{
+        list-style: none;
+      }
+      .italic{
+        font-style: italic;
+      }
+      .line-height div {
+        line-height: 2px  !important;
+      }
+      .margin-bottom div{
+        margin-bottom: -25px !important;
+      }
+      .margin-top div{
+        margin-top: 0px !important;
+      }
+      .margin-top-quote div{
+        margin-top: -25px !important;
+      }
+      .mb-36 div {
+        margin-bottom: 36px !important;
+      }
+      .font-newscycle{
+        font-family: 'News Cycle', sans-serif !important;
+      }
+      .font-newscycle div{
+        font-family: 'News Cycle', sans-serif !important;
+        font-weight: normal !important;
+        line-height: 26px !important;
+        letter-spacing: 0.3px !important;
+      }
+      .font-playfair, .font-playfair div{
+        font-family: 'Playfair Display', serif !important;
+      }
+      .quote div{
+        font-family: 'Playfair Display', serif !important;
+        font-size: 20px !important;
+        line-height: 28px !important;
+        padding-bottom: 0px;
+        margin-bottom: -18px;
+      }
+      .quote-author-1 div, .quote-author-2 div{
+        font-family: 'Playfair Display', sans-serif !important;
+        font-size: 20px !important;
+      text-align: right;
+      float: right;
+      line-height: 28px !important;
+      padding-top: 0px;
+    }
+    .quote-author-long div{
+      font-family: 'News Cycle', sans-serif !important;
+      font-size: 20px !important;
+      text-align: right;
+      text-align-last: right;
+      float: right;
+      line-height: 28px !important;
+      padding-top: 0px;
+    }
+    .quote-marks{
+      font-size: 34px !important;
+      font-weight: normal !important;
+      display: block !important;
+      position: relative !important;
+      top: 2px !important;
+    }
+    .quote-marks-r, .quote-marks-l{
+      font-size: 34px !important;
+      font-weight: normal !important;
+      display: block !important;
+      position: relative !important;
+    }
+    .quote-marks-r{
+      left: -25px !important;
+      top: 25px !important;
+    }
+    .quote-marks-l{
+      left: 95% !important;
+      top: -25px !important;
+    }
+    .header-text div{
+      text-align: right !important;
+      line-height: 22px !important;
+      padding: 20px;
+    }
+    .header-text a {
+      color: white !important;
+    }
+    .footer-text div{
+      font-family: 'News Cycle', sans-serif !important;
+      color: white !important;
+      text-align: center !important;
+      line-height: 28px !important;
+    }
+  </mj-style>
+
+  <mj-attributes>
+    <mj-text css-class="font-newscycle" font-size="18px" />
+    <mj-section background-color="white" />
+  </mj-attributes>
+</mj-head>
+
+<mj-body width="880px" background-color="#F5A488">
+  <mj-section background-color="transparent">
+    <mj-column>
+      <mj-text css-class="header-text">
+        <mj-raw>
+          <a style="color:white; " href="*|ARCHIVE|*" target="_blank" rel="noopener noreferrer">Lire cet email dans mon navigateur</a>
+        </mj-raw>
+      </mj-text>
+    </mj-column>
+  </mj-section>
+  <mj-section padding=0>
+    <mj-column>
+      <mj-image padding=0 src="https://lesconcertsducoeur.ch/wp-content/uploads/newsletter/CDC_VS_NL7-banner-top.png"></mj-image>
+    </mj-column>
+  </mj-section>
+
+  <mj-section padding=0>
+    <mj-column>
+      <mj-text>
+        <h1>
+        <span class="italic">Les Concerts du Coeur valaisans</span> en temps de COVID-19
+      </h1>
+      </mj-text>
+      <mj-text>
+        <span class="font-playfair">
+          En ces temps si particuliers, l’Association <span class="italic">Les Concerts du Coeur</span> se doit de faire preuve d’imagination : son mode de fonctionnement a donc été revu.  Plus que jamais, les personnes âgées et malades confinées ont un grand besoin d’écouter de la musique et de dialoguer avec des artistes également isolés. De leur côté, les musiciens doivent trouver des solutions alternatives pour gagner leur vie.
+        </span>
+      </mj-text>
+      <mj-text>
+        <span class="font-playfair">
+          Depuis le 15 mars, l’Association a mis sur pied plus de vingt concerts dans une dizaine d’institutions.
+        </span>
+      </mj-text>
+    </mj-column>
+  </mj-section>
+
+  <mj-section>
+  <mj-column>
+    <mj-text padding-bottom=0>
+        <h2>
+          Trois types de prestations ont été offerts :
+        </h2>
+        <h4>
+          Rendez-vous virtuel hebdomadaire via Skype ou Zoom avec un artiste:
+        </h4>
+        une tablette de type iPad circule de chambre en chambre, assurant la diffusion d’un musicien connecté. Cela permet aux résidents d'échanger individuellement avec l'artiste, de lui poser des questions et de choisir le répertoire.
+
+    </mj-text>
+      <mj-text>
+Pendant un mois, dans cette période d’incertitude et afin d’assurer des liens de façon continue, des rencontres hebdomadaires ont été organisées avec le même artiste, d’abord un accordéoniste, puis une harpiste. Ces rendez-vous musicaux semblent la solution idéale pour les institutions où les résidents ne peuvent pas quitter leur chambre.
+    </mj-text>
+    <mj-text padding-bottom=0>
+        <h4>
+          Concerts virtuels en direct via Skype ou Zoom diffusés dans tout l'EMS :
+        </h4>
+        dans les institutions équipées, des concerts en direct ont été diffusés grâce au système de retransmission audio dans tous les étages des établissements. Les résidents ont pu profiter à tour de rôle du visuel via un ordinateur installé à chaque étage. Ils ont ainsi pu bénéficier d’un concert personnalisé et échanger avec l’artiste.
+
+    </mj-text>
+    <mj-text padding-bottom=0>
+        <h4>
+          Concerts sur  les terrasses et dans les jardins :
+        </h4>
+        dès début mai et dans le respect de la distanciation sociale recommandée par l’Office fédéral de la santé, des concerts ont lieu dans les jardins et sur les terrasses d’EMS et d’hôpitaux. Cela permet aux résidents ainsi qu’au personnel de profiter d’un moment privilégié et de sentir les vibrations de la musique.
+
+    </mj-text>
+
+  </mj-column>
+  <mj-column>
+    <mj-text>
+        <h2>
+Des événements ont été organisés dans les institutions suivantes :
+        </h2>
+      Résidence médicalisée Le Glarier (Sion), Foyer Ottanel (Vernayaz), Foyer Saint-Jacques (Saint-Maurice), Maison de la Providence (Orsières), EMS Beaulieu (Sierre), Foyer Saint-Joseph (Sierre), EMS Les Crêtes (Grimisuat), EMS Saint-Sylve (Vex), Martinsheim (Visp) et la Clinique bernoise (Crans-Montana).
+    </mj-text>
+    <mj-text>
+      <h4>
+Suite aux feedbacks très positifs des institutions ainsi que des artistes et résidents, de nombreux concerts sont en cours de planification pour l’été 2020.
+      </h4>
+      Au vu de la situation sanitaire, des réglementations qui changent constamment et des contraintes météo, les délais de travail sont souvent très courts. Les concerts s’organisent donc <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">«</span> à la carte <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">»</span>, à peine quelques jours avant leur tenue.
+    </mj-text>
+      <mj-image src="https://lesconcertsducoeur.ch/wp-content/uploads/newsletter/CDC_VS_NL7-violoniste-portrait.png"></mj-image>
+  </mj-column>
+</mj-section>
+
+
+<mj-section css-class="margin-bottom">
+  <mj-column>
+    <mj-text padding-bottom=0>
+      <h2>
+        Quelques commentaires reçus suite aux concerts déjà organisés depuis le début de la crise du COVID-19 :
+      </h2>
+    </mj-text>
+  </mj-column>
+</mj-section>
+
+<mj-section>
+  <mj-column>
+    <mj-text>
+      <h4>
+      Résidents du Glarier et animatrice Sabine Roux :
+    </h4>
+      <mj-raw>
+        <ul class="list-style-none">
+          <li> <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">«</span> C'était divin.  <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">»</span> </li>
+            <li> <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">«</span> Ella a des doigts de fée, ça fait du bien aux oreilles. <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">»</span> </li>
+            <li> <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">«</span> C'est doux. <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">»</span></li>
+          </ul>
+        </mj-raw>
+      </mj-text>
+    <mj-text>
+      <h4>
+        Les responsables du centre ont rapporté que
+    </h4>
+      <mj-raw>
+        <ul class="list-style-none">
+          <li> <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">«</span> L’ambiance était calme et paisible, les résidents ont été très attentifs. <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">»</span> </li>
+          </ul>
+        </mj-raw>
+      </mj-text>
+    <mj-text>
+      <h4>
+        Régine Kamerzin animatrice au Foyer de Jour Beaulieu a rapporté ce qui suit à la suite d’un concert d’accordéon  diffusé de manière virtuelle:
+    </h4>
+      <mj-raw>
+        <ul class="list-style-none">
+          <li> <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">«</span> Les résidents ont adoré. Ils ont été enchantés et très impressionnés … Avec grand plaisir pour une prochaine fois. <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">»</span>  </li>
+          </ul>
+        </mj-raw>
+      </mj-text>
+    </mj-column>
+
+    <mj-column>
+      <mj-text>
+      <h4>
+      Sabine Grenon, animatrice Fondation St. Jacques suite au rendez-vous musical virtuel du 10 avril 2020 :
+    </h4>
+      <mj-raw>
+        <ul class="list-style-none">
+          <li>  <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">«</span> Je peux dire que nous avons vécu un magnifique après-midi grâce au talent et à la bienveillance du musicien. Je suis passée dans les chambres des résidents avec une tablette ce qui leur a permis un moment unique et privilégié. Nous avons ainsi visité 11 résidents qui sortent très peu de leur chambre et pour qui la solitude est un poids difficile à supporter. Chaque résident a exprimé son émotion de manière différente, une dame s’est même levée pour danser. Tous ont été très touchés par l’expérience. Le fait de le faire de manière individuelle, offre au résident un sentiment d’appartenance. Encore un grand merci pour cette super idée et je me réjouis déjà̀ des prochains. <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">»</span> </li>
+          </ul>
+        </mj-raw>
+      </mj-text>
+    </mj-column>
+  </mj-section>
+
+<mj-section>
+  <mj-column>
+    <mj-image src="https://lesconcertsducoeur.ch/wp-content/uploads/newsletter/CDC_VS_NL7-accordeoniste-paysage.png"></mj-image>
+  </mj-column>
+</mj-section>
+
+<mj-section>
+  <mj-column>
+    <mj-text>
+      <h2>
+        Voici ce que nous ont rapporté les artistes :
+      </h2>
+      <mj-raw>
+        <ul class="list-style-none">
+          <li>
+      <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">«</span>
+En cette période difficile pour tout le monde et notamment pour les résidents en EMS, Laure Barras, responsable de l'Association <span class="italic">Les Concerts du Coeur</span>, m'a contacté pour donner un concert via la plateforme Skype. L'idée était de faire un concert depuis mon domicile, derrière mon ordinateur et de le diffuser en direct aux résidents d’un EMS. Un infirmier, qui était en communication avec moi au même moment, faisait le tour des chambres des résidents avec une tablette. Ainsi, les résidents pouvaient voir et écouter le concert que je proposais.
+</li>
+</ul>
+</mj-raw>
+</mj-tex>
+<mj-text>
+      <mj-raw>
+        <ul class="list-style-none">
+          <li>
+
+Pour ma part, j'ai déjà donné quelques concerts depuis chez moi ces derniers temps, donc ce n'était pas quelque chose de nouveau. En revanche pour les résidents, c'était une expérience assez inédite.<span class="italic"> <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">«</span> C'est fou ce qu'on peut faire avec ces engins, ma fille m'appelle avec ce système, mais je ne savais pas qu'on pouvait s’en servir pour diffuser des concerts <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">»</span> </span>.  Ces paroles proviennent des résidents et les mots étaient accompagnés de sourires de bonheur. Le fait aussi pour moi, de pouvoir discuter et partager un moment presque intime avec les résidents et de les voir aussi heureux, m'a plu et m'a particulièrement touché. Ce sont des contacts que nous n'aurions pas pu avoir avec lors d’un concert "normal". Il y avait même des résidents qui chantaient; formidable !
+</li>
+</ul>
+</mj-raw>
+</mj-text>
+<mj-text>
+      <mj-raw>
+        <ul class="list-style-none">
+          <li>
+Je pense que cette expérience est à renouveler et à diffuser dans plusieurs établissements. Il est important de ne pas laisser ces personnes âgées  seules. Grâce à cette <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">«</span> compagnie virtuelle <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">»</span>, leurs journées confinées pourraient s’agrémenter d'un petit rayon de soleil.
+Bravo à Laure pour son initiative et aux <span class="italic">Concerts du Coeur</span>.
+<span style="font-family: 'Playfair Display', serif; font-size: 19px; ">»</span>
+</li>
+</ul>
+</mj-raw>
+    </mj-text>
+    <mj-text>
+      <h4>
+        Yves Moulin, accordéoniste - Rendez-vous musical virtuel du 3 avril 2020
+      </h4>
+    </mj-text>
+  </mj-column>
+</mj-section>
+<mj-section margin-top="0px" css-class="margin-top-quote">
+  <mj-column>
+    <mj-text>
+      <mj-raw>
+        <ul class="list-style-none">
+          <li>
+      <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">«</span>
+      Cela fut pour nous une immense joie de partager ce moment avec les résidents et les soignants, surtout en cette période compliquée, aussi pour nous artistes. En effet, l'ensemble de nos projets et concerts ont été annulés ces dernières semaines et ce, pour un temps indéterminé. C'est précisément cette incertitude qui rend cette période si difficile à la fois financièrement mais aussi et surtout psychologiquement. Les moments de partage artistique nous manquent véritablement, ces derniers étant l'essence même de notre métier. Dans ce contexte, l'opportunité qui nous a été donnée de proposer aux résidents un moment d'évasion s'est révélée être pour nous, musiciens en quête de sens, un soulagement : soulagement de partager à nouveau, soulagement de trouver une place, aussi petite soit-elle, en tant qu'acteur dans la crise actuelle.
+      <span style="font-family: 'Playfair Display', serif; font-size: 19px; ">»</span>
+</li>
+</ul>
+</mj-raw>
+</mj-text>
+    <mj-text>
+      <h4>
+        Sylvain Faucon, hautboïste - Rendez-vous musical virtuel du 23 avril 2020
+      </h4>
+    </mj-text>
+  </mj-column>
+</mj-section>
+
+    <mj-section>
+      <mj-column>
+        <mj-text css-class="margin-bottom font-newscycle" font-size=19px color="black">
+          Nous réitérons nos remerciements à nos fidèles donateurs:
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section>
+      <mj-column>
+        <mj-image src="https://lesconcertsducoeur.ch/wp-content/uploads/newsletter/all-blacks-web/Logo_BeisheimStiftung_verkleinert.png"></mj-image>
+      </mj-column>
+      <mj-column>
+        <mj-image src="https://lesconcertsducoeur.ch/wp-content/uploads/newsletter/all-blacks-web/LoRo.png"></mj-image>
+      </mj-column>
+      <mj-column>
+        <mj-image src="https://lesconcertsducoeur.ch/wp-content/uploads/newsletter/all-blacks-web/ArtEnPartage.png"></mj-image>
+      </mj-column>
+    </mj-section>
+
+    <mj-section>
+      <mj-column>
+        <mj-image src="https://lesconcertsducoeur.ch/wp-content/uploads/newsletter/all-blacks-web/ProHelvetia.png"></mj-image>
+      </mj-column>
+      <mj-column>
+        <mj-image src="https://lesconcertsducoeur.ch/wp-content/uploads/newsletter/all-blacks-web/Logo_Fondation_BB.png"></mj-image>
+      </mj-column>
+      <mj-column>
+        <mj-image src="https://lesconcertsducoeur.ch/wp-content/uploads/newsletter/all-blacks-web/Minkoff.png"></mj-image>
+      </mj-column>
+      <mj-column>
+        <mj-image src="https://lesconcertsducoeur.ch/wp-content/uploads/newsletter/all-blacks-web/logo_hemu.png"></mj-image>
+      </mj-column>
+    </mj-section>
+
+    <mj-section>
+      <mj-column>
+        <mj-image src="https://lesconcertsducoeur.ch/wp-content/uploads/newsletter/all-blacks-web/commune-lens-b.png"></mj-image>
+      </mj-column>
+      <mj-column>
+        <mj-image src="https://lesconcertsducoeur.ch/wp-content/uploads/newsletter/all-blacks-web/commune-st-maurice-b.png"></mj-image>
+      </mj-column>
+      <mj-column>
+        <mj-image src="https://lesconcertsducoeur.ch/wp-content/uploads/newsletter/all-blacks-web/commune-crans-montana-b.png"></mj-image>
+      </mj-column>
+    </mj-section>
+
+    <mj-section>
+      <mj-column>
+        <mj-image height=100px width=160px src="https://lesconcertsducoeur.ch/wp-content/uploads/newsletter/all-blacks-web/commune-sion-b.png"></mj-image>
+      </mj-column>
+      <mj-column>
+        <mj-image height=120px width=130px src="https://lesconcertsducoeur.ch/wp-content/uploads/newsletter/all-blacks-web/commune-vernayaz-b-custom.png"></mj-image>
+      </mj-column>
+      <mj-column>
+        <mj-image src="https://lesconcertsducoeur.ch/wp-content/uploads/newsletter/all-blacks-web/commune-vouvry-b.png"></mj-image>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="0">
+      <mj-column>
+        <mj-image padding="0" src="https://lesconcertsducoeur.ch/wp-content/uploads/newsletter/CDC_VS_NL7-banner-bottom.png"></mj-image>
+      </mj-column>
+    </mj-section>
+
+
+    <mj-section background-color="transparent">
+      <mj-column>
+        <mj-text css-class="footer-text">
+          <mj-raw>
+            Vous recevez ce mail car vous avez rejoint la newsletter du site *|DOMAIN_NAME|* avec l'adresse *|EMAIL|*.<br /><a style="color:inherit; text-decoration: underline;" href="*|UNSUBSCRIBED|*" data-link="btn_unsubscribe">Se désinscrire</a> pour ne plus recevoir de mails de notre part.<br> © 2020 <span class="italic">les Concerts du Coeur</span>
+          </mj-raw>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml>
