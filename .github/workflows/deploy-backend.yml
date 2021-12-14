@@ -3,8 +3,9 @@ name: Deploy backend
 on:
   push:
     branches: [main]
-    paths: |
-      - 'backend/**'
+    paths:
+      - ".github//deploy-backend.yml"
+      - "backend/**"
 
 jobs:
   build:
