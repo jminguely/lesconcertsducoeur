@@ -27,6 +27,10 @@ jobs:
       - name: 🧶 Yarn this beauty
         run: yarn
 
+      - name: 🔗 Creates symlink
+        run: |
+          ln -s /home/jminguely/www/cdc/shared/backend/public/uploads ./backend/public/uploads
+
       - name: 🔨 Build admin panel
         run: yarn build
 
@@ -36,7 +40,7 @@ jobs:
         env:
           DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
         with:
-          flags: "-avzr --delete"
+          flags: "-avzrl --delete"
           options: ""
           ssh_options: ""
           src: "./backend"
