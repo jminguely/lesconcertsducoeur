@@ -21,6 +21,7 @@ jobs:
         with:
           node-version: "14"
           cache: "yarn"
+          cache-dependency-path: "./backend/yarn.lock"
 
       - name: 🧶 Yarn this beauty
         run: yarn
@@ -34,7 +35,7 @@ jobs:
           flags: "-avzr --delete"
           options: ""
           ssh_options: ""
-          src: "/build"
+          src: "./backend/build"
           dest: ${{secrets.DEPLOY_DEST}}
 
       - name: 🧨 Kickstart node server
