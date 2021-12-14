@@ -2,36 +2,40 @@ name: Deploy backend
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
     paths:
-      - 'backend/**'
-      
+      - "backend/**"
+      - ".github/**"
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-      
+
+      - name: 🛣 Move to backend location
+        run: cd backend
+
       - uses: actions/setup-node@v2
         with:
-          node-version: '14'
-          cache: 'yarn'
+          node-version: "14"
+          cache: "yarn"
 
       - name: 🧶 Yarn this beauty
-        run: yarn --cwd 'backend'
-        
+        run: yarn
+
       - name: 🚀 Ship the whold thin
         id: deploy
         uses: Pendect/action-rsyncer@v1.1.0
         env:
           DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
         with:
-          flags: '-avzr --delete'
-          options: ''
-          ssh_options: ''
-          src: '/*'
-          dest:  ${{secrets.DEPLOY_DEST}}
-          
+          flags: "-avzr --delete"
+          options: ""
+          ssh_options: ""
+          src: "/build"
+          dest: ${{secrets.DEPLOY_DEST}}
+
       - name: 🧨 Kickstart node server
         run: curl --basic --user "${{ secrets.ALWAYSDATA_API }} account=jminguely:" --data '' --request POST https://api.alwaysdata.com/v1/site/681745/restart/
