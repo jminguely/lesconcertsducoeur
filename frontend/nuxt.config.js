@@ -47,7 +47,9 @@ export default {
 
   apollo: {
     clientConfigs: {
-      default: '@/plugins/apollo-client-configs-default.js',
+      default: {
+        httpEndpoint: 'https://cdc-backend.minguely.ch/graphql',
+      },
     },
   },
 
