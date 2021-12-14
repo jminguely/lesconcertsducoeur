@@ -31,7 +31,7 @@ and then install all dependencies with yarn:
   yarn develop
 ```
 
-## Build the admin panel with
+## Build the admin panel
 
 ```
   yarn build
