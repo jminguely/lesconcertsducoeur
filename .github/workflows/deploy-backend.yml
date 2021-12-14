@@ -4,15 +4,15 @@ on:
   push:
     branches: [main]
     paths:
-      - "./backend/**"
       - ".github/**"
+      - "backend/**"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./backend
+        working-directory: backend
 
     steps:
       - uses: actions/checkout@v2
@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: "14"
           cache: "yarn"
-          cache-dependency-path: "./backend/yarn.lock"
+          cache-dependency-path: "backend/yarn.lock"
 
       - name: 🧶 Yarn this beauty
         run: yarn
@@ -35,7 +35,7 @@ jobs:
           flags: "-avzr --delete"
           options: ""
           ssh_options: ""
-          src: "./backend/*"
+          src: "backend/*"
           dest: ${{secrets.DEPLOY_DEST}}
 
       - name: 🧨 Kickstart node server
