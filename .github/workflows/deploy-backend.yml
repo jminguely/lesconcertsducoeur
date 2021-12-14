@@ -26,6 +26,9 @@ jobs:
       - name: 🧶 Yarn this beauty
         run: yarn
 
+      - name: 🔨 Build admin panel
+        run: yarn build
+
       - name: 🚀 Ship the whole thin
         id: deploy
         uses: Pendect/action-rsyncer@v1.1.0
