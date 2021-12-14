@@ -35,7 +35,7 @@ jobs:
           flags: "-avzr --delete"
           options: ""
           ssh_options: ""
-          src: "./backend"
+          src: "./backend/*"
           dest: ${{secrets.DEPLOY_DEST}}
 
       - name: 🧨 Kickstart node server
