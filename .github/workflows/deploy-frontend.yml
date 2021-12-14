@@ -27,6 +27,9 @@ jobs:
       - name: 🧶 Yarn this beauty
         run: yarn
 
+      - name: ⚡️ Generate the application
+        run: yarn generate
+
       - name: 🔗 Creates symlink
         run: |
           ln -s /home/jminguely/www/cdc/shared/frontend/static/wp-content ./static/wp-content
