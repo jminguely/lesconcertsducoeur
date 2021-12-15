@@ -64,10 +64,10 @@
       <div class="flex-grow lg:w-2/5">
         <div class="ml-auto">
           <template v-if="selected.picture != null">
-            <img class="object-cover h-full lg:w-120 lg:h-full w-96" :src="'https://api.lesconcertsducoeur.ch' + selected.picture.url" />
+            <img class="object-cover h-full lg:w-120 lg:h-full w-96" :src="'https://cdc-frontend.minguely.ch' + selected.picture.url" />
           </template>
           <template v-if="selected.cover != null">
-            <img class="object-cover h-full lg:w-120 lg:h-full w-96" :src="'https://api.lesconcertsducoeur.ch' + selected.cover.url" />
+            <img class="object-cover h-full lg:w-120 lg:h-full w-96" :src="'https://cdc-frontend.minguely.ch' + selected.cover.url" />
           </template>
         </div>
 
