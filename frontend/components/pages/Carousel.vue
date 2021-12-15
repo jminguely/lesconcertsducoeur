@@ -1,7 +1,7 @@
 <template>
   <splide :options="options">
     <splide-slide v-for="(image, i) in images" :key="i">
-      <img :src="'https://cdc-frontend.minguely.ch' + image.url" />
+      <img :src="'https://cdc-backend.minguely.ch' + image.url" />
     </splide-slide>
   </splide>
 </template>

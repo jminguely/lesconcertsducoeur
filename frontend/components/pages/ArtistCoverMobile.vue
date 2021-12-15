@@ -1,11 +1,11 @@
 <template>
   <div class="relative w-full h-full">
     <template v-if="data.picture != null">
-      <img class="object-cover w-full" :src="'https://cdc-frontend.minguely.ch' + data.picture.url" />
+      <img class="object-cover w-full" :src="'https://cdc-backend.minguely.ch' + data.picture.url" />
     </template>
 
     <template v-if="data.cover != null">
-      <img class="object-cover w-full" :src="'https://cdc-frontend.minguely.ch' + data.cover.url" />
+      <img class="object-cover w-full" :src="'https://cdc-backend.minguely.ch' + data.cover.url" />
     </template>
 
     <div class="mt-2 text-left w-full">

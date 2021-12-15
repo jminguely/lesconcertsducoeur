@@ -1,11 +1,11 @@
 <template>
   <div class="relative w-full h-full">
     <template v-if="data.picture != null">
-      <img class="object-cover w-full h-4/5 md:h-full" :src="'https://cdc-frontend.minguely.ch' + data.picture.url" />
+      <img class="object-cover w-full h-4/5 md:h-full" :src="'https://cdc-backend.minguely.ch' + data.picture.url" />
     </template>
 
     <template v-if="data.cover != null">
-      <img class="object-cover w-full h-4/5 md:h-full" :src="'https://cdc-frontend.minguely.ch' + data.cover.url" />
+      <img class="object-cover w-full h-4/5 md:h-full" :src="'https://cdc-backend.minguely.ch' + data.cover.url" />
     </template>
 
     <button class="absolute bottom-0 left-0 z-30 block w-full h-1/5 md:top-0 md:h-full p-10 text-black duration-300 ease-in-out md:text-white md:hover:opacity-0 focus:outline-none">
