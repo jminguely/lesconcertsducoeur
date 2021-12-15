@@ -32,7 +32,7 @@ jobs:
 
       - name: 🔗 Creates symlink
         run: |
-          ln -s /home/jminguely/www/cdc/shared/frontend/static/wp-content ./static/wp-content
+          ln -s /home/jminguely/www/cdc/shared/frontend/static/wp-content ./dist/wp-content
 
       - name: 🚀 Ship the whole thin
         id: deploy
