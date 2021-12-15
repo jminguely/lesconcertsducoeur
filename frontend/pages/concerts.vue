@@ -43,7 +43,7 @@
 
     <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
       <div class="max-w-xl">
-        <img src="~/assets/img/illustrations/illustration6.svg" />
+        <img src="~/assets/img/illustrations/illustration6.webp" />
       </div>
 
       <Testimonial class="max-w-xl">

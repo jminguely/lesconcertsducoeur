@@ -193,7 +193,7 @@
         </template>
       </Headline>
       <div class="w-full">
-        <img class="mx-auto" src="~/assets/img/illustrations/illustration4.svg" />
+        <img class="mx-auto" src="~/assets/img/illustrations/illustration4.webp" />
       </div>
     </div>
 

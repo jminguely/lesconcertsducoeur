@@ -80,7 +80,7 @@
 
     <!-- <h2 class="mb-10 text-3xl font-playFair">{{ $t('home').partners.title }}</h2>
     <div class="grid grid-cols-3 gap-5">
-      <img class="object-contain w-full h-full" src="~/assets/img/partners/LMN.svg" />
+      <img class="object-contain w-full h-full" src="~/assets/img/partners/LMN.webp" />
     </div> -->
 
     <template v-if="association.partners != null">
@@ -127,10 +127,10 @@ export default {
   data() {
     return {
       sponsors: [
-        { img: require('~/assets/img/partners/BS.svg'), link: '' },
-        { img: require('~/assets/img/partners/Hemu.svg'), link: '' },
-        { img: require('~/assets/img/partners/LR.svg'), link: '' },
-        { img: require('~/assets/img/partners/M.svg'), link: '' },
+        { img: require('~/assets/img/partners/BS.webp'), link: '' },
+        { img: require('~/assets/img/partners/Hemu.webp'), link: '' },
+        { img: require('~/assets/img/partners/LR.webp'), link: '' },
+        { img: require('~/assets/img/partners/M.webp'), link: '' },
       ],
       data: null,
       association: null,

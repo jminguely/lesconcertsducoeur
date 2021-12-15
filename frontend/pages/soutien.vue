@@ -56,7 +56,7 @@
         <h2 class="text-3xl font-playFair" v-html="$t('soutien').supportUs.text"></h2>
       </div>
       <div class="w-full">
-        <img src="~/assets/img/illustrations/illustration7.svg" />
+        <img src="~/assets/img/illustrations/illustration7.webp" />
       </div>
     </div> -->
 
