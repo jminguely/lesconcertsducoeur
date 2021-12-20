@@ -47,7 +47,15 @@
 
     <div
       class="mt-px border-b-2 py-1 pl-7 z-10 overflow-hidden text-xl text-gray-800 duration-300 ease-in-out bg-white"
-      :class="{ 'border-vs': canton == 'vs', 'border-vd': canton == 'vd', 'border-ge': canton == 'ge', 'h-0': !dropdown, 'h-24': dropdown, 'pointer-events-none': !dropdown }"
+      :class="{
+        'border-vs': canton == 'vs',
+        'border-vd': canton == 'vd',
+        'border-ge': canton == 'ge',
+        'h-0': !dropdown,
+        'h-24': dropdown && canton != 'vd',
+        'h-32': dropdown && canton == 'vd',
+        'pointer-events-none': !dropdown,
+      }"
     >
       <slot name="items"></slot>
     </div>
@@ -76,9 +84,9 @@ export default {
 
       statements[1] = 'h-9'
 
-      statements[2] = 'h-32'
+      // statements[2] = this.canton === 'vd' ? 'h-36' : 'h-32'
 
-      const conditions = [true, !this.dropdown, this.dropdown, this.topBorder]
+      const conditions = [true, !this.dropdown, this.dropdown]
 
       for (let i = 0; i < statements.length; i++) {
         obj[statements[i]] = conditions[i]

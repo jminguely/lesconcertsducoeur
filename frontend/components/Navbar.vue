@@ -9,6 +9,8 @@
               <nuxt-link :to="localePath({ name: 'canton-association', params: { canton: canton } })">{{ $t('nav').association }}</nuxt-link>
               <nuxt-link :to="localePath({ name: 'canton-artistes', params: { canton: canton } })">{{ $t('nav').artists }}</nuxt-link>
               <nuxt-link :to="localePath({ name: 'canton-auditions', params: { canton: canton } })">{{ $t('nav').auditions }}</nuxt-link>
+              <!-- Add offres d'emploi page to canton de vaud only -->
+              <nuxt-link v-if="canton == 'vd'" :to="localePath({ name: 'canton-offres-emploi', params: { canton: canton } })">Offres d'emploi</nuxt-link>
             </ul>
           </template>
         </navbar-item>
