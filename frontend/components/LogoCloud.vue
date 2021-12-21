@@ -5,7 +5,7 @@
     </div>
     <div :class="{ 'grid grid-cols-2 sm:grid-cols-4 2xl:grid-cols-6': isPartner, 'grid grid-cols-3 sm:grid-cols-4 2xl:grid-cols-6': !isPartner }">
       <div v-for="(item, i) in logos" :key="i">
-        <img class="filter grayscale w-full h-full object-contain" :src="'https://cdc-backend.minguely.ch' + item.url" />
+        <img class="filter grayscale w-full h-full object-contain" :src="'https://api.lesconcertsducoeur.ch' + item.url" />
       </div>
     </div>
   </div>

@@ -48,7 +48,7 @@ export default {
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: 'https://cdc-backend.minguely.ch/graphql',
+        httpEndpoint: 'https://api.lesconcertsducoeur.ch/graphql',
       },
     },
   },
