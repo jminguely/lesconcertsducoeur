@@ -2,7 +2,7 @@
   <div class="text-xl">
     <Headline>
       <template #headline>Offres d'emploi</template>
-      <template #content> L’Association <i>Les Concerts du Cœur Vaudois</i> cherche un.en&nbsp;:</template>
+      <template #content> L’Association <i>Les Concerts du Cœur Vaudois</i> cherche un.e&nbsp;:</template>
     </Headline>
 
     <h2 class="mt-8 mb-4 text-2xl lg:text-3xl font-playFair">Chargé.e d’administration</h2>
