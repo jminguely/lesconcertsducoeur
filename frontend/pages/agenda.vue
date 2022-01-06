@@ -112,7 +112,7 @@ export default {
       this.cantonFilter = ''
     },
     handleYears(el) {
-      console.log(el)
+      // console.log(el)
     },
     getColor(canton) {
       if (canton === 'VS') return 'vs'

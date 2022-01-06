@@ -50,7 +50,7 @@ export default {
   },
   mounted() {
     this.canton = this.$route.params.canton
-    console.log(window)
+    // console.log(window)
     if (process.browser) {
       window.rnw.tamaro.runWidget('.rnw-widget-container', {
         language: this.$i18n.locale,

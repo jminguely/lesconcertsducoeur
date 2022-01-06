@@ -183,7 +183,7 @@ export default {
       }
       if (hasDate && hasTime) data.date_time = this.$dateFns.formatISO(new Date(`${date}T${time}`))
 
-      console.log(data)
+      // console.log(data)
       return data
     },
     fromHex(h) {

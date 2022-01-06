@@ -118,7 +118,7 @@ export default {
     for (let i = 0; i < this.meta_posts.length; i++) {
       setTimeout(() => {
         const postData = this.parseCalendarEntry(this.meta_posts[i])
-        console.log(JSON.stringify(postData))
+        // console.log(JSON.stringify(postData))
         // console.log(JSON.stringify(postData))
         if (postData.title == null || postData.locale == null) {
           // This certainly means that it has a french version

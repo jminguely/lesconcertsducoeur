@@ -90,7 +90,7 @@ export default {
   },
   methods: {
     setActiveAccordionItem(i) {
-      console.log(i)
+      // console.log(i)
       this.activeAccordionItem = i
     },
   },
