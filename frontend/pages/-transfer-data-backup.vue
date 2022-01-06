@@ -34,7 +34,7 @@
     </div> -->
     {{ meta_posts.length }}
     <DateDivider>
-      <template #date>2021</template>
+      <template #date>2022</template>
     </DateDivider>
 
     <template v-if="data != null">
@@ -91,7 +91,7 @@ export default {
 
   computed: {
     years() {
-      return [2016, 2017, 2018, 2019, 2020, 2021]
+      return [2016, 2017, 2018, 2019, 2020, 2021, 2022]
     },
     agendaPosts() {
       return this.wpPosts[2].data.filter((el) => el.post_type === 'agenda')

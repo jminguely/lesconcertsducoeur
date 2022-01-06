@@ -8,7 +8,7 @@
       <ClassicSelect :options="cantons" :selected-item.sync="cantonFilter" default-item="VS">
         <template #label>{{ $t('agenda').canton }}</template>
       </ClassicSelect>
-      <ClassicSelect :options="years" :selected-item.sync="yearFilter" default-item="2021">
+      <ClassicSelect :options="years" :selected-item.sync="yearFilter" default-item="2022">
         <template #label>{{ $t('agenda').pastConcerts }}</template>
       </ClassicSelect>
       <!-- <a class="cursor-pointer" @click="resetFilters()">Effacer les filtres</a> -->
@@ -26,7 +26,7 @@
     </div>
 
     <DateDivider>
-      <template #date>{{ yearFilter || 2021 }}</template>
+      <template #date>{{ yearFilter || 2022 }}</template>
     </DateDivider>
 
     <template v-if="data != null">
@@ -88,7 +88,7 @@ export default {
 
   computed: {
     years() {
-      return ['2021', '2020', '2019', '2018', '2017', '2016']
+      return ['2022', '2021', '2020', '2019', '2018', '2017', '2016']
     },
     cantons() {
       return ['VS', 'VD', 'GE']
