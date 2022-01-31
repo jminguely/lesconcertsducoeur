@@ -52,10 +52,25 @@ export default {
     },
     async getContent(canton) {
       const query = gql`
-        query getAudition($locale: String, $canton: ID) {
-          auditions(locale: $locale, where: { canton: $canton }) {
+        query getAudition($canton: ID) {
+          auditions(where: { canton: $canton }) {
             id
             locale
+            localizations {
+              id
+              locale
+              content {
+                __typename
+                ... on ComponentContentText {
+                  text
+                  id
+                }
+              }
+              hero {
+                headline
+                subhead
+              }
+            }
             content {
               __typename
               ... on ComponentContentText {
@@ -89,8 +104,10 @@ export default {
         .catch((e) => {
           if (process.env.dev) console.log(e)
         })
-      console.log(this.data)
-      if (this.data != null) this.audition = this.data.auditions[0]
+      if (this.data != null) {
+        if (locale === this.data.auditions[0].locale) this.audition = this.data.auditions[0]
+        else this.audition = this.data.auditions[0].localizations.find((localization) => localization.locale === locale)
+      }
     },
   },
 }
