@@ -16,16 +16,6 @@
     }
   },
   "attributes": {
-    "canton_switch": {
-      "type": "component",
-      "repeatable": false,
-      "component": "content.canton-switch",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "content": {
       "pluginOptions": {
         "i18n": {

@@ -173,7 +173,7 @@ export default {
     concertTypes: [
       {
         title: 'Concerts médiation traditionnels',
-        text: `Ces concerts sont organisés sous forme traditionnelle : les lieux de vie se transforment en salle de concert pour les résident·e·s, les malades, les bénéficiaires, le personnel ainsi que les proches : 
+        text: `Ces concerts sont organisés sous forme traditionnelle : les lieux de vie se transforment en salle de concert pour les résident·e·s, les malades, les bénéficiaires, le personnel ainsi que les proches :
       <ul class="pt-2">
         <li>— Le concert dure entre 45 minutes et une heure ;</li>
         <li>— Les artistes se présentent et parlent des pièces qu’ils et elles vont interpréter ;</li>
@@ -182,7 +182,7 @@ export default {
       },
       {
         title: 'Concerts à l’extérieur',
-        text: `En fonction de la météo et de la situation sanitaire, des concerts à l’extérieur sont également possibles, dans des jardins, sur des terrasses, sur des balcons ou même sur des parkings : 
+        text: `En fonction de la météo et de la situation sanitaire, des concerts à l’extérieur sont également possibles, dans des jardins, sur des terrasses, sur des balcons ou même sur des parkings :
       <ul class="pt-2">
         <li>— Le concert dure entre 45 minutes et une heure ;</li>
         <li>— Le public peut écouter depuis les balcons ou à distance ;</li>
@@ -193,7 +193,7 @@ export default {
       },
       {
         title: 'Concerts itinérants',
-        text: `Dans les hôpitaux, les cliniques ou les EMS les artistes peuvent se déplacer avec leurs instruments de service en service  et d’étage en étage : 
+        text: `Dans les hôpitaux, les cliniques ou les EMS les artistes peuvent se déplacer avec leurs instruments de service en service  et d’étage en étage :
       <ul class="pt-2">
         <li>— Chaque intervention dure une quinzaine de minutes maximum ;</li>
         <li>— La musique est destinée aux patient·e·s, à leurs proches ainsi qu’au personnel ;</li>
@@ -203,7 +203,7 @@ export default {
       },
       {
         title: 'Concerts dans les chambres',
-        text: `La possibilité est offerte aux patient·e·s et aux résident·e·s de recevoir des « mini-concerts » privés : 
+        text: `La possibilité est offerte aux patient·e·s et aux résident·e·s de recevoir des « mini-concerts » privés :
       <ul class="pt-2">
         <li>— Le concert dure une quinzaine de minutes ;</li>
         <li>— L’artiste s’installe dans la chambre du/de la patient·e qui peut choisir les pièces qu’il ou elle souhaite entendre parmi le répertoire de l’artiste ;</li>
@@ -213,12 +213,12 @@ export default {
       {
         title: 'Concerts virtuels',
         text: `Des concerts en live streaming peuvent être diffusés dans les institutions :  de leur domicile ou d’un studio de musique,  les artistes proposent un <i>concert live</i> et sont prêts à ouvrir le dialogue sur la musique qu’ils et elles proposent.<br>
-          Si l’installation technologique de l’institution le permet, il est possible de retransmettre le concert dans tout l’établissement. 
+          Si l’installation technologique de l’institution le permet, il est possible de retransmettre le concert dans tout l’établissement.
 `,
       },
       {
         title: 'Rencontres virtuelles avec des artistes',
-        text: `Ces rencontres se font au moyen d’une tablette de type iPad fourni par l’institution qui circule de chambre en chambre, assurant la diffusion d’un·e musicien·ne connecté·e ; 
+        text: `Ces rencontres se font au moyen d’une tablette de type iPad fourni par l’institution qui circule de chambre en chambre, assurant la diffusion d’un·e musicien·ne connecté·e ;
       <ul class="pt-2">
         <li>— Cela permet aux résident·e·s d'échanger individuellement avec le musicien, de lui poser des questions et de choisir des pièces parmi le répertoire de l’artiste ;</li>
         <li>— Ces rendez-vous musicaux constituent une solution idéale pour les institutions où les résident·e·s ne peuvent pas quitter leur chambre ni recevoir de visites.</li>
@@ -228,7 +228,7 @@ export default {
     content: [
       {
         title: 'Répertoire',
-        content: `L'élaboration des programmes et répertoires proposés répond aux critères suivants : 
+        content: `L'élaboration des programmes et répertoires proposés répond aux critères suivants :
       <ul class="pt-2">
         <li>— Interpréter des œuvres spécifiques demandées en amont par le public ;</li>
         <li>— Faire revivre le répertoire musical régional ;</li>
@@ -238,7 +238,7 @@ export default {
       },
       {
         title: 'Organisation',
-        content: `Pour chaque concert, <i>Les Concerts du Cœur</i> offrent les services suivants :  
+        content: `Pour chaque concert, <i>Les Concerts du Cœur</i> offrent les services suivants :
       <ul class="pt-2">
         <li>— Organisation du concert selon la date et l’horaire souhaités par l’institution ;</li>
         <li>— Coordination avec les artistes ; </li>
@@ -267,60 +267,6 @@ export default {
     title: 'Médias',
     findUsOnSocialMedias: 'Retrouvez-nous sur nos réseaux sociaux',
     images: 'Images',
-  },
-  auditions: {
-    hero: {
-      title: 'Auditions',
-      subtitle: {
-        vs: 'Souhaitez-vous devenir musicien·ne des <i>Concerts du Cœur Valaisans</i> ?',
-        vd: 'Souhaitez-vous devenir musicien·ne des <i>Concerts du Cœur Vaudois</i> ?',
-        ge: 'Souhaitez-vous devenir musicien·ne des <i>Concerts du Cœur Genevois</i> ?',
-      },
-      text: 'Avez-vous envie de proposer des moments de musique aux personnes âgées, hospitalisées, incarcérées, en situation de handicap ou de précarité, tout en développant vos aptitudes de médiation culturelle grâce à des concerts rémunérés ?',
-      text_1: 'Nous organisons des auditions afin de recruter de nouvelles·aux musicien·ne·s.',
-    },
-    prochainesAuditions: 'Prochaines auditions',
-    requirements: {
-      vs: [
-        `
-    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Les artistes intéressé·e·s doivent répondre aux critères ci-dessous:</h2>
-    <ul class="pt-2">
-      <li>— résider dans le canton du Valais (en tout cas la majorité des membres de la formation) ;</li>
-      <li>— démontrer un standard très élevé de qualité musicale et de technique instrumentale ;</li>
-      <li>— posséder de bonnes capacités de communication et une aisance manifeste à établir une relation avec le public en l’invitant à participer autant que faire se peut ;</li>
-      <li>— proposer un choix de répertoire varié et adapté aux spécificités d’un ou plusieurs publics cibles des <i>Concerts du Cœur</i> ;</li>
-      <li>— s’engager à respecter et à défendre les valeurs de l’association.</li>
-    </ul>`,
-        `Tous les styles de musique sont bienvenus (classique / jazz / folklorique / musique du monde etc.).`,
-        '<i>Les Concerts du Cœur</i> organiseront des auditions en 2022.',
-      ],
-      vd: [
-        `
-    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Les artistes intéressé·e·s doivent répondre aux critères ci-dessous: </h2>
-    <ul class="pt-2">
-      <li>— résider dans le canton de Vaud (en tout cas la majorité des membres de la formation) ;</li>
-      <li>— démontrer un standard très élevé de qualité musicale et de technique instrumentale ;</li>
-      <li>— posséder de bonnes capacités de communication et une aisance manifeste à établir une relation avec le public en l’invitant à participer autant que faire se peut ;</li>
-      <li>— proposer un choix de répertoire varié et adapté aux spécificités d’un ou plusieurs publics cibles des <i>Concerts du Cœur</i> ;</li>
-      <li>— s’engager à respecter et à défendre les valeurs de l’association.</li>
-    </ul>`,
-        `Tous les styles de musique sont bienvenus (classique / jazz / folklorique / musique du monde etc.).`,
-        '<i>Les Concerts du Cœur</i> Vaudois organiseront des auditions en 2022.',
-      ],
-      ge: [
-        `
-    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Les artistes intéressé·e·s doivent répondre aux critères ci-dessous:</h2>
-    <ul class="pt-2">
-      <li>— résider dans le canton de Genève (en tout cas la majorité des membres de la formation) ;</li>
-      <li>— démontrer un standard très élevé de qualité musicale et de technique instrumentale ;</li>
-      <li>— posséder de bonnes capacités de communication et une aisance manifeste à établir une relation avec le public en l’invitant à participer autant que faire se peut ;</li>
-      <li>— proposer un choix de répertoire varié et adapté aux spécificités d’un ou plusieurs publics cibles des <i>Concerts du Cœur</i> ;</li>
-      <li>— s’engager à respecter et à défendre les valeurs de l’association.</li>
-    </ul>`,
-        `Tous les styles de musique sont bienvenus (classique / jazz / folklorique / musique du monde etc.).`,
-        '<i>Les Concerts du Cœur</i> Genevois organiseront des auditions en 2022.',
-      ],
-    },
   },
   association: {
     comite: {

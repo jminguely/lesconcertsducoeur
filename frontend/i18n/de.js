@@ -116,7 +116,7 @@ export default {
     concertTypes: [
       {
         title: 'Traditionelle Konzerte',
-        text: `Dieses Format bietet ein Konzert im traditionellen Sinne: Der Aufenthaltsraum verwandelt sich in einen Konzertsaal für die Bewohner:innen, Patient:innen, Personal und Angehörige: 
+        text: `Dieses Format bietet ein Konzert im traditionellen Sinne: Der Aufenthaltsraum verwandelt sich in einen Konzertsaal für die Bewohner:innen, Patient:innen, Personal und Angehörige:
       <ul class="pt-2">
         <li>— Das Konzert dauert zwischen 45 und 60 Minuten;</li>
         <li>— Die Künstler:innen führen mit kurzen Moderationen durch das Konzert;</li>
@@ -125,7 +125,7 @@ export default {
       },
       {
         title: 'Konzerte im Freien',
-        text: `Je nach Wetterbedingungen sind Konzerte im Freien – in den Gärten, auf den Terrassen oder sogar auf den Parkplätzen Ihrer Institution – möglich: 
+        text: `Je nach Wetterbedingungen sind Konzerte im Freien – in den Gärten, auf den Terrassen oder sogar auf den Parkplätzen Ihrer Institution – möglich:
       <ul class="pt-2">
         <li>— Das Konzert dauert zwischen 45 und 60 Minuten;</li>
         <li>— Das Publikum kann aus der Ferne von den Balkonen, Fenstern oder Terrassen zuhören;</li>
@@ -146,7 +146,7 @@ export default {
       },
       {
         title: 'Konzerte in den Zimmern',
-        text: `Den PatientInnen und BewohnerInnen wird die Möglichkeit geboten, private Minikonzerte in ihren Zimmern zu geniessen: 
+        text: `Den PatientInnen und BewohnerInnen wird die Möglichkeit geboten, private Minikonzerte in ihren Zimmern zu geniessen:
       <ul class="pt-2">
         <li>— Die Konzerte dauern ca. 15 Minuten;</li>
         <li>— Die Musiker:innen spielen im Zimmer des/der PatientIn, der/die aus dem jeweiligen Repertoire einige Werke auswählen darf;</li>
@@ -155,12 +155,12 @@ export default {
       },
       {
         title: 'Virtuelle Konzerte',
-        text: `Live-Konzerte werden direkt in Ihre Institutionen übertragen: Die Künstler:innen musizieren von zu Hause oder von einem Musikstudio aus und treten in den direkten, virtuellen Dialog mit den Bewohner:innen und Patient:innen. 
+        text: `Live-Konzerte werden direkt in Ihre Institutionen übertragen: Die Künstler:innen musizieren von zu Hause oder von einem Musikstudio aus und treten in den direkten, virtuellen Dialog mit den Bewohner:innen und Patient:innen.
 Sofern es die technische Ausstattung der Institution zulässt, ist es auch möglich, das Konzert in der gesamten Institution, resp. an verschiedenen Abteilungen zu übertragen.`,
       },
       {
         title: 'Virtuelle Treffen mit Künstlern',
-        content: `Das persönliche, virtuelle Treffen wird durch ein iPad der Institution ermöglicht, das mit Hilfe Ihres Personals von Zimmer zu Zimmer zirkuliert: 
+        content: `Das persönliche, virtuelle Treffen wird durch ein iPad der Institution ermöglicht, das mit Hilfe Ihres Personals von Zimmer zu Zimmer zirkuliert:
       <ul class="pt-2">
         <li>— Die BewohnerInnen treten in den direkten Dialog mit den KünstlerInnen, können Fragen stellen und aus dem jeweiligen Repertoire einige Werke auswählen;</li>
         <li>— Diese Form ist eine ideale Lösung für Institutionen, in denen die BewohnerInnen ihre Zimmer nicht verlassen können.</li>
@@ -170,7 +170,7 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
     content: [
       {
         title: 'Repertoire',
-        content: `Die vorgeschlagenen Formate und Programme erfüllen folgende Kriterien: 
+        content: `Die vorgeschlagenen Formate und Programme erfüllen folgende Kriterien:
       <ul class="pt-2">
         <li>— Aufführung  eines vorab besprochenen Repertoires, um individuell auf die musikalischen Vorlieben Ihrer Institution einzugehen;</li>
         <li>— Wiederbelebung des regionalen Musikschatzes durch die jeweilige Darbietung von einigen Volksliedern;</li>
@@ -180,7 +180,7 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
       },
       {
         title: 'Organisation',
-        content: `Der Verein <i>Les Concerts du Cœur</i> bietet für jede gebuchte Veranstaltung folgende Dienstleistungen:   
+        content: `Der Verein <i>Les Concerts du Cœur</i> bietet für jede gebuchte Veranstaltung folgende Dienstleistungen:
       <ul class="pt-2">
         <li>— Organisation der Konzerte laut Wunschdatum-/Uhrzeit der Institution;</li>
         <li>— Koordination der Künstler:nnen;</li>
@@ -208,60 +208,6 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
     title: 'Medien',
     findUsOnSocialMedias: 'Folgen Sie uns auf den sozialen Netzwerken!',
     images: 'Bilder',
-  },
-  auditions: {
-    hero: {
-      title: 'Vorsingen',
-      subtitle: {
-        vs: 'Werden auch Sie Musiker:in des Vereins <i>Les Concerts du Cœur</i>!',
-        vd: 'Werden auch Sie Musiker:in des Vereins <i>Les Concerts du Cœur Vaudois</i>!',
-        ge: 'Werden auch Sie Musiker:in des Vereins <i>Les Concerts du Cœur Genevois</i>!',
-      },
-      text: 'Möchten auch Sie betagten oder kranken Menschen, Inhaftierten und sozial beeinträchtigten Menschen besondere musikalische Momente schenken und gleichzeitig Ihre Fähigkeiten zur Kulturvermittlung durch bezahlte Konzerte entwickeln?',
-      text_1: 'Wir freuen uns auf Ihre Bewerbung für das nächste Vorsingen!',
-    },
-    prochainesAuditions: 'Nächste Vorsingen',
-    requirements: {
-      vs: [
-        `
-    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Interessierte Künstler:innen müssen die folgenden Kriterien erfüllen:</h2>
-    <ul class="pt-2">
-      <li>— Sehr hoher Standard an musikalischer Qualität und Instrumentaltechnik;</li>
-      <li>— Augezeichnete Kommunikationsfähigkeiten sowie eine Affinität zur Konzertmoderation und zwischenmenschlicher Kommunikation;</li>
-      <li>— Nachweis eines abwechslungsreichen Repertoires, das auf die Besonderheiten einer oder mehrerer Zielgruppen der Konzerte von <i>Les concerts du Cœur</i> angepasst werden kann;</li>
-      <li>— Vollständiger oder mehrheitlicher Wohnsitz des Ensembles im Kanton Wallis;</li>
-      <li>— Wahrnehmung und Vermittlung der Vereins-Werte.</li>
-    </ul>`,
-        `Das gesamte Spektrum an Musikrichtungen ist willkommen!`,
-        'Der Verein <i>Les Concerts du Cœur</i> wird wiederum im Jahr 2022 Vorsingen anbieten. Für mehr Informationen freuen wir uns auf Ihre <a href="mailto:valais@lesconcertsducoeur.ch">Kontaktaufnahme</a>.',
-      ],
-      vd: [
-        `
-    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Interessierte Künstler:innen müssen die folgenden Kriterien erfüllen:</h2>
-    <ul class="pt-2">
-      <li>— Sehr hoher Standard an musikalischer Qualität und Instrumentaltechnik;</li>
-      <li>— Augezeichnete Kommunikationsfähigkeiten sowie eine Affinität zur Konzertmoderation und zwischenmenschlicher Kommunikation;</li>
-      <li>— Nachweis eines abwechslungsreichen Repertoires, das auf die Besonderheiten einer oder mehrerer Zielgruppen der Konzerte von <i>Les concerts du Cœur</i> angepasst werden kann;</li>
-      <li>— Vollständiger oder mehrheitlicher Wohnsitz des Ensembles im Kanton Waadt;</li>
-      <li>— Wahrnehmung und Vermittlung der Vereins-Werte.</li>
-    </ul>`,
-        `Das gesamte Spektrum an Musikrichtungen ist willkommen!`,
-        'Der Verein <i>Les Concerts du Cœur Vaudois</i> wird wiederum im Jahr 2022 Vorsingen anbieten. Für mehr Informationen freuen wir uns auf Ihre <a href="mailto:vaud@lesconcertsducoeur.ch">Kontaktaufnahme</a>.',
-      ],
-      ge: [
-        `
-    <h2 class="mt-12 text-xl lg:text-3xl font-playFair">Interessierte Künstler:innen müssen die folgenden Kriterien erfüllen:</h2>
-    <ul class="pt-2">
-      <li>— Sehr hoher Standard an musikalischer Qualität und Instrumentaltechnik;</li>
-      <li>— Augezeichnete Kommunikationsfähigkeiten sowie eine Affinität zur Konzertmoderation und zwischenmenschlicher Kommunikation;</li>
-      <li>— Nachweis eines abwechslungsreichen Repertoires, das auf die Besonderheiten einer oder mehrerer Zielgruppen der Konzerte von <i>Les concerts du Cœur</i> angepasst werden kann;</li>
-      <li>— Vollständiger oder mehrheitlicher Wohnsitz des Ensembles im Kanton Genf;</li>
-      <li>— Wahrnehmung und Vermittlung der Vereins-Werte.</li>
-    </ul>`,
-        `Das gesamte Spektrum an Musikrichtungen ist willkommen!`,
-        'Der Verein <i>Les Concerts du Cœur Genevois</i> wird wiederum im Jahr 2022 Vorsingen anbieten. Für mehr Informationen freuen wir uns auf Ihre <a href="mailto:geneve@lesconcertsducoeur.ch">Kontaktaufnahme</a>.',
-      ],
-    },
   },
   association: {
     comite: {
