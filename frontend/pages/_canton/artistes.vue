@@ -4,10 +4,6 @@
       <template #headline>{{ $t('artistes').title }} </template>
     </Headline>
 
-    <donate-button-link class="hidden lg:block absolute right-28 top-6" :to="localePath('canton-auditions')" :canton="canton">
-      {{ $t('auditions').hero.title }}
-    </donate-button-link>
-
     <template v-if="!$fetchState.pending">
       <template v-if="data != null">
         <div class="gap-y-5 sm:gap-x-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
