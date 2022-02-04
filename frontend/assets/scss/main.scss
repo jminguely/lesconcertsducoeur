@@ -38,6 +38,22 @@ h2 > div > p {
   p {
     @apply text-xl mt-4;
   }
+
+  &.ge {
+    blockquote {
+      @apply text-ge;
+    }
+  }
+  &.vs {
+    blockquote {
+      @apply text-vs;
+    }
+  }
+  &.vd {
+    blockquote {
+      @apply text-vd;
+    }
+  }
 }
 
 #sidebar,
