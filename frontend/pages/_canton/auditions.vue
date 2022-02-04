@@ -3,7 +3,7 @@
     <Headline>
       <template #headline>{{ audition.hero.headline }}</template>
       <template #content>
-        <div class="prose prose-xl" v-html="$md.render(audition.hero.subhead)"></div>
+        <div class="prose prose-xl text-" :class="[`text-${canton}`]" v-html="$md.render(audition.hero.subhead)"></div>
       </template>
     </Headline>
 
