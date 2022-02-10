@@ -85,15 +85,13 @@
 
       <div id="sidebar" :class="{ visible: menu, hidden: !menu }" class="mt-4">
         <ul class="flex flex-col overflow-hidden">
-          <navbar-item v-for="(canton, i) in cantons" :key="'mobile-navbar' + i + canton" :canton="canton" class="mt-2">
-            <template #content>{{ $t('canton')[canton] }}</template>
+          <navbar-item v-for="(cantonNav, i) in cantons" :key="'mobile-navbar' + i + cantonNav" :canton="cantonNav" class="mt-2">
+            <template #content>{{ $t('canton')[cantonNav] }}</template>
             <template #items>
               <ul class="flex flex-col overflow-hidden text-xl">
-                <nuxt-link :to="localePath({ name: 'canton-association', params: { canton: canton } })">{{ $t('nav').association }}</nuxt-link>
-                <nuxt-link :to="localePath({ name: 'canton-artistes', params: { canton: canton } })">{{ $t('nav').artists }}</nuxt-link>
-                <nuxt-link :to="localePath({ name: 'canton-auditions', params: { canton: canton } })">{{ $t('nav').auditions }}</nuxt-link>
-                <!-- Add offres d'emploi page to canton de vaud only -->
-                <nuxt-link v-if="canton == 'vd'" :to="localePath({ name: 'canton-offres-emploi', params: { canton: canton } })">Offres d'emploi</nuxt-link>
+                <nuxt-link :to="localePath({ name: 'canton-association', params: { canton: cantonNav } })">{{ $t('nav').association }}</nuxt-link>
+                <nuxt-link :to="localePath({ name: 'canton-artistes', params: { canton: cantonNav } })">{{ $t('nav').artists }}</nuxt-link>
+                <nuxt-link :to="localePath({ name: 'canton-auditions', params: { canton: cantonNav } })">{{ $t('nav').auditions }}</nuxt-link>
               </ul>
             </template>
           </navbar-item>
@@ -131,9 +129,9 @@
 </template>
 
 <script>
+import { gql } from 'graphql-tag'
 import SocialLink from '@/components/pages/SocialLink.vue'
 // import NavChevronRight from '@/components/NavChevronRight.vue'
-import { gql } from 'graphql-tag'
 export default {
   components: {
     SocialLink,

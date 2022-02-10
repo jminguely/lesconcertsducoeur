@@ -52,8 +52,7 @@
         'border-vd': canton == 'vd',
         'border-ge': canton == 'ge',
         'h-0': !dropdown,
-        'h-24': dropdown && canton != 'vd',
-        'h-32': dropdown && canton == 'vd',
+        'h-24': dropdown,
         'pointer-events-none': !dropdown,
       }"
     >
