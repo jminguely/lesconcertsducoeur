@@ -8,6 +8,7 @@ export default {
     title: 'Les Concerts du Cœur',
     htmlAttrs: {
       lang: 'fr',
+      class: 'bg-white',
     },
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { hid: 'description', name: 'description', content: '' }],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
