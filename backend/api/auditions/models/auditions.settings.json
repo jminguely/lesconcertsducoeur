@@ -32,8 +32,7 @@
         "content.carousel",
         "content.quotation",
         "content.two-columns-rich-text",
-        "content.text",
-        "content.file"
+        "content.text"
       ]
     },
     "hero": {
