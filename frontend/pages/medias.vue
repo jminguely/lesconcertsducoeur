@@ -102,11 +102,11 @@
 </template>
 
 <script>
+import { gql } from 'graphql-tag'
 import Headline from '@/components/typography/Headline.vue'
 import SocialLink from '@/components/pages/SocialLink.vue'
 import Spacing from '@/components/typography/Spacing.vue'
 import Carousel from '@/components/pages/Carousel.vue'
-import { gql } from 'graphql-tag'
 
 export default {
   components: {
@@ -220,6 +220,12 @@ export default {
           subtitle: 'Le Nouvelliste',
           date: '6 mai 2020',
           link: 'https://api.lesconcertsducoeur.ch/uploads/Cd_C_Le_Nouvelliste_coronavirs_07052020_compressed_da2af00cf0.pdf',
+        },
+        {
+          title: 'Les Concerts du Coeur Vaudois avec Mary Rose',
+          subtitle: 'LFM',
+          date: '16 décembre 2020',
+          link: 'https://www.lfm.ch/podcasts/morax-dans-la-radio-faites-nous-rever-16122020-0655/',
         },
         {
           title: 'Des notes pour réconforter les cœurs à Monthey',
