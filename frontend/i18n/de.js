@@ -9,19 +9,19 @@ export default {
     agenda: 'Agenda',
     medias: 'Medien',
     contact: 'Kontakt',
-    supportUs: 'Uns unter-stützen',
+    supportUs: 'Unterstützen',
     newsletter: 'Newsletter abonnieren',
   },
   home: {
     hero: {
       subtitle:
-        'bringt Musik in den Alltag von betagten oder kranken, inhaftierten oder sozial beeinträchtigten Personen – kurz, zu Menschen, die nicht auf der Sonnenseite des Lebens stehen. Es ist der Versuch, die soziale Isolation dank geteilten Emotionen in Musikworkshops, Konzerten sowie im Austausch mit den Künstler:innen aufzubrechen.',
+        'bringen Musik in den Alltag von betagten oder kranken, inhaftierten oder sozial beeinträchtigten Personen – kurz, zu Menschen, die nicht auf der Sonnenseite des Lebens stehen. Es ist der Versuch, die soziale Isolation dank geteilten Emotionen in Musikworkshops, und Konzerten durch den Austausch mit den Künstler:innen aufzubrechen.',
     },
     news: {
       title: 'Aktuell',
     },
     organizeConcert: {
-      title: 'Möchten Sie GastgeberIn eines Konzertes werden',
+      title: 'Möchten Sie Gastgeber:in eines Konzertes werden',
       vs: 'Im Kanton Wallis?',
       vd: 'Im Kanton Waadt?',
       ge: 'Im Kanton Genf?',
@@ -54,7 +54,7 @@ export default {
       title: 'In Partnerschaft mit',
     },
     sponsors: {
-      title: 'Sponsoren',
+      title: 'Mit Unterstützungsbeiträgen von',
     },
   },
   mission: {
@@ -85,7 +85,7 @@ export default {
         },
         {
           title: 'Emotionen durch Musik erleben',
-          text: 'Durch die Sprache der Musik sowie die zwischenmenschliche Interaktion kann die Isolation von Menschen durchbrochen werden: Jüngste Studien zeigen, dass musikalische Aktivitäten ähnliche Wirkungen erzeugen können wie Antidepressiva1<sup class="text-sm">1</sup>, die negativen Auswirkungen der Alzheimer-Krankheit verzögern sowie die soziale Isolation verhindern können.<sup class="text-sm">2</sup><br /><br /><p class="pb-2 text-sm"><sup>1</sup> CHANDA, Mona Lisa et LEVITIN, Daniel J. (avril 2013), Trends in Cognitive Sciences</p><p class="text-sm"><sup>2</sup> PLATEL, Hervé (octobre 2015), Pourquoi la musique est bonne pour le cerveau ?</p>',
+          text: 'Durch die Sprache der Musik sowie die zwischenmenschliche Interaktion kann die Isolation von Menschen durchbrochen werden: Jüngste Studien zeigen, dass musikalische Aktivitäten ähnliche Wirkungen erzeugen können wie Antidepressiva<sup class="text-sm">1</sup>, die negativen Auswirkungen der Alzheimer-Krankheit verzögern sowie die soziale Isolation verhindern können.<sup class="text-sm">2</sup><br /><br /><p class="pb-2 text-sm"><sup>1</sup> CHANDA, Mona Lisa et LEVITIN, Daniel J. (avril 2013), Trends in Cognitive Sciences</p><p class="text-sm"><sup>2</sup> PLATEL, Hervé (octobre 2015), Pourquoi la musique est bonne pour le cerveau ?</p>',
         },
         {
           title: 'Kultur hautnah vermitteln',
@@ -93,10 +93,10 @@ export default {
         },
         {
           title: 'Musikalische Vielfalt fördern',
-          text: '<i>Les Concerts du Cœur</i> repräsentieren die musikalische Vielfalt und die hohe Qualität junger Schweizer KünstlerInnen durch die stilistische Breite der Konzertprogramme sowie die unterschiedlichsten Instrumente und Besetzungen.',
+          text: '<i>Les Concerts du Cœur</i> repräsentieren die musikalische Vielfalt und die hohe Qualität junger Schweizer Künstler:innen durch die stilistische Breite der Konzertprogramme sowie die unterschiedlichsten Instrumente und Besetzungen.',
         },
         {
-          title: 'Professionellen Status der KünstlerInnen fördern und ihre gesellschaftliche Rolle anerkennen',
+          title: 'Professionellen Status der Künstler:innen fördern und ihre gesellschaftliche Rolle anerkennen',
           text: 'Der Verein <i>Les Concerts du Cœur</i> bietet musikalische Momente der Extraklasse, die von professionellen Musiker:innen der jeweiligen Region dargeboten werden. Mit unserer garantierten Gage sowie unseren Beiträgen an die erste und zweite Säule tragen wir zur Anerkennung ihres professionellen Status bei.',
         },
       ],
@@ -109,7 +109,7 @@ export default {
         <p>So wurden beispielsweise während der Pandemie die Konzerte nicht abgesagt, sondern jeweils Alternativen für einen kontinuierlichen Musikaustausch gesucht.</p>`,
       text: `<p>Mit unseren Konzerten bieten wir Ihnen ein breites Angebot an qualitativ hochwertigen Musikprogrammen:<br>
       Unsere Künstler:innen sind professionell ausgebildete Musiker:innen mit einer hohen Ausdruckskraft, starker Kommunikationsfähigkeit und Sensibilität und passen sich mit Leichtigkeit der jeweiligen Situation im Dienste des Publikums und der Musik an.</p>
-<p>Unsere stlistisch breit gefächerten Konzerte können zu jeder Tageszeit während der Woche sowie am Wochenende gebucht werden.</p>
+<p>Unsere stilistisch breit gefächerten Konzerte können zu jeder Tageszeit während der Woche sowie am Wochenende gebucht werden.</p>
 <p>Zögern Sie nicht, uns für nähere Informationen zu kontaktieren.</p>
 `,
     },
@@ -139,14 +139,14 @@ export default {
         text: `In Krankenhäusern und Kliniken, aber auch in Altersheimen laden die Musiker:innen zu kurzen Ständchen auf den jeweiligen Abteilungen ein:
       <ul class="pt-2">
         <li>— Jedes Konzert dauert maximal 15 Minuten;</li>
-        <li>— Die Musik ist für PatientInnen, ihre Angehörigen und das Personal bestimmt;</li>
+        <li>— Die Musik ist für Patient:innen, ihre Angehörigen und das Personal bestimmt;</li>
         <li>— Wer möchte, hat die Möglichkeit, den Musiker:innen durch die Institution zu folgen;</li>
         <li>— Insbesondere bei diesem Format passen die Musiker:innen ihr Repertoire und Moderation je nach Situation und Stimmung spontan an.</li>
       </ul>`,
       },
       {
         title: 'Konzerte in den Zimmern',
-        text: `Den PatientInnen und BewohnerInnen wird die Möglichkeit geboten, private Minikonzerte in ihren Zimmern zu geniessen:
+        text: `Den Patient:innen und Bewohner:innen wird die Möglichkeit geboten, private Minikonzerte in ihren Zimmern zu geniessen:
       <ul class="pt-2">
         <li>— Die Konzerte dauern ca. 15 Minuten;</li>
         <li>— Die Musiker:innen spielen im Zimmer des/der PatientIn, der/die aus dem jeweiligen Repertoire einige Werke auswählen darf;</li>
@@ -156,14 +156,14 @@ export default {
       {
         title: 'Virtuelle Konzerte',
         text: `Live-Konzerte werden direkt in Ihre Institutionen übertragen: Die Künstler:innen musizieren von zu Hause oder von einem Musikstudio aus und treten in den direkten, virtuellen Dialog mit den Bewohner:innen und Patient:innen.
-Sofern es die technische Ausstattung der Institution zulässt, ist es auch möglich, das Konzert in der gesamten Institution, resp. an verschiedenen Abteilungen zu übertragen.`,
+Sofern es die technische Ausstattung der Institution zulässt, ist es auch möglich, das Konzert in der gesamten Institution, resp. zu verschiedenen Abteilungen zu übertragen.`,
       },
       {
-        title: 'Virtuelle Treffen mit Künstlern',
-        content: `Das persönliche, virtuelle Treffen wird durch ein iPad der Institution ermöglicht, das mit Hilfe Ihres Personals von Zimmer zu Zimmer zirkuliert:
+        title: 'Virtuelle Konzerte mit Musiker:innen',
+        content: `Das persönliche, virtuelle Treffen wird durch ein iPad der Institution ermöglicht, das mit Hilfe Ihres Personals von Zimmer zu Zimmer zirkuliert::
       <ul class="pt-2">
-        <li>— Die BewohnerInnen treten in den direkten Dialog mit den KünstlerInnen, können Fragen stellen und aus dem jeweiligen Repertoire einige Werke auswählen;</li>
-        <li>— Diese Form ist eine ideale Lösung für Institutionen, in denen die BewohnerInnen ihre Zimmer nicht verlassen können.</li>
+        <li>— Die Bewohner:innen treten in den direkten Dialog mit den Künstler:innen, können Fragen stellen und aus dem jeweiligen Repertoire einige Werke auswählen;</li>
+        <li>— Diese Form ist eine ideale Lösung für Institutionen, in denen die Bewohner:innen ihre Zimmer nicht verlassen können.</li>
       </ul>`,
       },
     ],
@@ -175,7 +175,7 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
         <li>— Aufführung  eines vorab besprochenen Repertoires, um individuell auf die musikalischen Vorlieben Ihrer Institution einzugehen;</li>
         <li>— Wiederbelebung des regionalen Musikschatzes durch die jeweilige Darbietung von einigen Volksliedern;</li>
         <li>— Aktive Einbindung des Publikums bei bekannten Werken wie beispielsweise Volksliedern;</li>
-		    <li>Gemeinsame Entdeckung neuen Repertoires, welches die Neugier des Publikums wecken soll.</li>
+		    <li>— Gemeinsame Entdeckung neuen Repertoires, welches die Neugier des Publikums wecken soll.</li>
       </ul>`,
       },
       {
@@ -183,7 +183,7 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
         content: `Der Verein <i>Les Concerts du Cœur</i> bietet für jede gebuchte Veranstaltung folgende Dienstleistungen:
       <ul class="pt-2">
         <li>— Organisation der Konzerte laut Wunschdatum-/Uhrzeit der Institution;</li>
-        <li>— Koordination der Künstler:nnen;</li>
+        <li>— Koordination der Künstler:innen;</li>
         <li>— Bereitstellen von Flyern und Plakaten zum Ausdruck für das jeweilige Konzert;</li>
         <li>— Bereitstellen von Material oder Instrumenten wie z. B. ein E-Piano;</li>
         <li>— Anträge für Unterstützungsbeiträge, um den Künstler:innen eine angemessene Gage zu zahlen;</li>
@@ -194,7 +194,7 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
     ],
     testimonial: {
       quote:
-        'Ihr Konzert hat unserem Pflegepersonal ermöglicht, die positive Wirkung der Musik auf alle unsere Bewohnerinnen und Bewohner zu übertragen. Das Konzert hat Ruhe, Gelassenheit, grosse Freude und viel Vergnügen in unser Haus gebracht.',
+        'Ihr Konzert hat unserem Pflegepersonal ermöglicht, die positive Wirkung der Musik auf alle unsere Bewohner:innen und Bewohner zu übertragen. Das Konzert hat Ruhe, Gelassenheit, grosse Freude und viel Vergnügen in unser Haus gebracht.',
       name: 'Claude Crettol',
       title: 'Direktor der Vereinigung Beaulieu',
     },
@@ -215,14 +215,14 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
     },
     soutien: 'Sie möchten uns unterstützen?',
     benevole: 'FreiwilligeR werden',
-    don: 'Spende machen',
+    don: 'Spenden',
     donate: 'spenden',
     membre: 'Mitglied werden',
     partners: 'Unsere Partner und Unterstützer',
   },
   soutien: {
     donate: {
-      title: 'Spende machen',
+      title: 'Spenden',
       vs: 'Walliser Verein',
       vd: 'Waadtländer Verein',
       ge: 'Genfer Verein',
