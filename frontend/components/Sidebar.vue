@@ -115,14 +115,6 @@
 
           <nuxt-link :to="localePath('contact')" class="text-xl font-newsCycle hover:font-bold"> {{ $t('nav').contact }} </nuxt-link>
         </div>
-
-        <div
-          class="hidden mt-4 lg:flex lg:items-center lg:w-full"
-          :class="{ 'border-2 border-concert-dark': !isSent && !hasError, 'border-2 border-green-500': isSent && !hasError, 'border-2 border-red-500': hasError && hasError }"
-        >
-          <input v-model="email" class="flex-auto px-2 py-1 focus:rounded-none focus:border-0 focus:outline-none" :placeholder="$t('nav').newsletter" @keyup.enter="subscribeNewsletter()" />
-          <button @click="subscribeNewsletter()"><nav-chevron-right class="h-5 hover:cursor-pointer" /></button>
-        </div>
       </div>
     </div>
   </div>
