@@ -120,6 +120,24 @@ export default {
       content: null,
       links: [
         {
+          title: 'Singen und meinen Körper fühlen: Im Gespräch mit der Sopranistin Laure Barras',
+          subtitle: 'Kanal9',
+          date: '31 mai 2022',
+          link: 'https://canal9.ch/de/singen-und-meinen-korper-fuhlen-im-gesprach-mit-der-sopranistin-laure-barras/',
+        },
+        {
+          title: 'Les Concerts du Coeur fêtent leur cinq centième',
+          subtitle: 'Radio RTS',
+          date: '16 avril 2022',
+          link: 'https://www.rts.ch/audio-podcast/2022/audio/les-concerts-du-coeur-fetent-leur-cinq-centieme-25816624.html',
+        },
+        {
+          title: '550e Concert du cœur, une success story valaisanne',
+          subtitle: 'Le Nouvelliste',
+          date: '1 avril 2022',
+          link: 'https://api.lesconcertsducoeur.ch/uploads/Nouvelliste_2022_d003ea20d6.pdf',
+        },
+        {
           title: 'La musique adoucit la vie',
           subtitle: 'Journal de Sierre',
           date: '27 janvier 2017',
