@@ -132,6 +132,12 @@ export default {
           link: 'https://www.rts.ch/audio-podcast/2022/audio/les-concerts-du-coeur-fetent-leur-cinq-centieme-25816624.html',
         },
         {
+          title: 'Les Concerts du Cœur: la musique à portée de tous',
+          subtitle: 'Léman Bleu',
+          date: '1 avril 2022',
+          link: 'https://www.lemanbleu.ch/fr/Actualites/Geneve/2022040193277-Les-Concerts-du-Coeur-la-musique-a-portee-de-tous.html',
+        },
+        {
           title: '550e Concert du cœur, une success story valaisanne',
           subtitle: 'Le Nouvelliste',
           date: '1 avril 2022',
