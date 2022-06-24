@@ -5,7 +5,7 @@
     </div>
     <div :class="{ 'grid grid-cols-2 sm:grid-cols-3 2xl:grid-cols-4': isPartner, 'grid grid-cols-2 sm:grid-cols-3 2xl:grid-cols-4': !isPartner }">
       <div v-for="(item, i) in logos" :key="i">
-        <img class="filter grayscale w-full h-full object-contain" :src="'https://api.lesconcertsducoeur.ch' + item.url" />
+        <img class="logo-item filter grayscale w-full h-full object-contain" :src="'https://api.lesconcertsducoeur.ch' + item.url" />
       </div>
     </div>
   </div>
@@ -25,3 +25,9 @@ export default {
   },
 }
 </script>
+
+<style>
+.logo-item {
+  max-width: 250px;
+}
+</style>
