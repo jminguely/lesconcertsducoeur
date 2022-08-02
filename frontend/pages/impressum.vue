@@ -8,16 +8,16 @@
       <h2 class="text-3xl font-playFair">Adresse de contact</h2>
       <p>
         <i>Les Concerts du Cœur</i><br />
-        Les Rocailles, rue des biolirs 6<br />
-        3963 Crans-Montana<br />
+        Rue des Creusets 16<br />
+        1950 Sion<br />
         valais@lesconcertsducoeur.ch
       </p>
 
-      <h2 class="text-3xl font-playFair">Représentant(s) autorisé(s)</h2>
+      <h2 class="text-3xl font-playFair">Représentant.s autorisé.s</h2>
       <p>
         Contenu du texte : Laure Barras<br />
         Conception graphique : Malaïka Schürch<br />
-        Illsutrations : Michèle Reymond<br />
+        Illustrations : Michèle Reymond<br />
         Programmation : Alex Roque<br />
         Traductions français-allemand : Franziska Heinzen
       </p>
@@ -50,18 +50,18 @@
       <h2 class="text-3xl font-playFair">Kontaktadresse</h2>
       <p>
         <i>Les Concerts du Cœur</i><br />
-        Les Rocailles, rue des biolirs 6<br />
-        3963 Crans-Montana<br />
+        Rue des Creusets 16<br />
+        1950 Sion<br />
         valais@lesconcertsducoeur.ch
       </p>
 
-      <h2 class="text-3xl font-playFair">Bevollmächtigte(r) Vertreter</h2>
+      <h2 class="text-3xl font-playFair">Bevollmächtigte:r Vertreter:in</h2>
       <p>
         Textinhalt: Laure Barras<br />
         Grafikdesign: Malaïka Schürch<br />
         Illustrationen: Michèle Reymond<br />
-        Programmierung: Alex Roque Programmierung: Alex Roque <br />
-        Französisch-Deutsche Übersetzungen: Franziska Heinzen
+        Programmierung: Alex Roque<br />
+        Deutsche Übersetzungen: Franziska Heinzen
       </p>
 
       <h2 class="text-3xl font-playFair">Nutzung von Diensten Dritter</h2>
@@ -69,23 +69,22 @@
 
       <h2 class="text-3xl font-playFair">Haftungsausschluss</h2>
       <p>
-        Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftpflichtansprüche Haftungsansprüche gegen den Autor,
+        Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftpflichtansprüche: Haftungsansprüche gegen den Autor,
         welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger
-        Informationen verursacht wurden, sind grundsätzlich ausgeschlossen. Alle Angebote sind freibleibend. Alle Angebote sind freibleibend. Der Autor behält es sich ausdrücklich vor, Teile der
-        Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen. der Autor ohne gesonderte
-        Ankündigung.
+        Informationen verursacht wurden, sind grundsätzlich ausgeschlossen. Alle Angebote sind freibleibend. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne
+        gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.
       </p>
 
       <h2 class="text-3xl font-playFair">Haftungsausschluss für Links</h2>
       <p>
-        Verweise und Links auf Websites Dritter liegen nicht in unserer Verantwortung. Wir übernehmen keine Verantwortung für diese Websites. Zugang zu und Nutzung von diesen Websites erfolgt auf
-        eigene Gefahr.
+        Verweise und Links auf Webseiten Dritter liegen nicht in unserer Verantwortung. Wir übernehmen keine Verantwortung für den Inhalt dieser Webseiten. Der Zugang zu und die Nutzung dieser
+        Webseiten erfolgt auf eigene Gefahr.
       </p>
 
       <h2 class="text-3xl font-playFair">Copyright</h2>
       <p>
-        Das Urheberrecht und alle anderen Rechte an den Inhalten, Bildern, Fotos oder anderen Dateien auf dieser Website gehören ausschließlich den Herzkonzerten oder den Rechteinhabern ausdrücklich
-        genannt. Für die Vervielfältigung von Material ist die schriftliche Zustimmung des Urheberrechtsinhabers einzuholen.
+        Das Urheberrecht und alle anderen Rechte an den Inhalten, Bildern, Fotos oder anderen Dateien auf dieser Website gehören ausschließlich dem Verein Les Concerts du Coeur oder den ausdrücklich
+        genannten Rechteinhabern. Für die Vervielfältigung von Material ist die schriftliche Zustimmung des Urheberrechtsinhabers einzuholen.
       </p>
     </div>
   </div>

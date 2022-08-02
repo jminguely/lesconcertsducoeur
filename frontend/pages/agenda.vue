@@ -59,12 +59,11 @@
 </template>
 
 <script>
+import { gql } from 'graphql-tag'
 import Headline from '@/components/typography/Headline.vue'
 import DateDivider from '@/components/typography/DateDivider.vue'
 import EventDetails from '@/components/typography/EventDetails.vue'
 import ClassicSelect from '@/components/pages/ClassicSelect.vue'
-
-import { gql } from 'graphql-tag'
 
 export default {
   components: {
@@ -165,6 +164,10 @@ export default {
       if (this.cantonFilter === '') where = this.yearFilter === '' ? { date_time_gte: new Date() } : { date_time_gte: `${this.yearFilter}-01-01`, date_time_lte: `${this.yearFilter}-12-31` }
       else where = this.yearFilter === '' ? { date_time_gte: new Date(), canton } : { date_time_gte: `${this.yearFilter}-01-01`, date_time_lte: `${this.yearFilter}-12-31`, canton }
 
+      where.NOT = [{ music_group: null }]
+
+      console.log(JSON.stringify(where))
+
       const variables = {
         // date_time: this.$dateFns.formatISO(new Date()),
         where,
@@ -178,6 +181,7 @@ export default {
           return data
         })
         .catch((e) => {
+          console.log(e)
           if (process.env.dev) console.log(e)
         })
     },

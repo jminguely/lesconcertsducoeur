@@ -257,8 +257,8 @@ Herzlichen Dank!
       <div class="mb-8 lg:mb-12">
           <div class="text-xl text-vs">
             <span class="font-bold"><i>Les Concerts du Cœur</i></span><br />
-            Les Rocailles, Rue des Biolirs 6,<br />
-            3963 Crans-Montana<br />
+            Rue des Creusets 16<br />
+            1950 Sion<br />
             <a href="mailto:valais@lesconcertsducoeur.ch">valais@lesconcertsducoeur.ch</a>
           </div>
         </div>
