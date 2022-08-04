@@ -120,6 +120,12 @@ export default {
       content: null,
       links: [
         {
+          title: 'Les Concerts du Cœur: La musique pour tous et toutes',
+          subtitle: "L'Agenda, édition 97",
+          date: 'juillet-août 2022',
+          link: 'https://api.lesconcertsducoeur.ch/uploads/L_Agenda_97_Concerts_du_coeur_5431529437.pdf/',
+        },
+        {
           title: 'Singen und meinen Körper fühlen: Im Gespräch mit der Sopranistin Laure Barras',
           subtitle: 'Kanal9',
           date: '31 mai 2022',
