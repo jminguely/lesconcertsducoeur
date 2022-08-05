@@ -164,10 +164,6 @@ export default {
       if (this.cantonFilter === '') where = this.yearFilter === '' ? { date_time_gte: new Date() } : { date_time_gte: `${this.yearFilter}-01-01`, date_time_lte: `${this.yearFilter}-12-31` }
       else where = this.yearFilter === '' ? { date_time_gte: new Date(), canton } : { date_time_gte: `${this.yearFilter}-01-01`, date_time_lte: `${this.yearFilter}-12-31`, canton }
 
-      where.NOT = [{ music_group: null }]
-
-      console.log(JSON.stringify(where))
-
       const variables = {
         // date_time: this.$dateFns.formatISO(new Date()),
         where,
