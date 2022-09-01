@@ -102,6 +102,7 @@
     <donate-button-link class="hidden lg:block relative -bottom-8 left-24" :to="localePath('soutien')">
       {{ $t('nav').supportUs }}
     </donate-button-link>
+
     <div>
       <div id="sidebar" class="flex flex-col lg:ml-4">
         <div :class="{ 'flex flex-row-reverse justify-between': menu, 'hidden lg:flex': !menu }" class="items-center">
@@ -115,19 +116,29 @@
 
           <nuxt-link :to="localePath('contact')" class="text-xl font-newsCycle hover:font-bold"> {{ $t('nav').contact }} </nuxt-link>
         </div>
+
+        <form
+          id="mc-embedded-subscribe-form"
+          action="https://lesconcertsducoeur.us17.list-manage.com/subscribe/post?u=e047a05962015364141e05684&amp;id=7c376f04c5&amp;f_id=00e649e0f0"
+          method="post"
+          target="_blank"
+          novalidate
+          class="hidden mt-4 lg:flex lg:items-center lg:w-full border-2 border-concert-dark"
+        >
+          <input id="mce-EMAIL" class="flex-auto px-2 py-1 focus:rounded-none focus:border-0 focus:outline-none" :placeholder="$t('nav').newsletter" type="email" value="" name="EMAIL" required />
+          <button type="submit"><nav-chevron-right class="h-5 hover:cursor-pointer" /></button>
+        </form>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { gql } from 'graphql-tag'
 import SocialLink from '@/components/pages/SocialLink.vue'
-// import NavChevronRight from '@/components/NavChevronRight.vue'
+
 export default {
   components: {
     SocialLink,
-    // NavChevronRight,
   },
   data() {
     return {
@@ -169,53 +180,6 @@ export default {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
-    validateEmail(email) {
-      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      return re.test(String(email).toLowerCase())
-    },
-    async subscribeNewsletter() {
-      if (this.validateEmail(this.email)) {
-        const mutation = gql`
-          mutation CreateNewsletter($input: createNewsletterInput!) {
-            createNewsletter(input: $input) {
-              newsletter {
-                id
-                email
-              }
-            }
-          }
-        `
-        const variables = {
-          input: {
-            data: {
-              email: this.email,
-            },
-          },
-        }
-        await this.$apollo
-          .mutate({
-            mutation,
-            variables,
-          })
-          .then(({ data }) => {
-            if (process.env.dev) console.log(data)
-            this.isSent = true
-            this.hasError = false
-            setTimeout(() => {
-              this.isSent = false
-            }, 3000)
-          })
-          .catch((e) => {
-            if (process.env.dev) console.log(e)
-            this.hasError = true
-          })
-      } else {
-        this.hasError = true
-        setTimeout(() => {
-          this.hasError = false
-        }, 1500)
-      }
-    },
     handleScroll() {
       // Your scroll handling here
       // console.log(window.scrollY)
