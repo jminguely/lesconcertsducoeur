@@ -28,6 +28,8 @@ export default {
 
 <style>
 .logo-item {
+  aspect-ratio: 4 / 3;
   max-width: 250px;
+  object-fit: contain;
 }
 </style>
