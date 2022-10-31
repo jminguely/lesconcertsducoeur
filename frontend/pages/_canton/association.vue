@@ -78,11 +78,6 @@
       <template #headline>{{ $t('association').partners }} </template>
     </Headline>
 
-    <!-- <h2 class="mb-10 text-3xl font-playFair">{{ $t('home').partners.title }}</h2>
-    <div class="grid grid-cols-3 gap-5">
-      <img class="object-contain w-full h-full" src="~/assets/img/partners/LMN.webp" />
-    </div> -->
-
     <template v-if="association.partners != null">
       <logo-cloud v-if="association.partners.length > 0" :logos="association.partners" is-partner>
         <template #title> {{ $t('home').partners.title }}</template>
