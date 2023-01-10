@@ -33,7 +33,7 @@
       {{ event }}
     </div> -->
     <DateDivider>
-      <template #date>2022</template>
+      <template #date>2023</template>
     </DateDivider>
 
     <template v-if="data != null">
@@ -59,14 +59,13 @@
 </template>
 
 <script>
+import { gql } from 'graphql-tag'
 import Headline from '@/components/typography/Headline.vue'
 import DateDivider from '@/components/typography/DateDivider.vue'
 import EventDetails from '@/components/typography/EventDetails.vue'
 import wpPosts from '@/assets/wp_posts.json'
 import wpPostmeta from '@/assets/wp_postmeta.json'
 // import ClassicSelect from '@/components/pages/ClassicSelect.vue'
-
-import { gql } from 'graphql-tag'
 
 export default {
   components: {

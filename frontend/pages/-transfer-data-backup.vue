@@ -60,14 +60,13 @@
 </template>
 
 <script>
+import { gql } from 'graphql-tag'
 import Headline from '@/components/typography/Headline.vue'
 import DateDivider from '@/components/typography/DateDivider.vue'
 import EventDetails from '@/components/typography/EventDetails.vue'
 import wpPosts from '@/assets/wp_posts.json'
 import wpPostmeta from '@/assets/wp_postmeta.json'
 // import ClassicSelect from '@/components/pages/ClassicSelect.vue'
-
-import { gql } from 'graphql-tag'
 
 export default {
   components: {
@@ -91,7 +90,7 @@ export default {
 
   computed: {
     years() {
-      return [2016, 2017, 2018, 2019, 2020, 2021, 2022]
+      return [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
     },
     agendaPosts() {
       return this.wpPosts[2].data.filter((el) => el.post_type === 'agenda')
