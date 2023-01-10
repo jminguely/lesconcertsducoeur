@@ -89,7 +89,7 @@ export default {
 
   computed: {
     years() {
-      return [2016, 2017, 2018, 2019, 2020, 2021, 2022]
+      return [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
     },
     agendaPosts() {
       return this.wpPosts[2].data.filter((el) => el.post_type === 'agenda')

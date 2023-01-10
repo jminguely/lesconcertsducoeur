@@ -34,7 +34,7 @@
     </div> -->
     {{ meta_posts.length }}
     <DateDivider>
-      <template #date>2022</template>
+      <template #date>2023</template>
     </DateDivider>
 
     <template v-if="data != null">

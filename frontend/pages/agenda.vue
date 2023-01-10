@@ -26,7 +26,7 @@
     </div>
 
     <DateDivider>
-      <template #date>{{ yearFilter || 2022 }}</template>
+      <template #date>{{ yearFilter || 2023 }}</template>
     </DateDivider>
 
     <template v-if="data != null">
