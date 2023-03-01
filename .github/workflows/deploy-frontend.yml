@@ -3,7 +3,7 @@ name: Deploy frontend
 on:
   push:
     branches:
-      - main
+      - refresh
     paths:
       - .github/workflows/deploy-frontend.yml
       - frontend/**
@@ -32,7 +32,7 @@ jobs:
 
       - name: 🔗 Creates symlink
         run: |
-          ln -s /home/jminguely/www/cdc/shared/frontend/static/wp-content ./dist/wp-content
+          ln -s /home/jminguely/www/cdc-new/shared/frontend/static/wp-content ./dist/wp-content
 
       - name: 🚀 Ship the whole thin
         id: deploy
@@ -44,7 +44,7 @@ jobs:
           options: ""
           ssh_options: ""
           src: "./frontend"
-          dest: ${{secrets.DEPLOY_DEST}}
+          dest: ${{secrets.DEPLOY_DEST_NEW}}
 
       - name: 🧨 Kickstart node server
-        run: curl --basic --user '${{ secrets.ALWAYSDATA_API }} account=jminguely:' --data '' --request POST https://api.alwaysdata.com/v1/site/681756/restart/
+        run: curl --basic --user '${{ secrets.ALWAYSDATA_API }} account=jminguely:' --data '' --request POST https://api.alwaysdata.com/v1/site/765707/restart/

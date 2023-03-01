@@ -3,7 +3,7 @@ name: Deploy backend
 on:
   push:
     branches:
-      - main
+      - refresh
     paths:
       - .github/workflows/deploy-backend.yml
       - backend/**
@@ -44,7 +44,7 @@ jobs:
           options: ""
           ssh_options: ""
           src: "./backend"
-          dest: ${{secrets.DEPLOY_DEST}}
+          dest: ${{secrets.DEPLOY_DEST_NEW}}
 
       - name: 🧨 Kickstart node server
-        run: curl --basic --user '${{ secrets.ALWAYSDATA_API }} account=jminguely:' --data '' --request POST https://api.alwaysdata.com/v1/site/681745/restart/
+        run: curl --basic --user '${{ secrets.ALWAYSDATA_API }} account=jminguely:' --data '' --request POST https://api.alwaysdata.com/v1/site/765706/restart/
