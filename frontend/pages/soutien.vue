@@ -96,26 +96,26 @@
     <div class="mb-8">
       <h2 class="mb-4 text-3xl font-playFair">{{ $t('soutien').member.vs.title }}</h2>
       <p class="max-w-2xl text-xl text-vs font-newsCycle">
-        <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_VS_bulletindadhesion_membres_ordinaires_FR_bc25236636.pdf">&gt; {{ $t('soutien').member.vs.subscription }}</a
+        <a href="https://api-new.lesconcertsducoeur.ch/uploads/Cd_C_VS_bulletindadhesion_membres_ordinaires_FR_bc25236636.pdf">&gt; {{ $t('soutien').member.vs.subscription }}</a
         ><br />
-        <a href="https://api.lesconcertsducoeur.ch/uploads/Cdc_VS_statuts_2019_signes_4d53a41b7e.pdf">&gt; {{ $t('soutien').member.vs.status }}</a>
+        <a href="https://api-new.lesconcertsducoeur.ch/uploads/Cdc_VS_statuts_2019_signes_4d53a41b7e.pdf">&gt; {{ $t('soutien').member.vs.status }}</a>
       </p>
     </div>
 
     <div class="mb-8">
       <h2 class="mb-4 text-3xl font-playFair">{{ $t('soutien').member.vd.title }}</h2>
       <p class="max-w-2xl text-xl text-vd font-newsCycle">
-        <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_VD_bulletindadhesion_membres_ordinaires_320695b34d.pdf">&gt; {{ $t('soutien').member.vd.subscription }}</a
+        <a href="https://api-new.lesconcertsducoeur.ch/uploads/Cd_C_VD_bulletindadhesion_membres_ordinaires_320695b34d.pdf">&gt; {{ $t('soutien').member.vd.subscription }}</a
         ><br />
-        <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_VD_statuts_c18257d91d.pdf">&gt; {{ $t('soutien').member.vd.status }}</a>
+        <a href="https://api-new.lesconcertsducoeur.ch/uploads/Cd_C_VD_statuts_c18257d91d.pdf">&gt; {{ $t('soutien').member.vd.status }}</a>
       </p>
     </div>
 
     <h2 class="mb-4 text-3xl font-playFair">{{ $t('soutien').member.ge.title }}</h2>
     <p class="max-w-2xl text-xl text-ge font-newsCycle">
-      <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_GE_bulletindadhesion_membres_c_679aaa5faa.pdf">&gt; {{ $t('soutien').member.ge.subscription }}</a
+      <a href="https://api-new.lesconcertsducoeur.ch/uploads/Cd_C_GE_bulletindadhesion_membres_c_679aaa5faa.pdf">&gt; {{ $t('soutien').member.ge.subscription }}</a
       ><br />
-      <a href="https://api.lesconcertsducoeur.ch/uploads/Cd_C_GE_Statuts_80c429d56e.pdf">&gt; {{ $t('soutien').member.ge.status }}</a>
+      <a href="https://api-new.lesconcertsducoeur.ch/uploads/Cd_C_GE_Statuts_80c429d56e.pdf">&gt; {{ $t('soutien').member.ge.status }}</a>
     </p>
   </div>
 </template>

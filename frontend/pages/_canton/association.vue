@@ -11,7 +11,7 @@
       </div>
 
       <div v-if="association.section_hero_img != null" class="pt-8 max-w-sm lg: pt-0">
-        <img :src="'https://api.lesconcertsducoeur.ch' + association.section_hero_img.url" />
+        <img :src="'https://api-new.lesconcertsducoeur.ch' + association.section_hero_img.url" />
       </div>
     </div>
 

@@ -64,7 +64,7 @@
       <div class="lg:overflow-auto lg:w-2/6" style="max-height: calc(100vh - 125.83px)">
         <div class="ml-auto">
           <template v-if="selected.picture != null">
-            <img class="object-cover h-64 lg:w-120 lg:h-128 w-96" :src="'https://api.lesconcertsducoeur.ch' + selected.picture.url" />
+            <img class="object-cover h-64 lg:w-120 lg:h-128 w-96" :src="'https://api-new.lesconcertsducoeur.ch' + selected.picture.url" />
           </template>
         </div>
 
