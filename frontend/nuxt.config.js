@@ -49,7 +49,7 @@ export default {
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: 'https://api.lesconcertsducoeur.ch/graphql',
+        httpEndpoint: 'https://api-new.lesconcertsducoeur.ch/graphql',
       },
     },
   },
