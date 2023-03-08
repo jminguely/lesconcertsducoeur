@@ -9,12 +9,7 @@
   "attributes": {
     "canton": {
       "type": "enumeration",
-      "enum": [
-        "GE",
-        "VS",
-        "VD",
-        "ALL"
-      ]
+      "enum": ["GE", "VS", "VD", "ALL"]
     }
   }
 }

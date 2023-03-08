@@ -1,386 +1,386 @@
 [
-    {
-        "name":"Irene Puccia",
-        "instrument_fr":"Piano",
-        "instrument_de":"Klavier",
-        "canton":"VS | VD",
-        "website":"https://www.irenepuccia.com/",
-        "img":"irene-puccia.jpg"
-    },
-    {
-        "name":"Laure Barras",
-        "instrument_fr":"Soprano",
-        "instrument_de":"Sopran",
-        "canton":"VS",
-        "website":"https://www.laurebarras.com/",
-        "img":"laure-barras.jpg"
-    },
-    {
-        "name":"Antoine Gilliéron",
-        "instrument_fr":"Piano",
-        "instrument_de":"Klavier",
-        "canton":"VS",
-        "website":null,
-        "img":"antoine-gillieron.jpg"
-    },
-    {
-        "name":"Guillaume Bouillon",
-        "instrument_fr":"Violoncelle",
-        "instrument_de":"Cello",
-        "canton":"VS | VD",
-        "website":null,
-        "img":"guillaume-bouillon.jpg"
-    },
-    {
-        "name":"Yu-Hsuan Kuo",
-        "instrument_fr":"Flûte",
-        "instrument_de":"Flöte",
-        "canton":"VS | VD",
-        "website":null,
-        "img":"yu-hsuan-kuo.jpg"
-    },
-    {
-        "name":"Ugo Reser",
-        "instrument_fr":"Violoncelle",
-        "instrument_de":"Cello",
-        "canton":"VS",
-        "website":null,
-        "img":"ugo-reser.jpg"
-    },
-    {
-        "name":"Elena Provozina-Reser",
-        "instrument_fr":"Violon",
-        "instrument_de":"Geige",
-        "canton":"VS",
-        "website":null,
-        "img":"elena-provozina-reser.jpg"
-    },
-    {
-        "name":"Cyprien Semayne",
-        "instrument_fr":"Alto",
-        "instrument_de":"Bratsche",
-        "canton":"VS",
-        "website":null,
-        "img":"cyprien-semayne.jpg"
-    },
-    {
-        "name":"Richard Helm",
-        "instrument_fr":"Baryton",
-        "instrument_de":"Bariton",
-        "canton":"VS | VD",
-        "website":null,
-        "img":"richard-helm.jpg"
-    },
-    {
-        "name":"Stéphanie Gurga",
-        "instrument_fr":"Piano/Clavecin",
-        "instrument_de":"Klavier/Cembalo",
-        "canton":"VS",
-        "website":null,
-        "img":"stephanie-gurga.jpg"
-    },
-    {
-        "name":"Amrat Hussain",
-        "instrument_fr":"Tabla",
-        "instrument_de":"Tabla",
-        "canton":"VS",
-        "website":null,
-        "img":"amrat-hussain.jpg"
-    },
-    {
-        "name":"Moinuddin Khan",
-        "instrument_fr":"Harmonium et chant",
-        "instrument_de":"Harmoniumspieler und Gesang",
-        "canton":"VS",
-        "website":null,
-        "img":"moinuddin-khan.jpg"
-    },
-    {
-        "name":"Maya Quiminal",
-        "instrument_fr":"Danse indienne",
-        "instrument_de":"Indische Tänzerin",
-        "canton":"VS",
-        "website":null,
-        "img":"maya-quiminal.jpg"
-    },
-    {
-        "name":"Grégoire Fellay",
-        "instrument_fr":"Accordéon",
-        "instrument_de":"Akkordeon",
-        "canton":"VS",
-        "website":null,
-        "img":"gregoire-fellay.jpg"
-    },
-    {
-        "name":"Carole Rey",
-        "instrument_fr":"Soprano",
-        "instrument_de":"Sopran",
-        "canton":"VS",
-        "website":null,
-        "img":"carole-rey.jpg"
-    },
-    {
-        "name":"Arman Grigorian",
-        "instrument_fr":"Piano",
-        "instrument_de":"Klavier",
-        "canton":"VS",
-        "website":null,
-        "img":"arman-grigorian.jpg"
-    },
-    {
-        "name":"Estelle Poscio",
-        "instrument_fr":"Soprano",
-        "instrument_de":"Sopran",
-        "canton":"VS",
-        "website":null,
-        "img":"estelle-poscio.jpg"
-    },
-    {
-        "name":"Sona Igityan",
-        "instrument_fr":"Piano",
-        "instrument_de":"Klavier",
-        "canton":"VS",
-        "website":null,
-        "img":"sona-igityan.jpg"
-    },
-    {
-        "name":"Lia Hakhnazaryan",
-        "instrument_fr":"Piano",
-        "instrument_de":"Klavier",
-        "canton":"VS",
-        "website":null,
-        "img":"lia-hakhnazaryan.jpg"
-    },
-    {
-        "name":"Sarah Velasco",
-        "instrument_fr":"Violon",
-        "instrument_de":"Geige",
-        "canton":"VS",
-        "website":null,
-        "img":"sarah-velasco.jpg"
-    },
-    {
-        "name":"Guillaume Geny",
-        "instrument_fr":"Guitare",
-        "instrument_de":"Gitarre",
-        "canton":"VS",
-        "website":null,
-        "img":"guillaume-geny.jpg"
-    },
-    {
-        "name":"Cédric Meyer",
-        "instrument_fr":"Guitare/Luth",
-        "instrument_de":"Gitarre/Laute",
-        "canton":"VS",
-        "website":null,
-        "img":"cedric-meyer.jpg"
-    },
-    {
-        "name":"Océane Knop",
-        "instrument_fr":"Flûte",
-        "instrument_de":"Flöte",
-        "canton":"VS",
-        "website":null,
-        "img":"oceane-knop_quintet-cayos.png"
-    },
-    {
-        "name":"Alice Fidon",
-        "instrument_fr":"Clarinette",
-        "instrument_de":"Klarinette",
-        "canton":"VS",
-        "website":null,
-        "img":"alice-fidon_quintet-cayos.png"
-    },
-    {
-        "name":"Oliva Rakotonanahary",
-        "instrument_fr":"Basson",
-        "instrument_de":"Fagott",
-        "canton":"VS",
-        "website":null,
-        "img":"oliva-rakotonanahary_quintet-cayos.png"
-    },
-    {
-        "name":"Sylvain Faucon",
-        "instrument_fr":"Hautbois",
-        "instrument_de":"Oboe",
-        "canton":"VS",
-        "website":null,
-        "img":"sylvain-faucon_quintet-cayos.png"
-    },
-    {
-        "name":"Yasmine Siffointe",
-        "instrument_fr":"Cor",
-        "instrument_de":"Horn",
-        "canton":"VS",
-        "website":null,
-        "img":"yasmine-siffointe_quintet-cayos.png"
-    },
-    {
-        "name":"Rozalia Agadjanian",
-        "instrument_fr":"Clarinette",
-        "instrument_de":"Klarinette",
-        "canton":"VS",
-        "website":null,
-        "img":"rozalia-agadjanian.jpg"
-    },
-    {
-        "name":"Nenad Djukic",
-        "instrument_fr":"Piano",
-        "instrument_de":"Klavier",
-        "canton":"VS",
-        "website":null,
-        "img":"nenad-djukic.jpg"
-    },
-    {
-        "name":"Cayos Quintet",
-        "instrument_fr":"",
-        "instrument_de":"",
-        "canton":"VS",
-        "website":null,
-        "img":"cayos-quintet.jpg"
-    },
-    {
-        "name":"Valentina Rebaudo",
-        "instrument_fr":"Clarinette",
-        "instrument_de":"Klarinette",
-        "canton":"VD",
-        "website":null,
-        "img":"valentina-rebaudo.jpg"
-    },
-    {
-        "name":"Felix Froschhammer",
-        "instrument_fr":"Violon",
-        "instrument_de":"Geige",
-        "canton":"VD",
-        "website":null,
-        "img":"felix-froschhammer.jpg"
-    },
-    {
-        "name":"Tashko Tasheff",
-        "instrument_fr":"Contrebasse",
-        "instrument_de":"Kontrabass",
-        "canton":"VD",
-        "website":null,
-        "img":"tashko-tasheff.jpg"
-    },
-    {
-        "name":"Wolfgang Hanninger",
-        "instrument_fr":"Saxophone",
-        "instrument_de":"Saxophon",
-        "canton":"VD",
-        "website":null,
-        "img":"wolfgang-hanninger.jpg"
-    },
-    {
-        "name":"Jérôme Jeanrenaud",
-        "instrument_fr":"Clavier",
-        "instrument_de":"Klaviatur",
-        "canton":"VD",
-        "website":null,
-        "img":"jerome-jeanrenaud.jpg"
-    },
-    {
-        "name":"Elisa Favre",
-        "instrument_fr":"Mezzo-soprano",
-        "instrument_de":"Mezzosopran",
-        "canton":"VS",
-        "website":null,
-        "img":"elisa-favre.jpg"
-    },
-    {
-        "name":"Franziska Heinzen",
-        "instrument_fr":"Soprano",
-        "instrument_de":"Sopran",
-        "canton":"VS",
-        "website":null,
-        "img":"franziska-heinzen.jpg"
-    },
-    {
-        "name":"Alice Aubert",
-        "instrument_fr":"Harpe",
-        "instrument_de":"Harfe",
-        "canton":"VS",
-        "website":null,
-        "img":"alice-aubert.jpg"
-    },
-    {
-        "name":"Jazz-Box Trio",
-        "instrument_fr":"",
-        "instrument_de":"",
-        "canton":"VS",
-        "website":null,
-        "img":"jazz-box-trio.jpg"
-    },
-    {
-        "name":"Yves Moulin",
-        "instrument_fr":"Accordéon",
-        "instrument_de":"Akkordeon",
-        "canton":"VS",
-        "website": "https://www.artismusicprod.com/",
-        "img":"yves-moulin.jpg"
-    },
-    {
-        "name":"Greta Staponkutė-Rakau",
-        "instrument_fr":"Alto",
-        "instrument_de":"Bratsche",
-        "canton":"VD",
-        "website": null,
-        "img":"greta-staponkute-rakau.jpg"
-    },
-    {
-        "name":"Augustinas Rakauskas",
-        "instrument_fr":"Accordéon",
-        "instrument_de":"Akkordeon",
-        "canton":"VD",
-        "website": null,
-        "img":"augustinas-rakauskas.jpg"
-    },
-    {
-        "name":"Benjamin Malcolm Mead",
-        "instrument_fr":"Piano",
-        "instrument_de":"Klavier",
-        "canton":"VS",
-        "website": "http://benjamin-mead.com/en/dates/",
-        "img":"benjamin-mead.jpg"
-    },
-    {
-        "name":"Michaela Unsinn",
-        "instrument_fr":"Mezzo-Soprano",
-        "instrument_de":"Mezzo-Sopran",
-        "canton":"VS",
-        "website": "http://www.michaelaunsinn.ch/",
-        "img":"michaela-unsinn.jpg"
-    },
-    {
-        "name":"Musta-Ka",
-        "instrument_fr":"Jazz manouche",
-        "instrument_de":"Jazz manouche",
-        "canton":"VS",
-        "website": "https://mx3.ch/mustaka",
-        "img":"mustaka.jpg"
-    },
-    {
-        "name":"Les Pornographes",
-        "instrument_fr":"Chansons de Brassens",
-        "instrument_de":"Lieder von Brassens",
-        "canton":"VS",
-        "website": "https://www.facebook.com/pages/category/Musician-Band/Les-Pornographes-2003995216543756/",
-        "img":"les-pornographes.jpg"
-    },
-    {
-        "name":"Swing Maniak",
-        "instrument_fr":"deux guitares",
-        "instrument_de":"zwei Gitarren",
-        "canton":"VS",
-        "website": "",
-        "img":"swing-maniak.jpg"
-    },
-    {
-        "name":"Sarah Brunner",
-        "instrument_fr":"Piano",
-        "instrument_de":"Klavier",
-        "canton":"VS",
-        "website": "",
-        "img":"sarah-brunner.jpg"
-    }
+  {
+    "name": "Irene Puccia",
+    "instrument_fr": "Piano",
+    "instrument_de": "Klavier",
+    "canton": "VS | VD",
+    "website": "https://www.irenepuccia.com/",
+    "img": "irene-puccia.jpg"
+  },
+  {
+    "name": "Laure Barras",
+    "instrument_fr": "Soprano",
+    "instrument_de": "Sopran",
+    "canton": "VS",
+    "website": "https://www.laurebarras.com/",
+    "img": "laure-barras.jpg"
+  },
+  {
+    "name": "Antoine Gilliéron",
+    "instrument_fr": "Piano",
+    "instrument_de": "Klavier",
+    "canton": "VS",
+    "website": null,
+    "img": "antoine-gillieron.jpg"
+  },
+  {
+    "name": "Guillaume Bouillon",
+    "instrument_fr": "Violoncelle",
+    "instrument_de": "Cello",
+    "canton": "VS | VD",
+    "website": null,
+    "img": "guillaume-bouillon.jpg"
+  },
+  {
+    "name": "Yu-Hsuan Kuo",
+    "instrument_fr": "Flûte",
+    "instrument_de": "Flöte",
+    "canton": "VS | VD",
+    "website": null,
+    "img": "yu-hsuan-kuo.jpg"
+  },
+  {
+    "name": "Ugo Reser",
+    "instrument_fr": "Violoncelle",
+    "instrument_de": "Cello",
+    "canton": "VS",
+    "website": null,
+    "img": "ugo-reser.jpg"
+  },
+  {
+    "name": "Elena Provozina-Reser",
+    "instrument_fr": "Violon",
+    "instrument_de": "Geige",
+    "canton": "VS",
+    "website": null,
+    "img": "elena-provozina-reser.jpg"
+  },
+  {
+    "name": "Cyprien Semayne",
+    "instrument_fr": "Alto",
+    "instrument_de": "Bratsche",
+    "canton": "VS",
+    "website": null,
+    "img": "cyprien-semayne.jpg"
+  },
+  {
+    "name": "Richard Helm",
+    "instrument_fr": "Baryton",
+    "instrument_de": "Bariton",
+    "canton": "VS | VD",
+    "website": null,
+    "img": "richard-helm.jpg"
+  },
+  {
+    "name": "Stéphanie Gurga",
+    "instrument_fr": "Piano/Clavecin",
+    "instrument_de": "Klavier/Cembalo",
+    "canton": "VS",
+    "website": null,
+    "img": "stephanie-gurga.jpg"
+  },
+  {
+    "name": "Amrat Hussain",
+    "instrument_fr": "Tabla",
+    "instrument_de": "Tabla",
+    "canton": "VS",
+    "website": null,
+    "img": "amrat-hussain.jpg"
+  },
+  {
+    "name": "Moinuddin Khan",
+    "instrument_fr": "Harmonium et chant",
+    "instrument_de": "Harmoniumspieler und Gesang",
+    "canton": "VS",
+    "website": null,
+    "img": "moinuddin-khan.jpg"
+  },
+  {
+    "name": "Maya Quiminal",
+    "instrument_fr": "Danse indienne",
+    "instrument_de": "Indische Tänzerin",
+    "canton": "VS",
+    "website": null,
+    "img": "maya-quiminal.jpg"
+  },
+  {
+    "name": "Grégoire Fellay",
+    "instrument_fr": "Accordéon",
+    "instrument_de": "Akkordeon",
+    "canton": "VS",
+    "website": null,
+    "img": "gregoire-fellay.jpg"
+  },
+  {
+    "name": "Carole Rey",
+    "instrument_fr": "Soprano",
+    "instrument_de": "Sopran",
+    "canton": "VS",
+    "website": null,
+    "img": "carole-rey.jpg"
+  },
+  {
+    "name": "Arman Grigorian",
+    "instrument_fr": "Piano",
+    "instrument_de": "Klavier",
+    "canton": "VS",
+    "website": null,
+    "img": "arman-grigorian.jpg"
+  },
+  {
+    "name": "Estelle Poscio",
+    "instrument_fr": "Soprano",
+    "instrument_de": "Sopran",
+    "canton": "VS",
+    "website": null,
+    "img": "estelle-poscio.jpg"
+  },
+  {
+    "name": "Sona Igityan",
+    "instrument_fr": "Piano",
+    "instrument_de": "Klavier",
+    "canton": "VS",
+    "website": null,
+    "img": "sona-igityan.jpg"
+  },
+  {
+    "name": "Lia Hakhnazaryan",
+    "instrument_fr": "Piano",
+    "instrument_de": "Klavier",
+    "canton": "VS",
+    "website": null,
+    "img": "lia-hakhnazaryan.jpg"
+  },
+  {
+    "name": "Sarah Velasco",
+    "instrument_fr": "Violon",
+    "instrument_de": "Geige",
+    "canton": "VS",
+    "website": null,
+    "img": "sarah-velasco.jpg"
+  },
+  {
+    "name": "Guillaume Geny",
+    "instrument_fr": "Guitare",
+    "instrument_de": "Gitarre",
+    "canton": "VS",
+    "website": null,
+    "img": "guillaume-geny.jpg"
+  },
+  {
+    "name": "Cédric Meyer",
+    "instrument_fr": "Guitare/Luth",
+    "instrument_de": "Gitarre/Laute",
+    "canton": "VS",
+    "website": null,
+    "img": "cedric-meyer.jpg"
+  },
+  {
+    "name": "Océane Knop",
+    "instrument_fr": "Flûte",
+    "instrument_de": "Flöte",
+    "canton": "VS",
+    "website": null,
+    "img": "oceane-knop_quintet-cayos.png"
+  },
+  {
+    "name": "Alice Fidon",
+    "instrument_fr": "Clarinette",
+    "instrument_de": "Klarinette",
+    "canton": "VS",
+    "website": null,
+    "img": "alice-fidon_quintet-cayos.png"
+  },
+  {
+    "name": "Oliva Rakotonanahary",
+    "instrument_fr": "Basson",
+    "instrument_de": "Fagott",
+    "canton": "VS",
+    "website": null,
+    "img": "oliva-rakotonanahary_quintet-cayos.png"
+  },
+  {
+    "name": "Sylvain Faucon",
+    "instrument_fr": "Hautbois",
+    "instrument_de": "Oboe",
+    "canton": "VS",
+    "website": null,
+    "img": "sylvain-faucon_quintet-cayos.png"
+  },
+  {
+    "name": "Yasmine Siffointe",
+    "instrument_fr": "Cor",
+    "instrument_de": "Horn",
+    "canton": "VS",
+    "website": null,
+    "img": "yasmine-siffointe_quintet-cayos.png"
+  },
+  {
+    "name": "Rozalia Agadjanian",
+    "instrument_fr": "Clarinette",
+    "instrument_de": "Klarinette",
+    "canton": "VS",
+    "website": null,
+    "img": "rozalia-agadjanian.jpg"
+  },
+  {
+    "name": "Nenad Djukic",
+    "instrument_fr": "Piano",
+    "instrument_de": "Klavier",
+    "canton": "VS",
+    "website": null,
+    "img": "nenad-djukic.jpg"
+  },
+  {
+    "name": "Cayos Quintet",
+    "instrument_fr": "",
+    "instrument_de": "",
+    "canton": "VS",
+    "website": null,
+    "img": "cayos-quintet.jpg"
+  },
+  {
+    "name": "Valentina Rebaudo",
+    "instrument_fr": "Clarinette",
+    "instrument_de": "Klarinette",
+    "canton": "VD",
+    "website": null,
+    "img": "valentina-rebaudo.jpg"
+  },
+  {
+    "name": "Felix Froschhammer",
+    "instrument_fr": "Violon",
+    "instrument_de": "Geige",
+    "canton": "VD",
+    "website": null,
+    "img": "felix-froschhammer.jpg"
+  },
+  {
+    "name": "Tashko Tasheff",
+    "instrument_fr": "Contrebasse",
+    "instrument_de": "Kontrabass",
+    "canton": "VD",
+    "website": null,
+    "img": "tashko-tasheff.jpg"
+  },
+  {
+    "name": "Wolfgang Hanninger",
+    "instrument_fr": "Saxophone",
+    "instrument_de": "Saxophon",
+    "canton": "VD",
+    "website": null,
+    "img": "wolfgang-hanninger.jpg"
+  },
+  {
+    "name": "Jérôme Jeanrenaud",
+    "instrument_fr": "Clavier",
+    "instrument_de": "Klaviatur",
+    "canton": "VD",
+    "website": null,
+    "img": "jerome-jeanrenaud.jpg"
+  },
+  {
+    "name": "Elisa Favre",
+    "instrument_fr": "Mezzo-soprano",
+    "instrument_de": "Mezzosopran",
+    "canton": "VS",
+    "website": null,
+    "img": "elisa-favre.jpg"
+  },
+  {
+    "name": "Franziska Heinzen",
+    "instrument_fr": "Soprano",
+    "instrument_de": "Sopran",
+    "canton": "VS",
+    "website": null,
+    "img": "franziska-heinzen.jpg"
+  },
+  {
+    "name": "Alice Aubert",
+    "instrument_fr": "Harpe",
+    "instrument_de": "Harfe",
+    "canton": "VS",
+    "website": null,
+    "img": "alice-aubert.jpg"
+  },
+  {
+    "name": "Jazz-Box Trio",
+    "instrument_fr": "",
+    "instrument_de": "",
+    "canton": "VS",
+    "website": null,
+    "img": "jazz-box-trio.jpg"
+  },
+  {
+    "name": "Yves Moulin",
+    "instrument_fr": "Accordéon",
+    "instrument_de": "Akkordeon",
+    "canton": "VS",
+    "website": "https://www.artismusicprod.com/",
+    "img": "yves-moulin.jpg"
+  },
+  {
+    "name": "Greta Staponkutė-Rakau",
+    "instrument_fr": "Alto",
+    "instrument_de": "Bratsche",
+    "canton": "VD",
+    "website": null,
+    "img": "greta-staponkute-rakau.jpg"
+  },
+  {
+    "name": "Augustinas Rakauskas",
+    "instrument_fr": "Accordéon",
+    "instrument_de": "Akkordeon",
+    "canton": "VD",
+    "website": null,
+    "img": "augustinas-rakauskas.jpg"
+  },
+  {
+    "name": "Benjamin Malcolm Mead",
+    "instrument_fr": "Piano",
+    "instrument_de": "Klavier",
+    "canton": "VS",
+    "website": "http://benjamin-mead.com/en/dates/",
+    "img": "benjamin-mead.jpg"
+  },
+  {
+    "name": "Michaela Unsinn",
+    "instrument_fr": "Mezzo-Soprano",
+    "instrument_de": "Mezzo-Sopran",
+    "canton": "VS",
+    "website": "http://www.michaelaunsinn.ch/",
+    "img": "michaela-unsinn.jpg"
+  },
+  {
+    "name": "Musta-Ka",
+    "instrument_fr": "Jazz manouche",
+    "instrument_de": "Jazz manouche",
+    "canton": "VS",
+    "website": "https://mx3.ch/mustaka",
+    "img": "mustaka.jpg"
+  },
+  {
+    "name": "Les Pornographes",
+    "instrument_fr": "Chansons de Brassens",
+    "instrument_de": "Lieder von Brassens",
+    "canton": "VS",
+    "website": "https://www.facebook.com/pages/category/Musician-Band/Les-Pornographes-2003995216543756/",
+    "img": "les-pornographes.jpg"
+  },
+  {
+    "name": "Swing Maniak",
+    "instrument_fr": "deux guitares",
+    "instrument_de": "zwei Gitarren",
+    "canton": "VS",
+    "website": "",
+    "img": "swing-maniak.jpg"
+  },
+  {
+    "name": "Sarah Brunner",
+    "instrument_fr": "Piano",
+    "instrument_de": "Klavier",
+    "canton": "VS",
+    "website": "",
+    "img": "sarah-brunner.jpg"
+  }
 ]

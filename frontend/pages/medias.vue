@@ -120,6 +120,24 @@ export default {
       content: null,
       links: [
         {
+          title: 'Création des Concerts du Coeur Fribourgeois',
+          subtitle: 'La liberté',
+          date: '17.02.34',
+          link: 'https://api.lesconcertsducoeur.ch/uploads/La_liberte_Fribourg_17_02_23_0215502aae.pdf',
+        },
+        {
+          title: 'Les plus grands organisateurs de concerts en Valais',
+          subtitle: 'Journal de Sierre',
+          date: ' 03.02.23 ',
+          link: 'https://api.lesconcertsducoeur.ch/uploads/Journal_de_Sierre_3_02_23_323348b370.pdf',
+        },
+        {
+          title: 'Musique au coeur',
+          subtitle: 'Journal GHI',
+          date: '31.03.22',
+          link: 'https://api.lesconcertsducoeur.ch/uploads/GHI_2022_56cbfb479d.pdf',
+        },
+        {
           title: 'Les Concerts du Cœur: La musique pour tous et toutes',
           subtitle: "L'Agenda, édition 97",
           date: 'juillet-août 2022',
