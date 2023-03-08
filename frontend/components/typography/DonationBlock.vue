@@ -10,25 +10,7 @@
       <div v-if="circle" id="donation-circle" class="ml-auto lg:m-0">
         <nuxt-link :to="localePath({ name: 'canton-don', params: { canton } })" class="no-underline">
           <div
-            class="
-              font-normal
-              duration-500
-              ease-in-out
-              hover:scale-105
-              flex
-              items-center
-              justify-center
-              w-28
-              h-28
-              text-xl
-              px-4
-              leading-6
-              text-center text-white
-              transform
-              rounded-full
-              -rotate-25
-              font-playFair
-            "
+            class="font-normal duration-500 ease-in-out hover:scale-105 flex items-center justify-center w-28 h-28 text-xl px-4 leading-6 text-center text-white transform rounded-full -rotate-25 font-playFair"
             :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"
           >
             {{ $t('association').donate }}
