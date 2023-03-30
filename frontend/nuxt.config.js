@@ -10,7 +10,11 @@ export default {
       lang: 'fr',
       class: 'bg-white',
     },
-    meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { hid: 'description', name: 'description', content: '' }],
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '' },
+    ],
 
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -35,16 +39,28 @@ export default {
 
   components: true,
 
-  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/tailwindcss', '@nuxtjs/date-fns'],
+  buildModules: [
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/date-fns',
+    '@nuxt/image',
+  ],
 
   modules: ['@nuxtjs/apollo', 'nuxt-i18n', '@nuxtjs/markdownit'],
 
   apollo: {
+    includeNodeModules: true,
     clientConfigs: {
-      default: {
-        httpEndpoint: 'https://api-new.lesconcertsducoeur.ch/graphql',
-        // httpEndpoint: 'http://localhost:1337/graphql',
-      },
+      default: '@/graphql/clientConfigs.js',
+    },
+  },
+
+  image: {
+    strapi: {
+      baseURL:
+        process.env.NODE_ENV === 'production'
+          ? 'https://api-new.lesconcertsducoeur.ch/'
+          : 'http://localhost:1337/',
     },
   },
 
@@ -70,8 +86,13 @@ export default {
     runtime: true, // Support `$md()`
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-buildhome(locale:"de-CH"){
-  build: {},
+  build: {
+    postcss: {
+      plugins: {
+        'postcss-nested': {},
+      },
+    },
+  },
 
   server: {
     host: process.env.IP || '0.0.0.0',

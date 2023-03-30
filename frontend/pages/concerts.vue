@@ -5,12 +5,12 @@
       <template #content><div v-dompurify-html="$t('concerts').hero.subtitle"></div></template>
     </Headline>
 
-    <p class="mb-12 text-xl font-newsCycle" v-dompurify-html="$t('concerts').hero.text"></p>
+    <p class="mb-12 text-xl" v-dompurify-html="$t('concerts').hero.text"></p>
 
     <!-- <ImageBlock>
       <template #title>Vous souhaitez organiser un concert?</template>
       <template #content>
-        <ul class="my-10 font-newsCycle">
+        <ul class="my-10">
           <li>> organiser un concert en Valais</li>
           <li>> organiser un concert sur Vaud</li>
           <li>> organiser un concert sur Genève</li>

@@ -1,0 +1,23 @@
+query getPage($locale: String!, $slug: String!) {
+  pageBySlug(locale: $locale, slug: $slug) {
+    id
+    title
+    content {
+      __typename
+      ... on ComponentContentTwoColumnsRichText {
+        id
+        col_left
+        col_right
+      }
+      ... on ComponentContentAccordion {
+        accordion_item {
+          title
+          text
+          image {
+            url
+          }
+        }
+      }
+    }
+  }
+}

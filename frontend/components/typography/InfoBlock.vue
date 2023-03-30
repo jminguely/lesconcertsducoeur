@@ -9,7 +9,7 @@
     </span> -->
     <div class="pt-5 pb-5 pr-4">
       <!-- Pretitle -->
-      <h3 class="text-xl font-newsCycle" :class="{ 'text-concert-dark': canton == '' || canton == 'all', 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">
+      <h3 class="text-xl" :class="{ 'text-concert-dark': canton == '' || canton == 'all', 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">
         <slot name="pretitle"></slot>
       </h3>
       <!-- Title -->
@@ -17,7 +17,7 @@
         <slot name="title"></slot>
       </h1>
       <!-- Content -->
-      <p class="text-xl font-newsCycle">
+      <p class="text-xl">
         <slot name="content"></slot>
       </p>
     </div>

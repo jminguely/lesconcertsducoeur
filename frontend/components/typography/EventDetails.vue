@@ -5,7 +5,7 @@
         <div><slot name="date"></slot></div>
         <div><slot name="location"></slot></div>
       </div>
-      <div class="text-4xl lg:text-5xl font-newsCycle lg:mb-0 text-concert-dark">
+      <div class="text-4xl lg:text-5xl lg:mb-0 text-concert-dark">
         <slot name="title"></slot>
       </div>
     </div>

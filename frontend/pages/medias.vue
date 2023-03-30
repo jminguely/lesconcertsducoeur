@@ -4,7 +4,7 @@
       <template #headline> {{ $t('medias').title }}</template>
     </Headline>
 
-    <p class="text-xl font-newsCycle">{{ $t('medias').findUsOnSocialMedias }}</p>
+    <p class="text-xl">{{ $t('medias').findUsOnSocialMedias }}</p>
 
     <div class="flex my-5">
       <SocialLink class="mr-2 lg:mr-4" name="facebook" link="https://www.facebook.com/concertsducoeur/" />
@@ -19,7 +19,7 @@
       </template>
     </Headline>
 
-    <div class="text-xl font-newsCycle">
+    <div class="text-xl">
       <p>
         <a
           href="https://lesconcertsducoeur.statslive.info/show-campaign-archived/eyJpdiI6ImxIekUzbzJiSTFFVnJPQkRad3dPMDRCUElwOWlCREVDaHRKVEplTnBnTFk9IiwidmFsdWUiOiJ0bHV5WEEyVVwvOGtweE1YbWJyM3pvZTN3UG1sUnlUWkRya3l6ZUgwc2p5WT0iLCJtYWMiOiI4ZWFkZWI5YjE4ODE0YzI3YmUwNjVkNThlMDVkMDRkODRhZDRkY2FjMTA4MWRiNjE2Y2VmOWY2Zjk0MjBkNzI5In0="

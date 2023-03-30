@@ -69,21 +69,21 @@
     <div class="flex flex-col my-20">
       <div class="flex my-10">
         <div class="text-3xl transform -translate-y-6 font-playFair">dans le canton du Valais</div>
-        <div class="max-w-2xl text-xl text-red-500 ml-28 font-newsCycle">
+        <div class="max-w-2xl text-xl text-red-500 ml-28">
           Nous avons besoin de votre soutien pour les tâches suivantes: alksdfjal Annoncez-vous à benevoles-vs@lesconcertsducoeur.ch
         </div>
       </div>
 
       <div class="flex my-10">
         <div class="text-3xl transform -translate-y-6 font-playFair">… sur Vaud</div>
-        <div class="max-w-2xl text-xl text-green-500 ml-28 font-newsCycle">
+        <div class="max-w-2xl text-xl text-green-500 ml-28">
           Nous avons besoin de votre soutien pour les tâches suivantes: alksdfjal Annoncez-vous à benevoles-vd@lesconcertsducoeur.ch
         </div>
       </div>
 
       <div class="flex my-10">
         <div class="text-3xl transform -translate-y-6 font-playFair">… à Genève</div>
-        <div class="max-w-2xl text-xl text-yellow-500 ml-28 font-newsCycle">
+        <div class="max-w-2xl text-xl text-yellow-500 ml-28">
           Nous avons besoin de votre soutien pour les tâches suivantes: alksdfjal Annoncez-vous à benevoles-ge@lesconcertsducoeur.ch
         </div>
       </div>
@@ -95,7 +95,7 @@
 
     <div class="mb-8">
       <h2 class="mb-4 text-3xl font-playFair">{{ $t('soutien').member.vs.title }}</h2>
-      <p class="max-w-2xl text-xl text-vs font-newsCycle">
+      <p class="max-w-2xl text-xl text-vs">
         <a href="https://api-new.lesconcertsducoeur.ch/uploads/Cd_C_VS_bulletindadhesion_membres_ordinaires_FR_bc25236636.pdf">&gt; {{ $t('soutien').member.vs.subscription }}</a
         ><br />
         <a href="https://api-new.lesconcertsducoeur.ch/uploads/Cdc_VS_statuts_2019_signes_4d53a41b7e.pdf">&gt; {{ $t('soutien').member.vs.status }}</a>
@@ -104,7 +104,7 @@
 
     <div class="mb-8">
       <h2 class="mb-4 text-3xl font-playFair">{{ $t('soutien').member.vd.title }}</h2>
-      <p class="max-w-2xl text-xl text-vd font-newsCycle">
+      <p class="max-w-2xl text-xl text-vd">
         <a href="https://api-new.lesconcertsducoeur.ch/uploads/Cd_C_VD_bulletindadhesion_membres_ordinaires_320695b34d.pdf">&gt; {{ $t('soutien').member.vd.subscription }}</a
         ><br />
         <a href="https://api-new.lesconcertsducoeur.ch/uploads/Cd_C_VD_statuts_c18257d91d.pdf">&gt; {{ $t('soutien').member.vd.status }}</a>
@@ -112,7 +112,7 @@
     </div>
 
     <h2 class="mb-4 text-3xl font-playFair">{{ $t('soutien').member.ge.title }}</h2>
-    <p class="max-w-2xl text-xl text-ge font-newsCycle">
+    <p class="max-w-2xl text-xl text-ge">
       <a href="https://api-new.lesconcertsducoeur.ch/uploads/Cd_C_GE_bulletindadhesion_membres_c_679aaa5faa.pdf">&gt; {{ $t('soutien').member.ge.subscription }}</a
       ><br />
       <a href="https://api-new.lesconcertsducoeur.ch/uploads/Cd_C_GE_Statuts_80c429d56e.pdf">&gt; {{ $t('soutien').member.ge.status }}</a>

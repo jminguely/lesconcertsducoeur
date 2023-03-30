@@ -47,7 +47,7 @@
           "localized": true
         }
       },
-      "type": "uid"
+      "type": "string"
     }
   }
 }

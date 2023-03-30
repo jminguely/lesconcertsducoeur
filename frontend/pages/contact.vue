@@ -10,7 +10,7 @@
     <spacing />
 
     <h2 class="text-3xl font-playFair">{{ $t('contact').general }}</h2>
-    <p class="font-newsCycle text-xl">contact@lesconcertsducoeur.ch</p>
+    <p class="text-xl">contact@lesconcertsducoeur.ch</p>
 
     <spacing />
     <accordion :items="items" class="hidden lg:block"> </accordion>

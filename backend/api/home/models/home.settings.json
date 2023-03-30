@@ -16,26 +16,6 @@
     }
   },
   "attributes": {
-    "hero": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "content.headline"
-    },
-    "testimonials": {
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "content.accordion-item"
-    },
     "carousel": {
       "type": "component",
       "repeatable": false,

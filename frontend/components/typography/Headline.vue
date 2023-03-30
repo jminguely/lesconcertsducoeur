@@ -1,6 +1,6 @@
 <template>
   <div class="text-concert-dark">
-    <h1 class="mb-6 text-4xl lg:text-5xl font-newsCycle">
+    <h1 class="mb-6 text-4xl lg:text-5xl">
       <slot name="headline"></slot>
     </h1>
     <h2 class="text-xl lg:text-3xl font-playFair">

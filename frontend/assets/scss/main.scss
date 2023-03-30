@@ -1,28 +1,5 @@
 @import './components/links';
 
-* {
-  line-height: 1.25 !important;
-}
-
-body {
-  font-family: 'News Cycle', sans-serif;
-  line-height: 1.25 !important;
-  color: #393939;
-  h1 {
-    line-height: 1.05 !important;
-  }
-  h2,
-  h3 {
-    line-height: 1.1 !important;
-  }
-}
-p {
-  padding-bottom: 0.7rem;
-}
-h2 > div > p {
-  padding-bottom: 1.3rem;
-}
-
 .site-wrapper {
   padding: 0 50px;
   display: grid;
@@ -32,7 +9,7 @@ h2 > div > p {
     'content';
   grid-template-rows: auto;
   grid-template-columns: auto;
-  gap: 50px 100px;
+  gap: 0 100px;
 
   @screen md {
     grid-template-areas:
@@ -67,6 +44,8 @@ h2 > div > p {
 
 .site-content {
   grid-area: content;
+  padding-top: 100px;
+
   h2 {
     @apply text-xl lg:text-3xl font-playFair;
     @apply mt-10;
@@ -119,17 +98,4 @@ h2 > div > p {
     text-decoration: none;
   }
 }
-.vs #comite .prose a {
-  color: #db303d !important;
-}
-.vd #comite .prose a {
-  color: #4d9a70 !important;
-}
-.ge .prose a {
-  color: #ee6f22 !important;
-}
-// .prose ul > li::before {
-//     content: '—';
-//     top: 0px;
-//     background-color: white;
-// }
+

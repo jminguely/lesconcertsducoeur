@@ -4,7 +4,7 @@
       <slot name="datetime"></slot>
     </span>
     <div class="-mt-1 pb-5 pr-4">
-      <h3 class="pb-1 text-xl font-newsCycle" :class="{ 'text-concert-dark': canton == '', 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">
+      <h3 class="pb-1 text-xl" :class="{ 'text-concert-dark': canton == '', 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">
         <slot name="pretitle"></slot>
       </h3>
       <h1 class="text-3xl font-playFair"><slot name="title"></slot></h1>

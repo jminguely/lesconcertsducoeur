@@ -4,12 +4,9 @@
     class="fixed top-0 left-0 flex flex-col w-screen h-screen p-5 lg:gap-x-5 lg:flex-row lg:p-10 lg:pb-20 overflow-auto duration-300 ease-in-out bg-white opacity-0"
   >
     <div class="z-10 flex justify-between lg:block lg:w-1/5">
-      <button class="focus:outline-none" @click="$emit('update:popup', false)">
-        <nav-cross :canton="canton" />
-      </button>
 
       <div class="lg:flex-shrink flex items-center lg:block lg:w-full lg:flex-col lg:static lg:mt-4">
-        <button class="flex my-2 mr-4 text-xl font-newsCycle focus:outline-none lg:mr-0" @click="goBack()">
+        <button class="flex my-2 mr-4 text-xl focus:outline-none lg:mr-0" @click="goBack()">
           <span :canton="canton" class="flex-shrink-0">←</span>
           <template v-if="data[previousIndex] != null">
             <span class="pl-2 hidden text-left lg:block" :class="{ 'hover:text-vs': canton == 'vs', 'hover:text-vd': canton == 'vd', 'hover:text-ge': canton == 'ge' }">
@@ -19,7 +16,7 @@
           </template>
         </button>
 
-        <button class="flex my-2 text-xl font-newsCycle focus:outline-none" @click="next()">
+        <button class="flex my-2 text-xl focus:outline-none" @click="next()">
           <span :canton="canton" class="flex-shrink-0">→</span>
           <template v-if="data[nextIndex] != null">
             <span class="pl-2 hidden text-left lg:block" :class="{ 'hover:text-vs': canton == 'vs', 'hover:text-vd': canton == 'vd', 'hover:text-ge': canton == 'ge' }">
@@ -33,7 +30,7 @@
 
     <div class="lg:flex-shrink flex flex-col justify-between py-10 lg:flex-row lg:w-4/5 lg:gap-x-10">
       <div class="mb-6 lg:w-3/5 lg:mb-0">
-        <h1 class="mb-6 text-4xl lg:text-5xl font-newsCycle">
+        <h1 class="mb-6 text-4xl lg:text-5xl">
           <template v-if="selected.first_name != null && selected.last_name != null"> {{ selected.first_name }} {{ selected.last_name }} </template>
           <template v-if="selected.name != null"> {{ selected.name }} </template>
         </h1>
@@ -43,21 +40,21 @@
         </h3>
 
         <div class="prose">
-          <p class="prose-xl font-newsCycle">
+          <p class="prose-xl">
             {{ selected.description }}
           </p>
 
           <div v-if="selected.repertoire != null && selected.repertoire != ''">
             <div class="mb-4 text-3xl font-playFair">{{ $t('artistes').repertoire }}</div>
-            <div v-if="selected.repertoire != null" class="prose prose-xl" v-dompurify-html="$md.render(selected.repertoire)"></div>
+            <div v-if="selected.repertoire != null" v-dompurify-html="$md.render(selected.repertoire)" class="prose prose-xl"></div>
           </div>
 
           <div v-if="selected.formats != null && selected.formats != ''">
             <div class="mb-4 text-3xl font-playFair">{{ $t('artistes').formats }}</div>
-            <div v-if="selected.formats != null" class="prose prose-xl" v-dompurify-html="$md.render(selected.formats)"></div>
+            <div v-if="selected.formats != null" v-dompurify-html="$md.render(selected.formats)" class="prose prose-xl"></div>
           </div>
         </div>
-        <!-- <p class="my-6 prose-xl font-newsCycle">Vous souhaitez booker ce musicien·nne dans votre établissement ?</p>
+        <!-- <p class="my-6 prose-xl">Vous souhaitez booker ce musicien·nne dans votre établissement ?</p>
         <nuxt-link class="prose-xl text-green-500 no-underline" to="/contact">> Contact</nuxt-link> -->
       </div>
 
@@ -75,7 +72,7 @@
           <div v-for="artist in selected.artists" :key="artist.id">
             <p class="mr-6 text-xl font-playFair">
               {{ artist.first_name }} {{ artist.last_name }}
-              <span class="text-lg font-newsCycle">{{ artist.instrument }} </span>
+              <span class="text-lg">{{ artist.instrument }} </span>
             </p>
           </div>
         </div>

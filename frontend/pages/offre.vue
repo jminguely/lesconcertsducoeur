@@ -45,7 +45,7 @@
 
     <accordion :items="$t('mission').objectifs.content" :images="images"> </accordion>
 
-    <div class="mt-12 text-xl font-newsCycle">
+    <div class="mt-12 text-xl">
       <!-- <div v-for="(item, i) in $t('mission').objectifs.content" :key="i" class="pb-8">
         <h3 class="font-bold pb-4">{{ item.title }}</h3>
         <p v-dompurify-html="item.text"></p>

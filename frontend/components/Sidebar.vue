@@ -1,5 +1,5 @@
 <template>
-  <div class="side-sidebar">
+  <div class="sidebar">
     <button
       :class="{ opened: menu }"
       :aria-expanded="menu"
@@ -7,19 +7,50 @@
       aria-label="Main Menu"
       @click="toggleMenu()"
     >
-      <svg :class="{ hidden: menu, block: !menu }" width="56" height="28" viewBox="0 0 56 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        :class="{ hidden: menu, block: !menu }"
+        width="56"
+        height="28"
+        viewBox="0 0 56 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <line y1="1" x2="56" y2="1" stroke="#393939" stroke-width="2" />
         <line y1="14" x2="56" y2="14" stroke="#393939" stroke-width="2" />
         <line y1="27" x2="56" y2="27" stroke="#393939" stroke-width="2" />
       </svg>
 
-      <svg :class="{ hidden: !menu, block: menu }" width="56" height="28" viewBox="0 0 56 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line x1="0.42738" y1="1.09593" x2="55.4274" y2="27.0959" stroke="#393939" stroke-width="2" />
-        <line x1="0.57262" y1="27.0959" x2="55.5726" y2="1.09593" stroke="#393939" stroke-width="2" />
+      <svg
+        :class="{ hidden: !menu, block: menu }"
+        width="56"
+        height="28"
+        viewBox="0 0 56 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="0.42738"
+          y1="1.09593"
+          x2="55.4274"
+          y2="27.0959"
+          stroke="#393939"
+          stroke-width="2"
+        />
+        <line
+          x1="0.57262"
+          y1="27.0959"
+          x2="55.5726"
+          y2="1.09593"
+          stroke="#393939"
+          stroke-width="2"
+        />
       </svg>
     </button>
 
-    <div class="fixed top-0 p-5 md:p-0 md:block md:sticky bg-white w-full h-full z-10" :class="{ hidden: !menu }">
+    <div
+      class="main-nav fixed top-0 p-5 md:p-0 md:block md:sticky bg-white w-full z-10"
+      :class="{ hidden: !menu }"
+    >
       <nuxt-link :to="localePath('/')">
         <img class="w-full h-auto" src="/CdC-logo.png" />
       </nuxt-link>
@@ -28,12 +59,31 @@
       </nuxt-link>
       <nav class="site-navigation">
         <ul>
-          <li v-for="(link, i) in links" :key="i" :class="{ 'sub-navigation-open': link.open }">
-            <nuxt-link v-if="link.link" :to="link.link" :exact="link.exactActiveClass">{{ link.name }}</nuxt-link>
-            <button v-if="!link.link" :class="{ nuxtLinkActive: link.open }" @click="toggleSubmenu(link)">{{ link.name }}</button>
-            <ul v-if="link.subLinks" class="sub-navigation">
+          <li
+            v-for="(link, i) in links"
+            :key="i"
+            :class="{ 'sub-navigation-open': link.open }"
+          >
+            <nuxt-link
+              v-if="link.link"
+              :to="link.link"
+              :exact="link.exactActiveClass"
+              >{{ link.name }}</nuxt-link
+            >
+            <button
+              v-if="!link.link"
+              :class="{ nuxtLinkActive: link.open }"
+              @click="toggleSubmenu(link)"
+            >
+              {{ link.name }}
+              <span :class="{ hidden: link.open }">🞡</span>
+              <span class="relative left-0.5 -top-0.5" :class="{ hidden: !link.open }">–</span>
+            </button>
+            <ul v-if="link.subLinks" class="sub-navigation" :class="{ hidden: !link.open }">
               <li v-for="(subLink, j) in link.subLinks" :key="j">
-                <nuxt-link v-if="subLink.link" :to="subLink.link">{{ subLink.name }}</nuxt-link>
+                <nuxt-link v-if="subLink.link" :to="subLink.link">{{
+                  subLink.name
+                }}</nuxt-link>
               </li>
             </ul>
           </li>
@@ -49,15 +99,31 @@ export default {
   data() {
     return {
       links: [
-        { name: this.$t('nav').home, link: this.localePath('/'), exactActiveClass: true },
+        {
+          name: this.$t('nav').home,
+          link: this.localePath('/'),
+          exactActiveClass: true,
+        },
         {
           name: this.$t('nav').association,
           open: false,
           subLinks: [
-            { name: this.$t('canton').vs, link: this.localePath('/association/vs') },
-            { name: this.$t('canton').vd, link: this.localePath('/association/vd') },
-            { name: this.$t('canton').ge, link: this.localePath('/association/ge') },
-            { name: this.$t('canton').fr, link: this.localePath('/association/fr') },
+            {
+              name: this.$t('canton').vs,
+              link: this.localePath('/association/vs'),
+            },
+            {
+              name: this.$t('canton').vd,
+              link: this.localePath('/association/vd'),
+            },
+            {
+              name: this.$t('canton').ge,
+              link: this.localePath('/association/ge'),
+            },
+            {
+              name: this.$t('canton').fr,
+              link: this.localePath('/association/fr'),
+            },
           ],
         },
         { name: this.$t('nav').agenda, link: this.localePath('agenda') },
@@ -65,7 +131,10 @@ export default {
         { name: this.$t('nav').offre, link: this.localePath('offre') },
         { name: this.$t('nav').auditions, link: this.localePath('auditions') },
         { name: this.$t('nav').medias, link: this.localePath('medias') },
-        { name: this.$t('nav').remerciements, link: this.localePath('remerciements') },
+        {
+          name: this.$t('nav').remerciements,
+          link: this.localePath('remerciements'),
+        },
         { name: this.$t('nav').contact, link: this.localePath('contact') },
       ],
       menu: false,
@@ -90,15 +159,9 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.sub-navigation-open button {
-  font-weight: 600;
-}
-.sub-navigation-open .sub-navigation {
-  display: block;
-}
-
-.sub-navigation {
-  display: none;
+.main-nav {
+  padding-top: 100px;
+  line-height: 1.3;;
 }
 
 .sub-navigation li:before {

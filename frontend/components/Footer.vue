@@ -1,5 +1,5 @@
 <template>
-  <div id="footer" class="mt-32 lg:mt-48 p-5 font-newsCycle">
+  <div id="footer" class="mt-32 lg:mt-48 p-5">
     <div class="hidden">
       <div class="items-center">
         <div class="lg:mr-2">
@@ -10,7 +10,7 @@
           <SocialLink name="instagram" link="https://www.instagram.com/lesconcertsducoeur/" sidebar />
         </div>
 
-        <nuxt-link :to="localePath('contact')" class="text-xl font-newsCycle hover:font-bold"> {{ $t('nav').contact }} </nuxt-link>
+        <nuxt-link :to="localePath('contact')" class="text-xl hover:font-bold"> {{ $t('nav').contact }} </nuxt-link>
       </div>
 
       <form

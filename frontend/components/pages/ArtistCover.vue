@@ -14,7 +14,7 @@
           <template v-if="data.first_name != null && data.last_name != null"> {{ data.first_name }} {{ data.last_name }} </template>
           <template v-if="data.name != null"> {{ data.name }} </template>
         </p>
-        <p class="text-lg font-newsCycle">
+        <p class="text-lg">
           <template v-if="data.instrument != null">
             {{ data.instrument }}
           </template>

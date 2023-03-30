@@ -4,7 +4,7 @@
       <slot name="title"></slot>
     </div>
     <div class="flex items-center flex-row justify-between">
-      <div class="font-newsCycle text-lg lg:text-xl lg:mr-48" :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">
+      <div class="text-lg lg:text-xl lg:mr-48" :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }">
         <slot name="details"></slot>
       </div>
       <div v-if="circle" id="donation-circle" class="ml-auto lg:m-0">

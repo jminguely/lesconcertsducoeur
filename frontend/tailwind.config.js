@@ -32,7 +32,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        newsCycle: ['News Cycle'],
+        sans: ['News Cycle'],
         playFair: ['Playfair'],
       },
       rotate: {

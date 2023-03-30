@@ -19,10 +19,10 @@
 
     <div class="ml-2 w-full flex justify-between sm:justify-start sm:w-auto items-start">
       <div class="mb-auto sticky top-0"><slot name="label"></slot></div>
-      <div :class="{ 'pointer-events-none hidden': !open }" class="ml-4 font-newsCycle">
+      <div :class="{ 'pointer-events-none hidden': !open }" class="ml-4">
         <div v-for="(item, i) in options" :key="i" class="cursor-pointer hover:font-bold" @click.stop="selectItem(item)">{{ item }}</div>
       </div>
-      <div :class="{ hidden: open }" class="ml-4 font-newsCycle">
+      <div :class="{ hidden: open }" class="ml-4">
         <template v-if="selectedItem != ''">
           {{ selectedItem }}
         </template>
