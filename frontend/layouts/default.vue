@@ -1,27 +1,19 @@
 <template>
-  <div class="antialiased h-screen">
-    <Sidebar />
-    <div class="h-full flex flex-col flex-grow ml-auto lg:ml-96">
-      <Navbar />
-      <div class="px-5 flex pt-6 flex-col justify-between flex-grow mt-20 lg:mt-28 lg:pl-0 lg:pr-20">
-        <Nuxt id="content" class="site-content" />
-        <Footer />
+  <div class="antialiased min-h-screen">
+    <div class="site-wrapper">
+      <div class="site-topbar">
+        <MarqueeBanner />
+        <div class="lang-switcher hidden md:block"><nuxt-link :to="switchLocalePath('fr')">fr</nuxt-link> | <nuxt-link :to="switchLocalePath('de')">de</nuxt-link></div>
+        <div class="hidden md:block"><ButtonSupport /></div>
       </div>
+      <Sidebar />
+      <Nuxt id="content" class="site-content" />
     </div>
-    <div class="z-50 fixed w-full h-1 bottom-0 left-0" :class="{ 'bg-vs': canton == 'vs', 'bg-vd': canton == 'vd', 'bg-ge': canton == 'ge' }"></div>
+    <Footer />
   </div>
 </template>
 <script>
-import Sidebar from '@/components/Sidebar.vue'
-import Navbar from '@/components/Navbar.vue'
-import Footer from '@/components/Footer.vue'
-
 export default {
-  components: {
-    Sidebar,
-    Navbar,
-    Footer,
-  },
   data() {
     return { canton: '' }
   },

@@ -1,5 +1,3 @@
-@import './fonts';
-
 @import './components/links';
 
 * {
@@ -25,7 +23,50 @@ h2 > div > p {
   padding-bottom: 1.3rem;
 }
 
+.site-wrapper {
+  padding: 0 50px;
+  display: grid;
+  grid-template-areas:
+    'topbar'
+    'sidebar'
+    'content';
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  gap: 50px 100px;
+
+  @screen md {
+    grid-template-areas:
+      'topbar topbar'
+      'sidebar content';
+    grid-template-rows: auto auto;
+    grid-template-columns: 200px auto;
+  }
+}
+
+.lang-switcher {
+  padding: 6px 20px;
+  white-space: nowrap;
+}
+
+.site-topbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  grid-area: topbar;
+  border-bottom: 1px solid #828282;
+  background: white;
+  z-index: 20;
+  padding: 10px 0;
+}
+
+.site-sidebar {
+  grid-area: sidebar;
+}
+
 .site-content {
+  grid-area: content;
   h2 {
     @apply text-xl lg:text-3xl font-playFair;
     @apply mt-10;
@@ -65,15 +106,6 @@ h2 > div > p {
 }
 
 #content {
-  ul > li::before {
-    content: '—' !important;
-    position: absolute !important;
-    width: 0.35em !important;
-    height: 0.35em !important;
-    top: 0 !important;
-    left: 0.25em !important;
-    background-color: transparent !important;
-  }
   .splide ul > li::before {
     content: '' !important;
   }

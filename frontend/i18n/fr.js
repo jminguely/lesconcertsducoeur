@@ -1,16 +1,14 @@
 export default {
   nav: {
-    association: "L'association",
-    artists: 'Nos artistes',
-    auditions: 'Auditions',
     home: 'Accueil',
-    mission: 'Notre mission',
-    concerts: 'Nos concerts',
+    association: 'Les associations',
     agenda: 'Agenda',
+    artistes: 'Nos artistes',
+    offre: 'Notre offre (orga)',
+    auditions: 'Auditions',
     medias: 'Médias',
+    remerciements: 'Remerciements',
     contact: 'Contact',
-    supportUs: 'Nous soutenir',
-    newsletter: "S'abonner à la newsletter",
   },
   home: {
     hero: {
@@ -400,9 +398,11 @@ Merci !
     VS: 'Valais',
     VD: 'Vaud',
     GE: 'Genève',
+    FR: 'Fribourg',
     vs: 'Valais',
     vd: 'Vaud',
     ge: 'Genève',
+    fr: 'Fribourg',
   },
   impressum: {
     title: 'Mentions légales',

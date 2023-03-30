@@ -53,7 +53,7 @@
 
     <div class="flex">
       <div class="w-full py-4 pr-10">
-        <h2 class="text-3xl font-playFair" v-html="$t('soutien').supportUs.text"></h2>
+        <h2 class="text-3xl font-playFair" v-dompurify-html="$t('soutien').supportUs.text"></h2>
       </div>
       <div class="w-full">
         <img src="~/assets/img/illustrations/illustration7.webp" />

@@ -3,13 +3,13 @@
     <Headline>
       <template #headline>{{ audition.hero.headline }}</template>
       <template #content>
-        <div class="prose prose-xl text-" :class="[`text-${canton}`]" v-html="$md.render(audition.hero.subhead)"></div>
+        <div v-dompurify-html="$md.render(audition.hero.subhead)" class="prose prose-xl text-" :class="[`text-${canton}`]"></div>
       </template>
     </Headline>
 
     <div v-for="content in audition.content" :key="content.id" class="text-xl mt-4">
       <div v-if="content.__typename === 'ComponentContentText'">
-        <div v-html="$md.render(content.text)"></div>
+        <div v-dompurify-html="$md.render(content.text)"></div>
       </div>
     </div>
 
@@ -18,10 +18,9 @@
 </template>
 
 <script>
+import { gql } from 'graphql-tag'
 import Headline from '@/components/typography/Headline.vue'
 import Spacing from '@/components/typography/Spacing.vue'
-
-import { gql } from 'graphql-tag'
 
 export default {
   components: {
@@ -39,8 +38,7 @@ export default {
 
   fetchOnServer: false,
   async fetch() {
-    this.canton = this.$route.params.canton
-    await this.getContent(this.$route.params.canton)
+    await this.getContent('vs')
   },
 
   methods: {

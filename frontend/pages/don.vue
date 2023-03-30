@@ -49,7 +49,7 @@ export default {
     },
   },
   mounted() {
-    this.canton = this.$route.params.canton
+    this.canton = 'vs'
     // console.log(window)
     if (process.browser) {
       window.rnw.tamaro.runWidget('.rnw-widget-container', {

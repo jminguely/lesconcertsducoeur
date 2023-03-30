@@ -65,7 +65,7 @@
     <div class="grid grid-cols-1 sm:gap-x-10 sm:grid-cols-2 sm:gap-y-5">
       <div v-for="item in links" :key="item.title" class="text-xl">
         <p>
-          <a :href="item.link" target="_blank" v-html="item.title"></a><br />
+          <a :href="item.link" target="_blank" v-dompurify-html="item.title"></a><br />
           {{ item.subtitle }} – {{ item.date }}
         </p>
       </div>

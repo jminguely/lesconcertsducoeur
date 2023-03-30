@@ -3,9 +3,6 @@
     <div>
       <slot name="image"></slot>
     </div>
-    <donate-button :canton="canton">
-      <slot name="label"></slot>
-    </donate-button>
   </div>
 </template>
 

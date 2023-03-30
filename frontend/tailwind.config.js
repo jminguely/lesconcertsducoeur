@@ -32,7 +32,6 @@ module.exports = {
         },
       },
       fontFamily: {
-        bodoni: ['Bodoni'],
         newsCycle: ['News Cycle'],
         playFair: ['Playfair'],
       },
@@ -44,6 +43,7 @@ module.exports = {
         vs: '#DB303D',
         vd: '#4D9A70',
         ge: '#EE6F22',
+        fr: '#3751C0',
         concert: {
           dark: '#393939',
         },

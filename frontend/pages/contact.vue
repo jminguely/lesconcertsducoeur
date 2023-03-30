@@ -19,7 +19,7 @@
       <div>
         <h3 class="mb-4 text-3xl font-playFair">{{ item.title }}</h3>
       </div>
-      <div v-html="item.text"></div>
+      <div v-dompurify-html="item.text"></div>
     </div>
   </div>
 </template>

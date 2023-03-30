@@ -9,7 +9,7 @@
     <Headline>
       <template #headline>{{ $t('mission').hero.title }}</template>
       <template #content>
-        <p v-html="$t('mission').hero.subtitle"></p>
+        <p v-dompurify-html="$t('mission').hero.subtitle"></p>
       </template>
     </Headline>
 
@@ -39,7 +39,7 @@
 
     <!-- <accordion-item v-for="(item, i) in $t('mission').objectifs.content" :key="i">
       <template #label>{{ item.title }}{{ i }}</template>
-      <template #content><div v-html="item.text"></div></template>
+      <template #content><div v-dompurify-html="item.text"></div></template>
       <template #image><img class="mx-auto" :src="images[i]" /></template>
     </accordion-item> -->
 
@@ -48,7 +48,7 @@
     <div class="mt-12 text-xl font-newsCycle">
       <!-- <div v-for="(item, i) in $t('mission').objectifs.content" :key="i" class="pb-8">
         <h3 class="font-bold pb-4">{{ item.title }}</h3>
-        <p v-html="item.text"></p>
+        <p v-dompurify-html="item.text"></p>
       </div> -->
     </div>
   </div>

@@ -11,7 +11,16 @@ export default {
       class: 'bg-white',
     },
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { hid: 'description', name: 'description', content: '' }],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        once: true,
+        rel: 'stylesheet',
+        href: '/fonts.css',
+        as: 'style',
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -19,37 +28,22 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '@/plugins/vue-dompurify.js', mode: 'client' },
     { src: '@/plugins/vue-clickaway.js', mode: 'client' },
     { src: '@/plugins/vue-splide.js', mode: 'client' },
   ],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
-    // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
-    // https://www.npmjs.com/package/@nuxtjs/date-fns
-    '@nuxtjs/date-fns',
-  ],
+  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/tailwindcss', '@nuxtjs/date-fns'],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    // https://www.npmjs.com/package/@nuxtjs/apollo
-    '@nuxtjs/apollo',
-    // https://i18n.nuxtjs.org/
-    'nuxt-i18n',
-    // https://www.npmjs.com/package/@nuxtjs/markdownit
-    '@nuxtjs/markdownit',
-  ],
+  modules: ['@nuxtjs/apollo', 'nuxt-i18n', '@nuxtjs/markdownit'],
 
   apollo: {
     clientConfigs: {
       default: {
         httpEndpoint: 'https://api-new.lesconcertsducoeur.ch/graphql',
+        // httpEndpoint: 'http://localhost:1337/graphql',
       },
     },
   },

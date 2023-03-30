@@ -1,16 +1,14 @@
 export default {
   nav: {
-    association: 'Der Verein',
-    artists: 'Die Musiker:innen',
-    auditions: 'Vorsingen',
     home: 'Home',
-    mission: 'Unsere Mission',
-    concerts: 'Unsere Konzerte',
+    association: 'Der Verein',
     agenda: 'Agenda',
+    artistes: 'Die Musiker:innen',
+    offre: 'Notre offre (orga)',
+    auditions: 'Vorsingen',
     medias: 'Medien',
+    remerciements: 'Remerciements',
     contact: 'Kontakt',
-    supportUs: 'Unterstützen',
-    newsletter: 'Newsletter abonnieren',
   },
   home: {
     hero: {
@@ -343,9 +341,11 @@ Herzlichen Dank!
     VS: 'Wallis',
     VD: 'Waadt',
     GE: 'Genf',
+    FR: 'Freiburg',
     vs: 'Wallis',
     vd: 'Waadt',
     ge: 'Genf',
+    fr: 'Freiburg',
   },
   impressum: {
     title: 'Impressum',

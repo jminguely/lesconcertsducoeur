@@ -10,7 +10,7 @@
 
       <div class="lg:flex-shrink flex items-center lg:block lg:w-full lg:flex-col lg:static lg:mt-4">
         <button class="flex my-2 mr-4 text-xl font-newsCycle focus:outline-none lg:mr-0" @click="goBack()">
-          <nav-chevron-left :canton="canton" class="flex-shrink-0" />
+          <span :canton="canton" class="flex-shrink-0">←</span>
           <template v-if="data[previousIndex] != null">
             <span class="pl-2 hidden text-left lg:block" :class="{ 'hover:text-vs': canton == 'vs', 'hover:text-vd': canton == 'vd', 'hover:text-ge': canton == 'ge' }">
               <template v-if="data[previousIndex].first_name != null && data[previousIndex].last_name"> {{ data[previousIndex].first_name }} {{ data[previousIndex].last_name }} </template>
@@ -20,7 +20,7 @@
         </button>
 
         <button class="flex my-2 text-xl font-newsCycle focus:outline-none" @click="next()">
-          <nav-chevron-right :canton="canton" class="flex-shrink-0" />
+          <span :canton="canton" class="flex-shrink-0">→</span>
           <template v-if="data[nextIndex] != null">
             <span class="pl-2 hidden text-left lg:block" :class="{ 'hover:text-vs': canton == 'vs', 'hover:text-vd': canton == 'vd', 'hover:text-ge': canton == 'ge' }">
               <template v-if="data[nextIndex].first_name != null && data[nextIndex].last_name"> {{ data[nextIndex].first_name }} {{ data[nextIndex].last_name }} </template>
@@ -49,12 +49,12 @@
 
           <div v-if="selected.repertoire != null && selected.repertoire != ''">
             <div class="mb-4 text-3xl font-playFair">{{ $t('artistes').repertoire }}</div>
-            <div v-if="selected.repertoire != null" class="prose prose-xl" v-html="$md.render(selected.repertoire)"></div>
+            <div v-if="selected.repertoire != null" class="prose prose-xl" v-dompurify-html="$md.render(selected.repertoire)"></div>
           </div>
 
           <div v-if="selected.formats != null && selected.formats != ''">
             <div class="mb-4 text-3xl font-playFair">{{ $t('artistes').formats }}</div>
-            <div v-if="selected.formats != null" class="prose prose-xl" v-html="$md.render(selected.formats)"></div>
+            <div v-if="selected.formats != null" class="prose prose-xl" v-dompurify-html="$md.render(selected.formats)"></div>
           </div>
         </div>
         <!-- <p class="my-6 prose-xl font-newsCycle">Vous souhaitez booker ce musicien·nne dans votre établissement ?</p>

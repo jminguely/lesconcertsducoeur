@@ -2,10 +2,10 @@
   <div>
     <Headline>
       <template #headline>{{ $t('concerts').hero.title }}</template>
-      <template #content><div v-html="$t('concerts').hero.subtitle"></div></template>
+      <template #content><div v-dompurify-html="$t('concerts').hero.subtitle"></div></template>
     </Headline>
 
-    <p class="mb-12 text-xl font-newsCycle" v-html="$t('concerts').hero.text"></p>
+    <p class="mb-12 text-xl font-newsCycle" v-dompurify-html="$t('concerts').hero.text"></p>
 
     <!-- <ImageBlock>
       <template #title>Vous souhaitez organiser un concert?</template>
@@ -25,7 +25,7 @@
 
     <!-- <accordion-item v-for="(item, i) in $t('concerts').concertTypes" :key="i">
       <template #label>{{ item.title }}</template>
-      <template #content><div v-html="item.content"></div></template>
+      <template #content><div v-dompurify-html="item.content"></div></template>
       <template #image><img class="mx-auto" :src="images[i]" /></template>
     </accordion-item> -->
 
@@ -36,7 +36,7 @@
       <Headline>
         <template #headline>{{ item.title }}</template>
       </Headline>
-      <div class="text-xl" v-html="item.content"></div>
+      <div class="text-xl" v-dompurify-html="item.content"></div>
     </div>
 
     <Spacing />

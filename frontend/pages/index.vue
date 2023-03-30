@@ -44,7 +44,7 @@
             {{ $t('canton')[item.canton.uid.toLowerCase()] }}
           </template>
           <template #pretitle></template>
-          <template #title><span v-html="$md.render(item.title)"></span></template>
+          <template #title><span v-dompurify-html="$md.render(item.title)"></span></template>
           <template #content>{{ item.content }}</template>
         </InfoBlock>
       </div>
@@ -93,7 +93,7 @@
     <div class="grid grid-cols-1 gap-y-10 md:gap-10 md:grid-cols-2">
       <testimonial>
         <template #quote>
-          <span v-html="firstTestimonial.quote"></span>
+          <span v-dompurify-html="firstTestimonial.quote"></span>
         </template>
 
         <template #name>
@@ -107,7 +107,7 @@
 
       <testimonial class="hidden sm:block">
         <template #quote>
-          <span v-html="secondTestimonial.quote"></span>
+          <span v-dompurify-html="secondTestimonial.quote"></span>
         </template>
 
         <template #name>
@@ -129,7 +129,7 @@
     <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
       <Sublink canton="vs">
         <template #title>
-          <span v-html="$t('home').organizeConcert.vs"></span>
+          <span v-dompurify-html="$t('home').organizeConcert.vs"></span>
         </template>
         <template #text>
           <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'vs' } })">
@@ -140,7 +140,7 @@
 
       <Sublink canton="vd">
         <template #title>
-          <span v-html="$t('home').organizeConcert.vd"></span>
+          <span v-dompurify-html="$t('home').organizeConcert.vd"></span>
         </template>
         <template #text>
           <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'vd' } })">
@@ -151,7 +151,7 @@
 
       <Sublink canton="ge">
         <template #title>
-          <span v-html="$t('home').organizeConcert.ge"></span>
+          <span v-dompurify-html="$t('home').organizeConcert.ge"></span>
         </template>
         <template #text>
           <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'ge' } })">
@@ -220,6 +220,7 @@
 </template>
 
 <script>
+import { gql } from 'graphql-tag'
 import Illustration from '@/components/pages/Illustration.vue'
 import Carousel from '@/components/pages/Carousel.vue'
 import Divider from '@/components/pages/Divider.vue'
@@ -230,8 +231,6 @@ import InfoBlock from '@/components/typography/InfoBlock.vue'
 import Sublink from '@/components/typography/Sublink.vue'
 import HeadlineLink from '@/components/typography/HeadlineLink.vue'
 import Spacing from '@/components/typography/Spacing.vue'
-
-import { gql } from 'graphql-tag'
 
 export default {
   components: {
@@ -387,12 +386,13 @@ export default {
       this.content = await this.$apollo
         .query({ query })
         .then(({ data }) => {
-          if (process.env.dev) console.log(data)
+          if (process.env.dev) console.log('data', data)
           return data
         })
         .catch((e) => {
-          if (process.env.dev) console.log(e)
+          if (process.env.dev) console.log('error', e)
         })
+      console.log(this)
       this.content = this.content.home
     },
   },

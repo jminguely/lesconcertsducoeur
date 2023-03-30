@@ -5,7 +5,7 @@
         <Headline>
           <template #headline>{{ association.section_hero_title }}</template>
           <template #content>
-            <div class="prose prose-xl" v-html="$md.render(association.section_hero_description)"></div>
+            <div v-dompurify-html="$md.render(association.section_hero_description)" class="prose prose-xl"></div>
           </template>
         </Headline>
       </div>
@@ -15,92 +15,48 @@
       </div>
     </div>
 
-    <!-- Section Comtié et Direction Artistique -->
     <spacing />
-    <Headline>
-      <template #headline>
-        <span class="text-4xl lg:text-5xl">{{ $t('association').comite.title }}</span>
-      </template>
-    </Headline>
 
-    <template v-if="association.section_comite != null">
+    <template v-if="association.section_comite">
+      <Headline>
+        <template #headline>
+          <span class="text-4xl lg:text-5xl">{{ $t('association').comite.title }}</span>
+        </template>
+      </Headline>
       <div id="comite" class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div class="prose prose-xl" v-html="$md.render(association.section_comite.col_left)"></div>
-        <div class="prose prose-xl" v-html="$md.render(association.section_comite.col_right)"></div>
+        <div v-dompurify-html="$md.render(association.section_comite.col_left)" class="prose prose-xl"></div>
+        <div v-dompurify-html="$md.render(association.section_comite.col_right)" class="prose prose-xl"></div>
       </div>
     </template>
 
     <Spacing />
 
-    <Headline class="mb-8">
+    <DonationBlock v-if="association.section_membre">
       <template #headline>{{ $t('association').soutien }}</template>
-    </Headline>
-
-    <DonationBlock class="mb-16">
-      <template #title>{{ $t('association').benevole }}</template>
-      <template #details>
-        <div
-          v-if="association.section_benevole != null"
-          class="prose prose-xl"
-          :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }"
-          v-html="$md.render(association.section_benevole)"
-        ></div>
-      </template>
-    </DonationBlock>
-
-    <DonationBlock class="mb-16" circle :canton="canton">
-      <template #title>{{ $t('association').don }}</template>
-      <template #details>
-        <div
-          v-if="association.section_don != null"
-          class="prose prose-xl"
-          :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }"
-          v-html="$md.render(association.section_don)"
-        ></div>
-      </template>
-    </DonationBlock>
-
-    <DonationBlock>
       <template #title>{{ $t('association').membre }}</template>
       <template #details>
-        <div
-          v-if="association.section_membre != null"
-          class="prose prose-xl"
-          :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }"
-          v-html="$md.render(association.section_membre)"
-        ></div>
+        <div v-dompurify-html="$md.render(association.section_membre)" class="prose prose-xl" :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }"></div>
       </template>
     </DonationBlock>
 
     <Spacing />
 
-    <Headline class="mb-12">
-      <template #headline>{{ $t('association').partners }} </template>
-    </Headline>
-
-    <template v-if="association.partners != null">
-      <logo-cloud v-if="association.partners.length > 0" :logos="association.partners" is-partner>
+    <template v-if="association.partners.length > 0">
+      <Headline class="mb-12">
+        <template #headline>{{ $t('association').partners }} </template>
+      </Headline>
+      <logo-cloud :logos="association.partners" is-partner>
         <template #title> {{ $t('home').partners.title }}</template>
       </logo-cloud>
     </template>
 
     <spacing />
 
-    <template v-if="association.sponsors != null">
+    <template v-if="association.sponsors">
       <logo-cloud v-if="association.sponsors.length > 0" :logos="association.sponsors">
         <template #title> {{ $t('home').sponsors.title }}</template>
       </logo-cloud>
     </template>
-
-    <!-- <Sponsors :sponsors="sponsors">
-      <template #title> {{ $t('home').partners.title }}</template>
-    </Sponsors>
-
-    <Spacing />
-
-    <Sponsors :sponsors="sponsors">
-      <template #title> {{ $t('home').sponsors.title }}</template>
-    </Sponsors> -->
   </div>
 </template>
 
@@ -144,6 +100,7 @@ export default {
       if (canton === 'vs') return 2
       if (canton === 'vd') return 3
       if (canton === 'ge') return 4
+      if (canton === 'fr') return 5
     },
     async getAssociation(canton) {
       const query = gql`

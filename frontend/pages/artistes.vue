@@ -4,10 +4,6 @@
       <template #headline>{{ $t('artistes').title }} </template>
     </Headline>
 
-    <donate-button-link class="hidden lg:block absolute right-28 top-6" :to="localePath('canton-auditions')" :canton="canton">
-      {{ $t('nav').auditions }}
-    </donate-button-link>
-
     <template v-if="!$fetchState.pending">
       <template v-if="data != null">
         <div class="gap-y-5 sm:gap-x-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
@@ -21,12 +17,11 @@
 </template>
 
 <script>
+import { gql } from 'graphql-tag'
 import Headline from '@/components/typography/Headline.vue'
 import ArtistCover from '@/components/pages/ArtistCover.vue'
 import ArtistCoverMobile from '@/components/pages/ArtistCoverMobile.vue'
 import ArtistPopup from '@/components/pages/ArtistPopup.vue'
-
-import { gql } from 'graphql-tag'
 
 export default {
   components: {
@@ -47,8 +42,7 @@ export default {
   fetchOnServer: false,
 
   async fetch() {
-    this.canton = this.$route.params.canton
-    await this.getArtists(this.$route.params.canton)
+    await this.getArtists('vs')
   },
 
   methods: {
@@ -63,19 +57,6 @@ export default {
       if (canton === 'GE') return 4
     },
     async getArtists(canton) {
-      // artists(locale: $locale, where: { cantons_contains: $cantons }) {
-      //   id
-      //   first_name
-      //   last_name
-      //   instrument
-      //   description
-      //   repertoire
-      //   formats
-      //   picture {
-      //     id
-      //     url
-      //   }
-      // }
       const query = gql`
         query getArtists($locale: String, $cantons: ID) {
           musicGroups(locale: $locale, where: { cantons_contains: $cantons }) {
@@ -116,10 +97,8 @@ export default {
           if (process.env.dev) console.log(e)
         })
 
-      // const artists = queryData.artists
       const musicGroups = queryData.musicGroups
       this.data = musicGroups
-      // this.data = musicGroups.concat(artists)
     },
   },
 }
