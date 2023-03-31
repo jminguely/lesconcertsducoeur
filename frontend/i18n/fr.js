@@ -9,6 +9,7 @@ export default {
     medias: 'Médias',
     remerciements: 'Remerciements',
     contact: 'Contact',
+    nousSoutenir: 'Nous soutenir',
   },
   home: {
     hero: {
@@ -104,7 +105,7 @@ export default {
       help: '> en devenant bénévole',
       member: '> en devenant membre',
     },
-    nousSoutenir: 'Nous soutenir',
+
     partners: {
       title: 'En partenariat avec',
     },

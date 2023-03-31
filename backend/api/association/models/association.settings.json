@@ -20,7 +20,6 @@
       "type": "dynamiczone",
       "components": [
         "content.two-columns-text-image",
-        "content.canton-switch",
         "content.headline",
         "content.accordion-item",
         "content.accordion",
@@ -48,7 +47,11 @@
     "section_hero_img": {
       "model": "file",
       "via": "related",
-      "allowedTypes": ["images", "files", "videos"],
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
       "plugin": "upload",
       "required": false,
       "pluginOptions": {
@@ -102,7 +105,11 @@
     "partners": {
       "collection": "file",
       "via": "related",
-      "allowedTypes": ["images", "files", "videos"],
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
       "plugin": "upload",
       "required": false,
       "pluginOptions": {
@@ -114,7 +121,11 @@
     "sponsors": {
       "collection": "file",
       "via": "related",
-      "allowedTypes": ["images", "files", "videos"],
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
       "plugin": "upload",
       "required": false,
       "pluginOptions": {

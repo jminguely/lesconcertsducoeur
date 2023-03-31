@@ -4,17 +4,27 @@
       <template #headline>Agenda</template>
     </Headline>
 
-    <div class="flex flex-col justify-items-start font-playFair text-xl items-start space-y-4 mb-16 lg:space-y-0 lg:flex-row lg:space-x-8">
-      <ClassicSelect :options="cantons" :selected-item.sync="cantonFilter" default-item="VS">
+    <div
+      class="flex flex-col justify-items-start font-playFair text-xl items-start space-y-4 mb-16 lg:space-y-0 lg:flex-row lg:space-x-8"
+    >
+      <ClassicSelect
+        :options="cantons"
+        :selected-item.sync="cantonFilter"
+        default-item="VS"
+      >
         <template #label>{{ $t('agenda').canton }}</template>
       </ClassicSelect>
-      <ClassicSelect :options="years" :selected-item.sync="yearFilter" default-item="2023">
+      <ClassicSelect
+        :options="years"
+        :selected-item.sync="yearFilter"
+        default-item="2023"
+      >
         <template #label>{{ $t('agenda').pastConcerts }}</template>
       </ClassicSelect>
       <!-- <a class="cursor-pointer" @click="resetFilters()">Effacer les filtres</a> -->
 
       <div
-        class="w-full sm:w-auto duration-300 ease-in-out flex items-start py-2 px-4 border-2 text-white bg-concert-dark border-concert-dark cursor-pointer"
+        class="w-full sm:w-auto duration-300 ease-in-out flex items-start py-2 px-4 border-2 text-white bg-gray border-gray cursor-pointer"
         :class="{
           'opacity-0': yearFilter == '' && cantonFilter == '',
           'opacity-100': yearFilter != '' || cantonFilter != '',
@@ -30,20 +40,36 @@
     </DateDivider>
 
     <template v-if="data != null">
-      <EventDetails v-for="item in data.calendars" :key="item.id + item.title" class="py-6" :canton="getColor(getCanton(item.canton))">
-        <template #date>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template>
+      <EventDetails
+        v-for="item in data.calendars"
+        :key="item.id + item.title"
+        class="py-6"
+        :canton="getColor(getCanton(item.canton))"
+      >
+        <template #date>{{
+          $dateFns.format(
+            new Date(item.date_time),
+            'dd.MM.yyyy' + ' | ' + 'HH:mm'
+          )
+        }}</template>
         <template #location>{{ item.location }}</template>
         <template #title>{{ item.title }} </template>
         <template #artists>
           <template v-if="item.music_group != null">
-            <div v-for="artist in item.music_group.artists" :key="artist.id + artist.first_name">
+            <div
+              v-for="artist in item.music_group.artists"
+              :key="artist.id + artist.first_name"
+            >
               <span>{{ artist.first_name }} {{ artist.last_name }}</span>
               <span>|</span>
               <span>{{ artist.instrument }}</span>
             </div>
           </template>
           <template v-else>
-            <div v-for="artist in item.artists" :key="artist.id + artist.first_name">
+            <div
+              v-for="artist in item.artists"
+              :key="artist.id + artist.first_name"
+            >
               <span>{{ artist.first_name }} {{ artist.last_name }}</span>
               <span>|</span>
               <span>{{ artist.instrument }}</span>
@@ -161,8 +187,23 @@ export default {
       const canton = this.getCantonID(this.cantonFilter)
 
       let where = {}
-      if (this.cantonFilter === '') where = this.yearFilter === '' ? { date_time_gte: new Date() } : { date_time_gte: `${this.yearFilter}-01-01`, date_time_lte: `${this.yearFilter}-12-31` }
-      else where = this.yearFilter === '' ? { date_time_gte: new Date(), canton } : { date_time_gte: `${this.yearFilter}-01-01`, date_time_lte: `${this.yearFilter}-12-31`, canton }
+      if (this.cantonFilter === '')
+        where =
+          this.yearFilter === ''
+            ? { date_time_gte: new Date() }
+            : {
+                date_time_gte: `${this.yearFilter}-01-01`,
+                date_time_lte: `${this.yearFilter}-12-31`,
+              }
+      else
+        where =
+          this.yearFilter === ''
+            ? { date_time_gte: new Date(), canton }
+            : {
+                date_time_gte: `${this.yearFilter}-01-01`,
+                date_time_lte: `${this.yearFilter}-12-31`,
+                canton,
+              }
 
       const variables = {
         // date_time: this.$dateFns.formatISO(new Date()),

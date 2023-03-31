@@ -25,7 +25,6 @@
       "type": "dynamiczone",
       "components": [
         "content.two-columns-text-image",
-        "content.canton-switch",
         "content.headline",
         "content.accordion-item",
         "content.accordion",

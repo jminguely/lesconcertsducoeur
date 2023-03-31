@@ -9,6 +9,7 @@ export default {
     medias: 'Medien',
     remerciements: 'Remerciements',
     contact: 'Kontakt',
+    nousSoutenir: 'Verein unterstützen',
   },
   home: {
     hero: {
@@ -47,7 +48,6 @@ export default {
       help: '> Als Freiwillige:r',
       member: '> Als Vereinsmitglied',
     },
-    nousSoutenir: 'Verein unterstützen',
     partners: {
       title: 'In Partnerschaft mit',
     },

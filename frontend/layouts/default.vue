@@ -3,8 +3,17 @@
     <div class="site-wrapper">
       <div class="site-topbar">
         <MarqueeBanner />
-        <div class="lang-switcher hidden md:block"><nuxt-link :to="switchLocalePath('fr')">fr</nuxt-link> | <nuxt-link :to="switchLocalePath('de')">de</nuxt-link></div>
-        <div class="hidden md:block"><ButtonSupport /></div>
+        <div class="lang-switcher hidden md:block">
+          <nuxt-link :to="switchLocalePath('fr')">fr</nuxt-link> |
+          <nuxt-link :to="switchLocalePath('de')">de</nuxt-link>
+        </div>
+        <div class="hidden md:block">
+          <Btn
+            color="multi"
+            :text="$t('nav').nousSoutenir"
+            :link="localePath('soutien')"
+          />
+        </div>
       </div>
       <Sidebar />
       <Nuxt id="content" class="site-content" />

@@ -1,5 +1,5 @@
 <template>
-  <div :class="`w-full border-concert-dark border-b-1`"></div>
+  <div :class="`w-full border-gray border-b-1`"></div>
 </template>
 
 <script>

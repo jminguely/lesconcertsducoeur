@@ -44,9 +44,7 @@ module.exports = {
         vd: '#4D9A70',
         ge: '#EE6F22',
         fr: '#3751C0',
-        concert: {
-          dark: '#393939',
-        },
+        gray: '#393939',
       },
       borderWidth: {
         1: '1px',

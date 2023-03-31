@@ -42,17 +42,13 @@ export default {
 
     const locale = i18n.locale + '-CH'
 
-    console.log(client);
-
     const res = await client.query({
       query: fetchPage,
       variables: {
         locale,
-        slug: pageSlug
+        slug: pageSlug,
       },
     })
-
-    console.log('res', res)
 
     const page = res.data.pageBySlug
 

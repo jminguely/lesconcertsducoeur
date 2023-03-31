@@ -54,36 +54,28 @@
       <nuxt-link :to="localePath('/')">
         <img class="w-full h-auto" src="/CdC-logo.png" />
       </nuxt-link>
-      <nuxt-link :to="localePath('/')">
+      <a
+        href="https://www.livemusicnow.org.uk/"
+        target="_blank"
+        rel="noreferrer"
+      >
         <img class="w-1/2 h-auto mb-5" src="/LMN-logo.png" />
-      </nuxt-link>
+      </a>
       <nav class="site-navigation">
         <ul>
-          <li
-            v-for="(link, i) in links"
-            :key="i"
-            :class="{ 'sub-navigation-open': link.open }"
-          >
+          <li v-for="(link, i) in links" :key="i">
             <nuxt-link
               v-if="link.link"
               :to="link.link"
               :exact="link.exactActiveClass"
               >{{ link.name }}</nuxt-link
             >
-            <button
-              v-if="!link.link"
-              :class="{ nuxtLinkActive: link.open }"
-              @click="toggleSubmenu(link)"
-            >
-              {{ link.name }}
-              <span :class="{ hidden: link.open }">🞡</span>
-              <span class="relative left-0.5 -top-0.5" :class="{ hidden: !link.open }">–</span>
-            </button>
-            <ul v-if="link.subLinks" class="sub-navigation" :class="{ hidden: !link.open }">
+            <span v-if="!link.link"> {{ link.name }} 🞡 </span>
+            <ul v-if="link.subLinks" class="sub-navigation">
               <li v-for="(subLink, j) in link.subLinks" :key="j">
-                <nuxt-link v-if="subLink.link" :to="subLink.link">{{
-                  subLink.name
-                }}</nuxt-link>
+                <nuxt-link v-if="subLink.link" :to="subLink.link">
+                  {{ subLink.name }}
+                </nuxt-link>
               </li>
             </ul>
           </li>
@@ -98,7 +90,12 @@ export default {
   components: {},
   data() {
     return {
-      links: [
+      menu: false,
+    }
+  },
+  computed: {
+    links() {
+      return [
         {
           name: this.$t('nav').home,
           link: this.localePath('/'),
@@ -136,17 +133,13 @@ export default {
           link: this.localePath('remerciements'),
         },
         { name: this.$t('nav').contact, link: this.localePath('contact') },
-      ],
-      menu: false,
-    }
+      ]
+    },
   },
 
   methods: {
     openMenu() {
       this.menu = true
-    },
-    toggleSubmenu(submenu) {
-      submenu.open = !submenu.open
     },
     toggleMenu() {
       this.menu = !this.menu
@@ -161,7 +154,7 @@ export default {
 <style lang="postcss" scoped>
 .main-nav {
   padding-top: 100px;
-  line-height: 1.3;;
+  line-height: 1.3;
 }
 
 .sub-navigation li:before {

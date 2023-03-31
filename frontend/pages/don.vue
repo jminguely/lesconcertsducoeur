@@ -8,14 +8,25 @@
       <iframe
         v-if="canton == 'vs'"
         class="border-2 lg:mt-5"
-        :class="{ 'border-vs': canton == 'vs', 'border-vd': canton == 'vd', 'border-ge': canton == 'ge' }"
+        :class="{
+          'border-vs': canton == 'vs',
+          'border-vd': canton == 'vd',
+          'border-ge': canton == 'ge',
+        }"
         width="100%"
         height="2200"
         :src="src"
       ></iframe>
     </template>
     <template v-else>
-      <div class="rnw-widget-container border-2 p-5 lg:mt-5" :class="{ 'border-vs': canton == 'vs', 'border-vd': canton == 'vd', 'border-ge': canton == 'ge' }"></div>
+      <div
+        class="rnw-widget-container border-2 p-5 lg:mt-5"
+        :class="{
+          'border-vs': canton == 'vs',
+          'border-vd': canton == 'vd',
+          'border-ge': canton == 'ge',
+        }"
+      ></div>
     </template>
   </div>
 </template>
@@ -34,7 +45,13 @@ export default {
   head() {
     return {
       title: `${this.$t('soutien').donate.title} | Les Concerts du Coeur`,
-      script: [{ hid: 'tamaro-raisenow', src: `https://tamaro.raisenow.com/lesco-3625/latest/widget.js`, defer: true }],
+      script: [
+        {
+          hid: 'tamaro-raisenow',
+          src: `https://tamaro.raisenow.com/lesco-3625/latest/widget.js`,
+          defer: true,
+        },
+      ],
     }
   },
   computed: {
@@ -44,18 +61,19 @@ export default {
       else return ''
     },
     src() {
-      if (this.canton === 'vs') return `https://widget.raisenow.com/widgets/lema/lesco-7b80/index-${this.$i18n.locale}.html`
+      if (this.canton === 'vs')
+        return `https://widget.raisenow.com/widgets/lema/lesco-7b80/index-${this.$i18n.locale}.html`
       else return ''
     },
   },
   mounted() {
     this.canton = 'vs'
     // console.log(window)
-    if (process.browser) {
-      window.rnw.tamaro.runWidget('.rnw-widget-container', {
-        language: this.$i18n.locale,
-      })
-    }
+    // if (process.browser) {
+    //   window.rnw.tamaro.runWidget('.rnw-widget-container', {
+    //     language: this.$i18n.locale,
+    //   })
+    // }
   },
 }
 </script>
