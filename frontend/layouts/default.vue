@@ -14,25 +14,32 @@
             :link="localePath('soutien')"
           />
         </div>
+        <div class="md:hidden">
+          <MenuToggle :menu-open="menuOpen" @toggleMenu="toggleMenu" />
+        </div>
       </div>
-      <Sidebar />
+      <Sidebar :menu-open="menuOpen" />
       <Nuxt id="content" class="site-content" />
     </div>
     <Footer />
   </div>
 </template>
 <script>
+import MenuToggle from '~/components/MenuToggle.vue'
+
 export default {
+  components: { MenuToggle },
   data() {
-    return { canton: '' }
+    return {
+      menuOpen: false,
+    }
   },
-  watch: {
-    $route(newRoute) {
-      if (newRoute.params) this.canton = newRoute.params.canton
+  methods: {
+    toggleMenu() {
+      this.menuOpen = !this.menuOpen
+
+      if (this.menuOpen) window.scrollTo(0, 0)
     },
-  },
-  mounted() {
-    if (this.$route.params) this.canton = this.$route.params.canton
   },
 }
 </script>

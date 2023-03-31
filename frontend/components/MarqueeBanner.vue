@@ -1,5 +1,5 @@
 <template>
-  <div class="marquee mr-20 md:mr-0">
+  <div class="marquee mr-5">
     <span class="sr-only">This text will scroll from right to left</span>
     <div class="marquee-inner" aria-hidden="true">
       <span>This text will scroll from right left</span>

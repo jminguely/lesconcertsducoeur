@@ -1,11 +1,12 @@
 <template>
-  <div id="footer" class="mt-32 lg:mt-48 p-5">
+  <footer class="site-footer mt-32 lg:mt-48 p-5 bg-gray text-white">
+    <Navigation />
     <div class="hidden">
       <div class="items-center">
         <div class="lg:mr-2">
           <SocialLink
-            name="facebook"
             link="https://www.facebook.com/concertsducoeur/"
+            name="facebook"
             sidebar
           />
         </div>
@@ -43,7 +44,6 @@
         <button type="submit">Submit</button>
       </form>
     </div>
-    <Divider class="mb-2" />
     <div class="text-lg">
       © 2023 <i>Les Concerts du Cœur</i> |
       <nuxt-link :to="localePath('impressum')">
@@ -54,16 +54,22 @@
         $t('privacy').title
       }}</nuxt-link>
     </div>
-  </div>
+  </footer>
 </template>
 <script>
-import Divider from '@/components/pages/Divider.vue'
+import Navigation from './Navigation.vue'
 import SocialLink from '@/components/pages/SocialLink.vue'
 
 export default {
   components: {
-    Divider,
     SocialLink,
+    Navigation,
   },
 }
 </script>
+
+<style lang="postcss">
+.site-footer {
+  padding: 50px;
+}
+</style>

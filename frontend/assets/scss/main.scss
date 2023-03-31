@@ -1,5 +1,13 @@
 @import './components/links';
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overscroll-behavior-y: none;
+}
+
 .site-wrapper {
   padding: 0 50px;
   display: grid;
@@ -43,8 +51,8 @@
 }
 
 .site-content {
+  @apply pt-24;
   grid-area: content;
-  padding-top: 100px;
 
   h2 {
     @apply text-xl lg:text-3xl font-playFair;
@@ -76,13 +84,6 @@
   }
 }
 
-#sidebar,
-#navbar,
-#footer {
-  a:hover {
-    font-weight: bold;
-  }
-}
 
 #content {
   .splide ul > li::before {
