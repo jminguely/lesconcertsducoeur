@@ -75,7 +75,6 @@ export default {
   },
   methods: {
     selectItem(item) {
-      console.log(item)
       this.$emit('update:selectedItem', item)
       this.open = false
     },

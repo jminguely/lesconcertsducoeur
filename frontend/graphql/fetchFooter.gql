@@ -1,0 +1,9 @@
+query {
+  footer {
+    id
+    partner {
+      id
+      url
+    }
+  }
+}

@@ -1,6 +1,23 @@
 <template>
   <footer class="site-footer mt-32 lg:mt-48 p-5 bg-gray text-white">
     <Navigation />
+    Partner
+    <div
+      v-if="footer.partners"
+      class="flex flex-row flex-wrap gap-5 justify-between items-stretch"
+    >
+      <div
+        v-for="(partner, i) in footer.partners"
+        :key="i"
+        class="bg-white flex filter invert mix-blend-screen"
+      >
+        <nuxt-img
+          class="filter grayscale aspect-4/3 object-contain w-28 m-auto"
+          provider="strapi"
+          :src="partner.url"
+        />
+      </div>
+    </div>
     <div class="hidden">
       <div class="items-center">
         <div class="lg:mr-2">
@@ -56,20 +73,38 @@
     </div>
   </footer>
 </template>
+
 <script>
+import { gql } from 'graphql-tag'
 import Navigation from './Navigation.vue'
 import SocialLink from '@/components/pages/SocialLink.vue'
+
+const FOOTER_QUERY = gql`
+  query FOOTER_QUERY {
+    footer {
+      partners {
+        id
+        url
+      }
+    }
+  }
+`
 
 export default {
   components: {
     SocialLink,
     Navigation,
   },
+  data() {
+    return {
+      partners: [],
+    }
+  },
+  apollo: {
+    footer: {
+      query: FOOTER_QUERY,
+      prefetch: true,
+    },
+  },
 }
 </script>
-
-<style lang="postcss">
-.site-footer {
-  padding: 50px;
-}
-</style>

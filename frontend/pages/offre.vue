@@ -14,9 +14,21 @@
     </Headline>
 
     <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
-      <sublink v-for="(canton, i) in ['vs', 'vd', 'ge']" :key="canton + i" :canton="canton">
+      <sublink
+        v-for="(canton, i) in ['vs', 'vd', 'ge']"
+        :key="canton + i"
+        :canton="canton"
+      >
         <template #text
-          ><nuxt-link :to="localePath({ name: 'canton-association', params: { canton: canton } })">{{ $t('mission').enSavoirPlus[canton] }}</nuxt-link></template
+          ><nuxt-link
+            :to="
+              localePath({
+                name: 'canton-association',
+                params: { canton: canton },
+              })
+            "
+            >{{ $t('mission').enSavoirPlus[canton] }}</nuxt-link
+          ></template
         >
       </sublink>
     </div>
@@ -43,7 +55,8 @@
       <template #image><img class="mx-auto" :src="images[i]" /></template>
     </accordion-item> -->
 
-    <accordion :items="$t('mission').objectifs.content" :images="images"> </accordion>
+    <accordion :items="$t('mission').objectifs.content" :images="images">
+    </accordion>
 
     <div class="mt-12 text-xl">
       <!-- <div v-for="(item, i) in $t('mission').objectifs.content" :key="i" class="pb-8">
@@ -74,9 +87,18 @@ export default {
   data() {
     return {
       activeAccordionItem: -1,
-      images: ['/img/mission_objectif_1.jpg', '/img/mission_objectif_2.jpg', '/img/mission_objectif_3.jpg', '/img/mission_objectif_4.jpg', '/img/mission_objectif_5.jpg'],
+      images: [
+        '/img/mission_objectif_1.jpg',
+        '/img/mission_objectif_2.jpg',
+        '/img/mission_objectif_3.jpg',
+        '/img/mission_objectif_4.jpg',
+        '/img/mission_objectif_5.jpg',
+      ],
       items: [
-        { description: this.$t('mission').buts.content[0], img: '/img/mission_but_1.jpg' },
+        {
+          description: this.$t('mission').buts.content[0],
+          img: '/img/mission_but_1.jpg',
+        },
         {
           description: this.$t('mission').buts.content[1],
           img: '/img/mission_but_2.jpg',
@@ -90,7 +112,6 @@ export default {
   },
   methods: {
     setActiveAccordionItem(i) {
-      // console.log(i)
       this.activeAccordionItem = i
     },
   },

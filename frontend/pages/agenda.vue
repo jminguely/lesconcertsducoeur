@@ -214,12 +214,11 @@ export default {
       this.data = await this.$apollo
         .query({ query, variables })
         .then(({ data }) => {
-          if (process.env.dev) console.log(data)
+          // if (process.env.dev) console.log(data)
           return data
         })
         .catch((e) => {
-          console.log(e)
-          if (process.env.dev) console.log(e)
+          // if (process.env.dev) console.log(e)
         })
     },
   },
