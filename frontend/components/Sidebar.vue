@@ -4,9 +4,9 @@
       class="main-nav pt-10 md:pt-24 md:block sticky top-0 bg-white w-full"
       :class="{ hidden: !menuOpen }"
     >
-      <div class="flex flex-row md:flex-col align-middle mb-5 gap-10">
+      <div class="mb-5">
         <nuxt-link class="block" :to="localePath('/')">
-          <img class="w-full h-auto" src="/CdC-logo.png" />
+          <img class="w-24 md:w-48 h-auto mb-3 -ml-3" src="/CdC-logo.png" />
         </nuxt-link>
         <a
           class="block"
@@ -14,7 +14,7 @@
           target="_blank"
           rel="noreferrer"
         >
-          <img class="w-full md:w-1/2 h-auto" src="/LMN-logo.png" />
+          <img class="w-10 md:w-20 h-auto" src="/LMN-logo.png" />
         </a>
       </div>
       <Navigation />

@@ -1,14 +1,21 @@
 <template>
   <div>
     <Headline class="-mt-6 mb-6 lg:mb-16">
-      <template #content> <i>Les Concerts du Cœur</i> {{ $t('home').hero.subtitle }} </template>
+      <template #content>
+        <i>Les Concerts du Cœur</i> {{ $t('home').hero.subtitle }}
+      </template>
     </Headline>
 
     <div class="grid grid-cols-3 gap-5 gap-y-20 sm:grid-cols-3 lg:mb-32">
       <nuxt-link to="/vs/association">
         <Illustration canton="vs">
           <template #image>
-            <img class="object-cover" src="~/assets/img/illustrations/home_illu_vs.jpg" width="2048" height="1683" />
+            <img
+              class="object-cover"
+              src="~/assets/img/illustrations/home_illu_vs.jpg"
+              width="2048"
+              height="1683"
+            />
           </template>
           <template #label>{{ $t('canton').VS }}</template>
         </Illustration>
@@ -17,7 +24,11 @@
       <nuxt-link to="/vd/association">
         <Illustration canton="vd">
           <template #image>
-            <img src="~/assets/img/illustrations/home_illu_vd.jpg" width="2048" height="1683" />
+            <img
+              src="~/assets/img/illustrations/home_illu_vd.jpg"
+              width="2048"
+              height="1683"
+            />
           </template>
           <template #label>{{ $t('canton').VD }}</template>
         </Illustration>
@@ -26,7 +37,11 @@
       <nuxt-link to="/ge/association">
         <Illustration canton="ge">
           <template #image>
-            <img src="~/assets/img/illustrations/home_illu_ge.jpg" width="2048" height="1683" />
+            <img
+              src="~/assets/img/illustrations/home_illu_ge.jpg"
+              width="2048"
+              height="1683"
+            />
           </template>
           <template #label>{{ $t('canton').GE }}</template>
         </Illustration>
@@ -39,12 +54,18 @@
       </Headline>
 
       <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
-        <InfoBlock v-for="item in newsArticles" :key="item.id" :canton="getCanton(item.canton)">
+        <InfoBlock
+          v-for="item in newsArticles"
+          :key="item.id"
+          :canton="getCanton(item.canton)"
+        >
           <template #date>
             {{ $t('canton')[item.canton.uid.toLowerCase()] }}
           </template>
           <template #pretitle></template>
-          <template #title><span v-dompurify-html="$md.render(item.title)"></span></template>
+          <template #title
+            ><span v-dompurify-html="$md.render(item.title)"></span
+          ></template>
           <template #content>{{ item.content }}</template>
         </InfoBlock>
       </div>
@@ -58,8 +79,17 @@
       </Headline>
 
       <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
-        <EventBlock v-for="item in calendars" :key="item.id" :canton="getCanton(item.canton)">
-          <template #datetime>{{ $dateFns.format(new Date(item.date_time), 'dd.MM.yyyy' + ' | ' + 'HH:mm') }}</template>
+        <EventBlock
+          v-for="item in calendars"
+          :key="item.id"
+          :canton="getCanton(item.canton)"
+        >
+          <template #datetime>{{
+            $dateFns.format(
+              new Date(item.date_time),
+              'dd.MM.yyyy' + ' | ' + 'HH:mm'
+            )
+          }}</template>
           <template #pretitle>{{ item.location }}</template>
           <template #title>{{ item.title }}</template>
         </EventBlock>
@@ -126,41 +156,6 @@
       <template #headline> {{ $t('home').organizeConcert.title }} </template>
     </Headline>
 
-    <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
-      <Sublink canton="vs">
-        <template #title>
-          <span v-dompurify-html="$t('home').organizeConcert.vs"></span>
-        </template>
-        <template #text>
-          <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'vs' } })">
-            {{ $t('home').organizeConcert.discover }}
-          </nuxt-link>
-        </template>
-      </Sublink>
-
-      <Sublink canton="vd">
-        <template #title>
-          <span v-dompurify-html="$t('home').organizeConcert.vd"></span>
-        </template>
-        <template #text>
-          <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'vd' } })">
-            {{ $t('home').organizeConcert.discover }}
-          </nuxt-link>
-        </template>
-      </Sublink>
-
-      <Sublink canton="ge">
-        <template #title>
-          <span v-dompurify-html="$t('home').organizeConcert.ge"></span>
-        </template>
-        <template #text>
-          <nuxt-link class="underline" :to="localePath({ name: 'canton-artistes', params: { canton: 'ge' } })">
-            {{ $t('home').organizeConcert.discover }}
-          </nuxt-link>
-        </template>
-      </Sublink>
-    </div>
-
     <HeadlineLink class="mt-12">
       <template #content>
         <nuxt-link :to="localePath('concerts')">
@@ -193,7 +188,10 @@
         </template>
       </Headline>
       <div class="w-full">
-        <img class="mx-auto" src="~/assets/img/illustrations/illustration4.webp" />
+        <img
+          class="mx-auto"
+          src="~/assets/img/illustrations/illustration4.webp"
+        />
       </div>
     </div>
 
@@ -203,7 +201,11 @@
 
     <template v-if="content != null">
       <template v-if="content.partners != null">
-        <logo-cloud v-if="content.partners.length > 0" :logos="content.partners" is-partner>
+        <logo-cloud
+          v-if="content.partners.length > 0"
+          :logos="content.partners"
+          is-partner
+        >
           <template #title> {{ $t('home').partners.title }}</template>
         </logo-cloud>
       </template>
@@ -211,7 +213,10 @@
       <spacing />
 
       <template v-if="content.sponsors != null">
-        <logo-cloud v-if="content.sponsors.length > 0" :logos="content.sponsors">
+        <logo-cloud
+          v-if="content.sponsors.length > 0"
+          :logos="content.sponsors"
+        >
           <template #title> {{ $t('home').sponsors.title }}</template>
         </logo-cloud>
       </template>
@@ -228,7 +233,6 @@ import Headline from '@/components/typography/Headline.vue'
 import Testimonial from '@/components/typography/Testimonial.vue'
 import EventBlock from '@/components/typography/EventBlock.vue'
 import InfoBlock from '@/components/typography/InfoBlock.vue'
-import Sublink from '@/components/typography/Sublink.vue'
 import HeadlineLink from '@/components/typography/HeadlineLink.vue'
 import Spacing from '@/components/typography/Spacing.vue'
 
@@ -241,7 +245,6 @@ export default {
     EventBlock,
     InfoBlock,
     Divider,
-    Sublink,
     HeadlineLink,
     Spacing,
   },
@@ -265,10 +268,14 @@ export default {
 
   computed: {
     firstTestimonial() {
-      return this.$t('home').testimonials[Math.abs(this.currentIndex) % this.$t('home').testimonials.length]
+      return this.$t('home').testimonials[
+        Math.abs(this.currentIndex) % this.$t('home').testimonials.length
+      ]
     },
     secondTestimonial() {
-      return this.$t('home').testimonials[Math.abs(this.currentIndex + 1) % this.$t('home').testimonials.length]
+      return this.$t('home').testimonials[
+        Math.abs(this.currentIndex + 1) % this.$t('home').testimonials.length
+      ]
     },
   },
 
@@ -294,7 +301,12 @@ export default {
     async getAgenda() {
       const query = gql`
         query getCalendar($locale: String, $where: JSON) {
-          calendars(sort: "date_time:asc", limit: 3, locale: $locale, where: $where) {
+          calendars(
+            sort: "date_time:asc"
+            limit: 3
+            locale: $locale
+            where: $where
+          ) {
             id
             canton {
               uid
@@ -364,21 +376,21 @@ export default {
         query getHome {
           home {
             id
-            carousel {
-              id
-              images {
-                id
-                url
-              }
-            }
-            sponsors {
-              id
-              url
-            }
-            partners {
-              id
-              url
-            }
+            # carousel {
+            #   id
+            #   images {
+            #     id
+            #     url
+            #   }
+            # }
+            # sponsors {
+            #   id
+            #   url
+            # }
+            # partners {
+            #   id
+            #   url
+            # }
           }
         }
       `

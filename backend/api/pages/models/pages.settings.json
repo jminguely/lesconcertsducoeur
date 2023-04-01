@@ -24,7 +24,7 @@
       },
       "type": "string"
     },
-    "content": {
+    "Content": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -32,21 +32,21 @@
       },
       "type": "dynamiczone",
       "components": [
-        "content.accordion-item",
-        "content.accordion",
         "content.headline",
-        "content.quotation",
-        "content.two-columns-rich-text",
-        "content.two-columns-text-image"
+        "content.richtext",
+        "content.accordion",
+        "content.grid"
       ]
     },
     "slug": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": false
     }
   }
 }

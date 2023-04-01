@@ -7,8 +7,15 @@
     <p class="text-xl">{{ $t('medias').findUsOnSocialMedias }}</p>
 
     <div class="flex my-5">
-      <SocialLink class="mr-2 lg:mr-4" name="facebook" link="https://www.facebook.com/concertsducoeur/" />
-      <SocialLink name="instagram" link="https://www.instagram.com/lesconcertsducoeur/" />
+      <SocialLink
+        class="mr-2 lg:mr-4"
+        name="facebook"
+        link="https://www.facebook.com/concertsducoeur/"
+      />
+      <SocialLink
+        name="instagram"
+        link="https://www.instagram.com/lesconcertsducoeur/"
+      />
     </div>
 
     <spacing />
@@ -63,9 +70,10 @@
     </Headline>
 
     <div class="grid grid-cols-1 sm:gap-x-10 sm:grid-cols-2 sm:gap-y-5">
-      <div v-for="item in links" :key="item.title" class="text-xl">
+      <div v-for="(item, i) in links" :key="i" class="text-xl">
         <p>
-          <a :href="item.link" target="_blank" v-dompurify-html="item.title"></a><br />
+          <a v-dompurify-html="item.title" :href="item.link" target="_blank"></a
+          ><br />
           {{ item.subtitle }} – {{ item.date }}
         </p>
       </div>
@@ -144,7 +152,8 @@ export default {
           link: 'https://api-new.lesconcertsducoeur.ch/uploads/L_Agenda_97_Concerts_du_coeur_5431529437.pdf',
         },
         {
-          title: 'Singen und meinen Körper fühlen: Im Gespräch mit der Sopranistin Laure Barras',
+          title:
+            'Singen und meinen Körper fühlen: Im Gespräch mit der Sopranistin Laure Barras',
           subtitle: 'Kanal9',
           date: '31 mai 2022',
           link: 'https://canal9.ch/de/singen-und-meinen-korper-fuhlen-im-gesprach-mit-der-sopranistin-laure-barras/',
@@ -234,7 +243,8 @@ export default {
           link: 'https://api-new.lesconcertsducoeur.ch/uploads/Cd_C_Le_Nouvelliste_La_musique_adoucit_les_soins_29012019_compressed_komprimiert_c5601fe81c.pdf',
         },
         {
-          title: '<i>Les Concerts du Cœur</i>: Laure Barras et ses musiciens amènent la musique auprès de ceux qui ne peuvent se rendre aux concerts',
+          title:
+            '<i>Les Concerts du Cœur</i>: Laure Barras et ses musiciens amènent la musique auprès de ceux qui ne peuvent se rendre aux concerts',
           subtitle: 'Canal9',
           date: '6 février 2019',
           link: 'http://canal9.ch/concerts-du-coeur-laure-barras-et-ses-musiciens-amenent-la-musique-aupres-de-ceux-qui-ne-peuvent-se-rendre-aux-concerts/',
@@ -264,7 +274,8 @@ export default {
           link: 'https://api-new.lesconcertsducoeur.ch/uploads/CDC_presse_paris_Match_02172020_compressed_988ac1a0df.pdf',
         },
         {
-          title: 'Coronavirus: les aînés apprécient des concerts privés sur un iPad',
+          title:
+            'Coronavirus: les aînés apprécient des concerts privés sur un iPad',
           subtitle: 'Le Nouvelliste',
           date: '6 mai 2020',
           link: 'https://api-new.lesconcertsducoeur.ch/uploads/Cd_C_Le_Nouvelliste_coronavirs_07052020_compressed_da2af00cf0.pdf',
@@ -294,7 +305,8 @@ export default {
           link: 'https://www.culturevalais.ch/fr/offre-culturelle/emission-rhone-fm-/les-concerts-du-coeur-999',
         },
         {
-          title: 'Lancement de l’association genevoise des <i>Concerts du Cœur</i>',
+          title:
+            'Lancement de l’association genevoise des <i>Concerts du Cœur</i>',
           subtitle: 'Le Lancéen',
           date: 'Avril 2021',
           link: 'https://www.lancy.ch/sites/default/files/arborescence/AUTRES/Le%20Lanc%C3%A9en/238-le-lanceen-avril-21_web_sans_pages_pub.pdf',

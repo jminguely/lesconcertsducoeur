@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_global_accordions",
+  "collectionName": "components_content_accordions",
   "info": {
-    "name": "accordion",
-    "icon": "apple-alt",
+    "name": "Accordion",
+    "icon": "grip-lines",
     "description": ""
   },
   "options": {},

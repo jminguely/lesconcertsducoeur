@@ -1,62 +1,97 @@
 <template>
-  <div v-if="association != null" :class="canton">
-    <div class="flex flex-col justify-between lg:flex-row lg:space-x-8">
-      <div>
+  <div>
+    <h1>Canton {{ canton }}</h1>
+    <div v-if="association != null" :class="canton">
+      <div class="flex flex-col justify-between lg:flex-row lg:space-x-8">
+        <div>
+          <Headline>
+            <template #headline>{{ association.section_hero_title }}</template>
+            <template #content>
+              <div
+                v-dompurify-html="
+                  $md.render(association.section_hero_description)
+                "
+                class="prose prose-xl"
+              ></div>
+            </template>
+          </Headline>
+        </div>
+
+        <div
+          v-if="association.section_hero_img != null"
+          class="pt-8 max-w-sm lg: pt-0"
+        >
+          <img
+            :src="
+              'https://api-new.lesconcertsducoeur.ch' +
+              association.section_hero_img.url
+            "
+          />
+        </div>
+      </div>
+
+      <spacing />
+
+      <template v-if="association.section_comite">
         <Headline>
-          <template #headline>{{ association.section_hero_title }}</template>
-          <template #content>
-            <div v-dompurify-html="$md.render(association.section_hero_description)" class="prose prose-xl"></div>
+          <template #headline>
+            <span class="text-4xl lg:text-5xl">{{
+              $t('association').comite.title
+            }}</span>
           </template>
         </Headline>
-      </div>
-
-      <div v-if="association.section_hero_img != null" class="pt-8 max-w-sm lg: pt-0">
-        <img :src="'https://api-new.lesconcertsducoeur.ch' + association.section_hero_img.url" />
-      </div>
-    </div>
-
-    <spacing />
-
-    <template v-if="association.section_comite">
-      <Headline>
-        <template #headline>
-          <span class="text-4xl lg:text-5xl">{{ $t('association').comite.title }}</span>
-        </template>
-      </Headline>
-      <div id="comite" class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div v-dompurify-html="$md.render(association.section_comite.col_left)" class="prose prose-xl"></div>
-        <div v-dompurify-html="$md.render(association.section_comite.col_right)" class="prose prose-xl"></div>
-      </div>
-    </template>
-
-    <Spacing />
-
-    <DonationBlock v-if="association.section_membre">
-      <template #headline>{{ $t('association').soutien }}</template>
-      <template #title>{{ $t('association').membre }}</template>
-      <template #details>
-        <div v-dompurify-html="$md.render(association.section_membre)" class="prose prose-xl" :class="{ 'text-vs': canton == 'vs', 'text-vd': canton == 'vd', 'text-ge': canton == 'ge' }"></div>
+        <div id="comite" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div
+            v-dompurify-html="$md.render(association.section_comite.col_left)"
+            class="prose prose-xl"
+          ></div>
+          <div
+            v-dompurify-html="$md.render(association.section_comite.col_right)"
+            class="prose prose-xl"
+          ></div>
+        </div>
       </template>
-    </DonationBlock>
 
-    <Spacing />
+      <Spacing />
 
-    <template v-if="association.partners.length > 0">
-      <Headline class="mb-12">
-        <template #headline>{{ $t('association').partners }} </template>
-      </Headline>
-      <logo-cloud :logos="association.partners" is-partner>
-        <template #title> {{ $t('home').partners.title }}</template>
-      </logo-cloud>
-    </template>
+      <DonationBlock v-if="association.section_membre">
+        <template #headline>{{ $t('association').soutien }}</template>
+        <template #title>{{ $t('association').membre }}</template>
+        <template #details>
+          <div
+            v-dompurify-html="$md.render(association.section_membre)"
+            class="prose prose-xl"
+            :class="{
+              'text-VS': canton == 'vs',
+              'text-VD': canton == 'vd',
+              'text-GE': canton == 'ge',
+            }"
+          ></div>
+        </template>
+      </DonationBlock>
 
-    <spacing />
+      <Spacing />
 
-    <template v-if="association.sponsors">
-      <logo-cloud v-if="association.sponsors.length > 0" :logos="association.sponsors">
-        <template #title> {{ $t('home').sponsors.title }}</template>
-      </logo-cloud>
-    </template>
+      <template v-if="association.partners.length > 0">
+        <Headline class="mb-12">
+          <template #headline>{{ $t('association').partners }} </template>
+        </Headline>
+        <logo-cloud :logos="association.partners" is-partner>
+          <template #title> {{ $t('home').partners.title }}</template>
+        </logo-cloud>
+      </template>
+
+      <spacing />
+
+      <template v-if="association.sponsors">
+        <logo-cloud
+          v-if="association.sponsors.length > 0"
+          :logos="association.sponsors"
+        >
+          <template #title> {{ $t('home').sponsors.title }}</template>
+        </logo-cloud>
+      </template>
+    </div>
   </div>
 </template>
 
@@ -77,12 +112,6 @@ export default {
   },
   data() {
     return {
-      sponsors: [
-        { img: require('~/assets/img/partners/BS.webp'), link: '' },
-        { img: require('~/assets/img/partners/Hemu.webp'), link: '' },
-        { img: require('~/assets/img/partners/LR.webp'), link: '' },
-        { img: require('~/assets/img/partners/M.webp'), link: '' },
-      ],
       data: null,
       association: null,
       canton: null,

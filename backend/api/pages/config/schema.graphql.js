@@ -1,5 +1,5 @@
 module.exports = {
-  query: "pageBySlug(slug: String!, locale: String!): Pages",
+  query: "pageBySlug(locale: String!, slug: String!): Pages",
   resolver: {
     Query: {
       pageBySlug: {

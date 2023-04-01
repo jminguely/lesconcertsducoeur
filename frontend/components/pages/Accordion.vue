@@ -29,7 +29,7 @@
         }"
       >
         <div class="w-full pr-5 text-xl">
-          <p v-dompurify-html="item.text"></p>
+          <div v-dompurify-html="item.text"></div>
         </div>
         <div v-if="item.image" class="w-full my-4 lg:my-0 max-h-144">
           <nuxt-img class="mx-auto" provider="strapi" :src="item.image.url" />

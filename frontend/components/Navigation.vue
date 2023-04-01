@@ -60,9 +60,10 @@ export default {
         { name: this.$t('nav').medias, link: this.localePath('medias') },
         {
           name: this.$t('nav').remerciements,
-          link: this.localePath('remerciements'),
+          // link: this.localePath('remerciements'),
+          link: `/${this.$i18n.locale}/remerciements`,
         },
-        { name: this.$t('nav').contact, link: this.localePath('contact') },
+        { name: this.$t('nav').contact, link: 'contact' },
       ]
     },
   },

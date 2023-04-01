@@ -1,6 +1,6 @@
 <template>
   <div class="antialiased min-h-screen">
-    <div class="site-wrapper">
+    <div class="site-wrapper px-12">
       <div class="site-topbar">
         <MarqueeBanner />
         <div class="lang-switcher hidden md:block">

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_content_blocks",
+  "info": {
+    "name": "Block",
+    "icon": "audio-description",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "RichText": {
+      "type": "richtext"
+    }
+  }
+}

@@ -15,40 +15,5 @@
       "localized": true
     }
   },
-  "attributes": {
-    "carousel": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "content.carousel"
-    },
-    "partners": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": ["images", "files", "videos"],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "sponsors": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": ["images", "files", "videos"],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    }
-  }
+  "attributes": {}
 }

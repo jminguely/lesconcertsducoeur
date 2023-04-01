@@ -41,7 +41,8 @@ export default {
         title: 'Ancien Conseiller fédéral',
       },
       {
-        quote: 'Chanter dans un home a tout autant de valeur que chanter sur une grande scène.',
+        quote:
+          'Chanter dans un home a tout autant de valeur que chanter sur une grande scène.',
         name: 'Laure Barras',
         title: 'Soprano',
       },
@@ -52,7 +53,8 @@ export default {
         title: 'Clarinettiste',
       },
       {
-        quote: 'C’était divin, doux, elle a des doigts de fée et ça fait du bien aux oreilles.',
+        quote:
+          'C’était divin, doux, elle a des doigts de fée et ça fait du bien aux oreilles.',
         name: ' Retour de la part d’une résidente à la Résidence Glarier',
         title: '',
       },
@@ -87,7 +89,8 @@ export default {
         title: '',
       },
       {
-        quote: "Très grande satisfaction de la part de nos résidents et de votre visite.<br/>Il en reste  un  souvenir d’exception. Merci pour ce moment d'émotions.",
+        quote:
+          "Très grande satisfaction de la part de nos résidents et de votre visite.<br/>Il en reste  un  souvenir d’exception. Merci pour ce moment d'émotions.",
         name: "Equipe d'animation de l'EMS Saint-Joseph",
         title: '',
       },
@@ -136,7 +139,8 @@ export default {
       title: 'Nos objectifs et nos valeurs',
       content: [
         {
-          title: 'Proposer des moments musicaux aux personnes qui ont difficilement accès à la culture',
+          title:
+            'Proposer des moments musicaux aux personnes qui ont difficilement accès à la culture',
           text: 'L’objectif des <i>Concerts du Cœur</i> est de promouvoir l’accès à la culture pour les personnes âgées, hospitalisées, incarcérées, en situation de handicap ou de précarité. En organisant, en coordination étroite avec le personnel, des concerts au sein même des institutions, nous amenons la musique dans des espaces nouveaux, et allons à la rencontre des personnes isolées ou empêchées dans leur capacité de déplacement.',
         },
         {
@@ -152,7 +156,8 @@ export default {
           text: 'Les <i>Concerts du Cœur</i> souhaitent être représentatifs de la diversité musicale et de la très grande qualité des artistes de la Suisse romande. Profitant de nouveaux espaces de concert, nous veillons également à décloisonner les styles musicaux et à faire découvrir une grande variété d’instruments et de formations.',
         },
         {
-          title: 'Promouvoir le statut professionnel des artistes et reconnaître leur rôle sociétal',
+          title:
+            'Promouvoir le statut professionnel des artistes et reconnaître leur rôle sociétal',
           text: '<i>Les Concerts du Cœur</i> sont des moments musicaux d’excellence, qui font toujours appel à des musicien·ne·s ou des ensembles professionnels qui jouent en Suisse romande.<br>En les salariant et en les faisant cotiser au premier et deuxième pilier, nous contribuons à la reconnaissance de leur statut.',
         },
       ],
@@ -297,22 +302,35 @@ Merci !
     },
     member: {
       title: 'Devenez membre',
-      vs: { title: 'Valaisan', subscription: "Bulletin d'adhésion pour les membres", status: 'Document officiel des statuts de l’association' },
-      vd: { title: 'Vaudois', subscription: "Bulletin d'adhésion pour les membres", status: 'Document officiel des statuts de l’association' },
-      ge: { title: 'Genevois', subscription: "Bulletin d'adhésion pour les membres", status: 'Document officiel des statuts de l’association' },
+      vs: {
+        title: 'Valaisan',
+        subscription: "Bulletin d'adhésion pour les membres",
+        status: 'Document officiel des statuts de l’association',
+      },
+      vd: {
+        title: 'Vaudois',
+        subscription: "Bulletin d'adhésion pour les membres",
+        status: 'Document officiel des statuts de l’association',
+      },
+      ge: {
+        title: 'Genevois',
+        subscription: "Bulletin d'adhésion pour les membres",
+        status: 'Document officiel des statuts de l’association',
+      },
     },
   },
   contact: {
     hero: {
       title: 'Contact',
-      subtitle: "Si nos actions vous intéressent, si vous désirez organiser un concert dans votre établissement ou dans l'EMS de l’un de de vos proches, n’hésitez pas à nous contacter.",
+      subtitle:
+        "Si nos actions vous intéressent, si vous désirez organiser un concert dans votre établissement ou dans l'EMS de l’un de de vos proches, n’hésitez pas à nous contacter.",
     },
     general: 'Contact général',
     vs: {
       title: 'Contact Valais',
       text: `
       <div class="mb-8 lg:mb-12">
-          <div class="text-xl text-vs">
+          <div class="text-xl text-VS">
             <span class="font-bold"><i>Les Concerts du Cœur</i></span><br />
             Rue des Creusets 16<br />
             1950 Sion<br />
@@ -323,7 +341,7 @@ Merci !
 
         <div class="mb-8 lg:mb-12">
           <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Direction artistique et organisation des concerts Bas-Valais et Valais Centrale</h3>
-          <div class="text-xl text-vs">
+          <div class="text-xl text-VS">
             <span class="font-bold">Laure Barras</span><br />
             <a href="mailto:laure.barras@lesconcertsducoeur.ch">laure.barras@lesconcertsducoeur.ch</a>
           </div>
@@ -331,7 +349,7 @@ Merci !
 
         <div class="mb-8 lg:mb-12">
           <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Organisation concerts Haut-Valais</h3>
-          <div class="text-xl text-vs">
+          <div class="text-xl text-VS">
             <span class="font-bold">Franziska Heinzen</span><br />
             <a href="mailto:franziska.heinzen@lesconcertsducoeur.ch">franziska.heinzen@lesconcertsducoeur.ch</a>
           </div>
@@ -339,7 +357,7 @@ Merci !
 
         <div>
           <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Secrétariat</h3>
-          <div class="text-xl text-vs">
+          <div class="text-xl text-VS">
             <span class="font-bold">Danielle Waser-Massy</span><br />
             <a href="mailto:secretariat-vs@lesconcertsducoeur.ch">secretariat-vs@lesconcertsducoeur.ch</a>
           </div>
@@ -350,7 +368,7 @@ Merci !
       title: `Contact Vaud`,
       text: `
           <div class="mb-8 lg:mb-12">
-          <div class="text-xl text-vd">
+          <div class="text-xl text-VD">
             <span class="font-bold"><i>Les Concerts du Cœur Vaudois</i></span><br />
             Route du village 59<br />
             1509 Vucherens<br />
@@ -360,7 +378,7 @@ Merci !
         <spacing />
         <div>
           <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Direction artistique et organisation des concerts</h3>
-          <div class="text-xl text-vd">
+          <div class="text-xl text-VD">
             <span class="font-bold">Mary Rose</span><br />
             <a href="mailto:mary.rose@lesconcertsducoeur.ch">mary.rose@lesconcertsducoeur.ch</a>
           </div>
@@ -371,7 +389,7 @@ Merci !
       title: `Contact Genève`,
       text: `
           <div class="mb-8 lg:mb-12">
-          <div class="text-xl text-ge">
+          <div class="text-xl text-GE">
             <span class="font-bold"><i>Les Concerts du Cœur Genevois</i></span><br />
             C/O Etude Zarb & Wood<br />
             Rue du Conseil-General 11<br />
@@ -383,11 +401,11 @@ Merci !
 
         <div>
           <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Direction artistique et organisations des concerts</h3>
-          <div class="mb-2 text-xl text-ge">
+          <div class="mb-2 text-xl text-GE">
             <span class="font-bold">Laure Zaugg</span><br />
             <a href="mailto:laure.zaugg@lesconcertsducoeur.ch">laure.zaugg@lesconcertsducoeur.ch</a>
           </div>
-          <div class="text-xl text-ge">
+          <div class="text-xl text-GE">
             <span class="font-bold">Sylvain Leutwyler</span><br />
             <a href="mailto:sylvain.leutwyler@lesconcertsducoeur.ch">sylvain.leutwyler@lesconcertsducoeur.ch</a>
           </div>

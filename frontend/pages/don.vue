@@ -9,9 +9,9 @@
         v-if="canton == 'vs'"
         class="border-2 lg:mt-5"
         :class="{
-          'border-vs': canton == 'vs',
-          'border-vd': canton == 'vd',
-          'border-ge': canton == 'ge',
+          'border-VS': canton == 'vs',
+          'border-VD': canton == 'vd',
+          'border-GE': canton == 'ge',
         }"
         width="100%"
         height="2200"
@@ -22,9 +22,9 @@
       <div
         class="rnw-widget-container border-2 p-5 lg:mt-5"
         :class="{
-          'border-vs': canton == 'vs',
-          'border-vd': canton == 'vd',
-          'border-ge': canton == 'ge',
+          'border-VS': canton == 'vs',
+          'border-VD': canton == 'vd',
+          'border-GE': canton == 'ge',
         }"
       ></div>
     </template>

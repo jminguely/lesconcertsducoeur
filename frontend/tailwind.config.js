@@ -40,10 +40,11 @@ module.exports = {
         25: '25deg',
       },
       colors: {
-        vs: '#DB303D',
-        vd: '#4D9A70',
-        ge: '#EE6F22',
-        fr: '#3751C0',
+        VS: '#DB303D',
+        VD: '#4D9A70',
+        GE: '#EE6F22',
+        FR: '#3751C0',
+        ALL: '#000000',
         gray: '#393939',
       },
       borderWidth: {

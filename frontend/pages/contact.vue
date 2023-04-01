@@ -15,7 +15,11 @@
     <spacing />
     <accordion :items="items" class="hidden lg:block"> </accordion>
 
-    <div v-for="(item, i) in items" :key="i + item.title" class="mb-12 lg:hidden">
+    <div
+      v-for="(item, i) in items"
+      :key="i + item.title"
+      class="mb-12 lg:hidden"
+    >
       <div>
         <h3 class="mb-4 text-3xl font-playFair">{{ item.title }}</h3>
       </div>

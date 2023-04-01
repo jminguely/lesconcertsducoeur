@@ -2,12 +2,16 @@ query getPage($locale: String!, $slug: String!) {
   pageBySlug(locale: $locale, slug: $slug) {
     id
     title
-    content {
+    Content {
       __typename
-      ... on ComponentContentTwoColumnsRichText {
+      ... on ComponentContentHeadline {
         id
-        col_left
-        col_right
+        Title
+        Text
+      }
+      ... on ComponentContentRichtext {
+        id
+        Text
       }
       ... on ComponentContentAccordion {
         accordion_item {
@@ -16,6 +20,14 @@ query getPage($locale: String!, $slug: String!) {
           image {
             url
           }
+        }
+      }
+      ... on ComponentContentGrid {
+        id
+        Block {
+          id
+          Title
+          RichText
         }
       }
     }

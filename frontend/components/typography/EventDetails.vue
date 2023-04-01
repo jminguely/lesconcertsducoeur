@@ -6,9 +6,9 @@
       <div
         class="mb-2 font-playFair text-2xl lg:text-3xl"
         :class="{
-          'text-vs': canton == 'vs',
-          'text-vd': canton == 'vd',
-          'text-ge': canton == 'ge',
+          'text-VS': canton == 'vs',
+          'text-VD': canton == 'vd',
+          'text-GE': canton == 'ge',
         }"
       >
         <div><slot name="date"></slot></div>
@@ -23,9 +23,9 @@
       <div
         class="font-playFair text-xl lg:text-2xl"
         :class="{
-          'text-vs': canton == 'vs',
-          'text-vd': canton == 'vd',
-          'text-ge': canton == 'ge',
+          'text-VS': canton == 'vs',
+          'text-VD': canton == 'vd',
+          'text-GE': canton == 'ge',
         }"
       >
         <slot name="artists"></slot>
@@ -33,9 +33,9 @@
       <div
         class="font-playFair text-xl lg:text-2xl"
         :class="{
-          'text-vs': canton == 'vs',
-          'text-vd': canton == 'vd',
-          'text-ge': canton == 'ge',
+          'text-VS': canton == 'vs',
+          'text-VD': canton == 'vd',
+          'text-GE': canton == 'ge',
         }"
       >
         <slot name="details"> </slot>

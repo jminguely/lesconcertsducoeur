@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_global_accordion_items",
+  "collectionName": "components_content_accordion_items",
   "info": {
     "name": "Accordion Item",
-    "icon": "archway",
+    "icon": "underline",
     "description": ""
   },
   "options": {},

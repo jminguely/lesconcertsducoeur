@@ -6,11 +6,31 @@
 
     <template v-if="!$fetchState.pending">
       <template v-if="data != null">
-        <div class="gap-y-5 sm:gap-x-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
-          <artist-cover v-for="artist in data" :key="artist.id" :data="artist" class="hidden md:block" @click.native="openPopup(artist)"></artist-cover>
-          <artist-cover-mobile v-for="artist in data" :key="artist.id" :data="artist" class="md:hidden" @click.native="openPopup(artist)"></artist-cover-mobile>
+        <div
+          class="gap-y-5 sm:gap-x-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-5"
+        >
+          <artist-cover
+            v-for="artist in data"
+            :key="artist.id"
+            :data="artist"
+            class="hidden md:block"
+            @click.native="openPopup(artist)"
+          ></artist-cover>
+          <artist-cover-mobile
+            v-for="artist in data"
+            :key="artist.id"
+            :data="artist"
+            class="md:hidden"
+            @click.native="openPopup(artist)"
+          ></artist-cover-mobile>
         </div>
-        <artist-popup :class="{ hidden: !popup }" :data="data" :item.sync="selected" :popup.sync="popup" :canton="canton" />
+        <artist-popup
+          :class="{ hidden: !popup }"
+          :data="data"
+          :item.sync="selected"
+          :popup.sync="popup"
+          :canton="canton"
+        />
       </template>
     </template>
   </div>

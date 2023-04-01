@@ -2,7 +2,9 @@
   <div>
     <Headline>
       <template #headline>{{ $t('concerts').hero.title }}</template>
-      <template #content><div v-dompurify-html="$t('concerts').hero.subtitle"></div></template>
+      <template #content
+        ><div v-dompurify-html="$t('concerts').hero.subtitle"></div
+      ></template>
     </Headline>
 
     <p class="mb-12 text-xl" v-dompurify-html="$t('concerts').hero.text"></p>
@@ -29,7 +31,8 @@
       <template #image><img class="mx-auto" :src="images[i]" /></template>
     </accordion-item> -->
 
-    <accordion :items="$t('concerts').concertTypes" :images="images"> </accordion>
+    <accordion :items="$t('concerts').concertTypes" :images="images">
+    </accordion>
 
     <div v-for="(item, i) in $t('concerts').content" :key="i">
       <spacing />
@@ -80,7 +83,14 @@ export default {
   },
   data() {
     return {
-      images: ['/img/concert_mediation.jpg', '/img/concert_exterieur.jpg', '/img/concert_itinerant.jpg', '/img/concert_chambres.jpg', '/img/concert_virtuel.jpg', '/img/rencontre_virtuelle.jpg'],
+      images: [
+        '/img/concert_mediation.jpg',
+        '/img/concert_exterieur.jpg',
+        '/img/concert_itinerant.jpg',
+        '/img/concert_chambres.jpg',
+        '/img/concert_virtuel.jpg',
+        '/img/rencontre_virtuelle.jpg',
+      ],
     }
   },
 }

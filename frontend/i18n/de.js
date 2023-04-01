@@ -78,7 +78,8 @@ export default {
       title: 'Unsere Zielsetzungen',
       content: [
         {
-          title: 'Musikalische Erlebnisse für Menschen mit erschwertem Zugang zu Kultur schaffen',
+          title:
+            'Musikalische Erlebnisse für Menschen mit erschwertem Zugang zu Kultur schaffen',
           text: 'Mit unseren Konzerten bieten wir Menschen mit erschwertem Zugang zu Kultur wie beispielsweise betagten, kranken, inhaftierten sowie sozial, finanziell, körperlich oder geistig beeinträchtigten Menschen qualitativ hochwertige musikalische Erlebnisse ausserhalb des traditionellen Konzertsaales.',
         },
         {
@@ -94,7 +95,8 @@ export default {
           text: '<i>Les Concerts du Cœur</i> repräsentieren die musikalische Vielfalt und die hohe Qualität junger Schweizer Künstler:innen durch die stilistische Breite der Konzertprogramme sowie die unterschiedlichsten Instrumente und Besetzungen.',
         },
         {
-          title: 'Professionellen Status der Künstler:innen fördern und ihre gesellschaftliche Rolle anerkennen',
+          title:
+            'Professionellen Status der Künstler:innen fördern und ihre gesellschaftliche Rolle anerkennen',
           text: 'Der Verein <i>Les Concerts du Cœur</i> bietet musikalische Momente der Extraklasse, die von professionellen Musiker:innen der jeweiligen Region dargeboten werden. Mit unserer garantierten Gage sowie unseren Beiträgen an die erste und zweite Säule tragen wir zur Anerkennung ihres professionellen Status bei.',
         },
       ],
@@ -237,9 +239,21 @@ Herzlichen Dank!
     },
     member: {
       title: 'Mitglied werden',
-      vs: { title: 'Walliser Verein', subscription: 'Beitrittsformular für Mitglieder', status: 'Statuten des Walliser Vereins' },
-      vd: { title: 'Waadtländer Verein', subscription: 'Beitrittsformular für Mitglieder', status: 'Statuten des Waadtländer Vereins' },
-      ge: { title: 'Genfer Verein', subscription: 'Beitrittsformular für Mitglieder', status: 'Statuten des Genfer Vereins' },
+      vs: {
+        title: 'Walliser Verein',
+        subscription: 'Beitrittsformular für Mitglieder',
+        status: 'Statuten des Walliser Vereins',
+      },
+      vd: {
+        title: 'Waadtländer Verein',
+        subscription: 'Beitrittsformular für Mitglieder',
+        status: 'Statuten des Waadtländer Vereins',
+      },
+      ge: {
+        title: 'Genfer Verein',
+        subscription: 'Beitrittsformular für Mitglieder',
+        status: 'Statuten des Genfer Vereins',
+      },
     },
   },
   contact: {
@@ -253,7 +267,7 @@ Herzlichen Dank!
       title: 'Kontakt Wallis',
       text: `
       <div class="mb-8 lg:mb-12">
-          <div class="text-xl text-vs">
+          <div class="text-xl text-VS">
             <span class="font-bold"><i>Les Concerts du Cœur</i></span><br />
             Rue des Creusets 16<br />
             1950 Sion<br />
@@ -264,7 +278,7 @@ Herzlichen Dank!
 
         <div class="mb-8 lg:mb-12">
           <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Künstlerische Leitung und Organisation der Konzerte im Unterwallis und Mittelwallis</h3>
-          <div class="text-xl text-vs">
+          <div class="text-xl text-VS">
             <span class="font-bold">Laure Barras</span><br />
             <a href="mailto:laure.barras@lesconcertsducoeur.ch">laure.barras@lesconcertsducoeur.ch</a>
           </div>
@@ -272,7 +286,7 @@ Herzlichen Dank!
 
         <div class="mb-8 lg:mb-12">
           <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Organisation der Konzerte im Oberwallis</h3>
-          <div class="text-xl text-vs">
+          <div class="text-xl text-VS">
             <span class="font-bold">Franziska Heinzen</span><br />
             <a href="mailto:franziska.heinzen@lesconcertsducoeur.ch">franziska.heinzen@lesconcertsducoeur.ch</a>
           </div>
@@ -280,7 +294,7 @@ Herzlichen Dank!
 
         <div>
           <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Sekretariat</h3>
-          <div class="text-xl text-vs">
+          <div class="text-xl text-VS">
             <span class="font-bold">Danielle Waser-Massy</span><br />
             <a href="mailto:secretariat-vs@lesconcertsducoeur.ch">secretariat-vs@lesconcertsducoeur.ch</a>
           </div>
@@ -291,7 +305,7 @@ Herzlichen Dank!
       title: `Kontakt Waadt`,
       text: `
           <div class="mb-8 lg:mb-12">
-          <div class="text-xl text-vd">
+          <div class="text-xl text-VD">
             <span class="font-bold"><i>Les Concerts du Cœur Vaudois</i></span><br />
             Route du village 59<br />
             1509 Vucherens<br />
@@ -302,7 +316,7 @@ Herzlichen Dank!
 
         <div>
           <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Künstlerische Leitung und Organisation der Konzerte</h3>
-          <div class="text-xl text-vd">
+          <div class="text-xl text-VD">
             <span class="font-bold">Mary Rose</span><br />
             <a href="mailto:mary.rose@lesconcertsducoeur.ch">mary.rose@lesconcertsducoeur.ch</a>
           </div>
@@ -313,7 +327,7 @@ Herzlichen Dank!
       title: `Kontakt Genf`,
       text: `
           <div class="mb-8 lg:mb-12">
-          <div class="text-xl text-ge">
+          <div class="text-xl text-GE">
             <span class="font-bold"><i>Les Concerts du Cœur Genevois</i></span><br />
             C/O Etude Zarb & Wood<br />
             Rue du Conseil-General 11<br />
@@ -325,11 +339,11 @@ Herzlichen Dank!
 
         <div>
           <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Künstlerische Leitung und Organisation der Konzerte</h3>
-          <div class="mb-2 text-xl text-ge">
+          <div class="mb-2 text-xl text-GE">
             <span class="font-bold">Laure Zaugg</span><br />
             <a href="mailto:laure.zaugg@lesconcertsducoeur.ch">laure.zaugg@lesconcertsducoeur.ch</a>
           </div>
-          <div class="text-xl text-ge">
+          <div class="text-xl text-GE">
             <span class="font-bold">Sylvain Leutwyler</span><br />
             <a href="mailto:sylvain.leutwyler@lesconcertsducoeur.ch">sylvain.leutwyler@lesconcertsducoeur.ch</a>
           </div>

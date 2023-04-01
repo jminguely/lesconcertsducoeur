@@ -1,5 +1,13 @@
 <template>
-  <footer class="site-footer mt-32 lg:mt-48 p-5 bg-gray text-white">
+  <footer class="site-footer mt-32 lg:mt-48 p-5 bg-gray text-white px-12">
+    <div class="mb-5">
+      <nuxt-link class="block" :to="localePath('/')">
+        <img
+          class="w-24 md:w-48 h-auto -ml-3 filter invert mix-blend-screen"
+          src="/CdC-logo.png"
+        />
+      </nuxt-link>
+    </div>
     <Navigation />
     Partner
     <div

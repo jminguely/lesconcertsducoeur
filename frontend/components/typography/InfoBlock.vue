@@ -3,9 +3,9 @@
     class="border-t-2 border-r-2 border-b-2 w-full"
     :class="{
       'border-gray': canton == '' || canton == 'all',
-      'border-vs': canton == 'vs',
-      'border-vd': canton == 'vd',
-      'border-ge': canton == 'ge',
+      'border-VS': canton == 'vs',
+      'border-VD': canton == 'vd',
+      'border-GE': canton == 'ge',
     }"
   >
     <!-- Date -->
@@ -18,9 +18,9 @@
         class="text-xl"
         :class="{
           'text-gray': canton == '' || canton == 'all',
-          'text-vs': canton == 'vs',
-          'text-vd': canton == 'vd',
-          'text-ge': canton == 'ge',
+          'text-VS': canton == 'vs',
+          'text-VD': canton == 'vd',
+          'text-GE': canton == 'ge',
         }"
       >
         <slot name="pretitle"></slot>

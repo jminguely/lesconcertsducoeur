@@ -1,16 +1,17 @@
 {
-  "collectionName": "components_global_headlines",
+  "collectionName": "components_content_headlines",
   "info": {
-    "name": "headline",
-    "icon": "atlas"
+    "name": "Headline",
+    "icon": "bold",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "headline": {
-      "type": "string"
+    "Text": {
+      "type": "text"
     },
-    "text": {
-      "type": "richtext"
+    "Title": {
+      "type": "string"
     }
   }
 }

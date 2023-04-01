@@ -3,11 +3,19 @@
     <Headline>
       <template #headline>{{ audition.hero.headline }}</template>
       <template #content>
-        <div v-dompurify-html="$md.render(audition.hero.subhead)" class="prose prose-xl text-" :class="[`text-${canton}`]"></div>
+        <div
+          v-dompurify-html="$md.render(audition.hero.subhead)"
+          class="prose prose-xl text-"
+          :class="[`text-${canton}`]"
+        ></div>
       </template>
     </Headline>
 
-    <div v-for="content in audition.content" :key="content.id" class="text-xl mt-4">
+    <div
+      v-for="content in audition.content"
+      :key="content.id"
+      class="text-xl mt-4"
+    >
       <div v-if="content.__typename === 'ComponentContentText'">
         <div v-dompurify-html="$md.render(content.text)"></div>
       </div>
@@ -103,8 +111,12 @@ export default {
           if (process.env.dev) console.log(e)
         })
       if (this.data != null) {
-        if (locale === this.data.auditions[0].locale) this.audition = this.data.auditions[0]
-        else this.audition = this.data.auditions[0].localizations.find((localization) => localization.locale === locale)
+        if (locale === this.data.auditions[0].locale)
+          this.audition = this.data.auditions[0]
+        else
+          this.audition = this.data.auditions[0].localizations.find(
+            (localization) => localization.locale === locale
+          )
       }
     },
   },

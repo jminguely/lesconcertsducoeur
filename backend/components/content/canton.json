@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_content_cantons",
+  "info": {
+    "name": "Canton",
+    "icon": "map-marker"
+  },
+  "options": {},
+  "attributes": {
+    "Canton": {
+      "type": "enumeration",
+      "enum": ["vs", "vd", "ge", "fr"]
+    }
+  }
+}

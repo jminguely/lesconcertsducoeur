@@ -33,23 +33,23 @@ export default {
 
   @keyframes background-switch {
     0% {
-      @apply bg-fr;
+      @apply bg-FR;
     }
 
     25% {
-      @apply bg-vd;
+      @apply bg-VD;
     }
 
     50% {
-      @apply bg-ge;
+      @apply bg-GE;
     }
 
     75% {
-      @apply bg-vs;
+      @apply bg-VS;
     }
 
     100% {
-      @apply bg-fr;
+      @apply bg-FR;
     }
   }
 }
