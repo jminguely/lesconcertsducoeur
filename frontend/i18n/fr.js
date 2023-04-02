@@ -423,11 +423,10 @@ Merci !
     ge: 'Genève',
     fr: 'Fribourg',
   },
-  impressum: {
-    title: 'Mentions légales',
-  },
-  privacy: {
-    title: 'Politique de confidentialité',
+  footer: {
+    newsletter: 'S\'abonner à la newsletter',
+    impressum: 'Mentions légales',
+    privacy: 'Politique de confidentialité',
   },
   artistes: {
     title: 'Nos artistes',

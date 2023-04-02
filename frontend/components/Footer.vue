@@ -1,83 +1,110 @@
 <template>
-  <footer class="site-footer mt-32 lg:mt-48 p-5 bg-gray text-white px-12">
-    <div class="mb-5">
-      <nuxt-link class="block" :to="localePath('/')">
-        <img
-          class="w-24 md:w-48 h-auto -ml-3 filter invert mix-blend-screen"
-          src="/CdC-logo.png"
-        />
-      </nuxt-link>
+  <footer
+    class="site-footer mt-32 lg:mt-48 pt-32 pb-8 px-12 bg-gray text-white"
+  >
+    <div class="logo-container mb-5 md:col-span-3">
+      <img
+        class="w-24 md:w-48 h-auto -ml-3 filter invert mix-blend-screen"
+        src="/CdC-logo.png"
+      />
     </div>
-    <Navigation />
-    Partner
-    <div
-      v-if="footer.partners"
-      class="flex flex-row flex-wrap gap-5 justify-between items-stretch"
-    >
-      <div
-        v-for="(partner, i) in footer.partners"
-        :key="i"
-        class="bg-white flex filter invert mix-blend-screen"
-      >
-        <nuxt-img
-          class="filter grayscale aspect-4/3 object-contain w-28 m-auto"
-          provider="strapi"
-          :src="partner.url"
-        />
+    <div class="navigation-container md:row-span-2">
+      <Navigation />
+    </div>
+    <div>
+      <h3 class="mb-3">Retrouvez-nous sur les réseaux</h3>
+      <div class="flex flex-row gap-5">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.facebook.com/concertsducoeur/"
+        >
+          <img
+            class="filter invert h-8 w-8"
+            alt="facebook"
+            src="~/assets/img/social/facebook.svg"
+          />
+        </a>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.instagram.com/lesconcertsducoeur/"
+        >
+          <img
+            class="filter invert h-8 w-8"
+            alt="Instagram"
+            src="~/assets/img/social/instagram.svg"
+          />
+        </a>
       </div>
     </div>
-    <div class="hidden">
-      <div class="items-center">
-        <div class="lg:mr-2">
-          <SocialLink
-            link="https://www.facebook.com/concertsducoeur/"
-            name="facebook"
-            sidebar
-          />
-        </div>
-
-        <div class="mr-2">
-          <SocialLink
-            name="instagram"
-            link="https://www.instagram.com/lesconcertsducoeur/"
-            sidebar
-          />
-        </div>
-
-        <nuxt-link :to="localePath('contact')" class="text-xl hover:font-bold">
-          {{ $t('nav').contact }}
-        </nuxt-link>
-      </div>
-
+    <div class="flex flex-col items-start">
+      <h3 class="mb-3">Vous souhaitez recevoir les infos</h3>
       <form
         id="mc-embedded-subscribe-form"
         action="https://lesconcertsducoeur.us17.list-manage.com/subscribe/post?u=e047a05962015364141e05684&amp;id=7c376f04c5&amp;f_id=00e649e0f0"
         method="post"
         target="_blank"
         novalidate
-        class="hidden mt-4 lg:flex lg:items-center lg:w-full border-2 border-gray"
+        class="flex items-center justify-start border-1 border-white"
       >
         <input
           id="mce-EMAIL"
-          class="flex-auto px-2 py-1 focus:rounded-none focus:border-0 focus:outline-none"
-          :placeholder="$t('nav').newsletter"
+          class="flex-auto p-2 focus:rounded-none focus:border-0 focus:outline-none bg-transparent"
+          :placeholder="$t('footer').newsletter"
           type="email"
           value=""
           name="EMAIL"
           required
         />
-        <button type="submit">Submit</button>
+        <button type="submit" class="text-lg px-3">→</button>
       </form>
     </div>
-    <div class="text-lg">
-      © 2023 <i>Les Concerts du Cœur</i> |
+    <div>
+      <h3 class="mb-3">En partenariat avec:</h3>
+      <a
+        class="block"
+        href="https://www.livemusicnow.org.uk/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img class="w-10 md:w-20 h-auto filter invert" src="/LMN-logo.png" />
+      </a>
+    </div>
+    <div>
+      © {{ new Date().getFullYear() }}<br />
+      <i>Les Concerts du Cœur</i><br />
       <nuxt-link :to="localePath('impressum')">
-        {{ $t('impressum').title }}
+        {{ $t('footer').impressum }} </nuxt-link
+      ><br />
+      <nuxt-link :to="localePath('privacy')">
+        {{ $t('footer').privacy }}
       </nuxt-link>
-      |
-      <nuxt-link :to="localePath('privacy')">{{
-        $t('privacy').title
-      }}</nuxt-link>
+    </div>
+    <div v-if="footer.partners" class="partner-container md:col-span-3 mt-16">
+      <h3>Merci à nos soutiens:</h3>
+      <div
+        class="flex flex-row flex-wrap gap-5 justify-between items-stretch border-t-1 border-white pt-5 mt-5"
+      >
+        <div
+          v-for="(partner, i) in footer.partners"
+          :key="i"
+          class="bg-white flex filter invert mix-blend-screen"
+        >
+          <nuxt-img
+            class="filter grayscale aspect-4/3 object-contain w-24 m-auto"
+            provider="strapi"
+            :src="partner.url"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="hidden">
+      <div class="items-center">
+        <nuxt-link :to="localePath('contact')" class="text-xl hover:font-bold">
+          {{ $t('nav').contact }}
+        </nuxt-link>
+      </div>
     </div>
   </footer>
 </template>
@@ -85,7 +112,6 @@
 <script>
 import { gql } from 'graphql-tag'
 import Navigation from './Navigation.vue'
-import SocialLink from '@/components/pages/SocialLink.vue'
 
 const FOOTER_QUERY = gql`
   query FOOTER_QUERY {
@@ -100,7 +126,6 @@ const FOOTER_QUERY = gql`
 
 export default {
   components: {
-    SocialLink,
     Navigation,
   },
   data() {
@@ -116,3 +141,23 @@ export default {
   },
 }
 </script>
+
+<style lang="postcss" scoped>
+.site-footer {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  gap: 0 100px;
+
+  @screen md {
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 200px auto auto;
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.15rem;
+    text-decoration-thickness: 1px;
+  }
+}
+</style>

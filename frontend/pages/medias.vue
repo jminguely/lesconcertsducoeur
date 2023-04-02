@@ -6,18 +6,6 @@
 
     <p class="text-xl">{{ $t('medias').findUsOnSocialMedias }}</p>
 
-    <div class="flex my-5">
-      <SocialLink
-        class="mr-2 lg:mr-4"
-        name="facebook"
-        link="https://www.facebook.com/concertsducoeur/"
-      />
-      <SocialLink
-        name="instagram"
-        link="https://www.instagram.com/lesconcertsducoeur/"
-      />
-    </div>
-
     <spacing />
 
     <Headline>
@@ -112,7 +100,6 @@
 <script>
 import { gql } from 'graphql-tag'
 import Headline from '@/components/typography/Headline.vue'
-import SocialLink from '@/components/pages/SocialLink.vue'
 import Spacing from '@/components/typography/Spacing.vue'
 import Carousel from '@/components/pages/Carousel.vue'
 
@@ -120,7 +107,6 @@ export default {
   components: {
     Headline,
     Carousel,
-    SocialLink,
     Spacing,
   },
   data() {

@@ -52,26 +52,6 @@
         </div>
       </template>
 
-      <Spacing />
-
-      <DonationBlock v-if="association.section_membre">
-        <template #headline>{{ $t('association').soutien }}</template>
-        <template #title>{{ $t('association').membre }}</template>
-        <template #details>
-          <div
-            v-dompurify-html="$md.render(association.section_membre)"
-            class="prose prose-xl"
-            :class="{
-              'text-VS': canton == 'vs',
-              'text-VD': canton == 'vd',
-              'text-GE': canton == 'ge',
-            }"
-          ></div>
-        </template>
-      </DonationBlock>
-
-      <Spacing />
-
       <template v-if="association.partners.length > 0">
         <Headline class="mb-12">
           <template #headline>{{ $t('association').partners }} </template>
@@ -99,14 +79,12 @@
 import { gql } from 'graphql-tag'
 
 import Headline from '@/components/typography/Headline.vue'
-import DonationBlock from '@/components/typography/DonationBlock.vue'
 import LogoCloud from '@/components/LogoCloud.vue'
 import Spacing from '~/components/typography/Spacing.vue'
 
 export default {
   components: {
     Headline,
-    DonationBlock,
     LogoCloud,
     Spacing,
   },

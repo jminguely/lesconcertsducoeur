@@ -361,11 +361,10 @@ Herzlichen Dank!
     ge: 'Genf',
     fr: 'Freiburg',
   },
-  impressum: {
-    title: 'Impressum',
-  },
-  privacy: {
-    title: 'Datenschutzerklärung',
+  footer: {
+    newsletter: 'Newsletter abonnieren',
+    impressum: 'Impressum',
+    privacy: 'Datenschutzerklärung',
   },
   artistes: {
     title: 'Unsere Künstler:innen',

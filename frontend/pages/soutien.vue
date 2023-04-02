@@ -3,7 +3,7 @@
     <Headline>
       <template #headline>{{ $t('soutien').donate.title }} </template>
     </Headline>
-
+    <!--
     <DonationBlock canton="vs" circle>
       <template #title>{{ $t('soutien').donate.vs }}</template>
       <template #details>
@@ -18,39 +18,8 @@
           Clearing{{ $i18n.locale == 'fr' ? ' :' : ':' }} 765
         </p>
       </template>
-    </DonationBlock>
+    </DonationBlock> -->
 
-    <spacing />
-
-    <DonationBlock canton="vd" circle>
-      <template #title>{{ $t('soutien').donate.vd }}</template>
-      <template #details>
-        <p>
-          Les Concerts du Cœur Vaudois <br />
-          1509 Vucherens <br />
-          IBAN{{ $i18n.locale == 'fr' ? ' :' : ':' }} CH13 0076 7000 Z546 0551 3
-          <br />
-          SWIFT/BIC{{ $i18n.locale == 'fr' ? ' :' : ':' }} BCVLCH2LXXX <br />
-          Clearing{{ $i18n.locale == 'fr' ? ' :' : ':' }} 767
-        </p>
-      </template>
-    </DonationBlock>
-
-    <spacing />
-
-    <DonationBlock class="mb-28" canton="ge" circle>
-      <template #title>{{ $t('soutien').donate.ge }}</template>
-      <template #details>
-        <p>
-          Les Concerts du Cœur Genevois <br />
-          1205 Genève <br />
-          IBAN{{ $i18n.locale == 'fr' ? ' :' : ':' }} CH83 0078 8000 0508 4197 7
-          <br />
-          SWIFT/BIC{{ $i18n.locale == 'fr' ? ' :' : ':' }} BCGECHGGXXX <br />
-          Clearing{{ $i18n.locale == 'fr' ? ' :' : ':' }} 788 <br />
-        </p>
-      </template>
-    </DonationBlock>
     <!-- <Headline>
       <template #headline>{{ $t('soutien').supportUs.title }}</template>
     </Headline>
@@ -148,12 +117,10 @@
 <script>
 import Headline from '@/components/typography/Headline.vue'
 import Spacing from '@/components/typography/Spacing.vue'
-import DonationBlock from '@/components/typography/DonationBlock.vue'
 
 export default {
   components: {
     Headline,
-    DonationBlock,
     Spacing,
   },
 }
