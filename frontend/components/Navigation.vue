@@ -71,8 +71,12 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.main-nav {
+.site-navigation {
   line-height: 1.3;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .sub-navigation li:before {

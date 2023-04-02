@@ -4,7 +4,7 @@
   >
     <div class="logo-container mb-5 md:col-span-3">
       <img
-        class="w-24 md:w-48 h-auto -ml-3 filter invert mix-blend-screen"
+        class="w-24 md:w-48 h-auto -ml-3 filter invert"
         src="/CdC-logo.png"
       />
     </div>
@@ -81,22 +81,51 @@
         {{ $t('footer').privacy }}
       </nuxt-link>
     </div>
-    <div v-if="footer.partners" class="partner-container md:col-span-3 mt-16">
+    <div
+      v-if="footer.partners"
+      class="partner-container md:col-span-3 mt-16 min-w-0"
+    >
       <h3>Merci à nos soutiens:</h3>
-      <div
-        class="flex flex-row flex-wrap gap-5 justify-between items-stretch border-t-1 border-white pt-5 mt-5"
-      >
-        <div
-          v-for="(partner, i) in footer.partners"
-          :key="i"
-          class="bg-white flex filter invert mix-blend-screen"
+      <div class="border-t-1 border-white pt-3 mt-2 slider-container">
+        <splide
+          :options="{
+            perPage: 12,
+            perMove: 1,
+            easing: 'linear',
+            gap: '1rem',
+            type: 'loop',
+            pagination: false,
+            arrows: false,
+            drag: false,
+            autoplay: true,
+            speed: 6000,
+            interval: 0,
+            width: '100%',
+            breakpoints: {
+              320: {
+                perPage: 2,
+              },
+              640: {
+                perPage: 3,
+              },
+              1280: {
+                perPage: 9,
+              },
+            },
+          }"
         >
-          <nuxt-img
-            class="filter grayscale aspect-4/3 object-contain w-24 m-auto"
-            provider="strapi"
-            :src="partner.url"
-          />
-        </div>
+          <splide-slide
+            v-for="(partner, i) in footer.partners"
+            :key="i"
+            class="flex bg-white"
+          >
+            <nuxt-img
+              class="aspect-4/3 p-2 object-contain m-auto filter grayscale"
+              provider="strapi"
+              :src="partner.url"
+            />
+          </splide-slide>
+        </splide>
       </div>
     </div>
     <div class="hidden">
@@ -142,7 +171,7 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .site-footer {
   display: grid;
   grid-template-rows: auto;
@@ -158,6 +187,15 @@ export default {
     text-decoration: underline;
     text-underline-offset: 0.15rem;
     text-decoration-thickness: 1px;
+  }
+}
+
+.slider-container {
+  opacity: 0;
+  transition: opacity 1s;
+
+  &:has(> .is-active) {
+    opacity: 1;
   }
 }
 </style>

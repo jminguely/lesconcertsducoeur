@@ -43,6 +43,7 @@ body {
   background: white;
   z-index: 20;
   padding: 10px 0;
+  min-width: 0; /* hotfix to make the splide not overflow the flex layout */
 }
 
 .site-sidebar {
@@ -93,8 +94,6 @@ body {
   }
 }
 
-#content {
-  .splide ul > li::before {
-    content: '' !important;
-  }
+.splide ul > li::before {
+  content: '' !important;
 }

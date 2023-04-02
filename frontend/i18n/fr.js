@@ -424,7 +424,7 @@ Merci !
     fr: 'Fribourg',
   },
   footer: {
-    newsletter: 'S\'abonner à la newsletter',
+    newsletter: "S'abonner à la newsletter",
     impressum: 'Mentions légales',
     privacy: 'Politique de confidentialité',
   },
