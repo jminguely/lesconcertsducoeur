@@ -12,12 +12,12 @@
     </Headline>
 
     <div
-      v-for="content in audition.content"
-      :key="content.id"
+      v-for="contentItem in audition.content"
+      :key="contentItem.id"
       class="text-xl mt-4"
     >
-      <div v-if="content.__typename === 'ComponentContentText'">
-        <div v-dompurify-html="$md.render(content.text)"></div>
+      <div v-if="contentItem.__typename === 'ComponentContentText'">
+        <div v-dompurify-html="$md.render(contentItem.text)"></div>
       </div>
     </div>
 
@@ -104,11 +104,11 @@ export default {
       this.data = await this.$apollo
         .query({ query, variables })
         .then(({ data }) => {
-          if (process.env.dev) console.log(data)
+          // if (process.env.dev) console.log(data)
           return data
         })
         .catch((e) => {
-          if (process.env.dev) console.log(e)
+          // if (process.env.dev) console.log(e)
         })
       if (this.data != null) {
         if (locale === this.data.auditions[0].locale)

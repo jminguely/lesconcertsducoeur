@@ -326,11 +326,11 @@ export default {
       this.content = await this.$apollo
         .query({ query })
         .then(({ data }) => {
-          if (process.env.dev) console.log(data)
+          // if (process.env.dev) console.log(data)
           return data
         })
         .catch((e) => {
-          if (process.env.dev) console.log(e)
+          // if (process.env.dev) console.log(e)
         })
       this.content = this.content.home
     },

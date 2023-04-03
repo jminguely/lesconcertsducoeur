@@ -20,7 +20,7 @@ export default {
     margin-bottom: 2rem;
     counter-reset: list-counter;
 
-    li:before {
+    li::before {
       content: '—';
       padding-right: 0.5rem;
       margin-left: -1.7rem;

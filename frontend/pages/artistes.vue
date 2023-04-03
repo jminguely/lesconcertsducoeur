@@ -110,11 +110,11 @@ export default {
       const queryData = await this.$apollo
         .query({ query, variables })
         .then(({ data }) => {
-          if (process.env.dev) console.log(data)
+          // if (process.env.dev) console.log(data)
           return data
         })
         .catch((e) => {
-          if (process.env.dev) console.log(e)
+          // if (process.env.dev) console.log(e)
         })
 
       const musicGroups = queryData.musicGroups

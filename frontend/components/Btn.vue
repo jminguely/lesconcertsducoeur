@@ -22,35 +22,33 @@ export default {
 </script>
 
 <style scoped lang="postcss">
-@layer components {
-  .btn {
-    @apply font-playFair py-2 px-4 rounded-3xl inline-block text-white whitespace-nowrap;
+.btn {
+  @apply font-playFair py-2 px-4 rounded-3xl inline-block text-white whitespace-nowrap;
+}
+
+.btn.bg-multi {
+  animation: background-switch 20s linear infinite;
+}
+
+@keyframes background-switch {
+  0% {
+    @apply bg-FR;
   }
 
-  .btn.bg-multi {
-    animation: background-switch 20s linear infinite;
+  25% {
+    @apply bg-VD;
   }
 
-  @keyframes background-switch {
-    0% {
-      @apply bg-FR;
-    }
+  50% {
+    @apply bg-GE;
+  }
 
-    25% {
-      @apply bg-VD;
-    }
+  75% {
+    @apply bg-VS;
+  }
 
-    50% {
-      @apply bg-GE;
-    }
-
-    75% {
-      @apply bg-VS;
-    }
-
-    100% {
-      @apply bg-FR;
-    }
+  100% {
+    @apply bg-FR;
   }
 }
 </style>

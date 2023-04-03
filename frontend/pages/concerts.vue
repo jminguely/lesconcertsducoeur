@@ -7,7 +7,7 @@
       ></template>
     </Headline>
 
-    <p class="mb-12 text-xl" v-dompurify-html="$t('concerts').hero.text"></p>
+    <p v-dompurify-html="$t('concerts').hero.text" class="mb-12 text-xl"></p>
 
     <!-- <ImageBlock>
       <template #title>Vous souhaitez organiser un concert?</template>
@@ -39,7 +39,7 @@
       <Headline>
         <template #headline>{{ item.title }}</template>
       </Headline>
-      <div class="text-xl" v-dompurify-html="item.content"></div>
+      <div v-dompurify-html="item.content" class="text-xl"></div>
     </div>
 
     <Spacing />

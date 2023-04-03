@@ -327,11 +327,11 @@ export default {
       this.data = await this.$apollo
         .query({ query, variables })
         .then(({ data }) => {
-          if (process.env.dev) console.log(data)
+          // if (process.env.dev) console.log(data)
           return data
         })
         .catch((e) => {
-          if (process.env.dev) console.log(e)
+          // if (process.env.dev) console.log(e)
         })
 
       if (this.data != null) this.calendars = this.data.calendars
@@ -361,11 +361,11 @@ export default {
       this.newsArticles = await this.$apollo
         .query({ query, variables })
         .then(({ data }) => {
-          if (process.env.dev) console.log(data)
+          // if (process.env.dev) console.log(data)
           return data
         })
         .catch((e) => {
-          if (process.env.dev) console.log(e)
+          // if (process.env.dev) console.log(e)
         })
 
       this.newsArticles = this.newsArticles.newsArticles
@@ -398,13 +398,13 @@ export default {
       this.content = await this.$apollo
         .query({ query })
         .then(({ data }) => {
-          if (process.env.dev) console.log('data', data)
+          // if (process.env.dev) console.log('data', data)
           return data
         })
         .catch((e) => {
-          if (process.env.dev) console.log('error', e)
+          // if (process.env.dev) console.log('error', e)
         })
-      console.log(this)
+      // console.log(this)
       this.content = this.content.home
     },
   },

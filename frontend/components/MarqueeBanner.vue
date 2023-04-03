@@ -38,7 +38,7 @@
   content: '';
   z-index: 2;
   position: absolute;
-  background: linear-gradient(to right, #ffffffff, #ffffff00);
+  background: linear-gradient(to right, #ffff, #fff0);
   display: block;
   width: 4rem;
   height: 100%;
@@ -50,7 +50,7 @@
   content: '';
   z-index: 2;
   position: absolute;
-  background: linear-gradient(to left, #ffffffff, #ffffff00);
+  background: linear-gradient(to left, #ffff, #fff0);
   display: block;
   width: 4rem;
   height: 100%;

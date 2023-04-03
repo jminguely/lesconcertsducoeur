@@ -157,7 +157,7 @@
         <a
           href="https://de-de.facebook.com/about/privacy"
           target="_blank"
-          style="colour: inherit"
+          style="color: inherit"
           >https://de-de.facebook.com/about/privacy</a
         >.
       </p>
@@ -469,5 +469,3 @@ export default {
   },
 }
 </script>
-
-<style></style>

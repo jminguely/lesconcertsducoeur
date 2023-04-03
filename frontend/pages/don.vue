@@ -78,9 +78,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<!-- <style scoped>
 #tamaro-widget-overlay.tamaro-widget.tamaro-widget,
 #tamaro-widget.tamaro-widget {
   padding: 0 !important;
 }
-</style>
+</style> -->

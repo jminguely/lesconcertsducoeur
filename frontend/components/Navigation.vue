@@ -77,9 +77,13 @@ export default {
   a {
     text-decoration: none;
   }
+
+  a.nuxt-link-active {
+    font-weight: 600;
+  }
 }
 
-.sub-navigation li:before {
+.sub-navigation li::before {
   content: '—';
   padding-right: 0.3rem;
 }

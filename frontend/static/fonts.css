@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Playfair';
+  font-family: Playfair;
   src: url('/webfonts/PlayfairDisplay-Regular.woff2') format('woff2'),
     url('/webfonts/PlayfairDisplay-Regular.woff') format('woff');
   font-weight: normal;
@@ -23,7 +23,7 @@
 }
 
 @font-face {
-  font-family: 'Playfair';
+  font-family: Playfair;
   src: url('/webfonts/PlayfairDisplay-Italic.woff2') format('woff2'),
     url('/webfonts/PlayfairDisplay-Italic.woff') format('woff');
   font-weight: normal;
