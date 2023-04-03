@@ -55,16 +55,18 @@ body {
 
 .site-wrapper {
   display: grid;
-  grid-template:
+  grid-template-areas:
     'topbar'
     'sidebar'
     'content';
   gap: 0 100px;
 
   @screen md {
-    grid-template:
+    grid-template-areas:
       'topbar topbar'
-      'sidebar content' 200px auto;
+      'sidebar content';
+    grid-template-rows: auto auto;
+    grid-template-columns: 200px auto;
   }
 }
 
