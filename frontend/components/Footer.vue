@@ -191,11 +191,38 @@ export default {
 }
 
 .slider-container {
+  position: relative;
   opacity: 0;
   transition: opacity 1s;
 
   &:has(> .is-active) {
     opacity: 1;
   }
+}
+
+.slider-container::before {
+  content: '';
+  z-index: 2;
+  position: absolute;
+  background: linear-gradient(to right, #393939ff, #39393900);
+  display: block;
+  width: 12rem;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.slider-container::after {
+  content: '';
+  z-index: 2;
+  position: absolute;
+  background: linear-gradient(to left, #393939ff, #39393900);
+  display: block;
+  width: 12rem;
+  height: 100%;
+  top: 0;
+  right: 0;
+  pointer-events: none;
 }
 </style>

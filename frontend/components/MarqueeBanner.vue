@@ -38,23 +38,25 @@
   content: '';
   z-index: 2;
   position: absolute;
-  background: linear-gradient(to right, #ffff, #fff0);
+  background: linear-gradient(to right, #ffff, #fff0, #fff0);
   display: block;
   width: 4rem;
   height: 100%;
   top: 0;
   left: 0;
+  pointer-events: none;
 }
 
 .marquee::after {
   content: '';
   z-index: 2;
   position: absolute;
-  background: linear-gradient(to left, #ffff, #fff0);
+  background: linear-gradient(to left, #ffff, #fff0, #fff0);
   display: block;
   width: 4rem;
   height: 100%;
   top: 0;
   right: 0;
+  pointer-events: none;
 }
 </style>
