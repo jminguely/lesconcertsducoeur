@@ -7,7 +7,7 @@
     </Headline>
 
     <div class="grid grid-cols-3 gap-5 gap-y-20 sm:grid-cols-3 lg:mb-32">
-      <nuxt-link to="/${this.$i18n.locale}/association/vs">
+      <nuxt-link :to="`/${$i18n.locale}/association/vs`">
         <Illustration canton="vs">
           <template #image>
             <img
@@ -21,7 +21,7 @@
         </Illustration>
       </nuxt-link>
 
-      <nuxt-link to="/${this.$i18n.locale}/association/vd">
+      <nuxt-link :to="`/${$i18n.locale}/association/vd`">
         <Illustration canton="vd">
           <template #image>
             <img
@@ -34,7 +34,7 @@
         </Illustration>
       </nuxt-link>
 
-      <nuxt-link to="/${this.$i18n.locale}/association/ge">
+      <nuxt-link :to="`/${$i18n.locale}/association/ge`">
         <Illustration canton="ge">
           <template #image>
             <img
