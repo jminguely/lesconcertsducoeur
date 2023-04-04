@@ -121,8 +121,6 @@
             ></div>
           </div>
         </div>
-        <!-- <p class="my-6 prose-xl">Vous souhaitez booker ce musicien·nne dans votre établissement ?</p>
-        <nuxt-link class="prose-xl text-green-500 no-underline" to="/contact">> Contact</nuxt-link> -->
       </div>
 
       <div class="flex-grow lg:w-2/5">

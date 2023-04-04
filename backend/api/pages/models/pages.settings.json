@@ -35,7 +35,9 @@
         "content.headline",
         "content.richtext",
         "content.accordion",
-        "content.grid"
+        "content.grid",
+        "content.logos",
+        "content.events-grid"
       ]
     },
     "slug": {

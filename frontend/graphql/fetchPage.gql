@@ -6,8 +6,13 @@ query getPage($locale: String!, $slug: String!) {
       __typename
       ... on ComponentContentHeadline {
         id
+        Lead
+        Image {
+          id
+          url
+        }
         Title
-        Text
+        RichText
       }
       ... on ComponentContentRichtext {
         id
@@ -27,6 +32,26 @@ query getPage($locale: String!, $slug: String!) {
         Block {
           id
           Title
+          RichText
+        }
+      }
+      ... on ComponentContentLogos {
+        id
+        Title
+        Images {
+          id
+          url
+        }
+      }
+      ... on ComponentContentEventsGrid {
+        id
+        EventBlocks: EventBlock {
+          id
+          Title
+          Canton {
+            id
+            uid
+          }
           RichText
         }
       }

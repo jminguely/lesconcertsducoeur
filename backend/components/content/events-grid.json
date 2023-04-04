@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_content_events_grids",
+  "info": {
+    "name": "EventsGrid",
+    "icon": "calendar-alt"
+  },
+  "options": {},
+  "attributes": {
+    "EventBlock": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.event-block"
+    }
+  }
+}

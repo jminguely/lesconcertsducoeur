@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "settings",
+  "info": {
+    "name": "Paramètres du site",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Logos": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": ["images", "files", "videos"],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "Notifications": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.notifications"
+    }
+  }
+}

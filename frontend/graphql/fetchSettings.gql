@@ -1,0 +1,14 @@
+{
+  setting {
+    id
+    Notifications {
+      id
+      Texte
+      Link
+    }
+    Logos {
+      id
+      url
+    }
+  }
+}

@@ -1,6 +1,10 @@
 <template>
-  <div class="border-t-1 border-gray">
-    <div v-for="(item, i) in items" :key="i" class="py-5 border-b border-black">
+  <div class="border-t-1 border-gray accordion">
+    <div
+      v-for="(item, i) in items"
+      :key="i"
+      class="py-5 border-b border-black accordion-item"
+    >
       <div class="flex cursor-pointer select-none items-center">
         <svg
           :class="{ 'transform rotate-90': i == activeItem }"
@@ -28,8 +32,8 @@
           'opacity-1 h-full max-h-full overflow-hidden pt-4': i == activeItem,
         }"
       >
-        <div class="w-full pr-5 text-xl">
-          <div v-dompurify-html="item.text"></div>
+        <div class="w-full pr-5">
+          <div v-dompurify-html="item.text" class="accordion-content"></div>
         </div>
         <div v-if="item.image" class="w-full my-4 lg:my-0 max-h-144">
           <nuxt-img class="mx-auto" provider="strapi" :src="item.image.url" />
@@ -59,3 +63,12 @@ export default {
   },
 }
 </script>
+
+<style lang="postcss">
+.accordion-content {
+  h3,
+  h4 {
+    @apply mb-0;
+  }
+}
+</style>

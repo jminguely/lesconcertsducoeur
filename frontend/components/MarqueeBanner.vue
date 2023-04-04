@@ -4,7 +4,7 @@
       :options="{
         autoWidth: true,
         easing: 'linear',
-        gap: '1rem',
+        gap: '2rem',
         type: 'loop',
         pagination: false,
         arrows: false,
@@ -14,14 +14,33 @@
         interval: 0,
       }"
     >
-      <splide-slide v-for="i in 5" :key="i">
-        <span class="whitespace-nowrap">
-          {{ i }} This text will scroll from right to left
-        </span>
+      <splide-slide
+        v-for="notification in notifications"
+        :key="notification.id"
+      >
+        <a
+          v-if="notification.Link"
+          class="whitespace-nowrap"
+          :href="notification.Link"
+        >
+          {{ notification.Texte }}
+        </a>
+        <span v-else class="whitespace-nowrap">{{ notification.Texte }}</span>
       </splide-slide>
     </splide>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    notifications: {
+      type: Array,
+      default: () => [],
+    },
+  },
+}
+</script>
 
 <style lang="postcss">
 .marquee {
@@ -31,6 +50,10 @@
 
   &:has(> .is-active) {
     opacity: 1;
+  }
+
+  a:hover {
+    opacity: 0.7;
   }
 }
 

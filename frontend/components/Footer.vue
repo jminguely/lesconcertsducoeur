@@ -57,7 +57,7 @@
           name="EMAIL"
           required
         />
-        <button type="submit" class="text-lg px-3">→</button>
+        <button type="submit" class="text-lg px-3">></button>
       </form>
     </div>
     <div>
@@ -74,17 +74,14 @@
     <div>
       © {{ new Date().getFullYear() }}<br />
       <i>Les Concerts du Cœur</i><br />
-      <nuxt-link :to="localePath('impressum')">
-        {{ $t('footer').impressum }} </nuxt-link
+      <nuxt-link :to="`/${$i18n.locale}/impressum`">
+        {{ $t('footer').impressum }}</nuxt-link
       ><br />
-      <nuxt-link :to="localePath('privacy')">
-        {{ $t('footer').privacy }}
-      </nuxt-link>
+      <nuxt-link :to="`/${$i18n.locale}/privacy`">
+        {{ $t('footer').privacy }} </nuxt-link
+      ><br />
     </div>
-    <div
-      v-if="footer.partners"
-      class="partner-container md:col-span-3 mt-16 min-w-0"
-    >
+    <div v-if="logos" class="partner-container md:col-span-3 mt-16 min-w-0">
       <h3>Merci à nos soutiens:</h3>
       <div class="border-t-1 border-white pt-3 mt-2 slider-container">
         <splide
@@ -109,20 +106,20 @@
                 perPage: 3,
               },
               1280: {
-                perPage: 9,
+                perPage: 8,
               },
             },
           }"
         >
           <splide-slide
-            v-for="(partner, i) in footer.partners"
-            :key="i"
+            v-for="logo in logos"
+            :key="logo.id"
             class="flex bg-white"
           >
             <nuxt-img
               class="aspect-4/3 p-2 object-contain m-auto filter grayscale"
               provider="strapi"
-              :src="partner.url"
+              :src="logo.url"
             />
           </splide-slide>
         </splide>
@@ -139,33 +136,16 @@
 </template>
 
 <script>
-import { gql } from 'graphql-tag'
 import Navigation from './Navigation.vue'
-
-const FOOTER_QUERY = gql`
-  query FOOTER_QUERY {
-    footer {
-      partners {
-        id
-        url
-      }
-    }
-  }
-`
 
 export default {
   components: {
     Navigation,
   },
-  data() {
-    return {
-      partners: [],
-    }
-  },
-  apollo: {
-    footer: {
-      query: FOOTER_QUERY,
-      prefetch: true,
+  props: {
+    logos: {
+      type: Array,
+      default: () => [],
     },
   },
 }
@@ -206,7 +186,7 @@ export default {
   position: absolute;
   background: linear-gradient(to right, #393939ff, #39393900);
   display: block;
-  width: 12rem;
+  width: 4rem;
   height: 100%;
   top: 0;
   left: 0;
@@ -219,7 +199,7 @@ export default {
   position: absolute;
   background: linear-gradient(to left, #393939ff, #39393900);
   display: block;
-  width: 12rem;
+  width: 4rem;
   height: 100%;
   top: 0;
   right: 0;

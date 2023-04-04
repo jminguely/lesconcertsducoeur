@@ -2,7 +2,7 @@
   <div class="antialiased min-h-screen">
     <div class="site-wrapper px-12">
       <div class="site-topbar">
-        <MarqueeBanner />
+        <MarqueeBanner :notifications="setting.Notifications" />
         <div class="lang-switcher hidden md:block">
           <nuxt-link :to="switchLocalePath('fr')">fr</nuxt-link> |
           <nuxt-link :to="switchLocalePath('de')">de</nuxt-link>
@@ -11,7 +11,7 @@
           <Btn
             color="multi"
             :text="$t('nav').nousSoutenir"
-            :link="localePath('soutien')"
+            :link="`/${$i18n.locale}/soutien`"
           />
         </div>
         <div class="md:hidden">
@@ -21,18 +21,43 @@
       <Sidebar :menu-open="menuOpen" />
       <Nuxt id="content" class="site-content" />
     </div>
-    <Footer />
+    <Footer :logos="setting.Logos" />
   </div>
 </template>
 <script>
+import { gql } from 'graphql-tag'
 import MenuToggle from '~/components/MenuToggle.vue'
+
+const SETTINGS_QUERY = gql`
+  query SETTINGS_QUERY {
+    setting {
+      id
+      Notifications {
+        id
+        Texte
+        Link
+      }
+      Logos {
+        id
+        url
+      }
+    }
+  }
+`
 
 export default {
   components: { MenuToggle },
   data() {
     return {
       menuOpen: false,
+      setting: {},
     }
+  },
+  apollo: {
+    setting: {
+      query: SETTINGS_QUERY,
+      prefetch: true,
+    },
   },
   methods: {
     toggleMenu() {
@@ -92,31 +117,23 @@ body {
 }
 
 .site-content {
-  @apply pt-24;
-
   grid-area: content;
+  @apply pt-24;
 
   h2 {
     @apply text-xl lg:text-3xl font-playFair;
-    @apply mt-10;
-  }
-
-  h2:first-of-type {
-    @apply mt-0;
   }
 
   h3 {
     @apply text-lg lg:text-2xl font-playFair;
-    @apply mt-10;
   }
 
   h4 {
     @apply text-base lg:text-xl font-playFair;
-    @apply mt-10;
   }
 
   p {
-    @apply text-xl mt-4;
+    @apply text-xl mb-6;
   }
 
   &.ge {
@@ -136,9 +153,27 @@ body {
       @apply text-VD;
     }
   }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+    text-decoration-thickness: 1px;
+    text-decoration-color: inherit;
+
+    &:has(span) {
+      text-decoration: none;
+    }
+
+    span {
+      text-decoration: underline;
+      text-underline-offset: 0.3rem;
+      text-decoration-thickness: 1px;
+      text-decoration-color: inherit;
+    }
+  }
 }
 
-.splide ul > li::before {
-  content: '' !important;
+.nuxt-link-active {
+  font-weight: 600;
 }
 </style>

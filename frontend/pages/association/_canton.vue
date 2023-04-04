@@ -56,9 +56,6 @@
         <Headline class="mb-12">
           <template #headline>{{ $t('association').partners }} </template>
         </Headline>
-        <logo-cloud :logos="association.partners" is-partner>
-          <template #title> {{ $t('home').partners.title }}</template>
-        </logo-cloud>
       </template>
 
       <spacing />
@@ -79,13 +76,11 @@
 import { gql } from 'graphql-tag'
 
 import Headline from '@/components/typography/Headline.vue'
-import LogoCloud from '@/components/LogoCloud.vue'
 import Spacing from '~/components/typography/Spacing.vue'
 
 export default {
   components: {
     Headline,
-    LogoCloud,
     Spacing,
   },
   data() {

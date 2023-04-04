@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_content_event_blocks",
+  "info": {
+    "name": "EventBlock",
+    "icon": "calendar-week"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Canton": {
+      "model": "canton"
+    },
+    "RichText": {
+      "type": "richtext"
+    }
+  }
+}

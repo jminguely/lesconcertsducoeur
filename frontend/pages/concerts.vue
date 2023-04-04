@@ -70,8 +70,7 @@
 import Headline from '@/components/typography/Headline.vue'
 import Spacing from '@/components/typography/Spacing.vue'
 import Testimonial from '@/components/typography/Testimonial.vue'
-// import AccordionItem from '@/components/pages/AccordionItem.vue'
-import Accordion from '@/components/pages/Accordion.vue'
+import Accordion from '@/components/dynamic/Accordion.vue'
 
 export default {
   components: {

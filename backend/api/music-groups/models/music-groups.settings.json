@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "music_groups",
   "info": {
-    "name": "Music groups",
+    "name": "Groups",
     "description": ""
   },
   "options": {

@@ -72,8 +72,7 @@ import Headline from '@/components/typography/Headline.vue'
 import Sublink from '@/components/typography/Sublink.vue'
 import DetailedImages from '@/components/typography/DetailedImages.vue'
 import Spacing from '@/components/typography/Spacing.vue'
-// import AccordionItem from '@/components/pages/AccordionItem.vue'
-import Accordion from '@/components/pages/Accordion.vue'
+import Accordion from '@/components/dynamic/Accordion.vue'
 
 export default {
   components: {

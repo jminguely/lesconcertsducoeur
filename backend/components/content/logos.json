@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_content_logos",
+  "info": {
+    "name": "Logos",
+    "icon": "boxes"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": ["images", "files", "videos"],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

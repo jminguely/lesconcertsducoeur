@@ -7,11 +7,22 @@
   },
   "options": {},
   "attributes": {
-    "Text": {
-      "type": "text"
-    },
     "Title": {
       "type": "string"
+    },
+    "Lead": {
+      "type": "text"
+    },
+    "Image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": ["images"],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "RichText": {
+      "type": "richtext"
     }
   }
 }

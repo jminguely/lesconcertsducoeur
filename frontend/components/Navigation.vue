@@ -56,14 +56,20 @@ export default {
         { name: this.$t('nav').agenda, link: this.localePath('agenda') },
         { name: this.$t('nav').artistes, link: this.localePath('artistes') },
         { name: this.$t('nav').offre, link: this.localePath('offre') },
-        { name: this.$t('nav').auditions, link: this.localePath('auditions') },
+        {
+          name: this.$t('nav').auditions,
+          link: `/${this.$i18n.locale}/auditions`,
+        },
         { name: this.$t('nav').medias, link: this.localePath('medias') },
         {
           name: this.$t('nav').remerciements,
           // link: this.localePath('remerciements'),
           link: `/${this.$i18n.locale}/remerciements`,
         },
-        { name: this.$t('nav').contact, link: 'contact' },
+        {
+          name: this.$t('nav').contact,
+          link: `/${this.$i18n.locale}/contact`,
+        },
       ]
     },
   },
@@ -76,10 +82,6 @@ export default {
 
   a {
     text-decoration: none;
-  }
-
-  a.nuxt-link-active {
-    font-weight: 600;
   }
 }
 

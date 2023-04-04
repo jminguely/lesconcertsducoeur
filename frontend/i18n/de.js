@@ -7,9 +7,10 @@ export default {
     offre: 'Notre offre (orga)',
     auditions: 'Vorsingen',
     medias: 'Medien',
-    remerciements: 'Remerciements',
+    remerciements: 'Danksagungen',
     contact: 'Kontakt',
     nousSoutenir: 'Verein unterstützen',
+    donate: 'Spenden',
   },
   home: {
     hero: {
@@ -216,140 +217,8 @@ Sofern es die technische Ausstattung der Institution zulässt, ist es auch mögl
     soutien: 'Sie möchten uns unterstützen?',
     benevole: 'FreiwilligeR werden',
     don: 'Spenden',
-    donate: 'spenden',
     membre: 'Mitglied werden',
     partners: 'Unsere Partner und Unterstützer',
-  },
-  soutien: {
-    donate: {
-      title: 'Spenden',
-      vs: 'Walliser Verein',
-      vd: 'Waadtländer Verein',
-      ge: 'Genfer Verein',
-    },
-    supportUs: {
-      title: 'Unterstützen Sie uns!',
-      text: `
-Erzählen Sie anderen von uns; <br />
-Werden Sie Mitglied; <br />
-Werden Sie Freiwillige:r; <br />
-Machen Sie eine Spende.<br /><br />
-Herzlichen Dank!
-      `,
-    },
-    member: {
-      title: 'Mitglied werden',
-      vs: {
-        title: 'Walliser Verein',
-        subscription: 'Beitrittsformular für Mitglieder',
-        status: 'Statuten des Walliser Vereins',
-      },
-      vd: {
-        title: 'Waadtländer Verein',
-        subscription: 'Beitrittsformular für Mitglieder',
-        status: 'Statuten des Waadtländer Vereins',
-      },
-      ge: {
-        title: 'Genfer Verein',
-        subscription: 'Beitrittsformular für Mitglieder',
-        status: 'Statuten des Genfer Vereins',
-      },
-    },
-  },
-  contact: {
-    hero: {
-      title: 'Kontakt',
-      subtitle:
-        'Wenn Sie sich für unsere Aktionen interessieren, wenn Sie ein Konzert in Ihrer Einrichtung oder im EMS eines Ihrer Angehörigen organisieren möchten, zögern Sie nicht, uns zu kontaktieren.',
-    },
-    general: 'Allgemeiner Kontakt',
-    vs: {
-      title: 'Kontakt Wallis',
-      text: `
-      <div class="mb-8 lg:mb-12">
-          <div class="text-xl text-VS">
-            <span class="font-bold"><i>Les Concerts du Cœur</i></span><br />
-            Rue des Creusets 16<br />
-            1950 Sion<br />
-            <a href="mailto:valais@lesconcertsducoeur.ch">valais@lesconcertsducoeur.ch</a>
-          </div>
-        </div>
-        <spacing />
-
-        <div class="mb-8 lg:mb-12">
-          <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Künstlerische Leitung und Organisation der Konzerte im Unterwallis und Mittelwallis</h3>
-          <div class="text-xl text-VS">
-            <span class="font-bold">Laure Barras</span><br />
-            <a href="mailto:laure.barras@lesconcertsducoeur.ch">laure.barras@lesconcertsducoeur.ch</a>
-          </div>
-        </div>
-
-        <div class="mb-8 lg:mb-12">
-          <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Organisation der Konzerte im Oberwallis</h3>
-          <div class="text-xl text-VS">
-            <span class="font-bold">Franziska Heinzen</span><br />
-            <a href="mailto:franziska.heinzen@lesconcertsducoeur.ch">franziska.heinzen@lesconcertsducoeur.ch</a>
-          </div>
-        </div>
-
-        <div>
-          <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Sekretariat</h3>
-          <div class="text-xl text-VS">
-            <span class="font-bold">Danielle Waser-Massy</span><br />
-            <a href="mailto:secretariat-vs@lesconcertsducoeur.ch">secretariat-vs@lesconcertsducoeur.ch</a>
-          </div>
-        </div>`,
-    },
-
-    vd: {
-      title: `Kontakt Waadt`,
-      text: `
-          <div class="mb-8 lg:mb-12">
-          <div class="text-xl text-VD">
-            <span class="font-bold"><i>Les Concerts du Cœur Vaudois</i></span><br />
-            Route du village 59<br />
-            1509 Vucherens<br />
-            <a href="mailto:vaud@lesconcertsducoeur.ch">vaud@lesconcertsducoeur.ch</a>
-          </div>
-        </div>
-        <spacing />
-
-        <div>
-          <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Künstlerische Leitung und Organisation der Konzerte</h3>
-          <div class="text-xl text-VD">
-            <span class="font-bold">Mary Rose</span><br />
-            <a href="mailto:mary.rose@lesconcertsducoeur.ch">mary.rose@lesconcertsducoeur.ch</a>
-          </div>
-        </div>
-        `,
-    },
-    ge: {
-      title: `Kontakt Genf`,
-      text: `
-          <div class="mb-8 lg:mb-12">
-          <div class="text-xl text-GE">
-            <span class="font-bold"><i>Les Concerts du Cœur Genevois</i></span><br />
-            C/O Etude Zarb & Wood<br />
-            Rue du Conseil-General 11<br />
-            1205 Genève<br />
-            <a href="mailto:geneve@lesconcertsducoeur.ch">geneve@lesconcertsducoeur.ch</a>
-          </div>
-        </div>
-        <spacing />
-
-        <div>
-          <h3 class="text-2xl lg:text-3xl font-playFair mb-4">Künstlerische Leitung und Organisation der Konzerte</h3>
-          <div class="mb-2 text-xl text-GE">
-            <span class="font-bold">Laure Zaugg</span><br />
-            <a href="mailto:laure.zaugg@lesconcertsducoeur.ch">laure.zaugg@lesconcertsducoeur.ch</a>
-          </div>
-          <div class="text-xl text-GE">
-            <span class="font-bold">Sylvain Leutwyler</span><br />
-            <a href="mailto:sylvain.leutwyler@lesconcertsducoeur.ch">sylvain.leutwyler@lesconcertsducoeur.ch</a>
-          </div>
-        </div>
-        `,
-    },
   },
   canton: {
     VS: 'Wallis',
