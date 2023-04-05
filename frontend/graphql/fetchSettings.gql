@@ -1,5 +1,5 @@
-{
-  setting {
+query getSettings($locale: String!) {
+  settings: setting(locale: $locale) {
     id
     Notifications {
       id

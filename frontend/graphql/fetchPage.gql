@@ -1,5 +1,5 @@
 query getPage($locale: String!, $slug: String!) {
-  pageBySlug(locale: $locale, slug: $slug) {
+  page: pageBySlug(locale: $locale, slug: $slug) {
     id
     title
     Content {

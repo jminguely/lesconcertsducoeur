@@ -3,8 +3,8 @@
     <div class="site-wrapper px-12">
       <div class="site-topbar">
         <MarqueeBanner
-          :key="setting.id"
-          :notifications="setting.Notifications"
+          :key="settings.id"
+          :notifications="settings.Notifications"
         />
         <div class="lang-switcher hidden md:block">
           <nuxt-link :to="switchLocalePath('fr')">fr</nuxt-link> |
@@ -24,41 +24,25 @@
       <Sidebar :menu-open="menuOpen" />
       <Nuxt id="content" class="site-content" />
     </div>
-    <Footer :key="setting.id" :logos="setting.Logos" />
+    <Footer :key="settings.id" :logos="settings.Logos" />
   </div>
 </template>
 <script>
-import { gql } from 'graphql-tag'
-import MenuToggle from '~/components/MenuToggle.vue'
+import fetchSettings from '~/graphql/fetchSettings.gql'
 
-const settingsQuery = gql`
-  query getSettings($locale: String!) {
-    setting(locale: $locale) {
-      id
-      Notifications {
-        id
-        Texte
-        Link
-      }
-      Logos {
-        id
-        url
-      }
-    }
-  }
-`
+import MenuToggle from '~/components/MenuToggle.vue'
 
 export default {
   components: { MenuToggle },
   data() {
     return {
       menuOpen: false,
-      setting: {},
+      settings: {},
     }
   },
   apollo: {
-    setting: {
-      query: settingsQuery,
+    settings: {
+      query: fetchSettings,
       variables() {
         return {
           locale: `${this.$i18n.locale}-CH`,

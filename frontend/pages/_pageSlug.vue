@@ -41,28 +41,23 @@ import RichText from '~/components/dynamic/RichText.vue'
 import Logos from '~/components/dynamic/Logos.vue'
 import Grid from '~/components/dynamic/Grid.vue'
 import Headline from '~/components/dynamic/Headline.vue'
+import EventsGrid from '~/components/dynamic/EventsGrid.vue'
 
 import fetchPage from '~/graphql/fetchPage.gql'
-import EventsGrid from '~/components/dynamic/EventsGrid.vue'
 
 export default {
   components: { Accordion, RichText, Logos, Grid, Headline, EventsGrid },
-  async asyncData({ app, params, i18n }) {
-    const client = app.apolloProvider.defaultClient
-    const { pageSlug } = params
-    const locale = i18n.locale + '-CH'
-
-    const res = await client.query({
+  apollo: {
+    page: {
       query: fetchPage,
-      variables: {
-        locale,
-        slug: pageSlug,
+      variables() {
+        return {
+          slug: this.$route.params.pageSlug,
+          locale: `${this.$i18n.locale}-CH`,
+        }
       },
-    })
-    const page = res.data.pageBySlug
-    return {
-      page,
-    }
+      prefetch: true,
+    },
   },
 }
 </script>
