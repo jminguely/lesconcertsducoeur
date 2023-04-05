@@ -2,7 +2,10 @@
   <div class="antialiased min-h-screen">
     <div class="site-wrapper px-12">
       <div class="site-topbar">
-        <MarqueeBanner :notifications="setting.Notifications" />
+        <MarqueeBanner
+          :key="setting.id"
+          :notifications="setting.Notifications"
+        />
         <div class="lang-switcher hidden md:block">
           <nuxt-link :to="switchLocalePath('fr')">fr</nuxt-link> |
           <nuxt-link :to="switchLocalePath('de')">de</nuxt-link>
@@ -21,16 +24,16 @@
       <Sidebar :menu-open="menuOpen" />
       <Nuxt id="content" class="site-content" />
     </div>
-    <Footer :logos="setting.Logos" />
+    <Footer :key="setting.id" :logos="setting.Logos" />
   </div>
 </template>
 <script>
 import { gql } from 'graphql-tag'
 import MenuToggle from '~/components/MenuToggle.vue'
 
-const SETTINGS_QUERY = gql`
-  query SETTINGS_QUERY {
-    setting {
+const settingsQuery = gql`
+  query getSettings($locale: String!) {
+    setting(locale: $locale) {
       id
       Notifications {
         id
@@ -55,7 +58,12 @@ export default {
   },
   apollo: {
     setting: {
-      query: SETTINGS_QUERY,
+      query: settingsQuery,
+      variables() {
+        return {
+          locale: `${this.$i18n.locale}-CH`,
+        }
+      },
       prefetch: true,
     },
   },
