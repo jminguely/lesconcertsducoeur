@@ -1,19 +1,6 @@
 <template>
   <div class="marquee mr-5 py-2 overflow-hidden">
-    <splide
-      :options="{
-        autoWidth: true,
-        easing: 'linear',
-        gap: '2rem',
-        type: 'loop',
-        pagination: false,
-        arrows: false,
-        drag: false,
-        autoplay: true,
-        speed: 6000,
-        interval: 0,
-      }"
-    >
+    <splide :options="splideOptions">
       <splide-slide
         v-for="notification in notifications"
         :key="notification.id"
@@ -38,6 +25,22 @@ export default {
       type: Array,
       default: () => [],
     },
+  },
+  data() {
+    return {
+      splideOptions: {
+        autoWidth: true,
+        easing: 'linear',
+        gap: '2rem',
+        type: 'loop',
+        pagination: false,
+        arrows: false,
+        drag: false,
+        autoplay: true,
+        speed: 6000,
+        interval: 0,
+      },
+    }
   },
 }
 </script>
