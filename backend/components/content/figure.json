@@ -10,19 +10,14 @@
     "Image": {
       "model": "file",
       "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
+      "allowedTypes": ["images"],
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
     },
     "ImagePosition": {
       "type": "enumeration",
-      "enum": [
-        "left",
-        "right"
-      ],
+      "enum": ["left", "right"],
       "required": true,
       "default": "right"
     },
