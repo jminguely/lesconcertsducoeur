@@ -22,8 +22,11 @@
       </div>
     </div>
 
-    <div class="flex flex-col justify-end">
-      <div :class="event.canton && `text-${event.canton.abbreviation}`">
+    <div
+      class="flex flex-col justify-end"
+      :class="event.canton && `text-${event.canton.abbreviation}`"
+    >
+      <div>
         <template v-if="event.music_group != null">
           <em class="font-playFair text-xl lg:text-2xl">
             {{ event.music_group.name }}
@@ -42,11 +45,7 @@
           </div>
         </template>
       </div>
-      <div
-        v-dompurify-html="event.details"
-        class="font-playFair text-xl lg:text-2xl"
-        :class="event.canton && `text-${event.canton.abbreviation}`"
-      ></div>
+      <div v-dompurify-html="event.details"></div>
     </div>
   </div>
 </template>
