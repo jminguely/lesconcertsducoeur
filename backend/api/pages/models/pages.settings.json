@@ -33,11 +33,15 @@
       "type": "dynamiczone",
       "components": [
         "content.headline",
+        "content.subtitle",
         "content.richtext",
         "content.accordion",
         "content.grid",
         "content.logos",
-        "content.events-grid"
+        "content.events-grid",
+        "content.download-list",
+        "content.figure",
+        "content.slides-list"
       ]
     },
     "slug": {

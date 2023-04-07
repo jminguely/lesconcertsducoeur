@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_content_figures",
+  "info": {
+    "name": "Figure",
+    "icon": "file-image",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "ImagePosition": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right"
+      ],
+      "required": true,
+      "default": "right"
+    },
+    "RichText": {
+      "type": "richtext"
+    }
+  }
+}

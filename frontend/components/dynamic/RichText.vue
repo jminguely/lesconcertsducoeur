@@ -34,7 +34,7 @@ export default {
   }
 
   mark {
-    @apply font-playFair py-2 px-4 rounded-3xl inline-block text-white whitespace-nowrap;
+    @apply font-playFair py-2 px-4 rounded-3xl inline-block text-white text-center mr-1 mb-1;
   }
 }
 </style>

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_content_download_elements",
+  "info": {
+    "name": "DownloadElement",
+    "icon": "file-alt"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Infos": {
+      "type": "string"
+    },
+    "File": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

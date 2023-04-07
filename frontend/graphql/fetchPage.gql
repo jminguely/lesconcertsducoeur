@@ -14,6 +14,10 @@ query getPage($locale: String!, $slug: String!) {
         Title
         RichText
       }
+      ... on ComponentContentSubtitle {
+        id
+        Text
+      }
       ... on ComponentContentRichtext {
         id
         Text
@@ -53,6 +57,40 @@ query getPage($locale: String!, $slug: String!) {
             uid
           }
           RichText
+        }
+      }
+      ... on ComponentContentDownloadList {
+        id
+        Title
+        DownloadElements: DownloadElement {
+          id
+          Title
+          Infos
+          File {
+            id
+            url
+          }
+        }
+      }
+      ... on ComponentContentFigure {
+        id
+        Image {
+          id
+          url
+        }
+        RichText
+        ImagePosition
+      }
+
+      ... on ComponentContentSlidesList {
+        id
+        Slides: SlideItem {
+          id
+          RichText
+          Image {
+            id
+            url
+          }
         }
       }
     }

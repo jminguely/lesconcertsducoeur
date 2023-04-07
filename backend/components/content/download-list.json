@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_content_download_lists",
+  "info": {
+    "name": "DownloadList",
+    "icon": "file-download"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "DownloadElement": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.download-element"
+    }
+  }
+}

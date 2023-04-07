@@ -23,7 +23,7 @@ export default {
 
 <style scoped lang="postcss">
 .btn {
-  @apply font-playFair py-2 px-4 rounded-3xl inline-block text-white whitespace-nowrap;
+  @apply font-playFair py-2 px-4 rounded-3xl inline-block text-white whitespace-nowrap text-center;
 }
 
 .btn.bg-multi {

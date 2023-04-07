@@ -13,6 +13,7 @@
         <div class="hidden md:block">
           <Btn
             color="multi"
+            class="whitespace-nowrap"
             :text="$t('nav').nousSoutenir"
             :link="`/${$i18n.locale}/soutien`"
           />
@@ -71,6 +72,8 @@ body {
 }
 
 .site-wrapper {
+  @apply max-w-7xl mx-auto;
+
   display: grid;
   grid-template:
     'topbar'
@@ -111,6 +114,11 @@ body {
 .site-content {
   grid-area: content;
   @apply pt-24;
+
+  h1,
+  .h1 {
+    @apply text-4xl lg:text-5xl font-sans;
+  }
 
   h2 {
     @apply text-xl lg:text-3xl font-playFair;

@@ -11,6 +11,7 @@ export default {
     contact: 'Kontakt',
     nousSoutenir: 'Verein unterstützen',
     donate: 'Spenden',
+    mission: 'Unsere Mission',
   },
   home: {
     hero: {

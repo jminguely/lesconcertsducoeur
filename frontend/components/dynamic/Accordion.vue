@@ -1,5 +1,5 @@
 <template>
-  <div class="border-t-1 border-gray accordion">
+  <div class="border-t-1 border-gray accordion mb-20">
     <div
       v-for="(item, i) in items"
       :key="i"
