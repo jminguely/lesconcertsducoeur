@@ -54,7 +54,7 @@ query getPage($locale: String!, $slug: String!) {
           Title
           Canton {
             id
-            uid
+            abbreviation
           }
           RichText
         }

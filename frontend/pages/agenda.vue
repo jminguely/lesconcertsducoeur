@@ -74,6 +74,11 @@ export default {
   },
   apollo: {
     cantons: {
+      variables() {
+        return {
+          locale: `${this.$i18n.locale}-CH`,
+        }
+      },
       query: fetchCantons,
       prefetch: true,
     },

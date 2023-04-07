@@ -5,7 +5,7 @@
     <div class="flex flex-col lg:max-w-xl">
       <div
         class="mb-2 font-playFair text-xl lg:text-2xl"
-        :class="event.canton && `text-${event.canton.uid}`"
+        :class="event.canton && `text-${event.canton.abbreviation}`"
       >
         <div>
           {{
@@ -23,7 +23,7 @@
     </div>
 
     <div class="flex flex-col justify-end">
-      <div :class="event.canton && `text-${event.canton.uid}`">
+      <div :class="event.canton && `text-${event.canton.abbreviation}`">
         <template v-if="event.music_group != null">
           <em class="font-playFair text-xl lg:text-2xl">
             {{ event.music_group.name }}
@@ -51,7 +51,7 @@
       <div
         v-dompurify-html="event.details"
         class="font-playFair text-xl lg:text-2xl"
-        :class="event.canton && `text-${event.canton.uid}`"
+        :class="event.canton && `text-${event.canton.abbreviation}`"
       ></div>
     </div>
   </div>

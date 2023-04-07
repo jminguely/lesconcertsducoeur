@@ -1,7 +1,7 @@
-query getCantons {
-  cantons {
+query getCantons($locale: String) {
+  cantons(locale: $locale) {
     id
-    uid
     name
+    abbreviation
   }
 }

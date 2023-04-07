@@ -60,7 +60,7 @@
           :canton="getCanton(item.canton)"
         >
           <template #date>
-            {{ $t('canton')[item.canton.uid.toLowerCase()] }}
+            {{ $t('canton')[item.canton.abbreviation.toLowerCase()] }}
           </template>
           <template #pretitle></template>
           <template #title
@@ -296,7 +296,7 @@ export default {
       return Math.floor(Math.random() * (max - min)) + min
     },
     getCanton(canton) {
-      return canton == null ? 'all' : canton.uid.toLowerCase()
+      return canton == null ? 'all' : canton.abbreviation.toLowerCase()
     },
     async getAgenda() {
       const query = gql`
@@ -309,7 +309,7 @@ export default {
           ) {
             id
             canton {
-              uid
+              abbreviation
             }
             date_time
             title
@@ -346,7 +346,7 @@ export default {
             date
             content
             canton {
-              uid
+              abbreviation
             }
           }
         }
