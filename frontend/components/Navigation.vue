@@ -41,19 +41,19 @@ export default {
           subLinks: [
             {
               name: this.$t('canton').vs,
-              link: this.localePath('/association/vs'),
+              link: this.localePath('/association/VS'),
             },
             {
               name: this.$t('canton').vd,
-              link: this.localePath('/association/vd'),
+              link: this.localePath('/association/VD'),
             },
             {
               name: this.$t('canton').ge,
-              link: this.localePath('/association/ge'),
+              link: this.localePath('/association/GE'),
             },
             {
               name: this.$t('canton').fr,
-              link: this.localePath('/association/fr'),
+              link: this.localePath('/association/FR'),
             },
           ],
         },

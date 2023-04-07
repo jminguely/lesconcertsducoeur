@@ -4,7 +4,7 @@ export default {
     association: 'Der Verein',
     agenda: 'Agenda',
     artistes: 'Die Musiker:innen',
-    offre: 'Notre offre (orga)',
+    offre: 'Unser Angebot',
     auditions: 'Vorsingen',
     medias: 'Medien',
     remerciements: 'Danksagungen',

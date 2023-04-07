@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "cantons",
   "info": {
-    "name": "canton",
+    "name": "Cantons",
     "description": ""
   },
   "options": {
@@ -31,6 +31,26 @@
         }
       },
       "type": "string"
+    },
+    "Content": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "content.headline",
+        "content.subtitle",
+        "content.richtext",
+        "content.accordion",
+        "content.grid",
+        "content.logos",
+        "content.events-grid",
+        "content.download-list",
+        "content.figure",
+        "content.slides-list"
+      ]
     }
   }
 }

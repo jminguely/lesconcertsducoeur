@@ -1,0 +1,97 @@
+query getCanton($locale: String!, $abbreviation: String!) {
+  canton: cantonByAbbr(locale: $locale, abbreviation: $abbreviation) {
+    id
+    Content {
+      __typename
+      ... on ComponentContentHeadline {
+        id
+        Lead
+        Image {
+          id
+          url
+        }
+        Title
+        RichText
+      }
+      ... on ComponentContentSubtitle {
+        id
+        Text
+      }
+      ... on ComponentContentRichtext {
+        id
+        Text
+      }
+      ... on ComponentContentAccordion {
+        accordion_item {
+          title
+          text
+          image {
+            url
+          }
+        }
+      }
+      ... on ComponentContentGrid {
+        id
+        Block {
+          id
+          Title
+          RichText
+        }
+      }
+      ... on ComponentContentLogos {
+        id
+        Title
+        Images {
+          id
+          url
+        }
+      }
+      ... on ComponentContentEventsGrid {
+        id
+        EventBlocks: EventBlock {
+          id
+          Title
+          Canton {
+            id
+            abbreviation
+          }
+          RichText
+        }
+      }
+      ... on ComponentContentDownloadList {
+        id
+        Title
+        DownloadElements: DownloadElement {
+          id
+          Title
+          Infos
+          File {
+            id
+            url
+          }
+        }
+      }
+      ... on ComponentContentFigure {
+        id
+        Image {
+          id
+          url
+        }
+        RichText
+        ImagePosition
+      }
+
+      ... on ComponentContentSlidesList {
+        id
+        Slides: SlideItem {
+          id
+          RichText
+          Image {
+            id
+            url
+          }
+        }
+      }
+    }
+  }
+}

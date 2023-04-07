@@ -2,7 +2,7 @@
   <div class="mb-20">
     <h3>{{ title }}</h3>
     <div
-      class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:gid-cols-6 2xl:grid-cols-4 gap-10"
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:gid-cols-5 gap-10"
     >
       <div v-for="image in images" :key="image.id">
         <nuxt-img

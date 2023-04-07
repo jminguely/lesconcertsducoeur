@@ -18,7 +18,7 @@
     },
     {
       "method": "GET",
-      "path": "/cantons/:id",
+      "path": "/cantons/:abbreviation",
       "handler": "canton.findOne",
       "config": {
         "policies": []

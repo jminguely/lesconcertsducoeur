@@ -44,7 +44,6 @@ module.exports = {
         VD: '#4D9A70',
         GE: '#EE6F22',
         FR: '#3751C0',
-        ALL: '#000000',
         gray: '#393939',
       },
       borderWidth: {

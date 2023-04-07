@@ -4,7 +4,7 @@ export default {
     association: 'Les associations',
     agenda: 'Agenda',
     artistes: 'Nos artistes',
-    offre: 'Notre offre (orga)',
+    offre: 'Notre offre',
     auditions: 'Auditions',
     medias: 'Médias',
     remerciements: 'Remerciements',
