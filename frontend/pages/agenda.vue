@@ -1,108 +1,89 @@
 <template>
   <div>
-    <Headline class="pb-12">
-      <template #headline>Agenda</template>
-    </Headline>
+    <Headline title="Agenda" />
 
-    <div
-      class="flex flex-col justify-items-start font-playFair text-xl items-start space-y-4 mb-16 lg:space-y-0 lg:flex-row lg:space-x-8"
-    >
-      <ClassicSelect
-        :options="cantons"
-        :selected-item.sync="cantonFilter"
-        default-item="VS"
-      >
-        <template #label>{{ $t('agenda').canton }}</template>
-      </ClassicSelect>
-      <ClassicSelect
-        :options="years"
-        :selected-item.sync="yearFilter"
-        default-item="2023"
-      >
-        <template #label>{{ $t('agenda').pastConcerts }}</template>
-      </ClassicSelect>
-      <!-- <a class="cursor-pointer" @click="resetFilters()">Effacer les filtres</a> -->
-
-      <div
-        class="w-full sm:w-auto duration-300 ease-in-out flex items-start py-2 px-4 border-2 text-white bg-gray border-gray cursor-pointer"
-        :class="{
-          'opacity-0': yearFilter == '' && cantonFilter == '',
-          'opacity-100': yearFilter != '' || cantonFilter != '',
-        }"
-        @click="resetFilters()"
-      >
-        {{ $t('agenda').resetFilters }}
+    <div class="flex flex-row justify-between items-end mb-20">
+      <div>
+        <div v-if="cantons" class="mb-3">
+          <button
+            v-for="canton in cantons"
+            :key="canton.id"
+            class="radio-button"
+            :class="cantonFilter === canton.id && 'active'"
+            @click="cantonFilter = canton.id"
+          >
+            <span class="bullet"></span>
+            {{ canton.name }}
+          </button>
+        </div>
+        <div v-if="years">
+          <button
+            v-for="year in years"
+            :key="year"
+            class="radio-button"
+            :class="yearFilter === year && 'active'"
+            @click="yearFilter = year"
+          >
+            <span class="bullet"></span>
+            {{ year }}
+          </button>
+        </div>
+      </div>
+      <div>
+        <button
+          class="transition-opacity duration-200"
+          :class="{
+            'opacity-0':
+              yearFilter == new Date().getFullYear() && cantonFilter == '',
+          }"
+          @click="resetFilters()"
+        >
+          <span class="transform rotate-45 inline-block">🞢</span>
+          {{ $t('agenda').resetFilters }}
+        </button>
       </div>
     </div>
 
-    <DateDivider>
-      <template #date>{{ yearFilter || 2023 }}</template>
-    </DateDivider>
+    <div class="py-4 text-4xl border-t border-b border-gray-600 font-playFair">
+      {{ yearFilter }}
+    </div>
 
     <template v-if="data != null">
       <EventDetails
-        v-for="item in data.calendars"
-        :key="item.id + item.title"
+        v-for="event in data.calendars"
+        :key="event.id"
         class="py-6"
-        :canton="getColor(getCanton(item.canton))"
+        :event="event"
       >
-        <template #date>{{
-          $dateFns.format(
-            new Date(item.date_time),
-            'dd.MM.yyyy' + ' | ' + 'HH:mm'
-          )
-        }}</template>
-        <template #location>{{ item.location }}</template>
-        <template #title>{{ item.title }} </template>
-        <template #artists>
-          <template v-if="item.music_group != null">
-            <div
-              v-for="artist in item.music_group.artists"
-              :key="artist.id + artist.first_name"
-            >
-              <span>{{ artist.first_name }} {{ artist.last_name }}</span>
-              <span>|</span>
-              <span>{{ artist.instrument }}</span>
-            </div>
-          </template>
-          <template v-else>
-            <div
-              v-for="artist in item.artists"
-              :key="artist.id + artist.first_name"
-            >
-              <span>{{ artist.first_name }} {{ artist.last_name }}</span>
-              <span>|</span>
-              <span>{{ artist.instrument }}</span>
-            </div>
-          </template>
-        </template>
-        <template #details>
-          <!-- {{ item.details }} -->
-        </template>
       </EventDetails>
     </template>
   </div>
 </template>
 
 <script>
-import { gql } from 'graphql-tag'
-import Headline from '@/components/typography/Headline.vue'
-import DateDivider from '@/components/typography/DateDivider.vue'
+import Headline from '~/components/dynamic/Headline.vue'
 import EventDetails from '@/components/typography/EventDetails.vue'
-import ClassicSelect from '@/components/pages/ClassicSelect.vue'
+
+import fetchConcerts from '~/graphql/fetchConcerts.gql'
+import fetchCantons from '~/graphql/fetchCantons.gql'
 
 export default {
   components: {
     Headline,
-    DateDivider,
     EventDetails,
-    ClassicSelect,
+  },
+  apollo: {
+    cantons: {
+      query: fetchCantons,
+      prefetch: true,
+    },
   },
   data() {
     return {
       data: null,
-      yearFilter: '',
+      yearFilter: new Date().getFullYear(),
       cantonFilter: '',
+      cantons: [],
     }
   },
 
@@ -113,10 +94,8 @@ export default {
 
   computed: {
     years() {
-      return ['2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016']
-    },
-    cantons() {
-      return ['VS', 'VD', 'GE']
+      const currentYear = new Date().getFullYear()
+      return [currentYear, currentYear - 1, currentYear - 2, 'Archives']
     },
   },
 
@@ -129,62 +108,15 @@ export default {
     },
   },
 
-  mounted() {},
-
   methods: {
     resetFilters() {
-      this.yearFilter = ''
+      this.yearFilter = new Date().getFullYear()
       this.cantonFilter = ''
     },
-    handleYears(el) {
-      // console.log(el)
-    },
-    getColor(canton) {
-      if (canton === 'VS') return 'vs'
-      if (canton === 'VD') return 'vd'
-      if (canton === 'GE') return 'ge'
-      if (canton === 'ALL') return 'all'
-    },
-    getCanton(canton) {
-      return canton == null ? 'ALL' : canton.uid
-    },
-    getCantonID(canton) {
-      if (canton === 'ALL') return 1
-      if (canton === 'VS') return 2
-      if (canton === 'VD') return 3
-      if (canton === 'GE') return 4
-    },
+
     async getAgenda() {
-      const query = gql`
-        query getCalendar($locale: String, $where: JSON) {
-          calendars(sort: "date_time:asc", locale: $locale, where: $where) {
-            id
-            canton {
-              uid
-            }
-            date_time
-            title
-            location
-            details
-            artists {
-              first_name
-              last_name
-              instrument
-            }
-            music_group {
-              id
-              artists {
-                id
-                first_name
-                last_name
-                instrument
-              }
-            }
-          }
-        }
-      `
       const locale = this.$i18n.locale + '-CH'
-      const canton = this.getCantonID(this.cantonFilter)
+      const canton = this.cantonFilter
 
       let where = {}
       if (this.cantonFilter === '')
@@ -206,13 +138,12 @@ export default {
               }
 
       const variables = {
-        // date_time: this.$dateFns.formatISO(new Date()),
         where,
         locale,
       }
 
       this.data = await this.$apollo
-        .query({ query, variables })
+        .query({ query: fetchConcerts, variables })
         .then(({ data }) => {
           // if (process.env.dev) console.log(data)
           return data
@@ -224,3 +155,39 @@ export default {
   },
 }
 </script>
+
+<style lang="postcss" scoped>
+.radio-button {
+  position: relative;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  &.active::after {
+    transform: translateY(-40%) scale(1);
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-40%);
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 0.5rem;
+  }
+
+  &::before {
+    border: 1px solid black;
+  }
+
+  &::after {
+    border: 0;
+    background: black;
+    transform: translateY(-40%) scale(0);
+    transition: transform 0.2s ease;
+  }
+}
+</style>

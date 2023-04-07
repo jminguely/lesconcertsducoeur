@@ -1,0 +1,27 @@
+query getCalendar($locale: String, $where: JSON) {
+  calendars(sort: "date_time:asc", locale: $locale, where: $where) {
+    id
+    canton {
+      uid
+    }
+    date_time
+    title
+    location
+    details
+    artists {
+      first_name
+      last_name
+      instrument
+    }
+    music_group {
+      id
+      name
+      artists {
+        id
+        first_name
+        last_name
+        instrument
+      }
+    }
+  }
+}

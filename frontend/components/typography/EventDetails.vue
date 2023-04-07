@@ -4,42 +4,55 @@
   >
     <div class="flex flex-col lg:max-w-xl">
       <div
-        class="mb-2 font-playFair text-2xl lg:text-3xl"
-        :class="{
-          'text-VS': canton == 'vs',
-          'text-VD': canton == 'vd',
-          'text-GE': canton == 'ge',
-        }"
+        class="mb-2 font-playFair text-xl lg:text-2xl"
+        :class="event.canton && `text-${event.canton.uid}`"
       >
-        <div><slot name="date"></slot></div>
-        <div><slot name="location"></slot></div>
+        <div>
+          {{
+            $dateFns.format(
+              new Date(event.date_time),
+              'dd.MM.yyyy' + ' | ' + 'HH:mm'
+            )
+          }}
+        </div>
+        <div>{{ event.location }}</div>
       </div>
-      <div class="text-4xl lg:text-5xl lg:mb-0 text-gray">
-        <slot name="title"></slot>
+      <div class="text-3xl lg:text-4xl lg:mb-0 text-gray">
+        {{ event.title }}
       </div>
     </div>
 
     <div class="flex flex-col justify-end">
-      <div
-        class="font-playFair text-xl lg:text-2xl"
-        :class="{
-          'text-VS': canton == 'vs',
-          'text-VD': canton == 'vd',
-          'text-GE': canton == 'ge',
-        }"
-      >
-        <slot name="artists"></slot>
+      <div :class="event.canton && `text-${event.canton.uid}`">
+        <template v-if="event.music_group != null">
+          <em class="font-playFair text-xl lg:text-2xl">
+            {{ event.music_group.name }}
+          </em>
+          <div
+            v-for="artist in event.music_group.artists"
+            :key="artist.id + artist.first_name"
+          >
+            <span>{{ artist.first_name }} {{ artist.last_name }}</span>
+            <span>|</span>
+            <span>{{ artist.instrument }}</span>
+          </div>
+        </template>
+        <template v-else>
+          <div
+            v-for="artist in event.artists"
+            :key="artist.id + artist.first_name"
+          >
+            <span>{{ artist.first_name }} {{ artist.last_name }}</span>
+            <span>|</span>
+            <span>{{ artist.instrument }}</span>
+          </div>
+        </template>
       </div>
       <div
+        v-dompurify-html="event.details"
         class="font-playFair text-xl lg:text-2xl"
-        :class="{
-          'text-VS': canton == 'vs',
-          'text-VD': canton == 'vd',
-          'text-GE': canton == 'ge',
-        }"
-      >
-        <slot name="details"> </slot>
-      </div>
+        :class="event.canton && `text-${event.canton.uid}`"
+      ></div>
     </div>
   </div>
 </template>
@@ -47,9 +60,9 @@
 <script>
 export default {
   props: {
-    canton: {
-      type: String,
-      default: '',
+    event: {
+      type: Object,
+      default: () => {},
     },
   },
 }
