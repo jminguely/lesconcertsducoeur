@@ -28,20 +28,14 @@
           <em class="font-playFair text-xl lg:text-2xl">
             {{ event.music_group.name }}
           </em>
-          <div
-            v-for="artist in event.music_group.artists"
-            :key="artist.id + artist.first_name"
-          >
+          <div v-for="artist in event.music_group.artists" :key="artist.id">
             <span>{{ artist.first_name }} {{ artist.last_name }}</span>
             <span>|</span>
             <span>{{ artist.instrument }}</span>
           </div>
         </template>
         <template v-else>
-          <div
-            v-for="artist in event.artists"
-            :key="artist.id + artist.first_name"
-          >
+          <div v-for="artist in event.artists" :key="artist.id">
             <span>{{ artist.first_name }} {{ artist.last_name }}</span>
             <span>|</span>
             <span>{{ artist.instrument }}</span>

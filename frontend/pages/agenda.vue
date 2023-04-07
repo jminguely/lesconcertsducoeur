@@ -33,8 +33,7 @@
         <button
           class="transition-opacity duration-200"
           :class="{
-            'opacity-0':
-              yearFilter == new Date().getFullYear() && cantonFilter == '',
+            'opacity-0': yearFilter == '' && cantonFilter == '',
           }"
           @click="resetFilters()"
         >
@@ -45,7 +44,7 @@
     </div>
 
     <div class="py-4 text-4xl border-t border-b border-gray-600 font-playFair">
-      {{ yearFilter }}
+      {{ yearFilter || $t('agenda').nextConcerts }}
     </div>
 
     <template v-if="data != null">
@@ -86,8 +85,8 @@ export default {
   data() {
     return {
       data: null,
-      yearFilter: new Date().getFullYear(),
-      cantonFilter: '',
+      yearFilter: '',
+      cantonFilter: 0,
       cantons: [],
     }
   },
@@ -100,7 +99,13 @@ export default {
   computed: {
     years() {
       const currentYear = new Date().getFullYear()
-      return [currentYear, currentYear - 1, currentYear - 2, 'Archives']
+      return [
+        currentYear,
+        currentYear - 1,
+        currentYear - 2,
+        currentYear - 3,
+        'Archives',
+      ]
     },
   },
 
@@ -115,34 +120,35 @@ export default {
 
   methods: {
     resetFilters() {
-      this.yearFilter = new Date().getFullYear()
-      this.cantonFilter = ''
+      this.yearFilter = ''
+      this.cantonFilter = 0
     },
 
     async getAgenda() {
       const locale = this.$i18n.locale + '-CH'
-      const canton = this.cantonFilter
 
-      let where = {}
-      if (this.cantonFilter === '')
-        where =
-          this.yearFilter === ''
-            ? { date_time_gte: new Date() }
-            : {
-                date_time_gte: `${this.yearFilter}-01-01`,
-                date_time_lte: `${this.yearFilter}-12-31`,
-              }
-      else
-        where =
-          this.yearFilter === ''
-            ? { date_time_gte: new Date(), canton }
-            : {
-                date_time_gte: `${this.yearFilter}-01-01`,
-                date_time_lte: `${this.yearFilter}-12-31`,
-                canton,
-              }
+      let sort = 'date_time:asc'
+
+      const where = {}
+
+      if (this.cantonFilter) {
+        where.canton = parseInt(this.cantonFilter)
+      }
+
+      if (this.yearFilter) {
+        if (this.yearFilter === 'Archives') {
+          sort = 'date_time:desc'
+          where.date_time_lte = `${new Date().getFullYear() - 4}-12-31`
+        } else {
+          where.date_time_gte = `${this.yearFilter}-01-01`
+          where.date_time_lte = `${this.yearFilter}-12-31`
+        }
+      } else {
+        where.date_time_gte = new Date()
+      }
 
       const variables = {
+        sort,
         where,
         locale,
       }
