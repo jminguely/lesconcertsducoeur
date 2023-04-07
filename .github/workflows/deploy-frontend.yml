@@ -46,5 +46,5 @@ jobs:
           src: './frontend'
           dest: ${{secrets.DEPLOY_DEST_NEW}}
 
-      - name: 🧨 Kickstart node server
+      - name: 🧨 Kickstart node server (frontend)
         run: curl --basic --user '${{ secrets.ALWAYSDATA_API }} account=jminguely:' --data '' --request POST https://api.alwaysdata.com/v1/site/765707/restart/
