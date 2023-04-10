@@ -1,11 +1,8 @@
 <template>
-  <div
-    :class="{ 'opacity-100 z-50': popup }"
-    class="fixed top-0 left-0 flex flex-col w-screen h-screen p-5 lg:gap-x-5 lg:flex-row lg:p-10 lg:pb-20 overflow-auto bg-white opacity-0"
-  >
+  <div :class="{ 'popup-open': popup }" class="popup">
     <div class="z-10 flex justify-between lg:block lg:w-1/5">
       <div
-        class="lg:flex-shrink flex items-center lg:block lg:w-full lg:flex-col lg:static lg:mt-4"
+        class="popup-sidebar lg:flex-shrink flex items-center lg:block lg:w-full lg:flex-col lg:static lg:mt-4"
       >
         <button
           class="flex my-2 text-xl focus:outline-none"
@@ -58,7 +55,7 @@
     </div>
 
     <div
-      class="lg:flex-shrink flex flex-col justify-between py-10 lg:flex-row lg:w-4/5 lg:gap-x-10"
+      class="popup-content lg:flex-shrink flex flex-col justify-between py-10 lg:flex-row lg:w-4/5 lg:gap-x-10"
     >
       <div class="mb-6 lg:w-3/5 lg:mb-0">
         <h1 class="mb-6 text-4xl lg:text-5xl">
@@ -118,20 +115,12 @@
 
       <div class="flex-grow lg:w-2/5">
         <div class="ml-auto">
-          <template v-if="selected.picture != null">
-            <img
-              class="object-cover h-full lg:w-120 lg:h-full w-96"
-              :src="
-                'https://api-new.lesconcertsducoeur.ch' + selected.picture.url
-              "
-            />
-          </template>
           <template v-if="selected.cover != null">
-            <img
+            <nuxt-img
+              loading="lazy"
               class="object-cover h-full lg:w-120 lg:h-full w-96"
-              :src="
-                'https://api-new.lesconcertsducoeur.ch' + selected.cover.url
-              "
+              provider="strapi"
+              :src="selected.cover.url"
             />
           </template>
         </div>
@@ -212,3 +201,42 @@ export default {
   },
 }
 </script>
+
+<style lang="postcss" scoped>
+.popup-sidebar,
+.popup-content {
+  opacity: 0;
+  transition: opacity 0.4s 0s;
+}
+
+.popup {
+  @apply flex flex-col p-5 lg:gap-x-5 lg:flex-row lg:p-10 lg:pb-20 bg-white;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s 0.4s;
+
+  &.popup-open {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s 0.1s;
+
+    .popup-content {
+      opacity: 1;
+      transition: opacity 1s 0.5s;
+    }
+
+    .popup-sidebar {
+      opacity: 1;
+      transition: opacity 1s 1s;
+    }
+  }
+}
+</style>

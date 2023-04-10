@@ -69,6 +69,10 @@ html {
 
 body {
   overscroll-behavior-y: none;
+
+  &.popup-open {
+    overflow: hidden;
+  }
 }
 
 .site-wrapper {

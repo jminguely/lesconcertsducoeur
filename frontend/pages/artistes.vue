@@ -35,6 +35,10 @@
       <template v-if="data != null">
         <div
           class="gap-y-5 sm:gap-x-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-5"
+          :class="{
+            'content-loading': contentLoading,
+            'content-loaded': !contentLoading,
+          }"
         >
           <artist-cover
             v-for="artist in data"
@@ -75,6 +79,7 @@ export default {
       data: null,
       bodyClass: '',
       selected: {},
+      contentLoading: true,
       popup: false,
       cantonFilter: 0,
       cantons: [],
@@ -106,8 +111,11 @@ export default {
   fetchOnServer: false,
 
   watch: {
-    async cantonFilter() {
-      await this.getArtists()
+    cantonFilter() {
+      this.contentLoading = true
+      setTimeout(() => {
+        this.getArtists()
+      }, 300)
     },
   },
 
@@ -115,7 +123,9 @@ export default {
     openPopup(item) {
       this.selected = item
       this.popup = true
-      this.bodyClass = 'overflow-hidden'
+      setTimeout(() => {
+        this.bodyClass = 'popup-open'
+      }, 500)
     },
     closePopup() {
       this.bodyClass = ''
@@ -151,12 +161,24 @@ export default {
       const musicGroups = queryData.musicGroups
 
       this.data = musicGroups
+
+      this.contentLoading = false
     },
   },
 }
 </script>
 
 <style lang="postcss" scoped>
+.content-loading {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.content-loaded {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
 .radio-button {
   position: relative;
   padding-left: 1rem;

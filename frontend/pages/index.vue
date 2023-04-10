@@ -98,28 +98,6 @@
 
     <spacing />
 
-    <div class="my-5 lg:my-28">
-      <template v-if="content != null">
-        <template v-if="content.carousel != null">
-          <template v-if="content.carousel.images != null">
-            <Carousel
-              class="mx-auto"
-              :options="{
-                rewind: true,
-                perPage: 1,
-                gap: '1rem',
-                type: 'fade',
-                arrows: true,
-                autoplay: true,
-                interval: 3000,
-              }"
-              :images="content.carousel.images"
-            />
-          </template>
-        </template>
-      </template>
-    </div>
-
     <div class="grid grid-cols-1 gap-y-10 md:gap-10 md:grid-cols-2">
       <testimonial>
         <template #quote>
@@ -221,7 +199,6 @@
 <script>
 import { gql } from 'graphql-tag'
 import Illustration from '@/components/pages/Illustration.vue'
-import Carousel from '@/components/pages/Carousel.vue'
 import Headline from '@/components/typography/Headline.vue'
 import Testimonial from '@/components/typography/Testimonial.vue'
 import EventBlock from '@/components/typography/EventBlock.vue'
@@ -234,7 +211,6 @@ export default {
     Headline,
     Illustration,
     Testimonial,
-    Carousel,
     EventBlock,
     InfoBlock,
     HeadlineLink,

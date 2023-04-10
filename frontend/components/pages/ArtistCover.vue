@@ -3,9 +3,11 @@
     class="artist-cover relative w-full aspect-square bg-gray text-left p-0 m-0 block"
   >
     <template v-if="data.cover != null">
-      <img
+      <nuxt-img
+        loading="lazy"
         class="absolute object-cover top-0 left-0 w-full h-full"
-        :src="'https://api-new.lesconcertsducoeur.ch' + data.cover.url"
+        provider="strapi"
+        :src="data.cover.url"
       />
     </template>
     <div class="content">
