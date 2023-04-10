@@ -118,7 +118,7 @@
               class="flex bg-white"
             >
               <nuxt-img
-                class="aspect-4/3 p-2 object-contain m-auto filter grayscale"
+                class="aspect-logo p-2 object-contain m-auto filter grayscale"
                 provider="strapi"
                 :src="logo.url"
               />

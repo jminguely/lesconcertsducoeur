@@ -2,6 +2,7 @@ module.exports = {
   theme: {
     extend: {
       aspectRatio: {
+        square: '1 / 1',
         '4/3': '4 / 3',
       },
       typography: {

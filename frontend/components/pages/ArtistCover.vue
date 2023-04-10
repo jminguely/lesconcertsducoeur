@@ -1,45 +1,26 @@
 <template>
-  <div class="relative w-full h-full">
-    <template v-if="data.picture != null">
-      <img
-        class="object-cover w-full h-4/5 md:h-full"
-        :src="'https://api-new.lesconcertsducoeur.ch' + data.picture.url"
-      />
-    </template>
-
+  <button
+    class="artist-cover relative w-full aspect-square bg-gray text-left p-0 m-0 block"
+  >
     <template v-if="data.cover != null">
       <img
-        class="object-cover w-full h-4/5 md:h-full"
+        class="absolute object-cover top-0 left-0 w-full h-full"
         :src="'https://api-new.lesconcertsducoeur.ch' + data.cover.url"
       />
     </template>
-
-    <button
-      class="absolute bottom-0 left-0 z-30 block w-full h-1/5 md:top-0 md:h-full p-10 text-black duration-300 ease-in-out md:text-white md:hover:opacity-0 focus:outline-none"
-    >
-      <div
-        class="absolute left-0 z-20 text-left top-8 md:top-0 md:mt-5 md:mx-5"
-      >
-        <p class="text-xl font-playFair">
-          <template v-if="data.first_name != null && data.last_name != null">
-            {{ data.first_name }} {{ data.last_name }}
-          </template>
-          <template v-if="data.name != null"> {{ data.name }} </template>
-        </p>
-        <p class="text-lg">
-          <template v-if="data.instrument != null">
-            {{ data.instrument }}
-          </template>
-          <template v-if="data.music_genre != null">
-            {{ data.music_genre }}
-          </template>
-        </p>
-      </div>
-      <div
-        class="absolute top-0 left-0 w-full h-full md:bg-gray-800 md:opacity-40"
-      ></div>
-    </button>
-  </div>
+    <div class="content">
+      <p class="text-xl font-playFair">
+        <template v-if="data.first_name != null && data.last_name != null">
+          {{ data.first_name }} {{ data.last_name }}
+        </template>
+        <template v-if="data.name != null"> {{ data.name }} </template>
+      </p>
+      <p class="infos">
+        <span v-if="data.instrument != null">{{ data.instrument }}</span>
+        <span v-if="data.music_genre != null">{{ data.music_genre }}</span>
+      </p>
+    </div>
+  </button>
 </template>
 
 <script>
@@ -52,3 +33,27 @@ export default {
   },
 }
 </script>
+
+<style lang="postcss" scoped>
+.artist-cover {
+  p {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .infos {
+    font-size: 1rem;
+  }
+
+  .content {
+    width: 100%;
+    min-height: 4rem;
+    padding: 2rem 1rem 1rem;
+    color: white;
+    background: linear-gradient(to top, #000a, #0000);
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+  }
+}
+</style>

@@ -150,8 +150,6 @@
       </testimonial>
     </div>
 
-    <Divider class="my-12" />
-
     <Headline>
       <template #headline> {{ $t('home').organizeConcert.title }} </template>
     </Headline>
@@ -163,8 +161,6 @@
         </nuxt-link>
       </template>
     </HeadlineLink>
-
-    <Divider class="my-16" />
 
     <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
       <Headline>
@@ -194,8 +190,6 @@
         />
       </div>
     </div>
-
-    <Divider class="my-16" />
 
     <spacing />
 
@@ -228,7 +222,6 @@
 import { gql } from 'graphql-tag'
 import Illustration from '@/components/pages/Illustration.vue'
 import Carousel from '@/components/pages/Carousel.vue'
-import Divider from '@/components/pages/Divider.vue'
 import Headline from '@/components/typography/Headline.vue'
 import Testimonial from '@/components/typography/Testimonial.vue'
 import EventBlock from '@/components/typography/EventBlock.vue'
@@ -244,7 +237,6 @@ export default {
     Carousel,
     EventBlock,
     InfoBlock,
-    Divider,
     HeadlineLink,
     Spacing,
   },

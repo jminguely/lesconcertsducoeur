@@ -1,26 +1,25 @@
 <template>
   <div
     :class="{ 'opacity-100 z-50': popup }"
-    class="fixed top-0 left-0 flex flex-col w-screen h-screen p-5 lg:gap-x-5 lg:flex-row lg:p-10 lg:pb-20 overflow-auto duration-300 ease-in-out bg-white opacity-0"
+    class="fixed top-0 left-0 flex flex-col w-screen h-screen p-5 lg:gap-x-5 lg:flex-row lg:p-10 lg:pb-20 overflow-auto bg-white opacity-0"
   >
     <div class="z-10 flex justify-between lg:block lg:w-1/5">
       <div
         class="lg:flex-shrink flex items-center lg:block lg:w-full lg:flex-col lg:static lg:mt-4"
       >
         <button
+          class="flex my-2 text-xl focus:outline-none"
+          @click="closePopup()"
+        >
+          <span class="transform rotate-45 inline-block">🞢</span>
+        </button>
+        <button
           class="flex my-2 mr-4 text-xl focus:outline-none lg:mr-0"
           @click="goBack()"
         >
-          <span :canton="canton" class="flex-shrink-0">←</span>
+          <span class="text-xl font-bold">‹</span>
           <template v-if="data[previousIndex] != null">
-            <span
-              class="pl-2 hidden text-left lg:block"
-              :class="{
-                'hover:text-VS': canton == 'vs',
-                'hover:text-VD': canton == 'vd',
-                'hover:text-GE': canton == 'ge',
-              }"
-            >
+            <span class="pl-2 hidden text-left lg:block">
               <template
                 v-if="
                   data[previousIndex].first_name != null &&
@@ -38,16 +37,9 @@
         </button>
 
         <button class="flex my-2 text-xl focus:outline-none" @click="next()">
-          <span :canton="canton" class="flex-shrink-0">→</span>
+          <span class="text-xl font-bold">›</span>
           <template v-if="data[nextIndex] != null">
-            <span
-              class="pl-2 hidden text-left lg:block"
-              :class="{
-                'hover:text-VS': canton == 'vs',
-                'hover:text-VD': canton == 'vd',
-                'hover:text-GE': canton == 'ge',
-              }"
-            >
+            <span class="pl-2 hidden text-left lg:block">
               <template
                 v-if="
                   data[nextIndex].first_name != null &&
@@ -84,7 +76,7 @@
             (selected.instrument != null && selected.instrument != '') ||
             (selected.music_genre != null && selected.music_genre != '')
           "
-          class="mb-12 text-3xl font-playFair"
+          class="mb-4 text-3xl font-playFair"
         >
           <template v-if="selected.instrument != null">
             {{ selected.instrument }}
@@ -94,17 +86,18 @@
           </template>
         </h3>
 
-        <div class="prose">
-          <p class="prose-xl">
-            {{ selected.description }}
-          </p>
+        <div>
+          <div
+            v-if="selected.description"
+            v-dompurify-html="selected.description"
+            class="prose-xl mb-20"
+          ></div>
 
           <div v-if="selected.repertoire != null && selected.repertoire != ''">
             <div class="mb-4 text-3xl font-playFair">
               {{ $t('artistes').repertoire }}
             </div>
             <div
-              v-if="selected.repertoire != null"
               v-dompurify-html="$md.render(selected.repertoire)"
               class="prose prose-xl"
             ></div>
@@ -144,10 +137,17 @@
         </div>
 
         <div v-if="selected.artists != null" class="mt-4 flex flex-col">
-          <div v-for="artist in selected.artists" :key="artist.id">
-            <p class="mr-6 text-xl font-playFair">
-              {{ artist.first_name }} {{ artist.last_name }}
-              <span class="text-lg">{{ artist.instrument }} </span>
+          <div>
+            <p>
+              <span
+                v-for="artist in selected.artists"
+                :key="artist.id"
+                class="text-xl font-playFair"
+              >
+                {{ artist.first_name }} {{ artist.last_name }}
+                <span class="text-lg font-sans">{{ artist.instrument }} </span
+                ><br />
+              </span>
             </p>
           </div>
         </div>
@@ -172,10 +172,6 @@ export default {
     data: {
       type: Array,
       default: () => [],
-    },
-    canton: {
-      type: String,
-      default: '',
     },
   },
   data() {
@@ -209,6 +205,9 @@ export default {
     },
     next() {
       this.selected = this.data[this.nextIndex]
+    },
+    closePopup() {
+      this.$emit('closePopup')
     },
   },
 }

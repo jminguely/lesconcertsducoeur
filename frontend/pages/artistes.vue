@@ -1,8 +1,35 @@
 <template>
   <div class="relative">
-    <Headline>
-      <template #headline>{{ $t('artistes').title }} </template>
-    </Headline>
+    <Headline :title="$t('artistes').title" />
+
+    <div class="flex flex-row justify-between items-end mb-20">
+      <div>
+        <div v-if="cantons" class="mb-3">
+          <button
+            v-for="canton in cantons"
+            :key="canton.id"
+            class="radio-button"
+            :class="cantonFilter === canton.id && 'active'"
+            @click="cantonFilter = canton.id"
+          >
+            <span class="bullet"></span>
+            {{ canton.name }}
+          </button>
+        </div>
+      </div>
+      <div>
+        <button
+          class="transition-opacity duration-200"
+          :class="{
+            'opacity-0': cantonFilter == '',
+          }"
+          @click="resetFilters()"
+        >
+          <span class="transform rotate-45 inline-block">🞢</span>
+          {{ $t('agenda').resetFilters }}
+        </button>
+      </div>
+    </div>
 
     <template v-if="!$fetchState.pending">
       <template v-if="data != null">
@@ -13,23 +40,15 @@
             v-for="artist in data"
             :key="artist.id"
             :data="artist"
-            class="hidden md:block"
             @click.native="openPopup(artist)"
           ></artist-cover>
-          <artist-cover-mobile
-            v-for="artist in data"
-            :key="artist.id"
-            :data="artist"
-            class="md:hidden"
-            @click.native="openPopup(artist)"
-          ></artist-cover-mobile>
         </div>
         <artist-popup
           :class="{ hidden: !popup }"
           :data="data"
           :item.sync="selected"
           :popup.sync="popup"
-          :canton="canton"
+          @closePopup="closePopup"
         />
       </template>
     </template>
@@ -37,78 +56,90 @@
 </template>
 
 <script>
-import { gql } from 'graphql-tag'
-import Headline from '@/components/typography/Headline.vue'
+import Headline from '@/components/dynamic/Headline.vue'
+
 import ArtistCover from '@/components/pages/ArtistCover.vue'
-import ArtistCoverMobile from '@/components/pages/ArtistCoverMobile.vue'
 import ArtistPopup from '@/components/pages/ArtistPopup.vue'
+
+import fetchArtists from '~/graphql/fetchArtists.gql'
+import fetchCantons from '~/graphql/fetchCantons.gql'
 
 export default {
   components: {
     Headline,
     ArtistCover,
-    ArtistCoverMobile,
     ArtistPopup,
   },
   data() {
     return {
       data: null,
+      bodyClass: '',
       selected: {},
       popup: false,
-      canton: null,
+      cantonFilter: 0,
+      cantons: [],
     }
+  },
+
+  async fetch() {
+    await this.getArtists()
+  },
+  head() {
+    return {
+      bodyAttrs: {
+        class: `${this.bodyClass}`,
+      },
+    }
+  },
+  apollo: {
+    cantons: {
+      variables() {
+        return {
+          locale: `${this.$i18n.locale}-CH`,
+        }
+      },
+      query: fetchCantons,
+      prefetch: true,
+    },
   },
 
   fetchOnServer: false,
 
-  async fetch() {
-    await this.getArtists('vs')
+  watch: {
+    async cantonFilter() {
+      await this.getArtists()
+    },
   },
 
   methods: {
     openPopup(item) {
       this.selected = item
       this.popup = true
+      this.bodyClass = 'overflow-hidden'
     },
-    getCantonID(canton) {
-      if (canton === 'ALL') return 1
-      if (canton === 'VS') return 2
-      if (canton === 'VD') return 3
-      if (canton === 'GE') return 4
+    closePopup() {
+      this.bodyClass = ''
+      this.popup = false
     },
-    async getArtists(canton) {
-      const query = gql`
-        query getArtists($locale: String, $cantons: ID) {
-          musicGroups(locale: $locale, where: { cantons_contains: $cantons }) {
-            id
-            name
-            music_genre
-            repertoire
-            formats
-            description
-            artists {
-              id
-              first_name
-              last_name
-              instrument
-            }
-            cover {
-              id
-              url
-            }
-          }
-        }
-      `
-
+    resetFilters() {
+      this.cantonFilter = 0
+    },
+    async getArtists() {
       const locale = this.$i18n.locale + '-CH'
 
+      const where = {}
+
+      if (this.cantonFilter) {
+        where.cantons_contains = parseInt(this.cantonFilter)
+      }
+
       const variables = {
-        cantons: this.getCantonID(canton.toUpperCase()),
+        where,
         locale,
       }
 
       const queryData = await this.$apollo
-        .query({ query, variables })
+        .query({ query: fetchArtists, variables })
         .then(({ data }) => {
           // if (process.env.dev) console.log(data)
           return data
@@ -118,8 +149,45 @@ export default {
         })
 
       const musicGroups = queryData.musicGroups
+
       this.data = musicGroups
     },
   },
 }
 </script>
+
+<style lang="postcss" scoped>
+.radio-button {
+  position: relative;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  &.active::after {
+    transform: translateY(-40%) scale(1);
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-40%);
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 0.5rem;
+  }
+
+  &::before {
+    border: 1px solid black;
+  }
+
+  &::after {
+    border: 0;
+    background: black;
+    transform: translateY(-40%) scale(0);
+    transition: transform 0.2s ease;
+  }
+}
+</style>

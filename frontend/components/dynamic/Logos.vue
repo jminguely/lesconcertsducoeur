@@ -6,7 +6,7 @@
     >
       <div v-for="image in images" :key="image.id">
         <nuxt-img
-          class="filter grayscale w-full h-full object-contain aspect-4/3"
+          class="filter grayscale w-full h-full object-contain aspect-logo"
           provider="strapi"
           :src="image.url"
         />

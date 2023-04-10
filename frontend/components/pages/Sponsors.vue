@@ -10,7 +10,7 @@
         target="_blank"
         :href="item.link"
       >
-        <img class="w-full h-full object-contain aspect-4/3" :src="item.img" />
+        <img class="w-full h-full object-contain aspect-logo" :src="item.img" />
       </a>
     </div>
   </div>
