@@ -181,10 +181,6 @@ body {
   font-weight: 600;
 }
 
-.aspect-square {
-  aspect-ratio: 1 / 1;
-}
-
 .aspect-logo {
   aspect-ratio: 4 / 3;
 }

@@ -43,25 +43,34 @@
       </div>
     </div>
 
-    <div class="py-4 text-4xl border-t border-b border-gray-600 font-playFair">
-      {{ yearFilter || $t('agenda').nextConcerts }}
-    </div>
-
-    <template v-if="data != null">
-      <EventDetails
-        v-for="event in data.calendars"
-        :key="event.id"
-        class="py-6"
-        :event="event"
+    <div
+      :class="{
+        'content-loading': contentLoading,
+        'content-loaded': !contentLoading,
+      }"
+    >
+      <div
+        class="py-4 text-4xl border-t border-b border-gray-600 font-playFair"
       >
-      </EventDetails>
-    </template>
+        {{ yearFilter || $t('agenda').nextConcerts }}
+      </div>
+
+      <template v-if="data != null">
+        <EventTeaser
+          v-for="event in data.calendars"
+          :key="event.id"
+          class="py-6"
+          :event="event"
+        >
+        </EventTeaser>
+      </template>
+    </div>
   </div>
 </template>
 
 <script>
 import Headline from '~/components/dynamic/Headline.vue'
-import EventDetails from '@/components/typography/EventDetails.vue'
+import EventTeaser from '@/components/pages/EventTeaser.vue'
 
 import fetchConcerts from '~/graphql/fetchConcerts.gql'
 import fetchCantons from '~/graphql/fetchCantons.gql'
@@ -69,7 +78,7 @@ import fetchCantons from '~/graphql/fetchCantons.gql'
 export default {
   components: {
     Headline,
-    EventDetails,
+    EventTeaser,
   },
   apollo: {
     cantons: {
@@ -85,6 +94,7 @@ export default {
   data() {
     return {
       data: null,
+      contentLoading: true,
       yearFilter: '',
       cantonFilter: 0,
       cantons: [],
@@ -110,11 +120,17 @@ export default {
   },
 
   watch: {
-    async yearFilter() {
-      await this.getAgenda()
+    yearFilter() {
+      this.contentLoading = true
+      setTimeout(() => {
+        this.getAgenda()
+      }, 300)
     },
-    async cantonFilter() {
-      await this.getAgenda()
+    cantonFilter() {
+      this.contentLoading = true
+      setTimeout(() => {
+        this.getAgenda()
+      }, 300)
     },
   },
 
@@ -157,6 +173,7 @@ export default {
         .query({ query: fetchConcerts, variables })
         .then(({ data }) => {
           // if (process.env.dev) console.log(data)
+          this.contentLoading = false
           return data
         })
         .catch((e) => {
@@ -168,6 +185,16 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.content-loading {
+  opacity: 0;
+  transition: opacity 0s;
+}
+
+.content-loaded {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
 .radio-button {
   position: relative;
   padding-left: 1rem;

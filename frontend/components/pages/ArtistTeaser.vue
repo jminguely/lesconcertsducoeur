@@ -1,7 +1,5 @@
 <template>
-  <button
-    class="artist-cover relative w-full aspect-square bg-gray text-left p-0 m-0 block"
-  >
+  <button class="artist-teaser">
     <template v-if="data.cover != null">
       <nuxt-img
         loading="lazy"
@@ -37,7 +35,11 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.artist-cover {
+.artist-teaser {
+  @apply relative w-full bg-gray text-left p-0 m-0 block;
+
+  aspect-ratio: 1 / 1;
+
   p {
     margin: 0;
     font-size: 1.5rem;

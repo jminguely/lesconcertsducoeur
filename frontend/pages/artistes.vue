@@ -40,14 +40,14 @@
             'content-loaded': !contentLoading,
           }"
         >
-          <artist-cover
+          <ArtistTeaser
             v-for="artist in data"
             :key="artist.id"
             :data="artist"
             @click.native="openPopup(artist)"
-          ></artist-cover>
+          ></ArtistTeaser>
         </div>
-        <artist-popup
+        <ArtistPopup
           :class="{ hidden: !popup }"
           :data="data"
           :item.sync="selected"
@@ -62,7 +62,7 @@
 <script>
 import Headline from '@/components/dynamic/Headline.vue'
 
-import ArtistCover from '@/components/pages/ArtistCover.vue'
+import ArtistTeaser from '@/components/pages/ArtistTeaser.vue'
 import ArtistPopup from '@/components/pages/ArtistPopup.vue'
 
 import fetchArtists from '~/graphql/fetchArtists.gql'
@@ -71,7 +71,7 @@ import fetchCantons from '~/graphql/fetchCantons.gql'
 export default {
   components: {
     Headline,
-    ArtistCover,
+    ArtistTeaser,
     ArtistPopup,
   },
   data() {
@@ -152,6 +152,7 @@ export default {
         .query({ query: fetchArtists, variables })
         .then(({ data }) => {
           // if (process.env.dev) console.log(data)
+          this.contentLoading = false
           return data
         })
         .catch((e) => {
@@ -161,8 +162,6 @@ export default {
       const musicGroups = queryData.musicGroups
 
       this.data = musicGroups
-
-      this.contentLoading = false
     },
   },
 }
