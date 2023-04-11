@@ -33,7 +33,10 @@
         }"
       >
         <div class="w-full pr-5">
-          <div v-dompurify-html="item.text" class="accordion-content"></div>
+          <div
+            v-dompurify-html="item.text"
+            class="accordion-content rich-text"
+          ></div>
         </div>
         <div v-if="item.image" class="w-full my-4 lg:my-0 max-h-144">
           <nuxt-img class="mx-auto" provider="strapi" :src="item.image.url" />
@@ -63,12 +66,3 @@ export default {
   },
 }
 </script>
-
-<style lang="postcss">
-.accordion-content {
-  h3,
-  h4 {
-    @apply mb-0;
-  }
-}
-</style>

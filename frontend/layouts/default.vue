@@ -1,6 +1,6 @@
 <template>
   <div class="antialiased min-h-screen">
-    <div class="site-wrapper px-12">
+    <div class="site-wrapper">
       <div class="site-topbar">
         <MarqueeBanner
           :key="settings.id"
@@ -76,7 +76,7 @@ body {
 }
 
 .site-wrapper {
-  @apply max-w-7xl mx-auto;
+  @apply max-w-7xl mx-auto px-12;
 
   display: grid;
   grid-template:
@@ -98,6 +98,8 @@ body {
 }
 
 .site-topbar {
+  @apply pl-3 py-2;
+
   display: flex;
   position: sticky;
   top: 0;
@@ -107,12 +109,13 @@ body {
   border-bottom: 1px solid #828282;
   background: white;
   z-index: 20;
-  padding: 10px 0;
   min-width: 0; /* hotfix to make the splide not overflow the flex layout */
 }
 
 .site-sidebar {
   grid-area: sidebar;
+
+  @apply pl-3;
 }
 
 .site-content {
@@ -123,7 +126,7 @@ body {
 
   h1,
   .h1 {
-    @apply text-4xl lg:text-5xl font-sans;
+    @apply text-4xl lg:text-5xl mb-5 font-sans;
   }
 
   h2 {

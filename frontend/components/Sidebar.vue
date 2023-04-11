@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar">
+  <div class="site-sidebar">
     <div
       class="main-nav pt-10 md:pt-24 md:block sticky top-0 bg-white w-full"
       :class="{ hidden: !menuOpen }"

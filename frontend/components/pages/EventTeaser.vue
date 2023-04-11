@@ -45,7 +45,7 @@
           </div>
         </template>
       </div>
-      <div v-dompurify-html="event.details"></div>
+      <div v-dompurify-html="event.details" class="rich-text"></div>
     </div>
   </div>
 </template>
