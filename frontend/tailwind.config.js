@@ -56,9 +56,7 @@ module.exports = {
   purge: {
     safelist: [
       'bg-VS',
-      'bg-FR',
-      'bg-VD',
-      'bg-GE',
+      { pattern: /(bg|text)-./ },
     ]
   },
   plugins: [require('@tailwindcss/typography')],
