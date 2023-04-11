@@ -53,6 +53,14 @@ module.exports = {
       },
     },
   },
+  safelist: [
+    {
+      pattern: /bg-+/
+    },
+    {
+      pattern: /text-+/
+    },
+  ],
   plugins: [require('@tailwindcss/typography')],
   variants: {
     extend: {
