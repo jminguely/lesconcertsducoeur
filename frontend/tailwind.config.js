@@ -55,7 +55,6 @@ module.exports = {
   },
   purge: {
     safelist: [
-      'bg-VS',
       { pattern: /(bg|text)-./ },
     ]
   },
