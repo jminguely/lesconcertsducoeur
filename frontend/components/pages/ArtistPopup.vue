@@ -207,7 +207,7 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .popup-sidebar,
 .popup-content {
   opacity: 0;
