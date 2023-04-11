@@ -216,7 +216,7 @@ export default {
 }
 
 .popup {
-  @apply p-5 lg:gap-x-5 lg:flex-row lg:p-10 lg:pb-20 bg-white opacity-0;
+  @apply p-5 lg:gap-x-5 lg:flex-row lg:p-10 lg:pb-20 bg-white opacity-0 pointer-events-none;
 
   position: fixed;
   top: 0;
@@ -225,22 +225,21 @@ export default {
   height: 100vh;
   overflow: auto;
   z-index: 50;
-  pointer-events: none;
   transition: opacity 0.5s 0.4s;
 
   &.popup-open {
-    @apply opacity-1 pointer-events-auto;
+    @apply opacity-100 pointer-events-auto;
 
     transition: opacity 0.5s 0.1s;
 
     .popup-content {
-      @apply opacity-1;
+      @apply opacity-100;
 
       transition: opacity 1s 0.5s;
     }
 
     .popup-sidebar {
-      @apply opacity-1;
+      @apply opacity-100;
 
       transition: opacity 1s 1s;
     }
