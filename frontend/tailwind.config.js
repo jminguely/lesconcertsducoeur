@@ -53,14 +53,14 @@ module.exports = {
       },
     },
   },
-  safelist: [
-    {
-      pattern: /bg-+/
-    },
-    {
-      pattern: /text-+/
-    },
-  ],
+  purge: {
+    safelist: [
+      'bg-VS',
+      'bg-FR',
+      'bg-VD',
+      'bg-GE',
+    ]
+  },
   plugins: [require('@tailwindcss/typography')],
   variants: {
     extend: {
