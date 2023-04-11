@@ -17,8 +17,8 @@ export default {
   components: { RichText },
   props: {
     bullet: {
-      type: String,
-      default: '',
+      type: Number,
+      default: 1,
     },
     richText: {
       type: String,

@@ -12,6 +12,7 @@ module.exports = {
   plugins: [],
   // add your custom rules here
   rules: {
+    'no-unused-components': 0,
     'selector-anb-no-unmatchable': 0,
     'vue/multi-word-component-names': 0,
   },

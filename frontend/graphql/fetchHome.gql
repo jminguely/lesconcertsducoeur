@@ -1,0 +1,17 @@
+query getHome($locale: String!) {
+  page: home(locale: $locale) {
+    id
+    Title
+    Lead
+    Carousel {
+      id
+      url
+    }
+    Testimonials {
+      id
+      Texte
+      Author
+      Position
+    }
+  }
+}

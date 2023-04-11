@@ -1,6 +1,16 @@
-query getCanton($locale: String!, $abbreviation: String!) {
-  canton: cantonByAbbr(locale: $locale, abbreviation: $abbreviation) {
+query getCanton($locale: String!, $where: JSON) {
+  canton: cantons(locale: $locale, where: $where, limit: 1) {
     id
+    Headline {
+      id
+      Title
+      Lead
+      RichText
+      Image {
+        id
+        url
+      }
+    }
     Content {
       __typename
       ... on ComponentContentHeadline {

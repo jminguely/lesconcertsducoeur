@@ -117,6 +117,8 @@ body {
 
 .site-content {
   grid-area: content;
+  min-width: 0; /* hotfix to make the splide not overflow the flex layout */
+
   @apply pt-24;
 
   h1,
@@ -134,28 +136,6 @@ body {
 
   h4 {
     @apply text-base lg:text-xl font-playFair;
-  }
-
-  p {
-    @apply text-xl mb-6;
-  }
-
-  &.ge {
-    blockquote {
-      @apply text-GE;
-    }
-  }
-
-  &.vs {
-    blockquote {
-      @apply text-VS;
-    }
-  }
-
-  &.vd {
-    blockquote {
-      @apply text-VD;
-    }
   }
 
   a {
@@ -181,7 +161,15 @@ body {
   font-weight: 600;
 }
 
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
 .aspect-logo {
   aspect-ratio: 4 / 3;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
 }
 </style>

@@ -1,21 +1,28 @@
 <template>
   <div v-if="canton">
-    <DynamicContent :content="canton.Content" />
+    <Headline
+      :title="canton[0].Headline.Title"
+      :image="canton[0].Headline.Image"
+      :lead="canton[0].Headline.Lead"
+      :rich-text="canton[0].Headline.RichText"
+    />
+    <DynamicContent :content="canton[0].Content" />
   </div>
 </template>
 
 <script>
+import Headline from '~/components/dynamic/Headline.vue'
 import DynamicContent from '~/components/DynamicContent.vue'
 import fetchCanton from '~/graphql/fetchCanton.gql'
 
 export default {
-  components: { DynamicContent },
+  components: { DynamicContent, Headline },
   apollo: {
     canton: {
       query: fetchCanton,
       variables() {
         return {
-          abbreviation: this.$route.params.canton,
+          where: { abbreviation_contains: this.$route.params.canton },
           locale: `${this.$i18n.locale}-CH`,
         }
       },

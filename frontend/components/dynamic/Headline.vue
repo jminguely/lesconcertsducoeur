@@ -5,7 +5,7 @@
       <nuxt-img class="mx-auto" provider="strapi" :src="image.url" />
     </div>
     <div class="col-start-1">
-      <p v-if="lead" class="text-xl lg:text-3xl font-playFair mb-10">
+      <p v-if="lead" class="text-xl lg:text-3xl font-playFair mb-0">
         {{ lead }}
       </p>
       <RichText v-if="richText" :content="richText" />

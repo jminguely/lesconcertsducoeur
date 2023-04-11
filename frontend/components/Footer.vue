@@ -1,7 +1,5 @@
 <template>
-  <footer
-    class="site-footer mt-32 lg:mt-48 pt-32 pb-8 px-12 bg-gray text-white"
-  >
+  <footer class="site-footer mt-20 pt-32 pb-8 px-12 bg-gray text-white">
     <div class="site-footer-container">
       <div class="logo-container mb-5 md:col-span-3">
         <img
@@ -156,7 +154,7 @@ export default {
 }
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .site-footer-container {
   @apply max-w-7xl mx-auto px-12;
 

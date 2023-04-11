@@ -1,380 +1,308 @@
 <template>
-  <div>
-    <Headline class="-mt-6 mb-6 lg:mb-16">
-      <template #content>
-        <i>Les Concerts du Cœur</i> {{ $t('home').hero.subtitle }}
-      </template>
-    </Headline>
-
-    <div class="grid grid-cols-3 gap-5 gap-y-20 sm:grid-cols-3 lg:mb-32">
-      <nuxt-link :to="`/${$i18n.locale}/association/vs`">
-        <Illustration canton="vs">
-          <template #image>
-            <img
-              class="object-cover"
-              src="~/assets/img/illustrations/home_illu_vs.jpg"
-              width="2048"
-              height="1683"
-            />
-          </template>
-          <template #label>{{ $t('canton').VS }}</template>
-        </Illustration>
-      </nuxt-link>
-
-      <nuxt-link :to="`/${$i18n.locale}/association/vd`">
-        <Illustration canton="vd">
-          <template #image>
-            <img
-              src="~/assets/img/illustrations/home_illu_vd.jpg"
-              width="2048"
-              height="1683"
-            />
-          </template>
-          <template #label>{{ $t('canton').VD }}</template>
-        </Illustration>
-      </nuxt-link>
-
-      <nuxt-link :to="`/${$i18n.locale}/association/ge`">
-        <Illustration canton="ge">
-          <template #image>
-            <img
-              src="~/assets/img/illustrations/home_illu_ge.jpg"
-              width="2048"
-              height="1683"
-            />
-          </template>
-          <template #label>{{ $t('canton').GE }}</template>
-        </Illustration>
-      </nuxt-link>
-    </div>
-
-    <template v-if="newsArticles != null">
-      <Headline class="mt-20">
-        <template #headline> {{ $t('home').news.title }}</template>
-      </Headline>
-
-      <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
-        <InfoBlock
-          v-for="item in newsArticles"
-          :key="item.id"
-          :canton="getCanton(item.canton)"
+  <div v-if="page">
+    <section>
+      <h1 class="text-4xl lg:text-5xl mb-5">{{ page.Title }}</h1>
+      <div
+        v-if="page.Lead"
+        v-dompurify-html="page.Lead"
+        class="text-xl lg:text-3xl font-playFair mb-10"
+      ></div>
+      <div>
+        <div
+          v-if="sortedCantons"
+          class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-20"
         >
-          <template #date>
-            {{ $t('canton')[item.canton.abbreviation.toLowerCase()] }}
-          </template>
-          <template #pretitle></template>
-          <template #title
-            ><span v-dompurify-html="$md.render(item.title)"></span
-          ></template>
-          <template #content>{{ item.content }}</template>
-        </InfoBlock>
+          <nuxt-link
+            v-for="canton in sortedCantons"
+            :key="canton.id"
+            :to="`/${$i18n.locale}/association/${canton.abbreviation}`"
+            class="flex flex-col items-center"
+          >
+            <nuxt-img
+              class="aspect-logo object-contain"
+              provider="strapi"
+              :src="canton.Headline.Image.url"
+            />
+            <Badge
+              :color="canton.abbreviation"
+              :text="canton.name"
+              class="-mt-8"
+            />
+          </nuxt-link>
+        </div>
       </div>
-    </template>
+    </section>
+    <section v-if="filteredConcerts">
+      <h2 class="h1 mb-10">{{ $t('home').nextConcerts }}</h2>
 
-    <template v-if="calendars != null">
-      <spacing />
-
-      <Headline>
-        <template #headline> {{ $t('home').nextConcerts }} </template>
-      </Headline>
-
-      <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
-        <EventBlock
-          v-for="item in calendars"
-          :key="item.id"
-          :canton="getCanton(item.canton)"
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
+        <div v-for="(concert, i) in filteredConcerts" :key="i">
+          <div
+            v-if="concert != undefined"
+            class="border-2 border-l-0 pr-5 pb-5 h-full"
+            :class="concert.canton && `border-${concert.canton.abbreviation}`"
+          >
+            <p
+              class="bg-white inline-block relative -top-4 pr-3 font-playFair text-md"
+            >
+              {{
+                $dateFns.format(
+                  new Date(concert.date_time),
+                  'dd.MM.yy' + ' | ' + 'HH:mm'
+                )
+              }}
+            </p>
+            <p
+              class="mb-0"
+              :class="concert.canton && `text-${concert.canton.abbreviation}`"
+            >
+              {{ concert.canton.name }}
+              {{ concert.location }}
+            </p>
+            <p class="text-lg font-playFair">
+              {{ concert.title }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section v-if="page.Carousel">
+      <Carousel :images="page.Carousel" />
+    </section>
+    <section v-if="page.Testimonials" class="border-b-1 mb-20 pb-20">
+      <Testimonials :testimonials="page.Testimonials" />
+    </section>
+    <section v-if="randomizedMusicGroups" class="border-b-1 mb-20 pb-20">
+      <h2 class="h1 mb-10">{{ $t('home').ourArtists }}</h2>
+      <div class="slider-container">
+        <splide
+          :options="{
+            perPage: 8,
+            perMove: 1,
+            easing: 'linear',
+            gap: '1rem',
+            type: 'loop',
+            pagination: false,
+            arrows: false,
+            drag: false,
+            autoplay: true,
+            speed: 6000,
+            interval: 0,
+            breakpoints: {
+              320: {
+                perPage: 2,
+              },
+              640: {
+                perPage: 4,
+              },
+              1280: {
+                perPage: 6,
+              },
+            },
+          }"
         >
-          <template #datetime>{{
-            $dateFns.format(
-              new Date(item.date_time),
-              'dd.MM.yyyy' + ' | ' + 'HH:mm'
-            )
-          }}</template>
-          <template #pretitle>{{ item.location }}</template>
-          <template #title>{{ item.title }}</template>
-        </EventBlock>
+          <template v-for="group in randomizedMusicGroups">
+            <splide-slide
+              v-if="group.cover"
+              :key="group.id"
+              class="flex bg-white flex-col"
+            >
+              <nuxt-img
+                class="aspect-square object-cover mx-auto"
+                provider="strapi"
+                :src="group.cover.url"
+              />
+              <p class="group-name">{{ group.name }}</p>
+            </splide-slide>
+          </template>
+        </splide>
       </div>
-    </template>
-
-    <spacing />
-
-    <div class="grid grid-cols-1 gap-y-10 md:gap-10 md:grid-cols-2">
-      <testimonial>
-        <template #quote>
-          <span v-dompurify-html="firstTestimonial.quote"></span>
-        </template>
-
-        <template #name>
-          {{ firstTestimonial.name }}
-        </template>
-
-        <template #title>
-          {{ firstTestimonial.title }}
-        </template>
-      </testimonial>
-
-      <testimonial class="hidden sm:block">
-        <template #quote>
-          <span v-dompurify-html="secondTestimonial.quote"></span>
-        </template>
-
-        <template #name>
-          {{ secondTestimonial.name }}
-        </template>
-
-        <template #title>
-          {{ secondTestimonial.title }}
-        </template>
-      </testimonial>
-    </div>
-
-    <Headline>
-      <template #headline> {{ $t('home').organizeConcert.title }} </template>
-    </Headline>
-
-    <HeadlineLink class="mt-12">
-      <template #content>
-        <nuxt-link :to="localePath('concerts')">
-          {{ $t('home').organizeConcert.differentTypes }}
-        </nuxt-link>
-      </template>
-    </HeadlineLink>
-
-    <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
-      <Headline>
-        <template #headline>{{ $t('home').supportUs.title }}</template>
-        <template #content>
-          <p class="mb-2 text-xl">
-            <nuxt-link :to="localePath('soutien')">
+    </section>
+    <section class="border-b-1 mb-20">
+      <h2 class="h1 mb-10">{{ $t('home').organizeConcert.title }}</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
+        <div class="flex flex-col h-100">
+          <h3 class="mb-2">{{ $t('home').organizeConcert.ge }}</h3>
+          <a class="text-GE text-xl mt-auto" :href="`/${$i18n.locale}/contact`"
+            >> {{ $t('nav').contact }}</a
+          >
+        </div>
+        <div class="flex flex-col h-100">
+          <h3 class="mb-2">{{ $t('home').organizeConcert.fr }}</h3>
+          <a class="text-FR text-xl mt-auto" :href="`/${$i18n.locale}/contact`"
+            >> {{ $t('nav').contact }}</a
+          >
+        </div>
+        <div class="flex flex-col h-100">
+          <h3 class="mb-2">{{ $t('home').organizeConcert.vs }}</h3>
+          <a class="text-VS text-xl mt-auto" :href="`/${$i18n.locale}/contact`"
+            >> {{ $t('nav').contact }}</a
+          >
+        </div>
+        <div class="flex flex-col h-100">
+          <h3 class="mb-2">{{ $t('home').organizeConcert.vd }}</h3>
+          <a class="text-VD text-xl mt-auto" :href="`/${$i18n.locale}/contact`"
+            >> {{ $t('nav').contact }}</a
+          >
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="grid md:grid-cols-2 gap-10">
+        <div>
+          <h2 class="h1 mb-10">{{ $t('home').supportUs.title }}</h2>
+          <div class="text-xl font-playFair">
+            <p class="my-5">
               {{ $t('home').supportUs.donate }}
-            </nuxt-link>
-          </p>
-          <p class="mb-2 text-xl">
-            <nuxt-link :to="localePath('soutien') + '#devenir-membre'">
-              {{ $t('home').supportUs.help }}
-            </nuxt-link>
-          </p>
-          <p class="mb-2 text-xl">
-            <nuxt-link :to="localePath('soutien') + '#devenir-membre'">
+            </p>
+            <p class="my-5">{{ $t('home').supportUs.help }}</p>
+            <p class="my-5">
               {{ $t('home').supportUs.member }}
-            </nuxt-link>
-          </p>
-        </template>
-      </Headline>
-      <div class="w-full">
-        <img
-          class="mx-auto"
-          src="~/assets/img/illustrations/illustration4.webp"
-        />
+            </p>
+            <p>
+              <Btn
+                color="multi"
+                class="mt-2 mb-5 text-xl"
+                :text="$t('nav').nousSoutenir"
+                :link="`/${$i18n.locale}/soutien`"
+              />
+            </p>
+          </div>
+        </div>
+        <div>
+          <img src="/img/illustration4.webp" alt="" />
+        </div>
       </div>
-    </div>
-
-    <spacing />
-
-    <template v-if="content != null">
-      <template v-if="content.partners != null">
-        <logo-cloud
-          v-if="content.partners.length > 0"
-          :logos="content.partners"
-          is-partner
-        >
-          <template #title> {{ $t('home').partners.title }}</template>
-        </logo-cloud>
-      </template>
-
-      <spacing />
-
-      <template v-if="content.sponsors != null">
-        <logo-cloud
-          v-if="content.sponsors.length > 0"
-          :logos="content.sponsors"
-        >
-          <template #title> {{ $t('home').sponsors.title }}</template>
-        </logo-cloud>
-      </template>
-    </template>
+    </section>
   </div>
 </template>
 
 <script>
-import { gql } from 'graphql-tag'
-import Illustration from '@/components/pages/Illustration.vue'
-import Headline from '@/components/typography/Headline.vue'
-import Testimonial from '@/components/typography/Testimonial.vue'
-import EventBlock from '@/components/typography/EventBlock.vue'
-import InfoBlock from '@/components/typography/InfoBlock.vue'
-import HeadlineLink from '@/components/typography/HeadlineLink.vue'
-import Spacing from '@/components/typography/Spacing.vue'
+import fetchHome from '~/graphql/fetchHome.gql'
+import fetchArtists from '~/graphql/fetchArtists.gql'
+import fetchCantons from '~/graphql/fetchCantons.gql'
+import fetchFutureConcerts from '~/graphql/fetchFutureConcerts.gql'
+
+import Btn from '~/components/Btn.vue'
+import Badge from '~/components/Badge.vue'
+import Carousel from '~/components/dynamic/Carousel.vue'
+import Testimonials from '~/components/dynamic/Testimonials.vue'
 
 export default {
-  components: {
-    Headline,
-    Illustration,
-    Testimonial,
-    EventBlock,
-    InfoBlock,
-    HeadlineLink,
-    Spacing,
-  },
+  components: { Btn, Badge, Carousel, Testimonials },
   data() {
     return {
-      content: null,
-      calendars: null,
-      newsArticles: null,
-      currentIndex: 0,
-      timer: null,
+      cantons: [],
+      musicGroups: [],
+      concerts: [],
     }
   },
-
-  fetchOnServer: false,
-
-  async fetch() {
-    await this.getContent()
-    await this.getAgenda()
-    await this.getNewsArticles()
-  },
-
   computed: {
-    firstTestimonial() {
-      return this.$t('home').testimonials[
-        Math.abs(this.currentIndex) % this.$t('home').testimonials.length
-      ]
+    sortedCantons() {
+      const cantons = [...this.cantons]
+      return cantons.sort((a, b) => a.name - b.name)
     },
-    secondTestimonial() {
-      return this.$t('home').testimonials[
-        Math.abs(this.currentIndex + 1) % this.$t('home').testimonials.length
-      ]
+    randomizedMusicGroups() {
+      const musicGroups = [...this.musicGroups]
+
+      const shuffled = [...musicGroups].sort(() => 0.5 - Math.random())
+      return shuffled.slice(0, 20)
+    },
+    filteredConcerts() {
+      const filteredConcerts = []
+
+      this.sortedCantons.forEach((canton) => {
+        filteredConcerts.push(
+          [...this.concerts].find((concert) => concert.canton.id === canton.id)
+        )
+      })
+
+      return filteredConcerts
     },
   },
-
-  mounted() {
-    this.startSlide()
-  },
-
-  methods: {
-    startSlide() {
-      this.timer = setInterval(() => this.next(), 12000)
-    },
-    next() {
-      this.currentIndex += 2
-    },
-    getRandomInt(min, max) {
-      min = Math.ceil(min)
-      max = Math.floor(max)
-      return Math.floor(Math.random() * (max - min)) + min
-    },
-    getCanton(canton) {
-      return canton == null ? 'all' : canton.abbreviation.toLowerCase()
-    },
-    async getAgenda() {
-      const query = gql`
-        query getCalendar($locale: String, $where: JSON) {
-          calendars(
-            sort: "date_time:asc"
-            limit: 3
-            locale: $locale
-            where: $where
-          ) {
-            id
-            canton {
-              abbreviation
-            }
-            date_time
-            title
-            location
-          }
+  apollo: {
+    page: {
+      query: fetchHome,
+      variables() {
+        return {
+          locale: `${this.$i18n.locale}-CH`,
         }
-      `
-
-      const where = { date_time_gte: new Date() }
-      const variables = {
-        locale: this.$i18n.locale + '-CH',
-        where,
-      }
-
-      this.data = await this.$apollo
-        .query({ query, variables })
-        .then(({ data }) => {
-          // if (process.env.dev) console.log(data)
-          return data
-        })
-        .catch((e) => {
-          // if (process.env.dev) console.log(e)
-        })
-
-      if (this.data != null) this.calendars = this.data.calendars
+      },
+      prefetch: true,
     },
-
-    async getNewsArticles() {
-      const query = gql`
-        query getNewsArticles($locale: String) {
-          newsArticles(sort: "date:asc", limit: 3, locale: $locale) {
-            id
-            title
-            date
-            content
-            canton {
-              abbreviation
-            }
-          }
+    musicGroups: {
+      query: fetchArtists,
+      variables() {
+        return {
+          locale: `${this.$i18n.locale}-CH`,
+          where: {},
         }
-      `
-
-      // const where = { date_gte: new Date() }
-      const variables = {
-        locale: this.$i18n.locale + '-CH',
-        // where,
-      }
-
-      this.newsArticles = await this.$apollo
-        .query({ query, variables })
-        .then(({ data }) => {
-          // if (process.env.dev) console.log(data)
-          return data
-        })
-        .catch((e) => {
-          // if (process.env.dev) console.log(e)
-        })
-
-      this.newsArticles = this.newsArticles.newsArticles
+      },
+      prefetch: true,
     },
-
-    async getContent() {
-      const query = gql`
-        query getHome {
-          home {
-            id
-            # carousel {
-            #   id
-            #   images {
-            #     id
-            #     url
-            #   }
-            # }
-            # sponsors {
-            #   id
-            #   url
-            # }
-            # partners {
-            #   id
-            #   url
-            # }
-          }
+    cantons: {
+      query: fetchCantons,
+      variables() {
+        return {
+          locale: `${this.$i18n.locale}-CH`,
         }
-      `
-
-      this.content = await this.$apollo
-        .query({ query })
-        .then(({ data }) => {
-          // if (process.env.dev) console.log('data', data)
-          return data
-        })
-        .catch((e) => {
-          // if (process.env.dev) console.log('error', e)
-        })
-      // console.log(this)
-      this.content = this.content.home
+      },
+      prefetch: true,
+    },
+    concerts: {
+      query: fetchFutureConcerts,
+      variables() {
+        return {
+          locale: `${this.$i18n.locale}-CH`,
+          where: { date_time_gte: new Date(), canton_contains: null },
+        }
+      },
+      prefetch: true,
     },
   },
 }
 </script>
+
+<style lang="postcss" scoped>
+.slider-container {
+  position: relative;
+  opacity: 0;
+  transition: opacity 1s;
+
+  &:has(> .is-active) {
+    opacity: 1;
+  }
+}
+
+.slider-container::before {
+  content: '';
+  z-index: 2;
+  position: absolute;
+  background: linear-gradient(to right, #ffff, #fff0);
+  display: block;
+  width: 4rem;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.slider-container::after {
+  content: '';
+  z-index: 2;
+  position: absolute;
+  background: linear-gradient(to left, #ffff, #fff0);
+  display: block;
+  width: 4rem;
+  height: 100%;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.group-name {
+  padding: 0.5rem;
+  text-align: center;
+  line-height: 1;
+}
+</style>

@@ -1,6 +1,12 @@
 query getCantons($locale: String) {
   cantons(locale: $locale) {
     id
+    Headline {
+      Image {
+        id
+        url
+      }
+    }
     abbreviation
     name
     locale
