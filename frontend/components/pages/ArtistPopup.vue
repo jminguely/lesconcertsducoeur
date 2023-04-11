@@ -207,15 +207,16 @@ export default {
 }
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .popup-sidebar,
 .popup-content {
-  opacity: 0;
+  @apply opacity-0;
+
   transition: opacity 0.4s 0s;
 }
 
 .popup {
-  @apply p-5 lg:gap-x-5 lg:flex-row lg:p-10 lg:pb-20 bg-white;
+  @apply p-5 lg:gap-x-5 lg:flex-row lg:p-10 lg:pb-20 bg-white opacity-0;
 
   position: fixed;
   top: 0;
@@ -224,22 +225,23 @@ export default {
   height: 100vh;
   overflow: auto;
   z-index: 50;
-  opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s 0.4s;
 
   &.popup-open {
-    opacity: 1;
-    pointer-events: auto;
+    @apply opacity-1 pointer-events-auto;
+
     transition: opacity 0.5s 0.1s;
 
     .popup-content {
-      opacity: 1;
+      @apply opacity-1;
+
       transition: opacity 1s 0.5s;
     }
 
     .popup-sidebar {
-      opacity: 1;
+      @apply opacity-1;
+
       transition: opacity 1s 1s;
     }
   }
