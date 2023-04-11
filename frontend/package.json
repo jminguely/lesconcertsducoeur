@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.0-rc.19",
-    "@nuxtjs/markdownit": "^2.0.0",
     "@splidejs/vue-splide": "^0.3.5",
     "@tailwindcss/typography": "^0.4.1",
     "core-js": "^3.19.3",

@@ -67,7 +67,9 @@
       </div>
     </section>
     <section v-if="page.Carousel">
-      <Carousel :images="page.Carousel" />
+      <client-only>
+        <Carousel :images="page.Carousel" />
+      </client-only>
     </section>
     <section v-if="page.Testimonials" class="border-b-1 mb-20 pb-20">
       <Testimonials :testimonials="page.Testimonials" />
@@ -75,47 +77,49 @@
     <section v-if="randomizedMusicGroups" class="border-b-1 mb-20 pb-20">
       <h2 class="h1 mb-10">{{ $t('home').ourArtists }}</h2>
       <div class="slider-container">
-        <splide
-          :options="{
-            perPage: 8,
-            perMove: 1,
-            easing: 'linear',
-            gap: '1rem',
-            type: 'loop',
-            pagination: false,
-            arrows: false,
-            drag: false,
-            autoplay: true,
-            speed: 6000,
-            interval: 0,
-            breakpoints: {
-              320: {
-                perPage: 2,
+        <client-only>
+          <splide
+            :options="{
+              perPage: 8,
+              perMove: 1,
+              easing: 'linear',
+              gap: '1rem',
+              type: 'loop',
+              pagination: false,
+              arrows: false,
+              drag: false,
+              autoplay: true,
+              speed: 6000,
+              interval: 0,
+              breakpoints: {
+                320: {
+                  perPage: 2,
+                },
+                640: {
+                  perPage: 4,
+                },
+                1280: {
+                  perPage: 6,
+                },
               },
-              640: {
-                perPage: 4,
-              },
-              1280: {
-                perPage: 6,
-              },
-            },
-          }"
-        >
-          <template v-for="group in randomizedMusicGroups">
-            <splide-slide
-              v-if="group.cover"
-              :key="group.id"
-              class="flex bg-white flex-col"
-            >
-              <nuxt-img
-                class="aspect-square object-cover mx-auto"
-                provider="strapi"
-                :src="group.cover.url"
-              />
-              <p class="group-name">{{ group.name }}</p>
-            </splide-slide>
-          </template>
-        </splide>
+            }"
+          >
+            <template v-for="group in randomizedMusicGroups">
+              <splide-slide
+                v-if="group.cover"
+                :key="group.id"
+                class="flex bg-white flex-col"
+              >
+                <nuxt-img
+                  class="aspect-square object-cover mx-auto"
+                  provider="strapi"
+                  :src="group.cover.url"
+                />
+                <p class="group-name">{{ group.name }}</p>
+              </splide-slide>
+            </template>
+          </splide>
+        </client-only>
       </div>
     </section>
     <section class="border-b-1 mb-20">

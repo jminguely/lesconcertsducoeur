@@ -83,51 +83,53 @@
       <div v-if="logos" class="partner-container md:col-span-3 mt-16 min-w-0">
         <h3>Merci à nos soutiens:</h3>
         <div class="border-t-1 border-white pt-3 mt-2 slider-container">
-          <splide
-            :options="{
-              perPage: 12,
-              perMove: 1,
-              easing: 'linear',
-              gap: '1rem',
-              type: 'loop',
-              pagination: false,
-              arrows: false,
-              drag: false,
-              autoplay: true,
-              speed: 6000,
-              interval: 0,
-              width: '100%',
-              breakpoints: {
-                320: {
-                  perPage: 2,
+          <client-only>
+            <splide
+              :options="{
+                perPage: 12,
+                perMove: 1,
+                easing: 'linear',
+                gap: '1rem',
+                type: 'loop',
+                pagination: false,
+                arrows: false,
+                drag: false,
+                autoplay: true,
+                speed: 6000,
+                interval: 0,
+                width: '100%',
+                breakpoints: {
+                  320: {
+                    perPage: 2,
+                  },
+                  640: {
+                    perPage: 3,
+                  },
+                  1280: {
+                    perPage: 8,
+                  },
                 },
-                640: {
-                  perPage: 3,
-                },
-                1280: {
-                  perPage: 8,
-                },
-              },
-            }"
-          >
-            <splide-slide
-              v-for="logo in logos"
-              :key="logo.id"
-              class="flex bg-white"
+              }"
             >
-              <nuxt-img
-                class="aspect-logo p-2 object-contain m-auto filter grayscale"
-                provider="strapi"
-                :src="logo.url"
-              />
-            </splide-slide>
-          </splide>
+              <splide-slide
+                v-for="logo in logos"
+                :key="logo.id"
+                class="flex bg-white"
+              >
+                <nuxt-img
+                  class="aspect-logo p-2 object-contain m-auto filter grayscale"
+                  provider="strapi"
+                  :src="logo.url"
+                />
+              </splide-slide>
+            </splide>
+          </client-only>
         </div>
       </div>
       <div class="hidden">
         <div class="items-center">
           <nuxt-link
-            :to="localePath('contact')"
+            :to="`/${$i18n.locale}/contact`"
             class="text-xl hover:font-bold"
           >
             {{ $t('nav').contact }}

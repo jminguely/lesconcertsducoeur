@@ -47,7 +47,7 @@ export default {
     '@nuxt/image',
   ],
 
-  modules: ['@nuxtjs/apollo', 'nuxt-i18n', '@nuxtjs/markdownit'],
+  modules: ['@nuxtjs/apollo', 'nuxt-i18n'],
 
   apollo: {
     includeNodeModules: true,
@@ -81,10 +81,6 @@ export default {
         de,
       },
     },
-  },
-
-  markdownit: {
-    runtime: true, // Support `$md()`
   },
 
   build: {

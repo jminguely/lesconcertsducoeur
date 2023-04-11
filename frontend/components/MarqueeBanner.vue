@@ -1,20 +1,22 @@
 <template>
   <div class="marquee mr-5 py-2 overflow-hidden">
-    <splide :options="getSplideOptions()">
-      <splide-slide
-        v-for="notification in notifications"
-        :key="notification.id"
-      >
-        <a
-          v-if="notification.Link"
-          class="whitespace-nowrap"
-          :href="notification.Link"
+    <client-only>
+      <splide :options="getSplideOptions()">
+        <splide-slide
+          v-for="notification in notifications"
+          :key="notification.id"
         >
-          {{ notification.Texte }}
-        </a>
-        <span v-else class="whitespace-nowrap">{{ notification.Texte }}</span>
-      </splide-slide>
-    </splide>
+          <a
+            v-if="notification.Link"
+            class="whitespace-nowrap"
+            :href="notification.Link"
+          >
+            {{ notification.Texte }}
+          </a>
+          <span v-else class="whitespace-nowrap">{{ notification.Texte }}</span>
+        </splide-slide>
+      </splide>
+    </client-only>
   </div>
 </template>
 
