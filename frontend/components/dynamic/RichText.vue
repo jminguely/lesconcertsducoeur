@@ -15,6 +15,10 @@ export default {
 
 <style lang="postcss">
 .rich-text {
+  p {
+    margin-bottom: 2rem;
+  }
+
   ul {
     padding-left: 1.7rem;
     margin-bottom: 2rem;
@@ -34,7 +38,7 @@ export default {
   }
 
   mark {
-    @apply font-playFair py-2 px-4 rounded-3xl inline-block text-white text-center mr-1 mb-1;
+    @apply font-playFair py-2 px-4 rounded-3xl inline-block text-white text-center my-1 mr-1;
   }
 }
 </style>

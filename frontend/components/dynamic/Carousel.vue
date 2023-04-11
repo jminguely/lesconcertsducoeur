@@ -33,6 +33,7 @@ export default {
         autoplay: true,
         speed: 2000,
         interval: 4000,
+        lazyLoad: true,
       }
     },
   },

@@ -98,6 +98,7 @@
                 speed: 6000,
                 interval: 0,
                 width: '100%',
+                lazyLoad: true,
                 breakpoints: {
                   320: {
                     perPage: 2,

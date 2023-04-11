@@ -1,0 +1,104 @@
+<template>
+  <div class="slider-container">
+    <client-only>
+      <splide
+        :options="{
+          perPage: 8,
+          perMove: 1,
+          easing: 'linear',
+          gap: '1rem',
+          type: 'loop',
+          width: '100%',
+          pagination: false,
+          arrows: false,
+          drag: false,
+          autoplay: true,
+          speed: 6000,
+          interval: 0,
+          lazyLoad: true,
+          breakpoints: {
+            320: {
+              perPage: 2,
+            },
+            640: {
+              perPage: 4,
+            },
+            1280: {
+              perPage: 6,
+            },
+          },
+        }"
+      >
+        <template v-for="artist in artists">
+          <splide-slide
+            v-if="artist.cover"
+            :key="artist.id"
+            class="flex bg-white flex-col"
+          >
+            <nuxt-img
+              class="aspect-square object-cover mx-auto"
+              provider="strapi"
+              :src="artist.cover.url"
+            />
+            <p class="artist-name">{{ artist.name }}</p>
+          </splide-slide>
+        </template>
+      </splide>
+    </client-only>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    artists: {
+      type: Array,
+      default: () => [],
+    },
+  },
+}
+</script>
+
+<style lang="postcss" scoped>
+.slider-container {
+  position: relative;
+  opacity: 0;
+  transition: opacity 1s;
+
+  &:has(> .is-active) {
+    opacity: 1;
+  }
+}
+
+.slider-container::before {
+  content: '';
+  z-index: 2;
+  position: absolute;
+  background: linear-gradient(to right, #ffff, #fff0);
+  display: block;
+  width: 4rem;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.slider-container::after {
+  content: '';
+  z-index: 2;
+  position: absolute;
+  background: linear-gradient(to left, #ffff, #fff0);
+  display: block;
+  width: 4rem;
+  height: 100%;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.group-name {
+  padding: 0.5rem;
+  text-align: center;
+  line-height: 1;
+}
+</style>

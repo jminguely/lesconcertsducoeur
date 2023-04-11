@@ -74,53 +74,12 @@
     <section v-if="page.Testimonials" class="border-b-1 mb-20 pb-20">
       <Testimonials :testimonials="page.Testimonials" />
     </section>
-    <section v-if="randomizedMusicGroups" class="border-b-1 mb-20 pb-20">
+    <section v-if="randomizedMusicGroups.length" class="border-b-1 mb-20 pb-20">
       <h2 class="h1 mb-10">{{ $t('home').ourArtists }}</h2>
-      <div class="slider-container">
-        <client-only>
-          <splide
-            :options="{
-              perPage: 8,
-              perMove: 1,
-              easing: 'linear',
-              gap: '1rem',
-              type: 'loop',
-              pagination: false,
-              arrows: false,
-              drag: false,
-              autoplay: true,
-              speed: 6000,
-              interval: 0,
-              breakpoints: {
-                320: {
-                  perPage: 2,
-                },
-                640: {
-                  perPage: 4,
-                },
-                1280: {
-                  perPage: 6,
-                },
-              },
-            }"
-          >
-            <template v-for="group in randomizedMusicGroups">
-              <splide-slide
-                v-if="group.cover"
-                :key="group.id"
-                class="flex bg-white flex-col"
-              >
-                <nuxt-img
-                  class="aspect-square object-cover mx-auto"
-                  provider="strapi"
-                  :src="group.cover.url"
-                />
-                <p class="group-name">{{ group.name }}</p>
-              </splide-slide>
-            </template>
-          </splide>
-        </client-only>
-      </div>
+      <ArtistsSlider
+        :key="randomizedMusicGroups[0].id"
+        :artists="randomizedMusicGroups"
+      />
     </section>
     <section class="border-b-1 mb-20">
       <h2 class="h1 mb-10">{{ $t('home').organizeConcert.title }}</h2>
@@ -189,11 +148,12 @@ import fetchFutureConcerts from '~/graphql/fetchFutureConcerts.gql'
 
 import Btn from '~/components/Btn.vue'
 import Badge from '~/components/Badge.vue'
+import ArtistsSlider from '~/components/pages/ArtistsSlider.vue'
 import Carousel from '~/components/dynamic/Carousel.vue'
 import Testimonials from '~/components/dynamic/Testimonials.vue'
 
 export default {
-  components: { Btn, Badge, Carousel, Testimonials },
+  components: { Btn, Badge, ArtistsSlider, Carousel, Testimonials },
   data() {
     return {
       cantons: [],
@@ -266,47 +226,3 @@ export default {
   },
 }
 </script>
-
-<style lang="postcss" scoped>
-.slider-container {
-  position: relative;
-  opacity: 0;
-  transition: opacity 1s;
-
-  &:has(> .is-active) {
-    opacity: 1;
-  }
-}
-
-.slider-container::before {
-  content: '';
-  z-index: 2;
-  position: absolute;
-  background: linear-gradient(to right, #ffff, #fff0);
-  display: block;
-  width: 4rem;
-  height: 100%;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-}
-
-.slider-container::after {
-  content: '';
-  z-index: 2;
-  position: absolute;
-  background: linear-gradient(to left, #ffff, #fff0);
-  display: block;
-  width: 4rem;
-  height: 100%;
-  top: 0;
-  right: 0;
-  pointer-events: none;
-}
-
-.group-name {
-  padding: 0.5rem;
-  text-align: center;
-  line-height: 1;
-}
-</style>
