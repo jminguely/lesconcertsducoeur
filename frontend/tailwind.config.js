@@ -54,7 +54,7 @@ module.exports = {
     },
   },
   purge: {
-    safelist: [{ pattern: /(bg|text)-./ }],
+    safelist: [/^bg-/, /^text-/]
   },
   plugins: [require('@tailwindcss/typography')],
   variants: {
