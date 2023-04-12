@@ -1,12 +1,7 @@
 <template>
   <div>
     <Headline :title="$t('nav').donate" />
-    <iframe
-      class="border-1 lg:mt-5"
-      width="100%"
-      height="100%"
-      :src="src"
-    ></iframe>
+    <iframe width="100%" height="2300px" :src="src"></iframe>
   </div>
 </template>
 
