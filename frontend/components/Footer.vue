@@ -80,51 +80,13 @@
           {{ $t('footer').privacy }} </nuxt-link
         ><br />
       </div>
-      <div v-if="logos" class="partner-container md:col-span-3 mt-16 min-w-0">
+      <div
+        v-if="logos.length"
+        class="partner-container md:col-span-3 mt-16 min-w-0"
+      >
         <h3>Merci à nos soutiens:</h3>
-        <div class="border-t-1 border-white pt-3 mt-2 slider-container">
-          <client-only>
-            <splide
-              :options="{
-                perPage: 12,
-                perMove: 1,
-                easing: 'linear',
-                gap: '1rem',
-                type: 'loop',
-                pagination: false,
-                arrows: false,
-                drag: false,
-                autoplay: true,
-                speed: 6000,
-                interval: 0,
-                width: '100%',
-                lazyLoad: true,
-                breakpoints: {
-                  320: {
-                    perPage: 2,
-                  },
-                  640: {
-                    perPage: 3,
-                  },
-                  1280: {
-                    perPage: 8,
-                  },
-                },
-              }"
-            >
-              <splide-slide
-                v-for="logo in logos"
-                :key="logo.id"
-                class="flex bg-white"
-              >
-                <nuxt-img
-                  class="aspect-logo p-2 object-contain m-auto filter grayscale"
-                  provider="strapi"
-                  :src="logo.url"
-                />
-              </splide-slide>
-            </splide>
-          </client-only>
+        <div class="border-t-1 border-white pt-3 mt-2">
+          <LogosSlider :key="logos[0].id" :logos="logos" />
         </div>
       </div>
       <div class="hidden">
@@ -143,10 +105,12 @@
 
 <script>
 import Navigation from './Navigation.vue'
+import LogosSlider from './pages/LogosSlider.vue'
 
 export default {
   components: {
     Navigation,
+    LogosSlider,
   },
   props: {
     logos: {
@@ -176,41 +140,5 @@ export default {
     text-underline-offset: 0.15rem;
     text-decoration-thickness: 1px;
   }
-}
-
-.slider-container {
-  position: relative;
-  opacity: 0;
-  transition: opacity 1s;
-
-  &:has(> .is-active) {
-    opacity: 1;
-  }
-}
-
-.slider-container::before {
-  content: '';
-  z-index: 2;
-  position: absolute;
-  background: linear-gradient(to right, #393939ff, #39393900);
-  display: block;
-  width: 4rem;
-  height: 100%;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-}
-
-.slider-container::after {
-  content: '';
-  z-index: 2;
-  position: absolute;
-  background: linear-gradient(to left, #393939ff, #39393900);
-  display: block;
-  width: 4rem;
-  height: 100%;
-  top: 0;
-  right: 0;
-  pointer-events: none;
 }
 </style>
