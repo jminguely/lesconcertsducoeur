@@ -96,7 +96,7 @@ export default {
   pointer-events: none;
 }
 
-.group-name {
+.artist-name {
   padding: 0.5rem;
   text-align: center;
   line-height: 1;
