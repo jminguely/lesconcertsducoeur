@@ -1,16 +1,18 @@
 <template>
   <footer class="site-footer mt-20 pt-32 pb-8 px-12 bg-gray text-white">
     <div class="site-footer-container">
-      <div class="logo-container mb-5 md:col-span-3">
+      <div class="logo-container mb-5 lg:col-span-3">
         <img
-          class="w-24 md:w-48 h-auto -ml-3 filter invert"
+          class="w-24 lg:w-48 h-auto -ml-3 filter invert"
           src="/CdC-logo.png"
         />
       </div>
-      <div class="navigation-container md:row-span-2">
+      <div
+        class="navigation-container sm:col-start-1 sm:row-span-3 lg:row-span-2"
+      >
         <Navigation />
       </div>
-      <div>
+      <div class="sm:row-start-1 sm:col-start-2 lg:row-start-auto">
         <h3 class="mb-3">Retrouvez-nous sur les réseaux</h3>
         <div class="flex flex-row gap-5">
           <a
@@ -37,7 +39,7 @@
           </a>
         </div>
       </div>
-      <div class="flex flex-col items-start">
+      <div class="flex flex-col items-start sm:col-start-2 lg:col-start-auto">
         <h3 class="mb-3">Vous souhaitez recevoir les infos</h3>
         <form
           id="mc-embedded-subscribe-form"
@@ -59,7 +61,7 @@
           <button type="submit" class="text-lg px-3">></button>
         </form>
       </div>
-      <div>
+      <div class="sm:col-start-2 lg:col-start-auto">
         <h3 class="mb-3">En partenariat avec:</h3>
         <a
           class="block"
@@ -67,10 +69,10 @@
           target="_blank"
           rel="noreferrer"
         >
-          <img class="w-10 md:w-20 h-auto filter invert" src="/LMN-logo.png" />
+          <img class="w-10 lg:w-20 h-auto filter invert" src="/LMN-logo.png" />
         </a>
       </div>
-      <div>
+      <div class="sm:col-start-2 lg:col-start-auto">
         © {{ new Date().getFullYear() }}<br />
         <i>Les Concerts du Cœur</i><br />
         <nuxt-link :to="`/${$i18n.locale}/impressum`">
@@ -82,7 +84,7 @@
       </div>
       <div
         v-if="logos.length"
-        class="partner-container md:col-span-3 mt-16 min-w-0"
+        class="partner-container lg:col-span-3 mt-16 min-w-0 sm:col-span-2"
       >
         <h3>Merci à nos soutiens:</h3>
         <div class="border-t-1 border-white pt-3 mt-2">
@@ -128,11 +130,17 @@ export default {
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: auto;
-  gap: 0 100px;
+  gap: 50px;
 
-  @screen md {
+  @screen sm {
+    grid-template-rows: auto auto;
+    grid-template-columns: 200px auto;
+  }
+
+  @screen lg {
     grid-template-rows: auto auto auto auto;
     grid-template-columns: 200px auto auto;
+    gap: 0 50px;
   }
 
   a {

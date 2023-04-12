@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col justify-between border-b border-gray-800 lg:grid lg:grid-cols-2 lg:gap-x-10"
+    class="flex flex-col justify-between border-b border-gray-800 lg:grid lg:grid-cols-2 lg:gap-10"
   >
     <div class="flex flex-col lg:max-w-xl">
       <div

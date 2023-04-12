@@ -57,7 +57,7 @@
       </div>
 
       <div
-        class="popup-content lg:flex-shrink flex flex-col justify-between py-10 lg:flex-row lg:w-4/5 lg:gap-x-10"
+        class="popup-content lg:flex-shrink flex flex-col justify-between py-10 lg:flex-row lg:w-4/5 lg:gap-10"
       >
         <div class="mb-6 lg:w-3/5 lg:mb-0">
           <h1 class="mb-6 text-4xl lg:text-5xl mb-5">
