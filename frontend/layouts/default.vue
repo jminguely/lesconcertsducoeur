@@ -65,7 +65,7 @@ export default {
 <style lang="postcss">
 html {
   scroll-behavior: smooth;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 body {
@@ -131,11 +131,11 @@ body {
   }
 
   h2 {
-    @apply text-xl lg:text-3xl font-playFair;
+    @apply text-xl lg:text-3xl font-playFair mb-1;
   }
 
   h3 {
-    @apply text-lg lg:text-2xl font-playFair;
+    @apply text-lg lg:text-2xl font-playFair mb-1;
 
     line-height: 1.25;
   }

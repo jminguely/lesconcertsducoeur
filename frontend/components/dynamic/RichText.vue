@@ -1,5 +1,5 @@
 <template>
-  <div v-dompurify-html="content" class="rich-text mb-10"></div>
+  <div v-dompurify-html="content" class="rich-text mb-5"></div>
 </template>
 
 <script>
@@ -16,7 +16,7 @@ export default {
 <style lang="postcss">
 .rich-text {
   p {
-    margin-bottom: 2rem;
+    margin-bottom: 0.75rem;
   }
 
   ul {

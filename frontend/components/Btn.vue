@@ -27,7 +27,7 @@ export default {
 }
 
 .btn.bg-multi {
-  animation: background-switch 20s linear infinite;
+  animation: background-switch 10s linear infinite;
 }
 
 @keyframes background-switch {
@@ -35,7 +35,15 @@ export default {
     @apply bg-FR;
   }
 
+  12.5% {
+    @apply bg-FR;
+  }
+
   25% {
+    @apply bg-VD;
+  }
+
+  37.5% {
     @apply bg-VD;
   }
 
@@ -43,7 +51,15 @@ export default {
     @apply bg-GE;
   }
 
+  62.5% {
+    @apply bg-GE;
+  }
+
   75% {
+    @apply bg-VS;
+  }
+
+  87.5% {
     @apply bg-VS;
   }
 
