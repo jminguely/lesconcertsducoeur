@@ -10,7 +10,7 @@
       </p>
       <p
         v-if="testimonial.Author"
-        class="font-playFair mt-5 text-right w-1/2 self-end"
+        class="font-playFair mt-5 text-right md:w-1/2 self-end"
       >
         {{ testimonial.Author }}
       </p>
@@ -34,8 +34,6 @@ export default {
 
 <style lang="postcss" scoped>
 .testimonial {
-  @apply text-lg;
-
   &::before,
   &::after {
     @apply font-playFair;

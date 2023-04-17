@@ -10,13 +10,13 @@
       <div>
         <div
           v-if="sortedCantons"
-          class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-20"
+          class="grid grid-cols-2 lg:grid-cols-4 gap-10 mb-20"
         >
           <nuxt-link
             v-for="canton in sortedCantons"
             :key="canton.id"
             :to="`/${$i18n.locale}/association/${canton.abbreviation}`"
-            class="flex flex-col items-center"
+            class="flex flex-col items-center no-underline"
           >
             <nuxt-img
               class="aspect-logo object-contain"
@@ -26,7 +26,7 @@
             <Badge
               :color="canton.abbreviation"
               :text="canton.name"
-              class="-mt-8"
+              class="-mt-8 no-underline"
             />
           </nuxt-link>
         </div>

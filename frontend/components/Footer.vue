@@ -1,5 +1,5 @@
 <template>
-  <footer class="site-footer mt-20 pt-32 pb-8 px-12 bg-gray text-white">
+  <footer class="site-footer mt-20 pt-32 pb-8 px-6 bg-gray text-white">
     <div class="site-footer-container">
       <div class="logo-container mb-5 lg:col-span-3">
         <img
@@ -115,7 +115,7 @@ export default {
 
 <style lang="postcss" scoped>
 .site-footer-container {
-  @apply max-w-7xl mx-auto px-12;
+  @apply max-w-7xl mx-auto;
 
   display: grid;
   grid-template-rows: auto;

@@ -2,7 +2,7 @@
   <div>
     <Headline title="Agenda" />
 
-    <div class="flex flex-row justify-between items-end mb-20">
+    <div class="md:flex flex-row justify-between items-end mb-20">
       <div>
         <div v-if="cantons" class="mb-3">
           <button
@@ -25,7 +25,10 @@
             @click="yearFilter = year"
           >
             <span class="bullet"></span>
-            {{ year }}
+            <template v-if="year == 'archive'">
+              {{ $t('agenda').archive }}
+            </template>
+            <template v-else>{{ year }}</template>
           </button>
         </div>
       </div>
@@ -37,7 +40,7 @@
           }"
           @click="resetFilters()"
         >
-          <span class="transform rotate-45 inline-block">🞢</span>
+          <span class="inline-block">✕</span>
           {{ $t('agenda').resetFilters }}
         </button>
       </div>
@@ -52,7 +55,11 @@
       <div
         class="py-4 text-4xl border-t border-b border-gray-600 font-playFair"
       >
-        {{ yearFilter || $t('agenda').nextConcerts }}
+        <template v-if="yearFilter == 'archive'">{{
+          $t('agenda').archive
+        }}</template>
+        <template v-else-if="yearFilter">{{ yearFilter }}</template>
+        <template v-else>{{ $t('agenda').nextConcerts }}</template>
       </div>
 
       <template v-if="data != null">
@@ -114,7 +121,7 @@ export default {
         currentYear - 1,
         currentYear - 2,
         currentYear - 3,
-        'Archives',
+        'archive',
       ]
     },
   },
@@ -152,7 +159,7 @@ export default {
       }
 
       if (this.yearFilter) {
-        if (this.yearFilter === 'Archives') {
+        if (this.yearFilter === 'archive') {
           sort = 'date_time:desc'
           where.date_time_lte = `${new Date().getFullYear() - 4}-12-31`
         } else {

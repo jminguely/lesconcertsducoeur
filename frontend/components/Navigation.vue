@@ -8,7 +8,7 @@
           :exact="link.exactActiveClass"
           >{{ link.name }}</nuxt-link
         >
-        <span v-if="!link.link"> {{ link.name }} 🞡 </span>
+        <span v-if="!link.link">{{ link.name }}</span>
         <ul v-if="link.subLinks" class="sub-navigation">
           <li v-for="(subLink, j) in link.subLinks" :key="j">
             <nuxt-link v-if="subLink.link" :to="subLink.link">

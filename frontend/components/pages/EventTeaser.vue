@@ -22,13 +22,10 @@
       </div>
     </div>
 
-    <div
-      class="flex flex-col justify-end"
-      :class="event.canton && `text-${event.canton.abbreviation}`"
-    >
+    <div class="flex flex-col justify-end">
       <div>
         <template v-if="event.music_group != null">
-          <em class="font-playFair">
+          <em class="font-playFair text-xl">
             {{ event.music_group.name }}
           </em>
           <div v-for="artist in event.music_group.artists" :key="artist.id">

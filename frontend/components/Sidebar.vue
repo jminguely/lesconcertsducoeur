@@ -4,9 +4,9 @@
       class="main-nav pt-10 md:pt-24 md:block sticky top-0 bg-white w-full"
       :class="{ hidden: !menuOpen }"
     >
-      <div class="mb-5">
+      <div class="mb-5 hidden md:block">
         <nuxt-link class="block" :to="localePath('/')">
-          <img class="w-24 md:w-48 h-auto mb-3 -ml-3" src="/CdC-logo.png" />
+          <img class="w-24 md:w-48 h-auto mb-5 -ml-3" src="/CdC-logo.png" />
         </nuxt-link>
         <a
           class="block"
@@ -18,6 +18,14 @@
         </a>
       </div>
       <Navigation />
+      <div class="md:hidden mt-10" aria-hidden="true">
+        <Btn
+          color="multi"
+          class="whitespace-nowrap text-sm"
+          :text="$t('nav').nousSoutenir"
+          :link="`/${$i18n.locale}/soutien`"
+        />
+      </div>
     </div>
   </div>
 </template>

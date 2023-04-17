@@ -2,11 +2,17 @@
   <div class="antialiased min-h-screen">
     <div class="site-wrapper">
       <div class="site-topbar">
-        <MarqueeBanner
-          :key="settings.id"
-          :notifications="settings.Notifications"
+        <img
+          class="w-24 object-contain h-auto -ml-3 md:hidden"
+          src="/CdC-logo.png"
         />
-        <div class="lang-switcher hidden md:block">
+        <div class="hidden md:flex min-w-0">
+          <MarqueeBanner
+            :key="settings.id"
+            :notifications="settings.Notifications"
+          />
+        </div>
+        <div class="lang-switcher">
           <nuxt-link :to="switchLocalePath('fr')">fr</nuxt-link> |
           <nuxt-link :to="switchLocalePath('de')">de</nuxt-link>
         </div>
@@ -21,6 +27,16 @@
         <div class="md:hidden">
           <MenuToggle :menu-open="menuOpen" @toggleMenu="toggleMenu" />
         </div>
+      </div>
+      <div
+        v-if="$route.name.includes('index')"
+        class="marquee-mobile"
+        aria-hidden="true"
+      >
+        <MarqueeBanner
+          :key="settings.id"
+          :notifications="settings.Notifications"
+        />
       </div>
       <Sidebar :menu-open="menuOpen" />
       <Nuxt id="content" class="site-content" />
@@ -52,6 +68,11 @@ export default {
       prefetch: true,
     },
   },
+  watch: {
+    $route() {
+      this.menuOpen = false
+    },
+  },
   methods: {
     toggleMenu() {
       this.menuOpen = !this.menuOpen
@@ -77,11 +98,12 @@ body {
 }
 
 .site-wrapper {
-  @apply max-w-7xl mx-auto px-12;
+  @apply max-w-7xl mx-auto px-6;
 
   display: grid;
   grid-template:
     'topbar'
+    'marquee'
     'sidebar'
     'content';
   gap: 0 100px;
@@ -94,8 +116,14 @@ body {
 }
 
 .lang-switcher {
-  padding: 6px 20px;
+  padding: 10px 20px;
   white-space: nowrap;
+}
+
+.marquee-mobile {
+  @apply md:hidden min-w-0;
+
+  grid-area: marquee;
 }
 
 .site-topbar {
@@ -116,14 +144,14 @@ body {
 .site-sidebar {
   grid-area: sidebar;
 
-  @apply pl-3;
+  @apply md:pl-3;
 }
 
 .site-content {
   grid-area: content;
   min-width: 0; /* hotfix to make the splide not overflow the flex layout */
 
-  @apply pt-24;
+  @apply pt-6 md:pt-24;
 
   h1,
   .h1 {
@@ -149,11 +177,12 @@ body {
     @apply text-base lg:text-xl font-playFair;
   }
 
-  a {
+  a:not(.no-underline):not(.btn) {
     text-decoration: underline;
     text-underline-offset: 0.3rem;
     text-decoration-thickness: 1px;
     text-decoration-color: inherit;
+    letter-spacing: 0.1rem;
 
     &:has(span) {
       text-decoration: none;

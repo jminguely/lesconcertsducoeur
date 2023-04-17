@@ -1,5 +1,5 @@
 <template>
-  <div class="marquee mr-5 py-2 overflow-hidden">
+  <div class="marquee md:mr-5 py-2 overflow-hidden">
     <client-only>
       <splide :options="getSplideOptions()">
         <splide-slide
@@ -68,7 +68,7 @@ export default {
   position: absolute;
   background: linear-gradient(to right, #ffff, #fff0, #fff0);
   display: block;
-  width: 4rem;
+  width: 2rem;
   height: 100%;
   top: 0;
   left: 0;
@@ -81,7 +81,7 @@ export default {
   position: absolute;
   background: linear-gradient(to left, #ffff, #fff0, #fff0);
   display: block;
-  width: 4rem;
+  width: 2rem;
   height: 100%;
   top: 0;
   right: 0;

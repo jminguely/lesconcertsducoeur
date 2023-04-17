@@ -29,6 +29,12 @@ export default {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
   span {
     color: white;

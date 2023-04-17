@@ -35,6 +35,7 @@ export default {
     nextConcerts: 'Prochains concerts',
     pastConcerts: 'Concerts passés',
     resetFilters: 'Effacer les filtres',
+    archive: 'Archives',
   },
   medias: {
     title: 'Médias',

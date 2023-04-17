@@ -73,7 +73,7 @@ export default {
   position: absolute;
   background: linear-gradient(to right, #393939ff, #39393900);
   display: block;
-  width: 4rem;
+  width: 2rem;
   height: 100%;
   top: 0;
   left: 0;
@@ -86,7 +86,7 @@ export default {
   position: absolute;
   background: linear-gradient(to left, #393939ff, #39393900);
   display: block;
-  width: 4rem;
+  width: 2rem;
   height: 100%;
   top: 0;
   right: 0;

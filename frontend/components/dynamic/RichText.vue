@@ -39,6 +39,8 @@ export default {
 
   mark {
     @apply font-playFair py-2 px-4 rounded-3xl inline-block text-white text-center my-1 mr-1;
+
+    letter-spacing: 0;
   }
 }
 </style>

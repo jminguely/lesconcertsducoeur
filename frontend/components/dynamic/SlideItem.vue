@@ -1,10 +1,10 @@
 <template>
-  <div class="grid grid-cols-2 gap-10 mb-10">
+  <div class="grid lg:grid-cols-2 gap-x-10 mb-10">
     <div class="relative border-t-1 pl-12 pt-3">
       <p class="bullet">{{ bullet }}.</p>
       <RichText :content="richText" />
     </div>
-    <div v-if="image">
+    <div v-if="image" class="pl-12 mb-10 md:pl-0 md:mb-0">
       <nuxt-img class="mx-auto" provider="strapi" :src="image.url" />
     </div>
   </div>

@@ -9,7 +9,7 @@
     <svg
       :class="{ hidden: menuOpen, block: !menuOpen }"
       width="40"
-      height="40"
+      height="50"
       viewBox="0 0 56 28"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@
     <svg
       :class="{ hidden: !menuOpen, block: menuOpen }"
       width="40"
-      height="40"
+      height="50"
       viewBox="0 0 56 28"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

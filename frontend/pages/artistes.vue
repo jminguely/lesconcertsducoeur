@@ -2,7 +2,7 @@
   <div class="relative">
     <Headline :title="$t('artistes').title" />
 
-    <div class="flex flex-row justify-between items-end mb-20">
+    <div class="md:flex flex-row justify-between items-end mb-20">
       <div>
         <div v-if="cantons" class="mb-3">
           <button
@@ -25,7 +25,7 @@
           }"
           @click="resetFilters()"
         >
-          <span class="transform rotate-45 inline-block">🞢</span>
+          <span class="inline-block">✕</span>
           {{ $t('agenda').resetFilters }}
         </button>
       </div>
@@ -34,7 +34,7 @@
     <template v-if="!$fetchState.pending">
       <template v-if="data != null">
         <div
-          class="gap-y-5 sm:gap-x-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-5"
+          class="gap-y-5 sm:gap-x-5 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 md:gap-5"
           :class="{
             'content-loading': contentLoading,
             'content-loaded': !contentLoading,

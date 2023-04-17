@@ -58,7 +58,7 @@ export default {
 
   image: {
     strapi: {
-      baseURL: 'https://api-new.lesconcertsducoeur.ch/'
+      baseURL: 'https://api-new.lesconcertsducoeur.ch/',
     },
   },
 

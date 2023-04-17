@@ -1,12 +1,12 @@
 <template>
   <div :class="{ 'popup-open': popup }" class="popup">
-    <div class="max-w-7xl mx-auto px-12 flex flex-col lg:flex-row">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row">
       <div class="z-10 flex justify-between lg:block lg:w-1/5">
         <div
           class="popup-sidebar lg:flex-shrink flex items-center lg:block lg:w-full lg:flex-col lg:static lg:mt-4"
         >
           <button class="flex my-2 focus:outline-none" @click="closePopup()">
-            <span class="transform rotate-45 inline-block">🞢</span>
+            <span class="inline-block">✕</span>
           </button>
           <button
             class="flex my-2 mr-4 focus:outline-none lg:mr-0"

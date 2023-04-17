@@ -1,6 +1,10 @@
 <template>
-  <div class="mb-20 grid grid-cols-2 gap-10">
-    <nuxt-img class="mx-auto" provider="strapi" :src="image.url" />
+  <div class="mb-20 lg:grid grid-cols-2 gap-10">
+    <nuxt-img
+      class="mx-auto mb-10 lg:md-10"
+      provider="strapi"
+      :src="image.url"
+    />
     <RichText
       :content="richText"
       :class="{
