@@ -5,7 +5,7 @@
       <div
         v-if="page.Lead"
         v-dompurify-html="page.Lead"
-        class="text-xl lg:text-3xl font-playFair mb-10"
+        class="lg:text-3xl font-playFair mb-10"
       ></div>
       <div>
         <div
@@ -86,25 +86,25 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
         <div class="flex flex-col h-100">
           <h3 class="mb-2">{{ $t('home').organizeConcert.ge }}</h3>
-          <a class="text-GE text-xl mt-auto" :href="`/${$i18n.locale}/contact`"
+          <a class="text-GE mt-auto" :href="`/${$i18n.locale}/contact`"
             >> {{ $t('nav').contact }}</a
           >
         </div>
         <div class="flex flex-col h-100">
           <h3 class="mb-2">{{ $t('home').organizeConcert.fr }}</h3>
-          <a class="text-FR text-xl mt-auto" :href="`/${$i18n.locale}/contact`"
+          <a class="text-FR mt-auto" :href="`/${$i18n.locale}/contact`"
             >> {{ $t('nav').contact }}</a
           >
         </div>
         <div class="flex flex-col h-100">
           <h3 class="mb-2">{{ $t('home').organizeConcert.vs }}</h3>
-          <a class="text-VS text-xl mt-auto" :href="`/${$i18n.locale}/contact`"
+          <a class="text-VS mt-auto" :href="`/${$i18n.locale}/contact`"
             >> {{ $t('nav').contact }}</a
           >
         </div>
         <div class="flex flex-col h-100">
           <h3 class="mb-2">{{ $t('home').organizeConcert.vd }}</h3>
-          <a class="text-VD text-xl mt-auto" :href="`/${$i18n.locale}/contact`"
+          <a class="text-VD mt-auto" :href="`/${$i18n.locale}/contact`"
             >> {{ $t('nav').contact }}</a
           >
         </div>
@@ -114,7 +114,7 @@
       <div class="grid md:grid-cols-2 gap-10">
         <div>
           <h2 class="h1 mb-10">{{ $t('home').supportUs.title }}</h2>
-          <div class="text-xl font-playFair">
+          <div class="font-playFair">
             <p class="my-5">
               {{ $t('home').supportUs.donate }}
             </p>
@@ -125,7 +125,7 @@
             <p>
               <Btn
                 color="multi"
-                class="mt-2 mb-5 text-xl"
+                class="mt-2 mb-5"
                 :text="$t('nav').nousSoutenir"
                 :link="`/${$i18n.locale}/soutien`"
               />

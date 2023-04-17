@@ -91,16 +91,6 @@
           <LogosSlider :key="logos[0].id" :logos="logos" />
         </div>
       </div>
-      <div class="hidden">
-        <div class="items-center">
-          <nuxt-link
-            :to="`/${$i18n.locale}/contact`"
-            class="text-xl hover:font-bold"
-          >
-            {{ $t('nav').contact }}
-          </nuxt-link>
-        </div>
-      </div>
     </div>
   </footer>
 </template>

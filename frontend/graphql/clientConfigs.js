@@ -9,10 +9,7 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
 
 export default ({ req, app }) => {
   return {
-    httpEndpoint:
-      process.env.NODE_ENV === 'production'
-        ? 'https://api-new.lesconcertsducoeur.ch/graphql'
-        : 'http://localhost:1337/graphql',
+    httpEndpoint: 'https://api-new.lesconcertsducoeur.ch/graphql',
     cache: new InMemoryCache({ fragmentMatcher }),
   }
 }

@@ -1,7 +1,7 @@
 <template>
-  <div class="grid lg:grid-cols-2 gap-10 mb-20">
+  <div class="grid lg:grid-cols-2 gap-x-10 gap-y-5 mb-20">
     <div v-for="block in blocks" :key="block.id">
-      <h3 class="mb-0">{{ block.Title }}</h3>
+      <h3 class="mb-2">{{ block.Title }}</h3>
       <RichText :content="block.RichText" />
     </div>
   </div>

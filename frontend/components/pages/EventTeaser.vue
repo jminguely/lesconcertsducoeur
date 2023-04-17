@@ -4,7 +4,7 @@
   >
     <div class="flex flex-col lg:max-w-xl">
       <div
-        class="mb-2 font-playFair text-xl lg:text-2xl"
+        class="mb-2 font-playFair"
         :class="event.canton && `text-${event.canton.abbreviation}`"
       >
         <div>
@@ -28,7 +28,7 @@
     >
       <div>
         <template v-if="event.music_group != null">
-          <em class="font-playFair text-xl lg:text-2xl">
+          <em class="font-playFair">
             {{ event.music_group.name }}
           </em>
           <div v-for="artist in event.music_group.artists" :key="artist.id">

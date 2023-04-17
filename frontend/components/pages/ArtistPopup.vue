@@ -5,17 +5,14 @@
         <div
           class="popup-sidebar lg:flex-shrink flex items-center lg:block lg:w-full lg:flex-col lg:static lg:mt-4"
         >
-          <button
-            class="flex my-2 text-xl focus:outline-none"
-            @click="closePopup()"
-          >
+          <button class="flex my-2 focus:outline-none" @click="closePopup()">
             <span class="transform rotate-45 inline-block">🞢</span>
           </button>
           <button
-            class="flex my-2 mr-4 text-xl focus:outline-none lg:mr-0"
+            class="flex my-2 mr-4 focus:outline-none lg:mr-0"
             @click="goBack()"
           >
-            <span class="text-xl font-bold">‹</span>
+            <span class="font-bold">‹</span>
             <template v-if="data[previousIndex] != null">
               <span class="pl-2 hidden text-left lg:block">
                 <template
@@ -34,8 +31,8 @@
             </template>
           </button>
 
-          <button class="flex my-2 text-xl focus:outline-none" @click="next()">
-            <span class="text-xl font-bold">›</span>
+          <button class="flex my-2 focus:outline-none" @click="next()">
+            <span class="font-bold">›</span>
             <template v-if="data[nextIndex] != null">
               <span class="pl-2 hidden text-left lg:block">
                 <template
@@ -135,7 +132,7 @@
                 <span
                   v-for="artist in selected.artists"
                   :key="artist.id"
-                  class="text-xl font-playFair"
+                  class="font-playFair"
                 >
                   {{ artist.first_name }} {{ artist.last_name }}
                   <span class="text-lg font-sans">{{ artist.instrument }} </span

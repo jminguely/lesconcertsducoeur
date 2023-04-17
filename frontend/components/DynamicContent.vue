@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="(item, i) in content" :key="i" class="text-xl mb-4">
+    <div v-for="(item, i) in content" :key="i" class="mb-4">
       <div v-if="item.__typename === 'ComponentContentHeadline'">
         <Headline
           :title="item.Title"

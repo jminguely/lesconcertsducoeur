@@ -10,23 +10,6 @@ module.exports = {
             },
           },
         },
-        xl: {
-          css: {
-            lineHeight: '1.25',
-            h2: {
-              fontFamily: 'Playfair',
-              fontSize: '1.875rem',
-              marginBottom: '0.7rem',
-              lineHeight: '1.1',
-              fontWeight: 'normal',
-            },
-            ul: {
-              li: {
-                margin: 0,
-              },
-            },
-          },
-        },
       },
       fontFamily: {
         sans: ['News Cycle'],

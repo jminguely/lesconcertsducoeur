@@ -9,7 +9,7 @@
       />
     </template>
     <div class="content">
-      <p class="text-xl font-playFair">
+      <p class="font-playFair">
         <template v-if="data.first_name != null && data.last_name != null">
           {{ data.first_name }} {{ data.last_name }}
         </template>

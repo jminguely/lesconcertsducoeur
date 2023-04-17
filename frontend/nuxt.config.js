@@ -58,10 +58,7 @@ export default {
 
   image: {
     strapi: {
-      baseURL:
-        process.env.NODE_ENV === 'production'
-          ? 'https://api-new.lesconcertsducoeur.ch/'
-          : 'http://localhost:1337/',
+      baseURL: 'https://api-new.lesconcertsducoeur.ch/'
     },
   },
 
