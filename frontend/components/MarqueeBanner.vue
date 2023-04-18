@@ -8,12 +8,14 @@
         >
           <a
             v-if="notification.Link"
-            class="whitespace-nowrap"
+            class="whitespace-nowrap pr-3"
             :href="notification.Link"
           >
             {{ notification.Texte }}
           </a>
-          <span v-else class="whitespace-nowrap">{{ notification.Texte }}</span>
+          <span v-else class="whitespace-nowrap pr-3">{{
+            notification.Texte
+          }}</span>
         </splide-slide>
       </splide>
     </client-only>
