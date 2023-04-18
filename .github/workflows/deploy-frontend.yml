@@ -28,7 +28,7 @@ jobs:
         run: yarn
 
       - name: ⚡️ Generate the application
-        run: yarn generate
+        run: yarn build
 
       - name: 🔗 Creates symlink
         run: |
