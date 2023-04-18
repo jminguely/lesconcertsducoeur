@@ -27,6 +27,9 @@ jobs:
       - name: 🧶 Yarn this beauty
         run: yarn
 
+      - name: ⭐️ Generate the application
+        run: yarn generate
+
       - name: ⚒️ Build the application
         run: yarn build
 
