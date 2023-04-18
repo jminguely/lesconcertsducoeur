@@ -2,7 +2,7 @@ import fr from './i18n/fr.js'
 import de from './i18n/de.js'
 
 export default {
-  target: 'static',
+  target: 'server',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Les Concerts du Cœur',
