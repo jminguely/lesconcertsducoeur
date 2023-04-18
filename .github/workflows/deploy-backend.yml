@@ -16,9 +16,9 @@ jobs:
         working-directory: ./backend
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: '14'
           cache: 'yarn'
@@ -36,7 +36,7 @@ jobs:
 
       - name: 🚀 Ship the whole thin
         id: deploy
-        uses: Pendect/action-rsyncer@v1.1.0
+        uses: Pendect/action-rsyncer@v2.0.0
         env:
           DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
         with:
