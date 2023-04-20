@@ -50,6 +50,10 @@
       <div v-if="item.__typename === 'ComponentContentSlidesList'">
         <SlidesList :slides="item.Slides" />
       </div>
+
+      <div v-if="item.__typename === 'ComponentContentTestimonialsGrid'">
+        <Testimonials :testimonials="item.Testimonials" />
+      </div>
     </div>
   </div>
 </template>
@@ -64,6 +68,7 @@ import EventsGrid from '~/components/dynamic/EventsGrid.vue'
 import DownloadList from '~/components/dynamic/DownloadList.vue'
 import Figure from '~/components/dynamic/Figure.vue'
 import SlidesList from '~/components/dynamic/SlidesList.vue'
+import Testimonials from '~/components/dynamic/Testimonials.vue'
 
 export default {
   components: {
@@ -76,6 +81,7 @@ export default {
     DownloadList,
     Figure,
     SlidesList,
+    Testimonials,
   },
   props: {
     content: {

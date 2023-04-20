@@ -79,6 +79,7 @@ query getCanton($locale: String!, $where: JSON) {
             id
             url
           }
+          ExternalLink
         }
       }
       ... on ComponentContentFigure {

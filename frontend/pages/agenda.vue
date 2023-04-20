@@ -10,7 +10,7 @@
             :key="canton.id"
             class="radio-button"
             :class="cantonFilter === canton.id && 'active'"
-            @click="cantonFilter = canton.id"
+            @click="clickFilterCanton(canton.id)"
           >
             <span class="bullet"></span>
             {{ canton.name }}
@@ -22,7 +22,7 @@
             :key="year"
             class="radio-button"
             :class="yearFilter === year && 'active'"
-            @click="yearFilter = year"
+            @click="clickFilterYear(year)"
           >
             <span class="bullet"></span>
             <template v-if="year == 'archive'">
@@ -145,6 +145,22 @@ export default {
     resetFilters() {
       this.yearFilter = ''
       this.cantonFilter = 0
+    },
+
+    clickFilterCanton(canton) {
+      if (this.cantonFilter !== canton) {
+        this.cantonFilter = canton
+      } else {
+        this.cantonFilter = 0
+      }
+    },
+
+    clickFilterYear(year) {
+      if (this.yearFilter !== year) {
+        this.yearFilter = year
+      } else {
+        this.yearFilter = ''
+      }
     },
 
     async getAgenda() {

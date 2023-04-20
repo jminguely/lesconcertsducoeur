@@ -70,6 +70,7 @@ query getPage($locale: String!, $slug: String!) {
             id
             url
           }
+          ExternalLink
         }
       }
       ... on ComponentContentFigure {
@@ -91,6 +92,16 @@ query getPage($locale: String!, $slug: String!) {
             id
             url
           }
+        }
+      }
+
+      ... on ComponentContentTestimonialsGrid {
+        id
+        Testimonials {
+          id
+          Texte
+          Author
+          Position
         }
       }
     }
