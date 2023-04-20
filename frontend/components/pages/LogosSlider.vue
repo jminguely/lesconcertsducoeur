@@ -67,10 +67,10 @@ export default {
   position: absolute;
   background: linear-gradient(to right, #393939ff, #39393900);
   display: block;
-  width: 2rem;
+  width: 1rem;
   height: 100%;
   top: 0;
-  left: 0;
+  left: -1px;
   pointer-events: none;
 }
 
@@ -80,10 +80,10 @@ export default {
   position: absolute;
   background: linear-gradient(to left, #393939ff, #39393900);
   display: block;
-  width: 2rem;
+  width: 1rem;
   height: 100%;
   top: 0;
-  right: 0;
+  right: -1px;
   pointer-events: none;
 }
 </style>

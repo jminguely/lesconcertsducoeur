@@ -38,6 +38,7 @@ export default {
   &::after {
     @apply font-playFair;
 
+    line-height: 1em;
     font-size: 1.25em;
   }
 

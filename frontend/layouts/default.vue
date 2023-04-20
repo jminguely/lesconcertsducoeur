@@ -2,30 +2,32 @@
   <div class="antialiased min-h-screen">
     <div class="site-wrapper">
       <div class="site-topbar">
-        <img
-          class="w-24 object-contain h-auto -ml-3 md:hidden"
-          src="/CdC-logo.png"
-        />
-        <div class="hidden md:flex min-w-0">
-          <MarqueeBanner
-            :key="settings.id"
-            :notifications="settings.Notifications"
+        <div class="site-topbar-content">
+          <img
+            class="w-24 object-contain h-auto md:hidden"
+            src="/CdC-logo.png"
           />
-        </div>
-        <div class="lang-switcher">
-          <nuxt-link :to="switchLocalePath('fr')">fr</nuxt-link> |
-          <nuxt-link :to="switchLocalePath('de')">de</nuxt-link>
-        </div>
-        <div class="hidden md:block">
-          <Btn
-            color="multi"
-            class="whitespace-nowrap"
-            :text="$t('nav').nousSoutenir"
-            :link="`/${$i18n.locale}/soutien`"
-          />
-        </div>
-        <div class="md:hidden">
-          <MenuToggle :menu-open="menuOpen" @toggleMenu="toggleMenu" />
+          <div class="hidden md:flex min-w-0">
+            <MarqueeBanner
+              :key="settings.id"
+              :notifications="settings.Notifications"
+            />
+          </div>
+          <div class="lang-switcher">
+            <nuxt-link :to="switchLocalePath('fr')">fr</nuxt-link> |
+            <nuxt-link :to="switchLocalePath('de')">de</nuxt-link>
+          </div>
+          <div class="hidden md:block">
+            <Btn
+              color="multi"
+              class="whitespace-nowrap"
+              :text="$t('nav').nousSoutenir"
+              :link="`/${$i18n.locale}/soutien`"
+            />
+          </div>
+          <div class="md:hidden">
+            <MenuToggle :menu-open="menuOpen" @toggleMenu="toggleMenu" />
+          </div>
         </div>
       </div>
       <div
@@ -98,25 +100,23 @@ body {
 }
 
 .site-wrapper {
-  @apply max-w-7xl mx-auto px-6;
+  @apply max-w-7xl mx-auto px-6 pt-14;
 
   display: grid;
   grid-template:
-    'topbar'
     'marquee'
     'sidebar'
     'content';
   gap: 0 100px;
 
   @screen md {
-    grid-template:
-      'topbar topbar'
-      'sidebar content' min-content / 200px 1fr;
+    grid-template: 'sidebar content' min-content / 200px 1fr;
   }
 }
 
 .lang-switcher {
   padding: 10px 20px;
+  margin-left: auto;
   white-space: nowrap;
 }
 
@@ -127,18 +127,26 @@ body {
 }
 
 .site-topbar {
-  @apply pl-3 py-2;
+  @apply px-6;
 
-  display: flex;
-  position: sticky;
+  position: fixed;
   top: 0;
-  flex-direction: row;
-  justify-content: space-between;
-  grid-area: topbar;
-  border-bottom: 1px solid #828282;
-  background: white;
+  left: 0;
+  width: 100%;
   z-index: 20;
+  background: white;
   min-width: 0; /* hotfix to make the splide not overflow the flex layout */
+
+  .site-topbar-content {
+    @apply max-w-7xl mx-auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #828282;
+
+    @apply py-2 md:px-4;
+  }
 }
 
 .site-sidebar {

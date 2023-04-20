@@ -1,14 +1,14 @@
 <template>
   <footer class="site-footer mt-20 pt-32 pb-8 px-6 bg-gray text-white">
     <div class="site-footer-container">
-      <div class="logo-container mb-5 lg:col-span-3">
+      <div class="logo-container mb-5 md:pl-3">
         <img
           class="w-24 lg:w-48 h-auto -ml-3 filter invert"
           src="/CdC-logo.png"
         />
       </div>
       <div
-        class="navigation-container sm:col-start-1 sm:row-span-3 lg:row-span-2"
+        class="navigation-container sm:col-start-1 sm:row-span-3 lg:row-span-2 md:pl-3"
       >
         <Navigation />
       </div>

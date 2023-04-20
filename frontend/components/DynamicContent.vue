@@ -10,7 +10,10 @@
         />
       </div>
 
-      <div v-if="item.__typename === 'ComponentContentSubtitle'">
+      <div
+        v-if="item.__typename === 'ComponentContentSubtitle'"
+        class="xl:w-1/2"
+      >
         <h2 class="h1">{{ item.Text }}</h2>
       </div>
 
