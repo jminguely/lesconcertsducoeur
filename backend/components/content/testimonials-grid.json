@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_content_testimonials_grids",
+  "info": {
+    "name": "TestimonialsGrid",
+    "icon": "comments"
+  },
+  "options": {},
+  "attributes": {
+    "Testimonials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.testimonials"
+    }
+  }
+}
