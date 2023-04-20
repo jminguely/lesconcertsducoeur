@@ -52,12 +52,6 @@ export default {
 <style lang="postcss">
 .marquee {
   position: relative;
-  opacity: 0;
-  transition: opacity 1s;
-
-  &:has(> .is-active) {
-    opacity: 1;
-  }
 
   a:hover {
     opacity: 0.7;

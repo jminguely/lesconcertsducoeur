@@ -39,18 +39,3 @@ export default {
   },
 }
 </script>
-
-<style lang="postcss">
-.carousel {
-  opacity: 0;
-  transition: opacity 1s;
-
-  &:has(> .is-active) {
-    opacity: 1;
-  }
-
-  a:hover {
-    opacity: 0.7;
-  }
-}
-</style>

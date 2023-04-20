@@ -65,12 +65,6 @@ export default {
 <style lang="postcss" scoped>
 .slider-container {
   position: relative;
-  opacity: 0;
-  transition: opacity 1s;
-
-  &:has(> .is-active) {
-    opacity: 1;
-  }
 }
 
 .slider-container::before {
