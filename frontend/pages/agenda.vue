@@ -2,7 +2,7 @@
   <div>
     <Headline title="Agenda" />
 
-    <div class="md:flex flex-row justify-between items-end mb-20">
+    <div class="md:flex flex-row justify-between items-end mb-5">
       <div>
         <div v-if="cantons" class="mb-3">
           <button

@@ -10,7 +10,7 @@
       <div>
         <div
           v-if="sortedCantons"
-          class="grid grid-cols-2 lg:grid-cols-4 gap-10 mb-20"
+          class="grid grid-cols-2 lg:grid-cols-4 gap-10 mb-10 lg:mb-20"
         >
           <nuxt-link
             v-for="canton in sortedCantons"
@@ -35,7 +35,7 @@
     <section v-if="filteredConcerts">
       <h2 class="h1 mb-10">{{ $t('home').nextConcerts }}</h2>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10 lg:mb-20">
         <div v-for="(concert, i) in filteredConcerts" :key="i">
           <div
             v-if="concert != undefined"
@@ -71,19 +71,22 @@
         <Carousel :images="page.Carousel" />
       </client-only>
     </section>
-    <section v-if="page.Testimonials" class="border-b-1 mb-20 pb-20">
+    <section v-if="page.Testimonials" class="border-b-1 mb-10 lg:mb-20 pb-20">
       <Testimonials :testimonials="page.Testimonials" />
     </section>
-    <section v-if="randomizedMusicGroups.length" class="border-b-1 mb-20 pb-20">
+    <section
+      v-if="randomizedMusicGroups.length"
+      class="border-b-1 mb-10 lg:mb-20 pb-20"
+    >
       <h2 class="h1 mb-10">{{ $t('home').ourArtists }}</h2>
       <ArtistsSlider
         :key="randomizedMusicGroups[0].id"
         :artists="randomizedMusicGroups"
       />
     </section>
-    <section class="border-b-1 mb-20">
+    <section class="border-b-1 mb-10 lg:mb-20">
       <h2 class="h1 mb-10">{{ $t('home').organizeConcert.title }}</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10 lg:mb-20">
         <div class="flex flex-col h-100">
           <h3 class="mb-2">{{ $t('home').organizeConcert.ge }}</h3>
           <a class="text-GE mt-auto" :href="`/${$i18n.locale}/contact`"
@@ -111,7 +114,7 @@
       </div>
     </section>
     <section>
-      <div class="grid md:grid-cols-2 gap-10">
+      <div class="grid lg:grid-cols-2 gap-10">
         <div>
           <h2 class="h1 mb-10">{{ $t('home').supportUs.title }}</h2>
           <div class="font-playFair">

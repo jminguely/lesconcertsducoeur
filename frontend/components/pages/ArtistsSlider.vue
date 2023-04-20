@@ -3,7 +3,7 @@
     <client-only>
       <splide
         :options="{
-          perPage: 8,
+          perPage: 5,
           perMove: 1,
           easing: 'linear',
           gap: '1rem',
@@ -25,9 +25,6 @@
             },
             960: {
               perPage: 4,
-            },
-            1280: {
-              perPage: 6,
             },
           },
         }"

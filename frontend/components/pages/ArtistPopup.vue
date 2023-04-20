@@ -1,13 +1,8 @@
 <template>
   <div :class="{ 'popup-open': popup }" class="popup">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row">
-      <div class="z-10 flex justify-between lg:block lg:w-1/5">
-        <div
-          class="popup-sidebar lg:flex-shrink flex items-center lg:block lg:w-full lg:flex-col lg:static lg:mt-4"
-        >
-          <button class="flex my-2 focus:outline-none" @click="closePopup()">
-            <span class="inline-block">✕</span>
-          </button>
+    <div class="max-w-7xl mx-auto px-3 md:px-6 flex flex-col lg:flex-row">
+      <div class="z-10 lg:block lg:w-1/5">
+        <div class="popup-sidebar flex flex-row justify-between lg:flex-col">
           <button
             class="flex my-2 mr-4 focus:outline-none lg:mr-0"
             @click="goBack()"
@@ -29,6 +24,13 @@
                 </template>
               </span>
             </template>
+          </button>
+
+          <button
+            class="flex my-2 mr-4 focus:outline-none md:order-first"
+            @click="closePopup()"
+          >
+            <span class="inline-block">✕</span>
           </button>
 
           <button class="flex my-2 focus:outline-none" @click="next()">
@@ -54,7 +56,7 @@
       </div>
 
       <div
-        class="popup-content lg:flex-shrink flex flex-col justify-between py-10 lg:flex-row lg:w-4/5 lg:gap-10"
+        class="popup-content lg:flex-shrink py-10 lg:py-0 flex flex-col justify-between lg:flex-row lg:w-4/5 lg:gap-10"
       >
         <div class="mb-6 lg:w-3/5 lg:mb-0">
           <h1 class="mb-6 text-4xl lg:text-5xl mb-5">
@@ -128,16 +130,15 @@
 
           <div v-if="selected.artists != null" class="mt-4 flex flex-col">
             <div>
-              <p>
-                <span
-                  v-for="artist in selected.artists"
-                  :key="artist.id"
-                  class="font-playFair"
+              <p
+                v-for="artist in selected.artists"
+                :key="artist.id"
+                class="mb-0"
+              >
+                <span class="font-sans"
+                  >{{ artist.first_name }} {{ artist.last_name }}</span
                 >
-                  {{ artist.first_name }} {{ artist.last_name }}
-                  <span class="text-lg font-sans">{{ artist.instrument }} </span
-                  ><br />
-                </span>
+                <span class="font-playFair">{{ artist.instrument }} </span>
               </p>
             </div>
           </div>
@@ -213,7 +214,7 @@ export default {
 }
 
 .popup {
-  @apply p-5 lg:gap-x-5 lg:flex-row lg:p-10 lg:pb-20 bg-white opacity-0 pointer-events-none;
+  @apply lg:gap-x-5 lg:flex-row lg:p-10 lg:pb-20 bg-white opacity-0 pointer-events-none;
 
   position: fixed;
   top: 0;

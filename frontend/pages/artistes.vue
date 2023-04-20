@@ -2,7 +2,7 @@
   <div class="relative">
     <Headline :title="$t('artistes').title" />
 
-    <div class="md:flex flex-row justify-between items-end mb-20">
+    <div class="md:flex flex-row justify-between items-end mb-5">
       <div>
         <div v-if="cantons" class="mb-3">
           <button
@@ -10,7 +10,7 @@
             :key="canton.id"
             class="radio-button"
             :class="cantonFilter === canton.id && 'active'"
-            @click="cantonFilter = canton.id"
+            @click="clickFilterCanton(canton.id)"
           >
             <span class="bullet"></span>
             {{ canton.name }}
@@ -133,6 +133,13 @@ export default {
     },
     resetFilters() {
       this.cantonFilter = 0
+    },
+    clickFilterCanton(canton) {
+      if (this.cantonFilter !== canton) {
+        this.cantonFilter = canton
+      } else {
+        this.cantonFilter = 0
+      }
     },
     async getArtists() {
       const locale = this.$i18n.locale + '-CH'

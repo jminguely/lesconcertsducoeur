@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-10 mb-20">
+  <div class="mt-10 mb-10 lg:mb-20">
     <div v-for="(slide, i) in slides" :key="slide.id">
       <SlideItem
         :bullet="i + 1"

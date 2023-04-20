@@ -1,10 +1,10 @@
 <template>
   <div
     class="mb-10 headline"
-    :class="{ 'grid md:grid-cols-2 gap-x-10': image }"
+    :class="{ 'grid lg:grid-cols-2 gap-x-10': image }"
   >
     <h1 class="text-4xl lg:text-5xl mb-5">{{ title }}</h1>
-    <div v-if="image" class="md:col-start-2 md:row-start-1 md:row-span-2">
+    <div v-if="image" class="lg:col-start-2 lg:row-start-1 lg:row-span-2">
       <nuxt-img class="mx-auto" provider="strapi" :src="image.url" />
     </div>
     <div class="col-start-1">

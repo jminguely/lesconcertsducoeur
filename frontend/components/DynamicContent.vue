@@ -17,7 +17,10 @@
         <h2 class="h1">{{ item.Text }}</h2>
       </div>
 
-      <div v-if="item.__typename === 'ComponentContentRichtext'" class="mb-20">
+      <div
+        v-if="item.__typename === 'ComponentContentRichtext'"
+        class="mb-10 lg:mb-20"
+      >
         <RichText :content="item.Text" />
       </div>
 

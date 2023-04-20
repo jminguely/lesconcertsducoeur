@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-20 lg:grid grid-cols-2 gap-10">
+  <div class="mb-10 lg:mb-20 lg:grid grid-cols-2 gap-10">
     <nuxt-img
       class="mx-auto mb-10 lg:md-10"
       provider="strapi"

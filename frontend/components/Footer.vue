@@ -1,9 +1,9 @@
 <template>
-  <footer class="site-footer mt-20 pt-32 pb-8 px-6 bg-gray text-white">
+  <footer class="site-footer mt-20 pt-32 pb-8 px-3 md:px-6 bg-gray text-white">
     <div class="site-footer-container">
       <div class="logo-container mb-5 md:pl-3">
         <img
-          class="w-24 lg:w-48 h-auto -ml-3 filter invert"
+          class="w-24 lg:w-48 h-auto md:-ml-3 filter invert"
           src="/CdC-logo.png"
         />
       </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="grid lg:grid-cols-2 gap-10 mb-20">
+  <div class="grid lg:grid-cols-2 gap-10 mb-10 lg:mb-20">
     <div
       v-for="testimonial in testimonials"
       :key="testimonial.id"

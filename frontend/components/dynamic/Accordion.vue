@@ -1,9 +1,9 @@
 <template>
-  <div class="border-t-1 border-gray accordion mb-20">
+  <div class="border-t-1 border-gray accordion mb-10 lg:mb-20">
     <div
       v-for="(item, i) in items"
       :key="i"
-      class="py-5 border-b border-black accordion-item"
+      class="py-1 md:py-5 border-b border-black accordion-item"
     >
       <div class="flex cursor-pointer select-none items-center">
         <svg

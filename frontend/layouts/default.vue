@@ -100,7 +100,7 @@ body {
 }
 
 .site-wrapper {
-  @apply max-w-7xl mx-auto px-6 pt-14;
+  @apply max-w-7xl mx-auto px-3 md:px-6 pt-14;
 
   display: grid;
   grid-template:
@@ -127,7 +127,7 @@ body {
 }
 
 .site-topbar {
-  @apply px-6;
+  @apply px-3 md:px-6;
 
   position: fixed;
   top: 0;

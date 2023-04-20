@@ -1,8 +1,8 @@
 <template>
-  <div class="mb-20">
+  <div class="mb-10 lg:mb-20">
     <h3>{{ title }}</h3>
     <div
-      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:gid-cols-5 gap-10"
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:gid-cols-5 gap-5 md:gap-10"
     >
       <div v-for="image in images" :key="image.id">
         <nuxt-img
