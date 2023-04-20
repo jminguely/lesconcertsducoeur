@@ -2,7 +2,8 @@
   "collectionName": "components_content_download_elements",
   "info": {
     "name": "DownloadElement",
-    "icon": "file-alt"
+    "icon": "file-alt",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -15,10 +16,17 @@
     "File": {
       "collection": "file",
       "via": "related",
-      "allowedTypes": ["images", "files", "videos"],
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "ExternalLink": {
+      "type": "string"
     }
   }
 }
