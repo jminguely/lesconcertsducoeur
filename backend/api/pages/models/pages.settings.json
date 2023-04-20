@@ -41,7 +41,8 @@
         "content.events-grid",
         "content.download-list",
         "content.figure",
-        "content.slides-list"
+        "content.slides-list",
+        "content.testimonials"
       ]
     },
     "slug": {
