@@ -16,7 +16,7 @@
             {{ canton.name }}
           </button>
         </div>
-        <div v-if="years">
+        <div v-if="years" class="mb-3">
           <button
             v-for="year in years"
             :key="year"
