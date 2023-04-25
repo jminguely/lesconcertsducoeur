@@ -5,8 +5,9 @@
       :href="`https://api-new.lesconcertsducoeur.ch${content.File.url}`"
       >{{ content.Title }}</a
     >
-    <a v-else :href="content.ExternalLink">{{ content.Title }}</a>
-    <span v-if="content.Infos" class="ml-2">{{ content.Infos }}</span>
+    <a v-else :href="content.ExternalLink">{{ content.Title }}</a
+    ><br />
+    <span v-if="content.Infos">{{ content.Infos }}</span>
   </div>
 </template>
 <script>

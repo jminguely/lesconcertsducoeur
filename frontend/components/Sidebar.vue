@@ -1,7 +1,7 @@
 <template>
   <div class="site-sidebar">
     <div
-      class="main-nav pt-10 md:pt-24 md:block sticky top-0 bg-white w-full"
+      class="main-nav pt-10 md:pt-24 md:block sticky top-0 bg-white w-full border-b-1 pb-10 md:border-b-0 md:pb-0 border-gray"
       :class="{ hidden: !menuOpen }"
     >
       <div class="mb-5 hidden md:block">
@@ -14,7 +14,7 @@
           target="_blank"
           rel="noreferrer"
         >
-          <img class="w-10 md:w-20 h-auto" src="/LMN-logo.png" />
+          <img class="w-28 h-auto" src="/LMN-logo.png" />
         </a>
       </div>
       <Navigation />

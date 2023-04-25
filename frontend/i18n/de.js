@@ -63,7 +63,11 @@ export default {
     fr: 'Freiburg',
   },
   footer: {
+    socials: 'Finden Sie uns in den Netzwerken',
+    newsletter_infos: 'Sie möchten die Infos erhalten',
     newsletter: 'Newsletter abonnieren',
+    partner: 'In Partnerschaft mit:',
+    support: 'Vielen Dank an unsere Unterstützer:',
     impressum: 'Impressum',
     privacy: 'Datenschutzerklärung',
   },

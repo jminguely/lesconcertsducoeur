@@ -13,7 +13,7 @@
         <Navigation />
       </div>
       <div class="sm:row-start-1 sm:col-start-2 lg:row-start-auto">
-        <h3 class="mb-3">Retrouvez-nous sur les réseaux</h3>
+        <h3 class="mb-3">{{ $t('footer').socials }}</h3>
         <div class="flex flex-row gap-5">
           <a
             target="_blank"
@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="flex flex-col items-start sm:col-start-2 lg:col-start-auto">
-        <h3 class="mb-3">Vous souhaitez recevoir les infos</h3>
+        <h3 class="mb-3">{{ $t('footer').newsletter_infos }}</h3>
         <form
           id="mc-embedded-subscribe-form"
           action="https://lesconcertsducoeur.us17.list-manage.com/subscribe/post?u=e047a05962015364141e05684&amp;id=7c376f04c5&amp;f_id=00e649e0f0"
@@ -62,14 +62,14 @@
         </form>
       </div>
       <div class="sm:col-start-2 lg:col-start-auto">
-        <h3 class="mb-3">En partenariat avec:</h3>
+        <h3 class="mb-3">{{ $t('footer').partner }}</h3>
         <a
           class="block"
           href="https://www.livemusicnow.org.uk/"
           target="_blank"
           rel="noreferrer"
         >
-          <img class="w-10 lg:w-20 h-auto filter invert" src="/LMN-logo.png" />
+          <img class="w-28 h-auto filter invert" src="/LMN-logo.png" />
         </a>
       </div>
       <div class="sm:col-start-2 lg:col-start-auto">
@@ -86,7 +86,7 @@
         v-if="logos.length"
         class="partner-container lg:col-span-3 mt-16 min-w-0 sm:col-span-2"
       >
-        <h3>Merci à nos soutiens:</h3>
+        <h3>{{ $t('footer').support }}</h3>
         <div class="border-t-1 border-white pt-3 mt-2">
           <LogosSlider :key="logos[0].id" :logos="logos" />
         </div>

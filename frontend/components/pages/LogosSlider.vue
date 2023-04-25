@@ -3,7 +3,7 @@
     <client-only>
       <splide
         :options="{
-          perPage: 12,
+          perPage: 11,
           perMove: 1,
           easing: 'linear',
           gap: '1rem',
@@ -13,7 +13,7 @@
           drag: false,
           autoplay: true,
           speed: 6000,
-          interval: 1,
+          interval: 0,
           width: '100%',
           lazyLoad: true,
           breakpoints: {
@@ -29,11 +29,7 @@
           },
         }"
       >
-        <splide-slide
-          v-for="logo in logos"
-          :key="logo.id"
-          class="flex bg-white"
-        >
+        <splide-slide v-for="logo in logos" :key="logo.id" class="flex">
           <nuxt-img
             class="aspect-logo p-2 object-contain m-auto filter grayscale"
             provider="strapi"
