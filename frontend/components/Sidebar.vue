@@ -6,7 +6,7 @@
     >
       <div class="mb-5 hidden md:block">
         <nuxt-link class="block" :to="localePath('/')">
-          <img class="w-24 md:w-48 h-auto mb-5 md:-ml-3" src="/CdC-logo.png" />
+          <img class="w-24 md:w-48 h-auto mb-5 md:-ml-2" src="/CdC-logo.png" />
         </nuxt-link>
         <a
           class="block"

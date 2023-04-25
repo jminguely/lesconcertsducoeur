@@ -3,7 +3,7 @@
     <div class="site-footer-container">
       <div class="logo-container mb-5 md:pl-3">
         <img
-          class="w-24 lg:w-48 h-auto md:-ml-3 filter invert"
+          class="w-24 lg:w-48 h-auto md:-ml-2 filter invert"
           src="/CdC-logo.png"
         />
       </div>
