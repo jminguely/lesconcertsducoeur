@@ -64,8 +64,8 @@ export default {
     fr: 'Fribourg',
   },
   footer: {
-    socials: 'Retrouvez-nous sur les réseaux',
-    newsletter_infos: 'Vous souhaitez recevoir les infos',
+    socials: 'Retrouvez-nous sur les réseaux:',
+    newsletter_infos: 'Vous souhaitez recevoir les infos?',
     newsletter: "S'abonner à la newsletter",
     partner: 'En partenariat avec:',
     support: 'Merci à nos soutiens:',
