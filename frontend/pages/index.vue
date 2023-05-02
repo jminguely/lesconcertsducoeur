@@ -57,7 +57,6 @@
               class="mb-0"
               :class="concert.canton && `text-${concert.canton.abbreviation}`"
             >
-              {{ concert.canton.name }}
               {{ concert.location }}
             </p>
             <p class="text-lg font-playFair">
@@ -72,9 +71,6 @@
         <Carousel :images="page.Carousel" />
       </client-only>
     </section>
-    <section v-if="page.Testimonials" class="border-b-1 mb-10 lg:mb-20 pb-20">
-      <Testimonials :testimonials="page.Testimonials" />
-    </section>
     <section
       v-if="randomizedMusicGroups.length"
       class="border-b-1 mb-10 lg:mb-20 pb-20"
@@ -84,6 +80,9 @@
         :key="randomizedMusicGroups[0].id"
         :artists="randomizedMusicGroups"
       />
+    </section>
+    <section v-if="page.Testimonials" class="border-b-1 mb-10 lg:mb-20 pb-20">
+      <Testimonials :testimonials="page.Testimonials" />
     </section>
     <section class="border-b-1 mb-10 lg:mb-20">
       <h2 class="h1 mb-10">{{ $t('home').organizeConcert.title }}</h2>
