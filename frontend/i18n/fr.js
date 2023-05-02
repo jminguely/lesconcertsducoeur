@@ -1,10 +1,10 @@
 export default {
   nav: {
     home: 'Accueil',
-    association: 'Les associations',
+    association: 'Nos associations',
     agenda: 'Agenda',
-    artistes: 'Nos artistes',
-    offre: 'Notre offre',
+    artistes: 'Artistes',
+    offre: 'Offre de concerts',
     auditions: 'Auditions',
     presse: 'Presse',
     remerciements: 'Remerciements',
