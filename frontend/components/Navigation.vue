@@ -64,7 +64,7 @@ export default {
           name: this.$t('nav').auditions,
           link: `/${this.$i18n.locale}/auditions`,
         },
-        { name: this.$t('nav').medias, link: `/${this.$i18n.locale}/medias` },
+        { name: this.$t('nav').presse, link: `/${this.$i18n.locale}/presse` },
         {
           name: this.$t('nav').remerciements,
           link: `/${this.$i18n.locale}/remerciements`,

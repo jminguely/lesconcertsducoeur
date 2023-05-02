@@ -6,7 +6,7 @@ export default {
     artistes: 'Nos artistes',
     offre: 'Notre offre',
     auditions: 'Auditions',
-    medias: 'Médias',
+    presse: 'Presse',
     remerciements: 'Remerciements',
     contact: 'Contact',
     nousSoutenir: 'Nous soutenir',

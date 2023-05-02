@@ -6,7 +6,7 @@ export default {
     artistes: 'Die Musiker:innen',
     offre: 'Unser Angebot',
     auditions: 'Vorsingen',
-    medias: 'Medien',
+    presse: 'Presse',
     remerciements: 'Danksagungen',
     contact: 'Kontakt',
     nousSoutenir: 'Verein unterstützen',
