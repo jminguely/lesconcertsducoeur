@@ -16,18 +16,18 @@ export default {
   home: {
     organizeConcert: {
       title: 'Möchten Sie Gastgeber:in eines Konzertes werden',
-      vs: 'Im Kanton Wallis?',
-      vd: 'Im Kanton Waadt?',
-      ge: 'Im Kanton Genf?',
-      fr: 'Im Kanton Freiburg?',
+      vs: '… im Kanton Wallis?',
+      vd: '… im Kanton Waadt?',
+      ge: '… im Kanton Genf?',
+      fr: '… im Kanton Freiburg?',
     },
     nextConcerts: 'Nächste Konzerte',
     ourArtists: 'Unsere Künstler:innen',
     supportUs: {
-      title: 'Unterstützen Sie uns!',
-      donate: '… Mit einer Spende',
-      help: '… Als Freiwillige:r',
-      member: '… Als Vereinsmitglied',
+      title: 'Unterstützen Sie uns',
+      donate: '… mit einer Spende!',
+      help: '… als Freiwillige:r!',
+      member: '… als Vereinsmitglied!',
     },
   },
   agenda: {
