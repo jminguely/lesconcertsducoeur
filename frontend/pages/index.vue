@@ -9,11 +9,11 @@
       ></div>
       <div>
         <div
-          v-if="sortedCantons"
+          v-if="cantons"
           class="grid grid-cols-2 lg:grid-cols-4 gap-10 mb-10 lg:mb-20"
         >
           <nuxt-link
-            v-for="canton in sortedCantons"
+            v-for="canton in cantons"
             :key="canton.id"
             :to="`/${$i18n.locale}/association/${canton.abbreviation}`"
             class="flex flex-col items-center no-underline"
@@ -165,10 +165,6 @@ export default {
     }
   },
   computed: {
-    sortedCantons() {
-      const cantons = [...this.cantons]
-      return cantons.sort((a, b) => a.name - b.name)
-    },
     randomizedMusicGroups() {
       const musicGroups = [...this.musicGroups]
 
@@ -178,7 +174,7 @@ export default {
     filteredConcerts() {
       const filteredConcerts = []
 
-      this.sortedCantons.forEach((canton) => {
+      this.cantons.forEach((canton) => {
         filteredConcerts.push(
           [...this.concerts].find((concert) => concert.canton.id === canton.id)
         )

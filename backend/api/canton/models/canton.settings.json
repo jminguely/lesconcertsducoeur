@@ -61,6 +61,15 @@
         }
       },
       "component": "content.headline"
+    },
+    "order": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "integer",
+      "unique": false
     }
   }
 }

@@ -1,6 +1,7 @@
 query getCantons($locale: String) {
-  cantons(locale: $locale) {
+  cantons(locale: $locale, sort: "order:asc") {
     id
+    order
     Headline {
       Image {
         id
