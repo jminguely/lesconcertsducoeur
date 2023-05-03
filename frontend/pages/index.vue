@@ -88,18 +88,6 @@
       <h2 class="h1 mb-10">{{ $t('home').organizeConcert.title }}</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10 lg:mb-20">
         <div class="flex flex-col h-100">
-          <h3 class="mb-2">{{ $t('home').organizeConcert.ge }}</h3>
-          <a class="text-GE mt-auto" :href="`/${$i18n.locale}/contact`"
-            >> {{ $t('nav').contact }}</a
-          >
-        </div>
-        <div class="flex flex-col h-100">
-          <h3 class="mb-2">{{ $t('home').organizeConcert.fr }}</h3>
-          <a class="text-FR mt-auto" :href="`/${$i18n.locale}/contact`"
-            >> {{ $t('nav').contact }}</a
-          >
-        </div>
-        <div class="flex flex-col h-100">
           <h3 class="mb-2">{{ $t('home').organizeConcert.vs }}</h3>
           <a class="text-VS mt-auto" :href="`/${$i18n.locale}/contact`"
             >> {{ $t('nav').contact }}</a
@@ -108,6 +96,18 @@
         <div class="flex flex-col h-100">
           <h3 class="mb-2">{{ $t('home').organizeConcert.vd }}</h3>
           <a class="text-VD mt-auto" :href="`/${$i18n.locale}/contact`"
+            >> {{ $t('nav').contact }}</a
+          >
+        </div>
+        <div class="flex flex-col h-100">
+          <h3 class="mb-2">{{ $t('home').organizeConcert.ge }}</h3>
+          <a class="text-GE mt-auto" :href="`/${$i18n.locale}/contact`"
+            >> {{ $t('nav').contact }}</a
+          >
+        </div>
+        <div class="flex flex-col h-100">
+          <h3 class="mb-2">{{ $t('home').organizeConcert.fr }}</h3>
+          <a class="text-FR mt-auto" :href="`/${$i18n.locale}/contact`"
             >> {{ $t('nav').contact }}</a
           >
         </div>

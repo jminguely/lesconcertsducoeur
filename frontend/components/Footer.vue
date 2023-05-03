@@ -17,24 +17,46 @@
         <div class="flex flex-row gap-5">
           <a
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             href="https://www.facebook.com/concertsducoeur/"
           >
             <img
-              class="filter invert h-8 w-8"
+              class="h-8 w-8"
               alt="facebook"
               src="~/assets/img/social/facebook.svg"
             />
           </a>
           <a
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             href="https://www.instagram.com/lesconcertsducoeur/"
           >
             <img
-              class="filter invert h-8 w-8"
+              class="h-8 w-8"
               alt="Instagram"
               src="~/assets/img/social/instagram.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.youtube.com/@lesconcertsducur109"
+          >
+            <img
+              class="h-8 w-8"
+              alt="youtube"
+              src="~/assets/img/social/youtube.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="mailto:contact@lesconcertsducoeur.ch"
+          >
+            <img
+              class="h-8 w-8"
+              alt="email"
+              src="~/assets/img/social/email.svg"
             />
           </a>
         </div>
@@ -67,7 +89,7 @@
           class="block"
           href="https://www.livemusicnow.org.uk/"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           <img class="w-28 h-auto filter invert" src="/LMN-logo.png" />
         </a>

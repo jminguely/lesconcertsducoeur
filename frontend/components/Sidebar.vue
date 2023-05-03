@@ -12,7 +12,7 @@
           class="block"
           href="https://www.livemusicnow.org.uk/"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           <img class="w-28 h-auto" src="/LMN-logo.png" />
         </a>
