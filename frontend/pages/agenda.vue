@@ -13,9 +13,7 @@
             @click="clickFilterCanton(canton.id)"
           >
             <span class="bullet"></span>
-            <span>
-              {{ canton.name }}
-            </span>
+            {{ canton.name }}
           </button>
         </div>
         <div v-if="years" class="mb-3">

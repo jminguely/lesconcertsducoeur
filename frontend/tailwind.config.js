@@ -12,8 +12,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['News Cycle'],
-        playFair: ['Playfair'],
+        sans: ['News Cycle', 'sans-serif'],
+        playFair: ['Playfair', 'serif'],
       },
       rotate: {
         '-25': '-25deg',
