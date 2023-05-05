@@ -15,19 +15,19 @@ export default {
   },
   home: {
     organizeConcert: {
-      title: 'Souhaitez-vous organiser un concert…',
-      vs: '…en Valais?',
-      vd: '…sur Vaud?',
-      ge: '…sur Genève?',
-      fr: '…sur Fribourg?',
+      title: 'Souhaitez-vous organiser un concert ?',
+      vs: 'Dans le canton du Valais',
+      vd: 'Dans le canton de Vaud',
+      ge: 'Dans le canton de Genève',
+      fr: 'Dans le canton de Fribourg',
     },
     nextConcerts: 'Prochains concerts',
     ourArtists: 'Nos artistes',
     supportUs: {
-      title: 'Soutenez-nous!',
-      donate: '… en faisant un don',
-      help: '… en devenant bénévole',
-      member: '… en devenant membre',
+      title: 'Soutenez-nous :',
+      donate: 'en faisant un don,',
+      help: 'en devenant bénévole,',
+      member: 'en devenant membre.',
     },
   },
   agenda: {
