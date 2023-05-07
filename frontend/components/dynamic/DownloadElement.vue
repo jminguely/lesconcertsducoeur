@@ -2,7 +2,7 @@
   <div class="mb-2">
     <a
       v-if="content.File"
-      :href="`https://api-new.lesconcertsducoeur.ch${content.File.url}`"
+      :href="`https://api.lesconcertsducoeur.ch${content.File.url}`"
       >{{ content.Title }}</a
     >
     <a v-else :href="content.ExternalLink">{{ content.Title }}</a
