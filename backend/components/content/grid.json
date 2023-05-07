@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_content_grids",
+  "info": {
+    "name": "Grid",
+    "icon": "border-all",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Block": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.block"
+    }
+  }
+}

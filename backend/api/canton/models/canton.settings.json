@@ -2,20 +2,74 @@
   "kind": "collectionType",
   "collectionName": "cantons",
   "info": {
-    "name": "canton"
+    "name": "Cantons",
+    "description": ""
   },
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "abbreviation": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
       "type": "string"
     },
-    "uid": {
-      "type": "uid"
+    "Content": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "content.headline",
+        "content.subtitle",
+        "content.richtext",
+        "content.accordion",
+        "content.grid",
+        "content.logos",
+        "content.events-grid",
+        "content.download-list",
+        "content.figure",
+        "content.slides-list"
+      ]
+    },
+    "Headline": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "content.headline"
+    },
+    "order": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "integer",
+      "unique": false
     }
   }
 }

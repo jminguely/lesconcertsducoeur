@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_content_subtitles",
+  "info": {
+    "name": "Subtitle",
+    "icon": "italic"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "string"
+    }
+  }
+}

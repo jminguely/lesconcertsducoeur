@@ -1,0 +1,20 @@
+query getArtists($locale: String, $where: JSON) {
+  musicGroups(locale: $locale, where: $where, sort: "name:asc") {
+    id
+    name
+    music_genre
+    repertoire
+    formats
+    description
+    artists {
+      id
+      first_name
+      last_name
+      instrument
+    }
+    cover {
+      id
+      url
+    }
+  }
+}

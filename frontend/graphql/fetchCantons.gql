@@ -1,0 +1,18 @@
+query getCantons($locale: String) {
+  cantons(locale: $locale, sort: "order:asc") {
+    id
+    order
+    Headline {
+      Image {
+        id
+        url
+      }
+    }
+    abbreviation
+    name
+    locale
+    localizations(where: { locale: "fr-CH" }) {
+      id
+    }
+  }
+}

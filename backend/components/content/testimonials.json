@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_content_testimonials",
+  "info": {
+    "name": "Testimonials",
+    "icon": "comment"
+  },
+  "options": {},
+  "attributes": {
+    "Texte": {
+      "type": "text"
+    },
+    "Author": {
+      "type": "string"
+    },
+    "Position": {
+      "type": "string"
+    }
+  }
+}

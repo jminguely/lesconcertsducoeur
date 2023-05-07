@@ -16,17 +16,35 @@
     }
   },
   "attributes": {
-    "hero": {
-      "type": "component",
-      "repeatable": false,
+    "Carousel": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": ["images", "files", "videos"],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Title": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "content.headline"
+      "type": "string"
     },
-    "testimonials": {
+    "Lead": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext"
+    },
+    "Testimonials": {
       "type": "component",
       "repeatable": true,
       "pluginOptions": {
@@ -34,41 +52,7 @@
           "localized": true
         }
       },
-      "component": "content.accordion-item"
-    },
-    "carousel": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "content.carousel"
-    },
-    "partners": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": ["images", "files", "videos"],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "sponsors": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": ["images", "files", "videos"],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "component": "content.testimonials"
     }
   }
 }

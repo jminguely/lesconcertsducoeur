@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_global_notifications",
+  "info": {
+    "name": "Notifications",
+    "icon": "flag"
+  },
+  "options": {},
+  "attributes": {
+    "Texte": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "string"
+    }
+  }
+}

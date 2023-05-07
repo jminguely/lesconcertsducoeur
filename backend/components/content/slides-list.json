@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_content_slides_lists",
+  "info": {
+    "name": "SlidesList",
+    "icon": "list-ol"
+  },
+  "options": {},
+  "attributes": {
+    "SlideItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.slide-item"
+    }
+  }
+}

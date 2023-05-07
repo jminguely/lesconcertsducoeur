@@ -8,7 +8,7 @@
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {
     "i18n": {
@@ -16,16 +16,6 @@
     }
   },
   "attributes": {
-    "canton_switch": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "content.canton-switch"
-    },
     "title": {
       "pluginOptions": {
         "i18n": {
@@ -34,7 +24,7 @@
       },
       "type": "string"
     },
-    "content": {
+    "Content": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -42,22 +32,28 @@
       },
       "type": "dynamiczone",
       "components": [
-        "content.accordion-item",
-        "content.accordion",
-        "content.canton-switch",
         "content.headline",
-        "content.quotation",
-        "content.two-columns-rich-text",
-        "content.two-columns-text-image"
+        "content.subtitle",
+        "content.richtext",
+        "content.accordion",
+        "content.grid",
+        "content.logos",
+        "content.events-grid",
+        "content.download-list",
+        "content.figure",
+        "content.slides-list",
+        "content.testimonials-grid"
       ]
     },
     "slug": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
-      "type": "uid"
+      "type": "string",
+      "required": true,
+      "unique": false
     }
   }
 }

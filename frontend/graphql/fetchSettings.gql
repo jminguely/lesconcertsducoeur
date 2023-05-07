@@ -1,0 +1,14 @@
+query getSettings($locale: String!) {
+  settings: setting(locale: $locale) {
+    id
+    Notifications {
+      id
+      Texte
+      Link
+    }
+    Logos {
+      id
+      url
+    }
+  }
+}

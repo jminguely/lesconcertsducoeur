@@ -1,9 +1,6 @@
 module.exports = {
   theme: {
     extend: {
-      aspectRatio: {
-        '4/3': '4 / 3',
-      },
       typography: {
         DEFAULT: {
           css: {
@@ -13,40 +10,21 @@ module.exports = {
             },
           },
         },
-        xl: {
-          css: {
-            lineHeight: '1.25',
-            h2: {
-              fontFamily: 'Playfair',
-              fontSize: '1.875rem',
-              marginBottom: '0.7rem',
-              lineHeight: '1.1',
-              fontWeight: 'normal',
-            },
-            ul: {
-              li: {
-                margin: 0,
-              },
-            },
-          },
-        },
       },
       fontFamily: {
-        bodoni: ['Bodoni'],
-        newsCycle: ['News Cycle'],
-        playFair: ['Playfair'],
+        sans: ['News Cycle', 'sans-serif'],
+        playFair: ['Playfair', 'serif'],
       },
       rotate: {
         '-25': '-25deg',
         25: '25deg',
       },
       colors: {
-        vs: '#DB303D',
-        vd: '#4D9A70',
-        ge: '#EE6F22',
-        concert: {
-          dark: '#393939',
-        },
+        VS: '#DB303D',
+        VD: '#4D9A70',
+        GE: '#EE6F22',
+        FR: '#3751C0',
+        gray: '#393939',
       },
       borderWidth: {
         1: '1px',
@@ -57,6 +35,9 @@ module.exports = {
         144: '36rem',
       },
     },
+  },
+  purge: {
+    safelist: [/^bg-/, /^text-/, /^border-/],
   },
   plugins: [require('@tailwindcss/typography')],
   variants: {

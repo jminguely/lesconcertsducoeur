@@ -1,15 +1,27 @@
 {
-  "collectionName": "components_global_headlines",
+  "collectionName": "components_content_headlines",
   "info": {
-    "name": "headline",
-    "icon": "atlas"
+    "name": "Headline",
+    "icon": "bold",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "headline": {
+    "Title": {
       "type": "string"
     },
-    "text": {
+    "Lead": {
+      "type": "text"
+    },
+    "Image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": ["images"],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "RichText": {
       "type": "richtext"
     }
   }
