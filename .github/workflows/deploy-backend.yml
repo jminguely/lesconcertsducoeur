@@ -3,7 +3,7 @@ name: Deploy backend
 on:
   push:
     branches:
-      - refresh
+      - main
     paths:
       - .github/workflows/deploy-backend.yml
       - backend/**
@@ -29,7 +29,7 @@ jobs:
 
       - name: 🔗 Creates symlink
         run: |
-          ln -s /home/jminguely/www/cdc-new/shared/backend/public/uploads ./public/
+          ln -s /home/jminguely/www/cdc/shared/backend/public/uploads ./public/
 
       - name: 🔨 Build admin panel
         run: yarn build
@@ -44,7 +44,7 @@ jobs:
           options: ''
           ssh_options: ''
           src: './backend'
-          dest: ${{secrets.DEPLOY_DEST_NEW}}
+          dest: ${{vars.DEPLOY_DEST}}
 
       - name: 🧨 Kickstart node server (backend)
         run: curl --basic --user '${{ secrets.ALWAYSDATA_API }} account=jminguely:' --data '' --request POST https://api.alwaysdata.com/v1/site/765706/restart/
