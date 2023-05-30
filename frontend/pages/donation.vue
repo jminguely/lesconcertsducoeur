@@ -13,6 +13,7 @@ export default {
   },
   head() {
     return {
+      title: `Donation — Les Concerts du Cœur`,
       script: [
         {
           hid: 'tamaro-raisenow',

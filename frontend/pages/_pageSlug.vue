@@ -10,6 +10,13 @@ import fetchPage from '~/graphql/fetchPage.gql'
 
 export default {
   components: { DynamicContent },
+  head() {
+    if (this.page?.title) {
+      return {
+        title: `${this.page?.title} — Les Concerts du Cœur`,
+      }
+    }
+  },
   apollo: {
     page: {
       query: fetchPage,

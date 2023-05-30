@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Headline title="Agenda" />
+    <Headline :title="$t('agenda').title" />
 
     <div class="md:flex flex-row justify-between items-end mb-5">
       <div>
@@ -87,6 +87,23 @@ export default {
     Headline,
     EventTeaser,
   },
+  data() {
+    return {
+      data: null,
+      contentLoading: true,
+      yearFilter: '',
+      cantonFilter: 0,
+      cantons: [],
+    }
+  },
+  async fetch() {
+    await this.getAgenda()
+  },
+  head() {
+    return {
+      title: `${this.$t('agenda').title} — Les Concerts du Cœur`,
+    }
+  },
   apollo: {
     cantons: {
       variables() {
@@ -98,20 +115,8 @@ export default {
       prefetch: true,
     },
   },
-  data() {
-    return {
-      data: null,
-      contentLoading: true,
-      yearFilter: '',
-      cantonFilter: 0,
-      cantons: [],
-    }
-  },
 
   fetchOnServer: false,
-  async fetch() {
-    await this.getAgenda()
-  },
 
   computed: {
     years() {

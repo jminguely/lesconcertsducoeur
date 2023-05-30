@@ -91,6 +91,7 @@ export default {
   },
   head() {
     return {
+      title: `${this.$t('artistes').title} — Les Concerts du Cœur`,
       bodyAttrs: {
         class: `${this.bodyClass}`,
       },

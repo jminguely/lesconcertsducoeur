@@ -31,6 +31,7 @@ export default {
     },
   },
   agenda: {
+    title: 'Agenda',
     canton: 'Canton',
     nextConcerts: 'Prochains concerts',
     pastConcerts: 'Concerts passés',

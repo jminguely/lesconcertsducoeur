@@ -17,6 +17,13 @@ import fetchCanton from '~/graphql/fetchCanton.gql'
 
 export default {
   components: { DynamicContent, Headline },
+  head() {
+    if (this.canton) {
+      return {
+        title: `${this.canton[0].Headline.Title} — Les Concerts du Cœur`,
+      }
+    }
+  },
   apollo: {
     canton: {
       query: fetchCanton,
