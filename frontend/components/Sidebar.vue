@@ -1,7 +1,7 @@
 <template>
   <div class="site-sidebar">
     <div
-      class="main-nav pt-10 md:pt-24 md:block sticky top-0 bg-white w-full border-b-1 pb-10 md:border-b-0 md:pb-0 border-gray"
+      class="main-nav pt-10 md:pt-24 md:block bg-white w-full border-b-1 pb-10 md:border-b-0 md:pb-0 border-gray"
       :class="{ hidden: !menuOpen }"
     >
       <div class="mb-5 hidden md:block">
@@ -42,3 +42,12 @@ export default {
   },
 }
 </script>
+
+<style lang="postcss" scoped>
+@media (min-height: 700px) {
+  .main-nav {
+    position: sticky;
+    top: 0;
+  }
+}
+</style>
