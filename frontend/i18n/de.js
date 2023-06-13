@@ -1,7 +1,7 @@
 export default {
   nav: {
     home: 'Home',
-    association: 'Unsere Vereine',
+    association: 'Vereine',
     agenda: 'Agenda',
     artistes: 'Musiker:innen',
     offre: 'Konzertformate',
@@ -11,7 +11,7 @@ export default {
     contact: 'Kontakt',
     nousSoutenir: 'Verein unterstützen',
     donate: 'Spenden',
-    mission: 'Unsere Mission',
+    mission: 'Mission',
   },
   home: {
     organizeConcert: {
