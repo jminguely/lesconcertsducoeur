@@ -3,6 +3,7 @@ query getCalendars($locale: String!, $where: JSON) {
     id
     title
     date_time
+    time_end
     location
     canton {
       id

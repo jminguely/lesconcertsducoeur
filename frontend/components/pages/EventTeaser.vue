@@ -14,6 +14,7 @@
               'dd.MM.yyyy' + ' | ' + 'HH:mm'
             )
           }}
+          <span v-if="event.time_end">— {{ event.time_end.slice(0, 5) }}</span>
         </div>
         <div>{{ event.location }}</div>
       </div>

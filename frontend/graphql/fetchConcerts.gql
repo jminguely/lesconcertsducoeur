@@ -6,6 +6,7 @@ query getCalendar($sort: String, $locale: String, $where: JSON) {
       abbreviation
     }
     date_time
+    time_end
     title
     location
     details

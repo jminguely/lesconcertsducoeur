@@ -52,6 +52,9 @@
                   'dd.MM.yy' + ' | ' + 'HH:mm'
                 )
               }}
+              <span v-if="concert.time_end"
+                >— {{ concert.time_end.slice(0, 5) }}</span
+              >
             </p>
             <p
               class="mb-0"
