@@ -52,7 +52,8 @@
                   'dd.MM.yy' + ' | ' + 'HH:mm'
                 )
               }}
-              <span v-if="concert.time_end"
+              <span
+                v-if="concert.time_end && concert.time_end != '00:00:00.000'"
                 >— {{ concert.time_end.slice(0, 5) }}</span
               >
             </p>
