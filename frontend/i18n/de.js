@@ -22,7 +22,7 @@ export default {
       fr: 'Im Kanton Freiburg',
     },
     nextConcerts: 'Nächste Konzerte',
-    ourArtists: 'Unsere Künstler:innen',
+    ourArtists: 'Musiker:innen',
     supportUs: {
       title: 'Unterstützen Sie uns:',
       donate: 'mit einer Spende,',
@@ -73,7 +73,7 @@ export default {
     privacy: 'Datenschutzerklärung',
   },
   artistes: {
-    title: 'Unsere Künstler:innen',
+    title: 'Musiker:innen',
     repertoire: 'Repertoire',
     formats: 'Formate',
   },
