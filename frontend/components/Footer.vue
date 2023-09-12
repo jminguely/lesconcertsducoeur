@@ -63,21 +63,39 @@
       </div>
       <div class="flex flex-col items-start sm:col-start-2 lg:col-start-auto">
         <h3 class="mb-3">{{ $t('footer').newsletter_infos }}</h3>
+
         <form
           id="mc-embedded-subscribe-form"
-          action="https://lesconcertsducoeur.us17.list-manage.com/subscribe/post?u=e047a05962015364141e05684&amp;id=7c376f04c5&amp;f_id=00e649e0f0"
+          action="https://newsletter.infomaniak.com/external/submit"
           method="post"
           target="_blank"
           novalidate
           class="flex items-center justify-start border-1 border-white"
         >
+          <input type="email" name="email" class="hidden" />
+          <input
+            type="hidden"
+            name="key"
+            value="eyJpdiI6Ik9HeUV4SWdocHNET0t5TEhWSFZVSjNPRjhPWUN2dzZoMlRRbkc0Z0liTHM9IiwidmFsdWUiOiI5UXAxdlMrYnBCcjZPXC9vaENWdXVld0pPK2VtVkIxcFIra1hHQkF1MlJLUT0iLCJtYWMiOiJiMzk0NjdjZGY4OWI3YmRmNzUzNTJkYmEzN2YzNzc0NTIxOTBlZDExZmEzNTJkNzdjNmQ4ZGMyYjA5MmM3ZTg3In0="
+          />
+          <input type="hidden" name="webform_id" value="15246" />
+
+          <!-- Field "langue" -->
+          <input
+            v-if="$i18n"
+            class="hidden"
+            type="text"
+            name="inf[51622]"
+            :value="$i18n.locale"
+          />
+
           <input
             id="mce-EMAIL"
             class="flex-auto p-2 focus:rounded-none focus:border-0 focus:outline-none bg-transparent"
             :placeholder="$t('footer').newsletter"
             type="email"
             value=""
-            name="EMAIL"
+            name="inf[1]"
             required
           />
           <button type="submit" class="text-lg px-3">></button>
