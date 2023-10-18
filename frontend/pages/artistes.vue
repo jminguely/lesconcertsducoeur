@@ -145,7 +145,9 @@ export default {
     async getArtists() {
       const locale = this.$i18n.locale + '-CH'
 
-      const where = {}
+      const where = {
+        archive: false,
+      }
 
       if (this.cantonFilter) {
         where.cantons_contains = parseInt(this.cantonFilter)
