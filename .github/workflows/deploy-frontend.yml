@@ -1,9 +1,9 @@
-name: Deploy frontend
+name: Deploy frontend-new
 
 on:
   push:
     branches:
-      - main
+      - refresh-2024
     paths:
       - .github/workflows/deploy-frontend.yml
       - frontend/**
@@ -39,8 +39,8 @@ jobs:
           flags: '-auvzrl --delete'
           options: ''
           ssh_options: ''
-          src: './frontend'
-          dest: ${{vars.DEPLOY_DEST}}
+          src: './frontend/*'
+          dest: ${{vars.DEPLOY_DEST_NEW}}
 
       - name: 🧨 Kickstart node server (frontend)
-        run: curl --basic --user '${{ secrets.ALWAYSDATA_API }} account=jminguely:' --data '' --request POST https://api.alwaysdata.com/v1/site/765707/restart/
+        run: curl --basic --user '${{ secrets.ALWAYSDATA_API }} account=jminguely:' --data '' --request POST https://api.alwaysdata.com/v1/site/839201/restart/
