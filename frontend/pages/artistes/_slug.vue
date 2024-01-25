@@ -66,7 +66,7 @@
               loading="lazy"
               class="object-cover h-full lg:w-120 lg:h-full w-96"
               provider="strapi"
-              :src="group[0].cover.url"
+              :src="group[0].cover.formats.medium.url"
             />
           </template>
         </div>

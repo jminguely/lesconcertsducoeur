@@ -6,7 +6,7 @@
         class="absolute object-cover top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500"
         :class="{ 'opacity-100': loaded }"
         provider="strapi"
-        :src="data.cover.url"
+        :src="data.cover.formats.small.url"
         @load="loaded = true"
       />
     </template>
