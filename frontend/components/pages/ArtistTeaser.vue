@@ -1,5 +1,5 @@
 <template>
-  <button class="artist-teaser">
+  <nuxt-link class="artist-teaser" :to="localePath(`/artistes/${data.slug}`)">
     <template v-if="data.cover != null">
       <nuxt-img
         loading="lazy"
@@ -22,7 +22,7 @@
         <span v-if="data.music_genre != null">{{ data.music_genre }}</span>
       </p>
     </div>
-  </button>
+  </nuxt-link>
 </template>
 
 <script>

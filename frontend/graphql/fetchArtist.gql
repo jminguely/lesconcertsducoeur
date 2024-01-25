@@ -1,5 +1,5 @@
-query getArtists($locale: String, $where: JSON) {
-  musicGroups(locale: $locale, where: $where, sort: "name:asc") {
+query getArtist($locale: String, $where: JSON) {
+  group: musicGroups(locale: $locale, where: $where, sort: "name:asc") {
     id
     name
     slug

@@ -44,26 +44,19 @@
             v-for="artist in data"
             :key="artist.id"
             :data="artist"
-            @click.native="openPopup(artist)"
           ></ArtistTeaser>
         </div>
-        <ArtistPopup
-          :class="{ hidden: !popup }"
-          :data="data"
-          :item.sync="selected"
-          :popup.sync="popup"
-          @closePopup="closePopup"
-        />
       </template>
     </template>
   </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 import Headline from '@/components/dynamic/Headline.vue'
 
 import ArtistTeaser from '@/components/pages/ArtistTeaser.vue'
-import ArtistPopup from '@/components/pages/ArtistPopup.vue'
 
 import fetchArtists from '~/graphql/fetchArtists.gql'
 import fetchCantons from '~/graphql/fetchCantons.gql'
@@ -72,16 +65,12 @@ export default {
   components: {
     Headline,
     ArtistTeaser,
-    ArtistPopup,
   },
   data() {
     return {
       data: null,
-      bodyClass: '',
-      selected: {},
       contentLoading: true,
       popup: false,
-      cantonFilter: 0,
       cantons: [],
     }
   },
@@ -92,10 +81,17 @@ export default {
   head() {
     return {
       title: `${this.$t('artistes').title} — Les Concerts du Cœur`,
-      bodyAttrs: {
-        class: `${this.bodyClass}`,
-      },
     }
+  },
+  computed: {
+    cantonFilter: {
+      get() {
+        return this.$store.state.cantonFilter
+      },
+      set(value) {
+        this.setCantonFilter(value)
+      },
+    },
   },
   apollo: {
     cantons: {
@@ -121,17 +117,9 @@ export default {
   },
 
   methods: {
-    openPopup(item) {
-      this.selected = item
-      this.popup = true
-      setTimeout(() => {
-        this.bodyClass = 'popup-open'
-      }, 500)
-    },
-    closePopup() {
-      this.bodyClass = ''
-      this.popup = false
-    },
+    ...mapMutations({
+      setCantonFilter: 'setCantonFilter',
+    }),
     resetFilters() {
       this.cantonFilter = 0
     },
