@@ -1,8 +1,18 @@
 'use strict'
 
-/**
- * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#lifecycle-hooks)
- * to customize this model
- */
+const _ = require('lodash'); // import lodash
 
-module.exports = {}
+module.exports = {
+  lifecycles: {
+    async beforeCreate(data) {
+      if (data.name) {
+        data.slug = _.kebabCase(data.name);
+      }
+    },
+    async beforeUpdate(params, data) {
+      if (data.name) {
+        data.slug = _.kebabCase(data.name);
+      }
+    },
+  },
+};
