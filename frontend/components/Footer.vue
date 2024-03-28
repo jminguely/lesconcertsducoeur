@@ -40,7 +40,7 @@
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.youtube.com/@lesconcertsducur109"
+            href="https://www.youtube.com/@lesconcertsducoeur"
           >
             <img
               class="h-8 w-8"
