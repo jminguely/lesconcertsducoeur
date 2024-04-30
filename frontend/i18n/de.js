@@ -12,6 +12,7 @@ export default {
     nousSoutenir: 'Verein unterstützen',
     donate: 'Spenden',
     mission: 'Mission',
+    newsletter: 'Newsletter',
   },
   home: {
     organizeConcert: {

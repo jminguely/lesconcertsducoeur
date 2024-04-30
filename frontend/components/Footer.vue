@@ -129,15 +129,15 @@
           />
         </div>
       </div>
-      <div class="sm:col-start-2 lg:col-start-auto">
-        © {{ new Date().getFullYear() }}<br />
-        <i>Les Concerts du Cœur</i><br />
+      <div class="sm:col-start-2 lg:col-start-auto flex flex-col items-start">
+        © {{ new Date().getFullYear() }}
+        <i>Les Concerts du Cœur</i>
         <nuxt-link :to="`/${$i18n.locale}/impressum`">
           {{ $t('footer').impressum }}</nuxt-link
-        ><br />
+        >
         <nuxt-link :to="`/${$i18n.locale}/privacy`">
-          {{ $t('footer').privacy }} </nuxt-link
-        ><br />
+          {{ $t('footer').privacy }}
+        </nuxt-link>
       </div>
       <div
         v-if="logos.length"

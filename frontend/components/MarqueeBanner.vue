@@ -41,7 +41,7 @@ export default {
         arrows: false,
         drag: false,
         autoplay: true,
-        speed: 10000,
+        speed: 15000,
         interval: 0,
       }
     },

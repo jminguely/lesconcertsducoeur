@@ -1,7 +1,10 @@
 <template>
   <div v-if="group && group[0]">
-    <nuxt-link class="mb-8 inline-block" :to="localePath('/artistes')"
-      >← Retours à la liste des artistes</nuxt-link
+    <nuxt-link
+      active-class=""
+      class="mb-8 inline-block"
+      :to="localePath('/artistes')"
+      >← Les artistes</nuxt-link
     >
     <h1 class="mb-6 text-4xl lg:text-5xl">
       <template
@@ -59,7 +62,7 @@
 
       <div class="flex-grow lg:w-2/5">
         <div class="ml-auto">
-          <template v-if="group[0].cover.formats?.medium?.url != null">
+          <template v-if="group[0].cover?.formats?.medium?.url != null">
             <nuxt-img
               loading="lazy"
               class="object-cover h-full lg:w-120 lg:h-full w-96"

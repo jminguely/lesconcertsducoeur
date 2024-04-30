@@ -67,6 +67,7 @@ export default {
   .infos {
     margin-top: 0.25rem;
     font-size: 1rem;
+    line-height: 1.6;
   }
 
   .content {
