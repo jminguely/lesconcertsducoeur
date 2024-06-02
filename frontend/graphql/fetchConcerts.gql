@@ -19,7 +19,6 @@ query getCalendar($sort: String, $locale: String, $where: JSON) {
     music_group {
       id
       name
-      slug
       artists {
         id
         first_name

@@ -77,6 +77,7 @@ export default {
   artistes: {
     title: 'Nos artistes',
     repertoire: 'Répertoire',
-    formats: 'Formate',
+    formats: 'Format',
+    musiciens: 'Artistes',
   },
 }

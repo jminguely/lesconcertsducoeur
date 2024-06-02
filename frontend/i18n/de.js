@@ -77,5 +77,6 @@ export default {
     title: 'Musiker:innen',
     repertoire: 'Repertoire',
     formats: 'Formate',
+    musiciens: 'Musiker:innen',
   },
 }

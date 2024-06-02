@@ -1,4 +1,4 @@
-query getArtist($locale: String, $where: JSON) {
+query getArtist($locale: String, $where: JSON, $whereConcerts: JSON) {
   group: musicGroups(locale: $locale, where: $where, sort: "name:asc") {
     id
     name
@@ -17,6 +17,26 @@ query getArtist($locale: String, $where: JSON) {
       id
       url
       formats
+    }
+  }
+  concerts: calendars(
+    sort: "date_time:asc"
+    locale: $locale
+    where: $whereConcerts
+    limit: 2
+  ) {
+    id
+    canton {
+      id
+      abbreviation
+    }
+    date_time
+    time_end
+    title
+    location
+    details
+    music_group {
+      slug
     }
   }
 }
