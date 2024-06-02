@@ -1,12 +1,5 @@
 <template>
   <div v-if="group && group[0]">
-    <nuxt-link
-      active-class=""
-      class="mb-8 inline-block"
-      :to="localePath('/artistes')"
-      >← {{ $t('artistes').title }}</nuxt-link
-    >
-
     <div class="grid lg:grid-cols-2 gap-5 lg:gap-x-10">
       <div>
         <div class="lg:mb-12">
@@ -45,7 +38,7 @@
         </div>
       </div>
 
-      <div class="row-start-1 lg:row-start-auto">
+      <div>
         <template v-if="group[0].cover?.formats?.medium?.url != null">
           <nuxt-img
             loading="lazy"

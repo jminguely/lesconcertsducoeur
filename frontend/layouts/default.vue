@@ -145,7 +145,7 @@ body {
     justify-content: space-between;
     border-bottom: 1px solid #828282;
 
-    @apply py-2 md:px-4;
+    @apply py-2 md:pl-4;
   }
 }
 
