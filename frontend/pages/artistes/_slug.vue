@@ -1,6 +1,6 @@
 <template>
   <div v-if="group && group[0]">
-    <div class="grid lg:grid-cols-2 gap-5 lg:gap-x-10">
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-x-10">
       <div>
         <div class="lg:mb-12">
           <h1 class="artiste-title">
@@ -92,10 +92,10 @@
       <div>
         <div
           v-if="concerts?.length > 0"
-          class="border-1 border-l-0 relative pt-4 mt-4"
+          class="border-1 border-l-0 relative pt-4 pb-1 pr-1 mt-4"
         >
           <p class="text-md font-playFair bg-white pr-2 absolute -top-4 left-0">
-            Prochains concerts
+            {{ $t('artistes').concerts }}
           </p>
           <div>
             <div v-for="concert in concerts" :key="concert.id" class="mb-2">
@@ -126,7 +126,25 @@
           </div>
         </div>
       </div>
-      <div>Liens</div>
+      <div>
+        <ul>
+          <li v-for="(link, id) in group[0].link" :key="id">
+            <a
+              target="_blank"
+              :href="link.url"
+              class="flex gap-2 flex-row items-center mb-1"
+            >
+              <svg class="icon text-black h-5 w-5">
+                <use :href="`${icons}#${link.icon}`"></use>
+              </svg>
+              <span v-if="link.label" class="pb-1">{{ link.label }}</span>
+              <span v-else class="pb-1">
+                {{ $t('artistes')[link.icon] }}
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
     <div
       v-if="musicGroupSlugs.length"
@@ -142,7 +160,7 @@
         "
       >
         <span class="font-bold">←</span>
-        <span class="pl-2 hidden text-left lg:block">
+        <span class="pl-2 text-left">
           {{ musicGroupSlugs[currentMusicGroupSlugIndex - 1].name }}
         </span>
       </nuxt-link>
@@ -156,7 +174,7 @@
           )
         "
       >
-        <span class="pr-2 hidden text-left lg:block">
+        <span class="pr-2 text-left">
           {{ musicGroupSlugs[currentMusicGroupSlugIndex + 1].name }}
         </span>
         <span class="font-bold">→</span>
@@ -167,8 +185,14 @@
 
 <script>
 import fetchArtist from '~/graphql/fetchArtist.gql'
+import icons from '~/assets/img/icons.svg'
 
 export default {
+  data() {
+    return {
+      icons,
+    }
+  },
   head() {
     if (this.page?.title) {
       return {

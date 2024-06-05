@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_link_links",
+  "info": {
+    "name": "link",
+    "icon": "external-link-square-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "web",
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "default": "web"
+    },
+    "url": {
+      "type": "string",
+      "required": true,
+      "default": "https://"
+    },
+    "label": {
+      "type": "string"
+    }
+  }
+}

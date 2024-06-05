@@ -78,5 +78,10 @@ export default {
     repertoire: 'Repertoire',
     formats: 'Formate',
     musiciens: 'Musiker:innen',
+    concerts: 'Nächste Konzerte',
+    web: 'Site web',
+    instagram: 'Instagram',
+    facebook: 'Facebook',
+    youtube: 'YouTube',
   },
 }

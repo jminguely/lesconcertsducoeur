@@ -18,12 +18,17 @@ query getArtist($locale: String, $where: JSON, $whereConcerts: JSON) {
       url
       formats
     }
+    link {
+      icon
+      url
+      label
+    }
   }
   concerts: calendars(
     sort: "date_time:asc"
     locale: $locale
     where: $whereConcerts
-    limit: 2
+    limit: 3
   ) {
     id
     canton {
