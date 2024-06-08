@@ -65,6 +65,18 @@
       },
       "type": "time",
       "required": false
+    },
+    "badge": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "resident",
+        "libre"
+      ]
     }
   }
 }
