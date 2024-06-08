@@ -2,12 +2,12 @@
   <div v-if="group && group[0]">
     <div
       v-if="musicGroupSlugs.length"
-      class="mb-8 border-b-1 grid grid-cols-2 md:grid-cols-3 justify-between items-center"
+      class="mb-8 border-b-1 grid grid-cols-2 md:grid-cols-3 gap-3"
     >
       <div>
         <nuxt-link
           v-if="musicGroupSlugs[currentMusicGroupSlugIndex - 1] != null"
-          class="flex items-center my-2 mr-4 focus:outline-none lg:mr-0 no-underline"
+          class="flex items-center my-2 focus:outline-none lg:mr-0 no-underline"
           :to="
             localePath(
               `/artistes/${
@@ -39,7 +39,7 @@
       <div>
         <nuxt-link
           v-if="musicGroupSlugs[currentMusicGroupSlugIndex + 1] != null"
-          class="flex items-center justify-end my-2 mr-4 focus:outline-none no-underline"
+          class="flex items-center justify-end my-2 focus:outline-none no-underline"
           :to="
             localePath(
               `/artistes/${
