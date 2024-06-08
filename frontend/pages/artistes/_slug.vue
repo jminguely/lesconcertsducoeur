@@ -1,5 +1,62 @@
 <template>
   <div v-if="group && group[0]">
+    <div
+      v-if="musicGroupSlugs.length"
+      class="mb-8 border-b-1 grid grid-cols-2 md:grid-cols-3 justify-between items-center"
+    >
+      <div>
+        <nuxt-link
+          v-if="musicGroupSlugs[currentMusicGroupSlugIndex - 1] != null"
+          class="flex items-center my-2 mr-4 focus:outline-none lg:mr-0 no-underline"
+          :to="
+            localePath(
+              `/artistes/${
+                musicGroupSlugs[currentMusicGroupSlugIndex - 1].slug
+              }`
+            )
+          "
+        >
+          <svg class="icon h-3 w-2">
+            <use href="~/assets/img/icons.svg#caret"></use>
+          </svg>
+          <span class="pl-2 text-left leading-4 pb-0.5">
+            {{ musicGroupSlugs[currentMusicGroupSlugIndex - 1].name }}
+          </span>
+        </nuxt-link>
+      </div>
+
+      <nuxt-link
+        active-class=""
+        class="flex-grow inline-block text-center order-first md:order-none col-span-2 md:col-span-1"
+        :to="localePath('/artistes')"
+      >
+        <svg class="inline-block h-3 w-2">
+          asdf
+          <use href="~/assets/img/icons.svg#close"></use>
+        </svg>
+      </nuxt-link>
+
+      <div>
+        <nuxt-link
+          v-if="musicGroupSlugs[currentMusicGroupSlugIndex + 1] != null"
+          class="flex items-center justify-end my-2 mr-4 focus:outline-none no-underline"
+          :to="
+            localePath(
+              `/artistes/${
+                musicGroupSlugs[currentMusicGroupSlugIndex + 1].slug
+              }`
+            )
+          "
+        >
+          <span class="pr-2 text-right leading-4 pb-0.5">
+            {{ musicGroupSlugs[currentMusicGroupSlugIndex + 1].name }}
+          </span>
+          <svg class="icon h-3 w-2 transform rotate-180">
+            <use href="~/assets/img/icons.svg#caret"></use>
+          </svg>
+        </nuxt-link>
+      </div>
+    </div>
     <div class="grid lg:grid-cols-2 gap-8 lg:gap-x-10">
       <div>
         <div class="lg:mb-12">
@@ -146,40 +203,6 @@
         </ul>
       </div>
     </div>
-    <div
-      v-if="musicGroupSlugs.length"
-      class="mt-8 border-t-1 flex justify-between"
-    >
-      <nuxt-link
-        v-if="musicGroupSlugs[currentMusicGroupSlugIndex - 1] != null"
-        class="flex my-2 mr-4 focus:outline-none lg:mr-0 no-underline"
-        :to="
-          localePath(
-            `/artistes/${musicGroupSlugs[currentMusicGroupSlugIndex - 1].slug}`
-          )
-        "
-      >
-        <span class="font-bold">←</span>
-        <span class="pl-2 text-left">
-          {{ musicGroupSlugs[currentMusicGroupSlugIndex - 1].name }}
-        </span>
-      </nuxt-link>
-
-      <nuxt-link
-        v-if="musicGroupSlugs[currentMusicGroupSlugIndex + 1] != null"
-        class="flex my-2 mr-4 focus:outline-none lg:mr-0 no-underline ml-auto"
-        :to="
-          localePath(
-            `/artistes/${musicGroupSlugs[currentMusicGroupSlugIndex + 1].slug}`
-          )
-        "
-      >
-        <span class="pr-2 text-left">
-          {{ musicGroupSlugs[currentMusicGroupSlugIndex + 1].name }}
-        </span>
-        <span class="font-bold">→</span>
-      </nuxt-link>
-    </div>
   </div>
 </template>
 
@@ -247,5 +270,10 @@ export default {
   @apply text-4xl lg:text-5xl;
 
   margin-bottom: 0 !important;
+}
+
+.pagination {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 </style>
