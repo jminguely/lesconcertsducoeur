@@ -2,7 +2,7 @@
   <div v-if="group && group[0]">
     <div
       v-if="musicGroupSlugs.length"
-      class="mb-8 pb-2 border-b-1 border-gray grid grid-cols-3 gap-3"
+      class="mb-8 pb-2 border-b-1 border-black grid grid-cols-3 gap-3 items-center"
     >
       <div>
         <nuxt-link
@@ -16,7 +16,7 @@
             )
           "
         >
-          <svg class="icon h-3 w-2">
+          <svg class="icon h-2.5 w-2.5">
             <use href="~/assets/img/icons.svg#caret"></use>
           </svg>
           <span class="pl-2 text-left leading-4 pb-0.5 hidden md:inline">
@@ -30,7 +30,7 @@
         class="flex-grow inline-block text-center"
         :to="localePath('/artistes')"
       >
-        <svg class="inline-block h-3 w-2">
+        <svg class="inline-block h-2.5 w-2.5">
           <use href="~/assets/img/icons.svg#close"></use>
         </svg>
       </nuxt-link>
@@ -50,7 +50,7 @@
           <span class="pr-2 text-right leading-4 pb-0.5 hidden md:inline">
             {{ musicGroupSlugs[currentMusicGroupSlugIndex + 1].name }}
           </span>
-          <svg class="icon h-3 w-2 transform rotate-180">
+          <svg class="icon h-2.5 w-2.5 transform rotate-180">
             <use href="~/assets/img/icons.svg#caret"></use>
           </svg>
         </nuxt-link>

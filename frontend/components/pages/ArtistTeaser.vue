@@ -68,6 +68,11 @@ export default {
     margin-top: 0.25rem;
     font-size: 1rem;
     line-height: 1.6;
+    letter-spacing: 0;
+
+    span {
+      text-decoration: none !important;
+    }
   }
 
   .content {

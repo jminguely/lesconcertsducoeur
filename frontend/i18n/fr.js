@@ -74,6 +74,16 @@ export default {
     impressum: 'Impressum',
     privacy: 'Politique de confidentialité',
   },
+  newsletter: {
+    title: 'Inscription newsletter',
+    lead: 'Restez au courant de nos activités à travers la newsletter bi-annuelle.',
+    firstname: 'Prénom',
+    lastname: 'Nom',
+    email: 'Email',
+    submit: "Validez l'inscription",
+    privacy:
+      "Votre adresse de messagerie est uniquement utilisée pour vous envoyer notre lettre d'information ainsi que des informations concernant nos activités.Vous pouvez à tout moment utiliser le lien de désabonnement intégré dans chacun de nos mails.",
+  },
   artistes: {
     title: 'Nos artistes',
     repertoire: 'Répertoire',

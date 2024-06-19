@@ -1,8 +1,8 @@
 <template>
   <div class="max-w-lg">
-    <h1 class="text-4xl lg:text-5xl">{{ $t('nav').newsletter }}</h1>
+    <h1 class="text-4xl lg:text-5xl">{{ $t('newsletter').title }}</h1>
     <p class="lead">
-      Restez au courant de nos activités à travers la newsletter bi-annuelle.
+      {{ $t('newsletter').lead }}
     </p>
     <form
       id="mc-embedded-subscribe-form"
@@ -11,21 +11,26 @@
       target="_blank"
     >
       <div class="flex flex-col gap-3 my-3">
-        <input type="text" name="inf[2]" placeholder="Prénom" />
-        <input type="text" name="inf[3]" placeholder="Nom" />
+        <input
+          type="text"
+          name="inf[2]"
+          :placeholder="$t('newsletter').firstname"
+        />
+        <input
+          type="text"
+          name="inf[3]"
+          :placeholder="$t('newsletter').lastname"
+        />
         <input
           type="email"
           name="inf[1]"
           required="required"
-          placeholder="Email"
+          :placeholder="$t('newsletter').email"
           oninvalid="this.setCustomValidity('Please Enter valid email')"
           oninput="setCustomValidity('')"
         />
         <small>
-          Votre adresse de messagerie est uniquement utilisée pour vous envoyer
-          notre lettre d'information ainsi que des informations concernant nos
-          activités. Vous pouvez à tout moment utiliser le lien de désabonnement
-          intégré dans chacun de nos mails.
+          {{ $t('newsletter').privacy }}
         </small>
         <input type="email" name="email" class="hidden" />
         <input
@@ -47,7 +52,7 @@
       <div class="text-right">
         <input
           type="submit"
-          value="Validez l'inscription"
+          :value="$t('newsletter').submit"
           class="btn bg-gray cursor-pointer"
         />
       </div>
