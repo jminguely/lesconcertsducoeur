@@ -7,7 +7,7 @@
       <div>
         <nuxt-link
           v-if="musicGroupSlugs[currentMusicGroupSlugIndex - 1] != null"
-          class="flex items-center my-2 focus:outline-none lg:mr-0 no-underline"
+          class="flex items-center focus:outline-none lg:mr-0 no-underline"
           :to="
             localePath(
               `/artistes/${
@@ -16,7 +16,7 @@
             )
           "
         >
-          <svg class="icon h-2.5 w-2.5">
+          <svg class="icon h-2.5 w-2.5 -mt-0.5">
             <use href="~/assets/img/icons.svg#caret"></use>
           </svg>
           <span class="pl-2 text-left leading-4 pb-0.5 hidden md:inline">
@@ -38,7 +38,7 @@
       <div>
         <nuxt-link
           v-if="musicGroupSlugs[currentMusicGroupSlugIndex + 1] != null"
-          class="flex items-center justify-end my-2 focus:outline-none no-underline"
+          class="flex items-center justify-end focus:outline-none no-underline"
           :to="
             localePath(
               `/artistes/${

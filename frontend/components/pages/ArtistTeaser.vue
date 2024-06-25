@@ -11,7 +11,7 @@
       />
     </template>
     <div class="content">
-      <p class="font-playFair">
+      <p class="artist-name">
         <template v-if="data.first_name != null && data.last_name != null">
           {{ data.first_name }} {{ data.last_name }}
         </template>
@@ -62,6 +62,12 @@ export default {
     margin: 0;
     font-size: 1.3rem;
     line-height: 1;
+  }
+
+  .artist-name {
+    @apply font-playFair;
+
+    letter-spacing: 0;
   }
 
   .infos {
