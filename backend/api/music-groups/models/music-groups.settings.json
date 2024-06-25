@@ -94,6 +94,10 @@
         }
       },
       "component": "link.link"
+    },
+    "slug": {
+      "type": "string",
+      "required": false
     }
   }
 }
