@@ -31,7 +31,7 @@
         </div>
       </div>
       <div
-        v-if="$route.name.includes('index')"
+        v-if="$route.name && $route.name.includes('index')"
         class="marquee-mobile"
         aria-hidden="true"
       >
