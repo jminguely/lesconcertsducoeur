@@ -30,7 +30,7 @@
         class="flex-grow inline-block text-center"
         :to="localePath('/artistes')"
       >
-        <svg class="inline-block h-2.5 w-2.5">
+        <svg class="inline-block h-2.5 w-2.5 -mt-0.5">
           <use href="~/assets/img/icons.svg#close"></use>
         </svg>
       </nuxt-link>
