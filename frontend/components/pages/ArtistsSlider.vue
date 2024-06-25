@@ -35,12 +35,17 @@
             :key="artist.id"
             class="flex bg-white flex-col"
           >
-            <nuxt-img
-              class="aspect-square object-cover mx-auto"
-              provider="strapi"
-              :src="artist.cover.url"
-            />
-            <p class="artist-name">{{ artist.name }}</p>
+            <nuxt-link
+              class="artist-teaser"
+              :to="localePath(`/artistes/${artist.slug}`)"
+            >
+              <nuxt-img
+                class="aspect-square object-cover mx-auto"
+                provider="strapi"
+                :src="artist.cover.url"
+              />
+              <p class="artist-name">{{ artist.name }}</p>
+            </nuxt-link>
           </splide-slide>
         </template>
       </splide>
@@ -93,6 +98,6 @@ export default {
 .artist-name {
   padding: 0.5rem;
   text-align: center;
-  line-height: 1;
+  line-height: 1.4;
 }
 </style>

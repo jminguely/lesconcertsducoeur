@@ -1,17 +1,17 @@
 <template>
-  <button class="artist-teaser">
+  <nuxt-link class="artist-teaser" :to="localePath(`/artistes/${data.slug}`)">
     <template v-if="data.cover != null">
       <nuxt-img
         loading="lazy"
         class="absolute object-cover top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500"
         :class="{ 'opacity-100': loaded }"
         provider="strapi"
-        :src="data.cover.url"
+        :src="data.cover.formats.small.url"
         @load="loaded = true"
       />
     </template>
     <div class="content">
-      <p class="font-playFair">
+      <p class="artist-name">
         <template v-if="data.first_name != null && data.last_name != null">
           {{ data.first_name }} {{ data.last_name }}
         </template>
@@ -22,7 +22,7 @@
         <span v-if="data.music_genre != null">{{ data.music_genre }}</span>
       </p>
     </div>
-  </button>
+  </nuxt-link>
 </template>
 
 <script>
@@ -64,9 +64,21 @@ export default {
     line-height: 1;
   }
 
+  .artist-name {
+    @apply font-playFair;
+
+    letter-spacing: 0;
+  }
+
   .infos {
     margin-top: 0.25rem;
     font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: 0;
+
+    span {
+      text-decoration: none !important;
+    }
   }
 
   .content {

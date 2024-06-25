@@ -12,6 +12,7 @@ export default {
     nousSoutenir: 'Verein unterstützen',
     donate: 'Spenden',
     mission: 'Mission',
+    newsletter: 'Newsletter',
   },
   home: {
     organizeConcert: {
@@ -72,9 +73,25 @@ export default {
     impressum: 'Impressum',
     privacy: 'Datenschutzerklärung',
   },
+  newsletter: {
+    title: 'Newsletter-Anmeldung',
+    lead: 'Bleiben Sie auf dem Laufenden mit unserem zwei Mal jährlichen Newsletter.',
+    firstname: 'Vorname',
+    lastname: 'Nachname',
+    email: 'Email',
+    submit: 'Abonnieren',
+    privacy:
+      'Ihre E-Mail-Adresse wird nur dazu verwendet, Ihnen unseren Newsletter und Informationen über unsere Aktivitäten zuzusenden. Sie können jederzeit den Abmeldelink nutzen, der in jeder unserer E-Mails integriert ist.',
+  },
   artistes: {
     title: 'Musiker:innen',
     repertoire: 'Repertoire',
     formats: 'Formate',
+    musiciens: 'Musiker:innen',
+    concerts: 'Nächste Konzerte',
+    web: 'Site web',
+    instagram: 'Instagram',
+    facebook: 'Facebook',
+    youtube: 'YouTube',
   },
 }

@@ -21,7 +21,7 @@
         <button
           class="transition-opacity duration-200"
           :class="{
-            'opacity-0': cantonFilter == '',
+            'opacity-0': !cantonFilter,
           }"
           @click="resetFilters()"
         >
@@ -32,7 +32,7 @@
     </div>
 
     <template v-if="!$fetchState.pending">
-      <template v-if="data != null">
+      <template v-if="musicGroups">
         <div
           class="gap-y-5 sm:gap-x-5 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 md:gap-5"
           :class="{
@@ -41,29 +41,22 @@
           }"
         >
           <ArtistTeaser
-            v-for="artist in data"
+            v-for="artist in musicGroups"
             :key="artist.id"
             :data="artist"
-            @click.native="openPopup(artist)"
           ></ArtistTeaser>
         </div>
-        <ArtistPopup
-          :class="{ hidden: !popup }"
-          :data="data"
-          :item.sync="selected"
-          :popup.sync="popup"
-          @closePopup="closePopup"
-        />
       </template>
     </template>
   </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 import Headline from '@/components/dynamic/Headline.vue'
 
 import ArtistTeaser from '@/components/pages/ArtistTeaser.vue'
-import ArtistPopup from '@/components/pages/ArtistPopup.vue'
 
 import fetchArtists from '~/graphql/fetchArtists.gql'
 import fetchCantons from '~/graphql/fetchCantons.gql'
@@ -72,16 +65,12 @@ export default {
   components: {
     Headline,
     ArtistTeaser,
-    ArtistPopup,
   },
   data() {
     return {
-      data: null,
-      bodyClass: '',
-      selected: {},
+      musicGroups: [],
       contentLoading: true,
       popup: false,
-      cantonFilter: 0,
       cantons: [],
     }
   },
@@ -92,10 +81,25 @@ export default {
   head() {
     return {
       title: `${this.$t('artistes').title} — Les Concerts du Cœur`,
-      bodyAttrs: {
-        class: `${this.bodyClass}`,
-      },
     }
+  },
+  computed: {
+    cantonFilter: {
+      get() {
+        return this.$store.state.cantonFilter
+      },
+      set(value) {
+        this.setCantonFilter(value)
+      },
+    },
+    musicGroupSlugs: {
+      get() {
+        return this.$store.state.musicGroupSlugs
+      },
+      set(value) {
+        this.setMusicGroupSlugs(value)
+      },
+    },
   },
   apollo: {
     cantons: {
@@ -112,45 +116,40 @@ export default {
   fetchOnServer: false,
 
   watch: {
-    cantonFilter() {
+    cantonFilter(newFilter) {
       this.contentLoading = true
-      setTimeout(() => {
-        this.getArtists()
-      }, 300)
+      this.getArtists(newFilter)
     },
+  },
+  mounted() {
+    this.getArtists(this.cantonFilter)
   },
 
   methods: {
-    openPopup(item) {
-      this.selected = item
-      this.popup = true
-      setTimeout(() => {
-        this.bodyClass = 'popup-open'
-      }, 500)
-    },
-    closePopup() {
-      this.bodyClass = ''
-      this.popup = false
-    },
+    ...mapMutations({
+      setCantonFilter: 'setCantonFilter',
+      setMusicGroupSlugs: 'setMusicGroupSlugs',
+    }),
     resetFilters() {
       this.cantonFilter = 0
     },
     clickFilterCanton(canton) {
       if (this.cantonFilter !== canton) {
         this.cantonFilter = canton
+        this.$store.commit('setCantonFilter', canton)
       } else {
-        this.cantonFilter = 0
+        this.$store.commit('setCantonFilter', 0)
       }
     },
-    async getArtists() {
+    getArtists(cantonFilter) {
       const locale = this.$i18n.locale + '-CH'
 
       const where = {
         archive: false,
       }
 
-      if (this.cantonFilter) {
-        where.cantons_contains = parseInt(this.cantonFilter)
+      if (cantonFilter) {
+        where.cantons_contains = parseInt(cantonFilter)
       }
 
       const variables = {
@@ -158,20 +157,19 @@ export default {
         locale,
       }
 
-      const queryData = await this.$apollo
+      this.$apollo
         .query({ query: fetchArtists, variables })
         .then(({ data }) => {
-          // if (process.env.dev) console.log(data)
           this.contentLoading = false
-          return data
+          this.musicGroups = data.musicGroups
+          this.musicGroupSlugs = this.musicGroups.map((group) => {
+            return { slug: group.slug, name: group.name }
+          })
+          this.$store.commit('setMusicGroupSlugs', this.musicGroupSlugs)
         })
         .catch((e) => {
-          // if (process.env.dev) console.log(e)
+          // handle error
         })
-
-      const musicGroups = queryData.musicGroups
-
-      this.data = musicGroups
     },
   },
 }

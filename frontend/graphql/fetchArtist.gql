@@ -1,0 +1,47 @@
+query getArtist($locale: String, $where: JSON, $whereConcerts: JSON) {
+  group: musicGroups(locale: $locale, where: $where, sort: "name:asc") {
+    id
+    name
+    slug
+    music_genre
+    repertoire
+    formats
+    description
+    artists {
+      id
+      first_name
+      last_name
+      instrument
+    }
+    cover {
+      id
+      url
+      formats
+    }
+    link {
+      icon
+      url
+      label
+    }
+  }
+  concerts: calendars(
+    sort: "date_time:asc"
+    locale: $locale
+    where: $whereConcerts
+    limit: 3
+  ) {
+    id
+    canton {
+      id
+      abbreviation
+    }
+    date_time
+    time_end
+    title
+    location
+    details
+    music_group {
+      slug
+    }
+  }
+}

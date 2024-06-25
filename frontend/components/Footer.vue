@@ -20,44 +20,36 @@
             rel="noopener noreferrer"
             href="https://www.facebook.com/concertsducoeur/"
           >
-            <img
-              class="h-8 w-8"
-              alt="facebook"
-              src="~/assets/img/social/facebook.svg"
-            />
+            <svg class="icon text-white h-8 w-8">
+              <use href="~/assets/img/icons.svg#facebook"></use>
+            </svg>
           </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.instagram.com/lesconcertsducoeur/"
           >
-            <img
-              class="h-8 w-8"
-              alt="Instagram"
-              src="~/assets/img/social/instagram.svg"
-            />
+            <svg class="icon text-white h-8 w-8">
+              <use href="~/assets/img/icons.svg#instagram"></use>
+            </svg>
           </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.youtube.com/@lesconcertsducoeur"
           >
-            <img
-              class="h-8 w-8"
-              alt="youtube"
-              src="~/assets/img/social/youtube.svg"
-            />
+            <svg class="icon text-white h-8 w-8">
+              <use href="~/assets/img/icons.svg#youtube"></use>
+            </svg>
           </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="mailto:contact@lesconcertsducoeur.ch"
           >
-            <img
-              class="h-8 w-8"
-              alt="email"
-              src="~/assets/img/social/email.svg"
-            />
+            <svg class="icon text-white h-8 w-8">
+              <use href="~/assets/img/icons.svg#email"></use>
+            </svg>
           </a>
         </div>
       </div>
@@ -70,7 +62,7 @@
           method="post"
           target="_blank"
           novalidate
-          class="flex items-center justify-start border-1 border-white"
+          class="flex items-center justify-start border-1"
         >
           <input type="email" name="email" class="hidden" />
           <input
@@ -129,15 +121,15 @@
           />
         </div>
       </div>
-      <div class="sm:col-start-2 lg:col-start-auto">
-        © {{ new Date().getFullYear() }}<br />
-        <i>Les Concerts du Cœur</i><br />
+      <div class="sm:col-start-2 lg:col-start-auto flex flex-col items-start">
+        © {{ new Date().getFullYear() }}
+        <i>Les Concerts du Cœur</i>
         <nuxt-link :to="`/${$i18n.locale}/impressum`">
           {{ $t('footer').impressum }}</nuxt-link
-        ><br />
+        >
         <nuxt-link :to="`/${$i18n.locale}/privacy`">
-          {{ $t('footer').privacy }} </nuxt-link
-        ><br />
+          {{ $t('footer').privacy }}
+        </nuxt-link>
       </div>
       <div
         v-if="logos.length"

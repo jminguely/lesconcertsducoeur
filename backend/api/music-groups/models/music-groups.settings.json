@@ -85,9 +85,15 @@
       "type": "boolean",
       "default": false
     },
-    "slug": {
-      "type": "string",
-      "required": false
+    "link": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "link.link"
     }
   }
 }

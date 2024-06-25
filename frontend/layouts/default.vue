@@ -145,7 +145,7 @@ body {
     justify-content: space-between;
     border-bottom: 1px solid #828282;
 
-    @apply py-2 md:px-4;
+    @apply py-2 md:pl-4;
   }
 }
 
@@ -159,7 +159,7 @@ body {
   grid-area: content;
   min-width: 0; /* hotfix to make the splide not overflow the flex layout */
 
-  @apply pt-6 md:pt-24;
+  @apply pt-2 md:pt-24;
 
   h1,
   .h1 {

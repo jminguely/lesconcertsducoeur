@@ -2,6 +2,7 @@ query getArtists($locale: String, $where: JSON) {
   musicGroups(locale: $locale, where: $where, sort: "name:asc") {
     id
     name
+    slug
     music_genre
     repertoire
     formats
@@ -15,6 +16,7 @@ query getArtists($locale: String, $where: JSON) {
     cover {
       id
       url
+      formats
     }
   }
 }
