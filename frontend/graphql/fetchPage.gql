@@ -104,6 +104,11 @@ query getPage($locale: String!, $slug: String!) {
           Position
         }
       }
+
+      ... on ComponentContentEmbed {
+        id
+        HTML
+      }
     }
   }
 }

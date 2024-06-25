@@ -60,6 +60,10 @@
       <div v-if="item.__typename === 'ComponentContentTestimonialsGrid'">
         <Testimonials :testimonials="item.Testimonials" />
       </div>
+
+      <div v-if="item.__typename === 'ComponentContentEmbed'">
+        <Embed :content="item.HTML" />
+      </div>
     </div>
   </div>
 </template>
@@ -75,6 +79,7 @@ import DownloadList from '~/components/dynamic/DownloadList.vue'
 import Figure from '~/components/dynamic/Figure.vue'
 import SlidesList from '~/components/dynamic/SlidesList.vue'
 import Testimonials from '~/components/dynamic/Testimonials.vue'
+import Embed from '~/components/dynamic/Embed.vue'
 
 export default {
   components: {
@@ -88,6 +93,7 @@ export default {
     Figure,
     SlidesList,
     Testimonials,
+    Embed,
   },
   props: {
     content: {
