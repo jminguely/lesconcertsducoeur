@@ -42,7 +42,8 @@
         "content.download-list",
         "content.figure",
         "content.slides-list",
-        "content.testimonials-grid"
+        "content.testimonials-grid",
+        "content.embed"
       ]
     },
     "slug": {
