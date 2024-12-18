@@ -25,7 +25,7 @@ export default {
   },
   computed: {
     src() {
-      return `https://widget.raisenow.com/widgets/lema/lesco-7b80/index-${this.$i18n.locale}.html`
+      return `https://donate.raisenow.io/vpztw?analytics.channel=embed&lng=${this.$i18n.locale}`
     },
   },
 }
