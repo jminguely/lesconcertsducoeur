@@ -16,7 +16,14 @@ query getArtist($locale: String, $where: JSON, $whereConcerts: JSON) {
     cover {
       id
       url
-      formats
+      formats {
+        small {
+          url
+        }
+        medium {
+          url
+        }
+      }
     }
     link {
       icon
