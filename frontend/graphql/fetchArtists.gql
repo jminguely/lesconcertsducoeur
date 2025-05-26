@@ -16,14 +16,7 @@ query getArtists($locale: String, $where: JSON) {
     cover {
       id
       url
-      formats {
-        small {
-          url
-        }
-        medium {
-          url
-        }
-      }
+      formats
     }
   }
 }
