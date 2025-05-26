@@ -24,7 +24,7 @@ jobs:
           cache: 'yarn'
           cache-dependency-path: './frontend/yarn.lock'
 
-      - name: 🧶 Yarn this beauty
+      - name: 🧶 Yarn this beauty!
         run: yarn
 
       - name: ⚒️ Build the application
