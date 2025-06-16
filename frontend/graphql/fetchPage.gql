@@ -83,6 +83,13 @@ query getPage($locale: String!, $slug: String!) {
         ImagePosition
       }
 
+      ... on ComponentContentFigureEmbed {
+        id
+        HTML
+        RichText
+        EmbedPosition
+      }
+
       ... on ComponentContentSlidesList {
         id
         Slides: SlideItem {

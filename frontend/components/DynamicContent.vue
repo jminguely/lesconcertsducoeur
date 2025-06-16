@@ -64,6 +64,14 @@
       <div v-if="item.__typename === 'ComponentContentEmbed'">
         <Embed :content="item.HTML" />
       </div>
+
+      <div v-if="item.__typename === 'ComponentContentFigureEmbed'">
+        <FigureEmbed
+          :content="item.HTML"
+          :rich-text="item.RichText"
+          :embed-position="item.EmbedPosition"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -77,6 +85,7 @@ import Headline from '~/components/dynamic/Headline.vue'
 import EventsGrid from '~/components/dynamic/EventsGrid.vue'
 import DownloadList from '~/components/dynamic/DownloadList.vue'
 import Figure from '~/components/dynamic/Figure.vue'
+import FigureEmbed from '~/components/dynamic/FigureEmbed.vue'
 import SlidesList from '~/components/dynamic/SlidesList.vue'
 import Testimonials from '~/components/dynamic/Testimonials.vue'
 import Embed from '~/components/dynamic/Embed.vue'
@@ -94,6 +103,7 @@ export default {
     SlidesList,
     Testimonials,
     Embed,
+    FigureEmbed,
   },
   props: {
     content: {

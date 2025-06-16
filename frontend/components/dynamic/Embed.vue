@@ -15,7 +15,6 @@ export default {
 
 <style lang="postcss">
 .embed-container {
-  background: red;
   aspect-ratio: 16/9;
 
   object,
