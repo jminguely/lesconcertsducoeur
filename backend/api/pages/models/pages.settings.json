@@ -43,7 +43,8 @@
         "content.figure",
         "content.slides-list",
         "content.testimonials-grid",
-        "content.embed"
+        "content.embed",
+        "content.figure-embed"
       ]
     },
     "slug": {

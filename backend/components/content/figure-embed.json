@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_content_figure_embeds",
+  "info": {
+    "name": "Figure Embed",
+    "icon": "photo-video"
+  },
+  "options": {},
+  "attributes": {
+    "HTML": {
+      "type": "text",
+      "required": true
+    },
+    "EmbedPosition": {
+      "type": "enumeration",
+      "enum": ["left", "right"],
+      "required": true,
+      "default": "right"
+    },
+    "RichText": {
+      "type": "richtext"
+    }
+  }
+}
