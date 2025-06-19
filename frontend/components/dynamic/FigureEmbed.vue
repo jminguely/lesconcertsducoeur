@@ -4,7 +4,7 @@
     <RichText
       :content="richText"
       :class="{
-        'col-start-1 row-start-1': embedPosition == 'right',
+        'mt-3 md:mt-1 col-start-1 row-start-1': embedPosition == 'right',
       }"
     />
   </div>
