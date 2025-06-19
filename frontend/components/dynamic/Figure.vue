@@ -8,6 +8,7 @@
     />
     <RichText
       :content="richText"
+      class="mt-3 md:my-0"
       :class="{
         'col-start-1 row-start-1': imagePosition == 'right',
       }"

@@ -3,8 +3,9 @@
     <div class="embed-container md:mt-2" v-html="content"></div>
     <RichText
       :content="richText"
+      class="mt-3 md:my-0"
       :class="{
-        'mt-3 md:mt-0 col-start-1 row-start-1': embedPosition == 'right',
+        'col-start-1 row-start-1': embedPosition == 'right',
       }"
     />
   </div>
