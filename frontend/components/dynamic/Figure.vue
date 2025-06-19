@@ -2,7 +2,7 @@
   <div class="mb-10 lg:mb-20 lg:grid grid-cols-2 gap-10">
     <nuxt-img
       v-if="image"
-      class="mx-auto mb-10 lg:md-10"
+      class="mx-auto mb-10 lg:md-10 md:mt-2"
       provider="strapi"
       :src="image.url"
     />
