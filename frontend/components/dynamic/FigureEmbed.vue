@@ -1,6 +1,6 @@
 <template>
   <div class="mb-10 lg:mb-20 lg:grid grid-cols-2 gap-10">
-    <div class="embed-container md:mt-2" v-html="content"></div>
+    <div class="embed-container mb-10 md:mt-2" v-html="content"></div>
     <RichText
       :content="richText"
       class="mt-3 md:my-0"
