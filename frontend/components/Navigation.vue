@@ -61,6 +61,10 @@ export default {
         { name: this.$t('nav').artistes, link: this.localePath('artistes') },
         { name: this.$t('nav').offre, link: `/${this.$i18n.locale}/offre` },
         {
+          name: this.$t('nav').participationculturelle,
+          link: `/${this.$i18n.locale}/participationculturelle`,
+        },
+        {
           name: this.$t('nav').auditions,
           link: `/${this.$i18n.locale}/auditions`,
         },

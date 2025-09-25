@@ -5,6 +5,7 @@ export default {
     agenda: 'Agenda',
     artistes: 'Musiker:innen',
     offre: 'Konzertformate',
+    participationculturelle: 'Kulturelle Teilhabe',
     auditions: 'Vorspiel',
     presse: 'Presse',
     remerciements: 'Dank',

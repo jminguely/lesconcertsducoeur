@@ -5,6 +5,7 @@ export default {
     agenda: 'Agenda',
     artistes: 'Artistes',
     offre: 'Offre de concerts',
+    participationculturelle: 'Participation culturelle',
     auditions: 'Auditions',
     presse: 'Presse',
     remerciements: 'Remerciements',
