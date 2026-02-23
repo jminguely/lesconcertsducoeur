@@ -20,6 +20,11 @@
     "apollo:download": "apollo client:download-schema graphql/schema.json --endpoint http://localhost:1337/graphql",
     "apollo:generate": "apollo client:codegen --outputFlat=graphql/types/ --target typescript --includes=graphql/queries/**.ts --localSchemaFile=graphql/schema.json --tagName=gql"
   },
+  "resolutions": {
+    "vue": "2.7.16",
+    "vue-server-renderer": "2.7.16",
+    "vue-template-compiler": "2.7.16"
+  },
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.0-rc.19",
     "@splidejs/vue-splide": "^0.3.5",
