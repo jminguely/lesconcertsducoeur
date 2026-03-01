@@ -221,7 +221,7 @@ export default {
       variables() {
         return {
           locale: `${this.$i18n.locale}-CH`,
-          where: { date_time_gte: new Date(), canton_contains: null },
+          where: { date_time_gte: new Date() },
         }
       },
       prefetch: true,

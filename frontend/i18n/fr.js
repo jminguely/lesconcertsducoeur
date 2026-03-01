@@ -5,6 +5,7 @@ export default {
     agenda: 'Agenda',
     artistes: 'Artistes',
     offre: 'Offre de concerts',
+    formation: 'Formation continue',
     participationculturelle: 'Participation culturelle',
     auditions: 'Auditions',
     presse: 'Presse',
@@ -81,9 +82,13 @@ export default {
     firstname: 'Prénom',
     lastname: 'Nom',
     email: 'Email',
-    submit: "Validez l'inscription",
+    canton: 'Canton',
+    submit: "Valider l'inscription",
+    success: 'Votre inscription a été enregistrée avec succès !',
+    errorText: 'Merci de renseigner une chaîne de caractères',
+    errorEmail: 'Merci de renseigner une adresse email',
     privacy:
-      "Votre adresse de messagerie est uniquement utilisée pour vous envoyer notre lettre d'information ainsi que des informations concernant nos activités.Vous pouvez à tout moment utiliser le lien de désabonnement intégré dans chacun de nos mails.",
+      "Votre adresse de messagerie est uniquement utilisée pour vous envoyer notre lettre d'information ainsi que des informations concernant nos activités. Vous pouvez à tout moment utiliser le lien de désabonnement intégré dans chacun de nos mails.",
   },
   artistes: {
     title: 'Nos artistes',
