@@ -1,5 +1,19 @@
 <template>
   <div v-if="page">
+    <div class="mb-10">
+      <div class="embed-container">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/25L2gavV7yc?si=-cQXyk8KR7whSgFa&autoplay=1&mute=1"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
     <section>
       <h1 class="text-4xl lg:text-5xl mb-5">{{ page.Title }}</h1>
       <div
