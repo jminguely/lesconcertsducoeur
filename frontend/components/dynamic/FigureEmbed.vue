@@ -1,15 +1,11 @@
 <template>
-  <div
-    class="mb-10 lg:mb-20"
-    :class="embedPosition !== 'full' ? 'lg:grid grid-cols-2 gap-10' : ''"
-  >
+  <div class="mb-10 lg:mb-20 lg:grid grid-cols-2 gap-10">
     <div class="embed-container mb-2 md:mt-2" v-html="content"></div>
     <RichText
-      v-if="richText"
       :content="richText"
       class="mt-3 md:my-0"
       :class="{
-        'col-start-1 row-start-1': embedPosition === 'right',
+        'col-start-1 row-start-1': embedPosition == 'right',
       }"
     />
   </div>

@@ -12,7 +12,7 @@
     },
     "EmbedPosition": {
       "type": "enumeration",
-      "enum": ["left", "right", "full"],
+      "enum": ["left", "right"],
       "required": true,
       "default": "right"
     },
