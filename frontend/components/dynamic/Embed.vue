@@ -1,5 +1,7 @@
 <template>
-  <div class="embed-container" v-html="content"></div>
+  <div class="mb-10">
+    <div class="embed-container" v-html="content"></div>
+  </div>
 </template>
 
 <script>
