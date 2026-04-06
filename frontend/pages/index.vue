@@ -1,18 +1,21 @@
 <template>
   <div v-if="page">
-    <div class="mb-10">
-      <div class="embed-container">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/25L2gavV7yc?si=-cQXyk8KR7whSgFa&autoplay=1&mute=1"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div>
+    <div class="mb-10 w-full relative">
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="none"
+        poster="/video/z_video_webpage.jpg"
+        class="w-full h-auto object-cover"
+      >
+        <source
+          v-if="videoLoaded"
+          src="/video/z_video_webpage.mp4"
+          type="video/mp4"
+        />
+      </video>
     </div>
     <section>
       <h1 class="text-4xl lg:text-5xl mb-5">{{ page.Title }}</h1>
@@ -180,6 +183,7 @@ export default {
       cantons: [],
       musicGroups: [],
       concerts: [],
+      videoLoaded: false,
     }
   },
   computed: {
@@ -200,6 +204,11 @@ export default {
 
       return filteredConcerts
     },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.videoLoaded = true
+    })
   },
   apollo: {
     page: {
