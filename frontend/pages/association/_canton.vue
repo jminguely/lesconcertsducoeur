@@ -28,9 +28,11 @@ export default {
     canton: {
       query: fetchCanton,
       variables() {
+        const canton = this.$route.params.canton
+
         return {
-          where: { abbreviation_contains: this.$route.params.canton },
           locale: `${this.$i18n.locale}-CH`,
+          ...(canton ? { where: { abbreviation_contains: canton } } : {}),
         }
       },
       prefetch: true,

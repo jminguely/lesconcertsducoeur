@@ -225,7 +225,6 @@ export default {
       variables() {
         return {
           locale: `${this.$i18n.locale}-CH`,
-          where: {},
         }
       },
       prefetch: true,

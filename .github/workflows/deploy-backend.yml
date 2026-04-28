@@ -41,12 +41,20 @@ jobs:
           DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
         with:
           flags: '-avzrl --delete'
-          options: ''
+          options: '--exclude=node_modules'
           ssh_options: ''
           src: './backend'
           dest: ${{vars.DEPLOY_DEST}}
 
-      - name: 🧨 Kickstart node server (backend)
+      - name: � Install production dependencies on server
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ vars.DEPLOY_HOST }}
+          username: ${{ vars.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          script: cd ~/www/cdc/backend && yarn --production --frozen-lockfile
+
+      - name: �🧨 Kickstart node server (backend)
         run: curl --basic --user '${{ secrets.ALWAYSDATA_API }} account=jminguely:' --data '' --request POST https://api.alwaysdata.com/v1/site/765706/restart/
 
       - name: 🧨 Kickstart node server (frontend)

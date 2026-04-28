@@ -240,9 +240,11 @@ export default {
     group: {
       query: fetchArtist,
       variables() {
+        const slug = this.$route.params.slug
+
         return {
           locale: `${this.$i18n.locale}-CH`,
-          where: { slug: this.$route.params.slug },
+          ...(slug ? { where: { slug } } : {}),
         }
       },
       prefetch: true,
@@ -250,12 +252,16 @@ export default {
     concerts: {
       query: fetchArtist,
       variables() {
+        const slug = this.$route.params.slug
+
         return {
           locale: `${this.$i18n.locale}-CH`,
-          whereConcerts: {
-            date_time_gte: new Date(),
-            music_group: { slug: this.$route.params.slug },
-          },
+          whereConcerts: slug
+            ? {
+                date_time_gte: new Date(),
+                music_group: { slug },
+              }
+            : { date_time_gte: new Date() },
         }
       },
       prefetch: true,
