@@ -9,8 +9,8 @@
           />
           <div class="hidden md:flex min-w-0">
             <MarqueeBanner
-              :key="settings.id"
-              :notifications="settings.Notifications"
+              :key="settings.id || 'layout-settings'"
+              :notifications="settings.Notifications || []"
             />
           </div>
           <div class="lang-switcher">
@@ -36,14 +36,17 @@
         aria-hidden="true"
       >
         <MarqueeBanner
-          :key="settings.id"
-          :notifications="settings.Notifications"
+          :key="settings.id || 'layout-settings-mobile'"
+          :notifications="settings.Notifications || []"
         />
       </div>
       <Sidebar :menu-open="menuOpen" />
       <Nuxt id="content" class="site-content" />
     </div>
-    <Footer :key="settings.id" :logos="settings.Logos" />
+    <Footer
+      :key="settings.id || 'layout-footer'"
+      :logos="settings.Logos || []"
+    />
   </div>
 </template>
 <script>
@@ -56,12 +59,28 @@ export default {
   data() {
     return {
       menuOpen: false,
-      settings: {},
+      settings: {
+        id: null,
+        Notifications: [],
+        Logos: [],
+      },
     }
   },
   apollo: {
     settings: {
       query: fetchSettings,
+      update(data) {
+        return (
+          data.settings || {
+            id: null,
+            Notifications: [],
+            Logos: [],
+          }
+        )
+      },
+      error(error) {
+        console.error('[Layout] Failed to fetch settings', error.message)
+      },
       variables() {
         return {
           locale: `${this.$i18n.locale}-CH`,

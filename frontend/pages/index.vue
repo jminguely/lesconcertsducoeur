@@ -36,7 +36,7 @@
             class="flex flex-col items-center no-underline"
           >
             <nuxt-img
-              v-if="canton.Headline.Image"
+              v-if="canton.Headline && canton.Headline.Image"
               class="aspect-logo object-contain"
               provider="strapi"
               :src="canton.Headline.Image.url"

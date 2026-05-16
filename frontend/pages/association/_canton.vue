@@ -1,12 +1,12 @@
 <template>
-  <div v-if="canton">
+  <div v-if="currentCanton">
     <Headline
-      :title="canton[0].Headline.Title"
-      :image="canton[0].Headline.Image"
-      :lead="canton[0].Headline.Lead"
-      :rich-text="canton[0].Headline.RichText"
+      :title="headline.Title"
+      :image="headline.Image"
+      :lead="headline.Lead"
+      :rich-text="headline.RichText"
     />
-    <DynamicContent :content="canton[0].Content" />
+    <DynamicContent :content="currentCanton.Content || []" />
   </div>
 </template>
 
@@ -17,11 +17,35 @@ import fetchCanton from '~/graphql/fetchCanton.gql'
 
 export default {
   components: { DynamicContent, Headline },
-  head() {
-    if (this.canton) {
+  computed: {
+    currentCanton() {
+      return Array.isArray(this.canton) && this.canton.length > 0
+        ? this.canton[0]
+        : null
+    },
+    headline() {
+      const cantonHeadline =
+        this.currentCanton && this.currentCanton.Headline
+          ? this.currentCanton.Headline
+          : {}
+
       return {
-        title: `${this.canton[0].Headline.Title} — Les Concerts du Cœur`,
+        Title: cantonHeadline.Title || '',
+        Image: cantonHeadline.Image || null,
+        Lead: cantonHeadline.Lead || '',
+        RichText: cantonHeadline.RichText || '',
       }
+    },
+  },
+  head() {
+    if (this.headline.Title) {
+      return {
+        title: `${this.headline.Title} — Les Concerts du Cœur`,
+      }
+    }
+
+    return {
+      title: 'Association — Les Concerts du Cœur',
     }
   },
   apollo: {

@@ -79,6 +79,7 @@ export default {
 
   apollo: {
     includeNodeModules: true,
+    errorHandler: '~/graphql/errorHandler.js',
     clientConfigs: {
       default: '@/graphql/clientConfigs.js',
     },
