@@ -11,8 +11,5 @@ query getCantons($locale: String) {
     abbreviation
     name
     locale
-    localizations(where: { locale: "fr-CH" }) {
-      id
-    }
   }
 }
