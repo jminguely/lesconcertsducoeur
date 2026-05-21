@@ -4,7 +4,7 @@
     <p class="lead">
       {{ $t('newsletter').lead }}
     </p>
-    <form method="post" :action="formAction" class="inf-form">
+    <form method="post" :action="formAction" class="inf-form" novalidate>
       <input type="email" name="email" class="hidden" />
       <input type="hidden" name="key" :value="formKey" />
       <input type="hidden" name="webform_id" :value="formWebformId" />
@@ -20,67 +20,57 @@
 
       <div class="inf-content">
         <div class="flex flex-col gap-3 my-3">
-          <div class="inf-input inf-input-text">
+          <div class="newsletter-input-row">
             <input
-              type="text"
-              name="inf[2]"
-              data-inf-meta="2"
-              :data-inf-error="$t('newsletter').errorText"
-              :placeholder="$t('newsletter').firstname"
-            />
-          </div>
-          <div class="inf-input inf-input-text">
-            <input
-              type="text"
-              name="inf[3]"
-              data-inf-meta="3"
-              :data-inf-error="$t('newsletter').errorText"
-              :placeholder="$t('newsletter').lastname"
-            />
-          </div>
-          <div class="inf-input inf-input-text">
-            <input
+              id="mce-EMAIL"
+              class="newsletter-input"
               type="email"
               name="inf[1]"
               data-inf-meta="1"
               :data-inf-error="$t('newsletter').errorEmail"
-              required="required"
+              required
               :placeholder="$t('newsletter').email + ' *'"
             />
+            <button
+              type="submit"
+              class="newsletter-submit"
+              :aria-label="$t('newsletter').submit"
+              @click="onSubmitClick"
+            >
+              <span aria-hidden="true">></span>
+            </button>
           </div>
 
           <!-- Hidden locale field -->
           <input
-            v-if="$i18n"
             class="hidden"
             type="text"
             name="inf[51622]"
-            :value="$i18n.locale === 'de' ? 'DE' : 'FR'"
+            :value="formLanguage"
           />
-
-          <!-- Canton field -->
-          <div class="inf-input inf-input-text">
-            <input
-              type="text"
-              name="inf[51623]"
-              data-inf-meta="51623"
-              :placeholder="$t('newsletter').canton"
-            />
-          </div>
 
           <small>
             {{ $t('newsletter').privacy }}
           </small>
         </div>
 
-        <div ref="altchaContainer" class="my-3"></div>
-
-        <div class="inf-submit text-right">
-          <input
-            type="submit"
-            :value="$t('newsletter').submit"
-            class="btn bg-gray cursor-pointer"
-          />
+        <div
+          class="captcha-wrap"
+          :class="{ 'is-open': showCaptchaTooltip }"
+          aria-live="polite"
+        >
+          <span class="captcha-label">{{ captchaLabel }}</span>
+          <div
+            class="captcha-tooltip"
+            :class="{ 'is-open': showCaptchaTooltip }"
+          >
+            <altcha-widget
+              hidelogo
+              hidefooter
+              type="native"
+              challengeurl="https://newsletter.infomaniak.com/v3/altcha-challenge"
+            ></altcha-widget>
+          </div>
         </div>
       </div>
     </form>
@@ -89,6 +79,13 @@
 
 <script>
 export default {
+  data() {
+    return {
+      showCaptchaTooltip: false,
+      detectedLocale: null,
+    }
+  },
+
   head() {
     return {
       title: 'Newsletter — Les Concerts du Cœur',
@@ -98,29 +95,27 @@ export default {
           type: 'text/javascript',
           body: true,
         },
-        {
-          src: 'https://eu.altcha.org/js/latest/altcha.min.js',
-          type: 'module',
-          defer: true,
-          body: true,
-        },
-        {
-          src: 'https://newsletter.storage5.infomaniak.com/mcaptcha/altcha.js',
-          defer: true,
-          body: true,
-        },
-        {
-          src: 'https://newsletter.infomaniak.com/v3/static/webform_index.js?v=1771321045',
-          type: 'text/javascript',
-          body: true,
-        },
       ],
     }
   },
 
   computed: {
+    systemLocale() {
+      return this.detectedLocale || this.siteLocale
+    },
+    siteLocale() {
+      return (this.$i18n && this.$i18n.locale) || 'fr'
+    },
     isGerman() {
-      return this.$i18n && this.$i18n.locale === 'de'
+      return this.siteLocale === 'de'
+    },
+    formLanguage() {
+      return this.systemLocale === 'de' ? 'DE' : 'FR'
+    },
+    captchaLabel() {
+      return this.isGerman
+        ? 'Sicherheitspruefung laeuft'
+        : 'Verification anti-spam en cours'
     },
     formAction() {
       return this.isGerman
@@ -143,33 +138,66 @@ export default {
   },
 
   mounted() {
-    // Insert altcha-widget as a DOM element to avoid Vue 2 component resolution
-    this.$nextTick(() => {
-      const container = this.$refs.altchaContainer
-      if (container) {
-        const widget = document.createElement('altcha-widget')
-        widget.setAttribute('hidelogo', '')
-        widget.setAttribute('hidefooter', '')
-        widget.setAttribute('floating', '')
-        widget.setAttribute(
-          'challengeurl',
-          'https://newsletter.infomaniak.com/v3/altcha-challenge'
-        )
-        container.appendChild(widget)
-      }
+    this.detectedLocale = this.getSystemLocale()
+
+    if (typeof window === 'undefined' || !window.customElements) return
+
+    window.customElements.whenDefined('altcha-widget').then(() => {
+      this.$nextTick(() => {
+        this.$el.querySelectorAll('altcha-widget').forEach((widget) => {
+          if (typeof widget.getConfiguration !== 'function') {
+            window.customElements.upgrade(widget)
+          }
+        })
+      })
     })
+  },
+
+  methods: {
+    getSystemLocale() {
+      if (typeof window === 'undefined' || typeof navigator === 'undefined') {
+        return null
+      }
+
+      const candidates = [
+        ...(Array.isArray(navigator.languages) ? navigator.languages : []),
+        navigator.language,
+      ].filter(Boolean)
+
+      const hasGerman = candidates.some((lang) =>
+        String(lang).toLowerCase().startsWith('de')
+      )
+
+      return hasGerman ? 'de' : 'fr'
+    },
+    onSubmitClick() {
+      if (!this.showCaptchaTooltip) {
+        this.showCaptchaTooltip = true
+      }
+    },
   },
 }
 </script>
 
 <style lang="postcss" scoped>
-form input[type='text'],
-form input[type='email'] {
-  @apply border-1 border-gray border-opacity-30 py-1 px-2;
+.newsletter-input-row {
+  @apply flex items-stretch border-1 border-gray border-opacity-30;
 }
 
-.btn {
-  @apply font-playFair py-1 px-2 rounded-3xl inline-block text-white whitespace-nowrap text-center no-underline;
+.newsletter-input {
+  @apply flex-auto py-1 px-2;
+}
+
+.newsletter-input::placeholder {
+  color: rgb(107 114 128 / 72%);
+}
+
+.newsletter-input:focus {
+  outline: none;
+}
+
+.newsletter-submit {
+  @apply text-lg px-3 border-l-1 border-gray border-opacity-30;
 }
 
 .inf-input.inf-error label,
@@ -179,5 +207,50 @@ form input[type='email'] {
 
 .inf-input.inf-error input {
   border: 1px solid #c03;
+}
+
+.captcha-wrap {
+  @apply mt-2 flex items-baseline gap-2 justify-start;
+}
+
+.captcha-label {
+  @apply text-xs text-gray text-opacity-70 flex-shrink-0 whitespace-nowrap;
+}
+
+.captcha-tooltip {
+  @apply p-0;
+
+  opacity: 0;
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.captcha-tooltip.is-open {
+  opacity: 1;
+  max-height: 34px;
+  max-width: 240px;
+  overflow: visible;
+  pointer-events: auto;
+}
+
+altcha-widget {
+  display: inline-block;
+  min-height: 20px;
+  transform: scale(0.82);
+  transform-origin: left center;
+
+  --altcha-padding: 0;
+  --altcha-border-radius: 0;
+  --altcha-font-size: 11px;
+  --altcha-border-width: 0;
+  --altcha-border-color: transparent;
+}
+
+altcha-widget::part(main) {
+  border: 0;
+  padding: 0;
 }
 </style>
