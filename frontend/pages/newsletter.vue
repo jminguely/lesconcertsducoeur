@@ -36,6 +36,7 @@
               :data-inf-error="$t('newsletter').errorEmail"
               required
               :placeholder="$t('newsletter').email + ' *'"
+              @keydown.enter.prevent="onSubmitClick"
             />
             <button
               type="button"
