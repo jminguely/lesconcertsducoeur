@@ -16,27 +16,8 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
 
-    script: [
-      {
-        hid: 'inf-altcha-widget',
-        src: 'https://eu.altcha.org/js/latest/altcha.min.js',
-        type: 'module',
-        defer: true,
-        body: true,
-      },
-      {
-        hid: 'inf-altcha-bridge',
-        src: 'https://newsletter.storage5.infomaniak.com/mcaptcha/altcha.js',
-        defer: true,
-        body: true,
-      },
-      {
-        hid: 'inf-webform-index',
-        src: 'https://newsletter.infomaniak.com/v3/static/webform_index.js?v=1771321045',
-        type: 'text/javascript',
-        body: true,
-      },
-    ],
+    script: [],
+
 
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

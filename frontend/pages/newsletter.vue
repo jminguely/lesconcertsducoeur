@@ -4,7 +4,13 @@
     <p class="lead">
       {{ $t('newsletter').lead }}
     </p>
-    <form method="post" :action="formAction" class="inf-form" novalidate>
+    <form
+      method="post"
+      :action="formAction"
+      class="inf-form"
+      novalidate
+      @submit="handleFormSubmit"
+    >
       <input type="email" name="email" class="hidden" />
       <input type="hidden" name="key" :value="formKey" />
       <input type="hidden" name="webform_id" :value="formWebformId" />
@@ -32,7 +38,7 @@
               :placeholder="$t('newsletter').email + ' *'"
             />
             <button
-              type="submit"
+              type="button"
               class="newsletter-submit"
               :aria-label="$t('newsletter').submit"
               @click="onSubmitClick"
@@ -83,19 +89,13 @@ export default {
     return {
       showCaptchaTooltip: false,
       detectedLocale: null,
+      isSubmitting: false,
     }
   },
 
   head() {
     return {
       title: 'Newsletter — Les Concerts du Cœur',
-      script: [
-        {
-          src: this.trackingScriptUrl,
-          type: 'text/javascript',
-          body: true,
-        },
-      ],
     }
   },
 
@@ -130,27 +130,17 @@ export default {
     formWebformId() {
       return this.isGerman ? '15447' : '15246'
     },
-    trackingScriptUrl() {
-      return this.isGerman
-        ? 'https://webform.statslive.info/ow/eyJpdiI6IkRKUkRLVHFWMWpBalJUTUhcL2lsd3F0NHZUemlmOFhLVjc4K1ppT1gxVTgwPSIsIm1hYyI6IjgyOGYwZDA4MzU5ZjFlYWVhZmJlMmRiYmM5MTAxMTQ1ZGM3ZmZiOGRmMGY4YThhZTk2YWU4ZjFmYjUwNjdjOTYiLCJ2YWx1ZSI6Iks3UUxXSE5SSk9FY1h2a1ZxdXArakRrRFl3UmM1WVcrZmxMR2tNKzJoUjA9In0='
-        : 'https://webform.statslive.info/ow/eyJpdiI6ImFwU05xU3F2aG9HMmVIaythZU11M2NKZXdxTXpvU2VkQTdLdWkrWEx3XC9zPSIsIm1hYyI6Ijk5N2Q4MzQxZGNlZjk4Y2ViYzc4NmEyODQwMzAxOGVjYmJiYmY3ZDg4YWU1MTA4NzcyZjU1ZWRiNmQ4MDM0ZjMiLCJ2YWx1ZSI6IjdZb1B4V3ZHVXJ0YUUyUkx4OE1FdVNldiszWHUzdVZ2YXdhXC9hMHRjMU9RPSJ9'
-    },
   },
 
   mounted() {
     this.detectedLocale = this.getSystemLocale()
+    this.loadAltcha()
+  },
 
-    if (typeof window === 'undefined' || !window.customElements) return
-
-    window.customElements.whenDefined('altcha-widget').then(() => {
-      this.$nextTick(() => {
-        this.$el.querySelectorAll('altcha-widget').forEach((widget) => {
-          if (typeof widget.getConfiguration !== 'function') {
-            window.customElements.upgrade(widget)
-          }
-        })
-      })
-    })
+  beforeDestroy() {
+    // Clean up the script tag when leaving the page so re-entry doesn't double-load
+    const el = document.querySelector('script[data-altcha-page]')
+    if (el) el.remove()
   },
 
   methods: {
@@ -170,9 +160,62 @@ export default {
 
       return hasGerman ? 'de' : 'fr'
     },
-    onSubmitClick() {
+
+    loadAltcha() {
+      if (typeof window === 'undefined') return
+      // Guard: skip if already registered (e.g. hot-reload)
+      if (window.customElements && window.customElements.get('altcha-widget'))
+        return
+      const script = document.createElement('script')
+      script.src = 'https://eu.altcha.org/js/latest/altcha.min.js'
+      script.type = 'module'
+      script.dataset.altchaPage = 'newsletter'
+      document.body.appendChild(script)
+    },
+
+    onSubmitClick(event) {
+      event.preventDefault()
+
+      if (this.isSubmitting) {
+        return
+      }
+
+      // Show captcha if not already visible
       if (!this.showCaptchaTooltip) {
         this.showCaptchaTooltip = true
+        return
+      }
+
+      // Altcha widget automatically writes a hidden input[name="altcha"] when solved
+      const form = this.$el.querySelector('form')
+      const altchaInput = form && form.querySelector('input[name="altcha"]')
+      if (altchaInput && altchaInput.value) {
+        this.submitForm()
+      }
+      // If not solved yet, user must wait for the captcha to complete
+    },
+
+    handleFormSubmit(event) {
+      event.preventDefault()
+
+      const form = this.$el.querySelector('form')
+      const altchaInput = form && form.querySelector('input[name="altcha"]')
+      if (!altchaInput || !altchaInput.value) {
+        this.showCaptchaTooltip = true
+        return
+      }
+
+      this.submitForm()
+    },
+
+    submitForm() {
+      const form = this.$el.querySelector('form')
+      if (form) {
+        this.isSubmitting = true
+        // Submit the form after a short delay to ensure everything is ready
+        this.$nextTick(() => {
+          form.submit()
+        })
       }
     },
   },

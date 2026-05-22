@@ -55,74 +55,9 @@
       </div>
       <div class="flex flex-col items-start sm:col-start-2 lg:col-start-auto">
         <h3 class="mb-3">{{ $t('footer').newsletter_infos }}</h3>
-
-        <form
-          id="mc-embedded-subscribe-form"
-          :action="footerFormAction"
-          method="post"
-          class="inf-form w-full"
-          novalidate
-        >
-          <input type="email" name="email" class="hidden" />
-          <input type="hidden" name="key" :value="footerFormKey" />
-          <input type="hidden" name="webform_id" :value="footerFormWebformId" />
-
-          <div class="inf-success" style="display: none">
-            <p class="text-sm success-message">
-              {{ $t('newsletter').success }}
-            </p>
-          </div>
-
-          <div class="inf-content w-full">
-            <!-- Field "langue" -->
-            <input
-              v-if="$i18n"
-              class="hidden"
-              type="text"
-              name="inf[51622]"
-              :value="$i18n.locale === 'de' ? 'DE' : 'FR'"
-            />
-
-            <div class="newsletter-input-row">
-              <input
-                id="mce-EMAIL"
-                class="newsletter-input"
-                :placeholder="$t('footer').newsletter"
-                type="email"
-                value=""
-                name="inf[1]"
-                required
-              />
-              <button
-                type="submit"
-                class="newsletter-submit"
-                :aria-label="$t('newsletter').submit"
-                @click="onSubmitClick"
-              >
-                <span aria-hidden="true">></span>
-              </button>
-            </div>
-
-            <div
-              class="captcha-wrap"
-              :class="{ 'is-open': showCaptchaTooltip }"
-              aria-live="polite"
-            >
-              <span class="captcha-label">{{ captchaLabel }}</span>
-              <div
-                class="captcha-tooltip"
-                :class="{ 'is-open': showCaptchaTooltip }"
-              >
-                <altcha-widget
-                  hidelogo
-                  hidefooter
-                  type="native"
-                  challengeurl="https://newsletter.infomaniak.com/v3/altcha-challenge"
-                ></altcha-widget>
-              </div>
-            </div>
-          </div>
-        </form>
+        <nuxt-link :to="`/${$i18n.locale}/newsletter`">
+          {{ $t('footer').newsletter }}
+        </nuxt-link>
       </div>
       <div class="sm:col-start-2 lg:col-start-auto">
         <h3 class="mb-3">{{ $t('footer').partner }}</h3>
@@ -190,54 +125,6 @@ export default {
       default: () => [],
     },
   },
-  data() {
-    return {
-      showCaptchaTooltip: false,
-    }
-  },
-  computed: {
-    isGerman() {
-      return this.$i18n && this.$i18n.locale === 'de'
-    },
-    captchaLabel() {
-      return this.isGerman
-        ? 'Sicherheitspruefung laeuft'
-        : 'Verification anti-spam en cours'
-    },
-    footerFormAction() {
-      return this.isGerman
-        ? 'https://newsletter.infomaniak.com/v3/api/1/newsletters/webforms/15447/submit'
-        : 'https://newsletter.infomaniak.com/v3/api/1/newsletters/webforms/15246/submit'
-    },
-    footerFormKey() {
-      return this.isGerman
-        ? 'eyJpdiI6InJ6MVZTajN2SEZQRkpxb0NuM1NYZGdCYWtBSmF2dzZTcFBSNHVPS3diN0E9IiwibWFjIjoiMTQwZmU4MmNjY2MxNzUwYjEyYzY2YmI1N2YyMDZkYmFkN2M0ZGFhNzgxNmU3ZjQxY2QzYzUxODYxODY0OGNlMyIsInZhbHVlIjoiZ24xK3diSVo0RkNHbERPNUtQQkRZUHpjWWx3ZmhUeWxXdkVmZUpMZ25DND0ifQ=='
-        : 'eyJpdiI6IkdVNWhkTkdvTVNqZkxIQXNwYzNPTGo1eEpZT3FrcEVQZ3dzcmE4aUlvVE09IiwibWFjIjoiNTgzMmY0Nzk4M2E1ODU4ODhjZThjMzZlMTQyN2FlYTBkMTc0NWVhNDM4ZmVjOGJiZjE3ZDhkOWEzOThhNmMxMiIsInZhbHVlIjoiVGo1dXl4Q29sd3VtWm5Qb0ZFR3RnNjJaaVwvaDNmVHp1N0wzRXZDMjdcL2RzPSJ9'
-    },
-    footerFormWebformId() {
-      return this.isGerman ? '15447' : '15246'
-    },
-  },
-  mounted() {
-    if (typeof window === 'undefined' || !window.customElements) return
-
-    window.customElements.whenDefined('altcha-widget').then(() => {
-      this.$nextTick(() => {
-        this.$el.querySelectorAll('altcha-widget').forEach((widget) => {
-          if (typeof widget.getConfiguration !== 'function') {
-            window.customElements.upgrade(widget)
-          }
-        })
-      })
-    })
-  },
-  methods: {
-    onSubmitClick() {
-      if (!this.showCaptchaTooltip) {
-        this.showCaptchaTooltip = true
-      }
-    },
-  },
 }
 </script>
 
@@ -266,82 +153,5 @@ export default {
     text-underline-offset: 0.15rem;
     text-decoration-thickness: 1px;
   }
-}
-
-.inf-form {
-  @apply w-full;
-}
-
-.newsletter-input-row {
-  @apply flex items-stretch border-1 border-white;
-}
-
-.newsletter-input {
-  @apply flex-auto p-2 bg-transparent text-white;
-}
-
-.newsletter-input::placeholder {
-  color: rgb(255 255 255 / 72%);
-}
-
-.newsletter-input:focus {
-  outline: none;
-}
-
-.newsletter-submit {
-  @apply text-lg px-3 border-l-1 border-white;
-}
-
-.success-message {
-  @apply w-full border-1 border-white px-3 py-2;
-
-  line-height: 1.35;
-}
-
-.captcha-wrap {
-  @apply relative mt-1 flex items-baseline gap-2 justify-between;
-}
-
-.captcha-label {
-  @apply text-xs text-white text-opacity-60 flex-shrink-0 whitespace-nowrap;
-}
-
-.captcha-tooltip {
-  @apply p-0;
-
-  opacity: 0;
-  max-height: 0;
-  max-width: 0;
-  overflow: hidden;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-
-.captcha-tooltip.is-open {
-  opacity: 1;
-  max-height: 34px;
-  max-width: 240px;
-  overflow: visible;
-  pointer-events: auto;
-}
-
-altcha-widget {
-  display: inline-block;
-  min-height: 20px;
-  transform: scale(0.82);
-  transform-origin: left center;
-
-  /* Compact visual density for the footer layout */
-  --altcha-padding: 0;
-  --altcha-border-radius: 0;
-  --altcha-font-size: 11px;
-  --altcha-border-width: 0;
-  --altcha-border-color: transparent;
-}
-
-/* Remove container chrome if exposed via shadow parts */
-altcha-widget::part(main) {
-  border: 0;
-  padding: 0;
 }
 </style>
