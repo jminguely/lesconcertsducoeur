@@ -101,4 +101,9 @@ export default {
     facebook: 'Facebook',
     youtube: 'YouTube',
   },
+  seo: {
+    description:
+      'Les Concerts du Cœur proposent des moments de musique de qualité aux personnes qui ont difficilement accès aux salles de concerts traditionnelles.',
+    siteName: 'Les Concerts du Cœur',
+  },
 }

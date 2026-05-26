@@ -100,4 +100,9 @@ export default {
     facebook: 'Facebook',
     youtube: 'YouTube',
   },
+  seo: {
+    description:
+      'Les Concerts du Cœur bieten Menschen mit erschwertem Zugang zu traditionellen Konzertsälen qualitativ hochwertige musikalische Erlebnisse.',
+    siteName: 'Les Concerts du Cœur',
+  },
 }
