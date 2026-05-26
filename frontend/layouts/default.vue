@@ -75,10 +75,22 @@ export default {
       htmlAttrs: { lang: locale, class: 'bg-white' },
       meta: [
         { hid: 'description', name: 'description', content: description },
-        { hid: 'og:description', property: 'og:description', content: description },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: description,
+        },
         { hid: 'og:locale', property: 'og:locale', content: ogLocale },
-        { hid: 'og:locale:alternate', property: 'og:locale:alternate', content: ogLocaleAlternate },
-        { hid: 'twitter:description', name: 'twitter:description', content: description },
+        {
+          hid: 'og:locale:alternate',
+          property: 'og:locale:alternate',
+          content: ogLocaleAlternate,
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: description,
+        },
       ],
     }
   },
