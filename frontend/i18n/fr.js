@@ -78,7 +78,7 @@ export default {
   },
   newsletter: {
     title: 'Inscription newsletter',
-    lead: 'Restez au courant de nos activités à travers la newsletter bi-annuelle.',
+    lead: 'Restez au courant de nos activités à travers la newsletter trimestrielle.',
     firstname: 'Prénom',
     lastname: 'Nom',
     email: 'Email',

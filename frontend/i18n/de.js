@@ -77,7 +77,7 @@ export default {
   },
   newsletter: {
     title: 'Newsletter-Anmeldung',
-    lead: 'Bleiben Sie auf dem Laufenden mit unserem zwei Mal jährlichen Newsletter.',
+    lead: 'Bleiben Sie auf dem Laufenden mit unserem vier Mal jährlichen Newsletter.',
     firstname: 'Vorname',
     lastname: 'Nachname',
     email: 'Email',
