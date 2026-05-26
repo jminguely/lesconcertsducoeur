@@ -243,7 +243,7 @@ export default {
       variables() {
         return {
           locale: `${this.$i18n.locale}-CH`,
-          where: { date_time_gte: new Date() },
+          where: { date_time_gte: new Date(new Date().setHours(0, 0, 0, 0)) },
         }
       },
       prefetch: true,
