@@ -24,7 +24,7 @@ export default {
       ge: 'Im Kanton Genf',
       fr: 'Im Kanton Freiburg',
     },
-    nextConcerts: 'Nächste Konzerte',
+    nextConcerts: 'Nächste Konzerte und Workshops',
     ourArtists: 'Musiker:innen',
     supportUs: {
       title: 'Unterstützen Sie uns:',
@@ -36,7 +36,7 @@ export default {
   agenda: {
     title: 'Agenda',
     canton: 'Kanton',
-    nextConcerts: 'Nächste Konzerte',
+    nextConcerts: 'Nächste Konzerte und Workshops',
     pastConcerts: 'Vergangene Konzerte',
     resetFilters: 'Filter löschen',
     archive: 'Archiv',
@@ -94,7 +94,7 @@ export default {
     repertoire: 'Repertoire',
     formats: 'Formate',
     musiciens: 'Musiker:innen',
-    concerts: 'Nächste Konzerte',
+    concerts: 'Nächste Konzerte und Workshops',
     web: 'Site web',
     instagram: 'Instagram',
     facebook: 'Facebook',

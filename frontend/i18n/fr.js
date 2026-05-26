@@ -24,7 +24,7 @@ export default {
       ge: 'Dans le canton de Genève',
       fr: 'Dans le canton de Fribourg',
     },
-    nextConcerts: 'Prochains concerts',
+    nextConcerts: 'Prochains concerts et ateliers',
     ourArtists: 'Nos artistes',
     supportUs: {
       title: 'Soutenez-nous :',
@@ -36,7 +36,7 @@ export default {
   agenda: {
     title: 'Agenda',
     canton: 'Canton',
-    nextConcerts: 'Prochains concerts',
+    nextConcerts: 'Prochains concerts et ateliers',
     pastConcerts: 'Concerts passés',
     resetFilters: 'Effacer les filtres',
     archive: 'Archives',
@@ -95,7 +95,7 @@ export default {
     repertoire: 'Répertoire',
     formats: 'Format',
     musiciens: 'Artistes',
-    concerts: 'Prochains concerts',
+    concerts: 'Prochains concerts et ateliers',
     web: 'Site web',
     instagram: 'Instagram',
     facebook: 'Facebook',
