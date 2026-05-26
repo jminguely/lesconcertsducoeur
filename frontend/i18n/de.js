@@ -8,7 +8,7 @@ export default {
     formation: 'Weiterbildung',
     participationculturelle: 'Kulturelle Teilhabe',
     auditions: 'Vorspiel',
-    presse: 'Presse',
+    presse: 'Medien',
     remerciements: 'Dank',
     contact: 'Kontakt',
     nousSoutenir: 'Verein unterstützen',
@@ -42,7 +42,7 @@ export default {
     archive: 'Archiv',
   },
   medias: {
-    title: 'Presse',
+    title: 'Medien',
     findUsOnSocialMedias: 'Folgen Sie uns auf den sozialen Netzwerken!',
     images: 'Bilder',
   },

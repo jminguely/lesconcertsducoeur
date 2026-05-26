@@ -8,7 +8,7 @@ export default {
     formation: 'Formation continue',
     participationculturelle: 'Participation culturelle',
     auditions: 'Auditions',
-    presse: 'Presse',
+    presse: 'Médias',
     remerciements: 'Remerciements',
     contact: 'Contact',
     nousSoutenir: 'Nous soutenir',
