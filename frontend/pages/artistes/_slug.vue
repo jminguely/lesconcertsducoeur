@@ -251,6 +251,7 @@ export default {
     },
     concerts: {
       query: fetchArtist,
+      fetchPolicy: 'cache-and-network',
       variables() {
         const slug = this.$route.params.slug
 
