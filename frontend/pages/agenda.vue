@@ -71,6 +71,60 @@
         >
         </EventTeaser>
       </template>
+
+      <nav
+        v-if="totalPages > 1"
+        class="flex items-center justify-start gap-1 py-8"
+        aria-label="Pagination"
+      >
+        <button
+          class="pagination-btn"
+          :disabled="currentPage === 1"
+          @click="goToPage(currentPage - 1)"
+        >
+          ‹
+        </button>
+
+        <button
+          v-if="pageNumbers[0] > 1"
+          class="pagination-btn"
+          @click="goToPage(1)"
+        >
+          1
+        </button>
+        <span v-if="pageNumbers[0] > 2" class="px-1">…</span>
+
+        <button
+          v-for="page in pageNumbers"
+          :key="page"
+          class="pagination-btn"
+          :class="{ active: page === currentPage }"
+          @click="goToPage(page)"
+        >
+          {{ page }}
+        </button>
+
+        <span
+          v-if="pageNumbers[pageNumbers.length - 1] < totalPages - 1"
+          class="px-1"
+          >…</span
+        >
+        <button
+          v-if="pageNumbers[pageNumbers.length - 1] < totalPages"
+          class="pagination-btn"
+          @click="goToPage(totalPages)"
+        >
+          {{ totalPages }}
+        </button>
+
+        <button
+          class="pagination-btn"
+          :disabled="currentPage === totalPages"
+          @click="goToPage(currentPage + 1)"
+        >
+          ›
+        </button>
+      </nav>
     </div>
   </div>
 </template>
@@ -94,6 +148,9 @@ export default {
       yearFilter: '',
       cantonFilter: 0,
       cantons: [],
+      currentPage: 1,
+      totalCount: 0,
+      perPage: 20,
     }
   },
   async fetch() {
@@ -129,16 +186,33 @@ export default {
         'archive',
       ]
     },
+    totalPages() {
+      return Math.ceil(this.totalCount / this.perPage)
+    },
+    pageNumbers() {
+      const pages = []
+      const delta = 2
+      for (
+        let i = Math.max(1, this.currentPage - delta);
+        i <= Math.min(this.totalPages, this.currentPage + delta);
+        i++
+      ) {
+        pages.push(i)
+      }
+      return pages
+    },
   },
 
   watch: {
     yearFilter() {
+      this.currentPage = 1
       this.contentLoading = true
       setTimeout(() => {
         this.getAgenda()
       }, 300)
     },
     cantonFilter() {
+      this.currentPage = 1
       this.contentLoading = true
       setTimeout(() => {
         this.getAgenda()
@@ -150,6 +224,17 @@ export default {
     resetFilters() {
       this.yearFilter = ''
       this.cantonFilter = 0
+      this.currentPage = 1
+    },
+
+    goToPage(page) {
+      if (page < 1 || page > this.totalPages) return
+      this.currentPage = page
+      this.contentLoading = true
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      setTimeout(() => {
+        this.getAgenda()
+      }, 300)
     },
 
     clickFilterCanton(canton) {
@@ -193,14 +278,16 @@ export default {
 
       const variables = {
         sort,
-        where,
+        where: { ...where, locale, published_at_null: false },
         locale,
+        limit: this.perPage,
+        start: (this.currentPage - 1) * this.perPage,
       }
 
       this.data = await this.$apollo
         .query({ query: fetchConcerts, variables })
         .then(({ data }) => {
-          // if (process.env.dev) console.log(data)
+          this.totalCount = data.calendarsConnection?.aggregate?.count || 0
           this.contentLoading = false
           return data
         })
@@ -254,6 +341,31 @@ export default {
     background: black;
     transform: translateY(-40%) scale(0);
     transition: transform 0.2s ease;
+  }
+}
+
+.pagination-btn {
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.4rem;
+  border: 1px solid black;
+  font-size: 0.875rem;
+  line-height: 1;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: black;
+    color: white;
+  }
+
+  &.active {
+    background-color: black;
+    color: white;
   }
 }
 </style>

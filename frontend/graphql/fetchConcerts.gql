@@ -1,5 +1,10 @@
-query getCalendar($sort: String, $locale: String, $where: JSON) {
-  calendars(sort: $sort, locale: $locale, where: $where, limit: 1000) {
+query getCalendar($sort: String, $locale: String, $where: JSON, $limit: Int, $start: Int) {
+  calendarsConnection(locale: $locale, where: $where) {
+    aggregate {
+      count
+    }
+  }
+  calendars(sort: $sort, locale: $locale, where: $where, limit: $limit, start: $start) {
     id
     canton {
       id
