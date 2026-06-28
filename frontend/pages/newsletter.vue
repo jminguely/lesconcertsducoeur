@@ -26,6 +26,49 @@
 
       <div class="inf-content">
         <div class="flex flex-col gap-3 my-3">
+          <!-- Firstname + Lastname: 2 separate fields, side-by-side on md+, stacked on mobile -->
+          <div class="newsletter-name-row">
+            <div class="newsletter-input-row flex-1">
+              <input
+                id="inf-firstname"
+                class="newsletter-input"
+                type="text"
+                name="inf[2]"
+                data-inf-meta="2"
+                :data-inf-error="$t('newsletter').errorText"
+                :placeholder="$t('newsletter').firstname"
+              />
+            </div>
+            <div class="newsletter-input-row flex-1">
+              <input
+                id="inf-lastname"
+                class="newsletter-input"
+                type="text"
+                name="inf[3]"
+                data-inf-meta="3"
+                :data-inf-error="$t('newsletter').errorText"
+                :placeholder="$t('newsletter').lastname"
+              />
+            </div>
+          </div>
+
+          <!-- Canton -->
+          <div class="newsletter-input-row relative">
+            <select
+              id="inf-canton"
+              class="newsletter-input newsletter-select pr-8"
+              name="inf[51623]"
+              data-inf-meta="51623"
+            >
+              <option value="">{{ $t('newsletter').canton }}</option>
+              <option value="Fribourg">Fribourg</option>
+              <option value="Vaud">Vaud</option>
+              <option value="Valais">Valais</option>
+              <option value="Genève">Genève</option>
+            </select>
+            <span class="newsletter-caret absolute inset-y-0 right-0 flex items-center pointer-events-none" aria-hidden="true">&#8964;</span>
+          </div>
+
           <div class="newsletter-input-row">
             <input
               id="mce-EMAIL"
@@ -44,9 +87,11 @@
               :aria-label="$t('newsletter').submit"
               @click="onSubmitClick"
             >
-              <span aria-hidden="true">></span>
+              <span class="hidden sm:inline" aria-hidden="true">{{$t('newsletter').submit}}</span>
+              <span class="sm:hidden" aria-hidden="true">></span>
             </button>
           </div>
+
 
           <!-- Hidden locale field -->
           <input
@@ -209,6 +254,16 @@ export default {
       this.submitForm()
     },
 
+    openCantonSelect() {
+      const sel = document.getElementById('inf-canton')
+      if (sel) {
+        // Focus and programmatically trigger a click to open the dropdown
+        sel.focus()
+        // For some browsers a click event will open the options list
+        sel.click()
+      }
+    },
+
     submitForm() {
       const form = this.$el.querySelector('form')
       if (form) {
@@ -232,6 +287,35 @@ export default {
   @apply flex-auto py-1 px-2;
 }
 
+.newsletter-name-row {
+  @apply flex flex-col gap-3 sm:flex-row sm:gap-3;
+}
+
+.newsletter-input-last {
+  @apply border-l-0;
+}
+
+.newsletter-select {
+  @apply w-full flex-auto py-1 px-2 bg-transparent text-gray;
+
+  appearance: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+
+
+.newsletter-caret {
+  @apply text-lg border-l-1 border-gray border-opacity-30 flex items-start;
+
+  padding-left: 13px;
+  padding-right: 13px;
+  color: rgb(107 114 128 / 72%);
+  line-height: 1;
+  user-select: none;
+}
+
+.newsletter-input,
 .newsletter-input::placeholder {
   color: rgb(107 114 128 / 72%);
 }
@@ -241,7 +325,7 @@ export default {
 }
 
 .newsletter-submit {
-  @apply text-lg px-3 border-l-1 border-gray border-opacity-30;
+  @apply px-3 border-l-1 border-gray border-opacity-30;
 }
 
 .inf-input.inf-error label,

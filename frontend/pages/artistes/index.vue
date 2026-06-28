@@ -128,7 +128,7 @@ export default {
       cantons: [],
       currentPage: 1,
       totalCount: 0,
-      perPage: 36,
+      perPage: 72,
     }
   },
 
