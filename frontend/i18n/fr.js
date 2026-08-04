@@ -18,7 +18,7 @@ export default {
   },
   home: {
     organizeConcert: {
-      title: 'Souhaitez-vous organiser un concert ?',
+      title: 'Souhaitez-vous organiser un concert ?',
       vs: 'Dans le canton du Valais',
       vd: 'Dans le canton de Vaud',
       ge: 'Dans le canton de Genève',
@@ -27,7 +27,7 @@ export default {
     nextConcerts: 'Prochains concerts et ateliers',
     ourArtists: 'Nos artistes',
     supportUs: {
-      title: 'Soutenez-nous :',
+      title: 'Soutenez-nous :',
       donate: 'en faisant un don,',
       help: 'en devenant bénévole,',
       member: 'en devenant membre.',
@@ -50,7 +50,7 @@ export default {
     comite: {
       title: 'Comité et direction artistique',
     },
-    soutien: 'Comment nous soutenir ?',
+    soutien: 'Comment nous soutenir ?',
     benevole: 'Devenez bénévole',
     don: 'Faites un don',
 
@@ -68,11 +68,11 @@ export default {
     fr: 'Fribourg',
   },
   footer: {
-    socials: 'Retrouvez-nous sur les réseaux:',
-    newsletter_infos: 'Vous souhaitez recevoir les infos?',
+    socials: 'Retrouvez-nous sur les réseaux :',
+    newsletter_infos: 'Vous souhaitez recevoir les infos ?',
     newsletter: "S'abonner à la newsletter",
-    partner: 'En partenariat avec:',
-    support: 'Merci à nos soutiens:',
+    partner: 'En partenariat avec :',
+    support: 'Merci à nos soutiens :',
     impressum: 'Impressum',
     privacy: 'Politique de confidentialité',
   },
@@ -84,7 +84,7 @@ export default {
     email: 'Email',
     canton: 'Canton',
     submit: "Valider l'inscription",
-    success: 'Votre inscription a été enregistrée avec succès !',
+    success: 'Votre inscription a été enregistrée avec succès !',
     errorText: 'Merci de renseigner une chaîne de caractères',
     errorEmail: 'Merci de renseigner une adresse email',
     privacy:
@@ -92,9 +92,9 @@ export default {
   },
   artistes: {
     title: 'Nos artistes',
-    repertoire: 'Répertoire',
+    repertoire: 'Style / répertoire',
     formats: 'Format',
-    musiciens: 'Artistes',
+    musiciens: 'Musicien·nes',
     concerts: 'Prochains concerts et ateliers',
     web: 'Site web',
     instagram: 'Instagram',

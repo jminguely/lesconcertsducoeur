@@ -31,7 +31,7 @@
       >
         <splide-slide v-for="logo in logos" :key="logo.id" class="flex">
           <nuxt-img
-            class="aspect-logo p-2 object-contain m-auto filter grayscale"
+            class="aspect-logo p-2 object-contain m-auto filter grayscale bg-gray"
             provider="strapi"
             :src="logo.url"
           />
@@ -61,7 +61,7 @@ export default {
   content: '';
   z-index: 2;
   position: absolute;
-  background: linear-gradient(to right, #393939ff, #39393900);
+  background: linear-gradient(to right, #ffff, #fff0);
   display: block;
   width: 1rem;
   height: 100%;
@@ -74,7 +74,7 @@ export default {
   content: '';
   z-index: 2;
   position: absolute;
-  background: linear-gradient(to left, #393939ff, #39393900);
+  background: linear-gradient(to left, #ffff, #fff0);
   display: block;
   width: 1rem;
   height: 100%;

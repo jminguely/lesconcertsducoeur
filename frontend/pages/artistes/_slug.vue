@@ -140,7 +140,8 @@
             <span class="font-sans"
               >{{ artist.first_name }} {{ artist.last_name }}</span
             >
-            <span class="font-playFair">{{ artist.instrument }} </span>
+            <span>|</span>
+            <span class="font-playFair">as{{ artist.instrument }}</span>
           </p>
         </div>
       </div>

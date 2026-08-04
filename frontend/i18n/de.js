@@ -18,7 +18,7 @@ export default {
   },
   home: {
     organizeConcert: {
-      title: 'Möchten Sie Gastgeber:in eines Konzertes werden?',
+      title: 'Möchten Sie Gastgeber:in eines Konzertes werden ?',
       vs: 'Im Kanton Wallis',
       vd: 'Im Kanton Waadt',
       ge: 'Im Kanton Genf',
@@ -27,7 +27,7 @@ export default {
     nextConcerts: 'Nächste Konzerte und Workshops',
     ourArtists: 'Musiker:innen',
     supportUs: {
-      title: 'Unterstützen Sie uns:',
+      title: 'Unterstützen Sie uns :',
       donate: 'mit einer Spende,',
       help: 'als Freiwillige:r,',
       member: 'als Vereinsmitglied.',
@@ -43,14 +43,14 @@ export default {
   },
   medias: {
     title: 'Medien',
-    findUsOnSocialMedias: 'Folgen Sie uns auf den sozialen Netzwerken!',
+    findUsOnSocialMedias: 'Folgen Sie uns auf den sozialen Netzwerken !',
     images: 'Bilder',
   },
   association: {
     comite: {
       title: 'Vorstand und künstlerische Leitung',
     },
-    soutien: 'Sie möchten uns unterstützen?',
+    soutien: 'Sie möchten uns unterstützen ?',
     benevole: 'FreiwilligeR werden',
     don: 'Spenden',
     membre: 'Mitglied werden',
@@ -67,11 +67,11 @@ export default {
     fr: 'Freiburg',
   },
   footer: {
-    socials: 'Folgen Sie uns auf den sozialen Medien:',
-    newsletter_infos: 'Möchten Sie auf dem Laufenden bleiben?',
+    socials: 'Folgen Sie uns auf den sozialen Medien :',
+    newsletter_infos: 'Möchten Sie auf dem Laufenden bleiben ?',
     newsletter: 'Newsletter abonnieren',
-    partner: 'In Partnerschaft mit:',
-    support: 'Danke an unsere Unterstützer:innen:',
+    partner: 'In Partnerschaft mit :',
+    support: 'Danke an unsere Unterstützer:innen :',
     impressum: 'Impressum',
     privacy: 'Datenschutzerklärung',
   },
@@ -83,7 +83,7 @@ export default {
     email: 'Email',
     canton: 'Kanton',
     submit: 'Anmeldung bestätigen',
-    success: 'Ihre Anmeldung wurde erfolgreich registriert!',
+    success: 'Ihre Anmeldung wurde erfolgreich registriert !',
     errorText: 'Bitte geben Sie einen Text ein',
     errorEmail: 'Bitte geben Sie eine gültige E-Mail-Adresse ein',
     privacy:
@@ -91,7 +91,7 @@ export default {
   },
   artistes: {
     title: 'Musiker:innen',
-    repertoire: 'Repertoire',
+    repertoire: 'Stil / Repertoire',
     formats: 'Formate',
     musiciens: 'Musiker:innen',
     concerts: 'Nächste Konzerte und Workshops',

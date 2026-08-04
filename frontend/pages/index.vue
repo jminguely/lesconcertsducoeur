@@ -85,6 +85,13 @@
             </p>
           </div>
         </div>
+        <p>
+          <Btn
+            color="multi"
+            :text="$t('agenda').title"
+            :link="`/${$i18n.locale}/agenda`"
+          />
+        </p>
       </div>
     </section>
     <section v-if="page.Carousel">
@@ -94,13 +101,21 @@
     </section>
     <section
       v-if="randomizedMusicGroups.length"
-      class="border-b-1 mb-10 lg:mb-20 pb-20"
+      class="border-b-1 mb-5 lg:mb-10 pb-10"
     >
       <h2 class="h1 mb-10">{{ $t('home').ourArtists }}</h2>
       <ArtistsSlider
         :key="randomizedMusicGroups[0].id"
         :artists="randomizedMusicGroups"
       />
+      <p>
+        <Btn
+          color="multi"
+          class="mt-4"
+          :text="$t('home').ourArtists"
+          :link="`/${$i18n.locale}/artistes`"
+        />
+      </p>
     </section>
     <section v-if="page.Testimonials" class="border-b-1 mb-10 lg:mb-20 pb-20">
       <Testimonials :testimonials="page.Testimonials" />

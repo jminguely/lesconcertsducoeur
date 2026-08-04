@@ -1,113 +1,125 @@
 <template>
-  <footer class="site-footer mt-20 pt-32 pb-8 px-3 md:px-6 bg-gray text-white">
-    <div class="site-footer-container">
-      <div class="logo-container mb-5 md:pl-3">
-        <img
-          class="w-24 lg:w-48 h-auto md:-ml-2 filter invert"
-          src="/CdC-logo.png"
-        />
-      </div>
-      <div
-        class="navigation-container sm:col-start-1 sm:row-span-3 lg:row-span-2 md:pl-3"
-      >
-        <Navigation />
-      </div>
-      <div class="sm:row-start-1 sm:col-start-2 lg:row-start-auto">
-        <h3 class="mb-3">{{ $t('footer').socials }}</h3>
-        <div class="flex flex-row gap-5">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.facebook.com/concertsducoeur/"
-          >
-            <svg class="icon text-white h-8 w-8">
-              <use href="~/assets/img/icons.svg#facebook"></use>
-            </svg>
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.instagram.com/lesconcertsducoeur/"
-          >
-            <svg class="icon text-white h-8 w-8">
-              <use href="~/assets/img/icons.svg#instagram"></use>
-            </svg>
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.youtube.com/@lesconcertsducoeur"
-          >
-            <svg class="icon text-white h-8 w-8">
-              <use href="~/assets/img/icons.svg#youtube"></use>
-            </svg>
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="mailto:contact@lesconcertsducoeur.ch"
-          >
-            <svg class="icon text-white h-8 w-8">
-              <use href="~/assets/img/icons.svg#email"></use>
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div class="flex flex-col items-start sm:col-start-2 lg:col-start-auto">
-        <h3 class="mb-3">{{ $t('footer').newsletter_infos }}</h3>
-        <nuxt-link :to="`/${$i18n.locale}/newsletter`">
-          {{ $t('footer').newsletter }}
-        </nuxt-link>
-      </div>
-      <div class="sm:col-start-2 lg:col-start-auto">
-        <h3 class="mb-3">{{ $t('footer').partner }}</h3>
-        <div class="grid md:grid-cols-2 gap-5">
-          <a
-            class="block"
-            href="https://www.livemusicnow.org.uk/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              class="h-14 w-28 object-contain object-left filter invert"
-              src="/LMN-logo.png"
-            />
-          </a>
+  <div>
+
+    <footer class="site-footer mt-20 pt-32 pb-8 px-3 md:px-6 bg-gray text-white">
+      <div class="site-footer-container">
+        <div class="logo-container mb-5 md:pl-3">
           <img
-            class="h-14 w-28 object-contain object-left"
-            src="/HEMU-logo.png"
-          />
-          <img
-            class="h-14 w-28 object-contain object-left"
-            src="/HEMUGE-logo.png"
-          />
-          <img
-            class="h-14 w-28 object-contain object-left"
-            src="/HESSO-logo.png"
+            class="w-24 lg:w-48 h-auto md:-ml-2 filter invert"
+            src="/CdC-logo.png"
           />
         </div>
-      </div>
-      <div class="sm:col-start-2 lg:col-start-auto flex flex-col items-start">
-        © {{ new Date().getFullYear() }}
-        <i>Les Concerts du Cœur</i>
-        <nuxt-link :to="`/${$i18n.locale}/impressum`">
-          {{ $t('footer').impressum }}</nuxt-link
+        <div
+          class="navigation-container sm:col-start-1 sm:row-span-3 lg:row-span-2 md:pl-3"
         >
-        <nuxt-link :to="`/${$i18n.locale}/privacy`">
-          {{ $t('footer').privacy }}
-        </nuxt-link>
+          <Navigation />
+        </div>
+        <div class="sm:row-start-1 sm:col-start-2 lg:row-start-auto">
+          <h3 class="mb-3">{{ $t('footer').socials }}</h3>
+          <div class="flex flex-row gap-5">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/concertsducoeur/"
+            >
+              <svg class="icon text-white h-8 w-8">
+                <use href="~/assets/img/icons.svg#facebook"></use>
+              </svg>
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.instagram.com/lesconcertsducoeur/"
+            >
+              <svg class="icon text-white h-8 w-8">
+                <use href="~/assets/img/icons.svg#instagram"></use>
+              </svg>
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.youtube.com/@lesconcertsducoeur"
+            >
+              <svg class="icon text-white h-8 w-8">
+                <use href="~/assets/img/icons.svg#youtube"></use>
+              </svg>
+            </a>
+            <a
+              href="mailto:contact@lesconcertsducoeur.ch"
+            >
+              <svg class="icon text-white h-8 w-8">
+                <use href="~/assets/img/icons.svg#email"></use>
+              </svg>
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/company/101283444/"
+            >
+              <svg class="icon text-white h-8 w-8">
+                <use href="~/assets/img/icons.svg#linkedin"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-col items-start sm:col-start-2 lg:col-start-auto">
+          <h3 class="mb-3">{{ $t('footer').newsletter_infos }}</h3>
+          <nuxt-link :to="`/${$i18n.locale}/newsletter`">
+            {{ $t('footer').newsletter }}
+          </nuxt-link>
+        </div>
+        <div class="sm:col-start-2 lg:col-start-auto">
+          <h3 class="mb-3">{{ $t('footer').partner }}</h3>
+          <div class="grid md:grid-cols-2 gap-5">
+            <a
+              class="block"
+              href="https://www.livemusicnow.org.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="h-14 w-28 object-contain object-left filter invert"
+                src="/LMN-logo.png"
+              />
+            </a>
+            <img
+              class="h-14 w-28 object-contain object-left"
+              src="/HEMU-logo.png"
+            />
+            <img
+              class="h-14 w-28 object-contain object-left"
+              src="/HEMUGE-logo.png"
+            />
+            <img
+              class="h-14 w-28 object-contain object-left"
+              src="/HESSO-logo.png"
+            />
+          </div>
+        </div>
+        <div class="sm:col-start-2 lg:col-start-auto flex flex-col items-start">
+          © {{ new Date().getFullYear() }}
+          <i>Les Concerts du Cœur</i>
+          <nuxt-link :to="`/${$i18n.locale}/impressum`">
+            {{ $t('footer').impressum }}</nuxt-link
+          >
+          <nuxt-link :to="`/${$i18n.locale}/privacy`">
+            {{ $t('footer').privacy }}
+          </nuxt-link>
+        </div>
       </div>
+    </footer>
+    <div class="pb-4 px-3 md:px-6">
       <div
         v-if="logos.length"
-        class="partner-container lg:col-span-3 mt-16 min-w-0 sm:col-span-2"
+        class="partner-container lg:col-span-3 mt-4 min-w-0 sm:col-span-2 max-w-7xl mx-auto"
       >
         <h3>{{ $t('footer').support }}</h3>
-        <div class="border-t-1 border-white pt-3 mt-2">
+        <div class="border-t-1 border-gray pt-3 mt-2">
           <LogosSlider :key="logos[0].id" :logos="logos" />
         </div>
       </div>
     </div>
-  </footer>
+  </div>
 </template>
 
 <script>

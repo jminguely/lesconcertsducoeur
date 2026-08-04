@@ -50,14 +50,14 @@
           <div v-for="artist in event.music_group.artists" :key="artist.id">
             <span>{{ artist.first_name }} {{ artist.last_name }}</span>
             <span>|</span>
-            <span>{{ artist.instrument }}</span>
+            <span class="font-playFair">{{ artist.instrument }}</span>
           </div>
         </template>
         <template v-else>
           <div v-for="artist in event.artists" :key="artist.id">
             <span>{{ artist.first_name }} {{ artist.last_name }}</span>
             <span>|</span>
-            <span>{{ artist.instrument }}</span>
+            <span class="font-playFair">{{ artist.instrument }}</span>
           </div>
         </template>
       </div>
