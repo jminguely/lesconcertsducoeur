@@ -70,7 +70,7 @@
         </div>
         <div class="sm:col-start-2 lg:col-start-auto">
           <h3 class="mb-3">{{ $t('footer').partner }}</h3>
-          <div class="grid md:grid-cols-2 gap-5">
+          <div class="grid md:grid-cols-3 gap-5">
             <a
               class="block"
               href="https://www.livemusicnow.org.uk/"
@@ -89,10 +89,6 @@
             <img
               class="h-14 w-28 object-contain object-left"
               src="/HEMUGE-logo.png"
-            />
-            <img
-              class="h-14 w-28 object-contain object-left"
-              src="/HESSO-logo.png"
             />
           </div>
         </div>
