@@ -31,7 +31,7 @@
       >
         <splide-slide v-for="logo in logos" :key="logo.id" class="flex">
           <nuxt-img
-            class="aspect-logo p-2 object-contain m-auto filter grayscale bg-gray"
+            class="aspect-logo p-2 object-contain m-auto filter grayscale"
             provider="strapi"
             :src="logo.url"
           />
