@@ -256,7 +256,7 @@ export default {
     async getAgenda() {
       const locale = this.$i18n.locale + '-CH'
 
-      let sort = 'date_time:asc'
+      let sort = 'date_time:asc,id:asc'
 
       const where = {}
 
@@ -266,7 +266,7 @@ export default {
 
       if (this.yearFilter) {
         if (this.yearFilter === 'archive') {
-          sort = 'date_time:desc'
+          sort = 'date_time:desc,id:desc'
           where.date_time_lte = `${new Date().getFullYear() - 4}-12-31`
         } else {
           where.date_time_gte = `${this.yearFilter}-01-01`
