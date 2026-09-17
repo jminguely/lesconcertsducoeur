@@ -150,7 +150,7 @@ export default {
       cantons: [],
       currentPage: 1,
       totalCount: 0,
-      perPage: 100,
+      perPage: 80,
     }
   },
   async fetch() {
