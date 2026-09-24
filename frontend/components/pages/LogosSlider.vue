@@ -12,7 +12,7 @@
           arrows: false,
           drag: false,
           autoplay: true,
-          speed: 3500,
+          speed: 2000,
           interval: 0,
           width: '100%',
           lazyLoad: true,
